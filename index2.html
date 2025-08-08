@@ -1,392 +1,740 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Confidant Hero</title>
+  <title>Themed Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper CSS -->
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontSize: {
-            base: '1em',
-            sm: '14px',
-            md: '15px',
-            lg: '1.4em',
-            xl: '42px',
-            heading: '6.75vw',
-          },
-          lineHeight: {
-            tight: '1em',
-            normal: '1.2em',
-            relaxed: '1.5em',
-            loose: '1.6em',
-            heading: '0.95em',
-          },
-          letterSpacing: {
-            wide: '1.8px',
-            tighter: '0.01em',
-          },
-          fontWeight: {
-            medium: '500',
-          },
-          transitionProperty: {
-            all: 'all',
-          },
-          transitionTimingFunction: {
-            ease: 'ease',
-          },
-          transitionDuration: {
-            DEFAULT: '300ms',
-          },
           colors: {
-            theme: {
-              text: '#DEDDDB',
-              textLight: '#848484',
-              textDark: '#EFE8CE',
-              link: '#E2725B',
-              hover: '#DD644C',
-              link2: '#7DA189',
-              hover2: '#6D967A',
-              link3: '#9D7246',
-              hover3: '#5B3918',
-              bg: '#141414',
-              bd: '#424040',
-              altBg: '#292828',
-              altBd: '#535353',
-            },
             dark: '#0e0e0e',
             offwhite: '#f5e9cd',
             graytext: '#d9d9d9',
             accent: '#f25835',
             footer: '#121212',
-            linkhover: '#f5e9cd',
+            linkhover: '#f25835',
           }
         }
       }
     }
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #f25835;
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+ .scroll-down {
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+    .overlay-bg {
+      background: linear-gradient(to right, rgba(14,14,14,0.8), rgba(14,14,14,0.6));
+    }
+
+    @keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+.animate-slide-in-up {
+  animation: slide-in-up 1.2s ease-out forwards;
+}
+
+
+   :root {
+      --bg-dark: #0e0e0e;
+      --accent: #f25835;
+      --offwhite: #f5e9cd;
+    }
+
+    /* Quote Button Animation */
+    .button {
+  --border_radius: 9999px;
+  --transition: 0.3s ease-in-out;
+  --active: 0;
+  padding: 0.5rem 1.25rem;
+  width: fit-content;
+  height: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform var(--transition);
+  transform-origin: center;
+}
+
+
+    .button::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-dark);
+      border-radius: var(--border_radius);
+     box-shadow:
+  inset 0 0.5px hsl(0, 0%, 100%),
+  inset 0 -1px 2px 0 hsl(0, 0%, 0%),
+  0px 4px 10px -4px rgba(0,0,0,0.5),
+  0 0 0 calc(var(--active) * 0.2rem) var(--accent);
+
+      transition: all var(--transition);
+      z-index: 0;
+    }
+
+    .button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background-image:
+        radial-gradient(at 51% 89%, rgba(242, 88, 53, 0.2) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(242, 88, 53, 0.4) 0px, transparent 50%),
+        radial-gradient(at 22% 91%, rgba(242, 88, 53, 0.3) 0px, transparent 50%);
+      opacity: var(--active);
+      border-radius: var(--border_radius);
+      transition: opacity var(--transition);
+      z-index: 2;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      --active: 1;
+    }
+
+    .dots_border {
+      --size_border: calc(100% + 2px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: var(--size_border);
+      height: var(--size_border);
+      border-radius: var(--border_radius);
+      overflow: hidden;
+      z-index: -10;
+    }
+
+    .dots_border::before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 2rem;
+      background-color: var(--accent);
+      mask: linear-gradient(transparent 0%, white 120%);
+      animation: rotate 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .text_button {
+      position: relative;
+      z-index: 10;
+      font-size: 1rem;
+      background-image: linear-gradient(90deg, var(--offwhite), rgba(245, 233, 205, 0.8));
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
 </head>
-<body class="bg-dark text-theme-text">
+<body class="bg-dark text-offwhite font-sans">
 
-    <section class="relative min-h-[90vh] bg-cover bg-center" style="background-image: url('./black-smooth-textured-paper-background.jpg');">
+  <!-- Navbar -->
+  <!-- Navbar -->
+<header class="sticky top-0 z-50 bg-[#0e0e0e] shadow-md">
+  <div class="max-w-7xl mx-auto border-b border-gray-700 px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
 
-    <!-- Diagonal Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-dark/90 to-transparent z-10"></div>
-
-    <!-- Header -->
-    <header class="absolute top-0 left-0 w-full z-30 px-6 sm:px-10 lg:px-20 pt-8 flex justify-between items-center">
       <!-- Logo -->
-      <div class="flex items-center gap-2 text-2xl font-bold text-offwhite z-30">
-        <div class="w-4 h-6 bg-accent rounded-sm"></div>
-        <span>Confidant</span>
+      <div class="flex items-center">
+        <img src="./thundergits logo.webp" alt="Logo" class="h-10 w-auto">
       </div>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex gap-8 text-offwhite font-medium z-30">
-        <a href="#" class="border-b-2 border-linkhover pb-1">Home</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Pages</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Portfolio</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Blog</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Shop</a>
+      <nav class="hidden md:flex space-x-8 items-center font-medium text-sm text-offwhite">
+        <a href="#" class="nav-link transition hover:text-accent">Home</a>
+        <a href="#" class="nav-link transition hover:text-accent">About</a>
+        <a href="#" class="nav-link transition hover:text-accent">Work</a>
+        <a href="#" class="nav-link transition hover:text-accent">Services</a>
+        <a href="#" class="nav-link transition hover:text-accent">Career</a>
+        <a href="#" class="nav-link transition hover:text-accent">Contact</a>
+
+        <!-- New Themed Button -->
+        <button class="button relative flex items-center gap-2 px-6 py-3 rounded-full bg-transparent border-none">
+          <div class="dots_border"></div>
+          
+           
+          <span class="text_button">Get a Quote</span>
+        </button>
       </nav>
 
-      <!-- Icons + Hamburger -->
-      <div class="flex items-center gap-6 z-30 text-offwhite">
-        <!-- Cart -->
-        <span class="relative w-8 h-8 text-center leading-8 text-[16px]">
-          <i class="fas fa-shopping-cart w-full h-full inline-block"></i>
-          <span class="absolute -top-2 -right-2 bg-accent text-white text-xs px-1.5 py-0.5 rounded-full">0</span>
-        </span>
-
-        <!-- Search -->
-        <span class="w-8 h-8 text-center leading-8 text-[16px] hover:text-theme-text_dark">
-          <i class="fas fa-search w-full h-full inline-block"></i>
-        </span>
-
-        <!-- Mobile Toggle -->
-        <button class="md:hidden w-8 h-8 text-center leading-8 text-[16px] focus:outline-none hover:text-theme-text_dark"
-          onclick="toggleMobileMenu()">
-          <i class="fas fa-bars w-full h-full inline-block"></i>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-toggle" class="text-offwhite focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-      class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-      <div class="flex justify-between items-center mb-10">
-        <div class="flex items-center gap-2 text-2xl font-bold">
-          <div class="w-4 h-6 bg-accent rounded-sm"></div>
-          <span class="text-white">Confidant</span>
-        </div>
-        <button onclick="toggleMobileMenu()" class="text-gray-300 text-lg">
-          Close <span class="ml-2 text-xl">×</span>
-        </button>
-      </div>
-
-      <div class="space-y-6">
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Home</span><span class="ml-2">→</span>
-        </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Pages</span><span class="ml-2">→</span>
-        </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Portfolio</span><span class="ml-2">→</span>
-        </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Blog</span><span class="ml-2">→</span>
-        </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Shop</span><span class="ml-2">→</span>
-        </a>
-      </div>
-
-      <!-- Footer Icons in Mobile -->
-      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-6 text-base text-graytext">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-dribbble"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
     </div>
+  </div>
 
-    <!-- Hero Text -->
-    <div class="relative z-20 px-6 sm:px-10 lg:px-20 max-w-6xl pt-48">
-      <h1 class="text-heading font-semibold leading-heading tracking-tighter text-offwhite mb-10">
-        SEO Services<br /> for Your Success
-      </h1>
+  <!-- Mobile Dropdown -->
+  <div id="mobile-menu" class="md:hidden hidden w-[60%] px-4 pb-6 bg-[#0e0e0e] space-y-2 text-sm font-medium">
+    <a href="#" class="block py-2 text-offwhite">Home</a>
+    <a href="#" class="block py-2 text-offwhite">About</a>
+    <a href="#" class="block py-2 text-offwhite">Work</a>
+    <a href="#" class="block py-2 text-offwhite">Services</a>
+    <a href="#" class="block py-2 text-offwhite">Career</a>
+    <a href="#" class="block py-2 text-offwhite">Contact</a>
+    <button class="mt-3 w-full button relative flex items-center gap-2 px-6 py-3 rounded-full bg-transparent border-none">
+      <div class="dots_border"></div>
+      
+      <span class="text_button ">Get a Quote</span>
+    </button>
+  </div>
+</header>
+
+
+  <!-- Dummy Content -->
+  <main class="">
+  <!-- Hero Section -->
+<section class="relative w-full h-screen overflow-hidden">
+  <!-- Video Background -->
+  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="./5818973-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+    <img src="./black-smooth-textured-paper-background.jpg" alt="background" class="w-full h-full object-cover">
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay-bg absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+
+  <!-- Content -->
+  <div class="relative z-20 flex flex-col items-center justify-center text-center h-full px-4   animate-fadeIn">
+    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-white drop-shadow-lg leading-snug">
+      WELCOME TO THUNDERGITS TECHNOLOGIES
+    </h1>
+    <p class="text-lg sm:text-xl font-medium max-w-2xl mb-4 text-gray-200 drop-shadow">
+      Empower your digital presence with ThunderGits
+    </p>
+    <p class="max-w-3xl mb-8 text-sm sm:text-base text-gray-300 px-2 leading-relaxed drop-shadow-sm">
+      At ThunderGits Technologies, we specialize in delivering innovative digital experiences with ThunderGits solutions that help your business grow and thrive in the digital age. Our team is committed to crafting customized solutions tailored to your unique needs.
+    </p>
+    <a href="#contact" class="inline-block bg-accent text-white px-6 py-3 rounded-lg shadow-lg hover:bg-linkhover hover:text-dark transition-all">
+      Get a Free Consultation
+    </a>
+
+    <!-- Scroll Down Arrow -->
+    <div class="mt-12 animate-bounce">
+      <span class="scroll-down text-white text-3xl opacity-80">&#x25BC;</span>
     </div>
-
-    <!-- Bottom Left Paragraph -->
-    <div class="absolute bottom-10 left-6 sm:left-10 md:left-20 z-20 max-w-md">
-      <p class="text-graytext text-lg font-medium">
-        Boost your online presence and increase<br /> traffic with expert SEO services today.
-      </p>
-    </div>
-
-    <!-- Vertical Right Social Bar (Fixed) -->
-    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 space-y-3">
-      <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
-      <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
-        <i class="fas fa-image"></i>
-      </a>
-      <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
-        <i class="fas fa-credit-card"></i>
-      </a>
-    </div>
-
-    <!-- Bottom Right Socials -->
-    <footer class="absolute bottom-10 right-6 sm:right-10 z-30 flex flex-wrap gap-6 text-sm text-offwhite">
-      <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-        <i class="fab fa-facebook-f"></i> Facebook
-      </a>
-      <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-        <i class="fab fa-x-twitter"></i> Twitter
-      </a>
-      <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-        <i class="fab fa-dribbble"></i> Dribbble
-      </a>
-      <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-    </footer>
-  </section>
-
-  <script>
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    }
-  </script>
-
-
-
-
-
-<!-- Next Image Section -->
-<section class="w-full h-[85vh]">
-  <div class="w-full h-full">
-    <img
-      src="./image thundergits.jpg"
-      alt="Descriptive Alt Text"
-      class="w-full h-full object-cover shadow-md"
-    />
   </div>
 </section>
 
-<section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-    <!-- Left Content -->
-    <div>
-      <h4 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-4">
-        SEO OFFERINGS
-      </h4>
-      <h2 class="text-5xl  text-gray-900 mb-8 leading-tight">
-        Best SEO solutions <br />
-        tailored for brands
+<section class="bg-[#0e0e0e] text-offwhite py-20 px-6 sm:px-10 lg:px-20">
+  <div class="max-w-7xl mx-auto text-center">
+    
+   <div class="inline-block mb-4 relative">
+      <span class="absolute left-0 top-2 h-6 w-1 bg-accent rounded-sm"></span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white pl-4 tracking-wide relative z-10">
+        Why ThunderGits?
       </h2>
-      <p class="text-gray-600 text-xl leading-relaxed">
-        Sed ut perspiciatis unde omnis iste natus ut perspic iatis unde omnis iste perspiciatis ut perspiciatis unde omnis iste natus.
-      </p>
     </div>
 
-    <!-- Right Grid (Icons Section) -->
-    <div class="grid grid-cols-2 gap-y-14 gap-x-12 pt-16">
+    <p class="text-lg text-gray-300 mb-12 max-w-3xl mx-auto">
+      Discover why businesses worldwide trust us for innovative technology solutions.
+    </p>
 
+    <!-- Feature Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
       <!-- Card 1 -->
-      <div class="space-y-5">
-        <i class="fab fa-searchengin text-6xl text-orange-500"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Website audit</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-        </p>
+      <div class="bg-[#1a1a1a] hover:shadow-accent/40 hover:shadow-lg transition-all duration-300 p-6 rounded-xl border border-gray-800 text-left hover:scale-[1.02]">
+        <div class="text-accent text-3xl mb-3">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Expert Team</h3>
+        <p class="text-gray-400">Professionals skilled in delivering the latest in tech.</p>
       </div>
 
       <!-- Card 2 -->
-      <div class="space-y-5">
-        <i class="fas fa-cogs text-6xl text-orange-500"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Technical SEO</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-        </p>
+      <div class="bg-[#1a1a1a] hover:shadow-accent/40 hover:shadow-lg transition-all duration-300 p-6 rounded-xl border border-gray-800 text-left hover:scale-[1.02]">
+        <div class="text-accent text-3xl mb-3">
+          <i class="fas fa-puzzle-piece"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Custom Solutions</h3>
+        <p class="text-gray-400">Tailored to meet your business objectives.</p>
       </div>
 
       <!-- Card 3 -->
-      <div class="space-y-5">
-        <i class="fas fa-edit text-6xl text-orange-500"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Content optimization</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-        </p>
+      <div class="bg-[#1a1a1a] hover:shadow-accent/40 hover:shadow-lg transition-all duration-300 p-6 rounded-xl border border-gray-800 text-left hover:scale-[1.02]">
+        <div class="text-accent text-3xl mb-3">
+          <i class="fas fa-microchip"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Cutting-Edge Tech</h3>
+        <p class="text-gray-400">Our solutions leverage AI, ML, cloud, and more.</p>
       </div>
 
       <!-- Card 4 -->
-      <div class="space-y-5">
-        <i class="fas fa-bullhorn text-6xl text-orange-500"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Content marketing</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-        </p>
+      <div class="bg-[#1a1a1a] hover:shadow-accent/40 hover:shadow-lg transition-all duration-300 p-6 rounded-xl border border-gray-800 text-left hover:scale-[1.02]">
+        <div class="text-accent text-3xl mb-3">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Customer Focused</h3>
+        <p class="text-gray-400">We prioritize your satisfaction and long-term success.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-[#1a1a1a] hover:shadow-accent/40 hover:shadow-lg transition-all duration-300 p-6 rounded-xl border border-gray-800 text-left hover:scale-[1.02]">
+        <div class="text-accent text-3xl mb-3">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Global Reach</h3>
+        <p class="text-gray-400">Trusted by businesses across the world.</p>
+      </div>
+
+      <!-- Card 6 (New) -->
+      <div class="bg-[#1a1a1a] hover:shadow-accent/40 hover:shadow-lg transition-all duration-300 p-6 rounded-xl border border-gray-800 text-left hover:scale-[1.02]">
+        <div class="text-accent text-3xl mb-3">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+        <p class="text-gray-400">We deliver solutions on time without compromising quality.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<section class="relative py-36 bg-white overflow-hidden">
-  <!-- Background Overlay on Right 60% -->
-  <div class="absolute right-0 top-0 h-full w-[60%] bg-[#fdf7ef] z-0"></div>
+<section class="relative w-full text-offwhite py-24 px-6 sm:px-10 lg:px-20 overflow-hidden">
 
-  <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 px-3 items-center">
+  <!-- Background video or fallback image -->
+  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="./5818973-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+    <img src="./black-smooth-textured-paper-background.jpg" alt="background" class="w-full h-full object-cover">
+  </video>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
+
+  <div class="relative z-20 max-w-7xl mx-auto text-center">
     
-    <!-- Left Image -->
-    <div class="w-full">
-      <img src="./image thundergits.jpeg" alt="Team Image" class="w-full h-[550px] object-cover shadow-lg" />
-    </div>
-
-    <!-- Right Content -->
-    <div class="space-y-6">
-      <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase">
-        About Us
-      </h4>
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-        Elevate your online <br /> presence with SEO
+    <!-- Section Title -->
+    <div class="inline-block mb-10 relative">
+      <span class="absolute left-0 top-2 h-6 w-1 bg-accent rounded-sm"></span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white pl-4 tracking-wide relative z-10">
+        What We Offer
       </h2>
-      <p class="text-gray-600 text-lg leading-relaxed">
-        Sed ut perspiciatis unde omnis iste natus ut perspic iatis unde omnis iste perspiciatis ut perspiciatis unde omnis iste natus.
-      </p>
-
-      <!-- List Items -->
-      <ul class="space-y-3">
-        <li class="flex items-start">
-          <span class="text-orange-500 text-xl mr-3">✔</span>
-          <span class="text-gray-700">Adipiscing eli sed eiusmod</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-orange-500 text-xl mr-3">✔</span>
-          <span class="text-gray-700">Tempor incididunt</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-orange-500 text-xl mr-3">✔</span>
-          <span class="text-gray-700">Labore et dolore magna</span>
-        </li>
-      </ul>
-
-      <!-- Button -->
-      <a href="#" class="inline-block mt-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3">
-        ABOUT US
-      </a>
     </div>
 
+    <p class="text-lg text-gray-300 mb-12 max-w-3xl mx-auto">
+      Services That Drive Results
+    </p>
+
+    <!-- Service Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+
+      <!-- Card Template -->
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-bullhorn"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Digital Marketing</h3>
+        <p class="text-gray-300 text-sm">SEO, PPC, and social media campaigns tailored for your brand.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-code"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Website Development</h3>
+        <p class="text-gray-300 text-sm">Custom, fast, and responsive websites built for user experience.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-mobile-alt"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Application Development</h3>
+        <p class="text-gray-300 text-sm">Robust mobile and web apps designed for scalability.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-shopping-cart"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">E-Commerce Solutions</h3>
+        <p class="text-gray-300 text-sm">Seamless user journeys & optimized payment systems.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-brain"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Machine Learning & AI</h3>
+        <p class="text-gray-300 text-sm">Predictive analytics to intelligent automation.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-cogs"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Custom Software</h3>
+        <p class="text-gray-300 text-sm">Software solutions tailored to your business goals.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-cloud"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Cloud Services</h3>
+        <p class="text-gray-300 text-sm">Secure, scalable, and efficient cloud solutions.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-robot"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">AI Consulting</h3>
+        <p class="text-gray-300 text-sm">Implement AI strategies to unlock new possibilities.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-sync-alt"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">DevOps & CloudOps</h3>
+        <p class="text-gray-300 text-sm">Streamline development for faster, reliable delivery.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-chart-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Business Intelligence</h3>
+        <p class="text-gray-300 text-sm">Turn data into actionable insights & dashboards.</p>
+      </div>
+
+      <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:border-accent shadow-md hover:shadow-accent/30 text-left">
+        <div class="text-accent text-3xl mb-4"><i class="fas fa-user-shield"></i></div>
+        <h3 class="text-xl font-semibold mb-2 text-white">IT Consultancy</h3>
+        <p class="text-gray-300 text-sm">Navigate complex tech landscapes with confidence.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
 
+<section class="relative w-full py-24 px-6 sm:px-10 lg:px-20 overflow-hidden text-offwhite">
 
-<section class="py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Heading -->
-    <div class="mb-16">
-      <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
-        Our Clients
-      </h4>
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-        Check our best <br class="hidden md:block" />
-        clients & partners
+  <!-- Background Video or Image -->
+  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="./5818973-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+    <img src="./black-smooth-textured-paper-background.jpg" alt="background" class="w-full h-full object-cover" />
+  </video>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/70 z-10"></div>
+
+  <div class="relative z-20 max-w-7xl mx-auto text-center">
+
+    <!-- Section Title -->
+    <div class="inline-block mb-10 relative">
+      <span class="absolute left-0 top-2 h-6 w-1 bg-accent rounded-sm"></span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white pl-4 tracking-wide relative z-10">
+        Our Work
       </h2>
     </div>
 
-    <!-- Client Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <p class="text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
+      Here are some of the projects we've worked on to deliver innovative IT solutions for businesses across various industries.
+    </p>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
       
-      <!-- Client 1 -->
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Exide_Logo.svg/2560px-Exide_Logo.svg.png" alt="EXIDE Logo" class="h-12 mb-4" />
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">EXIDE</h3>
-        <p class="text-gray-600 mb-4">
-          Sed ut perspiciatis unde omnis iste natus ut perspiciatis unde omnis iste perspiciatis.
-        </p>
-        <a href="#" class="text-sm font-semibold text-gray-900 flex items-center gap-1 hover:underline">
-          Read More
-          <span>&rarr;</span>
-        </a>
+      <!-- Project Card Template -->
+      <div class="flex flex-col h-full bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 shadow-sm hover:shadow-accent/20 transition-all duration-300">
+        <img src="./assets/crumbell.webp" alt="Crumbell Project" class="w-full h-48 object-cover">
+        <div class="flex flex-col justify-between flex-grow p-6">
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">Crumbell Project</h3>
+            <p class="text-sm text-accent font-medium mb-1">Mobile App & Backend — <span class="text-white">Crumbell</span></p>
+            <p class="text-sm text-gray-300">
+              Cross-platform mobile app for order & inventory. Built with React Native, Express.js, MongoDB, and Google Maps.
+            </p>
+          </div>
+          <div class="mt-6">
+            <a href="#" class="inline-block text-accent text-sm font-semibold hover:underline">View Project</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Client 2 -->
-      <div>
-        <img src="https://1000logos.net/wp-content/uploads/2021/06/IR-Logo.png" alt="IR Logo" class="h-12 mb-4 opacity-60" />
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">IR</h3>
-        <p class="text-gray-600 mb-4">
-          Sed ut perspiciatis unde omnis iste natus ut perspiciatis unde omnis iste perspiciatis.
-        </p>
-        <a href="#" class="text-sm font-semibold text-gray-900 flex items-center gap-1 hover:underline">
-          <span>&rarr;</span>
-        </a>
+      <!-- Kalvium Project -->
+      <div class="flex flex-col h-full bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 shadow-sm hover:shadow-accent/20 transition-all duration-300">
+        <img src="./assets/LoginPageDemo.webp" alt="Kalvium Project" class="w-full h-48 object-cover">
+        <div class="flex flex-col justify-between flex-grow p-6">
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">Kalvium Project</h3>
+            <p class="text-sm text-accent font-medium mb-1">Social Media App — <span class="text-white">Kalvium</span></p>
+            <p class="text-sm text-gray-300">
+              Social app with test-driven learning. Made using ReactJS, Node.js, and SQLite, with Instagram-like UI.
+            </p>
+          </div>
+          <div class="mt-6">
+            <a href="#" class="inline-block text-accent text-sm font-semibold hover:underline">View Project</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Client 3 -->
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg" alt="Django Logo" class="h-12 mb-4 opacity-40" />
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">Django</h3>
-        <p class="text-gray-600 mb-4">
-          Sed ut perspiciatis unde omnis iste natus ut perspiciatis unde omnis iste perspiciatis.
-        </p>
-        <a href="#" class="text-sm font-semibold text-gray-900 flex items-center gap-1 hover:underline">
-          <span>&rarr;</span>
-        </a>
+      <!-- SSP Project -->
+      <div class="flex flex-col h-full bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 shadow-sm hover:shadow-accent/20 transition-all duration-300">
+        <img src="./assets/erp.webp" alt="SSP Project" class="w-full h-48 object-cover">
+        <div class="flex flex-col justify-between flex-grow p-6">
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">SSP Project</h3>
+            <p class="text-sm text-accent font-medium mb-1">School ERP System — <span class="text-white">SSPS</span></p>
+            <p class="text-sm text-gray-300">
+              MERN stack ERP for student records, attendance, reports, and school admin operations.
+            </p>
+          </div>
+          <div class="mt-6">
+            <a href="#" class="inline-block text-accent text-sm font-semibold hover:underline">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dawabiro Project -->
+      <div class="flex flex-col h-full bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 shadow-sm hover:shadow-accent/20 transition-all duration-300">
+        <img src="./assets/dawabiro.webp" alt="Dawabiro Project" class="w-full h-48 object-cover">
+        <div class="flex flex-col justify-between flex-grow p-6">
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">Dawabiro Project</h3>
+            <p class="text-sm text-accent font-medium mb-1">Medicine Comparison — <span class="text-white">Dawabiro</span></p>
+            <p class="text-sm text-gray-300">
+              Built with Next.js and Express, it scrapes & compares real-time medicine prices for informed decisions.
+            </p>
+          </div>
+          <div class="mt-6">
+            <a href="#" class="inline-block text-accent text-sm font-semibold hover:underline">View Project</a>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
+
+
+
+<section class="relative py-24 px-6 sm:px-10 lg:px-20 text-white overflow-hidden">
+
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="./5818973-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+    <img src="./black-smooth-textured-paper-background.jpg" alt="background" class="w-full h-full object-cover">
+  </video>
+  <div class="absolute inset-0 bg-black/70 z-10"></div>
+
+  <div class="relative z-20 max-w-7xl mx-auto">
+
+    <!-- Title (your original style) -->
+    <div class="inline-block mb-10 relative">
+      <span class="absolute left-0 top-2 h-6 w-1 bg-accent rounded-sm"></span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white pl-4 tracking-wide relative z-10">
+        What Our Clients Say
+      </h2>
+    </div>
+
+    <!-- Arrow & Slider Row -->
+    <div class="flex items-center gap-6 mt-12">
+
+      <!-- Left Arrow -->
+      <div class="swiper-button-prev-custom text-3xl text-white hover:text-accent cursor-pointer">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+
+      <!-- Swiper -->
+      <div class="swiper testimonialSwiper w-full">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide px-2">
+            <div class="flex flex-col justify-between min-h-[300px] h-full text-center p-6 border-r border-accent/15">
+              <img src="./pritam.jpg" class="w-20 h-20 mx-auto rounded-full mb-4" />
+              <p class="text-sm text-gray-300 flex-grow">Working with ThunderGits was a game-changer. Their app design exceeded expectations—sleek, functional, and fast.</p>
+              <div class="w-10 h-1 bg-accent mx-auto my-4 rounded-full"></div>
+              <div class="mt-auto">
+                <h3 class="text-lg font-semibold">Pritam Kumar</h3>
+                <p class="text-accent text-sm">Founder of Crumbell</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide px-2">
+            <div class="flex flex-col justify-between min-h-[300px] h-full text-center p-6 border-r border-accent/15">
+              <img src="./prem.jpg" class="w-20 h-20 mx-auto rounded-full mb-4" />
+              <p class="text-sm text-gray-300 flex-grow">They handled everything with creativity and precision. A reliable partner for startups like us!</p>
+              <div class="w-10 h-1 bg-accent mx-auto my-4 rounded-full"></div>
+              <div class="mt-auto">
+                <h3 class="text-lg font-semibold">Prem Kumar</h3>
+                <p class="text-accent text-sm">Founder of Fi9e</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide px-2">
+            <div class="flex flex-col justify-between min-h-[300px] h-full text-center p-6 border-r border-accent/15">
+              <img src="./sahil.jpg" class="w-20 h-20 mx-auto rounded-full mb-4" />
+              <p class="text-sm text-gray-300 flex-grow">ThunderGits built a robust scraper-based medicine tool. Truly impressive attention to detail!</p>
+              <div class="w-10 h-1 bg-accent mx-auto my-4 rounded-full"></div>
+              <div class="mt-auto">
+                <h3 class="text-lg font-semibold">Sahil Saxena</h3>
+                <p class="text-accent text-sm">Founder of Dawabiro</p>
+              </div>
+            </div>
+          </div>
+
+
+
+            <div class="swiper-slide px-2">
+            <div class="flex flex-col justify-between min-h-[300px] h-full text-center p-6 border-r border-accent/15">
+              <img src="./sahil.jpg" class="w-20 h-20 mx-auto rounded-full mb-4" />
+              <p class="text-sm text-gray-300 flex-grow">ThunderGits built a robust scraper-based medicine tool. Truly impressive attention to detail!</p>
+              <div class="w-10 h-1 bg-accent mx-auto my-4 rounded-full"></div>
+              <div class="mt-auto">
+                <h3 class="text-lg font-semibold">Sahil Saxena</h3>
+                <p class="text-accent text-sm">Founder of Dawabiro</p>
+              </div>
+            </div>
+          </div>
+
+
+
+            <div class="swiper-slide px-2">
+            <div class="flex flex-col justify-between min-h-[300px] h-full text-center p-6 border-r border-accent/15">
+              <img src="./sahil.jpg" class="w-20 h-20 mx-auto rounded-full mb-4" />
+              <p class="text-sm text-gray-300 flex-grow">ThunderGits built a robust scraper-based medicine tool. Truly impressive attention to detail!</p>
+              <div class="w-10 h-1 bg-accent mx-auto my-4 rounded-full"></div>
+              <div class="mt-auto">
+                <h3 class="text-lg font-semibold">Sahil Saxena</h3>
+                <p class="text-accent text-sm">Founder of Dawabiro</p>
+              </div>
+            </div>
+          </div>
+
+
+            <div class="swiper-slide px-2">
+            <div class="flex flex-col justify-between min-h-[300px] h-full text-center p-6 border-r border-accent/15">
+              <img src="./sahil.jpg" class="w-20 h-20 mx-auto rounded-full mb-4" />
+              <p class="text-sm text-gray-300 flex-grow">ThunderGits built a robust scraper-based medicine tool. Truly impressive attention to detail!</p>
+              <div class="w-10 h-1 bg-accent mx-auto my-4 rounded-full"></div>
+              <div class="mt-auto">
+                <h3 class="text-lg font-semibold">Sahil Saxena</h3>
+                <p class="text-accent text-sm">Founder of Dawabiro</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Arrow -->
+      <div class="swiper-button-next-custom text-3xl text-white hover:text-accent cursor-pointer">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  </main>
+
+  <!-- Script -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!toggleBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
+
+
+<script>
+  const swiper = new Swiper(".testimonialSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
+  });
+</script>
+
 
 
 </body>

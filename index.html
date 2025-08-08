@@ -67,11 +67,19 @@
       }
     }
   </script>
+  <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body class="bg-dark text-theme-text">
 
-    <section class="relative min-h-[90vh] bg-cover bg-center" style="background-image: url('./black-smooth-textured-paper-background.jpg');">
+    <section class="relative min-h-[86vh] bg-cover bg-center" style="background-image: url('./black-smooth-textured-paper-background.jpg');">
 
     <!-- Diagonal Overlay -->
     <div class="absolute inset-0 bg-gradient-to-br from-dark/90 to-transparent z-10"></div>
@@ -81,16 +89,19 @@
       <!-- Logo -->
       <div class="flex items-center gap-2 text-2xl font-bold text-offwhite z-30">
         <div class="w-4 h-6 bg-accent rounded-sm"></div>
-        <span>Confidant</span>
+        <span>ThunderGits</span>
       </div>
+
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex gap-8 text-offwhite font-medium z-30">
         <a href="#" class="border-b-2 border-linkhover pb-1">Home</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Pages</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Portfolio</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Blog</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Shop</a>
+        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
+
+        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
+         <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
+        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
+        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
       </nav>
 
       <!-- Icons + Hamburger -->
@@ -155,19 +166,13 @@
     </div>
 
     <!-- Hero Text -->
-    <div class="relative z-20 px-6 sm:px-10 lg:px-20 max-w-6xl pt-48">
+    <div class="relative z-20 px-6 sm:px-10 lg:px-20 max-w-8xl pt-48">
       <h1 class="text-heading font-semibold leading-heading tracking-tighter text-offwhite mb-10">
-        SEO Services<br /> for Your Success
+        Welcome to Thundergits Technologies
       </h1>
     </div>
 
-    <!-- Bottom Left Paragraph -->
-    <div class="absolute bottom-10 left-6 sm:left-10 md:left-20 z-20 max-w-md">
-      <p class="text-graytext text-lg font-medium">
-        Boost your online presence and increase<br /> traffic with expert SEO services today.
-      </p>
-    </div>
-
+  
     <!-- Vertical Right Social Bar (Fixed) -->
     <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 space-y-3">
       <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
@@ -181,21 +186,36 @@
       </a>
     </div>
 
-    <!-- Bottom Right Socials -->
-    <footer class="absolute bottom-10 right-6 sm:right-10 z-30 flex flex-wrap gap-6 text-sm text-offwhite">
-      <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-        <i class="fab fa-facebook-f"></i> Facebook
-      </a>
-      <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-        <i class="fab fa-x-twitter"></i> Twitter
-      </a>
-      <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-        <i class="fab fa-dribbble"></i> Dribbble
-      </a>
-      <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-    </footer>
+
+<!-- Combined Bottom Section -->
+<div class="absolute bottom-10 left-6 right-6 sm:left-10 sm:right-10 z-30 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 text-offwhite text-sm">
+
+  <!-- Paragraph -->
+  <div class="max-w-md order-1 sm:order-none">
+    <p class="text-graytext text-base sm:text-lg font-medium">
+      Empower your digital presence<br />
+      with ThunderGits
+    </p>
+  </div>
+
+  <!-- Social Links -->
+  <div class="flex flex-wrap gap-4 sm:gap-6 order-2 sm:order-none">
+    <a href="#" class="flex items-center gap-2 hover:text-linkhover">
+      <i class="fab fa-facebook-f"></i> Facebook
+    </a>
+    <a href="#" class="flex items-center gap-2 hover:text-linkhover">
+      <i class="fab fa-x-twitter"></i> Twitter
+    </a>
+    <a href="#" class="flex items-center gap-2 hover:text-linkhover">
+      <i class="fab fa-dribbble"></i> Dribbble
+    </a>
+    <a href="#" class="flex items-center gap-2 hover:text-linkhover">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+  </div>
+
+</div>
+
   </section>
 
   <script>
@@ -225,102 +245,176 @@
 
     <!-- Left Content -->
     <div>
-      <h4 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-4">
-        SEO OFFERINGS
+      <h4 class="text-sm font-medium text-gray-900 tracking-wide uppercase mb-4">
+        What We Offer
       </h4>
-      <h2 class="text-5xl  text-gray-900 mb-8 leading-tight">
-        Best SEO solutions <br />
-        tailored for brands
+      <h2 class="text-heading text-gray-900 mb-8 leading-heading">
+        Services That Drive Results
       </h2>
-      <p class="text-gray-600 text-xl leading-relaxed">
-        Sed ut perspiciatis unde omnis iste natus ut perspic iatis unde omnis iste perspiciatis ut perspiciatis unde omnis iste natus.
+      <p class="text-base text-gray-900 leading-relaxed">
+        Empowering your business with end-to-end digital solutions—from web to cloud and AI.
       </p>
     </div>
 
     <!-- Right Grid (Icons Section) -->
     <div class="grid grid-cols-2 gap-y-14 gap-x-12 pt-16">
 
-      <!-- Card 1 -->
+      <!-- Digital Marketing -->
       <div class="space-y-5">
-        <i class="fab fa-searchengin text-6xl text-orange-500"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Website audit</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+        <i class="fas fa-bullhorn text-4xl text-accent"></i>
+        <h3 class="text-lg font-medium text-gray-900">Digital Marketing</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Boost online visibility with SEO, PPC, and social media campaigns tailored for your brand.
         </p>
       </div>
 
-      <!-- Card 2 -->
+      <!-- Website Development -->
       <div class="space-y-5">
-        <i class="fas fa-cogs text-6xl text-orange-500"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Technical SEO</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+        <i class="fas fa-code text-4xl text-accent"></i>
+        <h3 class="text-lg font-medium text-gray-900">Website Development</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Custom, fast, and responsive websites built for intuitive user experience.
         </p>
       </div>
 
-      <!-- Card 3 -->
+      <!-- App Development -->
       <div class="space-y-5">
-        <i class="fas fa-edit text-6xl text-orange-500"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Content optimization</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+        <i class="fas fa-mobile-alt text-4xl text-accent"></i>
+        <h3 class="text-lg font-medium text-gray-900">Application Development</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Robust mobile and web apps designed for scalability and performance.
         </p>
       </div>
 
-      <!-- Card 4 -->
+      <!-- E-Commerce Solutions -->
       <div class="space-y-5">
-        <i class="fas fa-bullhorn text-6xl text-orange-500"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Content marketing</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+        <i class="fas fa-shopping-cart text-4xl text-accent"></i>
+        <h3 class="text-lg font-medium text-gray-900">E-Commerce Solutions</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Seamless e-commerce journeys with optimized payment systems.
         </p>
       </div>
+
+      <!-- ML & AI -->
+      <!-- <div class="space-y-5">
+        <i class="fas fa-robot text-6xl text-orange-500"></i>
+        <h3 class="text-xl font-semibold text-gray-900">Machine Learning & AI</h3>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Predictive analytics and intelligent automation tailored to your needs.
+        </p>
+      </div> -->
+
+      <!-- Custom Software -->
+      <!-- <div class="space-y-5">
+        <i class="fas fa-tools text-6xl text-orange-500"></i>
+        <h3 class="text-xl font-semibold text-gray-900">Custom Software</h3>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Software solutions built specifically for your business goals.
+        </p>
+      </div> -->
+
+      <!-- Cloud Services -->
+      <!-- <div class="space-y-5">
+        <i class="fas fa-cloud text-6xl text-orange-500"></i>
+        <h3 class="text-xl font-semibold text-gray-900">Cloud Services</h3>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Scale effortlessly with secure and efficient cloud infrastructure.
+        </p>
+      </div> -->
+
+      <!-- AI Consulting -->
+      <!-- <div class="space-y-5">
+        <i class="fas fa-brain text-6xl text-orange-500"></i>
+        <h3 class="text-xl font-semibold text-gray-900">AI Consulting</h3>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Strategize and implement AI to unlock new business opportunities.
+        </p>
+      </div> -->
+
+      <!-- DevOps & CloudOps -->
+      <!-- <div class="space-y-5">
+        <i class="fas fa-sync-alt text-6xl text-orange-500"></i>
+        <h3 class="text-xl font-semibold text-gray-900">DevOps & CloudOps</h3>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Streamline development and operations for reliable delivery.
+        </p>
+      </div> -->
+
+      <!-- BI & Analytics -->
+      <!-- <div class="space-y-5">
+        <i class="fas fa-chart-line text-6xl text-orange-500"></i>
+        <h3 class="text-xl font-semibold text-gray-900">Business Intelligence</h3>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Convert data into actionable insights using advanced analytics.
+        </p>
+      </div> -->
+
+      <!-- IT Consultancy -->
+      <!-- <div class="space-y-5">
+        <i class="fas fa-user-tie text-6xl text-orange-500"></i>
+        <h3 class="text-xl font-semibold text-gray-900">IT Consultancy</h3>
+        <p class="text-gray-600 text-base leading-relaxed">
+          Your trusted advisor for navigating complex tech landscapes.
+        </p>
+      </div> -->
 
     </div>
   </div>
 </section>
 
-<section class="relative py-36 bg-white overflow-hidden">
+
+
+<section class="relative py-28 bg-white overflow-hidden">
   <!-- Background Overlay on Right 60% -->
   <div class="absolute right-0 top-0 h-full w-[60%] bg-[#fdf7ef] z-0"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 px-3 items-center">
-    
+  <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 px-4 sm:px-6 items-center">
+
     <!-- Left Image -->
     <div class="w-full">
-      <img src="./image thundergits.jpeg" alt="Team Image" class="w-full h-[550px] object-cover shadow-lg" />
+      <img src="./image thundergits.jpeg" alt="Team Image" class="w-full h-[580px] object-cover shadow-lg rounded" />
     </div>
 
     <!-- Right Content -->
     <div class="space-y-6">
       <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase">
-        About Us
+        Why ThunderGits?
       </h4>
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-        Elevate your online <br /> presence with SEO
+
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black leading-snug">
+        Discover why businesses <br /> trust us for innovation
       </h2>
-      <p class="text-gray-600 text-lg leading-relaxed">
-        Sed ut perspiciatis unde omnis iste natus ut perspic iatis unde omnis iste perspiciatis ut perspiciatis unde omnis iste natus.
+
+      <p class="text-black text-base sm:text-lg leading-relaxed">
+        We deliver future-ready solutions — from web and mobile to AI and cloud — that accelerate growth and digital transformation globally.
       </p>
 
-      <!-- List Items -->
-      <ul class="space-y-3">
+      <!-- List Items with FAB icons -->
+      <ul class="space-y-3 text-black">
         <li class="flex items-start">
-          <span class="text-orange-500 text-xl mr-3">✔</span>
-          <span class="text-gray-700">Adipiscing eli sed eiusmod</span>
+          <i class="fab fa-teamspeak text-orange-500 text-lg mr-3 mt-1"></i>
+          <span>Expert Team — Skilled professionals delivering cutting-edge technology.</span>
         </li>
         <li class="flex items-start">
-          <span class="text-orange-500 text-xl mr-3">✔</span>
-          <span class="text-gray-700">Tempor incididunt</span>
+          <i class="fas fa-tools text-orange-500 text-lg mr-3 mt-1"></i>
+          <span>Custom Solutions — Designed to meet your unique business goals.</span>
         </li>
         <li class="flex items-start">
-          <span class="text-orange-500 text-xl mr-3">✔</span>
-          <span class="text-gray-700">Labore et dolore magna</span>
+          <i class="fas fa-robot text-orange-500 text-lg mr-3 mt-1"></i>
+          <span>Advanced Technologies — Leveraging AI, ML, and cloud infrastructure.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fas fa-user-check text-orange-500 text-lg mr-3 mt-1"></i>
+          <span>Customer Focused — Your satisfaction and growth are our priorities.</span>
+        </li>
+        <li class="flex items-start">
+          <i class="fas fa-globe text-orange-500 text-lg mr-3 mt-1"></i>
+          <span>Global Reach — Trusted by clients across continents.</span>
         </li>
       </ul>
 
-      <!-- Button -->
-      <a href="#" class="inline-block mt-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3">
+      <!-- CTA Button -->
+      <a href="#" class="inline-block mt-6 bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 transition-all duration-300">
         ABOUT US
       </a>
     </div>
@@ -332,11 +426,11 @@
 
 <section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <!-- Heading -->
     <div class="mb-16">
       <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
-        Our Clients
+        What Our Clients Say
       </h4>
       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
         Check our best <br class="hidden md:block" />
@@ -344,49 +438,112 @@
       </h2>
     </div>
 
-    <!-- Client Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      
-      <!-- Client 1 -->
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Exide_Logo.svg/2560px-Exide_Logo.svg.png" alt="EXIDE Logo" class="h-12 mb-4" />
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">EXIDE</h3>
-        <p class="text-gray-600 mb-4">
-          Sed ut perspiciatis unde omnis iste natus ut perspiciatis unde omnis iste perspiciatis.
-        </p>
-        <a href="#" class="text-sm font-semibold text-gray-900 flex items-center gap-1 hover:underline">
-          Read More
-          <span>&rarr;</span>
-        </a>
-      </div>
+    <!-- Swiper Wrapper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
 
-      <!-- Client 2 -->
-      <div>
-        <img src="https://1000logos.net/wp-content/uploads/2021/06/IR-Logo.png" alt="IR Logo" class="h-12 mb-4 opacity-60" />
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">IR</h3>
-        <p class="text-gray-600 mb-4">
-          Sed ut perspiciatis unde omnis iste natus ut perspiciatis unde omnis iste perspiciatis.
-        </p>
-        <a href="#" class="text-sm font-semibold text-gray-900 flex items-center gap-1 hover:underline">
-          <span>&rarr;</span>
-        </a>
-      </div>
+        <!-- Testimonial 1 -->
+        <div class="swiper-slide">
+          <div class="p-6 rounded-lg border border-gray-200 shadow-sm">
+            <img src="https://i.ibb.co/jRzMC8d/crumbell.jpg" alt="Crumbell" class="h-12 w-12 rounded-full mb-4" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Pritam Kumar</h3>
+            <p class="text-sm text-gray-500 mb-2">Founder Of Crumbell</p>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Working with ThunderGits was an absolute game-changer for us. Their expertise in mobile app development brought our vision for Crumbell to life. The app they designed is not only sleek and user-friendly but also highly functional, exceeding our expectations.
+            </p>
+          </div>
+        </div>
 
-      <!-- Client 3 -->
-      <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg" alt="Django Logo" class="h-12 mb-4 opacity-40" />
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">Django</h3>
-        <p class="text-gray-600 mb-4">
-          Sed ut perspiciatis unde omnis iste natus ut perspiciatis unde omnis iste perspiciatis.
-        </p>
-        <a href="#" class="text-sm font-semibold text-gray-900 flex items-center gap-1 hover:underline">
-          <span>&rarr;</span>
-        </a>
-      </div>
+        <!-- Testimonial 2 -->
+        <div class="swiper-slide">
+          <div class="p-6 rounded-lg border border-gray-200 shadow-sm">
+            <img src="https://i.ibb.co/3sG8PYr/fi9e.jpg" alt="Fi9e" class="h-12 w-12 rounded-full mb-4" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Prem Kumar</h3>
+            <p class="text-sm text-gray-500 mb-2">Founder Of Fi9e</p>
+            <p class="text-gray-600 text-base leading-relaxed">
+              As a startup, we needed a reliable and innovative partner to help us launch our mobile app—and ThunderGits delivered! They handled everything from design to development with precision and creativity. Their ability to adapt to our changing needs truly impressed us.
+            </p>
+          </div>
+        </div>
 
+        <!-- Testimonial 3 -->
+        <div class="swiper-slide">
+          <div class="p-6 rounded-lg border border-gray-200 shadow-sm">
+            <img src="https://i.ibb.co/FbLXM6r/dawabiro.jpg" alt="Dawabiro" class="h-12 w-12 rounded-full mb-4" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Sahil Saxena</h3>
+            <p class="text-sm text-gray-500 mb-2">Founder Of Dawabiro</p>
+            <p class="text-gray-600 text-base leading-relaxed">
+              We approached ThunderGits with a challenging project—developing a medicine comparison tool with scheduled scrapers. They not only met but surpassed our expectations. Their attention to detail, technical proficiency, and innovative solutions helped us create Dawabiro.
+            </p>
+          </div>
+        </div>
+          <div class="swiper-slide">
+          <div class="p-6 rounded-lg border border-gray-200 shadow-sm">
+            <img src="https://i.ibb.co/FbLXM6r/dawabiro.jpg" alt="Dawabiro" class="h-12 w-12 rounded-full mb-4" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Sahil Saxena</h3>
+            <p class="text-sm text-gray-500 mb-2">Founder Of Dawabiro</p>
+            <p class="text-gray-600 text-base leading-relaxed">
+              We approached ThunderGits with a challenging project—developing a medicine comparison tool with scheduled scrapers. They not only met but surpassed our expectations. Their attention to detail, technical proficiency, and innovative solutions helped us create Dawabiro.
+            </p>
+          </div>
+        </div>
+          <div class="swiper-slide">
+          <div class="p-6 rounded-lg border border-gray-200 shadow-sm">
+            <img src="https://i.ibb.co/FbLXM6r/dawabiro.jpg" alt="Dawabiro" class="h-12 w-12 rounded-full mb-4" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Sahil Saxena</h3>
+            <p class="text-sm text-gray-500 mb-2">Founder Of Dawabiro</p>
+            <p class="text-gray-600 text-base leading-relaxed">
+              We approached ThunderGits with a challenging project—developing a medicine comparison tool with scheduled scrapers. They not only met but surpassed our expectations. Their attention to detail, technical proficiency, and innovative solutions helped us create Dawabiro.
+            </p>
+          </div>
+        </div>
+
+          <div class="swiper-slide">
+          <div class="p-6 rounded-lg border border-gray-200 shadow-sm">
+            <img src="https://i.ibb.co/FbLXM6r/dawabiro.jpg" alt="Dawabiro" class="h-12 w-12 rounded-full mb-4" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Sahil Saxena</h3>
+            <p class="text-sm text-gray-500 mb-2">Founder Of Dawabiro</p>
+            <p class="text-gray-600 text-base leading-relaxed">
+              We approached ThunderGits with a challenging project—developing a medicine comparison tool with scheduled scrapers. They not only met but surpassed our expectations. Their attention to detail, technical proficiency, and innovative solutions helped us create Dawabiro.
+            </p>
+          </div>
+        </div>
+          <div class="swiper-slide">
+          <div class="p-6 rounded-lg border border-gray-200 shadow-sm">
+            <img src="https://i.ibb.co/FbLXM6r/dawabiro.jpg" alt="Dawabiro" class="h-12 w-12 rounded-full mb-4" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Sahil Saxena</h3>
+            <p class="text-sm text-gray-500 mb-2">Founder Of Dawabiro</p>
+            <p class="text-gray-600 text-base leading-relaxed">
+              We approached ThunderGits with a challenging project—developing a medicine comparison tool with scheduled scrapers. They not only met but surpassed our expectations. Their attention to detail, technical proficiency, and innovative solutions helped us create Dawabiro.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.1,
+    spaceBetween: 20,
+    loop: true,
+    grabCursor: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
 
 
 </body>

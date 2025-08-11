@@ -76,6 +76,65 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+  <style>
+  .testimonial-box {
+    background-color: #1E1E1E;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-box::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+    left: 50%;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #1E1E1E;
+    transition: all 0.3s ease;
+  }
+
+  /* Active (center) Slide Styling */
+  .swiper-slide-active .testimonial-box {
+    background-color: #F97316 !important;
+  }
+
+  .swiper-slide-active .testimonial-box::before {
+    border-top-color: #F97316 !important;
+  }
+
+  .swiper-slide-active img {
+    border: 2px solid white;
+  }
+
+  .swiper-slide-active .quote {
+    color: white !important;
+  }
+
+  /* Dots Styling */
+  .swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+
+  .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #F97316;
+    opacity: 1;
+  }
+</style>
+
 </head>
 <body class="bg-dark text-theme-text">
 
@@ -178,7 +237,7 @@
 
   
     <!-- Vertical Right Social Bar (Fixed) -->
-    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 space-y-3">
+    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 space-y-1">
       <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
         <i class="fas fa-shopping-cart"></i>
       </a>
@@ -428,7 +487,7 @@
 
 
 
-<section class="py-24 bg-white">
+<section class="pt-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Heading -->
@@ -527,6 +586,379 @@
     </div>
   </div>
 </section>
+
+
+
+<section class="relative overflow-hidden bg-white py-4">
+  <div class="whitespace-nowrap flex animate-slide">
+    <!-- First set -->
+    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
+      THUNDERGITS
+    </h1>
+    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
+      THUNDERGITS
+    </h1>
+    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
+      THUNDERGITS
+    </h1>
+
+    <!-- Duplicate set for seamless loop -->
+    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
+      THUNDERGITS
+    </h1>
+    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
+      THUNDERGITS
+    </h1>
+    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
+      THUNDERGITS
+    </h1>
+  </div>
+
+  <style>
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); } /* Half of total width */
+    }
+    .animate-slide {
+      display: flex;
+      animation: slide 12s linear infinite;
+    }
+  </style>
+</section>
+
+
+
+
+<section class="relative bg-[#0B0B0B] pt-16 pb-24">
+  <!-- Background -->
+  <div class="absolute inset-0">
+    <img src="./black-smooth-textured-paper-background.jpg" alt="Background" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/70"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-gray-300 uppercase tracking-wide font-medium">Testimonials</p>
+      <h2 class="text-white text-4xl font-bold">What people say</h2>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper testimonialSwiper pb-20">
+      <div class="swiper-wrapper">
+
+        <!-- Slides -->
+        <div class="swiper-slide flex flex-col items-center">
+          <div class="testimonial-box relative p-8 text-center text-white">
+            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <p>Adipiscing elit lorem ipsum dolor sit amet...</p>
+          </div>
+          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <p class="font-bold text-white">Worren Dawson</p>
+          <p class="text-gray-400 text-sm">Boston</p>
+        </div>
+
+        <div class="swiper-slide flex flex-col items-center">
+          <div class="testimonial-box relative p-8 text-center text-white">
+            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <p>Adipiscing elit lorem ipsum dolor sit amet...</p>
+          </div>
+          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <p class="font-bold text-white">Worren Dawson</p>
+          <p class="text-gray-400 text-sm">Boston</p>
+        </div>
+
+        <div class="swiper-slide flex flex-col items-center">
+          <div class="testimonial-box relative p-8 text-center text-white">
+            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <p>Adipiscing elit lorem ipsum dolor sit amet...</p>
+          </div>
+          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <p class="font-bold text-white">Worren Dawson</p>
+          <p class="text-gray-400 text-sm">Boston</p>
+        </div>
+
+        <div class="swiper-slide flex flex-col items-center">
+          <div class="testimonial-box relative p-8 text-center text-white">
+            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <p>Duis aute irure dolor in reprehenderit...</p>
+          </div>
+          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <p class="font-bold text-white">Julia Roland</p>
+          <p class="text-gray-400 text-sm">New York City</p>
+        </div>
+
+        <div class="swiper-slide flex flex-col items-center">
+          <div class="testimonial-box relative p-8 text-center text-white">
+            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <p>Partnering with AI Network revolutionized...</p>
+          </div>
+          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <p class="font-bold text-white">Sofie Williams</p>
+          <p class="text-gray-400 text-sm">New York City</p>
+        </div>
+
+      </div>
+
+      <!-- Dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper('.testimonialSwiper', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      centeredSlides: true, // center wale slide ko active banata hai
+      pagination: {
+        el: '.testimonialSwiper .swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        0: { slidesPerView: 1, centeredSlides: true },
+        768: { slidesPerView: 2, centeredSlides: true },
+        1024: { slidesPerView: 3, centeredSlides: true }
+      }
+    });
+  });
+</script>
+
+
+<section class="bg-[#FAF7F2] py-12">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-start">
+    
+    <!-- Left: Image -->
+    <div class="w-full h-full">
+      <img src="./image thundergits.jpeg" alt="Contact Us" class="w-full h-full object-cover">
+    </div>
+
+    <!-- Right: Title + Form -->
+    <div class="flex flex-col justify-start">
+      <!-- Title -->
+      <div class="mb-8">
+        <p class="text-sm uppercase tracking-wide text-black mb-2">Contact Us</p>
+        <h2 class="text-3xl font-bold leading-tight text-black">
+          Have a cool project?<br>Get in touch!
+        </h2>
+      </div>
+
+      <!-- Form -->
+      <div class="bg-white p-10 shadow-md">
+        <form class="space-y-5">
+          <!-- Name -->
+          <div class="flex items-center border-b border-gray-300 pb-3">
+            <span class="text-gray-500 mr-3"><i class="fa-regular fa-user"></i></span>
+            <input type="text" placeholder="Name" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500">
+          </div>
+          <!-- Phone -->
+          <div class="flex items-center border-b border-gray-300 pb-3">
+            <span class="text-gray-500 mr-3"><i class="fa-solid fa-phone"></i></span>
+            <input type="text" placeholder="Phone" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500">
+          </div>
+          <!-- Email -->
+          <div class="flex items-center border-b border-gray-300 pb-3">
+            <span class="text-gray-500 mr-3"><i class="fa-regular fa-envelope"></i></span>
+            <input type="email" placeholder="Email Address" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500">
+          </div>
+          <!-- Subject -->
+          <div class="flex items-center border-b border-gray-300 pb-3">
+            <span class="text-gray-500 mr-3"><i class="fa-regular fa-pen-to-square"></i></span>
+            <input type="text" placeholder="Subject" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500">
+          </div>
+          <!-- Message -->
+          <div class="flex items-start border-b border-gray-300 pb-3">
+            <span class="text-gray-500 mr-3 mt-1"><i class="fa-regular fa-comment"></i></span>
+            <textarea placeholder="How can we help you? Feel free to get in touch!" rows="3" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500"></textarea>
+          </div>
+          <!-- Checkbox -->
+          <div class="flex items-center text-sm text-gray-600">
+            <input type="checkbox" id="agree" class="mr-2">
+            <label for="agree">I agree that my data is <a href="#" class="text-orange-500 underline">collected</a>.</label>
+          </div>
+          <!-- Button -->
+          <button type="submit" class="bg-orange-500 text-white font-bold uppercase py-3 px-6">
+            Get in touch
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+<!-- SEO Tracking Section -->
+<section class="py-16 bg-[#FAF7F2]">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center px-4">
+    <!-- Left Content -->
+    <div>
+      <p class="text-sm uppercase tracking-widest text-gray-500">ThunderGit Metrics</p>
+      <h2 class="text-4xl font-bold leading-tight mt-2 text-black">Tracking Your Repositories:<br>From Commit to Deployment</h2>
+      <p class="text-black mt-4">
+        ThunderGit provides real-time analytics for your repositories. Track commits, pull requests, CI/CD performance, and deployment success — all in one powerful dashboard.
+      </p>
+      <div class="flex items-center gap-4 mt-6">
+        <a href="#" class="bg-orange-500 text-white px-6 py-3 text-sm font-bold uppercase">Explore Features</a>
+        <a href="#" class="flex items-center gap-2 text-black font-medium">
+          <span class="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center">
+            ▶
+          </span>
+          Watch Demo
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Stats -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div>
+        <p class="text-5xl font-bold text-black">5K+</p>
+        <p class="font-semibold mt-2 text-black">Repositories Managed</p>
+        <p class="text-gray-500 text-sm mt-1">From startups to enterprises, ThunderGit is powering efficient development.</p>
+      </div>
+      <div>
+        <p class="text-5xl font-bold text-black">1.2M</p>
+        <p class="font-semibold mt-2 text-black">Commits Tracked</p>
+        <p class="text-gray-500 text-sm mt-1">Monitor commits and code quality metrics in real time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Latest News Section -->
+<section class="py-16 bg-white">
+  <div class="text-center mb-10">
+    <p class="text-sm uppercase tracking-widest text-gray-500">ThunderGit Blog</p>
+    <h2 class="text-4xl font-bold text-black">Latest from the Dev World</h2>
+  </div>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+    <!-- Card -->
+    <div>
+      <img src="./blogimg1.jpg" alt="News 1" class="w-full h-56 object-cover">
+      <p class="text-xs uppercase text-gray-500 mt-4">Git Tips</p>
+      <h3 class="font-bold text-lg mt-2 text-black">Mastering Git: 15 Commands Every Developer Should Know</h3>
+      <p class="text-gray-500 text-sm mt-1">Aug 5, 2025 • 3 Comments</p>
+    </div>
+
+    <!-- Card -->
+    <div>
+      <img src="./blogimg1.jpg" alt="News 2" class="w-full h-56 object-cover">
+      <p class="text-xs uppercase text-gray-500 mt-4">Open Source</p>
+      <h3 class="font-bold text-lg mt-2 text-black">Top 10 Open-Source Projects to Contribute in 2025</h3>
+      <p class="text-gray-500 text-sm mt-1">Aug 3, 2025 • 5 Comments</p>
+    </div>
+
+    <!-- Card -->
+    <div>
+      <img src="./blogimg1.jpg" alt="News 3" class="w-full h-56 object-cover">
+      <p class="text-xs uppercase text-gray-500 mt-4">DevOps</p>
+      <h3 class="font-bold text-lg mt-2 text-black">Automating CI/CD Pipelines with ThunderGit</h3>
+      <p class="text-gray-500 text-sm mt-1">Aug 1, 2025 • 0 Comments</p>
+    </div>
+
+    <!-- Card -->
+    <div>
+      <img src="./blogimg1.jpg" alt="News 4" class="w-full h-56 object-cover">
+      <p class="text-xs uppercase text-gray-500 mt-4">Productivity</p>
+      <h3 class="font-bold text-lg mt-2 text-black">Boosting Team Collaboration with Git Workflows</h3>
+      <p class="text-gray-500 text-sm mt-1">Jul 28, 2025 • 2 Comments</p>
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="flex justify-center space-x-2 mt-6">
+    <span class="w-3 h-3 bg-orange-500 rounded-full"></span>
+    <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
+    <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
+  </div>
+</section>
+
+
+
+<footer 
+  class="relative text-[#EDE6D6] bg-cover bg-center pt-16"
+  style="background-image: url('./black-smooth-textured-paper-background.jpg');"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-3 gap-12">
+    
+    <!-- Left -->
+    <div class="flex items-center md:items-start">
+      <h2 class="text-4xl font-bold leading-snug max-w-xs">
+        Delivering top-tier Git solutions globally
+      </h2>
+    </div>
+
+    <!-- Middle -->
+    <div>
+      <h3 class="font-semibold mb-3">Address</h3>
+      <p>Germany —</p>
+      <p>785 15h Street, Office 478</p>
+      <p>Berlin, De 81566</p>
+      <div class="flex gap-4 mt-6">
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-orange-500 transition">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-orange-500 transition">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-orange-500 transition">
+          <i class="fab fa-dribbble"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-orange-500 transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div>
+      <h3 class="font-semibold mb-3">Say Hello</h3>
+      <a href="mailto:info@thundergit.com" class="block hover:text-orange-500">info@thundergit.com</a>
+      <a href="tel:+18408412569" class="text-lg font-semibold hover:text-orange-500">+1 840 841 25 69</a>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t border-gray-700 mt-12 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 px-6 lg:px-8">
+    <div class="flex space-x-6 mb-4 md:mb-0">
+      <a href="#" class="text-white text-lg hover:text-orange-500">Our Blog</a>
+      <a href="#" class=" text-white text-lg hover:text-orange-500">About Us</a>
+      <a href="#" class=" text-white  text-lg hover:text-orange-500">Contact Us</a>
+    </div>
+    <p>ThunderGit © 2025. All Rights Reserved.</p>
+  </div>
+
+  <!-- Floating Presale Chat -->
+  <div class="fixed bottom-16 left-4 flex items-center z-50">
+    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl font-bold">💬</div>
+    <span class="ml-2 bg-white text-black px-4 py-1 rounded-full shadow">Presale Chat</span>
+  </div>
+
+  <!-- Floating Right Buttons -->
+  <!-- <div class="fixed top-1/3 right-0 flex flex-col z-50">
+    <a href="#" class="bg-orange-500 p-4 border-b border-black hover:bg-orange-600">🛒</a>
+    <a href="#" class="bg-orange-500 p-4 border-b border-black hover:bg-orange-600">🖼</a>
+    <a href="#" class="bg-orange-500 p-4 hover:bg-orange-600">💳</a>
+  </div> -->
+
+  <!-- Scroll to top -->
+  <button class="fixed bottom-4 right-4 w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-orange-500 z-50">
+    ↑
+  </button>
+</footer>
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 
 <script>
   const swiper = new Swiper(".mySwiper", {

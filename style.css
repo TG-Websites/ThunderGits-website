@@ -1,0 +1,143 @@
+.testimonial-box {
+    background-color: #1E1E1E;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+
+  .testimonial-box .quote {
+  font-size: 3.5rem; /* bigger than 4xl (which is 2.25rem), closer to 56px */
+  color: #e06b5e; /* coral/orange from screenshot */
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+  .testimonial-box::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+    left: 50%;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #1E1E1E;
+    transition: all 0.3s ease;
+  }
+
+  /* Active (center) Slide Styling */
+  .swiper-slide-active .testimonial-box {
+    background-color: #f25835 !important;
+  }
+
+  .swiper-slide-active .testimonial-box::before {
+    border-top-color: #f25835 !important;
+  }
+
+  .swiper-slide-active img {
+    border: 2px solid white;
+  }
+
+  .swiper-slide-active .quote {
+    color: white !important;
+  }
+
+  /* Dots Styling */
+ .testimonialSwiper .swiper-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto; /* Ye center alignment sahi karega */
+  display: flex;
+  justify-content: center;
+  gap: 4px; /* bullets ke beech thoda space */
+}
+
+
+  .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #f25835;
+    opacity: 1;
+  }
+
+
+    /* Brand colors for social icons on hover */
+  .social-facebook:hover i {
+    color: #1877f2; /* Facebook Blue */
+  }
+  .social-twitter:hover i {
+    color: #1da1f2; /* Twitter Blue */
+  }
+  .social-dribbble:hover i {
+    color: #ea4c89; /* Dribbble Pink */
+  }
+  .social-instagram:hover i {
+    color: #e4405f; /* Instagram Pinkish */
+  }
+
+
+
+
+  .marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 100s linear infinite;
+    }
+
+    .marquee-content {
+      display: flex;
+    }
+
+    .marquee h1 {
+      font-size: 16vw;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--accent, #f25835);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 0 3rem;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+
+
+     /* Pagination dots ka spacing */
+  .blogSwiper .swiper-pagination {
+    margin-top: 2rem; /* cards se gap */
+    position: relative; /* bottom me fix na ho, cards ke neeche rahe */
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+
+  /* Inactive dots visible */
+  .blogSwiper .swiper-pagination-bullet {
+    background-color: #d1d5db; /* Tailwind gray-300 */
+    opacity: 1;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  /* Active dot accent color */
+  .blogSwiper .swiper-pagination-bullet-active {
+    background-color: #f25835; /* Tailwind orange-500 */
+   
+  }

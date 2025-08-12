@@ -76,220 +76,161 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="./style.css">
 
 
-  <style>
-  .testimonial-box {
-    background-color: #1E1E1E;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .testimonial-box::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    transform: translate(-50%, 100%);
-    left: 50%;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 12px solid #1E1E1E;
-    transition: all 0.3s ease;
-  }
-
-  /* Active (center) Slide Styling */
-  .swiper-slide-active .testimonial-box {
-    background-color: #F97316 !important;
-  }
-
-  .swiper-slide-active .testimonial-box::before {
-    border-top-color: #F97316 !important;
-  }
-
-  .swiper-slide-active img {
-    border: 2px solid white;
-  }
-
-  .swiper-slide-active .quote {
-    color: white !important;
-  }
-
-  /* Dots Styling */
- .testimonialSwiper .swiper-pagination {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto; /* Ye center alignment sahi karega */
-  display: flex;
-  justify-content: center;
-  gap: 6px; /* bullets ke beech thoda space */
-}
-
-
-  .swiper-pagination-bullet {
-    background: white;
-    opacity: 0.5;
-  }
-
-  .swiper-pagination-bullet-active {
-    background: #F97316;
-    opacity: 1;
-  }
-</style>
 
 </head>
 <body class="bg-dark text-theme-text">
 
-    <section class="relative min-h-[86vh] bg-cover bg-center" style="background-image: url('./black-smooth-textured-paper-background.jpg');">
+<section class="relative bg-cover bg-center pt-20 pb-6 sm:pt-28 sm:pb-8"
+  style="background-image: url('./assets/bd-img.png');">
 
-    <!-- Diagonal Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-dark/90 to-transparent z-10"></div>
+  <!-- Diagonal Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-dark/90 to-transparent z-10"></div>
 
-    <!-- Header -->
-    <header class="absolute top-0 left-0 w-full z-30 px-6 sm:px-10 lg:px-20 pt-8 flex justify-between items-center">
-      <!-- Logo -->
-     <div class="flex items-center gap-2 text-2xl font-bold text-offwhite z-30">
-  <img src="./thundergits logo.webp" alt="Logo" class="w-8 h-8 object-contain" />
-  <span>ThunderGits</span>
+  <!-- Header -->
+  <header class="absolute top-0 left-0 w-full z-30 px-6 sm:px-10 lg:px-20 pt-8 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center gap-2 text-2xl font-bold text-offwhite z-30">
+      <img src="./assets/thundergits logo.webp" alt="Logo" class="w-8 h-8 object-contain" />
+      <span>ThunderGits</span>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-8 text-offwhite font-medium z-30">
+      <a href="#" class="border-b-2 border-linkhover pb-1">Home</a>
+      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
+      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
+      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
+      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
+      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
+    </nav>
+
+    <!-- Get a Quote Button + Hamburger -->
+    <div class="flex items-center gap-6 z-30">
+      <a href="#quote"
+        class="hidden md:inline-block bg-accent text-white font-semibold px-5 py-2 shadow-lg border-2 border-transparent hover:border-accent hover:bg-transparent hover:text-accent transition-all duration-300">
+        Get a Quote
+      </a>
+      <button class="md:hidden w-8 h-8 text-center leading-8 text-[16px] focus:outline-none text-offwhite hover:text-theme-text_dark"
+        onclick="toggleMobileMenu()">
+        <i class="fas fa-bars w-full h-full inline-block"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+    class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
+    <div class="flex justify-between items-center mb-10">
+      <div class="flex items-center gap-2 text-2xl font-bold">
+        <div class="w-4 h-6 bg-accent rounded-sm"></div>
+        <span class="text-white">ThunderGits</span>
+      </div>
+      <button onclick="toggleMobileMenu()" class="text-gray-300 text-lg">
+        Close <span class="ml-2 text-xl">×</span>
+      </button>
+    </div>
+
+    <div class="space-y-6">
+      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+        <span>Home</span><span class="ml-2">→</span>
+      </a>
+      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+        <span>About</span><span class="ml-2">→</span>
+      </a>
+      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+        <span>Work</span><span class="ml-2">→</span>
+      </a>
+      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+        <span>Services</span><span class="ml-2">→</span>
+      </a>
+      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+        <span>Career</span><span class="ml-2">→</span>
+      </a>
+      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+        <span>Contact</span><span class="ml-2">→</span>
+      </a>
+
+      <!-- Get a Quote Button in Mobile Menu -->
+      <div class="pt-4">
+        <a href="#quote"
+          class="block text-center bg-accent text-white font-semibold px-5 py-2 shadow-lg border-2 border-transparent hover:border-accent hover:bg-transparent hover:text-accent transition-all duration-300">
+          Get a Quote
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer Icons in Mobile -->
+    <div class="pt-8 border-t border-theme-bd mt-10 flex gap-6 text-base text-graytext">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+
+
+
+<!-- Hero Text -->
+<div
+  class="relative z-20 px-6 sm:px-10 lg:px-20 max-w-8xl flex-grow flex items-center pb-0 sm:pb-16 pt-16 sm:pt-20"
+>
+  <h1
+    class="text-heading font-semibold leading-heading tracking-tighter text-offwhite mb-10"
+  >
+    Welcome to Thundergits Technologies
+  </h1>
 </div>
-
-
-
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex gap-8 text-offwhite font-medium z-30">
-        <a href="#" class="border-b-2 border-linkhover pb-1">Home</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
-         <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-        <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-      </nav>
-
-      <!-- Icons + Hamburger -->
-      <div class="flex items-center gap-6 z-30 text-offwhite">
-        <!-- Cart -->
-        <span class="relative w-8 h-8 text-center leading-8 text-[16px]">
-          <i class="fas fa-shopping-cart w-full h-full inline-block"></i>
-          <span class="absolute -top-2 -right-2 bg-accent text-white text-xs px-1.5 py-0.5 rounded-full">0</span>
-        </span>
-
-        <!-- Search -->
-        <span class="w-8 h-8 text-center leading-8 text-[16px] hover:text-theme-text_dark">
-          <i class="fas fa-search w-full h-full inline-block"></i>
-        </span>
-
-        <!-- Mobile Toggle -->
-        <button class="md:hidden w-8 h-8 text-center leading-8 text-[16px] focus:outline-none hover:text-theme-text_dark"
-          onclick="toggleMobileMenu()">
-          <i class="fas fa-bars w-full h-full inline-block"></i>
-        </button>
-      </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-      class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-      <div class="flex justify-between items-center mb-10">
-        <div class="flex items-center gap-2 text-2xl font-bold">
-          <div class="w-4 h-6 bg-accent rounded-sm"></div>
-          <span class="text-white">Confidant</span>
-        </div>
-        <button onclick="toggleMobileMenu()" class="text-gray-300 text-lg">
-          Close <span class="ml-2 text-xl">×</span>
-        </button>
-      </div>
-
-      <div class="space-y-6">
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Home</span><span class="ml-2">→</span>
-        </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>About</span><span class="ml-2">→</span>
-        </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Work</span><span class="ml-2">→</span>
-        </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Services</span><span class="ml-2">→</span>
-        </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Career</span><span class="ml-2">→</span>
-        </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Contact</span><span class="ml-2">→</span>
-        </a>
-      </div>
-
-      <!-- Footer Icons in Mobile -->
-      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-6 text-base text-graytext">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-dribbble"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-    <!-- Hero Text -->
-    <div class="relative z-20 px-6 sm:px-10 lg:px-20 max-w-8xl pt-48">
-      <h1 class="text-heading font-semibold leading-heading tracking-tighter text-offwhite mb-10">
-        Welcome to Thundergits Technologies
-      </h1>
-    </div>
-
-  
-    <!-- Vertical Right Social Bar (Fixed) -->
-    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 space-y-1">
-      <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
-      <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
-        <i class="fas fa-image"></i>
-      </a>
-      <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
-        <i class="fas fa-credit-card"></i>
-      </a>
-    </div>
 
 
 <!-- Combined Bottom Section -->
-<div class="absolute bottom-10 left-6 right-6 sm:left-10 sm:right-10 z-30 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 text-offwhite text-sm">
-
-  <!-- Paragraph -->
-  <div class="max-w-md order-1 sm:order-none">
-    <p class="text-graytext text-base sm:text-lg font-medium">
-      Empower your digital presence<br />
-      with ThunderGits
-    </p>
-  </div>
-
-  <!-- Social Links -->
-  <div class="flex flex-wrap gap-4 sm:gap-6 order-2 sm:order-none">
-    <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-      <i class="fab fa-facebook-f"></i> Facebook
-    </a>
-    <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-      <i class="fab fa-x-twitter"></i> Twitter
-    </a>
-    <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-      <i class="fab fa-dribbble"></i> Dribbble
-    </a>
-    <a href="#" class="flex items-center gap-2 hover:text-linkhover">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-  </div>
-
+  <div
+    class="relative z-30 px-6 sm:px-10 lg:px-20 mt-6 mb-0 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 text-offwhite text-sm"
+  >
+    <div class="max-w-md">
+      <p class="text-graytext text-base sm:text-lg font-medium">
+        Empower your digital presence<br /> with ThunderGits
+      </p>
+    </div>
+   <div class="flex flex-wrap gap-4 sm:gap-6">
+  <a href="#" class="flex items-center gap-2 hover:text-linkhover social-facebook">
+    <i class="fab fa-facebook-f"></i> Facebook
+  </a>
+  <a href="#" class="flex items-center gap-2 hover:text-linkhover social-twitter">
+    <i class="fab fa-x-twitter"></i> Twitter
+  </a>
+  <a href="#" class="flex items-center gap-2 hover:text-linkhover social-dribbble">
+    <i class="fab fa-dribbble"></i> Dribbble
+  </a>
+  <a href="#" class="flex items-center gap-2 hover:text-linkhover social-instagram">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
 </div>
 
-  </section>
+  </div>
 
-  <script>
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    }
-  </script>
+</section>
+
+<!-- Vertical Right Social Bar -->
+<div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 space-y-1">
+  <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
+    <i class="fas fa-shopping-cart"></i>
+  </a>
+  <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
+    <i class="fas fa-image"></i>
+  </a>
+  <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
+    <i class="fas fa-credit-card"></i>
+  </a>
+</div>
+
+
+
+
+
 
 
 
@@ -299,7 +240,7 @@
 <section class="w-full h-[85vh]">
   <div class="w-full h-full">
     <img
-      src="./image thundergits.jpg"
+      src="./assets/image thundergits.jpg"
       alt="Descriptive Alt Text"
       class="w-full h-full object-cover shadow-md"
     />
@@ -307,16 +248,17 @@
 </section>
 
 <section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
 
     <!-- Left Content -->
     <div>
       <h4 class="text-sm font-medium text-gray-900 tracking-wide uppercase mb-4">
         What We Offer
       </h4>
-      <h2 class="text-heading text-gray-900 mb-8 leading-heading">
-        Services That Drive Results
-      </h2>
+    <h2 class="text-heading text-gray-900 mb-8 leading-tight font-bold tracking-[-0.02em]">
+  Services That Drive Results
+</h2>
+
       <p class="text-base text-gray-900 leading-relaxed">
         Empowering your business with end-to-end digital solutions—from web to cloud and AI.
       </p>
@@ -361,9 +303,16 @@
         </p>
       </div>
 
-      <!-- ML & AI -->
+      
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ML & AI -->
       <!-- <div class="space-y-5">
-        <i class="fas fa-robot text-6xl text-orange-500"></i>
+        <i class="fas fa-robot text-6xl text-accent"></i>
         <h3 class="text-xl font-semibold text-gray-900">Machine Learning & AI</h3>
         <p class="text-gray-600 text-base leading-relaxed">
           Predictive analytics and intelligent automation tailored to your needs.
@@ -372,7 +321,7 @@
 
       <!-- Custom Software -->
       <!-- <div class="space-y-5">
-        <i class="fas fa-tools text-6xl text-orange-500"></i>
+        <i class="fas fa-tools text-6xl text-accent"></i>
         <h3 class="text-xl font-semibold text-gray-900">Custom Software</h3>
         <p class="text-gray-600 text-base leading-relaxed">
           Software solutions built specifically for your business goals.
@@ -381,7 +330,7 @@
 
       <!-- Cloud Services -->
       <!-- <div class="space-y-5">
-        <i class="fas fa-cloud text-6xl text-orange-500"></i>
+        <i class="fas fa-cloud text-6xl text-accent"></i>
         <h3 class="text-xl font-semibold text-gray-900">Cloud Services</h3>
         <p class="text-gray-600 text-base leading-relaxed">
           Scale effortlessly with secure and efficient cloud infrastructure.
@@ -390,7 +339,7 @@
 
       <!-- AI Consulting -->
       <!-- <div class="space-y-5">
-        <i class="fas fa-brain text-6xl text-orange-500"></i>
+        <i class="fas fa-brain text-6xl text-accent"></i>
         <h3 class="text-xl font-semibold text-gray-900">AI Consulting</h3>
         <p class="text-gray-600 text-base leading-relaxed">
           Strategize and implement AI to unlock new business opportunities.
@@ -399,7 +348,7 @@
 
       <!-- DevOps & CloudOps -->
       <!-- <div class="space-y-5">
-        <i class="fas fa-sync-alt text-6xl text-orange-500"></i>
+        <i class="fas fa-sync-alt text-6xl text-accent"></i>
         <h3 class="text-xl font-semibold text-gray-900">DevOps & CloudOps</h3>
         <p class="text-gray-600 text-base leading-relaxed">
           Streamline development and operations for reliable delivery.
@@ -408,7 +357,7 @@
 
       <!-- BI & Analytics -->
       <!-- <div class="space-y-5">
-        <i class="fas fa-chart-line text-6xl text-orange-500"></i>
+        <i class="fas fa-chart-line text-6xl text-accent"></i>
         <h3 class="text-xl font-semibold text-gray-900">Business Intelligence</h3>
         <p class="text-gray-600 text-base leading-relaxed">
           Convert data into actionable insights using advanced analytics.
@@ -417,17 +366,12 @@
 
       <!-- IT Consultancy -->
       <!-- <div class="space-y-5">
-        <i class="fas fa-user-tie text-6xl text-orange-500"></i>
+        <i class="fas fa-user-tie text-6xl text-accent"></i>
         <h3 class="text-xl font-semibold text-gray-900">IT Consultancy</h3>
         <p class="text-gray-600 text-base leading-relaxed">
           Your trusted advisor for navigating complex tech landscapes.
         </p>
       </div> -->
-
-    </div>
-  </div>
-</section>
-
 
 
 <section class="relative py-28 bg-white overflow-hidden">
@@ -438,7 +382,7 @@
 
     <!-- Left Image -->
     <div class="w-full">
-      <img src="./image thundergits.jpeg" alt="Team Image" class="w-full h-[580px] object-cover shadow-lg rounded" />
+      <img src="./assets/image thundergits.jpeg" alt="Team Image" class="w-full h-[580px] object-cover shadow-lg rounded" />
     </div>
 
     <!-- Right Content -->
@@ -458,29 +402,29 @@
       <!-- List Items with FAB icons -->
       <ul class="space-y-3 text-black">
         <li class="flex items-start">
-          <i class="fab fa-teamspeak text-orange-500 text-lg mr-3 mt-1"></i>
+          <i class="fab fa-teamspeak text-accent text-lg mr-3 mt-1"></i>
           <span>Expert Team — Skilled professionals delivering cutting-edge technology.</span>
         </li>
         <li class="flex items-start">
-          <i class="fas fa-tools text-orange-500 text-lg mr-3 mt-1"></i>
+          <i class="fas fa-tools text-accent text-lg mr-3 mt-1"></i>
           <span>Custom Solutions — Designed to meet your unique business goals.</span>
         </li>
         <li class="flex items-start">
-          <i class="fas fa-robot text-orange-500 text-lg mr-3 mt-1"></i>
+          <i class="fas fa-robot text-accent text-lg mr-3 mt-1"></i>
           <span>Advanced Technologies — Leveraging AI, ML, and cloud infrastructure.</span>
         </li>
         <li class="flex items-start">
-          <i class="fas fa-user-check text-orange-500 text-lg mr-3 mt-1"></i>
+          <i class="fas fa-user-check text-accent text-lg mr-3 mt-1"></i>
           <span>Customer Focused — Your satisfaction and growth are our priorities.</span>
         </li>
         <li class="flex items-start">
-          <i class="fas fa-globe text-orange-500 text-lg mr-3 mt-1"></i>
+          <i class="fas fa-globe text-accent text-lg mr-3 mt-1"></i>
           <span>Global Reach — Trusted by clients across continents.</span>
         </li>
       </ul>
 
       <!-- CTA Button -->
-      <a href="#" class="inline-block mt-6 bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 transition-all duration-300">
+      <a href="#" class="inline-block mt-6 bg-accent hover:bg-orange-600 text-white font-medium px-6 py-3 transition-all duration-300">
         ABOUT US
       </a>
     </div>
@@ -623,38 +567,7 @@
     </div>
   </div>
 
-  <style>
-    .marquee {
-      display: flex;
-      width: max-content;
-      animation: marquee 100s linear infinite;
-    }
 
-    .marquee-content {
-      display: flex;
-    }
-
-    .marquee h1 {
-      font-size: 16vw;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      background: var(--accent, #ff6600);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      padding: 0 3rem;
-      white-space: nowrap;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-  </style>
 </section>
 
 
@@ -664,8 +577,8 @@
 <section class="relative bg-[#0B0B0B] pt-16 pb-24">
   <!-- Background -->
   <div class="absolute inset-0">
-    <img src="./black-smooth-textured-paper-background.jpg" alt="Background" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-black/70"></div>
+    <img src="./assets/bd-img.png" alt="Background" class="w-full h-full object-cover">
+    <!-- <div class="absolute inset-0 bg-black/70"></div> -->
   </div>
 
   <div class="relative max-w-7xl mx-auto px-6">
@@ -681,54 +594,74 @@
         <!-- Slides -->
         <div class="swiper-slide flex flex-col items-center">
           <div class="testimonial-box relative p-8 text-center text-white">
-            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <span class="quote text-accent text-4xl block mb-4">“</span>
             <p>Adipiscing elit lorem ipsum dolor sit amet...</p>
           </div>
-          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <img src="./assets/blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
           <p class="font-bold text-white">Worren Dawson</p>
           <p class="text-gray-400 text-sm">Boston</p>
         </div>
 
         <div class="swiper-slide flex flex-col items-center">
           <div class="testimonial-box relative p-8 text-center text-white">
-            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <span class="quote text-accent text-4xl block mb-4">“</span>
             <p>Adipiscing elit lorem ipsum dolor sit amet...</p>
           </div>
-          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <img src="./assets/blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
           <p class="font-bold text-white">Worren Dawson</p>
           <p class="text-gray-400 text-sm">Boston</p>
         </div>
 
         <div class="swiper-slide flex flex-col items-center">
           <div class="testimonial-box relative p-8 text-center text-white">
-            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <span class="quote text-accent text-4xl block mb-4">“</span>
             <p>Adipiscing elit lorem ipsum dolor sit amet...</p>
           </div>
-          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <img src="./assets/blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
           <p class="font-bold text-white">Worren Dawson</p>
           <p class="text-gray-400 text-sm">Boston</p>
         </div>
 
         <div class="swiper-slide flex flex-col items-center">
           <div class="testimonial-box relative p-8 text-center text-white">
-            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <span class="quote text-accent text-4xl block mb-4">“</span>
             <p>Duis aute irure dolor in reprehenderit...</p>
           </div>
-          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <img src="./assets/blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
           <p class="font-bold text-white">Julia Roland</p>
           <p class="text-gray-400 text-sm">New York City</p>
         </div>
 
         <div class="swiper-slide flex flex-col items-center">
           <div class="testimonial-box relative p-8 text-center text-white">
-            <span class="quote text-orange-500 text-4xl block mb-4">“</span>
+            <span class="quote text-accent text-4xl block mb-4">“</span>
             <p>Partnering with AI Network revolutionized...</p>
           </div>
-          <img src="./blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <img src="./assets/blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
           <p class="font-bold text-white">Sofie Williams</p>
           <p class="text-gray-400 text-sm">New York City</p>
         </div>
 
+
+                <div class="swiper-slide flex flex-col items-center">
+          <div class="testimonial-box relative p-8 text-center text-white">
+            <span class="quote text-accent text-4xl block mb-4">“</span>
+            <p>Partnering with AI Network revolutionized...</p>
+          </div>
+          <img src="./assets/blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <p class="font-bold text-white">Sofie Williams</p>
+          <p class="text-gray-400 text-sm">New York City</p>
+        </div>
+
+                <div class="swiper-slide flex flex-col items-center">
+          <div class="testimonial-box relative p-8 text-center text-white">
+            <span class="quote text-accent text-4xl block mb-4">“</span>
+            <p>Partnering with AI Network revolutionized...</p>
+          </div>
+          <img src="./assets/blogimg1.jpg" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
+          <p class="font-bold text-white">Sofie Williams</p>
+          <p class="text-gray-400 text-sm">New York City</p>
+        </div>
       </div>
 
       <!-- Dots -->
@@ -738,33 +671,15 @@
 </section>
 
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    new Swiper('.testimonialSwiper', {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      loop: true,
-      centeredSlides: true, // center wale slide ko active banata hai
-      pagination: {
-        el: '.testimonialSwiper .swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        0: { slidesPerView: 1, centeredSlides: true },
-        768: { slidesPerView: 2, centeredSlides: true },
-        1024: { slidesPerView: 3, centeredSlides: true }
-      }
-    });
-  });
-</script>
+
 
 
 <section class="bg-[#FAF7F2] py-12">
-  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-start">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start px-4 sm:px-6 lg:px-8">
     
     <!-- Left: Image -->
-    <div class="w-full h-full">
-      <img src="./image thundergits.jpeg" alt="Contact Us" class="w-full h-full object-cover">
+    <div class="w-full h-64 sm:h-80 md:h-96 lg:h-full">
+      <img src="./assets/image thundergits.jpeg" alt="Contact Us" class="w-full h-full object-cover rounded-md">
     </div>
 
     <!-- Right: Title + Form -->
@@ -772,46 +687,46 @@
       <!-- Title -->
       <div class="mb-8">
         <p class="text-sm uppercase tracking-wide text-black mb-2">Contact Us</p>
-        <h2 class="text-3xl font-bold leading-tight text-black">
+        <h2 class="text-2xl sm:text-3xl font-bold leading-tight text-black">
           Have a cool project?<br>Get in touch!
         </h2>
       </div>
 
       <!-- Form -->
-      <div class="bg-white p-10 shadow-md">
+      <div class="bg-white p-6 sm:p-10 shadow-md rounded-md">
         <form class="space-y-5">
           <!-- Name -->
           <div class="flex items-center border-b border-gray-300 pb-3">
             <span class="text-gray-500 mr-3"><i class="fa-regular fa-user"></i></span>
-            <input type="text" placeholder="Name" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500">
+            <input type="text" placeholder="Name" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500 text-sm sm:text-base">
           </div>
           <!-- Phone -->
           <div class="flex items-center border-b border-gray-300 pb-3">
             <span class="text-gray-500 mr-3"><i class="fa-solid fa-phone"></i></span>
-            <input type="text" placeholder="Phone" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500">
+            <input type="text" placeholder="Phone" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500 text-sm sm:text-base">
           </div>
           <!-- Email -->
           <div class="flex items-center border-b border-gray-300 pb-3">
             <span class="text-gray-500 mr-3"><i class="fa-regular fa-envelope"></i></span>
-            <input type="email" placeholder="Email Address" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500">
+            <input type="email" placeholder="Email Address" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500 text-sm sm:text-base">
           </div>
           <!-- Subject -->
           <div class="flex items-center border-b border-gray-300 pb-3">
             <span class="text-gray-500 mr-3"><i class="fa-regular fa-pen-to-square"></i></span>
-            <input type="text" placeholder="Subject" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500">
+            <input type="text" placeholder="Subject" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500 text-sm sm:text-base">
           </div>
           <!-- Message -->
           <div class="flex items-start border-b border-gray-300 pb-3">
             <span class="text-gray-500 mr-3 mt-1"><i class="fa-regular fa-comment"></i></span>
-            <textarea placeholder="How can we help you? Feel free to get in touch!" rows="3" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500"></textarea>
+            <textarea placeholder="How can we help you? Feel free to get in touch!" rows="3" class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-500 text-sm sm:text-base resize-y"></textarea>
           </div>
           <!-- Checkbox -->
           <div class="flex items-center text-sm text-gray-600">
             <input type="checkbox" id="agree" class="mr-2">
-            <label for="agree">I agree that my data is <a href="#" class="text-orange-500 underline">collected</a>.</label>
+            <label for="agree">I agree that my data is <a href="#" class="text-accent underline">collected</a>.</label>
           </div>
           <!-- Button -->
-          <button type="submit" class="bg-orange-500 text-white font-bold uppercase py-3 px-6">
+          <button type="submit" class="bg-accent text-white font-bold uppercase py-3 px-6 w-full sm:w-auto rounded-md hover:bg-accent-dark transition-colors duration-300">
             Get in touch
           </button>
         </form>
@@ -824,100 +739,164 @@
 
 
 
-
-<!-- SEO Tracking Section -->
 <section class="py-16 bg-[#FAF7F2]">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center px-4">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center px-4 sm:px-6 lg:px-8">
     <!-- Left Content -->
     <div>
       <p class="text-sm uppercase tracking-widest text-gray-500">ThunderGit Metrics</p>
-      <h2 class="text-4xl font-bold leading-tight mt-2 text-black">Tracking Your Repositories:<br>From Commit to Deployment</h2>
-      <p class="text-black mt-4">
+      <h2 class="text-4xl font-extrabold leading-tight mt-3 text-black max-w-xl">
+        Tracking Your Repositories:<br>From Commit to Deployment
+      </h2>
+      <p class="text-black mt-6 max-w-lg leading-relaxed">
         ThunderGit provides real-time analytics for your repositories. Track commits, pull requests, CI/CD performance, and deployment success — all in one powerful dashboard.
       </p>
-      <div class="flex items-center gap-4 mt-6">
-        <a href="#" class="bg-orange-500 text-white px-6 py-3 text-sm font-bold uppercase">Explore Features</a>
-        <a href="#" class="flex items-center gap-2 text-black font-medium">
-          <span class="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center">
-            ▶
-          </span>
-          Watch Demo
+      <div class="flex items-center gap-6 mt-8">
+        <a href="#" class="bg-accent hover:bg-accent-dark transition-colors duration-300 text-white px-7 py-3 text-sm font-semibold uppercase rounded-md shadow-md">
+          Explore Features
         </a>
+       <a href="#" class="flex items-center gap-3 text-black font-medium hover:text-accent transition-colors duration-300 cursor-pointer select-none">
+  <span
+    class="w-11 h-11 border border-gray-300 rounded-full flex items-center justify-center text-sm text-black bg-white/80 hover:bg-white transition-colors duration-300"
+  >
+    <i class="fa-solid fa-play"></i>
+  </span>
+  Watch Demo
+</a>
+
       </div>
     </div>
 
     <!-- Right Stats -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
       <div>
-        <p class="text-5xl font-bold text-black">5K+</p>
-        <p class="font-semibold mt-2 text-black">Repositories Managed</p>
-        <p class="text-gray-500 text-sm mt-1">From startups to enterprises, ThunderGit is powering efficient development.</p>
+        <p class="text-5xl font-extrabold text-black" data-target="5000" id="reposCounter">0</p>
+        <p class="font-semibold mt-3 text-black text-lg">Repositories Managed</p>
+        <p class="text-gray-500 text-sm mt-1 max-w-sm">From startups to enterprises, ThunderGit is powering efficient development.</p>
       </div>
       <div>
-        <p class="text-5xl font-bold text-black">1.2M</p>
-        <p class="font-semibold mt-2 text-black">Commits Tracked</p>
-        <p class="text-gray-500 text-sm mt-1">Monitor commits and code quality metrics in real time.</p>
+        <p class="text-5xl font-extrabold text-black" data-target="1200000" id="commitsCounter">0</p>
+        <p class="font-semibold mt-3 text-black text-lg">Commits Tracked</p>
+        <p class="text-gray-500 text-sm mt-1 max-w-sm">Monitor commits and code quality metrics in real time.</p>
       </div>
     </div>
   </div>
-</section>
 
+
+</section>
 
 
 <!-- Latest News Section -->
 <section class="py-16 bg-white">
-  <div class="text-center mb-10">
+  <div class="text-center mb-10 px-4 max-w-7xl mx-auto">
     <p class="text-sm uppercase tracking-widest text-gray-500">ThunderGit Blog</p>
     <h2 class="text-4xl font-bold text-black">Latest from the Dev World</h2>
   </div>
 
-  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-    <!-- Card -->
-    <div>
-      <img src="./blogimg1.jpg" alt="News 1" class="w-full h-56 object-cover">
-      <p class="text-xs uppercase text-gray-500 mt-4">Git Tips</p>
-      <h3 class="font-bold text-lg mt-2 text-black">Mastering Git: 15 Commands Every Developer Should Know</h3>
-      <p class="text-gray-500 text-sm mt-1">Aug 5, 2025 • 3 Comments</p>
-    </div>
+  <!-- Swiper -->
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="swiper blogSwiper">
+      <div class="swiper-wrapper">
+        <!-- Card 1 -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 1" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">Git Tips</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Mastering Git: 15 Commands Every Developer Should Know</h3>
+          <p class="text-gray-500 text-sm mt-1">Aug 5, 2025 • 3 Comments</p>
+        </div>
 
-    <!-- Card -->
-    <div>
-      <img src="./blogimg1.jpg" alt="News 2" class="w-full h-56 object-cover">
-      <p class="text-xs uppercase text-gray-500 mt-4">Open Source</p>
-      <h3 class="font-bold text-lg mt-2 text-black">Top 10 Open-Source Projects to Contribute in 2025</h3>
-      <p class="text-gray-500 text-sm mt-1">Aug 3, 2025 • 5 Comments</p>
-    </div>
+        <!-- Card 2 -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 2" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">Open Source</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Top 10 Open-Source Projects to Contribute in 2025</h3>
+          <p class="text-gray-500 text-sm mt-1">Aug 3, 2025 • 5 Comments</p>
+        </div>
 
-    <!-- Card -->
-    <div>
-      <img src="./blogimg1.jpg" alt="News 3" class="w-full h-56 object-cover">
-      <p class="text-xs uppercase text-gray-500 mt-4">DevOps</p>
-      <h3 class="font-bold text-lg mt-2 text-black">Automating CI/CD Pipelines with ThunderGit</h3>
-      <p class="text-gray-500 text-sm mt-1">Aug 1, 2025 • 0 Comments</p>
-    </div>
+        <!-- Card 3 -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 3" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">DevOps</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Automating CI/CD Pipelines with ThunderGit</h3>
+          <p class="text-gray-500 text-sm mt-1">Aug 1, 2025 • 0 Comments</p>
+        </div>
 
-    <!-- Card -->
-    <div>
-      <img src="./blogimg1.jpg" alt="News 4" class="w-full h-56 object-cover">
-      <p class="text-xs uppercase text-gray-500 mt-4">Productivity</p>
-      <h3 class="font-bold text-lg mt-2 text-black">Boosting Team Collaboration with Git Workflows</h3>
-      <p class="text-gray-500 text-sm mt-1">Jul 28, 2025 • 2 Comments</p>
-    </div>
-  </div>
+        <!-- Card 4 -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 4" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">Productivity</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Boosting Team Collaboration with Git Workflows</h3>
+          <p class="text-gray-500 text-sm mt-1">Jul 28, 2025 • 2 Comments</p>
+        </div>
 
-  <!-- Dots -->
-  <div class="flex justify-center space-x-2 mt-6">
-    <span class="w-3 h-3 bg-orange-500 rounded-full"></span>
-    <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
-    <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
+        <!-- Card 5 - Extra example -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 5" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">Security</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Keeping Your Code Secure in Open Source Projects</h3>
+          <p class="text-gray-500 text-sm mt-1">Jul 25, 2025 • 1 Comment</p>
+        </div>
+
+
+          <!-- Card 1 -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 1" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">Git Tips</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Mastering Git: 15 Commands Every Developer Should Know</h3>
+          <p class="text-gray-500 text-sm mt-1">Aug 5, 2025 • 3 Comments</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 2" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">Open Source</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Top 10 Open-Source Projects to Contribute in 2025</h3>
+          <p class="text-gray-500 text-sm mt-1">Aug 3, 2025 • 5 Comments</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 3" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">DevOps</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Automating CI/CD Pipelines with ThunderGit</h3>
+          <p class="text-gray-500 text-sm mt-1">Aug 1, 2025 • 0 Comments</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 4" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">Productivity</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Boosting Team Collaboration with Git Workflows</h3>
+          <p class="text-gray-500 text-sm mt-1">Jul 28, 2025 • 2 Comments</p>
+        </div>
+
+        <!-- Card 5 - Extra example -->
+        <div class="swiper-slide p-2">
+          <img src="./assets/blogimg1.jpg" alt="News 5" class="w-fulassets/l h-56 object-cover rounded-lg">
+          <p class="text-xs uppercase text-gray-500 mt-4">Security</p>
+          <h3 class="font-bold text-lg mt-2 text-black">Keeping Your Code Secure in Open Source Projects</h3>
+          <p class="text-gray-500 text-sm mt-1">Jul 25, 2025 • 1 Comment</p>
+        </div>
+
+        <!-- Add more cards as needed -->
+      </div>
+
+      <!-- Pagination dots -->
+      <div class="swiper-pagination mt-6"></div>
+    </div>
   </div>
 </section>
+
+
+
+
+
+
 
 
 
 <footer 
   class="relative text-[#EDE6D6] bg-cover bg-center pt-16"
-  style="background-image: url('./black-smooth-textured-paper-background.jpg');"
+  style="background-image: url('./assets/bd-img.png');"
 >
   <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-3 gap-12">
     
@@ -935,16 +914,16 @@
       <p>785 15h Street, Office 478</p>
       <p>Berlin, De 81566</p>
       <div class="flex gap-4 mt-6">
-        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-orange-500 transition">
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-orange-500 transition">
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
           <i class="fab fa-x-twitter"></i>
         </a>
-        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-orange-500 transition">
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
           <i class="fab fa-dribbble"></i>
         </a>
-        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-orange-500 transition">
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
           <i class="fab fa-instagram"></i>
         </a>
       </div>
@@ -953,65 +932,53 @@
     <!-- Right -->
     <div>
       <h3 class="font-semibold mb-3">Say Hello</h3>
-      <a href="mailto:info@thundergit.com" class="block hover:text-orange-500">info@thundergit.com</a>
-      <a href="tel:+18408412569" class="text-lg font-semibold hover:text-orange-500">+1 840 841 25 69</a>
+      <a href="mailto:info@thundergit.com" class="block hover:text-accent">info@thundergit.com</a>
+      <a href="tel:+18408412569" class="text-lg font-semibold hover:text-accent">+1 840 841 25 69</a>
     </div>
   </div>
 
   <!-- Bottom -->
   <div class="border-t border-gray-700 mt-12 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 px-6 lg:px-8">
     <div class="flex space-x-6 mb-4 md:mb-0">
-      <a href="#" class="text-white text-lg hover:text-orange-500">Our Blog</a>
-      <a href="#" class=" text-white text-lg hover:text-orange-500">About Us</a>
-      <a href="#" class=" text-white  text-lg hover:text-orange-500">Contact Us</a>
+      <a href="#" class="text-white text-lg hover:text-accent">Our Blog</a>
+      <a href="#" class=" text-white text-lg hover:text-accent">About Us</a>
+      <a href="#" class=" text-white  text-lg hover:text-accent">Contact Us</a>
     </div>
     <p>ThunderGit © 2025. All Rights Reserved.</p>
   </div>
-
-  <!-- Floating Presale Chat -->
-  <div class="fixed bottom-16 left-4 flex items-center z-50">
-    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl font-bold">💬</div>
-    <span class="ml-2 bg-white text-black px-4 py-1 rounded-full shadow">Presale Chat</span>
+<!-- Floating Presale Chat -->
+<!-- Presale Chat -->
+<div class="fixed bottom-16 left-4 flex items-center z-40"> 
+  <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+    <i class="fas fa-comments"></i>
   </div>
+  <span class="ml-2 bg-white text-black px-4 py-1 rounded-md shadow border border-gray-300">
+    Presale Chat
+  </span>
+</div>
+
+<!-- Scroll Toggle -->
+<button id="scrollToggleBtn" 
+  class="fixed bottom-16 right-4 w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-accent z-40">
+  <i id="scrollIcon" class="fas fa-arrow-up"></i>
+</button>
+
+
+
 
   <!-- Floating Right Buttons -->
   <!-- <div class="fixed top-1/3 right-0 flex flex-col z-50">
-    <a href="#" class="bg-orange-500 p-4 border-b border-black hover:bg-orange-600">🛒</a>
-    <a href="#" class="bg-orange-500 p-4 border-b border-black hover:bg-orange-600">🖼</a>
-    <a href="#" class="bg-orange-500 p-4 hover:bg-orange-600">💳</a>
+    <a href="#" class="bg-accent p-4 border-b border-black hover:bg-orange-600">🛒</a>
+    <a href="#" class="bg-accent p-4 border-b border-black hover:bg-orange-600">🖼</a>
+    <a href="#" class="bg-accent p-4 hover:bg-orange-600">💳</a>
   </div> -->
 
-  <!-- Scroll to top -->
-  <button class="fixed bottom-4 right-4 w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-orange-500 z-50">
-    ↑
-  </button>
 </footer>
 
-<!-- Font Awesome for icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 
-<script>
-  const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1.1,
-    spaceBetween: 20,
-    loop: true,
-    grabCursor: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-  });
-</script>
 
+ <script src="./script.js"></script>
 
 </body>
 </html>

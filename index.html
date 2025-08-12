@@ -115,14 +115,17 @@
   }
 
   /* Dots Styling */
-  .swiper-pagination {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 100%;
-  }
+ .testimonialSwiper .swiper-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto; /* Ye center alignment sahi karega */
+  display: flex;
+  justify-content: center;
+  gap: 6px; /* bullets ke beech thoda space */
+}
+
 
   .swiper-pagination-bullet {
     background: white;
@@ -581,6 +584,17 @@
             </p>
           </div>
         </div>
+           <div class="swiper-slide">
+          <div class="p-6 rounded-lg border border-gray-200 shadow-sm">
+            <img src="https://i.ibb.co/FbLXM6r/dawabiro.jpg" alt="Dawabiro" class="h-12 w-12 rounded-full mb-4" />
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Sahil Saxena</h3>
+            <p class="text-sm text-gray-500 mb-2">Founder Of Dawabiro</p>
+            <p class="text-gray-600 text-base leading-relaxed">
+              We approached ThunderGits with a challenging project—developing a medicine comparison tool with scheduled scrapers. They not only met but surpassed our expectations. Their attention to detail, technical proficiency, and innovative solutions helped us create Dawabiro.
+            </p>
+          </div>
+        </div>
+        
 
       </div>
     </div>
@@ -590,41 +604,59 @@
 
 
 <section class="relative overflow-hidden bg-white py-4">
-  <div class="whitespace-nowrap flex animate-slide">
-    <!-- First set -->
-    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
-      THUNDERGITS
-    </h1>
-    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
-      THUNDERGITS
-    </h1>
-    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
-      THUNDERGITS
-    </h1>
-
-    <!-- Duplicate set for seamless loop -->
-    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
-      THUNDERGITS
-    </h1>
-    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
-      THUNDERGITS
-    </h1>
-    <h1 class="text-[16vw] font-bold tracking-wide uppercase bg-accent text-transparent bg-clip-text px-12">
-      THUNDERGITS
-    </h1>
+  <div class="marquee">
+    <div class="marquee-content">
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+    </div>
+    <div class="marquee-content">
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+      <h1>THUNDERGITS</h1>
+    </div>
   </div>
 
   <style>
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); } /* Half of total width */
-    }
-    .animate-slide {
+    .marquee {
       display: flex;
-      animation: slide 12s linear infinite;
+      width: max-content;
+      animation: marquee 100s linear infinite;
+    }
+
+    .marquee-content {
+      display: flex;
+    }
+
+    .marquee h1 {
+      font-size: 16vw;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--accent, #ff6600);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 0 3rem;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
   </style>
 </section>
+
 
 
 
@@ -789,8 +821,7 @@
   </div>
 </section>
 
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 
 
 

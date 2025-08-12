@@ -115,7 +115,10 @@
       }
     }
 
-
+ /* Tailwind accent color replacement if needed */
+  .text-accent { color: #f25835; }        /* Gold/Yellow accent */
+  .border-accent { border-color: #f25835; }
+  .before\:bg-accent::before { background-color: #f25835; }
 
      /* Pagination dots ka spacing */
   .blogSwiper .swiper-pagination {

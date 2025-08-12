@@ -236,78 +236,111 @@
 
 
 
-<!-- Next Image Section -->
-<section class="w-full h-[85vh]">
-  <div class="w-full h-full">
+<!-- Image with Overlay Content Section -->
+<section class="relative w-full h-[85vh]">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
     <img
       src="./assets/image thundergits.jpg"
-      alt="Descriptive Alt Text"
+      alt="ThunderGits Overview"
       class="w-full h-full object-cover shadow-md"
     />
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <!-- Content Overlay -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+    <h2 class="text-lg sm:text-xl md:text-2xl font-semibold max-w-2xl leading-snug">
+      At ThunderGits Technologies, we specialize in delivering innovative digital experiences.
+    </h2>
+    <p class="mt-3 max-w-xl text-sm sm:text-base leading-relaxed">
+      With ThunderGits solutions, we help your business grow and thrive in the digital age.
+      Our team is committed to crafting customized solutions tailored to your unique needs.
+    </p>
+
+    <!-- Stylish Button -->
+    <a
+      href="#"
+      class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
+             hover:text-white transition-all duration-300 ease-out
+             before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
+             hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]"
+    >
+      Get a Free Consultation
+    </a>
   </div>
 </section>
 
-<section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+
+
+
+ <section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
     <!-- Left Content -->
-    <div>
+    <div class="text-center lg:text-left">
       <h4 class="text-sm font-medium text-gray-900 tracking-wide uppercase mb-4">
         What We Offer
       </h4>
-    <h2 class="text-heading text-gray-900 mb-8 leading-tight font-bold tracking-[-0.02em]">
-  Services That Drive Results
-</h2>
-
-      <p class="text-base text-gray-900 leading-relaxed">
+      <h2 class="text-heading text-gray-900 mb-6 leading-tight font-bold tracking-[-0.02em] text-2xl sm:text-3xl lg:text-4xl">
+        Services That Drive Results
+      </h2>
+      
+      <p class="text-base sm:text-lg text-gray-900 leading-relaxed max-w-xl mx-auto lg:mx-0">
         Empowering your business with end-to-end digital solutions—from web to cloud and AI.
       </p>
     </div>
 
-    <!-- Right Grid (Icons Section) -->
-    <div class="grid grid-cols-2 gap-y-14 gap-x-12 pt-16">
+    <!-- Right Content with Cards -->
+    <div class="flex flex-col">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8 pt-10 lg:pt-0">
+        <div class="space-y-3 text-center sm:text-left">
+          <i class="fas fa-bullhorn text-4xl text-accent"></i>
+          <h3 class="text-lg font-medium text-gray-900">Digital Marketing</h3>
+          <p class="text-theme-textLight text-base leading-relaxed">
+            Boost online visibility with SEO, PPC, and social media campaigns tailored for your brand.
+          </p>
+        </div>
 
-      <!-- Digital Marketing -->
-      <div class="space-y-5">
-        <i class="fas fa-bullhorn text-4xl text-accent"></i>
-        <h3 class="text-lg font-medium text-gray-900">Digital Marketing</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Boost online visibility with SEO, PPC, and social media campaigns tailored for your brand.
-        </p>
+        <div class="space-y-3 text-center sm:text-left">
+          <i class="fas fa-code text-4xl text-accent"></i>
+          <h3 class="text-lg font-medium text-gray-900">Website Development</h3>
+          <p class="text-theme-textLight text-base leading-relaxed">
+            Custom, fast, and responsive websites built for intuitive user experience.
+          </p>
+        </div>
+
+        <div class="space-y-3 text-center sm:text-left">
+          <i class="fas fa-mobile-alt text-4xl text-accent"></i>
+          <h3 class="text-lg font-medium text-gray-900">Application Development</h3>
+          <p class="text-theme-textLight text-base leading-relaxed">
+            Robust mobile and web apps designed for scalability and performance.
+          </p>
+        </div>
+
+        <div class="space-y-3 text-center sm:text-left">
+          <i class="fas fa-shopping-cart text-4xl text-accent"></i>
+          <h3 class="text-lg font-medium text-gray-900">E-Commerce Solutions</h3>
+          <p class="text-theme-textLight text-base leading-relaxed">
+            Seamless e-commerce journeys with optimized payment systems.
+          </p>
+        </div>
       </div>
 
-      <!-- Website Development -->
-      <div class="space-y-5">
-        <i class="fas fa-code text-4xl text-accent"></i>
-        <h3 class="text-lg font-medium text-gray-900">Website Development</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Custom, fast, and responsive websites built for intuitive user experience.
-        </p>
+      <!-- See More Button - Right Aligned -->
+      <div class="mt-8 flex justify-end">
+        <a href="#services"
+           class="bg-accent hover:bg-[#e65c00] text-white font-medium px-6 py-3 shadow-md transition-all duration-300">
+          See More
+        </a>
       </div>
-
-      <!-- App Development -->
-      <div class="space-y-5">
-        <i class="fas fa-mobile-alt text-4xl text-accent"></i>
-        <h3 class="text-lg font-medium text-gray-900">Application Development</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Robust mobile and web apps designed for scalability and performance.
-        </p>
-      </div>
-
-      <!-- E-Commerce Solutions -->
-      <div class="space-y-5">
-        <i class="fas fa-shopping-cart text-4xl text-accent"></i>
-        <h3 class="text-lg font-medium text-gray-900">E-Commerce Solutions</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Seamless e-commerce journeys with optimized payment systems.
-        </p>
-      </div>
-
-      
-
     </div>
+
   </div>
 </section>
+
+
 
 
 <!-- ML & AI -->
@@ -371,18 +404,139 @@
         <p class="text-gray-600 text-base leading-relaxed">
           Your trusted advisor for navigating complex tech landscapes.
         </p>
-      </div> -->
+      </div> --> 
+
+
+
+    <!-- <section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+   
+    <div class="text-center lg:text-left mb-12">
+      <h4 class="text-sm font-medium text-gray-900 tracking-wide uppercase mb-2">
+        What We Offer
+      </h4>
+      <h2 class="text-heading text-gray-900 leading-tight font-bold tracking-[-0.02em] text-2xl sm:text-3xl lg:text-4xl relative inline-block">
+        Services That Drive Results
+        <span class="absolute left-0 -bottom-2 w-16 h-[3px] bg-accent"></span>
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-gray-900 leading-relaxed max-w-xl mx-auto lg:mx-0">
+        Empowering your business with end-to-end digital solutions—from web to cloud and AI.
+      </p>
+    </div>
+
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+   
+      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">Machine Learning & AI</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Predictive analytics and intelligent automation tailored to your needs.
+        </p>
+      </div>
+
+      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">Custom Software</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Software solutions built specifically for your business goals.
+        </p>
+      </div>
+
+      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">Cloud Services</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Scale effortlessly with secure and efficient cloud infrastructure.
+        </p>
+      </div>
+
+      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">AI Consulting</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Strategize and implement AI to unlock new business opportunities.
+        </p>
+      </div>
+
+      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">DevOps & CloudOps</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Streamline development and operations for reliable delivery.
+        </p>
+      </div>
+
+      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">Business Intelligence</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Convert data into actionable insights using advanced analytics.
+        </p>
+      </div>
+
+      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">IT Consultancy</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Your trusted advisor for navigating complex tech landscapes.
+        </p>
+      </div>
+
+      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">IT Consultancy</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Your trusted advisor for navigating complex tech landscapes.
+        </p>
+      </div>
+
+      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
+        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">IT Consultancy</h3>
+        <p class="text-theme-textLight text-base leading-relaxed">
+          Your trusted advisor for navigating complex tech landscapes.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section> -->
+
+
 
 
 <section class="relative py-28 bg-white overflow-hidden">
-  <!-- Background Overlay on Right 60% -->
-  <div class="absolute right-0 top-0 h-full w-[60%] bg-[#fdf7ef] z-0"></div>
+  <!-- Angled Background Overlay -->
+  <div class="absolute right-0 top-0 h-full w-[60%] bg-[#fdf7ef] z-0 clip-path-custom"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 px-4 sm:px-6 items-center">
 
-    <!-- Left Image -->
-    <div class="w-full">
-      <img src="./assets/image thundergits.jpeg" alt="Team Image" class="w-full h-[580px] object-cover shadow-lg rounded" />
+    <!-- Left Image - Styled with Border -->
+    <div class="relative w-full">
+      <div class="absolute -top-4 -left-4 w-full h-full border-[6px] border-accent  -z-10"></div>
+      <img src="./assets/about-img.png" alt="Team Image"
+           class="w-full h-[560px] object-cover shadow-sm  " />
     </div>
 
     <!-- Right Content -->
@@ -391,46 +545,58 @@
         Why ThunderGits?
       </h4>
 
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black leading-snug">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black leading-snug relative inline-block pb-2">
         Discover why businesses <br /> trust us for innovation
+        <span class="absolute left-0 bottom-0 w-20 h-1 bg-accent"></span>
       </h2>
 
       <p class="text-black text-base sm:text-lg leading-relaxed">
         We deliver future-ready solutions — from web and mobile to AI and cloud — that accelerate growth and digital transformation globally.
       </p>
 
-      <!-- List Items with FAB icons -->
+      <!-- Stylish List Items -->
       <ul class="space-y-3 text-black">
-        <li class="flex items-start">
+        <li class="flex items-start bg-white p-3 rounded-md shadow-sm hover:shadow-md transition">
           <i class="fab fa-teamspeak text-accent text-lg mr-3 mt-1"></i>
           <span>Expert Team — Skilled professionals delivering cutting-edge technology.</span>
         </li>
-        <li class="flex items-start">
+        <li class="flex items-start bg-white p-3 rounded-md shadow-sm hover:shadow-md transition">
           <i class="fas fa-tools text-accent text-lg mr-3 mt-1"></i>
           <span>Custom Solutions — Designed to meet your unique business goals.</span>
         </li>
-        <li class="flex items-start">
+        <li class="flex items-start bg-white p-3 rounded-md shadow-sm hover:shadow-md transition">
           <i class="fas fa-robot text-accent text-lg mr-3 mt-1"></i>
           <span>Advanced Technologies — Leveraging AI, ML, and cloud infrastructure.</span>
         </li>
-        <li class="flex items-start">
+        <li class="flex items-start bg-white p-3 rounded-md shadow-sm hover:shadow-md transition">
           <i class="fas fa-user-check text-accent text-lg mr-3 mt-1"></i>
           <span>Customer Focused — Your satisfaction and growth are our priorities.</span>
         </li>
-        <li class="flex items-start">
+        <li class="flex items-start bg-white p-3 rounded-md shadow-sm hover:shadow-md transition">
           <i class="fas fa-globe text-accent text-lg mr-3 mt-1"></i>
           <span>Global Reach — Trusted by clients across continents.</span>
         </li>
       </ul>
 
-      <!-- CTA Button -->
-      <a href="#" class="inline-block mt-6 bg-accent hover:bg-orange-600 text-white font-medium px-6 py-3 transition-all duration-300">
+      <!-- CTA Button - No gradient, no radius -->
+      <a href="#"
+         class="inline-block mt-6 bg-accent hover:bg-[#e65c00] text-white font-medium px-6 py-3 shadow-md transition-all duration-300">
         ABOUT US
       </a>
     </div>
 
   </div>
 </section>
+
+
+
+<style>
+/* Custom angled background shape */
+/* .clip-path-custom {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+} */
+</style>
+
 
 
 
@@ -741,48 +907,48 @@
 
 <section class="py-16 bg-[#FAF7F2]">
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center px-4 sm:px-6 lg:px-8">
+    
     <!-- Left Content -->
-    <div>
+    <div class="text-center md:text-left">
       <p class="text-sm uppercase tracking-widest text-gray-500">ThunderGit Metrics</p>
-      <h2 class="text-4xl font-extrabold leading-tight mt-3 text-black max-w-xl">
-        Tracking Your Repositories:<br>From Commit to Deployment
+      <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 text-black max-w-xl mx-auto md:mx-0">
+        Tracking Your Repositories:<br class="hidden sm:block">From Commit to Deployment
       </h2>
-      <p class="text-black mt-6 max-w-lg leading-relaxed">
+      <p class="text-black mt-6 max-w-lg leading-relaxed mx-auto md:mx-0">
         ThunderGit provides real-time analytics for your repositories. Track commits, pull requests, CI/CD performance, and deployment success — all in one powerful dashboard.
       </p>
-      <div class="flex items-center gap-6 mt-8">
-        <a href="#" class="bg-accent hover:bg-accent-dark transition-colors duration-300 text-white px-7 py-3 text-sm font-semibold uppercase rounded-md shadow-md">
+      
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row items-center sm:justify-start gap-4 mt-8">
+        <a href="#" class="bg-accent hover:bg-accent-dark transition-colors duration-300 text-white px-6 sm:px-7 py-3 text-sm font-semibold uppercase rounded-md shadow-md w-full sm:w-auto text-center">
           Explore Features
         </a>
-       <a href="#" class="flex items-center gap-3 text-black font-medium hover:text-accent transition-colors duration-300 cursor-pointer select-none">
-  <span
-    class="w-11 h-11 border border-gray-300 rounded-full flex items-center justify-center text-sm text-black bg-white/80 hover:bg-white transition-colors duration-300"
-  >
-    <i class="fa-solid fa-play"></i>
-  </span>
-  Watch Demo
-</a>
-
+        <a href="#" class="flex items-center gap-3 text-black font-medium hover:text-accent transition-colors duration-300">
+          <span class="w-11 h-11 border border-gray-300 rounded-full flex items-center justify-center text-sm text-black bg-white/80 hover:bg-white transition-colors duration-300">
+            <i class="fa-solid fa-play"></i>
+          </span>
+          Watch Demo
+        </a>
       </div>
     </div>
 
     <!-- Right Stats -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 text-center sm:text-left">
       <div>
-        <p class="text-5xl font-extrabold text-black" data-target="5000" id="reposCounter">0</p>
+        <p class="text-4xl sm:text-5xl font-extrabold text-black" data-target="5000" id="reposCounter">0</p>
         <p class="font-semibold mt-3 text-black text-lg">Repositories Managed</p>
-        <p class="text-gray-500 text-sm mt-1 max-w-sm">From startups to enterprises, ThunderGit is powering efficient development.</p>
+        <p class="text-gray-500 text-sm mt-1">From startups to enterprises, ThunderGit is powering efficient development.</p>
       </div>
       <div>
-        <p class="text-5xl font-extrabold text-black" data-target="1200000" id="commitsCounter">0</p>
+        <p class="text-4xl sm:text-5xl font-extrabold text-black" data-target="1200000" id="commitsCounter">0</p>
         <p class="font-semibold mt-3 text-black text-lg">Commits Tracked</p>
-        <p class="text-gray-500 text-sm mt-1 max-w-sm">Monitor commits and code quality metrics in real time.</p>
+        <p class="text-gray-500 text-sm mt-1">Monitor commits and code quality metrics in real time.</p>
       </div>
     </div>
+
   </div>
-
-
 </section>
+
 
 
 <!-- Latest News Section -->

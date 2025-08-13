@@ -1,7 +1,21 @@
-    function toggleMobileMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.classList.toggle("hidden");
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      menu.style.opacity = 0;
+      setTimeout(() => {
+        menu.style.opacity = 1;
+      }, 10);
+    } else {
+      menu.style.opacity = 0;
+      setTimeout(() => {
+        menu.classList.add('hidden');
+      }, 300); // match with CSS transition
+    }
   }
+
+
   
   
   

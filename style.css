@@ -144,3 +144,36 @@
     background-color: #f25835; /* Tailwind orange-500 */
    
   }
+
+
+
+
+  /* Slide up + fade once */
+/* @keyframes slideFadeUpOnce {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-fade-up {
+  animation: slideFadeUpOnce 1s ease-out forwards;
+}
+
+.animate-slide-fade-up-delay1 {
+  animation: slideFadeUpOnce 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.animate-slide-fade-up-delay2 {
+  animation: slideFadeUpOnce 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+
+@keyframes floatBarEntrance {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate-bar-entrance {
+  animation: floatBarEntrance 1s ease-out forwards;
+} */

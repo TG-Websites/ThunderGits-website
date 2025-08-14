@@ -77,6 +77,7 @@
   <link rel="stylesheet" href="./style.css">
 
 
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -103,7 +104,7 @@
         <nav class="hidden md:flex gap-8 text-offwhite font-medium">
           <a href="#" class="pb-1 border-b-2 border-linkhover">Home</a>
           <a href="./about.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-          <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
+          <a href="./work.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
           <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
           <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
           <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
@@ -146,7 +147,7 @@
         <a href="./about.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
           <span>About</span><span class="ml-2">→</span>
         </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+        <a href="./work.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
           <span>Work</span><span class="ml-2">→</span>
         </a>
         <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
@@ -1092,88 +1093,89 @@
 
 
 
-  <section class="bg-[#FAF7F2] py-20">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start px-4 sm:px-6 lg:px-8">
+ <section class="bg-[#FAF7F2] py-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start px-4 sm:px-6 lg:px-8">
 
-      <!-- Left: Image -->
-      <div class="w-full h-64 sm:h-80 md:h-96 lg:h-full relative overflow-hidden">
-        <img src="./assets/about-img.png" alt="Contact Us"
-          class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-      </div>
-
-      <!-- Right: Title + Form -->
-      <div class="flex flex-col justify-start">
-
-        <!-- Title -->
-        <div class="mb-8">
-          <p class="text-sm uppercase tracking-wide text-gray-600 mb-2">Contact Us</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-black relative inline-block pb-2">
-            Have a cool project?<br>Get in touch!
-            <span class="absolute left-0 bottom-0 w-20 h-1 bg-accent"></span>
-          </h2>
-          <p class="text-gray-700 text-base sm:text-lg mt-3">
-            We’d love to hear about your ideas. Drop us a message and our team will get back to you promptly.
-          </p>
-        </div>
-
-        <!-- Form -->
-        <div class="bg-white p-6 sm:p-10 shadow-md">
-          <form class="space-y-5">
-
-            <!-- Name -->
-            <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
-              <span class="text-gray-400 mr-3"><i class="fa-regular fa-user"></i></span>
-              <input type="text" placeholder="Name"
-                class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
-            </div>
-
-            <!-- Phone -->
-            <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
-              <span class="text-gray-400 mr-3"><i class="fa-solid fa-phone"></i></span>
-              <input type="text" placeholder="Phone"
-                class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
-            </div>
-
-            <!-- Email -->
-            <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
-              <span class="text-gray-400 mr-3"><i class="fa-regular fa-envelope"></i></span>
-              <input type="email" placeholder="Email Address"
-                class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
-            </div>
-
-            <!-- Subject -->
-            <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
-              <span class="text-gray-400 mr-3"><i class="fa-regular fa-pen-to-square"></i></span>
-              <input type="text" placeholder="Subject"
-                class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
-            </div>
-
-            <!-- Message -->
-            <div class="flex items-start border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
-              <span class="text-gray-400 mr-3 mt-1"><i class="fa-regular fa-comment"></i></span>
-              <textarea placeholder="How can we help you? Feel free to get in touch!" rows="4"
-                class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base resize-y py-2"></textarea>
-            </div>
-
-            <!-- Checkbox -->
-            <div class="flex items-center text-sm text-gray-600">
-              <input type="checkbox" id="agree" class="mr-2">
-              <label for="agree">I agree that my data is <a href="#"
-                  class="text-accent underline">collected</a>.</label>
-            </div>
-
-            <!-- Button -->
-            <button type="submit"
-              class="bg-accent text-white font-bold uppercase py-3 px-6 w-full sm:w-auto hover:bg-accent-dark transition-colors duration-300">
-              Get in touch
-            </button>
-
-          </form>
-        </div>
-      </div>
-
+    <!-- Left: Image -->
+    <div data-aos="fade-right" class="w-full h-64 sm:h-80 md:h-96 lg:h-full relative overflow-hidden">
+      <img src="./assets/about-img.png" alt="Contact Us"
+        class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
     </div>
-  </section>
+
+    <!-- Right: Title + Form -->
+    <div class="flex flex-col justify-start">
+
+      <!-- Title -->
+      <div data-aos="fade-left" class="mb-8">
+        <p class="text-sm uppercase tracking-wide text-gray-600 mb-2">Contact Us</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-black relative inline-block pb-2">
+          Have a cool project?<br>Get in touch!
+          <span class="absolute left-0 bottom-0 w-20 h-1 bg-accent"></span>
+        </h2>
+        <p class="text-gray-700 text-base sm:text-lg mt-3">
+          We’d love to hear about your ideas. Drop us a message and our team will get back to you promptly.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <div data-aos="fade-up" class="bg-white p-6 sm:p-10 shadow-md">
+        <form class="space-y-5">
+
+          <!-- Name -->
+          <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3"><i class="fa-regular fa-user"></i></span>
+            <input type="text" placeholder="Name"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
+          </div>
+
+          <!-- Phone -->
+          <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3"><i class="fa-solid fa-phone"></i></span>
+            <input type="text" placeholder="Phone"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3"><i class="fa-regular fa-envelope"></i></span>
+            <input type="email" placeholder="Email Address"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
+          </div>
+
+          <!-- Subject -->
+          <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3"><i class="fa-regular fa-pen-to-square"></i></span>
+            <input type="text" placeholder="Subject"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
+          </div>
+
+          <!-- Message -->
+          <div class="flex items-start border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3 mt-1"><i class="fa-regular fa-comment"></i></span>
+            <textarea placeholder="How can we help you? Feel free to get in touch!" rows="4"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base resize-y py-2"></textarea>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="flex items-center text-sm text-gray-600">
+            <input type="checkbox" id="agree" class="mr-2">
+            <label for="agree">I agree that my data is <a href="#"
+                class="text-accent underline">collected</a>.</label>
+          </div>
+
+          <!-- Button -->
+          <button type="submit"
+            class="bg-accent text-white font-bold uppercase py-3 px-6 w-full sm:w-auto hover:bg-accent-dark transition-colors duration-300">
+            Get in touch
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 
 
@@ -1474,6 +1476,13 @@
   </footer>
 
 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // Animation duration
+    once: true,     // Only animate once
+  });
+</script>
 
 
   <script src="./script.js"></script>

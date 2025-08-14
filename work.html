@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThunderGits</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: {
+            base: '1em',
+            sm: '14px',
+            md: '15px',
+            lg: '1.4em',
+            xl: '42px',
+            heading: '6.75vw',
+          },
+          lineHeight: {
+            tight: '1em',
+            normal: '1.2em',
+            relaxed: '1.5em',
+            loose: '1.6em',
+            heading: '0.95em',
+          },
+          letterSpacing: {
+            wide: '1.8px',
+            tighter: '0.01em',
+          },
+          fontWeight: {
+            medium: '500',
+          },
+          transitionProperty: {
+            all: 'all',
+          },
+          transitionTimingFunction: {
+            ease: 'ease',
+          },
+          transitionDuration: {
+            DEFAULT: '300ms',
+          },
+          colors: {
+            theme: {
+              text: '#DEDDDB',
+              textLight: '#848484',
+              textDark: '#EFE8CE',
+              link: '#E2725B',
+              hover: '#DD644C',
+              link2: '#7DA189',
+              hover2: '#6D967A',
+              link3: '#9D7246',
+              hover3: '#5B3918',
+              bg: '#141414',
+              bd: '#424040',
+              altBg: '#292828',
+              altBd: '#535353',
+            },
+            dark: '#0e0e0e',
+            offwhite: '#f5e9cd',
+            graytext: '#d9d9d9',
+            accent: '#f25835',
+            footer: '#121212',
+            linkhover: '#f5e9cd',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+<link rel="stylesheet" href="./style.css">
+
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+</head>
+<body class="bg-dark text-theme-text">
+
+    <!-- Work Page Hero Section -->
+<section 
+  class="relative bg-cover bg-center flex flex-col justify-between sm:min-h-[50vh]"
+  style="background-image: url('./assets/bg2.png');"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+
+  <!-- Navbar -->
+  <header class="top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex justify-between items-center h-20 border-b border-theme-bd">
+      <div class="flex items-center gap-2 text-2xl font-bold text-offwhite">
+        <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+        <span>ThunderGits</span>
+      </div>
+      <nav class="hidden md:flex gap-8 text-offwhite font-medium">
+        <a href="./index.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
+        <a href="./about.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
+        <a href="./work.html" class="pb-1 border-b-2 border-linkhover">Work</a>
+        <a href="./services.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
+        <a href="./career.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
+        <a href="./contact.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
+      </nav>
+      <div class="flex items-center gap-6">
+        <a href="#quote"
+          class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
+            hover:text-white transition-all duration-300 ease-out
+            before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
+            hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
+          Get a Quote
+        </a>
+        <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu (same as About page ka) -->
+ <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
+      <div class="flex justify-between items-center mb-10">
+        <div class="flex items-center gap-2 text-2xl font-bold">
+          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <span class="text-white">ThunderGits</span>
+        </div>
+        <button onclick="toggleMobileMenu()" class="text-gray-300 text-lg">
+          Close <span class="ml-2 text-lg">×</span>
+        </button>
+      </div>
+
+      <div class="space-y-6">
+        <a href="./index.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+          <span>Home</span><span class="ml-2">→</span>
+        </a>
+        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+          <span>About</span><span class="ml-2">→</span>
+        </a>
+        <a href="./work.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+          <span>Work</span><span class="ml-2">→</span>
+        </a>
+        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+          <span>Services</span><span class="ml-2">→</span>
+        </a>
+        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+          <span>Career</span><span class="ml-2">→</span>
+        </a>
+        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
+          <span>Contact</span><span class="ml-2">→</span>
+        </a>
+
+        <!-- Get a Quote Button in Mobile Menu -->
+        <div class="pt-4">
+          <a href="#" class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
+             hover:text-white transition-all duration-300 ease-out
+             before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
+             hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Icons in Mobile -->
+      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-6 text-base text-graytext">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  <!-- Hero Text -->
+  <div class="relative z-20 flex-grow mt-20 py-8 sm:py-0">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
+      <div class="border-l-4 border-accent">
+        <div class="pl-3">
+          <p class="text-accent text-4xl sm:text-5xl font-bold drop-shadow-lg leading-snug mb-1">
+            Our Work
+          </p>
+          <h1 class="text-offwhite text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight drop-shadow-lg">
+            Turning Ideas Into Reality
+          </h1>
+          <p class="mt-3 text-base sm:text-lg text-offwhite/80 max-w-xl">
+            See how we transform concepts into impactful digital experiences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      menu.style.opacity = 0;
+      setTimeout(() => {
+        menu.style.opacity = 1;
+      }, 10);
+    } else {
+      menu.style.opacity = 0;
+      setTimeout(() => {
+        menu.classList.add('hidden');
+      }, 300); // match with CSS transition
+    }
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Work Page - Projects Showcase Section -->
+<section class="bg-gray-50 py-16 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-20">
+    
+    <!-- Content Row -->
+    <div class="grid lg:grid-cols-2 gap-12">
+
+      <!-- Left: Images Grid -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-accent text-white p-6 flex flex-col justify-end min-h-[200px] rounded-lg transform opacity-0 translate-y-6 animate-fade-up delay-100">
+          <p class="text-sm uppercase tracking-widest mb-2">Startup</p>
+          <h3 class="text-lg font-semibold leading-snug">The team, driving the tech of tomorrow</h3>
+        </div>
+        <img src="./assets/blogimg1.jpg" alt="Project 1" class="w-full h-full object-cover rounded-lg transform opacity-0 translate-y-6 animate-fade-up delay-200">
+        <img src="./assets/image thundergits.jpeg" alt="Project 2" class="w-full h-full object-cover rounded-lg col-span-2 transform opacity-0 translate-y-6 animate-fade-up delay-300">
+      </div>
+
+      <!-- Right: Heading + Paragraph -->
+      <div class="text-left flex flex-col justify-start transform opacity-0 translate-x-6 animate-fade-right delay-400">
+        <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
+          Project of ThunderGits Technologies
+        </h4>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-black">
+          Showcasing Our Expertise Through Innovative Projects
+          <span class="absolute left-0 bottom-0 w-32 h-1 bg-accent"></span>
+        </h2>
+        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl animate-fade-up delay-500">
+          Explore our portfolio of successful projects that highlight our dedication to delivering 
+          cutting-edge IT solutions. At ThunderGits Technologies, we turn challenges into 
+          opportunities through creativity and technology.
+        </p>
+        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl animate-fade-up delay-600">
+          Our work spans diverse industries, from startups to enterprises, each tailored to meet 
+          unique business goals. We pride ourselves on delivering not just software, but solutions 
+          that empower growth and innovation.
+        </p>
+        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl animate-fade-up delay-700">
+          Every project reflects our core values of innovation, integrity, and excellence, 
+          ensuring our clients achieve sustainable success in an ever-changing digital landscape.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Keyframe Animations */
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeRight {
+    0% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Tailwind-like classes for animation */
+  .animate-fade-up {
+    animation: fadeUp 0.8s forwards;
+  }
+
+  .animate-fade-right {
+    animation: fadeRight 0.8s forwards;
+  }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-700 { animation-delay: 0.7s; }
+</style>
+
+
+
+
+
+<!-- Work Page - Simple Animated Marquee Section -->
+<section class="relative overflow-hidden bg-white py-4">
+  <div class="marquee">
+    <div class="marquee-content">
+      <h1>Innovation</h1>
+      <h1>Tech Solutions</h1>
+      <h1>Projects</h1>
+      <h1>Web Apps</h1>
+      <h1>AI</h1>
+      <h1>Startups</h1>
+      <h1>Development</h1>
+      <h1>Design</h1>
+      <h1>Automation</h1>
+    </div>
+    <div class="marquee-content">
+      <h1>Innovation</h1>
+      <h1>Tech Solutions</h1>
+      <h1>Projects</h1>
+      <h1>Web Apps</h1>
+      <h1>AI</h1>
+      <h1>Startups</h1>
+      <h1>Development</h1>
+      <h1>Design</h1>
+      <h1>Automation</h1>
+    </div>
+  </div>
+</section>
+
+<style>
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 100s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+}
+
+.marquee h1 {
+  font-size: 16vw;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--accent, #f25835);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 3rem;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+
+
+
+
+
+<!-- Add AOS CSS in head -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<!-- Our Work Section with Dark Background, Image, and Styled Cards -->
+<section class="relative bg-theme-bg py-20 z-10">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img src="./assets/bg2.png" alt="Background" class="w-full h-full object-cover opacity-30">
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-20 z-10">
+    <!-- Section Title -->
+    <div class="mb-16 text-left" data-aos="fade-up">
+      <h4 class="text-sm tracking-widest font-semibold uppercase mb-2 text-theme-textLight">
+        Our Work
+      </h4>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-theme-textDark">
+        Projects that define our expertise
+        <span class="absolute left-0 bottom-0 w-32 h-1 bg-accent"></span>
+      </h2>
+      <p class="text-theme-textLight text-base sm:text-lg leading-relaxed mt-4 max-w-3xl">
+        Here are some of the projects we've worked on, delivering innovative IT solutions across industries.
+      </p>
+    </div>
+
+    <!-- Projects Grid: 2 Cards per Row -->
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-theme-altBg border-2 border-accent overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="100">
+        <img src="./assets/crumbell.webp" alt="Crumbell Project" class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold mb-1 text-theme-textDark">Crumbell Project</h3>
+          <p class="text-sm mb-2 text-accent">Mobile App & Backend - Crumbell</p>
+          <p class="text-theme-textLight mb-4 flex-grow">
+            A cross-platform mobile app and backend system designed for seamless order and inventory management. Built with React Native, Express.js, and MongoDB.
+          </p>
+          <p class="font-semibold mb-2 text-theme-textDark">Tech Stack: <span class="font-normal text-theme-textLight">React Native, MongoDB, Express JS</span></p>
+          <a href="#"
+             class="mt-5 relative inline-block px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
+                    overflow-hidden transition-colors duration-300 ease-out mx-auto
+                    before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
+                    before:transition-transform before:duration-300 before:ease-out before:z-0
+                    hover:before:scale-x-100 hover:text-white">
+            <span class="relative z-10">View Project</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-theme-altBg border-2 border-accent overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="200">
+        <img src="./assets/erp.webp" alt="SSP Project" class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold mb-1 text-theme-textDark">SSP Project</h3>
+          <p class="text-sm mb-2 text-accent">School ERP System - SSPS</p>
+          <p class="text-theme-textLight mb-4 flex-grow">
+            A comprehensive school ERP system built with MERN stack, providing features like student management, attendance, grades, and reports.
+          </p>
+          <p class="font-semibold mb-2 text-theme-textDark">Tech Stack: <span class="font-normal text-theme-textLight">MERN</span></p>
+          <a href="#"
+             class="mt-5 relative inline-block px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
+                    overflow-hidden transition-colors duration-300 ease-out mx-auto
+                    before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
+                    before:transition-transform before:duration-300 before:ease-out before:z-0
+                    hover:before:scale-x-100 hover:text-white">
+            <span class="relative z-10">View Project</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-theme-altBg border-2 border-accent overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="300">
+        <img src="./assets/dawabiro.webp" alt="Dawabiro Project" class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold mb-1 text-theme-textDark">Dawabiro Project</h3>
+          <p class="text-sm mb-2 text-accent">Medicine Comparison - Dawabiro</p>
+          <p class="text-theme-textLight mb-4 flex-grow">
+            A medicine comparison tool built with Next.js, Node.js, and ExpressJS, featuring scheduled scraping functionality to provide updated comparisons.
+          </p>
+          <p class="font-semibold mb-2 text-theme-textDark">Tech Stack: <span class="font-normal text-theme-textLight">NEXT JS, MongoDB, Express JS, Puppeteer</span></p>
+          <a href="#"
+             class="mt-5 relative inline-block px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
+                    overflow-hidden transition-colors duration-300 ease-out mx-auto
+                    before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
+                    before:transition-transform before:duration-300 before:ease-out before:z-0
+                    hover:before:scale-x-100 hover:text-white">
+            <span class="relative z-10">View Project</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-theme-altBg border-2 border-accent overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="400">
+        <img src="./assets/LoginPageDemo.webp" alt="Nalanda Netralaya Project" class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold mb-1 text-theme-textDark">Nalanda Netralaya Project</h3>
+          <p class="text-sm mb-2 text-accent">Hospital Website - Nalanda Netralaya</p>
+          <p class="text-theme-textLight mb-4 flex-grow">
+            A responsive dental hospital website with appointment booking and service details.
+          </p>
+          <p class="font-semibold mb-2 text-theme-textDark">Tech Stack: <span class="font-normal text-theme-textLight">HTML, CSS, JavaScript</span></p>
+          <a href="#"
+             class="mt-5 relative inline-block px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
+                    overflow-hidden transition-colors duration-300 ease-out mx-auto
+                    before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
+                    before:transition-transform before:duration-300 before:ease-out before:z-0
+                    hover:before:scale-x-100 hover:text-white">
+            <span class="relative z-10">View Project</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-theme-altBg border-2 border-accent overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="500">
+        <img src="./assets/dawabiro.webp" alt="Howbee Project" class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold mb-1 text-theme-textDark">Howbee Project</h3>
+          <p class="text-sm mb-2 text-accent">Interactive Website - Howbee</p>
+          <p class="text-theme-textLight mb-4 flex-grow">
+            A visually stunning website featuring complex animations and interactive designs that enhance user engagement.
+          </p>
+          <p class="font-semibold mb-2 text-theme-textDark">Tech Stack: <span class="font-normal text-theme-textLight">HTML, CSS, JavaScript</span></p>
+          <a href="#"
+             class="mt-5 relative inline-block px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
+                    overflow-hidden transition-colors duration-300 ease-out mx-auto
+                    before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
+                    before:transition-transform before:duration-300 before:ease-out before:z-0
+                    hover:before:scale-x-100 hover:text-white">
+            <span class="relative z-10">View Project</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-theme-altBg border-2 border-accent overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="600">
+        <img src="./assets/crumbell.webp" alt="Prismstar Project" class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold mb-1 text-theme-textDark">Prismstar Project</h3>
+          <p class="text-sm mb-2 text-accent">Office Realty - Prismstar</p>
+          <p class="text-theme-textLight mb-4 flex-grow">
+            An office leasing realty site providing details about available properties.
+          </p>
+          <p class="font-semibold mb-2 text-theme-textDark">Tech Stack: <span class="font-normal text-theme-textLight">HTML, CSS, JavaScript, Bootstrap</span></p>
+          <a href="#"
+             class="mt-5 relative inline-block px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
+                    overflow-hidden transition-colors duration-300 ease-out mx-auto
+                    before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
+                    before:transition-transform before:duration-300 before:ease-out before:z-0
+                    hover:before:scale-x-100 hover:text-white">
+            <span class="relative z-10">View Project</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Add AOS JS before closing body -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    mirror: false
+  });
+</script>
+
+
+
+<section class="bg-[#FAF7F2] py-20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start px-4 sm:px-6 lg:px-8">
+
+    <!-- Left: Image -->
+    <div data-aos="fade-right" class="w-full h-64 sm:h-80 md:h-96 lg:h-full relative overflow-hidden">
+      <img src="./assets/about-img.png" alt="Contact Us"
+        class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+    </div>
+
+    <!-- Right: Title + Form -->
+    <div class="flex flex-col justify-start">
+
+      <!-- Title -->
+      <div data-aos="fade-left" class="mb-8">
+        <p class="text-sm uppercase tracking-wide text-gray-600 mb-2">Contact Us</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-black relative inline-block pb-2">
+          Have a cool project?<br>Get in touch!
+          <span class="absolute left-0 bottom-0 w-20 h-1 bg-accent"></span>
+        </h2>
+        <p class="text-gray-700 text-base sm:text-lg mt-3">
+          We’d love to hear about your ideas. Drop us a message and our team will get back to you promptly.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <div data-aos="fade-up" class="bg-white p-6 sm:p-10 shadow-md">
+        <form class="space-y-5">
+
+          <!-- Name -->
+          <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3"><i class="fa-regular fa-user"></i></span>
+            <input type="text" placeholder="Name"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
+          </div>
+
+          <!-- Phone -->
+          <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3"><i class="fa-solid fa-phone"></i></span>
+            <input type="text" placeholder="Phone"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3"><i class="fa-regular fa-envelope"></i></span>
+            <input type="email" placeholder="Email Address"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
+          </div>
+
+          <!-- Subject -->
+          <div class="flex items-center border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3"><i class="fa-regular fa-pen-to-square"></i></span>
+            <input type="text" placeholder="Subject"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base py-2">
+          </div>
+
+          <!-- Message -->
+          <div class="flex items-start border-b border-gray-300 pb-3 focus-within:border-accent transition-colors">
+            <span class="text-gray-400 mr-3 mt-1"><i class="fa-regular fa-comment"></i></span>
+            <textarea placeholder="How can we help you? Feel free to get in touch!" rows="4"
+              class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-base sm:text-base resize-y py-2"></textarea>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="flex items-center text-sm text-gray-600">
+            <input type="checkbox" id="agree" class="mr-2">
+            <label for="agree">I agree that my data is <a href="#"
+                class="text-accent underline">collected</a>.</label>
+          </div>
+
+          <!-- Button -->
+          <button type="submit"
+            class="bg-accent text-white font-bold uppercase py-3 px-6 w-full sm:w-auto hover:bg-accent-dark transition-colors duration-300">
+            Get in touch
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer 
+  class="relative text-[#EDE6D6] bg-cover bg-center pt-16"
+  style="background-image: url('./assets/bg2.png');"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-3 gap-12">
+    
+    <!-- Left -->
+    <div class="flex items-center md:items-start">
+      <h2 class="text-4xl font-bold leading-snug max-w-xs">
+        Delivering top-tier Git solutions globally
+      </h2>
+    </div>
+
+    <!-- Middle -->
+    <div>
+      <h3 class="font-semibold mb-3">Address</h3>
+      <p>Germany —</p>
+      <p>785 15h Street, Office 478</p>
+      <p>Berlin, De 81566</p>
+      <div class="flex gap-4 mt-6">
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
+          <i class="fab fa-dribbble"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div>
+      <h3 class="font-semibold mb-3">Say Hello</h3>
+      <a href="mailto:info@thundergit.com" class="block hover:text-accent">info@thundergit.com</a>
+      <a href="tel:+18408412569" class="text-lg font-semibold hover:text-accent">+1 840 841 25 69</a>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t border-gray-700 mt-12 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 px-6 lg:px-8">
+    <div class="flex space-x-6 mb-4 md:mb-0">
+      <a href="#" class="text-white text-lg hover:text-accent">Our Blog</a>
+      <a href="#" class=" text-white text-lg hover:text-accent">About Us</a>
+      <a href="#" class=" text-white  text-lg hover:text-accent">Contact Us</a>
+    </div>
+    <p>ThunderGit © 2025. All Rights Reserved.</p>
+  </div>
+<!-- Floating Presale Chat -->
+<!-- Presale Chat -->
+<div class="fixed bottom-16 left-4 flex items-center z-40"> 
+  <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+    <i class="fas fa-comments"></i>
+  </div>
+  <span class="ml-2 bg-white text-black px-4 py-1 rounded-md shadow border border-gray-300">
+    Presale Chat
+  </span>
+</div>
+
+<!-- Scroll Toggle -->
+<button id="scrollToggleBtn" 
+  class="fixed bottom-16 right-4 w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-accent z-40">
+  <i id="scrollIcon" class="fas fa-arrow-up"></i>
+</button>
+
+
+
+
+  <!-- Floating Right Buttons -->
+  <!-- <div class="fixed top-1/3 right-0 flex flex-col z-50">
+    <a href="#" class="bg-accent p-4 border-b border-black hover:bg-orange-600">🛒</a>
+    <a href="#" class="bg-accent p-4 border-b border-black hover:bg-orange-600">🖼</a>
+    <a href="#" class="bg-accent p-4 hover:bg-orange-600">💳</a>
+  </div> -->
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // Animation duration
+    once: true,     // Only animate once
+  });
+</script>
+
+
+ <script src="./script.js"></script>
+
+</body>
+</html>

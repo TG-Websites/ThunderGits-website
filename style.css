@@ -1,151 +1,220 @@
+/* Testimonial Box */
 .testimonial-box {
-    background-color: #1E1E1E;
-    position: relative;
-    transition: all 0.3s ease;
-  }
+  background-color: #1E1E1E;
+  position: relative;
+  transition: all 0.3s ease;
+}
 
-
-  .testimonial-box .quote {
-  font-size: 3.5rem; /* bigger than 4xl (which is 2.25rem), closer to 56px */
-  color: #e06b5e; /* coral/orange from screenshot */
+.testimonial-box .quote {
+  font-size: 3.5rem; /* bigger than 4xl (2.25rem) */
   font-weight: 900;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   line-height: 1;
   display: inline-block;
   margin-bottom: 1.25rem;
+  /* Gradient text for quote */
+  background: linear-gradient(to right, #ec4899, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-  .testimonial-box::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    transform: translate(-50%, 100%);
-    left: 50%;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 12px solid #1E1E1E;
-    transition: all 0.3s ease;
-  }
 
-  /* Active (center) Slide Styling */
-  .swiper-slide-active .testimonial-box {
-    background-color: #f25835 !important;
-  }
+.testimonial-box::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  left: 50%;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #1E1E1E;
+  transition: all 0.3s ease;
+}
 
-  .swiper-slide-active .testimonial-box::before {
-    border-top-color: #f25835 !important;
-  }
+/* Active (center) Slide Styling */
+/* Active (center) Slide Styling */
+.swiper-slide-active .testimonial-box {
+  background: linear-gradient(to right, #ec4899, #9333ea) !important;
+}
 
-  .swiper-slide-active img {
-    border: 2px solid white;
-  }
+.swiper-slide-active .testimonial-box::before {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #ba77f8; /* Use gradient start color to make it visible */
+  transform: translate(-50%, 100%);
+  left: 50%;
+}
 
-  .swiper-slide-active .quote {
-    color: white !important;
-  }
 
-  /* Dots Styling */
- .testimonialSwiper .swiper-pagination {
+.swiper-slide-active img {
+  border: 2px solid white;
+}
+
+/* Dots Styling */
+.testimonialSwiper .swiper-pagination {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: auto; /* Ye center alignment sahi karega */
+  width: auto;
   display: flex;
   justify-content: center;
-  gap: 4px; /* bullets ke beech thoda space */
+  gap: 4px;
+}
+
+.swiper-pagination-bullet {
+  background: #d1d5db; /* neutral gray */
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: linear-gradient(to right, #ec4899, #9333ea);
+  opacity: 1;
 }
 
 
-  .swiper-pagination-bullet {
-    background: white;
-    opacity: 0.5;
+/* Make the quote white on the active slide */
+.swiper-slide-active .testimonial-box .quote {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: white !important;
+}
+
+
+/* Brand colors for social icons on hover remain the same */
+.social-facebook:hover i { color: #1877f2; }
+.social-twitter:hover i { color: #1da1f2; }
+.social-dribbble:hover i { color: #ea4c89; }
+.social-instagram:hover i { color: #e4405f; }
+
+/* Marquee Gradient */
+/* .marquee h1 {
+  font-size: 16vw;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #ec4899, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 3rem;
+  white-space: nowrap;
+} */
+
+
+
+/* .marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+}
+
+.marquee h1 {
+  font-size: 16vw;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #ec4899, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 3rem;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
   }
-
-  .swiper-pagination-bullet-active {
-    background: #f25835;
-    opacity: 1;
+  100% {
+    transform: translateX(-50%);
   }
+} */
 
 
-    /* Brand colors for social icons on hover */
-  .social-facebook:hover i {
-    color: #1877f2; /* Facebook Blue */
+/* Tailwind accent color replacement */
+.text-accent { 
+  background: linear-gradient(to right, #ec4899, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}        
+.border-accent { 
+  border-image: linear-gradient(to right, #ec4899, #9333ea) 1; 
+}
+.before\:bg-accent::before { 
+  background: linear-gradient(to right, #ec4899, #9333ea); 
+}
+
+/* Blog Swiper Pagination Dots */
+.blogSwiper .swiper-pagination-bullet-active {
+  background: linear-gradient(to right, #ec4899, #9333ea);
+}
+
+
+
+/* Swiper pagination alignment fix */
+.swiper-pagination {
+  position: relative !important; /* overlay hata diya */
+  bottom: 0 !important;          /* cards ke niche le aaya */
+  margin-top: 2.5rem !important; /* 10 = 40px ka gap */
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .swiper-pagination {
+    margin-top: 2rem !important; /* mobile me thoda kam gap */
   }
-  .social-twitter:hover i {
-    color: #1da1f2; /* Twitter Blue */
-  }
-  .social-dribbble:hover i {
-    color: #ea4c89; /* Dribbble Pink */
-  }
-  .social-instagram:hover i {
-    color: #e4405f; /* Instagram Pinkish */
-  }
+}
 
 
 
 
-  .marquee {
-      display: flex;
-      width: max-content;
-      animation: marquee 100s linear infinite;
+ /* Custom Animations */
+  @keyframes slideFadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
     }
-
-    .marquee-content {
-      display: flex;
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
-
-    .marquee h1 {
-      font-size: 16vw;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      background: var(--accent, #f25835);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      padding: 0 3rem;
-      white-space: nowrap;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
- /* Tailwind accent color replacement if needed */
-  .text-accent { color: #f25835; }        /* Gold/Yellow accent */
-  .border-accent { border-color: #f25835; }
-  .before\:bg-accent::before { background-color: #f25835; }
-
-     /* Pagination dots ka spacing */
-  .blogSwiper .swiper-pagination {
-    margin-top: 2rem; /* cards se gap */
-    position: relative; /* bottom me fix na ho, cards ke neeche rahe */
-    display: flex;
-    justify-content: center;
-    gap: 0.2rem;
   }
 
-  /* Inactive dots visible */
-  .blogSwiper .swiper-pagination-bullet {
-    background-color: #d1d5db; /* Tailwind gray-300 */
-    opacity: 1;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
+  @keyframes floatUpDown {
+    0%, 100% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
   }
 
-  /* Active dot accent color */
-  .blogSwiper .swiper-pagination-bullet-active {
-    background-color: #f25835; /* Tailwind orange-500 */
-   
+  @keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
-
+  /* Animation Utilities */
+  .animate-slide-fade-up {
+    animation: slideFadeUp 1s ease-out forwards;
+  }
+  .animate-slide-fade-up-delay1 {
+    animation: slideFadeUp 1s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  .animate-slide-fade-up-delay2 {
+    animation: slideFadeUp 1s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+  .animate-float-up-down {
+    animation: floatUpDown 3s ease-in-out infinite;
+  }
+  .animate-overlay {
+    animation: fadeInOverlay 1.2s ease-in-out forwards;
+  }
 
 
   /* Slide up + fade once */

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -68,165 +69,203 @@
     }
   </script>
   <!-- Swiper CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css">
 
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
 
 </head>
+
 <body class="bg-dark text-theme-text">
 
 
-<section 
-  class="relative bg-cover bg-center flex flex-col justify-between sm:min-h-[50vh]"
-  style="background-image: url('./assets/bg2.png');"
->
+<section class="relative bg-cover bg-center"
+  style="background-image: url('./assets/bg2.png');">
+
   <!-- Overlay -->
   <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
 
-  <!-- Navbar -->
-  <header class="top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
-    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex justify-between items-center h-20 border-b border-theme-bd">
-      <div class="flex items-center gap-2 text-2xl font-bold text-offwhite">
-        <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-        <span>ThunderGits</span>
-      </div>
-      <nav class="hidden md:flex gap-8 text-offwhite font-medium">
-        <a href="./index.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
-        <a href="/about" class="pb-1 border-b-2 border-linkhover">About</a>
-        <a href="./work.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
-        <a href="./service.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-        <a href="./career.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-        <a href="./contact.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-      </nav>
-      <div class="flex items-center gap-6">
-        <a href="#quote"
-          class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
+  <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
+      <div
+        class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex justify-between items-center h-20 border-b border-theme-bd">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
+          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <span>ThunderGits</span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
+          <a href="./index.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">Home</a>
+          <a href="./about.html"
+            class="pb-1 border-b-2 border-linkhover">About</a>
+          <a href="./work.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
+          <a href="./service.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
+          <a href="./career.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
+          <a href="./contact.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
+        </nav>
+
+        <!-- Quote + Hamburger -->
+        <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
+          <a href="#quote" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
                text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
                border border-pink-500 hover:text-white transition-all duration-300 ease-out
                before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
                before:scale-x-0 before:origin-left hover:before:scale-x-100 
                before:transition-transform before:duration-300 before:z-[-1]">
-          Get a Quote
-        </a>
-        <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
-          <i class="fas fa-bars text-lg"></i>
-        </button>
+            Get a Quote
+          </a>
+
+          <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
 
-    <!-- Mobile Menu -->
+ <!-- Mobile Menu -->
     <div id="mobileMenu"
       class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
       <div class="flex justify-between items-center mb-10">
-        <div class="flex items-center gap-2 text-2xl font-bold">
+        <div class="flex items-center gap-2 text-lg font-bold">
           <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
           <span class="text-white">ThunderGits</span>
         </div>
-        <button onclick="toggleMobileMenu()" class="text-gray-300 text-lg">
-          Close <span class="ml-2 text-lg">×</span>
+        <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
+          <span>Close</span>
+          <span class="text-2xl leading-none">×</span>
         </button>
       </div>
 
-      <div class="space-y-6">
-        <a href="./index.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Home</span><span class="ml-2">→</span>
+      <div class="space-y-5">
+        <a href="#" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Home</span><span class="text-sm">→</span>
         </a>
-        <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>About</span><span class="ml-2">→</span>
+        <a href="./about.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>About</span><span class="text-sm">→</span>
         </a>
-        <a href="./work.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Work</span><span class="ml-2">→</span>
+        <a href="./work.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Work</span><span class="text-sm">→</span>
         </a>
-        <a href="./service.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Services</span><span class="ml-2">→</span>
+        <a href="./service.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Services</span><span class="text-sm">→</span>
         </a>
-        <a href="./career.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Career</span><span class="ml-2">→</span>
+        <a href="./career.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Career</span><span class="text-sm">→</span>
         </a>
-        <a href="./contact.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-          <span>Contact</span><span class="ml-2">→</span>
+        <a href="./contact.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Contact</span><span class="text-sm">→</span>
         </a>
 
-        <!-- Get a Quote Button in Mobile Menu -->
+        <!-- Get a Quote Button -->
         <div class="pt-4">
-          <a href="#" class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
-             hover:text-white transition-all duration-300 ease-out
-             before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
-             hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
+          <a href="#"
+            class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
             Get a Quote
           </a>
         </div>
       </div>
 
-      <!-- Footer Icons in Mobile -->
-      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-6 text-base text-graytext">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-dribbble"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+      <!-- Footer Icons -->
+      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-x-twitter"></i></a>
       </div>
     </div>
 
-  <!-- Hero Text -->
- <div class="relative z-20 flex-grow mt-20 py-8 sm:py-0">
-  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
+
+
+
+  <!-- Hero Section -->
+<div class="relative z-20 flex items-center min-h-[50vh] pt-20">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
     
-    <!-- Gradient Border Wrapper -->
-    <div class="relative pl-4">
-      <!-- Gradient Border -->
-      <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-pink-500 to-purple-500"></div>
+   
+
+    <!-- Right Content -->
+    <div id="hero-content" class="relative flex items-center">
+      <!-- Left Gradient Border -->
+      <div id="gradient-border" class="absolute left-0 top-0 bg-gradient-to-b from-pink-500 to-purple-500 rounded-l-xl" 
+           style="width: 4px;"></div>
 
       <!-- Content -->
-      <div class="pl-4">
-        <!-- Gradient Text -->
-        <p class="text-4xl sm:text-5xl font-bold drop-shadow-lg leading-snug mb-1 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+               <div class="border-l-4 border-accent" data-aos="fade-right">
+
+      <div class="pl-4 flex flex-col  h-full">
+        <p class="text-4xl sm:text-5xl font-bold leading-snug mb-2 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
           About Us
         </p>
-        <h1 class="text-offwhite text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight drop-shadow-lg">
+        <h1 class="text-offwhite text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
           We Build. We Innovate.
         </h1>
-        <p class="mt-3 text-base sm:text-lg text-offwhite/80 max-w-xl">
-          Driving digital success with creativity & technology.
+        <p class="mt-2 sm:mt-4 text-base sm:text-lg text-offwhite/80 max-w-xl">
+           Driving digital success with creativity & technology.
         </p>
       </div>
     </div>
 
+  
   </div>
 </div>
+
+<!-- <script>
+  function adjustHeroContent() {
+    const img = document.getElementById('hero-image');
+    const content = document.getElementById('hero-content');
+    const border = document.getElementById('gradient-border');
+
+    const imgHeight = img.clientHeight;
+    content.style.height = imgHeight + 'px';
+    border.style.height = imgHeight + 'px';
+  }
+
+  window.addEventListener('load', adjustHeroContent);
+  window.addEventListener('resize', adjustHeroContent);
+</script> -->
+
+
 
 </section>
 
 
-<script>
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    if (menu.classList.contains('hidden')) {
-      menu.classList.remove('hidden');
-      menu.style.opacity = 0;
-      setTimeout(() => {
-        menu.style.opacity = 1;
-      }, 10);
-    } else {
-      menu.style.opacity = 0;
-      setTimeout(() => {
-        menu.classList.add('hidden');
-      }, 300); // match with CSS transition
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.style.opacity = 0;
+        setTimeout(() => {
+          menu.style.opacity = 1;
+        }, 10);
+      } else {
+        menu.style.opacity = 0;
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 300); // match with CSS transition
+      }
     }
-  }
-</script>
+  </script>
 
 
- <!-- Floating Social Bar -->
+  <!-- Floating Social Bar -->
   <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
     <a href="#"
       class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
@@ -245,274 +284,294 @@
 
 
 
-<section class="w-full bg-white py-20 sm:py-24">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-6 sm:px-10 lg:px-16">
-    
-    <!-- Left Side Image -->
-    <div class="w-full h-[350px] sm:h-[450px] lg:h-[500px] overflow-hidden rounded-xl">
-      <img src="./assets/about-img.png" alt="About ThunderGits" 
-           class="w-full h-full object-cover" />
+  <section class="w-full bg-white py-20 sm:py-24 animate-slide-fade-up">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-6 sm:px-10 lg:px-16">
+
+      <!-- Left Side Image -->
+      <div class="w-full h-[350px] sm:h-[450px] lg:h-[500px] overflow-hidden rounded-xl">
+        <img src="./assets/about-img.png" alt="About ThunderGits" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Right Side Content -->
+      <div>
+        <p class="text-sm uppercase tracking-wide text-gray-600 mb-2">About ThunderGits Technologies</p>
+
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-black relative inline-block pb-2">
+          Transforming Ideas Into Powerful Digital Solutions
+          <!-- Gradient underline -->
+          <span
+            class="absolute left-0 bottom-0 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+        </h2>
+
+        <p class="text-gray-700 text-base sm:text-lg mt-5 max-w-xl">
+          At ThunderGits Technologies, we don’t just build software; we empower businesses
+          to thrive with cutting-edge IT solutions. Our team blends innovation, expertise,
+          and passion to deliver impactful results — ensuring your digital presence is
+          not only strong but future-ready.
+        </p>
+
+        <p class="text-gray-700 text-base sm:text-lg mt-4 max-w-xl">
+          From concept to execution, we turn ambitious ideas into reality by combining
+          creative design, robust development, and strategic thinking.
+        </p>
+
+        <!-- Gradient Button with rounded bottom -->
+        <a href="/about"
+          class="inline-block mt-8 px-7 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-medium text-sm uppercase tracking-wide hover:opacity-90 transition rounded-md">
+          Explore More
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+  <section class="relative w-full h-[90vh] md:h-[70vh]">
+    <!-- Background Image -->
+    <div class="absolute inset-0" data-aos="zoom-in" data-aos-duration="1200">
+      <img src="./assets/image thundergits.jpg" alt="Who We Are - ThunderGits" class="w-full h-full object-cover" />
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-black/60"></div>
     </div>
 
-    <!-- Right Side Content -->
-    <div>
-      <p class="text-sm uppercase tracking-wide text-gray-600 mb-2">About ThunderGits Technologies</p>
-      
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-black relative inline-block pb-2">
-        Transforming Ideas Into Powerful Digital Solutions
-        <!-- Gradient underline -->
-        <span class="absolute left-0 bottom-0 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+    <!-- Content Overlay -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+
+      <p class="text-sm uppercase tracking-wide text-gray-300 mb-2" data-aos="fade-down" data-aos-delay="200">
+        Who We Are
+      </p>
+
+      <!-- Gradient underline -->
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug relative inline-block pb-2" data-aos="fade-up"
+        data-aos-delay="400">
+        Empowering Businesses Through Technology
+        <span
+          class="absolute left-1/2 -translate-x-1/2 bottom-0 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
       </h2>
-      
-      <p class="text-gray-700 text-base sm:text-lg mt-5 max-w-xl">
-        At ThunderGits Technologies, we don’t just build software; we empower businesses 
-        to thrive with cutting-edge IT solutions. Our team blends innovation, expertise, 
-        and passion to deliver impactful results — ensuring your digital presence is 
-        not only strong but future-ready.
-      </p>
-      
-      <p class="text-gray-700 text-base sm:text-lg mt-4 max-w-xl">
-        From concept to execution, we turn ambitious ideas into reality by combining 
-        creative design, robust development, and strategic thinking.
+
+      <p class="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-gray-200" data-aos="fade-up"
+        data-aos-delay="500">
+        ThunderGits is an innovative IT solutions agency dedicated to transforming businesses
+        through technology. With expertise in the latest tools, we deliver tailor-made solutions
+        that drive success and help organizations thrive in the digital era.
       </p>
 
-      <!-- Gradient Button with rounded bottom -->
-      <a href="/about" 
-         class="inline-block mt-8 px-7 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-medium text-sm uppercase tracking-wide hover:opacity-90 transition rounded-md">
-        Explore More
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-<section class="relative w-full h-[90vh] md:h-[70vh]">
-  <!-- Background Image -->
-  <div class="absolute inset-0">
-    <img src="./assets/image thundergits.jpg" alt="Who We Are - ThunderGits"
-      class="w-full h-full object-cover" />
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-black/60"></div>
-  </div>
-
-  <!-- Content Overlay -->
-  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
-    
-    <p class="text-sm uppercase tracking-wide text-gray-300 mb-2">Who We Are</p>
-    
-    <!-- Gradient underline -->
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug relative inline-block pb-2">
-      Empowering Businesses Through Technology
-      <span class="absolute left-1/2 -translate-x-1/2 bottom-0 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
-    </h2>
-
-    <p class="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-gray-200">
-      ThunderGits is an innovative IT solutions agency dedicated to transforming businesses 
-      through technology. With expertise in the latest tools, we deliver tailor-made solutions 
-      that drive success and help organizations thrive in the digital era.
-    </p>
-
-    <a href="#" class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg
+      <a href="#" class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg
       text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
       border border-pink-500 hover:text-white transition-all duration-300 ease-out
       before:absolute before:inset-0 before:rounded-lg 
       before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
       before:scale-x-0 before:origin-left hover:before:scale-x-100 
-      before:transition-transform before:duration-300 before:z-[-1]" data-aos="flip-up" data-aos-delay="600">
+      before:transition-transform before:duration-300 before:z-[-1]" data-aos="flip-up" data-aos-delay="700">
         Explore Our Process
-    </a>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="w-full bg-white relative py-24">
-  <div class="max-w-7xl mx-auto px-6 sm:px-10 md:px-20">
-    
-    <!-- Section Heading -->
-    <div class="mb-16 text-left">
-      <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
-        Our Process
-      </h4>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-black">
-        Our process is simple & transparent
-        <!-- Gradient underline -->
-        <span class="absolute left-0 bottom-0 w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
-      </h2>
-      <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl">
-        We believe in providing a seamless experience from application to onboarding.
-      </p>
+      </a>
     </div>
+  </section>
 
-    <!-- Swiper -->
-    <div class="swiper processSwiper relative h-[60vh] sm:h-[65vh] md:h-[60vh]">
-      <div class="swiper-wrapper">
 
-        <!-- Step 1 -->
-        <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
-          <div class="w-full md:w-1/2 h-full">
-            <img src="./assets/bg2.png" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="w-full bg-white relative py-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 md:px-20">
+
+      <!-- Section Heading -->
+      <div class="mb-16 text-left">
+        <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
+          Our Process
+        </h4>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-black">
+          Our process is simple & transparent
+          <!-- Gradient underline -->
+          <span
+            class="absolute left-0 bottom-0 w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+        </h2>
+        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl">
+          We believe in providing a seamless experience from application to onboarding.
+        </p>
+      </div>
+
+      <!-- Swiper -->
+      <div class="swiper processSwiper relative h-[60vh] sm:h-[65vh] md:h-[60vh]">
+        <div class="swiper-wrapper">
+
+          <!-- Step 1 -->
+          <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
+            <div class="w-full md:w-1/2 h-full">
+              <img src="./assets/bg2.png" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
+            </div>
+            <div
+              class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
+              <span class="text-lg font-bold mb-2 text-black">01</span>
+              <h4 class="uppercase text-sm tracking-widest opacity-80">Brand Consultation</h4>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
+                Collaborating to understand your business, vision, and objectives.
+              </h2>
+            </div>
           </div>
-          <div class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
-            <span class="text-lg font-bold mb-2 text-black">01</span>
-            <h4 class="uppercase text-sm tracking-widest opacity-80">Brand Consultation</h4>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
-              Collaborating to understand your business, vision, and objectives.
-            </h2>
+
+          <!-- Step 2 -->
+          <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
+            <div class="w-full md:w-1/2 h-full">
+              <img src="./assets/bd-img.png" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
+            </div>
+            <div
+              class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
+              <span class="text-lg font-bold mb-2 text-black">02</span>
+              <h4 class="uppercase text-sm tracking-widest opacity-80">Understand</h4>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
+                Collaborating to analyze your needs and craft a customized approach.
+              </h2>
+            </div>
           </div>
+
+          <!-- Step 3 -->
+          <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
+            <div class="w-full md:w-1/2 h-full">
+              <img src="./assets/black-smooth-textured-paper-background.jpg"
+                class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
+            </div>
+            <div
+              class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
+              <span class="text-lg font-bold mb-2 text-black">03</span>
+              <h4 class="uppercase text-sm tracking-widest opacity-80">Proposal</h4>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
+                Outlining goals, timeline, and deliverables to ensure clear communication.
+              </h2>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
+            <div class="w-full md:w-1/2 h-full">
+              <img src="./assets/blogimg1.jpg" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
+            </div>
+            <div
+              class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
+              <span class="text-lg font-bold mb-2 text-black">04</span>
+              <h4 class="uppercase text-sm tracking-widest opacity-80">Agreement</h4>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
+                Formalizing the agreement with terms, conditions, and commitments.
+              </h2>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
+            <div class="w-full md:w-1/2 h-full">
+              <img src="./assets/image thundergits.jpeg" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg"
+                alt="">
+            </div>
+            <div
+              class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
+              <span class="text-lg font-bold mb-2 text-black">05</span>
+              <h4 class="uppercase text-sm tracking-widest opacity-80">Strategize</h4>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
+                Building the strategy and roadmap for executing the plan with precision.
+              </h2>
+            </div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
+            <div class="w-full md:w-1/2 h-full">
+              <img src="./assets/image thundergits.jpg" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg"
+                alt="">
+            </div>
+            <div
+              class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
+              <span class="text-lg font-bold mb-2 text-black">06</span>
+              <h4 class="uppercase text-sm tracking-widest opacity-80">Build</h4>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
+                Developing high-quality, scalable solutions based on the agreed strategy.
+              </h2>
+            </div>
+          </div>
+
+          <!-- Step 7 -->
+          <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
+            <div class="w-full md:w-1/2 h-full">
+              <img src="./assets/about-img.png" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
+            </div>
+            <div
+              class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
+              <span class="text-lg font-bold mb-2 text-black">07</span>
+              <h4 class="uppercase text-sm tracking-widest opacity-80">Support</h4>
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
+                Providing ongoing maintenance and performance improvements post-delivery.
+              </h2>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Step 2 -->
-        <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
-          <div class="w-full md:w-1/2 h-full">
-            <img src="./assets/bd-img.png" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
+        <!-- Custom Horizontal Arrows (Bottom Center of Cards) -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-4 z-50">
+          <!-- Up Arrow -->
+          <div id="custom-prev"
+            class="w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-black/70 text-white rounded-full shadow-lg cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+            </svg>
           </div>
-          <div class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
-            <span class="text-lg font-bold mb-2 text-black">02</span>
-            <h4 class="uppercase text-sm tracking-widest opacity-80">Understand</h4>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
-              Collaborating to analyze your needs and craft a customized approach.
-            </h2>
-          </div>
-        </div>
 
-        <!-- Step 3 -->
-        <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
-          <div class="w-full md:w-1/2 h-full">
-            <img src="./assets/black-smooth-textured-paper-background.jpg" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
-          </div>
-          <div class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
-            <span class="text-lg font-bold mb-2 text-black">03</span>
-            <h4 class="uppercase text-sm tracking-widest opacity-80">Proposal</h4>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
-              Outlining goals, timeline, and deliverables to ensure clear communication.
-            </h2>
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
-          <div class="w-full md:w-1/2 h-full">
-            <img src="./assets/blogimg1.jpg" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
-          </div>
-          <div class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
-            <span class="text-lg font-bold mb-2 text-black">04</span>
-            <h4 class="uppercase text-sm tracking-widest opacity-80">Agreement</h4>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
-              Formalizing the agreement with terms, conditions, and commitments.
-            </h2>
-          </div>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
-          <div class="w-full md:w-1/2 h-full">
-            <img src="./assets/image thundergits.jpeg" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
-          </div>
-          <div class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
-            <span class="text-lg font-bold mb-2 text-black">05</span>
-            <h4 class="uppercase text-sm tracking-widest opacity-80">Strategize</h4>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
-              Building the strategy and roadmap for executing the plan with precision.
-            </h2>
-          </div>
-        </div>
-
-        <!-- Step 6 -->
-        <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
-          <div class="w-full md:w-1/2 h-full">
-            <img src="./assets/image thundergits.jpg" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
-          </div>
-          <div class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
-            <span class="text-lg font-bold mb-2 text-black">06</span>
-            <h4 class="uppercase text-sm tracking-widest opacity-80">Build</h4>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
-              Developing high-quality, scalable solutions based on the agreed strategy.
-            </h2>
-          </div>
-        </div>
-
-        <!-- Step 7 -->
-        <div class="swiper-slide flex flex-col md:flex-row h-full rounded-lg overflow-hidden shadow-lg">
-          <div class="w-full md:w-1/2 h-full">
-            <img src="./assets/about-img.png" class="w-full h-full object-cover rounded-l-lg md:rounded-l-lg" alt="">
-          </div>
-          <div class="w-full md:w-1/2 text-white flex flex-col justify-center px-6 sm:px-10 md:px-16 py-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-r-lg md:rounded-r-lg">
-            <span class="text-lg font-bold mb-2 text-black">07</span>
-            <h4 class="uppercase text-sm tracking-widest opacity-80">Support</h4>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">
-              Providing ongoing maintenance and performance improvements post-delivery.
-            </h2>
+          <!-- Down Arrow -->
+          <div id="custom-next"
+            class="w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-black/70 text-white rounded-full shadow-lg cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
         </div>
 
       </div>
 
-      <!-- Custom Horizontal Arrows (Bottom Center of Cards) -->
-      <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-4 z-50">
-        <!-- Up Arrow -->
-        <div id="custom-prev" class="w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-black/70 text-white rounded-full shadow-lg cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-          </svg>
-        </div>
-
-        <!-- Down Arrow -->
-        <div id="custom-next" class="w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-black/70 text-white rounded-full shadow-lg cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </div>
-
     </div>
-
-  </div>
-</section>
+  </section>
 
 
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script>
-var swiper = new Swiper(".processSwiper", {
-  direction: "vertical",
-  slidesPerView: 1,
-  loop: true,
-  speed: 800,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  navigation: {
-    nextEl: "#custom-next", // ⬇ Down arrow
-    prevEl: "#custom-prev", // ⬆ Up arrow
-  },
-  mousewheel: false,
-});
-
-
-</script>
+  <script>
+    var swiper = new Swiper(".processSwiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: "#custom-next", // ⬇ Down arrow
+        prevEl: "#custom-prev", // ⬆ Up arrow
+      },
+      mousewheel: false,
+    });
 
 
+  </script>
 
-<!-- Swiper JS -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+  <!-- Swiper JS -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
   var swiper = new Swiper(".processSwiper", {
@@ -543,69 +602,79 @@ var swiper = new Swiper(".processSwiper", {
 
 
 
-<section class="w-full px-6 sm:px-10 md:px-20 py-20 bg-white">
-  <div class="max-w-7xl mx-auto">
+  <section class="w-full px-6 sm:px-10 md:px-20 py-20 bg-white">
+    <div class="max-w-7xl mx-auto">
 
-    <!-- Section Heading -->
-    <div class="mb-16 text-left">
-      <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
-        Our Values
-      </h4>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-black">
-        What drives us forward
-        <span class="absolute left-0 bottom-0 w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
-      </h2>
-      <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl">
-        We uphold principles that define our work culture and shape our client relationships.
-      </p>
+      <!-- Section Heading -->
+      <div class="mb-16 text-left">
+        <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
+          Our Values
+        </h4>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-black">
+          What drives us forward
+          <span
+            class="absolute left-0 bottom-0 w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+        </h2>
+        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl">
+          We uphold principles that define our work culture and shape our client relationships.
+        </p>
+      </div>
+
+      <!-- Values Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Innovation -->
+        <div
+          class="bg-white text-black p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 rounded-lg">
+          <div class="text-4xl mb-5 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3
+            class="text-lg font-bold mb-3 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+            Innovation</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Constantly evolving to bring the latest technologies to our clients.
+          </p>
+        </div>
+
+        <!-- Integrity -->
+        <div
+          class="bg-white text-black p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 rounded-lg">
+          <div class="text-4xl mb-5 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3
+            class="text-lg font-bold mb-3 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+            Integrity</h3>
+          <p class="text-gray-600 leading-relaxed">
+            We believe in transparent and ethical work practices.
+          </p>
+        </div>
+
+        <!-- Excellence -->
+        <div
+          class="bg-white text-black p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 rounded-lg">
+          <div class="text-4xl mb-5 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3
+            class="text-lg font-bold mb-3 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+            Excellence</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Delivering high-quality results on time, every time.
+          </p>
+        </div>
+
+      </div>
+
     </div>
-
-    <!-- Values Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Innovation -->
-      <div class="bg-white text-black p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 rounded-lg">
-        <div class="text-4xl mb-5 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-          <i class="fas fa-lightbulb"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-3 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">Innovation</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Constantly evolving to bring the latest technologies to our clients.
-        </p>
-      </div>
-
-      <!-- Integrity -->
-      <div class="bg-white text-black p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 rounded-lg">
-        <div class="text-4xl mb-5 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-          <i class="fas fa-handshake"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-3 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">Integrity</h3>
-        <p class="text-gray-600 leading-relaxed">
-          We believe in transparent and ethical work practices.
-        </p>
-      </div>
-
-      <!-- Excellence -->
-      <div class="bg-white text-black p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 rounded-lg">
-        <div class="text-4xl mb-5 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-          <i class="fas fa-award"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-3 tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">Excellence</h3>
-        <p class="text-gray-600 leading-relaxed">
-          Delivering high-quality results on time, every time.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+  </section>
 
 
 
 
 
-<footer class="relative text-[#EDE6D6] pt-16">
+  <footer class="relative text-[#EDE6D6] pt-16">
 
     <!-- 🔥 Background Image Only -->
     <div class="absolute inset-0">
@@ -613,11 +682,11 @@ var swiper = new Swiper(".processSwiper", {
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
 
       <!-- Logo Section -->
       <div class="flex flex-col items-center md:items-start">
-        <a class="flex items-center text-white mb-4">
+        <a class="flex items-center justify-center md:justify-start text-white mb-4">
           <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
           <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
         </a>
@@ -652,15 +721,15 @@ var swiper = new Swiper(".processSwiper", {
       <div>
         <h3 class="font-semibold mb-3 text-lg">Contact</h3>
         <ul class="space-y-3">
-          <li class="flex items-start gap-2 text-gray-200">
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
             <i class="ri-map-pin-fill mt-1"></i>
             <span>Sector 85, Bata Chowk, Faridabad, Haryana, India, 121002</span>
           </li>
-          <li class="flex items-start gap-2 text-gray-200">
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
             <i class="ri-phone-fill mt-1"></i>
             <span>+91-7765979725</span>
           </li>
-          <li class="flex items-start gap-2 text-gray-200">
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
             <i class="ri-mail-fill mt-1"></i>
             <a href="mailto:contact@thundergits.com" class="hover:text-pink-400 transition">info@thundergits.com</a>
           </li>
@@ -671,33 +740,32 @@ var swiper = new Swiper(".processSwiper", {
 
     <!-- Bottom -->
     <div
-      class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
+      class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
       <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
       <div class="flex space-x-6 text-gray-300">
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
           class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
         <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
             class="fab fa-x-twitter"></i></a>
-        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-linkedin-in"></i></a>
+
+
       </div>
     </div>
 
     <!-- Floating Presale Chat -->
     <div class="fixed bottom-16 left-4 flex items-center z-40">
-      <div
-        class="w-12 h-12  rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
         <img src="./assets/call-center (1).png" alt="">
       </div>
-     <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
-             bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
-  AI Assistant
-</span>
-
+      <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
+           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
+        AI Assistant
+      </span>
     </div>
-
 
     <!-- Scroll To Top -->
     <button id="scrollToggleBtn"
@@ -707,10 +775,18 @@ var swiper = new Swiper(".processSwiper", {
   </footer>
 
 
+  <script>
+    // Animate when the page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      const hero = document.querySelector('.hero-content');
+      setTimeout(() => {
+        hero.classList.add('animate');
+      }, 200); // delay for smooth effect
+    });
+  </script>
 
-
-
- <script src="./script.js"></script>
+  <script src="./script.js"></script>
 
 </body>
+
 </html>

@@ -2,81 +2,82 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThunderGits</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThunderGits</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: {
+            base: '1em',
+            sm: '14px',
+            md: '15px',
+            lg: '1.4em',
+            xl: '42px',
+            heading: '6.75vw',
+          },
+          lineHeight: {
+            tight: '1em',
+            normal: '1.2em',
+            relaxed: '1.5em',
+            loose: '1.6em',
+            heading: '0.95em',
+          },
+          letterSpacing: {
+            wide: '1.8px',
+            tighter: '0.01em',
+          },
+          fontWeight: {
+            medium: '500',
+          },
+          transitionProperty: {
+            all: 'all',
+          },
+          transitionTimingFunction: {
+            ease: 'ease',
+          },
+          transitionDuration: {
+            DEFAULT: '300ms',
+          },
+          colors: {
             theme: {
-                extend: {
-                    fontSize: {
-                        base: '1em',
-                        sm: '14px',
-                        md: '15px',
-                        lg: '1.4em',
-                        xl: '42px',
-                        heading: '6.75vw',
-                    },
-                    lineHeight: {
-                        tight: '1em',
-                        normal: '1.2em',
-                        relaxed: '1.5em',
-                        loose: '1.6em',
-                        heading: '0.95em',
-                    },
-                    letterSpacing: {
-                        wide: '1.8px',
-                        tighter: '0.01em',
-                    },
-                    fontWeight: {
-                        medium: '500',
-                    },
-                    transitionProperty: {
-                        all: 'all',
-                    },
-                    transitionTimingFunction: {
-                        ease: 'ease',
-                    },
-                    transitionDuration: {
-                        DEFAULT: '300ms',
-                    },
-                    colors: {
-                        theme: {
-                            text: '#DEDDDB',
-                            textLight: '#848484',
-                            textDark: '#EFE8CE',
-                            link: '#E2725B',
-                            hover: '#DD644C',
-                            link2: '#7DA189',
-                            hover2: '#6D967A',
-                            link3: '#9D7246',
-                            hover3: '#5B3918',
-                            bg: '#141414',
-                            bd: '#424040',
-                            altBg: '#292828',
-                            altBd: '#535353',
-                        },
-                        dark: '#0e0e0e',
-                        offwhite: '#f5e9cd',
-                        graytext: '#d9d9d9',
-                        accent: '#f25835',
-                        footer: '#121212',
-                        linkhover: '#f5e9cd',
-                    }
-                }
-            }
+              text: '#DEDDDB',
+              textLight: '#848484',
+              textDark: '#EFE8CE',
+              link: '#E2725B',
+              hover: '#DD644C',
+              link2: '#7DA189',
+              hover2: '#6D967A',
+              link3: '#9D7246',
+              hover3: '#5B3918',
+              bg: '#141414',
+              bd: '#424040',
+              altBg: '#292828',
+              altBd: '#535353',
+            },
+            dark: '#0e0e0e',
+            offwhite: '#f5e9cd',
+            graytext: '#d9d9d9',
+            accent: '#f25835',
+            footer: '#121212',
+            linkhover: '#f5e9cd',
+          }
         }
-    </script>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      }
+    }
+  </script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
 
 </head>
@@ -84,614 +85,640 @@
 <body class="bg-dark text-theme-text">
 
 
-    <section class="relative bg-cover bg-center flex flex-col justify-between sm:min-h-[50vh]"
+  <section class="relative bg-cover bg-center flex flex-col justify-between sm:min-h-[50vh]"
     style="background-image: url('./assets/bg2.png');">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
 
     <!-- Navbar -->
-    <header class="top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
-        <div
-            class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex justify-between items-center h-20 border-b border-theme-bd">
-            <div class="flex items-center gap-2 text-2xl font-bold text-offwhite">
-                <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-                <span>ThunderGits</span>
-            </div>
-            <nav class="hidden md:flex gap-8 text-offwhite font-medium">
-                <a href="./index.html"
-                    class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
-                <a href="./about.html"
-                    class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-                <a href="./work.html"
-                    class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">Work</a>
-                <a href="./service.html"
-                    class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-                <a href="./career.html"
-                    class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-                <a href="/contact" class="pb-1 border-b-2 border-linkhover">Contact</a>
-            </nav>
-            <div class="flex items-center gap-6">
-                <a href="#quote"
-                    class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
-            hover:text-white transition-all duration-300 ease-out
-            before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
-            hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
-                    Get a Quote
-                </a>
-                <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-lg"></i>
-                </button>
-            </div>
+    <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
+      <div
+        class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex justify-between items-center h-20 border-b border-theme-bd">
+        <div class="flex items-center gap-2 text-2xl font-bold text-offwhite">
+          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <span>ThunderGits</span>
         </div>
+        <nav class="hidden md:flex gap-8 text-offwhite font-medium">
+          <a href="./index.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
+          <a href="./about.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
+          <a href="./work.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">Work</a>
+          <a href="./service.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
+          <a href="./career.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
+          <a href="/contact" class="pb-1 border-b-2 border-linkhover">Contact</a>
+        </nav>
+        <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
+          <a href="#quote" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
+               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
+               border border-pink-500 hover:text-white transition-all duration-300 ease-out
+               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
+               before:scale-x-0 before:origin-left hover:before:scale-x-100 
+               before:transition-transform before:duration-300 before:z-[-1]">
+            Get a Quote
+          </a>
+
+          <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
     </header>
 
-     <!-- Mobile Menu -->
-        <div id="mobileMenu"
-            class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-            <div class="flex justify-between items-center mb-10">
-                <div class="flex items-center gap-2 text-2xl font-bold">
-                    <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-                    <span class="text-white">ThunderGits</span>
-                </div>
-                <button onclick="toggleMobileMenu()" class="text-gray-300 text-lg">
-                    Close <span class="ml-2 text-lg">×</span>
-                </button>
-            </div>
-
-            <div class="space-y-6">
-                <a href="./index.html"
-                    class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-                    <span>Home</span><span class="ml-2">→</span>
-                </a>
-                <a href="./about.html"
-                    class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-                    <span>About</span><span class="ml-2">→</span>
-                </a>
-                <a href="./work.html"
-                    class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-                    <span>Work</span><span class="ml-2">→</span>
-                </a>
-                <a href="./service.html"
-                    class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-                    <span>Services</span><span class="ml-2">→</span>
-                </a>
-                <a href="./career.html"
-                    class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-                    <span>Career</span><span class="ml-2">→</span>
-                </a>
-                <a href="./contact.html" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-                    <span>Contact</span><span class="ml-2">→</span>
-                </a>
-
-                <!-- Get a Quote Button in Mobile Menu -->
-                <div class="pt-4">
-                    <a href="#" class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase border border-accent text-accent
-           hover:text-white transition-all duration-300 ease-out
-           before:absolute before:inset-0 before:bg-accent before:scale-x-0 before:origin-left
-           hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
-                        Get a Quote
-                    </a>
-                </div>
-            </div>
-
-            <!-- Footer Icons in Mobile -->
-            <div class="pt-8 border-t border-theme-bd mt-10 flex gap-6 text-base text-graytext">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                <a href="#"><i class="fab fa-dribbble"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
+      <div class="flex justify-between items-center mb-10">
+        <div class="flex items-center gap-2 text-lg font-bold">
+          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <span class="text-white">ThunderGits</span>
         </div>
+        <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
+          <span>Close</span>
+          <span class="text-2xl leading-none">×</span>
+        </button>
+      </div>
+
+      <div class="space-y-5">
+        <a href="#" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Home</span><span class="text-sm">→</span>
+        </a>
+        <a href="./about.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>About</span><span class="text-sm">→</span>
+        </a>
+        <a href="./work.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Work</span><span class="text-sm">→</span>
+        </a>
+        <a href="./service.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Services</span><span class="text-sm">→</span>
+        </a>
+        <a href="./career.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Career</span><span class="text-sm">→</span>
+        </a>
+        <a href="./contact.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+          <span>Contact</span><span class="text-sm">→</span>
+        </a>
+
+        <!-- Get a Quote Button -->
+        <div class="pt-4">
+          <a href="#"
+            class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Icons -->
+      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
 
     <!-- Hero Section (Updated for Contact) -->
     <div class="relative z-20 py-20 sm:py-32">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
 
-            <!-- Left Content -->
-            <div data-aos="fade-right" data-aos-duration="1200">
-                <p class="text-accent text-lg font-semibold mb-2">WE’RE HERE TO HELP YOU</p>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                    Get in Touch with <span class="text-accent">ThunderGits Technologies</span>
-                </h2>
-                <p class="text-lg text-gray-300 mb-6">
-                    Whether you have a question, need support, 
-                    or want to collaborate, we’re here to assist you. 
-                    Reach out to us and let’s work together to create something amazing.
-                </p>
+        <!-- Left Content -->
+        <div data-aos="fade-right" data-aos-duration="1200">
+          <p class="text-accent text-lg font-semibold mb-2">WE’RE HERE TO HELP YOU</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Get in Touch with <span class="text-accent">ThunderGits Technologies</span>
+          </h2>
+          <p class="text-lg text-gray-300 mb-6">
+            Whether you have a question, need support,
+            or want to collaborate, we’re here to assist you.
+            Reach out to us and let’s work together to create something amazing.
+          </p>
 
-                <!-- Buttons (Side by Side) -->
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <!-- Contact Us Button -->
-                    <a href="#contact-form"
-                        class="group relative w-full sm:w-auto px-8 py-3 text-sm sm:text-base font-semibold uppercase 
+          <!-- Buttons (Side by Side) -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <!-- Contact Us Button -->
+            <a href="#contact-form" class="group relative w-full sm:w-auto px-8 py-3 text-sm sm:text-base font-semibold uppercase 
                                border border-accent text-white overflow-hidden shadow-lg text-center">
-                        <span
-                            class="absolute inset-0 bg-accent origin-right scale-x-100 
+              <span class="absolute inset-0 bg-accent origin-right scale-x-100 
                                    transition-transform duration-500 ease-in-out 
                                    group-hover:scale-x-0 z-0"></span>
-                        <span
-                            class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-accent">
-                            Contact Us Now
-                        </span>
-                    </a>
+              <span class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-accent">
+                Contact Us Now
+              </span>
+            </a>
 
-                    <!-- FAQ Button -->
-                    <a href="#faq"
-                        class="group relative w-full sm:w-auto px-8 py-3 text-sm sm:text-base font-semibold uppercase 
+            <!-- FAQ Button -->
+            <a href="#faq" class="group relative w-full sm:w-auto px-8 py-3 text-sm sm:text-base font-semibold uppercase 
                                border border-accent text-accent overflow-hidden shadow-lg text-center">
-                        <span
-                            class="absolute inset-0 bg-accent origin-left scale-x-0 
+              <span class="absolute inset-0 bg-accent origin-left scale-x-0 
                                    transition-transform duration-500 ease-in-out 
                                    group-hover:scale-x-100 z-0"></span>
-                        <span
-                            class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-white">
-                            Frequently Asked Questions
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right Side Image -->
-            <div data-aos="fade-left" data-aos-duration="1200">
-                <img src="./assets/image thundergits.jpg" alt="Contact" class="rounded-2xl shadow-2xl" />
-            </div>
+              <span class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-white">
+                Frequently Asked Questions
+              </span>
+            </a>
+          </div>
         </div>
-    </div>
-</section>
 
-
- <!-- Floating Social Bar -->
-    <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1 animate-float-up-down">
-        <a href="#"
-            class="bg-accent w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-accent/50 transition-all"><i
-                class="fas fa-shopping-cart"></i></a>
-        <a href="#"
-            class="bg-accent w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-accent/50 transition-all"><i
-                class="fas fa-image"></i></a>
-        <a href="#"
-            class="bg-accent w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-accent/50 transition-all"><i
-                class="fas fa-credit-card"></i></a>
-    </div>
-
-
-
-
-
-
-
-
-<!-- Contact Section -->
-<section id="contact" class="relative bg-white text-gray-800 py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    
-    <!-- Section Heading -->
-    <div class="text-center mb-16">
-      <h2 class="text-xl md:text-5xl font-extrabold text-gray-900 mb-4 relative inline-block">
-        Get in Touch with Us
-        <span class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-20 h-1 bg-[#f25835]"></span>
-      </h2>
-      <p class="text-gray-600 text-md max-w-2xl mx-auto">
-        Have questions, need support, or want to collaborate?  
-        We’d love to hear from you. Reach out to one of our offices below.
-      </p>
-    </div>
-
-   <!-- Office Cards -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-  
-  <!-- Office Card -->
-  <div class="bg-white border border-gray-200 shadow-md p-8 hover:-translate-y-2 transition-all duration-300">
-    <h3 class="text-lg font-semibold text-[#f25835] mb-3">Delhi Office</h3>
-    <p class="text-gray-600 text-sm mb-4">123 Connaught Place, New Delhi, 110001</p>
-    
-    <div class="flex items-center gap-2 mb-2">
-      <i class="fas fa-phone text-[#f25835]"></i>
-      <a href="tel:+911234567890" class="text-gray-700 hover:text-[#f25835]">+91 12345 67890</a>
-    </div>
-    
-    <div class="flex items-center gap-2 mb-4">
-      <i class="fas fa-envelope text-[#f25835]"></i>
-      <a href="mailto:delhi@company.com" class="text-gray-700 hover:text-[#f25835]">delhi@company.com</a>
-    </div>
-
-    <iframe class="w-full h-40 border border-gray-200" src="https://maps.google.com/maps?q=Connaught%20Place%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-  </div>
-
-  <!-- Office Card -->
-  <div class="bg-white border border-gray-200 shadow-md p-8 hover:-translate-y-2 transition-all duration-300">
-    <h3 class="text-lg font-semibold text-[#f25835] mb-3">Mumbai Office</h3>
-    <p class="text-gray-600 text-sm mb-4">456 Marine Drive, Mumbai, 400001</p>
-    
-    <div class="flex items-center gap-2 mb-2">
-      <i class="fas fa-phone text-[#f25835]"></i>
-      <a href="tel:+912234567890" class="text-gray-700 hover:text-[#f25835]">+91 22345 67890</a>
-    </div>
-    
-    <div class="flex items-center gap-2 mb-4">
-      <i class="fas fa-envelope text-[#f25835]"></i>
-      <a href="mailto:mumbai@company.com" class="text-gray-700 hover:text-[#f25835]">mumbai@company.com</a>
-    </div>
-
-    <iframe class="w-full h-40 border border-gray-200" src="https://maps.google.com/maps?q=Marine%20Drive%20Mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-  </div>
-
-  <!-- Office Card -->
-  <div class="bg-white border border-gray-200 shadow-md p-8 hover:-translate-y-2 transition-all duration-300">
-    <h3 class="text-lg font-semibold text-[#f25835] mb-3">Bangalore Office</h3>
-    <p class="text-gray-600 text-sm mb-4">789 MG Road, Bangalore, 560001</p>
-    
-    <div class="flex items-center gap-2 mb-2">
-      <i class="fas fa-phone text-[#f25835]"></i>
-      <a href="tel:+918034567890" class="text-gray-700 hover:text-[#f25835]">+91 80345 67890</a>
-    </div>
-    
-    <div class="flex items-center gap-2 mb-4">
-      <i class="fas fa-envelope text-[#f25835]"></i>
-      <a href="mailto:blr@company.com" class="text-gray-700 hover:text-[#f25835]">blr@company.com</a>
-    </div>
-
-    <iframe class="w-full h-40 border border-gray-200" src="https://maps.google.com/maps?q=MG%20Road%20Bangalore&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-  </div>
-</div>
-
-
-
-    <!-- Map + Contact Form -->
-   <!-- Map + Contact Form -->
-<div class="container mx-auto flex sm:flex-nowrap flex-wrap">
-
-  <!-- Map & Office Info -->
-  <div class="lg:w-1/2 md:w-1/2 bg-gray-100 overflow-hidden sm:mr-10 p-6 flex items-end justify-start relative shadow-md min-h-[400px]">
-    <!-- Map -->
-    <iframe 
-      width="100%" 
-      height="100%" 
-      class="absolute inset-0"
-      frameborder="0" 
-      title="map" 
-      scrolling="no" 
-      src="https://maps.google.com/maps?q=Connaught%20Place%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-      style="filter: grayscale(1) contrast(1.1) opacity(0.7);">
-    </iframe>
-
-    <!-- Overlay Card -->
-    <div class="bg-white relative flex flex-wrap py-5 px-6 shadow-lg border-l-4 border-[#f25835]">
-      <div class="w-1/2 pr-4">
-        <h2 class="title-font font-semibold text-gray-900 text-xs tracking-widest">ADDRESS</h2>
-        <p class="mt-1 text-sm">123 Connaught Place, New Delhi, 110001</p>
-      </div>
-      <div class="w-1/2">
-        <h2 class="title-font font-semibold text-gray-900 text-xs tracking-widest">EMAIL</h2>
-        <a href="mailto:delhi@company.com" class="text-[#f25835] leading-relaxed text-sm">delhi@company.com</a>
-        <h2 class="title-font font-semibold text-gray-900 text-xs tracking-widest mt-4">PHONE</h2>
-        <a href="tel:+911234567890" class="text-gray-700 hover:text-[#f25835] text-sm">+91 12345 67890</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact Form -->
-  <div class="lg:w-1/2 md:w-1/2 bg-white flex flex-col w-full md:py-6 mt-8 md:mt-0 shadow-md p-6 border border-gray-200">
-    <h2 class="text-[#f25835] text-xl mb-2 font-semibold">Get in Touch</h2>
-    <p class="leading-relaxed mb-4 text-gray-600 text-sm">We’d love to hear from you. Fill out the form and our team will get back to you shortly.</p>
-    
-    <!-- Name + Phone in Row -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-      <div>
-        <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-        <input type="text" id="name" name="name" 
-          class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out">
-      </div>
-      <div>
-        <label for="phone" class="leading-7 text-sm text-gray-600">Phone</label>
-        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210"
-          class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out">
-      </div>
-    </div>
-
-    <!-- Email -->
-    <div class="relative mb-4">
-      <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-      <input type="email" id="email" name="email"
-        class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out">
-    </div>
-
-    <!-- Choose Office -->
-    <div class="relative mb-4">
-      <label for="office" class="leading-7 text-sm text-gray-600">Choose Office</label>
-      <select id="office" name="office"
-        class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out">
-        <option value="">-- Select Office --</option>
-        <option value="delhi">Delhi Office</option>
-        <option value="mumbai">Mumbai Office</option>
-        <option value="bangalore">Bangalore Office</option>
-      </select>
-    </div>
-
-    <!-- Message -->
-    <div class="relative mb-4">
-      <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-      <textarea id="message" name="message"
-        class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 h-28 text-base outline-none text-gray-700 py-2 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-    </div>
-
-    <!-- Button -->
-    <button class="self-start text-white bg-[#f25835] border-0 py-2 px-6 focus:outline-none hover:bg-[#d94725] uppercase font-semibold tracking-wide transition">
-      Send Message
-    </button>
-  </div>
-</div>
-
-  </div>
-</section>
-
-
-
-
-
-
-
-
-<!-- ================= FAQ Section ================= -->
-<section class="relative w-full min-h-[70vh]">
-  <!-- Background Image -->
-  <div class="absolute inset-0">
-    <img src="./assets/bg2.png" alt="ThunderGits FAQ"
-      class="w-full h-full object-cover shadow-md" />
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-black/60"></div>
-  </div>
-
-  <!-- Content Overlay -->
-  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6 py-16">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-      Frequently Asked Questions
-    </h2>
-    <p class="max-w-2xl text-base sm:text-lg text-gray-200 mb-8">
-      Find answers to the most common questions about our services, support, and more.
-    </p>
-
-    <!-- FAQ Accordion -->
-    <div class="max-w-3xl w-full bg-white/10 backdrop-blur-sm rounded-xl shadow-xl text-left divide-y divide-white/20">
-      
-      <!-- Item 1 -->
-      <div class="faq-item">
-        <button class="w-full flex justify-between items-center p-4 text-left">
-          <span class="text-lg font-semibold text-accent">What services do you offer?</span>
-          <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-          <p class="text-gray-200 text-sm pb-4">
-            We offer custom software development, IT consulting, cloud services, and much more. Contact us to learn how we can assist with your technology needs.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="faq-item">
-        <button class="w-full flex justify-between items-center p-4 text-left">
-          <span class="text-lg font-semibold text-accent">How can I get in touch with support?</span>
-          <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-          <p class="text-gray-200 text-sm pb-4">
-            You can reach our support team by email at <span class="text-accent">info@thundergits.com</span> or through our contact form on this page. We're here to help!
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="faq-item">
-        <button class="w-full flex justify-between items-center p-4 text-left">
-          <span class="text-lg font-semibold text-accent">Do you offer custom software development?</span>
-          <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-          <p class="text-gray-200 text-sm pb-4">
-            Yes, we specialize in custom software development to meet your unique business needs. From concept to delivery, we work closely with you to bring your ideas to life.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="faq-item">
-        <button class="w-full flex justify-between items-center p-4 text-left">
-          <span class="text-lg font-semibold text-accent">Can I schedule a demo of your services?</span>
-          <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-          <p class="text-gray-200 text-sm pb-4">
-            Yes! You can schedule a demo by filling out the contact form above or by emailing us directly at <span class="text-accent">info@thundergits.com</span>.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="faq-item">
-        <button class="w-full flex justify-between items-center p-4 text-left">
-          <span class="text-lg font-semibold text-accent">What industries do you serve?</span>
-          <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-          <p class="text-gray-200 text-sm pb-4">
-            We serve a variety of industries, including healthcare, finance, retail, and technology. Our solutions are tailored to your specific business needs.
-          </p>
+        <!-- Right Side Image -->
+        <div data-aos="fade-left" data-aos-duration="1200">
+          <img src="./assets/image thundergits.jpg" alt="Contact" class="rounded-2xl shadow-2xl" />
         </div>
       </div>
     </div>
+  </section>
+
+
+  <!-- Floating Social Bar -->
+  <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
+    <a href="#"
+      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
+      <i class="fas fa-shopping-cart"></i>
+    </a>
+    <a href="#"
+      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-purple-500/50 transition-all animate-float-up-down">
+      <i class="fas fa-image"></i>
+    </a>
+    <a href="#"
+      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
+      <i class="fas fa-credit-card"></i>
+    </a>
   </div>
-</section>
-
-<!-- FAQ Script -->
-<script>
-  const faqs = document.querySelectorAll('.faq-item');
-  faqs.forEach(item => {
-    const button = item.querySelector('button');
-    const content = item.querySelector('.faq-content');
-    const icon = item.querySelector('svg');
-
-    button.addEventListener('click', () => {
-      const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
-
-      // Close all
-      faqs.forEach(f => {
-        f.querySelector('.faq-content').style.maxHeight = null;
-        f.querySelector('svg').classList.remove('rotate-180');
-      });
-
-      // Toggle current
-      if (!isOpen) {
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.classList.add('rotate-180');
-      }
-    });
-  });
-</script>
-
-
-
-<!-- ================= CTA Section ================= -->
-<section class="bg-white py-20 border-t border-gray-200">
-  <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
-
-    <!-- Heading -->
-    <h2 class="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-4 relative inline-block">
-      Ready to Take Your Business to the Next Level?
-      <!-- Underline -->
-      <span class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-24 h-1 bg-[#f25835]"></span>
-    </h2>
-
-    <!-- Paragraph -->
-    <p class="text-gray-600 text-base max-w-2xl mx-auto mb-10">
-      Our expert team is here to help you create innovative solutions 
-      that will drive your business forward. Let’s collaborate!
-    </p>
-
-    <!-- Buttons -->
-    <div class="flex flex-col sm:flex-row justify-center gap-5">
-      <!-- Primary -->
-      <a href="#contact-form" 
-         class="bg-[#f25835] text-white px-10 py-4 font-semibold uppercase tracking-wide hover:bg-[#d94725] transition">
-        Contact Us Now
-      </a>
-    </div>
-
-  </div>
-</section>
 
 
 
 
 
 
-  
 
 
 
+  <!-- Contact Section -->
+  <section id="contact" class="relative bg-white text-gray-800 py-20">
+    <div class="max-w-7xl mx-auto px-6">
 
-  <footer class="relative text-[#EDE6D6] bg-cover bg-center pt-16" style="background-image: url('./assets/bg2.png');">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-3 gap-12">
+      <!-- Section Heading -->
+      <div class="text-center mb-16">
+        <h2 class="text-xl md:text-5xl font-extrabold text-gray-900 mb-4 relative inline-block">
+          Get in Touch with Us
+          <span class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-20 h-1 bg-[#f25835]"></span>
+        </h2>
+        <p class="text-gray-600 text-md max-w-2xl mx-auto">
+          Have questions, need support, or want to collaborate?
+          We’d love to hear from you. Reach out to one of our offices below.
+        </p>
+      </div>
 
-            <!-- Left -->
-            <div class="flex items-center md:items-start">
-                <h2 class="text-4xl font-bold leading-snug max-w-xs">
-                    Delivering top-tier Git solutions globally
-                </h2>
-            </div>
+      <!-- Office Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
 
-            <!-- Middle -->
-            <div>
-                <h3 class="font-semibold mb-3">Address</h3>
-                <p>Germany —</p>
-                <p>785 15h Street, Office 478</p>
-                <p>Berlin, De 81566</p>
-                <div class="flex gap-4 mt-6">
-                    <a href="#"
-                        class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#"
-                        class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                    <a href="#"
-                        class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
-                        <i class="fab fa-dribbble"></i>
-                    </a>
-                    <a href="#"
-                        class="w-10 h-10 flex items-center justify-center border border-gray-500 rounded-full hover:bg-accent transition">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
+        <!-- Office Card -->
+        <div class="bg-white border border-gray-200 shadow-md p-8 hover:-translate-y-2 transition-all duration-300">
+          <h3 class="text-lg font-semibold text-[#f25835] mb-3">Delhi Office</h3>
+          <p class="text-gray-600 text-sm mb-4">123 Connaught Place, New Delhi, 110001</p>
 
-            <!-- Right -->
-            <div>
-                <h3 class="font-semibold mb-3">Say Hello</h3>
-                <a href="mailto:info@thundergit.com" class="block hover:text-accent">info@thundergit.com</a>
-                <a href="tel:+18408412569" class="text-lg font-semibold hover:text-accent">+1 840 841 25 69</a>
-            </div>
+          <div class="flex items-center gap-2 mb-2">
+            <i class="fas fa-phone text-[#f25835]"></i>
+            <a href="tel:+911234567890" class="text-gray-700 hover:text-[#f25835]">+91 12345 67890</a>
+          </div>
+
+          <div class="flex items-center gap-2 mb-4">
+            <i class="fas fa-envelope text-[#f25835]"></i>
+            <a href="mailto:delhi@company.com" class="text-gray-700 hover:text-[#f25835]">delhi@company.com</a>
+          </div>
+
+          <iframe class="w-full h-40 border border-gray-200"
+            src="https://maps.google.com/maps?q=Connaught%20Place%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
 
-        <!-- Bottom -->
+        <!-- Office Card -->
+        <div class="bg-white border border-gray-200 shadow-md p-8 hover:-translate-y-2 transition-all duration-300">
+          <h3 class="text-lg font-semibold text-[#f25835] mb-3">Mumbai Office</h3>
+          <p class="text-gray-600 text-sm mb-4">456 Marine Drive, Mumbai, 400001</p>
+
+          <div class="flex items-center gap-2 mb-2">
+            <i class="fas fa-phone text-[#f25835]"></i>
+            <a href="tel:+912234567890" class="text-gray-700 hover:text-[#f25835]">+91 22345 67890</a>
+          </div>
+
+          <div class="flex items-center gap-2 mb-4">
+            <i class="fas fa-envelope text-[#f25835]"></i>
+            <a href="mailto:mumbai@company.com" class="text-gray-700 hover:text-[#f25835]">mumbai@company.com</a>
+          </div>
+
+          <iframe class="w-full h-40 border border-gray-200"
+            src="https://maps.google.com/maps?q=Marine%20Drive%20Mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+
+        <!-- Office Card -->
+        <div class="bg-white border border-gray-200 shadow-md p-8 hover:-translate-y-2 transition-all duration-300">
+          <h3 class="text-lg font-semibold text-[#f25835] mb-3">Bangalore Office</h3>
+          <p class="text-gray-600 text-sm mb-4">789 MG Road, Bangalore, 560001</p>
+
+          <div class="flex items-center gap-2 mb-2">
+            <i class="fas fa-phone text-[#f25835]"></i>
+            <a href="tel:+918034567890" class="text-gray-700 hover:text-[#f25835]">+91 80345 67890</a>
+          </div>
+
+          <div class="flex items-center gap-2 mb-4">
+            <i class="fas fa-envelope text-[#f25835]"></i>
+            <a href="mailto:blr@company.com" class="text-gray-700 hover:text-[#f25835]">blr@company.com</a>
+          </div>
+
+          <iframe class="w-full h-40 border border-gray-200"
+            src="https://maps.google.com/maps?q=MG%20Road%20Bangalore&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+
+
+
+      <!-- Map + Contact Form -->
+      <!-- Map + Contact Form -->
+      <div class="container mx-auto flex sm:flex-nowrap flex-wrap">
+
+        <!-- Map & Office Info -->
         <div
-            class="border-t border-gray-700 mt-12 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 px-6 lg:px-8">
-            <div class="flex space-x-6 mb-4 md:mb-0">
-                <a href="#" class="text-white text-lg hover:text-accent">Our Blog</a>
-                <a href="#" class=" text-white text-lg hover:text-accent">About Us</a>
-                <a href="#" class=" text-white  text-lg hover:text-accent">Contact Us</a>
+          class="lg:w-1/2 md:w-1/2 bg-gray-100 overflow-hidden sm:mr-10 p-6 flex items-end justify-start relative shadow-md min-h-[400px]">
+          <!-- Map -->
+          <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" scrolling="no"
+            src="https://maps.google.com/maps?q=Connaught%20Place%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            style="filter: grayscale(1) contrast(1.1) opacity(0.7);">
+          </iframe>
+
+          <!-- Overlay Card -->
+          <div class="bg-white relative flex flex-wrap py-5 px-6 shadow-lg border-l-4 border-[#f25835]">
+            <div class="w-1/2 pr-4">
+              <h2 class="title-font font-semibold text-gray-900 text-xs tracking-widest">ADDRESS</h2>
+              <p class="mt-1 text-sm">123 Connaught Place, New Delhi, 110001</p>
             </div>
-            <p>ThunderGit © 2025. All Rights Reserved.</p>
-        </div>
-        <!-- Floating Presale Chat -->
-        <!-- Presale Chat -->
-        <div class="fixed bottom-16 left-4 flex items-center z-40">
-            <div
-                class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
-                <i class="fas fa-comments"></i>
+            <div class="w-1/2">
+              <h2 class="title-font font-semibold text-gray-900 text-xs tracking-widest">EMAIL</h2>
+              <a href="mailto:delhi@company.com" class="text-[#f25835] leading-relaxed text-sm">delhi@company.com</a>
+              <h2 class="title-font font-semibold text-gray-900 text-xs tracking-widest mt-4">PHONE</h2>
+              <a href="tel:+911234567890" class="text-gray-700 hover:text-[#f25835] text-sm">+91 12345 67890</a>
             </div>
-            <span class="ml-2 bg-white text-black px-4 py-1 rounded-md shadow border border-gray-300">
-                Presale Chat
-            </span>
+          </div>
         </div>
 
-        <!-- Scroll Toggle -->
-        <button id="scrollToggleBtn"
-            class="fixed bottom-16 right-4 w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-accent z-40">
-            <i id="scrollIcon" class="fas fa-arrow-up"></i>
-        </button>
+        <!-- Contact Form -->
+        <div
+          class="lg:w-1/2 md:w-1/2 bg-white flex flex-col w-full md:py-6 mt-8 md:mt-0 shadow-md p-6 border border-gray-200">
+          <h2 class="text-[#f25835] text-xl mb-2 font-semibold">Get in Touch</h2>
+          <p class="leading-relaxed mb-4 text-gray-600 text-sm">We’d love to hear from you. Fill out the form and our
+            team will get back to you shortly.</p>
+
+          <!-- Name + Phone in Row -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+              <input type="text" id="name" name="name"
+                class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out">
+            </div>
+            <div>
+              <label for="phone" class="leading-7 text-sm text-gray-600">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210"
+                class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out">
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="relative mb-4">
+            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+            <input type="email" id="email" name="email"
+              class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out">
+          </div>
+
+          <!-- Choose Office -->
+          <div class="relative mb-4">
+            <label for="office" class="leading-7 text-sm text-gray-600">Choose Office</label>
+            <select id="office" name="office"
+              class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out">
+              <option value="">-- Select Office --</option>
+              <option value="delhi">Delhi Office</option>
+              <option value="mumbai">Mumbai Office</option>
+              <option value="bangalore">Bangalore Office</option>
+            </select>
+          </div>
+
+          <!-- Message -->
+          <div class="relative mb-4">
+            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+            <textarea id="message" name="message"
+              class="w-full bg-white border border-gray-300 focus:border-[#f25835] focus:ring-2 focus:ring-[#f25835]/30 h-28 text-base outline-none text-gray-700 py-2 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+          </div>
+
+          <!-- Button -->
+          <button
+            class="self-start text-white bg-[#f25835] border-0 py-2 px-6 focus:outline-none hover:bg-[#d94725] uppercase font-semibold tracking-wide transition">
+            Send Message
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 
 
 
-        <!-- Floating Right Buttons -->
-        <!-- <div class="fixed top-1/3 right-0 flex flex-col z-50">
-    <a href="#" class="bg-accent p-4 border-b border-black hover:bg-orange-600">🛒</a>
-    <a href="#" class="bg-accent p-4 border-b border-black hover:bg-orange-600">🖼</a>
-    <a href="#" class="bg-accent p-4 hover:bg-orange-600">💳</a>
-  </div> -->
-
-    </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000, // Animation duration
-            once: true,     // Only animate once
+
+
+  <!-- ================= FAQ Section ================= -->
+  <section class="relative w-full min-h-[70vh]">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="./assets/bg2.png" alt="ThunderGits FAQ" class="w-full h-full object-cover shadow-md" />
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <!-- Content Overlay -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6 py-16">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="max-w-2xl text-base sm:text-lg text-gray-200 mb-8">
+        Find answers to the most common questions about our services, support, and more.
+      </p>
+
+      <!-- FAQ Accordion -->
+      <div
+        class="max-w-3xl w-full bg-white/10 backdrop-blur-sm rounded-xl shadow-xl text-left divide-y divide-white/20">
+
+        <!-- Item 1 -->
+        <div class="faq-item">
+          <button class="w-full flex justify-between items-center p-4 text-left">
+            <span class="text-lg font-semibold text-accent">What services do you offer?</span>
+            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+            <p class="text-gray-200 text-sm pb-4">
+              We offer custom software development, IT consulting, cloud services, and much more. Contact us to learn
+              how we can assist with your technology needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item">
+          <button class="w-full flex justify-between items-center p-4 text-left">
+            <span class="text-lg font-semibold text-accent">How can I get in touch with support?</span>
+            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+            <p class="text-gray-200 text-sm pb-4">
+              You can reach our support team by email at <span class="text-accent">info@thundergits.com</span> or
+              through our contact form on this page. We're here to help!
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item">
+          <button class="w-full flex justify-between items-center p-4 text-left">
+            <span class="text-lg font-semibold text-accent">Do you offer custom software development?</span>
+            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+            <p class="text-gray-200 text-sm pb-4">
+              Yes, we specialize in custom software development to meet your unique business needs. From concept to
+              delivery, we work closely with you to bring your ideas to life.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item">
+          <button class="w-full flex justify-between items-center p-4 text-left">
+            <span class="text-lg font-semibold text-accent">Can I schedule a demo of your services?</span>
+            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+            <p class="text-gray-200 text-sm pb-4">
+              Yes! You can schedule a demo by filling out the contact form above or by emailing us directly at <span
+                class="text-accent">info@thundergits.com</span>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="faq-item">
+          <button class="w-full flex justify-between items-center p-4 text-left">
+            <span class="text-lg font-semibold text-accent">What industries do you serve?</span>
+            <svg class="w-5 h-5 text-accent transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+            <p class="text-gray-200 text-sm pb-4">
+              We serve a variety of industries, including healthcare, finance, retail, and technology. Our solutions are
+              tailored to your specific business needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Script -->
+  <script>
+    const faqs = document.querySelectorAll('.faq-item');
+    faqs.forEach(item => {
+      const button = item.querySelector('button');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('svg');
+
+      button.addEventListener('click', () => {
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+        // Close all
+        faqs.forEach(f => {
+          f.querySelector('.faq-content').style.maxHeight = null;
+          f.querySelector('svg').classList.remove('rotate-180');
         });
-    </script>
 
-    <script src="./script.js"></script>
+        // Toggle current
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + "px";
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  </script>
+
+
+
+  <!-- ================= CTA Section ================= -->
+  <section class="bg-white py-20 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
+
+      <!-- Heading -->
+      <h2 class="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-4 relative inline-block">
+        Ready to Take Your Business to the Next Level?
+        <!-- Underline -->
+        <span class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-24 h-1 bg-[#f25835]"></span>
+      </h2>
+
+      <!-- Paragraph -->
+      <p class="text-gray-600 text-base max-w-2xl mx-auto mb-10">
+        Our expert team is here to help you create innovative solutions
+        that will drive your business forward. Let’s collaborate!
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-5">
+        <!-- Primary -->
+        <a href="#contact-form"
+          class="bg-[#f25835] text-white px-10 py-4 font-semibold uppercase tracking-wide hover:bg-[#d94725] transition">
+          Contact Us Now
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="relative text-[#EDE6D6] pt-16">
+
+    <!-- 🔥 Background Image Only -->
+    <div class="absolute inset-0">
+      <img src="./assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
+
+      <!-- Logo Section -->
+      <div class="flex flex-col items-center md:items-start">
+        <a class="flex items-center justify-center md:justify-start text-white mb-4">
+          <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
+          <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
+        </a>
+        <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
+          Innovating through technology and creativity, building the future.
+        </p>
+      </div>
+
+      <!-- Explore -->
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">Explore</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-pink-400 transition">Home</a></li>
+          <li><a href="/pages/about.html" class="hover:text-pink-400 transition">About</a></li>
+          <li><a href="/pages/work.html" class="hover:text-pink-400 transition">Work</a></li>
+          <li><a href="/pages/blog.html" class="hover:text-pink-400 transition">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">Company</h3>
+        <ul class="space-y-2">
+          <li><a href="/pages/privacy-policy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+          <li><a href="/pages/career.html" class="hover:text-pink-400 transition">Career</a></li>
+          <li><a href="/pages/contact-us.html" class="hover:text-pink-400 transition">Contact</a></li>
+          <li><a href="/pages/services.html" class="hover:text-pink-400 transition">Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">Contact</h3>
+        <ul class="space-y-3">
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+            <i class="ri-map-pin-fill mt-1"></i>
+            <span>Sector 85, Bata Chowk, Faridabad, Haryana, India, 121002</span>
+          </li>
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+            <i class="ri-phone-fill mt-1"></i>
+            <span>+91-7765979725</span>
+          </li>
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+            <i class="ri-mail-fill mt-1"></i>
+            <a href="mailto:contact@thundergits.com" class="hover:text-pink-400 transition">info@thundergits.com</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div
+      class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
+      <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
+      <div class="flex space-x-6 text-gray-300">
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-x-twitter"></i></a>
+
+
+      </div>
+    </div>
+
+    <!-- Floating Presale Chat -->
+    <div class="fixed bottom-16 left-4 flex items-center z-40">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
+        <img src="./assets/call-center (1).png" alt="">
+      </div>
+      <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
+           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
+        AI Assistant
+      </span>
+    </div>
+
+    <!-- Scroll To Top -->
+    <button id="scrollToggleBtn"
+      class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
+      <i id="scrollIcon" class="fas fa-arrow-up"></i>
+    </button>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true,     // Only animate once
+    });
+  </script>
+
+  <script src="./script.js"></script>
 
 </body>
 

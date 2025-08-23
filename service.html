@@ -145,22 +145,22 @@
       </div>
 
       <div class="space-y-5">
-        <a href="#" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+        <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
           <span>Home</span><span class="text-sm">→</span>
         </a>
-        <a href="./about.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+        <a href="./about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
           <span>About</span><span class="text-sm">→</span>
         </a>
-        <a href="./work.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+        <a href="./work.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
           <span>Work</span><span class="text-sm">→</span>
         </a>
-        <a href="./service.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+        <a href="./service.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
           <span>Services</span><span class="text-sm">→</span>
         </a>
-        <a href="./career.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+        <a href="./career.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
           <span>Career</span><span class="text-sm">→</span>
         </a>
-        <a href="./contact.html" class="flex items-center gap-3 text-base font-medium hover:text-linkhover transition">
+        <a href="./contact.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
           <span>Contact</span><span class="text-sm">→</span>
         </a>
 
@@ -974,47 +974,61 @@
 
 
   <!-- CTA Section -->
-  <section class="bg-white py-20 border-t border-gray-200">
+  <section class="bg-white py-16 border-t border-gray-200">
     <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
 
       <!-- Heading -->
-      <h2 class="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-4 relative inline-block">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black leading-tight mb-4 relative inline-block">
         Ready to Take Your Business to the Next Level?
         <!-- Gradient Underline -->
-        <span
-          class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-600"></span>
+        <span class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-600 rounded"></span>
       </h2>
 
       <!-- Paragraph -->
       <p class="text-gray-600 text-base max-w-2xl mx-auto mb-10">
         Whether you're looking to transform your IT infrastructure, develop custom software,
         or take your business to the cloud,
-        <span
-          class="bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text font-semibold">ThunderGits
+        <span class="bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text font-semibold">ThunderGits
           Technologies</span>
         has the expertise to make it happen. Let’s work together and bring your vision to life!
       </p>
 
       <!-- Buttons -->
-      <div class="flex flex-col sm:flex-row justify-center gap-5">
-        <!-- Primary -->
-        <a href="#contact"
-          class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-10 py-4 font-semibold uppercase tracking-wide hover:opacity-90 transition rounded-lg">
+      <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+
+        <!-- First Button: Gradient → Transparent (border visible) -->
+        <a href="#contact" class="group relative px-8 py-3 text-sm sm:text-base font-semibold uppercase 
+              border border-pink-500 text-white overflow-hidden rounded-md">
+
+          <!-- Background Layer -->
+          <span class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-right scale-x-100 
+                   transition-transform duration-500 ease-in-out 
+                   group-hover:scale-x-0 z-0 rounded-md"></span>
+
+          <!-- Text -->
+          <span class="relative z-10 transition-colors duration-500 ease-in-out 
+                   group-hover:text-transparent group-hover:bg-clip-text 
+                   group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500">
           Get in Touch
+          </span>
         </a>
 
-        <!-- Secondary (gradient border + gradient text, hover -> gradient bg + white text) -->
-        <a href="#services"
-          class="relative inline-block px-10 py-4 font-semibold uppercase tracking-wide 
-         text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600
-         border-2 border-pink-500 rounded-lg
-         transition duration-300 ease-in-out
-         hover:text-white hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:bg-clip-border hover:border-transparent">
-          Explore Our Services
+        <!-- Second Button: Transparent → Gradient -->
+        <a href="#services" class="group relative px-8 py-3 text-sm sm:text-base font-semibold uppercase 
+              border border-pink-500 text-pink-500 overflow-hidden rounded-md">
+
+          <!-- Background Layer -->
+          <span class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-left scale-x-0 
+                   transition-transform duration-500 ease-in-out 
+                   group-hover:scale-x-100 z-0 rounded-md"></span>
+
+          <!-- Text -->
+          <span class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-white">
+            Explore Our Services
+          </span>
         </a>
 
       </div>
-
     </div>
   </section>
 

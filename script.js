@@ -138,19 +138,21 @@
 
 
 
-    const blogSwiper = new Swiper('.blogSwiper', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 4,
-      },
-    },
-  });
+ const blogSwiper = new Swiper(".blogSwiper", {
+  slidesPerView: 3,
+  spaceBetween: 24,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    1024: { slidesPerView: 3 },
+    768: { slidesPerView: 2 },
+    0: { slidesPerView: 1 },
+  },
+});
+
+
+
+
+  

@@ -1260,7 +1260,7 @@
             Explore Features
           </a>
           <a href="#"
-            class="flex items-center gap-1 text-black font-medium hover:text-pink-600 transition-colors duration-300">
+            class="flex items-center gap-3 text-black font-medium hover:text-pink-600 transition-colors duration-300">
             <span
               class="w-11 h-11 border border-gray-300 flex items-center justify-center text-sm text-black bg-white/80 hover:bg-white transition-colors duration-300 rounded-full shadow">
               <i class="fa-solid fa-play"></i>
@@ -1297,7 +1297,7 @@
         Explore Features
       </a>
       <a href="#"
-        class="flex items-center gap-1 text-black font-medium hover:text-pink-600 transition-colors duration-300">
+        class="flex items-center gap-3 text-black font-medium hover:text-pink-600 transition-colors duration-300">
         <span
           class="w-11 h-11 border border-gray-300 flex items-center justify-center text-sm text-black bg-white/80 hover:bg-white transition-colors duration-300 rounded-full shadow">
           <i class="fa-solid fa-play"></i>
@@ -1340,66 +1340,99 @@
 
 
   <!-- Latest News Section -->
-  <section class="py-16 bg-white">
-    <div class="text-center mb-10 px-4 max-w-7xl mx-auto">
-      <p class="text-sm uppercase tracking-widest text-pink-600" data-aos="fade-down" data-aos-duration="800">ThunderGit
-        Blog</p>
-      <h2 class="text-4xl font-bold text-black" data-aos="fade-up" data-aos-duration="1000">Latest from the Dev World
-      </h2>
-    </div>
+<section class="py-20 bg-white">
+  <div class="text-center mb-10 px-4 max-w-7xl mx-auto">
+    <p class="text-sm uppercase tracking-widest text-pink-600" data-aos="fade-down" data-aos-duration="800">ThunderGit Blog</p>
+    <h2 class="text-4xl font-bold text-black" data-aos="fade-up" data-aos-duration="1000">Latest from the Dev World</h2>
+  </div>
 
-    <!-- Swiper -->
-    <div class="max-w-7xl mx-auto px-4" data-aos="zoom-in-up" data-aos-duration="1200">
-      <div class="swiper blogSwiper">
-        <div class="swiper-wrapper">
+  <!-- Swiper -->
+  <div class="max-w-7xl mx-auto px-4" data-aos="zoom-in-up" data-aos-duration="1200">
+    <div class="swiper blogSwiper">
+      <div class="swiper-wrapper">
 
-          <!-- Card 1 -->
-          <div class="swiper-slide p-2" data-aos="fade-up" data-aos-delay="200">
-            <img src="./assets/blogimg1.jpg" alt="News 1" class="w-full h-56 object-cover rounded-lg shadow-lg">
-            <p class="text-xs uppercase text-gray-500 mt-4">Git Tips</p>
-            <h3 class="font-bold text-lg mt-2 text-black">Mastering Git: 15 Commands Every Developer Should Know</h3>
-            <p class="text-gray-500 text-sm mt-1">Aug 5, 2025 • 3 Comments</p>
+        <!-- Card -->
+        <div class="swiper-slide p-2">
+          <div class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <img src="./assets/web-scrap.webp" alt="The Ethical Web Scraper" class="w-full h-56 object-cover">
+            <div class="flex flex-col flex-1 p-6">
+              <p class="text-xs uppercase text-pink-600 font-semibold mb-2">Ethical Web Scraping</p>
+              <h3 class="font-bold text-lg text-black mb-2">The Ethical Web Scraper: Navigating the Gray Areas</h3>
+              <p class="text-gray-500 text-sm mb-4 flex-1">
+                As web scraping continues to be a powerful tool for extracting valuable data, it is important to understand the ethical considerations surrounding its use.
+              </p>
+              <div class="mt-auto">
+                <a class="inline-flex items-center text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 px-5 py-2 rounded-md shadow hover:opacity-90 transition-all duration-300"
+                  href="./blogs/the-ethical-web-scraping.html">
+                  Learn More
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
-
-          <!-- Card 2 -->
-          <div class="swiper-slide p-2" data-aos="fade-up" data-aos-delay="300">
-            <img src="./assets/blogimg1.jpg" alt="News 2" class="w-full h-56 object-cover rounded-lg shadow-lg">
-            <p class="text-xs uppercase text-gray-500 mt-4">Open Source</p>
-            <h3 class="font-bold text-lg mt-2 text-black">Top 10 Open-Source Projects to Contribute in 2025</h3>
-            <p class="text-gray-500 text-sm mt-1">Aug 3, 2025 • 5 Comments</p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="swiper-slide p-2" data-aos="fade-up" data-aos-delay="400">
-            <img src="./assets/blogimg1.jpg" alt="News 3" class="w-full h-56 object-cover rounded-lg shadow-lg">
-            <p class="text-xs uppercase text-gray-500 mt-4">DevOps</p>
-            <h3 class="font-bold text-lg mt-2 text-black">Automating CI/CD Pipelines with ThunderGit</h3>
-            <p class="text-gray-500 text-sm mt-1">Aug 1, 2025 • 0 Comments</p>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="swiper-slide p-2" data-aos="fade-up" data-aos-delay="500">
-            <img src="./assets/blogimg1.jpg" alt="News 4" class="w-full h-56 object-cover rounded-lg shadow-lg">
-            <p class="text-xs uppercase text-gray-500 mt-4">Productivity</p>
-            <h3 class="font-bold text-lg mt-2 text-black">Boosting Team Collaboration with Git Workflows</h3>
-            <p class="text-gray-500 text-sm mt-1">Jul 28, 2025 • 2 Comments</p>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="swiper-slide p-2" data-aos="fade-up" data-aos-delay="600">
-            <img src="./assets/blogimg1.jpg" alt="News 5" class="w-full h-56 object-cover rounded-lg shadow-lg">
-            <p class="text-xs uppercase text-gray-500 mt-4">Security</p>
-            <h3 class="font-bold text-lg mt-2 text-black">Keeping Your Code Secure in Open Source Projects</h3>
-            <p class="text-gray-500 text-sm mt-1">Jul 25, 2025 • 1 Comment</p>
-          </div>
-
         </div>
 
-        <!-- Pagination dots -->
-        <div class="swiper-pagination mt-6"></div>
+        <!-- Card -->
+        <div class="swiper-slide p-2">
+          <div class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <img src="./assets/why-react-native.webp" alt="React Native for Enterprise" class="w-full h-56 object-cover">
+            <div class="flex flex-col flex-1 p-6">
+              <p class="text-xs uppercase text-pink-600 font-semibold mb-2">Mobile App Development</p>
+              <h3 class="font-bold text-lg text-black mb-2">Why React Native is Perfect for Building Enterprise Applications</h3>
+              <p class="text-gray-500 text-sm mb-4 flex-1">
+                React Native offers significant advantages for enterprise application development, including cross-platform capabilities, performance, scalability, and cost-effectiveness.
+              </p>
+              <div class="mt-auto">
+                <a class="inline-flex items-center text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 px-5 py-2 rounded-md shadow hover:opacity-90 transition-all duration-300"
+                  href="./blogs/why-react-native.html">
+                  Learn More
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="swiper-slide p-2">
+          <div class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+            <img src="./assets/Deepseek.webp" alt="DeepSeek AI Search" class="w-full h-56 object-cover">
+            <div class="flex flex-col flex-1 p-6">
+              <p class="text-xs uppercase text-pink-600 font-semibold mb-2">AI & Search Technology</p>
+              <h3 class="font-bold text-lg text-black mb-2">How DeepSeek is Transforming AI-Powered Search</h3>
+              <p class="text-gray-500 text-sm mb-4 flex-1">
+                DeepSeek is revolutionizing search with AI-driven algorithms, delivering more accurate, personalized, and contextual search results.
+              </p>
+              <div class="mt-auto">
+                <a class="inline-flex items-center text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 px-5 py-2 rounded-md shadow hover:opacity-90 transition-all duration-300"
+                  href="./blogs/deepseek.html">
+                  Learn More
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination mt-6"></div>
     </div>
-  </section>
+  </div>
+</section>
 
 
 

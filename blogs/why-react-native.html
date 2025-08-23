@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThunderGits</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: {
+            base: '1em',
+            sm: '14px',
+            md: '15px',
+            lg: '1.4em',
+            xl: '42px',
+            heading: '6.75vw',
+          },
+          lineHeight: {
+            tight: '1em',
+            normal: '1.2em',
+            relaxed: '1.5em',
+            loose: '1.6em',
+            heading: '0.95em',
+          },
+          letterSpacing: {
+            wide: '1.8px',
+            tighter: '0.01em',
+          },
+          fontWeight: {
+            medium: '500',
+          },
+          transitionProperty: {
+            all: 'all',
+          },
+          transitionTimingFunction: {
+            ease: 'ease',
+          },
+          transitionDuration: {
+            DEFAULT: '300ms',
+          },
+          colors: {
+            theme: {
+              text: '#DEDDDB',
+              textLight: '#848484',
+              textDark: '#EFE8CE',
+              link: '#E2725B',
+              hover: '#DD644C',
+              link2: '#7DA189',
+              hover2: '#6D967A',
+              link3: '#9D7246',
+              hover3: '#5B3918',
+              bg: '#141414',
+              bd: '#424040',
+              altBg: '#292828',
+              altBd: '#535353',
+            },
+            dark: '#0e0e0e',
+            offwhite: '#f5e9cd',
+            graytext: '#d9d9d9',
+            accent: '#f25835',
+            footer: '#121212',
+            linkhover: '#f5e9cd',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./../style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+
+</head>
+
+<body class="bg-dark text-theme-text">
+
+
+<section class="relative bg-cover bg-center"
+  style="background-image: url('./../assets/bg2.png');">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+
+  <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
+      <div
+        class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex justify-between items-center h-20 border-b border-theme-bd">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
+          <img src="./../assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <span>ThunderGits</span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
+          <a href="./../index.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">Home</a>
+          <a href="./../about.html"
+            class="pb-1 border-b-2 border-linkhover">About</a>
+          <a href="./../work.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
+          <a href="./../service.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
+          <a href="./../career.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
+          <a href="./../contact.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
+        </nav>
+
+        <!-- Quote + Hamburger -->
+        <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
+          <a href="#quote" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
+               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
+               border border-pink-500 hover:text-white transition-all duration-300 ease-out
+               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
+               before:scale-x-0 before:origin-left hover:before:scale-x-100 
+               before:transition-transform before:duration-300 before:z-[-1]">
+            Get a Quote
+          </a>
+
+          <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+
+ <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
+      <div class="flex justify-between items-center mb-10">
+        <div class="flex items-center gap-2 text-lg font-bold">
+          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <span class="text-white">ThunderGits</span>
+        </div>
+        <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
+          <span>Close</span>
+          <span class="text-2xl leading-none">×</span>
+        </button>
+      </div>
+
+      <div class="space-y-5">
+        <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Home</span><span class="text-sm">→</span>
+        </a>
+        <a href="./../about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>About</span><span class="text-sm">→</span>
+        </a>
+        <a href="./../work.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Work</span><span class="text-sm">→</span>
+        </a>
+        <a href="./../service.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Services</span><span class="text-sm">→</span>
+        </a>
+        <a href="./../career.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Career</span><span class="text-sm">→</span>
+        </a>
+        <a href="./../contact.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Contact</span><span class="text-sm">→</span>
+        </a>
+
+        <!-- Get a Quote Button -->
+        <div class="pt-4">
+          <a href="#"
+            class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Icons -->
+      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+
+
+
+  
+
+<!-- <script>
+  function adjustHeroContent() {
+    const img = document.getElementById('hero-image');
+    const content = document.getElementById('hero-content');
+    const border = document.getElementById('gradient-border');
+
+    const imgHeight = img.clientHeight;
+    content.style.height = imgHeight + 'px';
+    border.style.height = imgHeight + 'px';
+  }
+
+  window.addEventListener('load', adjustHeroContent);
+  window.addEventListener('resize', adjustHeroContent);
+</script> -->
+
+
+
+</section>
+
+
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.style.opacity = 0;
+        setTimeout(() => {
+          menu.style.opacity = 1;
+        }, 10);
+      } else {
+        menu.style.opacity = 0;
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 300); // match with CSS transition
+      }
+    }
+  </script>
+
+
+  <!-- Floating Social Bar -->
+  <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
+    <a href="#"
+      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
+      <i class="fas fa-shopping-cart"></i>
+    </a>
+    <a href="#"
+      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-purple-500/50 transition-all animate-float-up-down">
+      <i class="fas fa-image"></i>
+    </a>
+    <a href="#"
+      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
+      <i class="fas fa-credit-card"></i>
+    </a>
+  </div>
+
+     <div class="container mx-auto flex flex-wrap py-6 mt-5 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto "
+        style="margin-top: 5rem;">
+        <!-- Post Section -->
+        <section class="w-full md:w-2/3 flex flex-col items-center px-3 text-white ">
+
+            <article class="flex flex-col shadow-lg my-4">
+                <!-- Article Image -->
+                <a href="#" class="hover:opacity-75">
+                    <img src="./../assets/why-react-native.webp" class="rounded-lg">
+                </a>
+                <div class="flex flex-col justify-start p-6">
+                    <a href="#" class="text-sm font-bold uppercase pb-4 purple-clr">Technology</a>
+                    <a href="#" class="text-3xl font-bold hover:text-gray-300 pb-4">Why React Native is Perfect for
+                        Building Enterprise Applications</a>
+                    <p href="#" class="text-sm pb-8">
+                        By <a href="#" class="font-semibold hover:text-gray-300">Shivam Jha</a>, Published on January
+                        1st, 2025
+                    </p>
+                    <h2 class="text-2xl font-bold pb-3">Introduction</h2>
+                    <p class="pb-3">In today's fast-paced world, businesses are constantly looking for ways to
+                        streamline their development process and bring applications to market faster. Enter React
+                        Native, an open-source framework that enables developers to build mobile applications using
+                        JavaScript and React. While it has gained immense popularity in the mobile development space,
+                        React Native is also a powerful tool for building enterprise applications. In this article,
+                        we'll explore why React Native is the perfect choice for large-scale, enterprise-grade
+                        solutions.</p>
+
+                    <h2 class="text-2xl font-bold pb-3">Cross-Platform Development</h2>
+                    <p class="pb-3">One of the biggest challenges for enterprise applications is ensuring that they
+                        function seamlessly across multiple platforms. React Native solves this by allowing developers
+                        to write a single codebase that works on both iOS and Android. This reduces development time,
+                        testing efforts, and maintenance costs, making it an ideal solution for businesses looking to
+                        expand their reach on mobile devices.</p>
+
+                    <h2 class="text-2xl font-bold pb-3">Performance That Competes with Native Apps</h2>
+                    <p class="pb-3">Unlike hybrid frameworks that rely on web views for rendering, React Native provides
+                        native components that enable a native-like performance. It achieves near-native speed by using
+                        a bridge to communicate with native modules, delivering smooth user experiences and fast load
+                        times. This makes React Native perfect for resource-intensive enterprise applications that need
+                        to deliver seamless performance across different devices.</p>
+
+                    <h2 class="text-2xl font-bold pb-3">Scalability and Flexibility</h2>
+                    <p class="pb-3">Enterprise applications are often complex, requiring high scalability and
+                        flexibility to accommodate growing user bases and evolving business needs. React Native offers
+                        excellent scalability, with a modular architecture that allows you to scale individual
+                        components independently. Whether you're building a simple internal tool or a large-scale
+                        customer-facing application, React Native's flexibility allows for seamless integration with
+                        third-party services and APIs, ensuring your enterprise solution can grow as your business does.
+                    </p>
+
+                    <h2 class="text-2xl font-bold pb-3">Cost-Effective Development</h2>
+                    <p class="pb-3">Building separate native applications for iOS and Android can be costly and
+                        time-consuming. With React Native, you can write a single codebase and deploy it across both
+                        platforms, significantly reducing development costs. Furthermore, the shared codebase allows for
+                        easier collaboration between teams, helping to streamline maintenance and reduce the time spent
+                        on bug fixes and updates. This cost-effective approach is particularly advantageous for
+                        enterprises with limited resources or tight budgets.</p>
+
+                    <h2 class="text-2xl font-bold pb-3">Large Developer Ecosystem and Community Support</h2>
+                    <p class="pb-3">React Native has a large and active community of developers who contribute to the
+                        framework's continuous improvement. This means that enterprises can rely on an extensive pool of
+                        open-source libraries, tools, and plugins to accelerate development. Additionally, React
+                        Native’s popularity ensures that there’s no shortage of skilled developers in the job market,
+                        making it easier for enterprises to find the talent they need to maintain and enhance their
+                        applications.</p>
+
+                    <h2 class="text-2xl font-bold pb-3">Integration with Existing Codebase</h2>
+                    <p class="pb-3">Many enterprises already have an established codebase for their mobile applications.
+                        React Native allows for easy integration with existing native code, enabling businesses to take
+                        advantage of their current infrastructure while also benefiting from React Native’s speed and
+                        efficiency. This flexibility ensures that enterprises can modernize their applications without
+                        the need for a complete overhaul of their existing systems.</p>
+
+                    <h2 class="text-2xl font-bold pb-3">Conclusion</h2>
+                    <p class="pb-3">React Native is not just a tool for building mobile applications; it's a powerful
+                        framework that can help enterprises streamline their development process, cut costs, and create
+                        scalable, high-performance solutions. With its cross-platform capabilities, native-like
+                        performance, flexibility, and active community, React Native has become the go-to solution for
+                        businesses looking to build enterprise-grade applications. Whether you're a small startup or a
+                        large corporation, React Native is the perfect choice for your next enterprise application.</p>
+                </div>
+            </article>
+
+            <!-- <div class="w-full flex pt-6">
+                <a href="#" class="w-1/2 shadow hover:shadow-md text-left p-6">
+                    <p class="text-lg text-blue-400 font-bold flex items-center"><i class="fas fa-arrow-left pr-1"></i>
+                        Previous</p>
+                    <p class="pt-2">Why React is the Best Framework for Web Development</p>
+                </a>
+                <a href="#" class="w-1/2 shadow hover:shadow-md text-right p-6">
+                    <p class="text-lg text-blue-400 font-bold flex items-center justify-end">Next <i
+                            class="fas fa-arrow-right pl-1"></i></p>
+                    <p class="pt-2">How to Migrate Your Legacy System to React</p>
+                </a>
+            </div> -->
+
+            <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow mt-10 mb-10 p-6">
+                <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
+                    <img src="/assets/shivam.png" class="rounded-full shadow h-32 w-32">
+                </div>
+                <div class="flex-1 flex flex-col justify-center md:justify-start">
+                    <p class="font-semibold text-2xl">Shivam Jha</p>
+                    <p class="pt-2">Shivam is a seasoned web and mobile app developer with years of experience in
+                        building scalable, high-performance solutions using the latest technologies like React, React
+                        Native, and Node.js. He enjoys sharing his knowledge and helping businesses grow by adopting
+                        modern development practices.</p>
+                    <div
+                        class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-400 pt-4">
+                        <a class="" href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a class="pl-4" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="pl-4" href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="pl-4" href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Sidebar Section -->
+        <aside class="w-full md:w-1/3 flex flex-col items-center px-3 text-white">
+
+            <div class="w-full shadow flex flex-col my-4 p-6">
+                <p class="text-xl font-semibold pb-5">About Us</p>
+                <p class="pb-2">At our core, we are a team of passionate developers committed to delivering innovative
+                    and scalable solutions. We believe in leveraging the latest technologies to help businesses succeed
+                    in a fast-changing digital landscape.</p>
+                <a href="/pages/about.html"
+                    class="w-full  bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+                    Get to know us
+                </a>
+            </div>
+
+
+
+        </aside>
+    </div>
+    
+    
+
+    <footer class="relative text-[#EDE6D6] pt-16">
+
+    <!-- 🔥 Background Image Only -->
+    <div class="absolute inset-0">
+      <img src="./../assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
+
+      <!-- Logo Section -->
+      <div class="flex flex-col items-center md:items-start">
+        <a class="flex items-center justify-center md:justify-start text-white mb-4">
+          <img src="./../assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
+          <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
+        </a>
+        <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
+          Innovating through technology and creativity, building the future.
+        </p>
+      </div>
+
+      <!-- Explore -->
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">Explore</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="hover:text-pink-400 transition">Home</a></li>
+          <li><a href="/pages/about.html" class="hover:text-pink-400 transition">About</a></li>
+          <li><a href="/pages/work.html" class="hover:text-pink-400 transition">Work</a></li>
+          <li><a href="/pages/blog.html" class="hover:text-pink-400 transition">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">Company</h3>
+        <ul class="space-y-2">
+          <li><a href="/pages/privacy-policy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+          <li><a href="/pages/career.html" class="hover:text-pink-400 transition">Career</a></li>
+          <li><a href="/pages/contact-us.html" class="hover:text-pink-400 transition">Contact</a></li>
+          <li><a href="/pages/services.html" class="hover:text-pink-400 transition">Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">Contact</h3>
+        <ul class="space-y-3">
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+            <i class="ri-map-pin-fill mt-1"></i>
+            <span>Sector 85, Bata Chowk, Faridabad, Haryana, India, 121002</span>
+          </li>
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+            <i class="ri-phone-fill mt-1"></i>
+            <span>+91-7765979725</span>
+          </li>
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+            <i class="ri-mail-fill mt-1"></i>
+            <a href="mailto:contact@thundergits.com" class="hover:text-pink-400 transition">info@thundergits.com</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div
+      class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
+      <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
+      <div class="flex space-x-6 text-gray-300">
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-x-twitter"></i></a>
+
+
+      </div>
+    </div>
+
+    <!-- Floating Presale Chat -->
+    <div class="fixed bottom-16 left-4 flex items-center z-40">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
+        <img src="./../assets/call-center (1).png" alt="">
+      </div>
+      <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
+           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
+        AI Assistant
+      </span>
+    </div>
+
+    <!-- Scroll To Top -->
+    <button id="scrollToggleBtn"
+      class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
+      <i id="scrollIcon" class="fas fa-arrow-up"></i>
+    </button>
+  </footer>
+
+
+  <script>
+    // Animate when the page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      const hero = document.querySelector('.hero-content');
+      setTimeout(() => {
+        hero.classList.add('animate');
+      }, 200); // delay for smooth effect
+    });
+  </script>
+
+  <script src="./../script.js"></script>
+
+</body>
+
+</html>

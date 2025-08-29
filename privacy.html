@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThunderGits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontSize: {
+                        base: '1em',
+                        sm: '14px',
+                        md: '15px',
+                        lg: '1.4em',
+                        xl: '42px',
+                        heading: '6.75vw',
+                    },
+                    lineHeight: {
+                        tight: '1em',
+                        normal: '1.2em',
+                        relaxed: '1.5em',
+                        loose: '1.6em',
+                        heading: '0.95em',
+                    },
+                    letterSpacing: {
+                        wide: '1.8px',
+                        tighter: '0.01em',
+                    },
+                    fontWeight: {
+                        medium: '500',
+                    },
+                    transitionProperty: {
+                        all: 'all',
+                    },
+                    transitionTimingFunction: {
+                        ease: 'ease',
+                    },
+                    transitionDuration: {
+                        DEFAULT: '300ms',
+                    },
+                    colors: {
+                        theme: {
+                            text: '#DEDDDB',
+                            textLight: '#848484',
+                            textDark: '#EFE8CE',
+                            link: '#E2725B',
+                            hover: '#DD644C',
+                            link2: '#7DA189',
+                            hover2: '#6D967A',
+                            link3: '#9D7246',
+                            hover3: '#5B3918',
+                            bg: '#141414',
+                            bd: '#424040',
+                            altBg: '#292828',
+                            altBd: '#535353',
+                        },
+                        dark: '#0e0e0e',
+                        offwhite: '#f5e9cd',
+                        graytext: '#d9d9d9',
+                        accent: '#f25835',
+                        footer: '#121212',
+                        linkhover: '#f5e9cd',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+
+</head>
+
+<body class="bg-dark text-theme-text">
+
+
+    <section class="relative bg-cover bg-center" style="background-image: url('./assets/bg2.png');">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+
+        <!-- Fixed Header -->
+        <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
+            <div
+                class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex justify-between items-center h-20 border-b border-theme-bd">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
+                    <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+                    <span>ThunderGits</span>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
+                    <a href="./index.html"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">Home</a>
+                    <a href="./about.html"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">About</a>
+                    <a href="./work.html"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
+                    <a href="./service.html"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
+                    <a href="./career.html"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
+                    <a href="./contact.html"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
+                </nav>
+
+                <!-- Quote + Hamburger -->
+                <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
+                    <a href="./contact.html" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
+               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
+               border border-pink-500 hover:text-white transition-all duration-300 ease-out
+               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
+               before:scale-x-0 before:origin-left hover:before:scale-x-100 
+               before:transition-transform before:duration-300 before:z-[-1]">
+                        Get a Quote
+                    </a>
+
+                    <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
+            <div class="flex justify-between items-center mb-10">
+                <div class="flex items-center gap-2 text-lg font-bold">
+                    <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+                    <span class="text-white">ThunderGits</span>
+                </div>
+                <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
+                    <span>Close</span>
+                    <span class="text-2xl leading-none">×</span>
+                </button>
+            </div>
+
+            <div class="space-y-5">
+                <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Home</span><span class="text-sm">→</span>
+                </a>
+                <a href="./about.html"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>About</span><span class="text-sm">→</span>
+                </a>
+                <a href="./work.html"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Work</span><span class="text-sm">→</span>
+                </a>
+                <a href="./service.html"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Services</span><span class="text-sm">→</span>
+                </a>
+                <a href="./career.html"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Career</span><span class="text-sm">→</span>
+                </a>
+                <a href="./contact.html"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Contact</span><span class="text-sm">→</span>
+                </a>
+
+                <!-- Get a Quote Button -->
+                <div class="pt-4">
+                    <a href="./contact.html"
+                        class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Icons -->
+            <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
+                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/thundergits/" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+                        class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+
+
+
+        <!-- Hero Section -->
+        <div class="relative z-20 flex items-center min-h-[50vh] pt-20">
+            <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+
+
+
+                <!-- Right Content -->
+                <div id="hero-content" class="relative flex items-center">
+                    <!-- Left Gradient Border -->
+                    <div id="gradient-border"
+                        class="absolute left-0 top-0 bg-gradient-to-b from-pink-500 to-purple-500 rounded-l-xl"
+                        style="width: 4px;"></div>
+
+                    <!-- Content -->
+                    <div class="border-l-4 border-accent" data-aos="fade-right">
+
+                        <div class="pl-4 flex flex-col  h-full">
+                            <p
+                                class="text-4xl sm:text-5xl font-bold leading-snug mb-2 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                                Privacy Policy
+                            </p>
+
+                            <p class="mt-2 sm:mt-4 text-base sm:text-lg text-offwhite/80 max-w-xl">
+                                Your privacy matters. Learn how we protect and use your information.
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- <script>
+  function adjustHeroContent() {
+    const img = document.getElementById('hero-image');
+    const content = document.getElementById('hero-content');
+    const border = document.getElementById('gradient-border');
+
+    const imgHeight = img.clientHeight;
+    content.style.height = imgHeight + 'px';
+    border.style.height = imgHeight + 'px';
+  }
+
+  window.addEventListener('load', adjustHeroContent);
+  window.addEventListener('resize', adjustHeroContent);
+</script> -->
+
+
+
+    </section>
+
+
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.style.opacity = 0;
+                setTimeout(() => {
+                    menu.style.opacity = 1;
+                }, 10);
+            } else {
+                menu.style.opacity = 0;
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300); // match with CSS transition
+            }
+        }
+    </script>
+
+
+    <!-- Floating Social Bar -->
+    <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
+        <a href="#"
+            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="#"
+            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-purple-500/50 transition-all animate-float-up-down">
+            <i class="fas fa-image"></i>
+        </a>
+        <a href="#"
+            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
+            <i class="fas fa-credit-card"></i>
+        </a>
+    </div>
+
+
+
+
+
+
+    <!-- Privacy Policy Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6 lg:px-12">
+
+            <!-- Title -->
+            <div class="text-left mb-12">
+                <h4 class="text-sm font-semibold text-pink-500 tracking-widest uppercase mb-3">
+                    Legal
+                </h4>
+                <h2 class="text-gray-900 font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block">
+                    Privacy Policy
+                    <span
+                        class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded"></span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl">
+                    ThunderGits Consultancy Services Pvt Ltd ("we", "our", or "us") operates the website
+                    <span class="font-semibold text-pink-500">thundergits.com</span>.
+                    This Privacy Policy outlines how we collect, use, and safeguard your information.
+                </p>
+            </div>
+
+            <!-- Policy Content -->
+            <div class="space-y-8">
+
+                <!-- 1. Information We Collect -->
+                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">1. Information We Collect</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        We collect personal data submitted through the website via:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 text-sm mt-3 space-y-1">
+                        <li>Contact forms</li>
+                        <li>Job application forms</li>
+                    </ul>
+                    <p class="text-gray-700 text-sm mt-3">
+                        Information includes your name, email, phone number, and service requirements.
+                    </p>
+                </div>
+
+                <!-- 2. Use of Information -->
+                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">2. Use of Information</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        The collected data is used internally to respond to your queries or evaluate job applications.
+                    </p>
+                </div>
+
+                <!-- 3. Data Sharing -->
+                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">3. Data Sharing</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        We do not share your data with third parties. All data is accessed only by our internal sales
+                        and HR teams.
+                    </p>
+                </div>
+
+                <!-- 4. Cookies -->
+                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">4. Cookies</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        We do not use cookies or external analytics tools on this website.
+                    </p>
+                </div>
+
+                <!-- 5. Data Security -->
+                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">5. Data Security</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Your information is protected with access control mechanisms to ensure safety and privacy.
+                    </p>
+                </div>
+
+                <!-- 6. Children’s Privacy -->
+                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">6. Children’s Privacy</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Our website is safe for users under 13. We do not knowingly collect sensitive data from
+                        children.
+                    </p>
+                </div>
+
+                <!-- 7. Policy Changes -->
+                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">7. Policy Changes</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Since we do not register users, we may update this policy without individual notifications.
+                        Please check this
+                        page periodically.
+                    </p>
+                </div>
+
+                <!-- 8. Contact Us -->
+                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">8. Contact Us</h3>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        For questions or concerns about this policy:
+                    </p>
+                    <ul class="list-none text-gray-700 text-sm mt-3 space-y-1">
+                        <li><strong>Email:</strong> info@thundergits.com</li>
+                        <li><strong>Address:</strong> Vill- Dagarua, PO-Bisambharpur Ailoth, PS- Musrigharari,
+                            Samastipur, Bihar, India, 848101</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <footer class="relative text-[#EDE6D6] pt-16">
+
+        <!-- 🔥 Background Image Only -->
+        <div class="absolute inset-0">
+            <img src="./assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
+
+            <!-- Logo Section -->
+            <div class="flex flex-col items-center md:items-start">
+                <a class="flex items-center justify-center md:justify-start text-white mb-4">
+                    <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
+                    <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
+                </a>
+                <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
+                    Innovating through technology and creativity, building the future.
+                </p>
+            </div>
+
+            <!-- Explore -->
+            <div>
+                <h3 class="font-semibold mb-3 text-lg">Explore</h3>
+                <ul class="space-y-2">
+                    <li><a href="./index.html" class="hover:text-pink-400 transition">Home</a></li>
+                    <li><a href="./about.html" class="hover:text-pink-400 transition">About</a></li>
+                    <li><a href="./work.html" class="hover:text-pink-400 transition">Work</a></li>
+                    <li><a href="./index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h3 class="font-semibold mb-3 text-lg">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="./privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+                    <li><a href="./career.html" class="hover:text-pink-400 transition">Career</a></li>
+                    <li><a href="./contact.html" class="hover:text-pink-400 transition">Contact</a></li>
+                    <li><a href="./service.html" class="hover:text-pink-400 transition">Services</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-semibold mb-3 text-lg">Contact</h3>
+                <ul class="space-y-3">
+                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+                        <i class="ri-map-pin-fill mt-1"></i>
+                        <span>Sector 85, Bata Chowk, Faridabad, Haryana, India, 121002</span>
+                    </li>
+                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+                        <i class="ri-phone-fill mt-1"></i>
+                        <span>+91-7765979725</span>
+                    </li>
+                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+                        <i class="ri-mail-fill mt-1"></i>
+                        <a href="mailto:contact@thundergits.com"
+                            class="hover:text-pink-400 transition">info@thundergits.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div
+            class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
+            <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
+            <div class="flex space-x-6 text-gray-300">
+                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/thundergits/" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+                        class="fab fa-x-twitter"></i></a>
+
+
+            </div>
+        </div>
+
+        <!-- Floating Presale Chat -->
+        <div class="fixed bottom-16 left-4 flex items-center z-40">
+            <div
+                class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
+                <img src="./assets/call-center (1).png" alt="">
+            </div>
+            <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
+           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
+                AI Assistant
+            </span>
+        </div>
+
+        <!-- Scroll To Top -->
+        <button id="scrollToggleBtn"
+            class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
+            <i id="scrollIcon" class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+
+    <script>
+        // Animate when the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            const hero = document.querySelector('.hero-content');
+            setTimeout(() => {
+                hero.classList.add('animate');
+            }, 200); // delay for smooth effect
+        });
+    </script>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

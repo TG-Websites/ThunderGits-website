@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThunderGits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontSize: {
+                        base: '1em',
+                        sm: '14px',
+                        md: '15px',
+                        lg: '1.4em',
+                        xl: '42px',
+                        heading: '6.75vw',
+                    },
+                    lineHeight: {
+                        tight: '1em',
+                        normal: '1.2em',
+                        relaxed: '1.5em',
+                        loose: '1.6em',
+                        heading: '0.95em',
+                    },
+                    letterSpacing: {
+                        wide: '1.8px',
+                        tighter: '0.01em',
+                    },
+                    fontWeight: {
+                        medium: '500',
+                    },
+                    transitionProperty: {
+                        all: 'all',
+                    },
+                    transitionTimingFunction: {
+                        ease: 'ease',
+                    },
+                    transitionDuration: {
+                        DEFAULT: '300ms',
+                    },
+                    colors: {
+                        theme: {
+                            text: '#DEDDDB',
+                            textLight: '#848484',
+                            textDark: '#EFE8CE',
+                            link: '#E2725B',
+                            hover: '#DD644C',
+                            link2: '#7DA189',
+                            hover2: '#6D967A',
+                            link3: '#9D7246',
+                            hover3: '#5B3918',
+                            bg: '#141414',
+                            bd: '#424040',
+                            altBg: '#292828',
+                            altBd: '#535353',
+                        },
+                        dark: '#0e0e0e',
+                        offwhite: '#f5e9cd',
+                        graytext: '#d9d9d9',
+                        accent: '#f25835',
+                        footer: '#121212',
+                        linkhover: '#f5e9cd',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./../style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+
+</head>
+
+<body class=" text-theme-text">
+
+
+    <section class="relative bg-cover bg-center" style="background-image: url('./../assets/bg2.png');">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+
+        <!-- Header -->
+        <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
+            <div
+                class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex justify-between items-center h-20 border-b border-theme-bd">
+
+                <!-- Logo + Name -->
+                <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
+                    <img src="./../assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+                    <span>ThunderGits</span>
+                </div>
+
+                <!-- Back to Career Button -->
+                <a href="./../career.html" class="relative px-6 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
+                      text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
+                      border border-pink-500 hover:text-white transition-all duration-300 ease-out
+                      before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
+                      before:scale-x-0 before:origin-left hover:before:scale-x-100 
+                      before:transition-transform before:duration-300 before:z-[-1]">
+                    Back to Career Page
+                </a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+      <div class="relative z-20 flex items-center min-h-[50vh] pt-20">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+
+    <!-- Right Content -->
+    <div id="hero-content" class="relative flex items-center">
+      <!-- Left Gradient Border -->
+      <div id="gradient-border"
+        class="absolute left-0 top-0 bg-gradient-to-b from-pink-500 to-purple-500 rounded-l-xl"
+        style="width: 4px; height: 100%;"></div>
+
+      <!-- Content -->
+      <div class="border-l-4 border-accent pl-4" data-aos="fade-right">
+  <p
+    class="text-4xl sm:text-5xl uppercase font-bold leading-[1.2] mb-3 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+     Frontend Developer
+  </p>
+  <p class="mt-2 sm:mt-4 text-base sm:text-lg text-offwhite/80 max-w-xl">
+   Join our team and build seamless, user-friendly web applications.
+  </p>
+</div>
+
+    </div>
+  </div>
+</div>
+
+    </section>
+
+
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.style.opacity = 0;
+                setTimeout(() => {
+                    menu.style.opacity = 1;
+                }, 10);
+            } else {
+                menu.style.opacity = 0;
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300); // match with CSS transition
+            }
+        }
+    </script>
+
+
+    <!-- Floating Social Bar -->
+    <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
+        <a href="#"
+            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="#"
+            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-purple-500/50 transition-all animate-float-up-down">
+            <i class="fas fa-image"></i>
+        </a>
+        <a href="#"
+            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
+            <i class="fas fa-credit-card"></i>
+        </a>
+    </div>
+
+
+
+
+
+
+
+    <!-- Job Details -->
+<!-- Job Details -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Title -->
+    <div class="text-left max-w-3xl mx-auto lg:mx-0 mb-12">
+      <h4 class="text-sm font-semibold text-pink-500 tracking-widest uppercase mb-3">
+        Careers
+      </h4>
+      <h2 class="text-gray-900 font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block">
+        Job Details
+        <span class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded"></span>
+      </h2>
+    </div>
+
+    <!-- Job Information Cards -->
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Position Overview -->
+      <div class="group border-l-4 border-pink-500 p-6 shadow-md hover:shadow-lg transition bg-white">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Position Overview</h3>
+        <ul class="space-y-3 text-gray-700 text-sm">
+          <li class="flex items-center gap-2">
+            <i class="ri-money-dollar-circle-fill text-pink-500 text-lg"></i>
+            <span><strong>Stipend/Salary:</strong> ₹15,000 - ₹20,000 per month (Based on experience)</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="ri-briefcase-fill text-pink-500 text-lg"></i>
+            <span><strong>Job Type:</strong> Full-Time</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="ri-map-pin-line text-pink-500 text-lg"></i>
+            <span><strong>Location:</strong> Remote</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Description -->
+      <div class="group border-l-4 border-pink-500 p-6 shadow-md hover:shadow-lg transition bg-white">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Job Description</h3>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          As a Frontend Developer at ThunderGits, you will be responsible for
+          designing, developing, and maintaining cutting-edge web applications
+          using modern frontend technologies. Your work will directly contribute
+          to creating seamless user experiences and enhancing the usability of our products.
+        </p>
+      </div>
+
+      <!-- Responsibilities -->
+      <div class="group border-l-4 border-pink-500 p-6 shadow-md hover:shadow-lg transition bg-white">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Responsibilities</h3>
+        <ul class="list-disc list-inside text-gray-700 text-sm space-y-2">
+          <li>Develop responsive and interactive web applications using React.js and related technologies.</li>
+          <li>Collaborate with designers and backend developers to implement innovative solutions.</li>
+          <li>Optimize web applications for maximum speed and scalability.</li>
+          <li>Ensure the technical feasibility of UI/UX designs.</li>
+          <li>Write clean, efficient, and maintainable code.</li>
+        </ul>
+      </div>
+
+      <!-- Qualifications -->
+      <div class="group border-l-4 border-pink-500 p-6 shadow-md hover:shadow-lg transition bg-white">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Qualifications</h3>
+        <ul class="list-disc list-inside text-gray-700 text-sm space-y-2">
+          <li>Proven experience in frontend development, particularly with React.js.</li>
+          <li>Strong understanding of HTML5, CSS3, and JavaScript (ES6+).</li>
+          <li>Familiarity with state management libraries like Redux or Context API.</li>
+          <li>Experience with version control systems like Git.</li>
+          <li>Good understanding of web performance optimization.</li>
+        </ul>
+      </div>
+
+      <!-- Benefits -->
+      <div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition bg-white">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Benefits</h3>
+        <ul class="list-disc list-inside text-gray-700 text-sm space-y-2">
+          <li>Competitive salary and performance-based bonuses.</li>
+          <li>Flexible working hours and remote work options.</li>
+          <li>Opportunities for professional development and career growth.</li>
+          <li>Inclusive and collaborative team culture.</li>
+          <li>Access to cutting-edge tools and technologies.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Application Form Section -->
+<section class="relative py-20 bg-white overflow-hidden mb-20">
+
+  <!-- Right-side Background Image -->
+  <div class="absolute top-0 right-0 w-[60%] h-full z-0 hidden lg:block">
+    <img src="./../assets/bg2.png" alt="Background" class="w-full h-full object-cover">
+  </div>
+
+  <!-- Mobile Background Image -->
+  <div class="absolute top-0 left-0 w-full h-full z-0 lg:hidden">
+    <img src="./../assets/bg2.png" alt="Background" class="w-full h-full object-cover">
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 px-4 sm:px-6 items-center">
+
+    <!-- Left Image -->
+    <div class="relative w-full order-1" data-aos="fade-right">
+      <div class="absolute top-4 -right-4 w-full h-full border-[6px] border-transparent -z-10 overflow-hidden rounded-md">
+        <div class="absolute bottom-0 right-0 w-1/2 h-1/2"
+          style="background: radial-gradient(circle at bottom right,
+                   rgba(236,72,153,0.9) 10%,
+                   rgba(236,72,153,0.6) 30%,
+                   rgba(147,51,234,0.4) 50%,
+                   rgba(147,51,234,0.2) 75%,
+                   transparent 100%);">
+        </div>
+      </div>
+      <img src="./../assets/about-img.png" alt="Apply Image"
+        class="w-full h-[400px] sm:h-[500px] lg:h-[560px] object-cover shadow-sm rounded-md" />
+    </div>
+
+    <!-- Right Form -->
+    <div class="space-y-6 text-white order-2" data-aos="fade-left">
+      <h4 class="text-sm font-semibold text-gray-300 tracking-widest uppercase">
+        Apply Now
+      </h4>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2">
+        Frontend Developer Application
+        <span class="absolute left-0 bottom-0 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></span>
+      </h2>
+
+      <form id="applicationForm" class="space-y-6">
+        <input type="hidden" name="jobTitle" value="Frontend Developer" />
+
+        <div>
+          <label for="name" class="block text-sm mb-2 text-gray-200">Name</label>
+          <input type="text" id="name" name="name"
+            class="w-full p-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-pink-500 shadow-sm"
+            placeholder="Enter your name" required />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm mb-2 text-gray-200">Email</label>
+          <input type="email" id="email" name="email"
+            class="w-full p-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-pink-500 shadow-sm"
+            placeholder="Enter your email" required />
+        </div>
+
+        <div>
+          <label for="phone" class="block text-sm mb-2 text-gray-200">Phone Number</label>
+          <input type="tel" id="phone" name="phone"
+            class="w-full p-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-pink-500 shadow-sm"
+            placeholder="Enter phone number" required />
+        </div>
+
+        <div>
+          <label for="resume" class="block text-sm mb-2 text-gray-200">Upload Resume</label>
+          <input type="file" id="resume" name="resume"
+            class="w-full p-4 bg-white/10 border border-white/20 rounded-lg text-white file:text-white file:bg-gradient-to-r file:from-pink-500 file:to-purple-500 file:border-0 file:rounded-md file:px-4 file:py-2 file:mr-4 focus:outline-none focus:border-pink-500 shadow-sm"
+            accept=".pdf,.doc,.docx" required />
+          <small class="text-gray-300">Accepted formats: PDF, DOC, DOCX</small>
+        </div>
+
+        <button type="submit" id="submitButton"
+          class="w-auto px-8 py-4 rounded-lg font-medium uppercase text-white bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90 transition flex items-center justify-center gap-2 shadow-md">
+          <span id="buttonText">Submit Application</span>
+          <svg id="loader" class="hidden w-5 h-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          </svg>
+        </button>
+      </form>
+
+      <div id="thankYouMessage" class="mt-6 hidden text-center text-pink-400 text-lg font-semibold">
+        Thank you! Your application has been submitted successfully.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+   <footer class="relative text-[#EDE6D6] pt-16">
+
+        <!-- 🔥 Background Image Only -->
+        <div class="absolute inset-0">
+            <img src="./../assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
+
+            <!-- Logo Section -->
+            <div class="flex flex-col items-center md:items-start">
+                <a class="flex items-center justify-center md:justify-start text-white mb-4">
+                    <img src="./../assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
+                    <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
+                </a>
+                <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
+                    Innovating through technology and creativity, building the future.
+                </p>
+            </div>
+
+            <!-- Explore -->
+            <div>
+                <h3 class="font-semibold mb-3 text-lg">Explore</h3>
+                <ul class="space-y-2">
+                    <li><a href="./../index.html" class="hover:text-pink-400 transition">Home</a></li>
+                    <li><a href="./../about.html" class="hover:text-pink-400 transition">About</a></li>
+                    <li><a href="./../work.html" class="hover:text-pink-400 transition">Work</a></li>
+                    <li><a href="./../index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h3 class="font-semibold mb-3 text-lg">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="./../privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+                    <li><a href="./../career.html" class="hover:text-pink-400 transition">Career</a></li>
+                    <li><a href="./../contact.html" class="hover:text-pink-400 transition">Contact</a></li>
+                    <li><a href="./../service.html" class="hover:text-pink-400 transition">Services</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-semibold mb-3 text-lg">Contact</h3>
+                <ul class="space-y-3">
+                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+                        <i class="ri-map-pin-fill mt-1"></i>
+                        <span>Sector 85, Bata Chowk, Faridabad, Haryana, India, 121002</span>
+                    </li>
+                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+                        <i class="ri-phone-fill mt-1"></i>
+                        <span>+91-7765979725</span>
+                    </li>
+                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+                        <i class="ri-mail-fill mt-1"></i>
+                        <a href="mailto:contact@thundergits.com"
+                            class="hover:text-pink-400 transition">info@thundergits.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div
+            class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
+            <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
+            <div class="flex space-x-6 text-gray-300">
+                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/thundergits/" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+                        class="fab fa-x-twitter"></i></a>
+
+
+            </div>
+        </div>
+
+        <!-- Floating Presale Chat -->
+        <div class="fixed bottom-16 left-4 flex items-center z-40">
+            <div
+                class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
+                <img src="./../assets/call-center (1).png" alt="">
+            </div>
+            <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
+           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
+                AI Assistant
+            </span>
+        </div>
+
+        <!-- Scroll To Top -->
+        <button id="scrollToggleBtn"
+            class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
+            <i id="scrollIcon" class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+
+    <script>
+        // Animate when the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            const hero = document.querySelector('.hero-content');
+            setTimeout(() => {
+                hero.classList.add('animate');
+            }, 200); // delay for smooth effect
+        });
+    </script>
+
+    <script src="./../script.js"></script>
+
+</body>
+
+</html>

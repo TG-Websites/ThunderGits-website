@@ -1165,14 +1165,14 @@
 
         <!-- Form -->
         <div data-aos="fade-up" class="bg-white p-6 sm:p-10 shadow-md rounded-md">
-          <form class="space-y-6">
+          <form id="contactForm" class="space-y-6">
 
             <!-- Name -->
             <div class="relative">
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
                 <i class="fa-regular fa-user"></i>
               </span>
-              <input type="text" placeholder="Name" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
+              <input type="text" name="name" placeholder="Name" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
                      placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
             </div>
 
@@ -1181,7 +1181,7 @@
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
                 <i class="fa-solid fa-phone"></i>
               </span>
-              <input type="text" placeholder="Phone" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
+              <input type="text" name="phone" placeholder="Phone" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
                      placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
             </div>
 
@@ -1190,32 +1190,32 @@
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
                 <i class="fa-regular fa-envelope"></i>
               </span>
-              <input type="email" placeholder="Email Address" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
+              <input type="email" name="email" placeholder="Email Address" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
                      placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
             </div>
 
             <!-- Subject -->
-            <div class="relative">
+            <!-- <div class="relative">
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
                 <i class="fa-regular fa-pen-to-square"></i>
               </span>
               <input type="text" placeholder="Subject" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
                      placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
-            </div>
+            </div> -->
 
             <!-- Message -->
             <div class="relative">
               <span class="absolute left-3 top-4 text-pink-500 text-[18px]">
                 <i class="fa-regular fa-comment"></i>
               </span>
-              <textarea placeholder="How can we help you? Feel free to get in touch!" rows="4"
+              <textarea name="message" placeholder="How can we help you? Feel free to get in touch!" rows="4"
                 class="w-full border border-gray-300 rounded-md pl-11 pr-4 pt-3 outline-none text-gray-700 
                      placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300 resize-y"></textarea>
             </div>
 
             <!-- Checkbox -->
             <div class="flex items-center text-sm text-gray-600">
-              <input type="checkbox" id="agree" class="mr-2">
+              <input type="checkbox" id="agree" class="mr-2" required>
               <label for="agree">
                 I agree that my data is
                 <a href="#"
@@ -1569,7 +1569,7 @@
 
 
   <script src="./script.js"></script>
-
+  <script src="./index.js"></script>
 </body>
 
 </html>

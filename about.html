@@ -84,9 +84,9 @@
 <body class="bg-dark text-theme-text">
 
 
-  <section class="relative bg-cover bg-center" style="background-image: url('./assets/bg2.png');">
+  <section class="relative bg-cover bg-center min-h-[90vh]" style="background-image: url('./assets/bg2.png');">
 
-    <!-- Overlay -->
+    <!-- Global Section Overlay (dark tone for bg img) -->
     <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
 
     <!-- Fixed Header -->
@@ -102,7 +102,7 @@
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
           <a href="./index.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">Home</a>
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
           <a href="./about.html" class="pb-1 border-b-2 border-linkhover">About</a>
           <a href="./work.html"
             class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
@@ -132,7 +132,6 @@
       </div>
     </header>
 
-
     <!-- Mobile Menu -->
     <div id="mobileMenu"
       class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
@@ -148,7 +147,7 @@
       </div>
 
       <div class="space-y-5">
-        <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+        <a href="./index.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
           <span>Home</span><span class="text-sm">→</span>
         </a>
         <a href="./about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
@@ -184,66 +183,69 @@
             class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
           class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-         <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-x-twitter"></i></a> -->
       </div>
     </div>
 
-
-
-
     <!-- Hero Section -->
-    <div class="relative z-20 flex items-center min-h-[50vh] pt-20">
-      <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+ <!-- Hero Section -->
+<div class="relative z-20 flex items-center min-h-[90vh] pt-28">
+  <div
+    class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 items-center gap-8 lg:gap-12">
 
-
-
-        <!-- Right Content -->
-        <div id="hero-content" class="relative flex items-center">
-          <!-- Left Gradient Border -->
-          <div id="gradient-border"
-            class="absolute left-0 top-0 bg-gradient-to-b from-pink-500 to-purple-500 rounded-l-xl" style="width: 4px;">
-          </div>
-
-          <!-- Content -->
-          <div class="border-l-4 border-accent" data-aos="fade-right">
-
-            <div class="pl-4 flex flex-col  h-full">
-              <p
-                class="text-4xl sm:text-5xl font-bold leading-snug mb-2 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-                About Us
-              </p>
-              <h1 class="text-offwhite text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
-                We Build. We Innovate.
-              </h1>
-              <p class="mt-2 sm:mt-4 text-base sm:text-lg text-offwhite/80 max-w-xl">
-                Driving digital success with creativity & technology.
-              </p>
-            </div>
-          </div>
-
-
+    <!-- Left Video -->
+    <div
+      class="flex justify-center md:justify-end items-center order-1 md:order-1"
+      data-aos="fade-right">
+      <div
+        class="relative w-[260px] sm:w-[340px] lg:w-[380px] h-[200px] sm:h-[250px] lg:h-[300px] rounded-xl overflow-hidden shadow-lg">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+          <source src="./assets/about-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <!-- Overlay for blend -->
+        <div
+          class="absolute inset-0 bg-gradient-to-l from-dark/60 via-dark/30 to-transparent">
         </div>
       </div>
+    </div>
 
-      <!-- <script>
-  function adjustHeroContent() {
-    const img = document.getElementById('hero-image');
-    const content = document.getElementById('hero-content');
-    const border = document.getElementById('gradient-border');
+    <!-- Right Content -->
+    <div
+      id="hero-content"
+      class="relative flex flex-col md:flex-row items-stretch justify-start order-2 md:order-2 w-full">
+      
+      <!-- Gradient Border (Mobile → top, Desktop → left) -->
+      <div
+        id="gradient-border"
+        class="bg-gradient-to-b from-pink-500 to-purple-500
+               h-[4px] w-full mb-4 md:mb-0 md:h-auto md:w-[4px] md:rounded-l-xl">
+      </div>
 
-    const imgHeight = img.clientHeight;
-    content.style.height = imgHeight + 'px';
-    border.style.height = imgHeight + 'px';
-  }
-
-  window.addEventListener('load', adjustHeroContent);
-  window.addEventListener('resize', adjustHeroContent);
-</script> -->
-
-
+      <!-- Text -->
+      <div
+        class="md:border-l-4 border-accent md:pl-6 pl-0 flex flex-col justify-start min-h-[200px] sm:min-h-[250px] lg:min-h-[300px] py-2 sm:py-4"
+        data-aos="fade-left">
+        
+        <p
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug mb-2 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+          About Us
+        </p>
+        <h1
+          class="text-offwhite text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug max-w-2xl">
+          We Build. We Innovate.
+        </h1>
+        <p
+          class="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg text-offwhite/80 max-w-2xl">
+          Driving digital success with creativity & technology. Our team thrives on blending design,
+          innovation, and cutting-edge technology to deliver transformative digital solutions.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
   </section>
+
 
 
 
@@ -851,7 +853,7 @@
             class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
           class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-         <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+        <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
             class="fab fa-x-twitter"></i></a> -->
 
 

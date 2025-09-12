@@ -1003,15 +1003,14 @@
 
         <!-- Form -->
         <div data-aos="fade-up" class="bg-white p-6 sm:p-10 shadow-md rounded-md">
-          <form class="space-y-6">
-
+           <form id="feedback-form" class="space-y-6">
             <!-- Name -->
             <div class="relative">
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
                 <i class="fa-regular fa-user"></i>
               </span>
-              <input type="text" placeholder="Name" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-                     placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
+              <input name="name" type="text" placeholder="Name" required class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
+             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
             </div>
 
             <!-- Phone -->
@@ -1019,8 +1018,8 @@
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
                 <i class="fa-solid fa-phone"></i>
               </span>
-              <input type="text" placeholder="Phone" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-                     placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
+              <input name="phone" type="text" placeholder="Phone" required class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
+             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
             </div>
 
             <!-- Email -->
@@ -1028,8 +1027,8 @@
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
                 <i class="fa-regular fa-envelope"></i>
               </span>
-              <input type="email" placeholder="Email Address" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-                     placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
+              <input name="email" type="email" placeholder="Email Address" required class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
+             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
             </div>
 
             <!-- Subject -->
@@ -1037,8 +1036,8 @@
               <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
                 <i class="fa-regular fa-pen-to-square"></i>
               </span>
-              <input type="text" placeholder="Subject" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-                     placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
+              <input name="subject" type="text" placeholder="Subject" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
+             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
             </div>
 
             <!-- Message -->
@@ -1046,28 +1045,27 @@
               <span class="absolute left-3 top-4 text-pink-500 text-[18px]">
                 <i class="fa-regular fa-comment"></i>
               </span>
-              <textarea placeholder="How can we help you? Feel free to get in touch!" rows="4"
+              <textarea name="message" placeholder="How can we help you? Feel free to get in touch!" rows="4" required
                 class="w-full border border-gray-300 rounded-md pl-11 pr-4 pt-3 outline-none text-gray-700 
-                     placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300 resize-y"></textarea>
+             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300 resize-y"></textarea>
             </div>
 
             <!-- Checkbox -->
             <div class="flex items-center text-sm text-gray-600">
-              <input type="checkbox" id="agree" class="mr-2">
-              <label for="agree">I agree that my data is
+              <input type="checkbox" id="agree" class="mr-2" required>
+              <label for="agree">
+                I agree that my data is
                 <a href="#"
                   class="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent underline">collected</a>.
               </label>
             </div>
 
             <!-- Button -->
-            <a href="contact.html" class="relative font-bold uppercase py-3 px-6 w-full sm:w-auto text-white 
-          bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow-md 
-          hover:opacity-90 transition-all duration-300 inline-block text-center">
+            <button type="submit" class="relative font-bold uppercase py-3 px-6 w-full sm:w-auto text-white 
+           bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow-md 
+           hover:opacity-90 transition-all duration-300">
               Get in touch
-            </a>
-
-
+            </button>
           </form>
         </div>
       </div>
@@ -1197,8 +1195,18 @@
     });
   </script>
 
-
+  <div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50">
+    <div class="rounded-lg bg-white p-8 text-center shadow-lg">
+      <div class="mb-4 text-6xl text-green-500">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2 class="mb-2 text-2xl font-bold">Thank You!</h2>
+      <p class="text-gray-600">Your message has been sent successfully.</p>
+      <button id="closeModal" class="mt-6 rounded-md bg-gray-800 px-4 py-2 text-white">Close</button>
+    </div>
+  </div>
   <script src="./script.js"></script>
+  <script src="./form.js"></script>
 
 </body>
 

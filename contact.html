@@ -443,139 +443,134 @@
 
 
   <!-- ================= FAQ Section ================= -->
-  <section id="faq" class="relative w-full min-h-[70vh]">
-    <!-- Background Image -->
-    <div class="absolute inset-0">
-      <img src="./assets/bg2.png" alt="ThunderGits FAQ" class="w-full h-full object-cover shadow-md" />
-      <div class="absolute inset-0 bg-black/60"></div>
-    </div>
+<section id="faq" class="relative w-full py-16 lg:py-24">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="./assets/bg2.png" alt="ThunderGits FAQ" class="w-full h-full object-cover shadow-md" />
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
 
-    <!-- Content Overlay -->
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6 py-16">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-        Frequently Asked Questions
-      </h2>
-      <p class="max-w-2xl text-base sm:text-lg text-gray-200 mb-8">
-        Find answers to the most common questions about our services, support, and more.
-      </p>
+  <!-- Content Overlay -->
+  <div class="relative z-10 flex flex-col items-center text-center text-white px-6">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+      Frequently Asked Questions
+    </h2>
+    <p class="max-w-2xl text-base sm:text-lg text-gray-200 mb-8">
+      Find answers to the most common questions about our services, support, and more.
+    </p>
 
-      <!-- FAQ Accordion -->
-      <div
-        class="max-w-3xl w-full bg-white/10 backdrop-blur-sm rounded-xl shadow-xl text-left divide-y divide-white/20">
+    <!-- FAQ Accordion -->
+    <div class="max-w-3xl w-full bg-white/10 backdrop-blur-sm rounded-xl shadow-xl text-left divide-y divide-white/20">
 
-        <!-- Item 1 -->
-        <div class="faq-item">
-          <button class="w-full flex justify-between items-center p-4 text-left">
-            <span
-              class="text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              What services do you offer?
-            </span>
-            <svg class="w-5 h-5 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Item -->
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            What services do you offer?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
-            <svg class="w-5 h-5 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
             </svg>
-          </button>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-            <p class="text-gray-200 text-sm pb-4">
-              We offer custom software development, IT consulting, cloud services, and much more. Contact us to learn
-              how we can assist with your technology needs.
-            </p>
           </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            We offer custom software development, IT consulting, cloud services, and much more. Contact us to learn how we can assist with your technology needs.
+          </p>
         </div>
+      </div>
 
-        <!-- Item 2 -->
-        <div class="faq-item">
-          <button class="w-full flex justify-between items-center p-4 text-left">
-            <span
-              class="text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              How can I get in touch with support?
-            </span>
-            <svg class="w-5 h-5 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Repeatable FAQ Items -->
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            How can I get in touch with support?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
-            <svg class="w-5 h-5 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
             </svg>
-          </button>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-            <p class="text-gray-200 text-sm pb-4">
-              You can reach our support team by email at <span class="text-accent">info@thundergits.com</span> or
-              through our contact form on this page. We're here to help!
-            </p>
           </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            You can reach our support team by email at <span class="text-accent">info@thundergits.com</span> or through our contact form on this page. We're here to help!
+          </p>
         </div>
+      </div>
 
-        <!-- Item 3 -->
-        <div class="faq-item">
-          <button class="w-full flex justify-between items-center p-4 text-left">
-            <span
-              class="text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              Do you offer custom software development?
-            </span>
-            <svg class="w-5 h-5 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Do you offer custom software development?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
-            <svg class="w-5 h-5 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
             </svg>
-          </button>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-            <p class="text-gray-200 text-sm pb-4">
-              Yes, we specialize in custom software development to meet your unique business needs. From concept to
-              delivery, we work closely with you to bring your ideas to life.
-            </p>
           </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            Yes, we specialize in custom software development to meet your unique business needs. From concept to delivery, we work closely with you to bring your ideas to life.
+          </p>
         </div>
+      </div>
 
-        <!-- Item 4 -->
-        <div class="faq-item">
-          <button class="w-full flex justify-between items-center p-4 text-left">
-            <span
-              class="text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              Can I schedule a demo of your services?
-            </span>
-            <svg class="w-5 h-5 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Can I schedule a demo of your services?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
-            <svg class="w-5 h-5 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
             </svg>
-          </button>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-            <p class="text-gray-200 text-sm pb-4">
-              Yes! You can schedule a demo by filling out the contact form above or by emailing us directly at <span
-                class="text-accent">info@thundergits.com</span>.
-            </p>
           </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            Yes! You can schedule a demo by filling out the contact form above or by emailing us directly at <span class="text-accent">info@thundergits.com</span>.
+          </p>
         </div>
+      </div>
 
-        <!-- Item 5 -->
-        <div class="faq-item">
-          <button class="w-full flex justify-between items-center p-4 text-left">
-            <span
-              class="text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              What industries do you serve?
-            </span>
-            <svg class="w-5 h-5 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            What industries do you serve?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
-            <svg class="w-5 h-5 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
             </svg>
-          </button>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
-            <p class="text-gray-200 text-sm pb-4">
-              We serve a variety of industries, including healthcare, finance, retail, and technology. Our solutions are
-              tailored to your specific business needs.
-            </p>
           </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            We serve a variety of industries, including healthcare, finance, retail, and technology. Our solutions are tailored to your specific business needs.
+          </p>
         </div>
-
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- FAQ Script -->
   <script>

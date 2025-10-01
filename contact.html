@@ -374,8 +374,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                <input type="text" id="name" name="name" class="w-full bg-white border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30 
-              text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out rounded-md">
+                <input type="text" id="name" name="name" required class="w-full bg-white border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30 
+              text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out rounded-md" placeholder="Enter your full name">
               </div>
               <div>
                 <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
@@ -387,8 +387,8 @@
             <!-- Email -->
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-              <input type="email" id="email" name="email" class="w-full bg-white border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30 
-            text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out rounded-md">
+              <input type="email" id="email" name="email" required class="w-full bg-white border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30 
+            text-base outline-none text-gray-700 py-2 px-3 transition-colors duration-200 ease-in-out rounded-md" placeholder="Enter your email address">
             </div>
 
             <!-- Office Dropdown -->
@@ -406,16 +406,20 @@
             <!-- Message -->
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-              <textarea id="message" name="message"
+              <textarea id="message" name="message" required
                 class="w-full bg-white border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30 
-            h-28 text-base outline-none text-gray-700 py-2 px-3 resize-none transition-colors duration-200 ease-in-out rounded-md"></textarea>
+            h-28 text-base outline-none text-gray-700 py-2 px-3 resize-none transition-colors duration-200 ease-in-out rounded-md" placeholder="Tell us about your project or inquiry..."></textarea>
             </div>
 
             <!-- Button -->
-            <button type="submit" class=" sm:w-auto text-white bg-gradient-to-r from-pink-500 to-purple-500 border-0 py-3 px-8 
-          focus:outline-none hover:opacity-90 uppercase font-semibold tracking-wide transition rounded-md shadow-md">
-              Send Message
+            <button type="submit" id="submitBtn" class=" sm:w-auto text-white bg-gradient-to-r from-pink-500 to-purple-500 border-0 py-3 px-8 
+          focus:outline-none hover:opacity-90 uppercase font-semibold tracking-wide transition rounded-md shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+              <span id="submitText">Send Message</span>
+              <span id="loadingText" class="hidden">Sending...</span>
             </button>
+
+            <!-- Success/Error Messages -->
+            <div id="formFeedback" class="hidden mt-4 p-4 rounded-md"></div>
 
           </form>
         </div>
@@ -762,6 +766,122 @@
       duration: 1000, // Animation duration
       once: true,     // Only animate once
     });
+  </script>
+
+  <!-- Contact Form Integration Script -->
+  <script>
+    const API_BASE_URL = 'http://localhost:5000/api';
+    
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const submitText = document.getElementById('submitText');
+      const loadingText = document.getElementById('loadingText');
+      const formFeedback = document.getElementById('formFeedback');
+      
+      // Get form data
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+      const message = formData.get('message');
+      
+      // Basic validation
+      if (!name || !email || !message) {
+        showFeedback('Please fill in all required fields (Name, Email, and Message).', 'error');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showFeedback('Please enter a valid email address.', 'error');
+        return;
+      }
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitText.classList.add('hidden');
+      loadingText.classList.remove('hidden');
+      formFeedback.classList.add('hidden');
+      
+      try {
+        // Split name into firstName and lastName
+        const nameParts = name.trim().split(' ');
+        const firstName = nameParts[0];
+        const lastName = nameParts.slice(1).join(' ') || '';
+        
+        // Prepare lead data according to Lead model
+        const leadData = {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phone: phone || '',
+          requirement: message,
+          source: 'Website Contact Form'
+        };
+        
+        // Make API call
+        const response = await fetch(`${API_BASE_URL}/lead`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(leadData)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+          showFeedback('Thank you for your message! We\'ll get back to you soon.', 'success');
+          this.reset(); // Clear the form
+          
+          // Smooth scroll to feedback message
+          setTimeout(() => {
+            formFeedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        } else {
+          throw new Error(result.message || 'Failed to send message');
+        }
+        
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        
+        // Handle specific error cases
+        if (error.message.includes('duplicate') || error.message.includes('unique')) {
+          showFeedback('This email address has already been submitted. We\'ll contact you soon!', 'info');
+        } else {
+          showFeedback('Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+        }
+      } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitText.classList.remove('hidden');
+        loadingText.classList.add('hidden');
+      }
+    });
+    
+    function showFeedback(message, type) {
+      const formFeedback = document.getElementById('formFeedback');
+      
+      // Remove existing classes
+      formFeedback.classList.remove('bg-green-100', 'text-green-700', 'border-green-300');
+      formFeedback.classList.remove('bg-red-100', 'text-red-700', 'border-red-300');
+      formFeedback.classList.remove('bg-blue-100', 'text-blue-700', 'border-blue-300');
+      
+      // Add appropriate classes based on type
+      if (type === 'success') {
+        formFeedback.classList.add('bg-green-100', 'text-green-700', 'border', 'border-green-300');
+      } else if (type === 'error') {
+        formFeedback.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-300');
+      } else if (type === 'info') {
+        formFeedback.classList.add('bg-blue-100', 'text-blue-700', 'border', 'border-blue-300');
+      }
+      
+      formFeedback.textContent = message;
+      formFeedback.classList.remove('hidden');
+    }
   </script>
 
   <script src="./script.js"></script>

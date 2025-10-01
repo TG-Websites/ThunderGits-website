@@ -304,7 +304,7 @@
                 </h2>
 
                 <form id="applicationForm" class="space-y-6">
-                    <input type="hidden" name="jobTitle" value="Graphic Designer" />
+                    <input type="hidden" id="jobId" name="jobId" value="" />
 
                     <div>
                         <label for="name" class="block text-sm mb-2 text-gray-200">Name</label>
@@ -328,11 +328,18 @@
                     </div>
 
                     <div>
+                        <label for="linkedinUrl" class="block text-sm mb-2 text-gray-200">LinkedIn Profile (Optional)</label>
+                        <input type="url" id="linkedinUrl" name="linkedinUrl"
+                            class="w-full p-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-pink-500 shadow-sm"
+                            placeholder="https://linkedin.com/in/yourprofile" />
+                    </div>
+
+                    <div>
                         <label for="resume" class="block text-sm mb-2 text-gray-200">Upload Resume</label>
                         <input type="file" id="resume" name="resume"
                             class="w-full p-4 bg-white/10 border border-white/20 rounded-lg text-white file:text-white file:bg-gradient-to-r file:from-pink-500 file:to-purple-500 file:border-0 file:rounded-md file:px-4 file:py-2 file:mr-4 focus:outline-none focus:border-pink-500 shadow-sm"
                             accept=".pdf,.doc,.docx" required />
-                        <small class="text-gray-300">Accepted formats: PDF, DOC, DOCX</small>
+                        <small class="text-gray-300">Accepted formats: PDF, DOC, DOCX (Max: 10MB)</small>
                     </div>
 
                     <button type="submit" id="submitButton"
@@ -347,8 +354,26 @@
                     </button>
                 </form>
 
-                <div id="thankYouMessage" class="mt-6 hidden text-center text-pink-400 text-lg font-semibold">
-                    Thank you! Your application has been submitted successfully.
+                <!-- Success Message -->
+                <div id="successMessage" class="mt-6 hidden p-4 bg-green-500/20 border border-green-500 rounded-lg text-center">
+                    <div class="text-green-400 text-lg font-semibold mb-2">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        Application Submitted Successfully!
+                    </div>
+                    <p class="text-green-300 text-sm">
+                        Thank you for applying! We'll review your application and get back to you soon.
+                    </p>
+                </div>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="mt-6 hidden p-4 bg-red-500/20 border border-red-500 rounded-lg text-center">
+                    <div class="text-red-400 text-lg font-semibold mb-2">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Application Failed
+                    </div>
+                    <p id="errorText" class="text-red-300 text-sm">
+                        Something went wrong. Please try again.
+                    </p>
                 </div>
             </div>
         </div>
@@ -472,6 +497,8 @@
 
     <script src="./../script.js"></script>
     <script>
+        let currentJobId = null;
+
         document.addEventListener("DOMContentLoaded", async () => {
             const params = new URLSearchParams(window.location.search);
             const jobId = params.get("id");
@@ -480,6 +507,8 @@
                 console.error("No job ID provided in URL");
                 return;
             }
+
+            currentJobId = jobId;
 
             try {
                 const res = await fetch(`http://localhost:5000/api/jobs/${jobId}`);
@@ -497,8 +526,89 @@
                 document.getElementById("job-type").innerText = job.jobType;
                 document.getElementById("job-location").innerText = job.location;
                 document.getElementById("job-stipend").innerText = job.stipend;
+                
+                // Set jobId in hidden field
+                document.getElementById("jobId").value = jobId;
             } catch (err) {
                 console.error("Error loading job:", err);
+            }
+        });
+
+        // Handle form submission
+        document.getElementById("applicationForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            
+            const submitButton = document.getElementById("submitButton");
+            const buttonText = document.getElementById("buttonText");
+            const loader = document.getElementById("loader");
+            const successMessage = document.getElementById("successMessage");
+            const errorMessage = document.getElementById("errorMessage");
+            const errorText = document.getElementById("errorText");
+
+            // Hide previous messages
+            successMessage.classList.add("hidden");
+            errorMessage.classList.add("hidden");
+
+            // Show loading state
+            submitButton.disabled = true;
+            buttonText.textContent = "Submitting...";
+            loader.classList.remove("hidden");
+
+            try {
+                // Get form data
+                const formData = new FormData();
+                formData.append("name", document.getElementById("name").value);
+                formData.append("email", document.getElementById("email").value);
+                formData.append("phone", document.getElementById("phone").value);
+                formData.append("linkedinUrl", document.getElementById("linkedinUrl").value);
+                formData.append("jobId", currentJobId);
+                
+                // Add resume file
+                const resumeFile = document.getElementById("resume").files[0];
+                if (resumeFile) {
+                    // Check file size (10MB limit)
+                    if (resumeFile.size > 10 * 1024 * 1024) {
+                        throw new Error("Resume file size must be less than 10MB");
+                    }
+                    formData.append("resume", resumeFile);
+                }
+
+                // Submit application
+                const response = await fetch("http://localhost:5000/api/applications", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // Show success message
+                    successMessage.classList.remove("hidden");
+                    
+                    // Reset form
+                    document.getElementById("applicationForm").reset();
+                    document.getElementById("jobId").value = currentJobId; // Keep jobId
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    throw new Error(result.message || "Failed to submit application");
+                }
+
+            } catch (error) {
+                console.error("Error submitting application:", error);
+                
+                // Show error message
+                errorText.textContent = error.message || "Something went wrong. Please try again.";
+                errorMessage.classList.remove("hidden");
+                
+                // Scroll to error message
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                // Reset button state
+                submitButton.disabled = false;
+                buttonText.textContent = "Submit Application";
+                loader.classList.add("hidden");
             }
         });
     </script>

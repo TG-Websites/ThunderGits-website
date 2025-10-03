@@ -238,25 +238,27 @@
                 <!-- Responsibilities -->
                 <div class="group border-l-4 border-pink-500 p-6 shadow-md hover:shadow-lg transition bg-white">
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Responsibilities</h3>
-                    <ul class="list-disc list-inside text-gray-700 text-sm space-y-2">
-                        <li>Create visually appealing graphics for social media, websites, and marketing campaigns.</li>
-                        <li>Develop branding materials, including logos, banners, and promotional content.</li>
-                        <li>Ensure design consistency across all digital assets.</li>
-                        <li>Work with the marketing team to develop eye-catching campaigns.</li>
-                        <li>Stay updated with the latest design trends and tools.</li>
-                    </ul>
+                    <div id="job-responsibilities" class="text-gray-700 text-sm space-y-2">
+                        <!-- Dynamic content will be loaded here -->
+                        <div class="animate-pulse">
+                            <div class="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                            <div class="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
+                            <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Qualifications -->
                 <div class="group border-l-4 border-pink-500 p-6 shadow-md hover:shadow-lg transition bg-white">
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Qualifications</h3>
-                    <ul class="list-disc list-inside text-gray-700 text-sm space-y-2">
-                        <li>Proven experience in graphic design.</li>
-                        <li>Strong understanding of design principles and typography.</li>
-                        <li>Expertise in Canva and other design tools.</li>
-                        <li>Creative mindset with the ability to think outside the box.</li>
-                        <li>Attention to detail and a passion for great design.</li>
-                    </ul>
+                    <div id="job-qualifications" class="text-gray-700 text-sm space-y-2">
+                        <!-- Dynamic content will be loaded here -->
+                        <div class="animate-pulse">
+                            <div class="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                            <div class="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
+                            <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -488,10 +490,12 @@
     <script>
         // Animate when the page loads
         window.addEventListener('DOMContentLoaded', () => {
-            const hero = document.querySelector('.hero-content');
-            setTimeout(() => {
-                hero.classList.add('animate');
-            }, 200); // delay for smooth effect
+            const hero = document.querySelector('#hero-content');
+            if (hero) {
+                setTimeout(() => {
+                    hero.classList.add('animate');
+                }, 200); // delay for smooth effect
+            }
         });
     </script>
 
@@ -526,6 +530,30 @@
                 document.getElementById("job-type").innerText = job.jobType;
                 document.getElementById("job-location").innerText = job.location;
                 document.getElementById("job-stipend").innerText = job.stipend;
+                
+                // ✅ Fill responsibilities
+                const responsibilitiesContainer = document.getElementById("job-responsibilities");
+                if (job.responsibility && job.responsibility.trim()) {
+                    responsibilitiesContainer.innerHTML = job.responsibility;
+                } else {
+                    responsibilitiesContainer.innerHTML = `
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Responsibilities will be updated soon.</li>
+                        </ul>
+                    `;
+                }
+                
+                // ✅ Fill qualifications
+                const qualificationsContainer = document.getElementById("job-qualifications");
+                if (job.qualifications && job.qualifications.trim()) {
+                    qualificationsContainer.innerHTML = job.qualifications;
+                } else {
+                    qualificationsContainer.innerHTML = `
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Qualifications will be updated soon.</li>
+                        </ul>
+                    `;
+                }
                 
                 // Set jobId in hidden field
                 document.getElementById("jobId").value = jobId;

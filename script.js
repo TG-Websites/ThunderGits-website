@@ -44,6 +44,8 @@
    // Simple count up animation for numbers
     function animateCount(id, target, duration = 2000) {
       const el = document.getElementById(id);
+      if (!el) return; // Exit if element doesn't exist
+      
       let start = 0;
       let startTimestamp = null;
       const step = (timestamp) => {
@@ -138,7 +140,7 @@
 
 
 
- const blogSwiper = new Swiper(".blogSwiper", {
+ window.blogSwiper = new Swiper(".blogSwiper", {
   slidesPerView: 3,
   spaceBetween: 24,
   pagination: {

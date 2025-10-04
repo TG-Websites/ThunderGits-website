@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thundergits Technologies - Innovative Tech Solutions</title>
+  <link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: {
+            base: '1em',
+            sm: '14px',
+            md: '15px',
+            lg: '1.4em',
+            xl: '42px',
+            heading: '6.75vw',
+          },
+          lineHeight: {
+            tight: '1em',
+            normal: '1.2em',
+            relaxed: '1.5em',
+            loose: '1.6em',
+            heading: '0.95em',
+          },
+          letterSpacing: {
+            wide: '1.8px',
+            tighter: '0.01em',
+          },
+          fontWeight: {
+            medium: '500',
+          },
+          transitionProperty: {
+            all: 'all',
+          },
+          transitionTimingFunction: {
+            ease: 'ease',
+          },
+          transitionDuration: {
+            DEFAULT: '300ms',
+          },
+          colors: {
+            theme: {
+              text: '#DEDDDB',
+              textLight: '#848484',
+              textDark: '#EFE8CE',
+              link: '#E2725B',
+              hover: '#DD644C',
+              link2: '#7DA189',
+              hover2: '#6D967A',
+              link3: '#9D7246',
+              hover3: '#5B3918',
+              bg: '#141414',
+              bd: '#424040',
+              altBg: '#292828',
+              altBd: '#535353',
+            },
+            dark: '#0e0e0e',
+            offwhite: '#f5e9cd',
+            graytext: '#d9d9d9',
+            accent: '#f25835',
+            footer: '#121212',
+            linkhover: '#f5e9cd',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+
+</head>
+
+<body class="bg-dark text-theme-text">
+
+
+  <section class="relative bg-cover bg-center min-h-[90vh]" style="background-image: url('./assets/bg2.png');">
+
+    <!-- Global Section Overlay (dark tone for bg img) -->
+    <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
+      <div
+        class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
+          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <span>ThunderGits</span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
+          <a href="./index.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
+          <a href="./about.html" 
+          class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
+          <a href="./work.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
+          <a href="./service.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
+          <a href="./career.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
+             <a href="./product.html"
+            class="pb-1 border-b-2 border-linkhover">Products</a>
+          <a href="./contact.html"
+            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
+        </nav>
+
+        <!-- Quote + Hamburger -->
+        <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
+          <a href="./contact.html" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
+               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
+               border border-pink-500 hover:text-white transition-all duration-300 ease-out
+               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
+               before:scale-x-0 before:origin-left hover:before:scale-x-100 
+               before:transition-transform before:duration-300 before:z-[-1]">
+            Get a Quote
+          </a>
+
+          <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
+      <div class="flex justify-between items-center mb-10">
+        <div class="flex items-center gap-2 text-lg font-bold">
+          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <span class="text-white">ThunderGits</span>
+        </div>
+        <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
+          <span>Close</span>
+          <span class="text-2xl leading-none">×</span>
+        </button>
+      </div>
+
+      <div class="space-y-5">
+        <a href="./index.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Home</span><span class="text-sm">→</span>
+        </a>
+        <a href="./about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>About</span><span class="text-sm">→</span>
+        </a>
+        <a href="./work.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Work</span><span class="text-sm">→</span>
+        </a>
+        <a href="./service.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Services</span><span class="text-sm">→</span>
+        </a>
+        <a href="./career.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Career</span><span class="text-sm">→</span>
+        </a>
+        <a href="./product.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Products</span><span class="text-sm">→</span>
+        </a>
+        <a href="./contact.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+          <span>Contact</span><span class="text-sm">→</span>
+        </a>
+
+        <!-- Get a Quote Button -->
+        <div class="pt-4">
+          <a href="./contact.html"
+            class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Icons -->
+      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+
+    
+   <!-- Hero Section -->
+<section
+  class="relative z-20 flex items-center min-h-[90vh] pt-28 overflow-hidden bg-cover bg-center bg-no-repeat"
+  style="background-image: url('./assets/product-bg.jpg');"
+>
+  <!-- Content Wrapper -->
+  <div
+    class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 items-center gap-8 lg:gap-12 relative z-10"
+  >
+    <!-- Right Product Showcase -->
+    <div
+      data-aos="fade-right"
+      class="relative flex justify-center items-center order-1 md:order-2 mb-6 md:mb-0"
+    >
+      <div
+        class="relative w-[240px] sm:w-[300px] lg:w-[380px] h-[180px] sm:h-[240px] lg:h-[300px] bg-dark/70 rounded-xl overflow-hidden shadow-xl border border-white/10 hover:border-pink-500/40 transition-all duration-300 group"
+      >
+        <img
+          src="./assets/product-hero.jpg"
+          alt="Software Solutions"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <!-- Overlay Text -->
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/40 to-transparent flex flex-col justify-end p-3 sm:p-4"
+        >
+          <div class="flex items-start gap-3">
+            <!-- Visible Gradient Border -->
+            <div
+              class="w-[3px] sm:w-[4px] h-full bg-gradient-to-b from-pink-500 to-purple-500 rounded-full "
+            ></div>
+
+            <div>
+              <h3 class="text-white font-semibold text-[13px] sm:text-sm">
+                Innovative Software Solutions
+              </h3>
+              <p class="text-[10px] sm:text-xs text-offwhite/70 leading-tight">
+                Empowering digital transformation through AI, cloud, and custom
+                app development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left Content -->
+    <div
+      data-aos="fade-left"
+      class="flex flex-col justify-center space-y-3 sm:space-y-5 text-center md:text-left order-2 md:order-1"
+    >
+      <div
+        class="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text font-bold uppercase tracking-wide text-xs sm:text-sm"
+      >
+        Our Products
+      </div>
+      <h2
+        class="text-2xl sm:text-3xl lg:text-5xl font-bold text-offwhite leading-snug"
+      >
+        Building
+        <span
+          class="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
+          >Next-Gen Digital Experiences</span
+        >
+      </h2>
+      <p
+        class="text-offwhite/80 text-sm sm:text-base lg:text-lg max-w-xl mx-auto md:mx-0"
+      >
+        At <strong>ThunderGits</strong>, we craft scalable web and mobile
+        applications powered by modern frameworks, seamless UX, and intelligent
+        automation — shaping the future of technology.
+      </p>
+
+      <!-- Buttons -->
+      <div
+        class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 items-center sm:items-start justify-center md:justify-start w-full"
+      >
+        <!-- View Products -->
+        <a
+          href="#products"
+          class="group relative inline-flex items-center justify-center flex-1 sm:flex-none sm:min-w-[200px] px-6 py-2.5 text-sm sm:text-base font-semibold uppercase border border-pink-500 text-white overflow-hidden rounded-md shadow-lg text-center"
+        >
+          <span
+            class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-right scale-x-100 transition-transform duration-500 ease-in-out group-hover:scale-x-0 z-0 rounded-md"
+          ></span>
+          <span
+            class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500"
+          >
+            View Solutions
+          </span>
+        </a>
+
+        <!-- Contact Us -->
+        <a
+          href="#contact"
+          class="group relative inline-flex items-center justify-center flex-1 sm:flex-none sm:min-w-[200px] px-6 py-2.5 text-sm sm:text-base font-semibold uppercase border border-pink-500 text-pink-500 overflow-hidden rounded-md shadow-lg text-center"
+        >
+          <span
+            class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-left scale-x-0 transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0 rounded-md"
+          ></span>
+          <span
+            class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-white"
+          >
+            Contact Us
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  </section>
+
+
+
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.style.opacity = 0;
+        setTimeout(() => {
+          menu.style.opacity = 1;
+        }, 10);
+      } else {
+        menu.style.opacity = 0;
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 300); // match with CSS transition
+      }
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- Featured Solutions Section -->
+<section class="relative z-10 bg-white text-dark py-16 sm:py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
+    <!-- Heading -->
+    <div class="text-left max-w-3xl mx-auto lg:mx-0 mb-10">
+      <h4
+        class="text-sm font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent tracking-widest uppercase mb-3"
+        data-aos="fade-right">
+        What We Offer
+      </h4>
+
+      <h2
+        class="text-gray-900 font-bold leading-snug text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block"
+        data-aos="fade-left" data-aos-delay="200">
+        Services That Drive Results
+        <span
+          class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+      </h2>
+
+      <p class="text-gray-700 text-base sm:text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+        Empowering your business with end-to-end digital solutions — from IoT to Cloud and AI-powered
+        innovation.
+      </p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+      <!-- Card 1 -->
+      <div
+        class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-pink-500/20 hover:border-pink-500/40 transition-all duration-500">
+        <div
+          class="w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500 text-white mb-5">
+          <i class="ri-cpu-line text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2 text-dark">IoT Energy Monitoring</h3>
+        <p class="text-dark/70 text-sm leading-relaxed">
+          Intelligent IoT platforms that track, analyze, and optimize real-time energy performance for
+          maximum efficiency.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-purple-500/20 hover:border-purple-500/40 transition-all duration-500">
+        <div
+          class="w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-r from-purple-500 to-pink-500 text-white mb-5">
+          <i class="ri-brain-line text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2 text-dark">AI-Powered Analytics</h3>
+        <p class="text-dark/70 text-sm leading-relaxed">
+          Transform data into insights with predictive analytics, automation, and machine learning
+          intelligence.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-pink-400/20 hover:border-pink-400/40 transition-all duration-500">
+        <div
+          class="w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500 text-white mb-5">
+          <i class="ri-cloud-line text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-2 text-dark">Cloud-Based Solutions</h3>
+        <p class="text-dark/70 text-sm leading-relaxed">
+          Secure and scalable cloud environments that enable smooth deployment, integration, and data
+          collaboration.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Product Cards Section -->
+<section class="relative z-10 bg-dark/90 text-white py-24 overflow-hidden" style="background: url('./assets/bg2.png') center/cover no-repeat;">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
+
+    <!-- Section Heading -->
+    <header class="text-left max-w-3xl mx-auto lg:mx-0 mb-16" data-aos="fade-up">
+      <h4 class="text-sm font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent tracking-widest uppercase mb-3">
+        💻 Our Innovative Software Products
+      </h4>
+
+      <h2 class="text-2xl sm:text-3xl lg:text-3xl font-bold leading-snug mb-6 relative inline-block">
+        Explore intelligent platforms that power industries and simplify operations
+        <span class="absolute left-0 -bottom-2 w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+      </h2>
+
+      <p class="text-white/70 text-base sm:text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+        Discover software solutions designed to optimize, automate, and elevate your business operations.
+      </p>
+    </header>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+
+      <!-- Product Card 1 -->
+      <article class="bg-black border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
+        <figure class="w-full h-48 overflow-hidden relative">
+          <img src="./assets/chikit.png" alt="ThunderERP" class="w-full h-full object-cover">
+          <figcaption class="absolute bottom-2 left-2 text-white/80 text-xs bg-black/40 px-2 py-1 rounded">Enterprise Solution</figcaption>
+        </figure>
+        <div class="p-6 flex flex-col flex-1">
+          <header>
+            <h3 class="font-semibold text-lg mb-3">ThunderERP</h3>
+          </header>
+          <p class="text-white/70 text-sm mb-4 flex-1 leading-relaxed">
+            All-in-one enterprise platform integrating HR, finance, analytics, and workflow automation for mid-to-large businesses.
+          </p>
+          <!-- Button centered horizontally -->
+          <div class="flex justify-center">
+            <a href="#thundererp" class="inline-block px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-md font-semibold text-sm transition-all hover:opacity-90">
+              View Details
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product Card 2 -->
+      <article class="bg-black border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
+        <figure class="w-full h-48 overflow-hidden relative">
+          <img src="./assets/appbihar.png" alt="Enerlytics AI" class="w-full h-full object-cover">
+          <figcaption class="absolute bottom-2 left-2 text-white/80 text-xs bg-black/40 px-2 py-1 rounded">Energy Management</figcaption>
+        </figure>
+        <div class="p-6 flex flex-col flex-1">
+          <header>
+            <h3 class="font-semibold text-lg mb-3">Enerlytics AI</h3>
+          </header>
+          <p class="text-white/70 text-sm mb-4 flex-1 leading-relaxed">
+            Smart energy monitoring system using IoT sensors & AI. Optimize energy consumption, reduce costs, and gain actionable insights.
+          </p>
+          <div class="flex justify-center">
+            <a href="#enerlytics" class="inline-block px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-md font-semibold text-sm transition-all hover:opacity-90">
+              Explore
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product Card 3 -->
+      <article class="bg-black border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
+        <figure class="w-full h-48 overflow-hidden relative">
+          <img src="./assets/blogimg1.jpg" alt="FleetIQ" class="w-full h-full object-cover">
+          <figcaption class="absolute bottom-2 left-2 text-white/80 text-xs bg-black/40 px-2 py-1 rounded">Fleet Management</figcaption>
+        </figure>
+        <div class="p-6 flex flex-col flex-1">
+          <header>
+            <h3 class="font-semibold text-lg mb-3">FleetIQ</h3>
+          </header>
+          <p class="text-white/70 text-sm mb-4 flex-1 leading-relaxed">
+            Cloud-based fleet & logistics management solution with GPS tracking, predictive maintenance, and real-time operational insights.
+          </p>
+          <div class="flex justify-center">
+            <a href="#fleetiq" class="inline-block px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-md font-semibold text-sm transition-all hover:opacity-90">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- CTA / Demo Section -->
+<section class="bg-white py-24 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
+
+    <!-- Heading -->
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-black leading-[1.2] mb-6 relative inline-block">
+      Experience Our Software in Action
+      <!-- Underline -->
+      <span class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded"></span>
+    </h2>
+
+    <!-- Paragraph -->
+    <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-10">
+      Book a demo or request a free trial to see how our intelligent platforms can transform your business operations and maximize efficiency.
+    </p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+
+        <!-- First Button: Gradient → Transparent (border visible) -->
+        <a href="./contact.html" class="group relative px-8 py-3 text-sm sm:text-base font-semibold uppercase 
+              border border-pink-500 text-white overflow-hidden rounded-md">
+
+          <!-- Background Layer -->
+          <span class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-right scale-x-100 
+                   transition-transform duration-500 ease-in-out 
+                   group-hover:scale-x-0 z-0 rounded-md"></span>
+
+          <!-- Text -->
+          <span class="relative z-10 transition-colors duration-500 ease-in-out 
+                   group-hover:text-transparent group-hover:bg-clip-text 
+                   group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500">
+            Book a Demo
+          </span>
+        </a>
+
+        <!-- Second Button: Transparent → Gradient -->
+        <a href="#services" class="group relative px-8 py-3 text-sm sm:text-base font-semibold uppercase 
+              border border-pink-500 text-pink-500 overflow-hidden rounded-md">
+
+          <!-- Background Layer -->
+          <span class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-left scale-x-0 
+                   transition-transform duration-500 ease-in-out 
+                   group-hover:scale-x-100 z-0 rounded-md"></span>
+
+          <!-- Text -->
+          <span class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-white">
+            Free Trial
+          </span>
+        </a>
+
+      </div>
+
+    
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="relative text-[#EDE6D6] pt-16">
+
+    <!-- 🔥 Background Image Only -->
+    <div class="absolute inset-0">
+      <img src="./assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
+
+      <!-- Logo Section -->
+      <div class="flex flex-col items-center md:items-start">
+        <a class="flex items-center justify-center md:justify-start text-white mb-4">
+          <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
+          <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
+        </a>
+        <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
+          Innovating through technology and creativity, building the future.
+        </p>
+      </div>
+
+      <!-- Explore -->
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">Explore</h3>
+        <ul class="space-y-2">
+          <li><a href="./index.html" class="hover:text-pink-400 transition">Home</a></li>
+          <li><a href="./about.html" class="hover:text-pink-400 transition">About</a></li>
+          <li><a href="./work.html" class="hover:text-pink-400 transition">Work</a></li>
+          <li><a href="./index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">Company</h3>
+        <ul class="space-y-2">
+          <li><a href="./privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+          <li><a href="./career.html" class="hover:text-pink-400 transition">Career</a></li>
+          <li><a href="./contact.html" class="hover:text-pink-400 transition">Contact</a></li>
+          <li><a href="./service.html" class="hover:text-pink-400 transition">Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">Contact</h3>
+        <ul class="space-y-3">
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+            <i class="ri-map-pin-fill mt-1"></i>
+            <span>2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
+          </li>
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+            <i class="ri-phone-fill mt-1"></i>
+            <span>+91-7765979725</span>
+          </li>
+          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+            <i class="ri-mail-fill mt-1"></i>
+            <a href="mailto:contact@thundergits.com" class="hover:text-pink-400 transition">info@thundergits.com</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div
+      class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
+      <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
+      <div class="flex space-x-6 text-gray-300">
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+            class="fab fa-x-twitter"></i></a> -->
+
+
+      </div>
+    </div>
+
+    <!-- Floating Presale Chat -->
+    <!-- <div class="fixed bottom-16 left-4 flex items-center z-40">
+            <div
+                class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
+                <img src="./assets/call-center (1).png" alt="">
+            </div>
+            <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
+           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
+                AI Assistant
+            </span>
+        </div> -->
+
+    <!-- Scroll To Top -->
+    <button id="scrollToggleBtn"
+      class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
+      <i id="scrollIcon" class="fas fa-arrow-up"></i>
+    </button>
+  </footer>
+
+
+  <script>
+    // Animate when the page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      const hero = document.querySelector('.hero-content');
+      setTimeout(() => {
+        hero.classList.add('animate');
+      }, 200); // delay for smooth effect
+    });
+  </script>
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

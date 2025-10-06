@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thundergits Technologies - Innovative Tech Solutions</title>
+    <link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontSize: {
+                        base: '1em',
+                        sm: '14px',
+                        md: '15px',
+                        lg: '1.4em',
+                        xl: '42px',
+                        heading: '6.75vw',
+                    },
+                    lineHeight: {
+                        tight: '1em',
+                        normal: '1.2em',
+                        relaxed: '1.5em',
+                        loose: '1.6em',
+                        heading: '0.95em',
+                    },
+                    letterSpacing: {
+                        wide: '1.8px',
+                        tighter: '0.01em',
+                    },
+                    fontWeight: {
+                        medium: '500',
+                    },
+                    transitionProperty: {
+                        all: 'all',
+                    },
+                    transitionTimingFunction: {
+                        ease: 'ease',
+                    },
+                    transitionDuration: {
+                        DEFAULT: '300ms',
+                    },
+                    colors: {
+                        theme: {
+                            text: '#DEDDDB',
+                            textLight: '#848484',
+                            textDark: '#EFE8CE',
+                            link: '#E2725B',
+                            hover: '#DD644C',
+                            link2: '#7DA189',
+                            hover2: '#6D967A',
+                            link3: '#9D7246',
+                            hover3: '#5B3918',
+                            bg: '#141414',
+                            bd: '#424040',
+                            altBg: '#292828',
+                            altBd: '#535353',
+                        },
+                        dark: '#0e0e0e',
+                        offwhite: '#f5e9cd',
+                        graytext: '#d9d9d9',
+                        accent: '#f25835',
+                        footer: '#121212',
+                        linkhover: '#f5e9cd',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+
+</head>
+
+<body class="bg-dark text-theme-text">
+
+
+    <section class="relative bg-cover bg-center min-h-[90vh]" style="background-image: url('./../assets/bg2.png');">
+
+        <!-- Global Section Overlay (dark tone for bg img) -->
+        <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+
+        <!-- Fixed Header -->
+        <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
+            <div class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
+                    <img src="./../assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+                    <span>ThunderGits</span>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
+                    <a href="#overview"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Overview</a>
+                    <a href="#features" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Features
+                    </a>
+                    <a href="#benefits"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Benefits</a>
+                    <a href="#testimonials"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Testimonials</a>
+                    <a href="#faq"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">FAQ</a>
+                    <a href="#contact"
+                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
+                </nav>
+
+                <!-- Quote + Hamburger -->
+                <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
+                    <a href="./../product.html" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
+               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
+               border border-pink-500 hover:text-white transition-all duration-300 ease-out
+               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
+               before:scale-x-0 before:origin-left hover:before:scale-x-100 
+               before:transition-transform before:duration-300 before:z-[-1]">
+                       Back to Products
+                    </a>
+
+                    <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
+            <div class="flex justify-between items-center mb-10">
+                <div class="flex items-center gap-2 text-lg font-bold">
+                    <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+                    <span class="text-white">ThunderGits</span>
+                </div>
+                <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
+                    <span>Close</span>
+                    <span class="text-2xl leading-none">×</span>
+                </button>
+            </div>
+
+            <div class="space-y-5">
+                <a href="#overview"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Overview</span><span class="text-sm">→</span>
+                </a>
+                <a href="#features"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Features</span><span class="text-sm">→</span>
+                </a>
+                <a href="#benefits"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Benefits</span><span class="text-sm">→</span>
+                </a>
+                <a href="#testimonials"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Testimonials</span><span class="text-sm">→</span>
+                </a>
+                <a href="#faq" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>FAQ</span><span class="text-sm">→</span>
+                </a>
+                <a href="#contact"
+                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+                    <span>Contact</span><span class="text-sm">→</span>
+                </a>
+
+                <!-- Get a Quote Button -->
+                <div class="pt-4">
+                    <a href="./contact.html"
+                        class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Icons -->
+            <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
+                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/thundergits/" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <!-- Hero Section -->
+        <div class="relative z-20 flex items-center min-h-[90vh] pt-28">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 items-center gap-8 lg:gap-12">
+    <!-- Left Image -->
+    <div class="flex justify-center md:justify-end items-center order-1 md:order-1" data-aos="fade-right">
+      <img src="./../assets/edugit.png" alt="Description" class="w-full max-w-[380px] h-[300px] object-cover rounded-xl shadow-lg" />
+    </div>
+
+    <!-- Right Content -->
+    <div id="hero-content" class="relative flex flex-col md:flex-row items-stretch justify-start order-2 md:order-2 w-full">
+      <!-- Gradient Border -->
+      <div id="gradient-border" class="bg-gradient-to-b from-pink-500 to-purple-500 h-[4px] w-full mb-4 md:mb-0 md:h-auto md:w-[4px] md:rounded-l-xl"></div>
+
+      <!-- Text Content -->
+      <div class="md:border-l-4 border-accent md:pl-6 pl-0 flex flex-col justify-start min-h-[200px] sm:min-h-[250px] lg:min-h-[300px] py-2 sm:py-4" data-aos="fade-left">
+        <p class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug mb-2 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+          EDUGITS
+        </p>
+        
+        <p class="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg text-offwhite/80 max-w-2xl">
+          A comprehensive subscription-based ERP platform designed for schools to streamline academics, finance, attendance, and examinations within a unified system.
+        </p>
+
+       <!-- Button container with bottom margin -->
+<div class="mt-8 mb-4"> 
+  <a href="https://edugits.thundergits.com" class="relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg
+     text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
+     border border-pink-500 hover:text-white transition-all duration-300 ease-out
+     before:absolute before:inset-0 before:rounded-lg 
+     before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
+     before:scale-x-0 before:origin-left hover:before:scale-x-100 
+     before:transition-transform before:duration-300 before:z-[-1]" data-aos="flip-up" data-aos-delay="700">
+    Visit Site
+  </a>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </section>
+
+
+
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.style.opacity = 0;
+                setTimeout(() => {
+                    menu.style.opacity = 1;
+                }, 10);
+            } else {
+                menu.style.opacity = 0;
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300); // match with CSS transition
+            }
+        }
+    </script>
+
+
+
+    <!-- Features Section white bg full width with styled heading -->
+    <section id="features" class="bg-white full-width-section" data-aos="fade-up" data-aos-duration="1200">
+        <div class="max-w-7xl mx-auto py-16 px-6 sm:px-10 lg:px-20">
+            <h2
+                class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-black uppercase tracking-wide mb-12 text-center">
+                Key Features
+                <span
+                    class="absolute left-0 bottom-0 w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+                <div
+                    class="bg-gray-100 rounded-lg p-8 shadow-md border border-gray-300 hover:border-pink-500 transition-all duration-300 flex flex-col items-start space-y-4">
+                    <div class="text-pink-600 text-4xl">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900">Role-based Dashboards</h4>
+                    <p class="text-gray-700 text-base leading-relaxed">
+                        Customize dashboards for admins, teachers, and students to provide easy access to relevant data
+                        and insights.
+                    </p>
+                </div>
+                <div
+                    class="bg-gray-100 rounded-lg p-8 shadow-md border border-gray-300 hover:border-pink-500 transition-all duration-300 flex flex-col items-start space-y-4">
+                    <div class="text-pink-600 text-4xl">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900">Payment Integration</h4>
+                    <p class="text-gray-700 text-base leading-relaxed">
+                        Seamless Razorpay payment gateway integration ensuring smooth and secure financial transactions.
+                    </p>
+                </div>
+                <div
+                    class="bg-gray-100 rounded-lg p-8 shadow-md border border-gray-300 hover:border-pink-500 transition-all duration-300 flex flex-col items-start space-y-4">
+                    <div class="text-pink-600 text-4xl">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900">Real-time Reports</h4>
+                    <p class="text-gray-700 text-base leading-relaxed">
+                        Generate detailed live reports for attendance, financial data, and academic performance quickly
+                        and easily.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="relative w-full py-16 px-6 sm:px-10 lg:px-20 bg-gray-900 overflow-hidden"
+        data-aos="fade-up" data-aos-duration="1400">
+        <!-- Background Image with dark overlay -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./../assets/bg2.png');">
+            <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto text-center z-10">
+            <h2
+                class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-pink-400 uppercase tracking-wide mb-10">
+                Why Choose Edugits
+               <span
+          class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <!-- Card 1 -->
+                <div
+                    class="bg-gray-800 rounded-xl p-8 cursor-default transition-shadow duration-200 hover:shadow-[0_4px_15px_rgba(255,255,255,0.1)] shadow-lg shadow-light">
+                    <h4 class="text-lg mb-3 font-semibold text-pink-400 tracking-wide">Streamlined Management</h4>
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        Easily manage large student bases, staff, and administrative operations from a single platform.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-gray-800 rounded-xl p-8 cursor-default transition-shadow duration-200 hover:shadow-[0_4px_15px_rgba(255,255,255,0.1)] shadow-lg shadow-light">
+                    <h4 class="text-lg mb-3 font-semibold text-pink-400 tracking-wide">Data-Driven Decisions</h4>
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        Get real-time insights and analytics for better strategic planning and operational efficiency.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-gray-800 rounded-xl p-8 cursor-default transition-shadow duration-200 hover:shadow-[0_4px_15px_rgba(255,255,255,0.1)] shadow-lg shadow-light">
+                    <h4 class="text-lg mb-3 font-semibold text-pink-400 tracking-wide">Scalable & Secure</h4>
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        Designed to grow with your institution, maintaining high security standards.
+                    </p>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-gray-800 rounded-xl p-8 cursor-default transition-shadow duration-200 hover:shadow-[0_4px_15px_rgba(255,255,255,0.1)] shadow-lg shadow-light">
+                    <h4 class="text-lg mb-3 font-semibold text-pink-400 tracking-wide">Easy Payment</h4>
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        Integrated with Razorpay for quick and secure fee collection and transactions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<section id="integration" class="bg-white full-width-section py-16 px-6 sm:px-10 lg:px-20">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Title -->
+    <div class="mb-16 text-left">
+      <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
+        Integration & Compatibility
+      </h4>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-black">
+        Effortless Integration with Your Existing Systems
+        <span class="absolute left-0 bottom-0 w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full"></span>
+      </h2>
+      <p class="mt-4 text-gray-700 text-base sm:text-lg leading-relaxed max-w-3xl">
+        Seamlessly connect Edugits with your current platforms. Our solution supports top payment gateways, APIs, and compatibility across devices and software.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
+      <!-- Card 1 -->
+      <div class="relative bg-white rounded-2xl shadow-lg p-8 border border-pink-200 hover:shadow-xl hover:scale-[1.03] transition-transform duration-300 cursor-default">
+        <h3 class="text-base font-semibold tracking-wide text-pink-600 mb-4 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c1.333 0 2-1.333 2-3s-1-3-2-3-2 1-2 3 0.667 3 2 3zM8 21l-3-6 6-2 6 2-3 6-6 0z" />
+          </svg>
+          Payment Gateways
+        </h3>
+        <ul class="text-gray-700 text-sm space-y-2 list-disc pl-5">
+          <li>Razorpay</li>
+          <li>Stripe</li>
+          <li>Paypal</li>
+          <li>Google Pay</li>
+        </ul>
+      </div>
+    
+      <!-- Card 2 -->
+      <div class="relative bg-white rounded-2xl shadow-lg p-8 border border-purple-300 hover:shadow-xl hover:scale-[1.03] transition-transform duration-300 cursor-default">
+        <h3 class="text-base font-semibold tracking-wide text-purple-600 mb-4 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 17v-7m-8 7v-4a3 3 0 0 1 6 0v4m-3 0H5a2 2 0 0 0-2 2v1h14v-1a2 2 0 0 0-2-2z" />
+          </svg>
+          API Integrations
+        </h3>
+        <ul class="text-gray-700 text-sm space-y-2 list-disc pl-5">
+          <li>RESTful APIs</li>
+          <li>Webhook Notifications</li>
+          <li>Single Sign-On (SSO)</li>
+          <li>Third-party LMS integration</li>
+        </ul>
+      </div>
+    
+      <!-- Card 3 -->
+      <div class="relative bg-white rounded-2xl shadow-lg p-8 border border-pink-300 hover:shadow-xl hover:scale-[1.03] transition-transform duration-300 cursor-default">
+        <h3 class="text-base font-semibold tracking-wide text-pink-600 mb-4 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          Platforms Supported
+        </h3>
+        <ul class="text-gray-700 text-sm space-y-2 list-disc pl-5">
+          <li>Windows, MacOS</li>
+          <li>iOS and Android (Mobile Apps)</li>
+          <li>Cloud SaaS</li>
+          <li>Browser compatibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+
+<!-- Pricing & Plans (matches site style) -->
+<section id="pricing" class="relative w-full py-16 lg:py-20">
+  <!-- Background image + dark overlay to match other sections -->
+  <div class="absolute inset-0">
+    <img src="./../assets/bg2.png" alt="bg" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center text-offwhite">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+      Pricing & Plans
+    </h2>
+    <p class="max-w-3xl mx-auto text-graytext text-sm sm:text-base mb-10">
+      Pick a subscription that fits school size and needs. All plans include a free trial and onboarding assistance.
+    </p>
+
+    <!-- Cards grid -->
+    <div class="grid gap-8 md:grid-cols-3">
+      <!-- Card: Basic -->
+      <div class="relative rounded-xl overflow-hidden bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.04)] p-6 sm:p-8 backdrop-blur-sm transition-shadow duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold tracking-wide text-pink-400">Basic</h3>
+          <span class="text-xs text-graytext">Small schools</span>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex items-baseline gap-3">
+            <span class="text-3xl sm:text-4xl font-extrabold text-offwhite">$49</span>
+            <span class="text-sm text-graytext">/month</span>
+          </div>
+        </div>
+
+        <ul class="mb-6 text-sm text-graytext space-y-2 text-left">
+          <li>• Up to 100 students</li>
+          <li>• Attendance & basic reports</li>
+          <li>• Payment integration</li>
+          <li>• Email support</li>
+        </ul>
+
+        <div class="">
+          <a href="#contact"
+             class="inline-block group relative px-6 py-2 text-sm font-semibold uppercase rounded-lg border border-pink-500 overflow-hidden
+                    text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 before:absolute before:inset-0 before:rounded-lg
+                    before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100
+                    before:transition-transform before:duration-300 before:z-0">
+            <span class="relative z-10 text-offwhite">Start Free Trial</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card: Standard (recommended) -->
+      <div class="relative rounded-xl overflow-hidden bg-gradient-to-r from-[rgba(255,0,150,0.06)] to-[rgba(120,30,200,0.03)] border-2 border-pink-500 p-6 sm:p-8 shadow-md scale-100 md:scale-100">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold tracking-wide text-pink-400">Standard</h3>
+          <span class="text-xs text-graytext">Most popular</span>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex items-baseline gap-3">
+            <span class="text-3xl sm:text-4xl font-extrabold text-pink-300">$99</span>
+            <span class="text-sm text-graytext">/month</span>
+          </div>
+        </div>
+
+        <ul class="mb-6 text-sm text-graytext space-y-2 text-left">
+          <li>• Up to 500 students</li>
+          <li>• Attendance, exams & grading</li>
+          <li>• Advanced reports & analytics</li>
+          <li>• Priority email & chat</li>
+        </ul>
+
+        <div class="">
+          <a href="#contact"
+             class="inline-block group relative px-6 py-2 text-sm font-semibold uppercase rounded-lg border border-transparent overflow-hidden
+                    text-white bg-gradient-to-r from-pink-500 to-purple-600 shadow-lg hover:brightness-105 transition">
+            Start Free Trial
+          </a>
+        </div>
+      </div>
+
+      <!-- Card: Premium -->
+      <div class="relative rounded-xl overflow-hidden bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.04)] p-6 sm:p-8 backdrop-blur-sm transition-shadow duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold tracking-wide text-pink-400">Premium</h3>
+          <span class="text-xs text-graytext">Enterprise</span>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex items-baseline gap-3">
+            <span class="text-3xl sm:text-4xl font-extrabold text-offwhite">$149</span>
+            <span class="text-sm text-graytext">/month</span>
+          </div>
+        </div>
+
+        <ul class="mb-6 text-sm text-graytext space-y-2 text-left">
+          <li>• Unlimited students</li>
+          <li>• All features + integrations</li>
+          <li>• Dedicated account manager</li>
+          <li>• 24/7 priority support</li>
+        </ul>
+
+        <div class="">
+          <a href="#contact"
+             class="inline-block group relative px-6 py-2 text-sm font-semibold uppercase rounded-lg border border-pink-500 overflow-hidden
+                    text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 before:absolute before:inset-0 before:rounded-lg
+                    before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100
+                    before:transition-transform before:duration-300 before:z-0">
+            <span class="relative z-10 text-offwhite">Start Free Trial</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Annual toggle + small note -->
+    <div class="mt-8 text-sm text-graytext max-w-2xl mx-auto">
+      <div class="inline-flex items-center gap-3 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.03)] rounded-full px-3 py-2">
+        <span class="text-xs">Billing</span>
+        <button class="ml-2 px-3 py-1 rounded-full bg-[rgba(255,255,255,0.03)] text-sm">Monthly</button>
+        <button class="px-3 py-1 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white text-sm">Yearly (save 10%)</button>
+      </div>
+      <p class="mt-3 text-graytext text-sm">
+        All plans include a 14‑day free trial and onboarding support. Custom enterprise pricing available on request.
+      </p>
+    </div>
+  </div>
+</section>
+
+    
+
+
+
+
+    <!-- Testimonials Section with white bg full width and styled heading -->
+    <section id="testimonials" class="bg-white full-width-section" data-aos="fade-up" data-aos-duration="1600">
+        <div class="max-w-7xl mx-auto py-16 px-6 sm:px-10 lg:px-20">
+            <h2
+                class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-black uppercase tracking-wide mb-10 text-center">
+                What Our Clients Say
+                <span
+                    class="absolute left-0 bottom-0 w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="bg-gray-100 rounded-lg p-8 shadow-md transition-shadow duration-300 flex flex-col space-y-4 cursor-default"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <p class="italic text-gray-700 text-base leading-relaxed">
+                        "Edugits transformed how we manage our schools. Operations are smoother and faster!"
+                    </p>
+                    <div class="flex items-center space-x-4 mt-auto">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 to-purple-600 flex items-center justify-center text-white font-semibold select-none">
+                            P
+                        </div>
+                        <div>
+                            <h5 class="font-medium text-gray-900">Principal A</h5>
+                            <p class="text-gray-600 text-sm">School District XYZ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-8 shadow-md transition-shadow duration-300 flex flex-col space-y-4 cursor-default"
+                    data-aos="zoom-in" data-aos-delay="400">
+                    <p class="italic text-gray-700 text-base leading-relaxed">
+                        "The real-time analytics help us make quick, informed decisions."
+                    </p>
+                    <div class="flex items-center space-x-4 mt-auto">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 to-purple-600 flex items-center justify-center text-white font-semibold select-none">
+                            A
+                        </div>
+                        <div>
+                            <h5 class="font-medium text-gray-900">Admin B</h5>
+                            <p class="text-gray-600 text-sm">School ABC</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-8 shadow-md transition-shadow duration-300 flex flex-col space-y-4 cursor-default"
+                    data-aos="zoom-in" data-aos-delay="600">
+                    <p class="italic text-gray-700 text-base leading-relaxed">
+                        "Smooth payments and student management platform, highly recommended!"
+                    </p>
+                    <div class="flex items-center space-x-4 mt-auto">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 to-purple-600 flex items-center justify-center text-white font-semibold select-none">
+                            M
+                        </div>
+                        <div>
+                            <h5 class="font-medium text-gray-900">Manager C</h5>
+                            <p class="text-gray-600 text-sm">Education Institute</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FAQ Section ================= -->
+<section id="faq" class="relative w-full py-16 lg:py-24">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="./../assets/bg2.png" alt="ThunderGits FAQ" class="w-full h-full object-cover shadow-md" />
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  <!-- Content Overlay -->
+  <div class="relative z-10 flex flex-col items-center text-center text-white px-6">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+      Frequently Asked Questions
+    </h2>
+    <p class="max-w-2xl text-base sm:text-lg text-gray-200 mb-8">
+      Find answers to the most common questions about our services, support, and more.
+    </p>
+
+    <!-- FAQ Accordion -->
+    <div class="max-w-3xl w-full bg-white/10 backdrop-blur-sm rounded-xl shadow-xl text-left divide-y divide-white/20">
+      
+      <!-- FAQ Item 1 -->
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            What services do you offer?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+            </svg>
+          </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            We offer custom software development, IT consulting, cloud services, and much more. Contact us to learn how we can assist with your technology needs.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            How can I get in touch with support?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+            </svg>
+          </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            You can reach our support team by email at <span class="text-accent">info@thundergits.com</span> or through our contact form on this page. We're here to help!
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Do you offer custom software development?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+            </svg>
+          </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            Yes, we specialize in custom software development to meet your unique business needs. From concept to delivery, we work closely with you to bring your ideas to life.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Can I schedule a demo of your services?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+            </svg>
+          </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            Yes! You can schedule a demo by filling out the contact form above or by emailing us directly at <span class="text-accent">info@thundergits.com</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="faq-item">
+        <button class="w-full flex justify-between items-center p-4 text-left">
+          <span class="text-base sm:text-lg font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            What industries do you serve?
+          </span>
+          <div class="flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 plus-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 minus-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+            </svg>
+          </div>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-4">
+          <p class="text-gray-200 text-sm pb-4">
+            We serve a variety of industries, including healthcare, finance, retail, and technology. Our solutions are tailored to your specific business needs.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact / CTA -->
+    <section class="bg-white py-16 border-t border-gray-200" data-aos="fade-up" data-aos-duration="2000">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <!-- Heading -->
+            <h3
+                class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black leading-[1.2] mb-4 relative inline-block tracking-wide">
+                Ready to Transform Your School?
+                <!-- Underline -->
+                <span
+                    class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-600 rounded"></span>
+            </h3>
+            <!-- Paragraph -->
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                Let's discuss how Edugits can help streamline your institution’s operations with a tailored demo or
+                consultation.
+            </p>
+            <!-- Button -->
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="mailto:sales@thundergits.com"
+                    class="group relative px-7 py-3 text-sm sm:text-base font-semibold uppercase tracking-wide border border-pink-500 text-white overflow-hidden rounded-md shadow-md w-max mx-auto sm:mx-0">
+                    <!-- Background Layer -->
+                    <span class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 origin-right scale-x-100 
+            transition-transform duration-500 ease-in-out group-hover:scale-x-0 z-0 rounded-md"></span>
+                    <!-- Text -->
+                    <span class="relative z-10 transition-colors duration-500 ease-in-out 
+            group-hover:text-transparent group-hover:bg-clip-text 
+            group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-600">
+                        Contact Us Now
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative text-[#EDE6D6] pt-16">
+
+        <!-- 🔥 Background Image Only -->
+        <div class="absolute inset-0">
+            <img src="./../assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
+
+            <!-- Logo Section -->
+            <div class="flex flex-col items-center md:items-start">
+                <a class="flex items-center justify-center md:justify-start text-white mb-4">
+                    <img src="./../assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
+                    <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
+                </a>
+                <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
+                    Innovating through technology and creativity, building the future.
+                </p>
+            </div>
+
+            <!-- Explore -->
+            <div>
+                <h3 class="font-semibold mb-3 text-lg">Explore</h3>
+                <ul class="space-y-2">
+                    <li><a href="./../index.html" class="hover:text-pink-400 transition">Home</a></li>
+                    <li><a href="./../about.html" class="hover:text-pink-400 transition">About</a></li>
+                    <li><a href="./../work.html" class="hover:text-pink-400 transition">Work</a></li>
+                    <li><a href="./../index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h3 class="font-semibold mb-3 text-lg">Company</h3>
+                <ul class="space-y-2">
+                    <li><a href="./../privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+                    <li><a href="./../career.html" class="hover:text-pink-400 transition">Career</a></li>
+                    <li><a href="./../contact.html" class="hover:text-pink-400 transition">Contact</a></li>
+                    <li><a href="./../service.html" class="hover:text-pink-400 transition">Services</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-semibold mb-3 text-lg">Contact</h3>
+                <ul class="space-y-3">
+                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+                        <i class="ri-map-pin-fill mt-1"></i>
+                        <span>2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
+                    </li>
+                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+                        <i class="ri-phone-fill mt-1"></i>
+                        <span>+91-7765979725</span>
+                    </li>
+                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
+                        <i class="ri-mail-fill mt-1"></i>
+                        <a href="mailto:contact@thundergits.com"
+                            class="hover:text-pink-400 transition">info@thundergits.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div
+            class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
+            <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
+            <div class="flex space-x-6 text-gray-300">
+                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/thundergits/" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
+                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+                <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+                        class="fab fa-x-twitter"></i></a> -->
+
+
+            </div>
+        </div>
+
+        <!-- Floating Presale Chat -->
+        <!-- <div class="fixed bottom-16 left-4 flex items-center z-40">
+            <div
+                class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
+                <img src="./assets/call-center (1).png" alt="">
+            </div>
+            <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
+           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
+                AI Assistant
+            </span>
+        </div> -->
+
+        <!-- Scroll To Top -->
+        <button id="scrollToggleBtn"
+            class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
+            <i id="scrollIcon" class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- FAQ Toggle Script -->
+    <script>
+        const faqs = document.querySelectorAll('.faq-item');
+        faqs.forEach(item => {
+            const button = item.querySelector('button');
+            const content = item.querySelector('.faq-content');
+            const plusIcon = item.querySelector('.plus-icon');
+            const minusIcon = item.querySelector('.minus-icon');
+
+            button.addEventListener('click', () => {
+                const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+                // Close all expanded
+                faqs.forEach(f => {
+                    f.querySelector('.faq-content').style.maxHeight = null;
+                    f.querySelector('.plus-icon').classList.remove('hidden');
+                    f.querySelector('.minus-icon').classList.add('hidden');
+                });
+
+                // Toggle current
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    plusIcon.classList.add('hidden');
+                    minusIcon.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

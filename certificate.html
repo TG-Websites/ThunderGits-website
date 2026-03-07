@@ -325,14 +325,14 @@
           <div class="text-lg font-semibold">Audit Trail</div>
 
           <div class="mt-4 grid gap-3 md:grid-cols-3">
-            <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+            <!-- <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
               <div class="text-xs text-white/60">Created At</div>
               <div id="createdAt" class="mt-1 font-semibold">—</div>
             </div>
             <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
               <div class="text-xs text-white/60">Updated At</div>
               <div id="updatedAt2" class="mt-1 font-semibold">—</div>
-            </div>
+            </div> -->
             <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
               <div class="text-xs text-white/60">Verified</div>
               <div id="verifiedNow" class="mt-1 font-semibold">Just now</div>
@@ -454,7 +454,7 @@
       m.classList.toggle("hidden");
     }
 
-    const API_BASE = "http://localhost:8080";
+    const API_BASE = "https://tgspace-back.thundergits.com";
     const CERT_ENDPOINT = (certificateId) => `${API_BASE}/api/certificate/${encodeURIComponent(certificateId)}`;
 
     const $ = (id) => document.getElementById(id);
@@ -573,8 +573,8 @@
         setHref("link", record.link);
         setText("updatedAt", formatDateTime(record.updatedAt));
 
-        setText("createdAt", formatDateTime(record.createdAt));
-        setText("updatedAt2", formatDateTime(record.updatedAt));
+        // setText("createdAt", formatDateTime(record.createdAt));
+        // setText("updatedAt2", formatDateTime(record.updatedAt));
         setText("verifiedNow", new Date().toLocaleString());
 
         // $("openLinkBtn").href = record.link || "./";

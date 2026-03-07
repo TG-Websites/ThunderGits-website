@@ -1,0 +1,35 @@
+ <!-- HERO + VERIFIED CARD -->
+      <div class="grid gap-6 md:grid-cols-[1.35fr_0.9fr]">
+        
+
+        <!-- Right Verified Card -->
+        <div class="rounded-2xl border border-tg-stroke bg-tg-card p-6 md:p-7">
+          
+
+          
+
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3 text-white/70">
+              <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10">
+                <i class="fa-regular fa-calendar text-white/60"></i>
+              </div>
+              <div class="flex-1">
+                <span class="text-white/55">Issued:</span>
+                <span id="issuedAt" class="ml-2 font-semibold text-white">—</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 text-white/70">
+              <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10">
+                <i class="fa-regular fa-user text-white/60"></i>
+              </div>
+              <div class="flex-1">
+                <span class="text-white/55">Program:</span>
+                <span class="ml-2 font-semibold text-white">Internship Completion</span>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>

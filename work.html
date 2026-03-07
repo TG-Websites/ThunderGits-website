@@ -95,8 +95,7 @@
 
     <!-- Navbar -->
     <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
-      <div
-        class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
+      <div class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
         <div class="flex items-center gap-2 text-2xl font-bold text-offwhite">
           <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
           <span>ThunderGits</span>
@@ -277,7 +276,7 @@
 
 
   <!-- Work Page - Projects Showcase Section -->
-  <section class="bg-gray-50 py-16 overflow-hidden">
+  <section class="bg-gray-50 py-16 overflow-hidden hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
 
       <!-- Content Row -->
@@ -485,7 +484,7 @@
       <img src="./assets/bg2.png" alt="Background" class="w-full h-full object-cover opacity-30">
     </div>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-20 z-10">
+    <div class="relative max-w-8xl mx-auto px-6 lg:px-20 z-10">
       <!-- Section Title -->
       <div class="mb-16 text-left" data-aos="fade-up">
         <h4 class="text-sm tracking-widest font-semibold uppercase mb-2 text-theme-textLight">Our Work</h4>
@@ -500,168 +499,85 @@
       </div>
 
       <!-- Projects Grid -->
-      <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+      <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-1">
 
         <!-- Card 1 -->
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
           data-aos="fade-up" data-aos-delay="100">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Crumbell Project
-              </h3>
-              <a target="_blank" href="#"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A cross-platform mobile app and backend system designed for seamless order and inventory management.
-                Built with React Native, Express.js, and MongoDB.
-              </p>
+          <!-- IMAGE / POSTER -->
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/crumbell.webp" alt="Crumbell Project" class="w-full object-cover" />
+          </div>
 
-              <div class="mt-auto">
-                <img src="./assets/crumbell.webp" alt="Crumbell Project" class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
+          <!-- TEXT CONTENT -->
+          <div class="mt-4 text-left">
+            <!-- TITLE -->
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Crumbell Project
+            </h3>
+
+            <!-- DESCRIPTION -->
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A cross-platform mobile app and backend system designed for seamless order
+              and inventory management. Built with React Native, Express.js, and MongoDB.
+            </p>
+
+            <!-- VIEW PROJECT -->
+            <a target="_blank" href="#"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
           </div>
         </div>
 
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Enersol
-              </h3>
-              <a target="_blank" href="https://enersolbiopower.com/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A brand promotional and e-commerce platform for one of India’s leading biomass gasifier and renewable
-                energy manufacturers. The site features SEO-driven landing pages, bilingual content, product catalogs,
-                and enquiry automation, helping the company expand globally while boosting digital brand presence.
-              </p>
+        <!-- Tailwind Card with polygon clip-path (shape like your example).
+     NOTE: clip-path polygon is percentage-based, so the exact look depends on the card’s width/height.
+     Replace sizes (w/h) if needed. -->
 
-              <div class="mt-auto">
-                <img src="./assets/enersol.png" alt="Social Media App" class="w-full h-56 object-cover rounded-md">
+        <div class="min-h-screen bg-[#0b0b0b] flex items-center justify-center p-10">
+          <div class="relative w-[360px] h-[420px]">
+            <!-- Outer black base (your requested background-color: #000000) -->
+            <div class="absolute inset-0" style="
+        background-color:#000000;
+        clip-path: polygon(25% 25%, 75% 25%, 75% 56.63%, 58.51% 58.77%, 54.89% 75%, 25% 75%);
+      "></div>
+
+            <!-- Full rounded card (to match the reference overall card look) -->
+            <div class="absolute inset-0 rounded-[34px] overflow-hidden bg-[#15161b] shadow-2xl">
+              <!-- Purple header -->
+              <div class="relative h-[120px] bg-gradient-to-b from-[#6b2cff] to-[#3b1db9]">
+                <div class="absolute left-7 top-7 text-white text-[34px] font-semibold tracking-tight">
+                  UIUX Design
+                </div>
+                <div class="absolute left-0 right-0 bottom-0 h-px bg-white/15"></div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                ICAI
-              </h3>
-              <a target="_blank" href="https://icaimfp.org/index.html"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                Official website for the Institute of Chartered Accountants of India, Muzaffarpur Branch. Built with a
-                secure CMS, event management tools, and member resources, the platform enables the branch to share
-                updates, conduct programs, and engage its local members efficiently.
-              </p>
 
-              <div class="mt-auto">
-                <img src="./assets/icaim.png" alt="Social Media App" class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
-          </div>
-        </div>
+              <!-- Image stack area -->
+              <div class="relative h-[300px]">
+                <!-- Back image -->
+                <div
+                  class="absolute left-[84px] top-[22px] w-[255px] h-[240px] rounded-[24px] overflow-hidden bg-white/10 shadow-xl">
+                  <img src="YOUR_IMAGE_2.png" class="w-full h-full object-cover" alt="" />
+                  <div class="absolute inset-0 bg-white/10"></div>
+                </div>
 
+                <!-- Front image -->
+                <div
+                  class="absolute left-[22px] top-[74px] w-[270px] h-[260px] rounded-[24px] overflow-hidden bg-white shadow-2xl">
+                  <img src="YOUR_IMAGE_1.png" class="w-full h-full object-cover" alt="" />
+                  <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent"></div>
+                </div>
 
-
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                AAP BIhar
-              </h3>
-              <a target="_blank" href="https://aapbihar.org/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                Complete website and backend panel for political campaigns and membership drives. Features include
-                dynamic content management, volunteer onboarding, live news updates, and district-wise task assignment
-                for streamlined political operations.
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/appbihar.png" alt="Social Media App" class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Loqo ai
-              </h3>
-              <a target="_blank" href="https://loqo.ai/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A custom video streaming platform with Google Ads integration, HLS playback, and advanced analytics.
-                Includes features like custom player, adaptive quality, and monetization controls, ensuring smooth user
-                experience and ad revenue optimization.
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/loqoai.png" alt="Social Media App" class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Volcanic Classes
-              </h3>
-              <a target="_blank" href="https://volcanicclasses.org/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                An education commerce platform with course sales, live class management, and a full CMS + ERP module.
-                Integrated with payments, emails, and role-based admin panel for seamless learning and business
-                management.
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/volcanic classes.png" alt="Social Media App"
-                  class="w-full h-56 object-cover rounded-md">
+                <!-- CTA button -->
+                <button
+                  class="absolute right-6 bottom-6 w-[74px] h-[74px] rounded-full bg-[#b7ff1b] grid place-items-center shadow-xl"
+                  type="button">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17L17 7" stroke="#0b0b0b" stroke-width="2.4" stroke-linecap="round" />
+                    <path d="M10 7H17V14" stroke="#0b0b0b" stroke-width="2.4" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -669,309 +585,386 @@
 
 
 
+        <!-- Card 2 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/enersol.png" alt="Enersol" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Enersol
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A brand promotional and e-commerce platform for one of India’s leading biomass gasifier and renewable
+              energy manufacturers. The site features SEO-driven landing pages, bilingual content, product catalogs,
+              and enquiry automation, helping the company expand globally while boosting digital brand presence.
+            </p>
+
+            <a target="_blank" href="https://enersolbiopower.com/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/icaim.png" alt="ICAI" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              ICAI
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              Official website for the Institute of Chartered Accountants of India, Muzaffarpur Branch. Built with a
+              secure CMS, event management tools, and member resources, the platform enables the branch to share
+              updates, conduct programs, and engage its local members efficiently.
+            </p>
+
+            <a target="_blank" href="https://icaimfp.org/index.html"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="400">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/appbihar.png" alt="AAP Bihar" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              AAP Bihar
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              Complete website and backend panel for political campaigns and membership drives. Features include
+              dynamic content management, volunteer onboarding, live news updates, and district-wise task assignment
+              for streamlined political operations.
+            </p>
+
+            <a target="_blank" href="https://aapbihar.org/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="500">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/loqoai.png" alt="Loqo AI" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Loqo AI
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A custom video streaming platform with Google Ads integration, HLS playback, and advanced analytics.
+              Includes features like custom player, adaptive quality, and monetization controls, ensuring smooth user
+              experience and ad revenue optimization.
+            </p>
+
+            <a target="_blank" href="https://loqo.ai/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
 
         <!-- Card 6 -->
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
           data-aos="fade-up" data-aos-delay="600">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Prismstar Project
-              </h3>
-              <a target="_blank" href="https://prismstar.in/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                An office leasing realty site providing details about available properties.
-              </p>
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/volcanic classes.png" alt="Volcanic Classes" class="w-full object-cover" />
+          </div>
 
-              <div class="mt-auto">
-                <img src="./assets/prismstar.webp" alt="Prismstar Project" class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Volcanic Classes
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              An education commerce platform with course sales, live class management, and a full CMS + ERP module.
+              Integrated with payments, emails, and role-based admin panel for seamless learning and business
+              management.
+            </p>
+
+            <a target="_blank" href="https://volcanicclasses.org/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
           </div>
         </div>
 
-
-
-
-        <div class="project-card group rounded-xl overflow-hidden flex flex-col bg-black transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <!-- Title + Link -->
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Edugits
-              </h3>
-              <a href="https://edugits.thundergits.com/" target="_blank"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-
-            <!-- Description + Tech + Image -->
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A subscription-based ERP platform where multiple schools can onboard and manage academics, finance,
-                attendance, and examinations under one system. Features include role-based dashboards, Razorpay
-                integration,
-                and real-time reporting tailored for large student bases.
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/edugit.png" alt="Edugits Platform" class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-
-        <div class="project-card group rounded-xl overflow-hidden flex flex-col bg-black transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="800">
-          <div class="flex flex-col h-full justify-between">
-            <!-- Title + Link -->
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Chikit
-              </h3>
-              <a href="https://chikit.thundergits.com/signin" target="_blank"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-
-            <!-- Description + Tech + Image -->
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A chemist shop management platform designed for local pharmacies to handle inventory, billing, and
-                customer
-                records with ease. The system streamlines medicine stock tracking, sales management, and daily
-                reporting,
-                helping small chemists go digital without complexity.
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/chikit.png" alt="Chikit Pharmacy Platform"
-                  class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300 bg-black"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Ocean Of Current Generation
-              </h3>
-              <a target="_blank" href="https://oceanofcurrentgeneration.com/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A corporate promotional website with integrated e-commerce modules for a company specializing in solar
-                gensets and panels. Built with modern UI/UX, product showcases, and lead capture systems, the platform
-                enhances both brand storytelling and direct product sales.
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/opc.png" alt="Social Media App" class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Trio
-              </h3>
-              <a target="_blank" href="https://trio-ev.com/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A full-featured platform for an electric mobility startup offering vehicle leasing, employee transport,
-                EV charging stations, weekend rentals, and EV logistics. Built with clean UX, service-tier options, and
-                passive income models to enable fleet owners & corporates to reduce carbon footprint while earning.
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/trio.png" alt="Social Media App" class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Card 5 -->
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="500">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Howbee Project
-              </h3>
-              <a target="_blank" href="#"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A visually stunning website featuring complex animations and interactive designs that enhance user
-                engagement.
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/Howbee.webp" alt="Howbee Project" class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- Card 7 -->
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
           data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Social Media App
-              </h3>
-              <a target="_blank" href="#"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A social media app with test-driven learning capabilities, developed using ReactJS, Node.js, and SQLite.
-                This app replicates Instagram's UI while emphasizing student learning via test cases.
-              </p>
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/prismstar.webp" alt="Prismstar Project" class="w-full object-cover" />
+          </div>
 
-              <div class="mt-auto">
-                <img src="./assets/LoginPageDemo.webp" alt="Social Media App"
-                  class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Prismstar Project
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              An office leasing realty site providing details about available properties.
+            </p>
+
+            <a target="_blank" href="https://prismstar.in/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
           </div>
         </div>
 
+        <!-- Card 8 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="800">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/edugit.png" alt="Edugits Platform" class="w-full object-cover" />
+          </div>
 
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Edugits
+            </h3>
 
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A subscription-based ERP platform where multiple schools can onboard and manage academics, finance,
+              attendance, and examinations under one system. Features include role-based dashboards, Razorpay
+              integration,
+              and real-time reporting tailored for large student bases.
+            </p>
 
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Pauseva
-              </h3>
-              <a target="_blank" href="https://pasuseva.in/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                Pasuseva is an NGO-type organization that facilitates loans for setting up poultry farms, cow farms, and fish farms at very minimal interest rates. It also provides guidance and ongoing support to help farmers grow their businesses. The platform includes online payment support and a custom admin panel to manage members, jobs, and various yojnas (schemes).
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/pasusevaimg.png" alt="Social Media App"
-                  class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
+            <a href="https://edugits.thundergits.com/" target="_blank"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
           </div>
         </div>
 
+        <!-- Card 9 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="900">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/chikit.png" alt="Chikit Pharmacy Platform" class="w-full object-cover" />
+          </div>
 
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Chikit
+            </h3>
 
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Coding Pandas
-              </h3>
-              <a target="_blank" href="https://codingpandas.in/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-                A leetcode type plateform which provide facility to practice the coding in various languages like python,c++ etc. also plateform is responsible to sell courses and manage from stock to checkout process. it has rbca feature which provide secure layer and SSE system to notify immediately to user about action.
-              </p>
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A chemist shop management platform designed for local pharmacies to handle inventory, billing, and
+              customer records with ease. The system streamlines medicine stock tracking, sales management, and daily
+              reporting,
+              helping small chemists go digital without complexity.
+            </p>
 
-              <div class="mt-auto">
-                <img src="./assets/codingpandaimg.png" alt="Social Media App"
-                  class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
+            <a href="https://chikit.thundergits.com/signin" target="_blank"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
           </div>
         </div>
 
+        <!-- Card 10 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="1000">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/opc.png" alt="Ocean Of Current Generation" class="w-full object-cover" />
+          </div>
 
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Ocean Of Current Generation
+            </h3>
 
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A corporate promotional website with integrated e-commerce modules for a company specializing in solar
+              gensets and panels. Built with modern UI/UX, product showcases, and lead capture systems, the platform
+              enhances both brand storytelling and direct product sales.
+            </p>
 
-        <div
-          class="project-card group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="flex flex-col h-full justify-between">
-            <div class="flex flex-col sm:flex-row sm:items-center mb-2">
-              <h3 class="text-lg font-semibold text-white mb-1 transition-[margin] duration-300 group-hover:mb-2">
-                Netajee
-              </h3>
-              <a target="_blank" href="https://netajee.in/"
-                class="project-link mt-2 sm:mt-0 text-white font-normal opacity-0 transition-opacity duration-300 whitespace-nowrap">
-                View Project →
-              </a>
-            </div>
-            <div class="flex flex-col flex-1 justify-between">
-              <p class="project-desc text-white mt-0 mb-2">
-               Netajee is election management plateform with admin panel,website and mobile application. in this we are managing volunteer,volunteer tracking,driver tracking, resource deploye tracking, all story,poster,media,press release.. etc will managed and published via admin panel. also we are showing election analytics based on kyc collected from voters. there is facility to create dynamic form and table to store dynamic data collected for election analysis.
-              </p>
-
-              <div class="mt-auto">
-                <img src="./assets/netajeeimg.png" alt="Social Media App"
-                  class="w-full h-56 object-cover rounded-md">
-              </div>
-            </div>
+            <a target="_blank" href="https://oceanofcurrentgeneration.com/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
           </div>
         </div>
 
+        <!-- Card 11 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="1100">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/trio.png" alt="Trio" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Trio
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A full-featured platform for an electric mobility startup offering vehicle leasing, employee transport,
+              EV charging stations, weekend rentals, and EV logistics. Built with clean UX, service-tier options, and
+              passive income models to enable fleet owners & corporates to reduce carbon footprint while earning.
+            </p>
+
+            <a target="_blank" href="https://trio-ev.com/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="1200">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/Howbee.webp" alt="Howbee Project" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Howbee Project
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A visually stunning website featuring complex animations and interactive designs that enhance user
+              engagement.
+            </p>
+
+            <a target="_blank" href="#"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 13 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="1300">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/LoginPageDemo.webp" alt="Social Media App" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Social Media App
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A social media app with test-driven learning capabilities, developed using ReactJS, Node.js, and SQLite.
+              This app replicates Instagram's UI while emphasizing student learning via test cases.
+            </p>
+
+            <a target="_blank" href="#"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 14 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="1400">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/pasusevaimg.png" alt="Pauseva" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Pauseva
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              Pasuseva is an NGO-type organization that facilitates loans for setting up poultry farms, cow farms, and
+              fish farms at very minimal interest rates. It also provides guidance and ongoing support to help farmers
+              grow their businesses. The platform includes online payment support and a custom admin panel to manage
+              members, jobs, and various yojnas (schemes).
+            </p>
+
+            <a target="_blank" href="https://pasuseva.in/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 15 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="1500">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/codingpandaimg.png" alt="Coding Pandas" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Coding Pandas
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              A leetcode type plateform which provide facility to practice the coding in various languages like
+              python,c++ etc. also plateform is responsible to sell courses and manage from stock to checkout process.
+              it has rbca feature which provide secure layer and SSE system to notify immediately to user about
+              action.
+            </p>
+
+            <a target="_blank" href="https://codingpandas.in/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 16 -->
+        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
+          data-aos="fade-up" data-aos-delay="1600">
+          <div class="overflow-hidden rounded-lg bg-white ">
+            <img src="./assets/netajeeimg.png" alt="Netajee" class="w-full object-cover" />
+          </div>
+
+          <div class="mt-4 text-left">
+            <h3 class="text-lg font-semibold text-white mb-1">
+              Netajee
+            </h3>
+
+            <p class="text-sm text-white leading-relaxed mb-3">
+              Netajee is election management plateform with admin panel,website and mobile application. in this we are
+              managing volunteer,volunteer tracking,driver tracking, resource deploye tracking, all
+              story,poster,media,press release.. etc will managed and published via admin panel. also we are showing
+              election analytics based on kyc collected from voters. there is facility to create dynamic form and
+              table to store dynamic data collected for election analysis.
+            </p>
+
+            <a target="_blank" href="https://netajee.in/"
+              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
+              View Project →
+            </a>
+          </div>
+        </div>
 
       </div>
+
+
     </div>
 
     <style>

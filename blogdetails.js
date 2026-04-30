@@ -18,8 +18,28 @@ function formatDate(dateString) {
 
 // Format category for display
 function formatCategory(category) {
-    if (!category) return 'General';
+    if (!category) return 'Insight';
     return category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+}
+
+// Interactive Grid Logic
+function initHeroGrid() {
+    const gridContainer = document.getElementById('hero-grid');
+    if (!gridContainer) return;
+    
+    function buildGrid() {
+        gridContainer.innerHTML = '';
+        const columns = Math.ceil(window.innerWidth / 50);
+        const rows = Math.ceil(window.innerHeight / 50);
+        const totalCells = columns * rows;
+        for (let i = 0; i < totalCells; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
+            gridContainer.appendChild(cell);
+        }
+    }
+    buildGrid();
+    window.addEventListener('resize', buildGrid);
 }
 
 // Fetch and display blog details
@@ -32,7 +52,7 @@ async function fetchBlogDetails() {
     }
 
     try {
-        const response = await fetch(`http://localhost:5000/api/blogs/public/${blogId}`);
+        const response = await fetch(`https://tgspace-back.thundergits.com/api/blogs/public/${blogId}`);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -63,48 +83,40 @@ function displayBlogContent(blog) {
     // Update page title
     document.title = `${blog.title} - ThunderGits`;
     
-    // Update blog header
-    const blogHeader = document.getElementById('blogHeader');
-    blogHeader.innerHTML = `
-        <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
-            <div class="inline-block px-3 py-1 bg-pink-600 text-white text-sm font-semibold rounded-full mb-4">
-                ${formatCategory(blog.category)}
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                ${blog.title}
-            </h1>
-            <div class="flex justify-center items-center space-x-6 text-theme-textLight text-sm">
-                <div class="flex items-center">
-                    <i class="fas fa-user mr-2"></i>
-                    <span>${blog.author?.username || 'ThunderGits Team'}</span>
-                </div>
-                <div class="flex items-center">
-                    <i class="fas fa-calendar-alt mr-2"></i>
-                    <span>${formatDate(blog.publishedAt)}</span>
-                </div>
-                ${blog.readTime ? `
-                    <div class="flex items-center">
-                        <i class="fas fa-clock mr-2"></i>
-                        <span>${blog.readTime} min read</span>
-                    </div>
-                ` : ''}
-                <div class="flex items-center">
-                    <i class="fas fa-eye mr-2"></i>
-                    <span>${blog.views || 0} views</span>
-                </div>
-            </div>
-        </div>
-    `;
+    // Update blog header elements
+    const blogTitle = document.getElementById('blogTitle');
+    const blogCategory = document.getElementById('blogCategory');
+    const blogDate = document.getElementById('blogDate');
+    const headerPlaceholder = document.getElementById('headerPlaceholder');
+    const headerContent = document.getElementById('headerContent');
+
+    if (blogTitle) blogTitle.innerText = blog.title;
+    if (blogCategory) blogCategory.innerText = formatCategory(blog.category);
+    if (blogDate) blogDate.innerText = formatDate(blog.publishedAt);
+
+    // Transition header
+    if (headerPlaceholder) headerPlaceholder.classList.add('hidden');
+    if (headerContent) {
+        headerContent.classList.remove('hidden');
+        setTimeout(() => {
+            headerContent.classList.remove('opacity-0');
+        }, 100);
+    }
 
     // Update featured image
     const featuredImageContainer = document.getElementById('featuredImageContainer');
     if (blog.featuredImage) {
         featuredImageContainer.innerHTML = `
-            <img src="${blog.featuredImage || './assets/blogimg1.jpg'}" 
-                 alt="${blog.title}" 
-                 class="w-full h-96 object-cover rounded-lg shadow-lg"
-                 onerror="this.src='./assets/blogimg1.jpg'"
-                 data-aos="zoom-in">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-indigo-500/10 group">
+                    <img src="${blog.featuredImage}" 
+                         alt="${blog.title}" 
+                         class="w-full h-[400px] md:h-[700px] object-cover transition-transform duration-1000 group-hover:scale-105"
+                         onerror="this.src='./assets/blogimg1.jpg'"
+                         data-aos="zoom-in">
+                    <div class="absolute inset-0 bg-indigo-950/10 group-hover:bg-transparent transition-colors duration-700"></div>
+                </div>
+            </div>
         `;
     } else {
         featuredImageContainer.style.display = 'none';
@@ -113,26 +125,30 @@ function displayBlogContent(blog) {
     // Update blog content
     const blogBody = document.getElementById('blogBody');
     blogBody.innerHTML = `
-        <div data-aos="fade-up" data-aos-delay="200">
-            ${blog.excerpt ? `<div class="text-xl text-gray-600 mb-8 italic border-l-4 border-pink-500 pl-6">${blog.excerpt}</div>` : ''}
-            <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
-                ${formatBlogContent(blog.content)}
-            </div>
+        ${blog.excerpt ? `<div class="text-xl md:text-2xl text-blue-950 font-bold mb-16 leading-relaxed border-l-4 border-indigo-500 pl-8 italic" data-aos="fade-up">${blog.excerpt}</div>` : ''}
+        <div class="prose prose-lg md:prose-xl prose-indigo max-w-none text-gray-700 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
+            ${formatBlogContent(blog.content)}
         </div>
     `;
 
     // Update author info
     const authorInfo = document.getElementById('authorInfo');
     authorInfo.innerHTML = `
-        <div data-aos="fade-up" data-aos-delay="300">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">About the Author</h3>
-            <div class="flex items-center space-x-4">
-                <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+        <div class="pt-24 border-t border-gray-100" data-aos="fade-up">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-12 bg-gray-50/50 p-8 md:p-12 rounded-3xl border border-gray-100">
+                <div class="w-24 h-24 bg-gradient-to-br from-indigo-600 to-blue-800 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-xl shadow-indigo-500/20 flex-shrink-0">
                     ${(blog.author?.username || 'TG').charAt(0).toUpperCase()}
                 </div>
                 <div>
-                    <h4 class="font-semibold text-gray-900">${blog.author?.username || 'ThunderGits Team'}</h4>
-                    <p class="text-gray-600">${blog.author?.email || 'Content Creator at ThunderGits'}</p>
+                    <span class="text-[10px] tracking-[0.3em] font-black uppercase text-indigo-500/60 mb-3 block">Written By</span>
+                    <h4 class="text-3xl font-bold text-blue-950 mb-4">${blog.author?.username || 'ThunderGits Team'}</h4>
+                    <p class="text-gray-500 leading-relaxed text-lg max-w-2xl font-light">
+                        ${blog.author?.bio || 'Leading the digital transformation frontier at ThunderGits Technologies. Expert in building scalable architectures and premium user experiences.'}
+                    </p>
+                    <div class="flex gap-4 mt-8">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-500 transition-all shadow-sm"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-500 transition-all shadow-sm"><i class="ri-twitter-fill"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,70 +158,74 @@ function displayBlogContent(blog) {
     const blogTags = document.getElementById('blogTags');
     if (blog.tags && blog.tags.length > 0) {
         blogTags.innerHTML = `
-            <div data-aos="fade-up" data-aos-delay="400">
-                <h3 class="text-lg font-semibold text-gray-900 mb-4">Tags</h3>
-                <div class="flex flex-wrap gap-2">
-                    ${blog.tags.map(tag => `
-                        <span class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-pink-100 hover:text-pink-700 transition-colors cursor-pointer">
-                            #${tag}
-                        </span>
-                    `).join('')}
-                </div>
+            <div class="flex flex-wrap gap-3" data-aos="fade-up">
+                ${blog.tags.map(tag => `
+                    <span class="px-5 py-2 bg-gray-100/50 text-gray-500 text-[10px] font-bold uppercase tracking-widest hover:bg-indigo-600 hover:text-white transition-all cursor-pointer rounded-lg border border-gray-100 hover:border-indigo-600 shadow-sm">
+                        #${tag}
+                    </span>
+                `).join('')}
             </div>
         `;
     } else {
         blogTags.style.display = 'none';
     }
+
+    // Initialize progress bar
+    initProgressBar();
+}
+
+// Progress Bar Logic
+function initProgressBar() {
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        if (progressBar) progressBar.style.width = scrolled + "%";
+    });
 }
 
 // Format blog content (convert line breaks to paragraphs)
 function formatBlogContent(content) {
     if (!content) return '';
-    
-    // Split content by double line breaks to create paragraphs
     const paragraphs = content.split('\n\n').filter(p => p.trim());
-    
     return paragraphs.map(paragraph => {
-        // Handle single line breaks within paragraphs
         const formattedParagraph = paragraph.replace(/\n/g, '<br>');
-        return `<p class="mb-6">${formattedParagraph}</p>`;
+        return `<p class="mb-8">${formattedParagraph}</p>`;
     }).join('');
 }
 
-// Fetch and display all blogs
+// Fetch and display related blogs
 async function fetchRelatedBlogs(category, currentBlogId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/blogs/published?limit=20&sortBy=publishedAt&sortOrder=desc`);
+        const response = await fetch(`https://tgspace-back.thundergits.com/api/blogs/published?limit=20&sortBy=publishedAt&sortOrder=desc`);
         const data = await response.json();
         
         if (data.success && data.data) {
-            // Filter out current blog and display all others
             const allBlogs = data.data.filter(blog => blog._id !== currentBlogId);
-            
             displayRelatedBlogs(allBlogs);
         }
     } catch (error) {
         console.error('Error fetching blogs:', error);
-        // Hide related section if error
         document.getElementById('relatedBlogs').style.display = 'none';
     }
 }
 
-// Display all blogs with show more functionality
+// Display related blogs
 function displayRelatedBlogs(blogs) {
     const container = document.getElementById('relatedBlogsContainer');
+    if (!container) return;
     
     if (blogs.length === 0) {
         container.innerHTML = `
             <div class="col-span-full text-center py-12">
-                <i class="fas fa-blog text-gray-400 text-6xl mb-4"></i>
-                <p class="text-gray-500 text-lg">No articles found</p>
+                <i class="ri-article-line text-gray-200 text-6xl mb-4"></i>
+                <p class="text-gray-400 text-lg">No related articles found</p>
             </div>
         `;
         return;
     }
     
-    // Initially show 6 blogs
     let visibleCount = 6;
     
     function renderBlogs() {
@@ -213,33 +233,22 @@ function displayRelatedBlogs(blogs) {
         
         container.innerHTML = `
             ${blogsToShow.map((blog, index) => `
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="${(index % 6) * 100}">
-                    <img src="${blog.featuredImage || './assets/blogimg1.jpg'}" 
-                         alt="${blog.title}" 
-                         class="w-full h-48 object-cover"
-                         onerror="this.src='./assets/blogimg1.jpg'">
-                    <div class="p-6">
-                        <div class="text-xs uppercase text-pink-600 font-semibold mb-2">
-                            ${formatCategory(blog.category)}
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="${(index % 3) * 100}">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="${blog.featuredImage || './assets/default-blog.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}" onerror="this.src='./assets/default-blog.webp'">
+                        <div class="absolute inset-0 bg-indigo-950/10 group-hover:bg-transparent transition-colors duration-700"></div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex items-center gap-3 mb-5">
+                            <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">${formatCategory(blog.category)}</span>
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">5 min read</span>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2 hover:text-pink-600 transition-colors">
-                            <a href="./blogdetails.html?id=${blog._id}">${blog.title}</a>
-                        </h3>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                            ${blog.excerpt || 'No description available'}
-                        </p>
-                        <div class="flex justify-between items-center text-xs text-gray-500 mb-4">
-                            <span>${formatDate(blog.publishedAt)}</span>
-                            ${blog.readTime ? `<span>${blog.readTime} min read</span>` : ''}
-                        </div>
-                        <div class="mt-auto">
-                            <a href="./blogdetails.html?id=${blog._id}" 
-                               class="inline-flex items-center text-pink-600 font-semibold hover:text-pink-700 transition-colors">
-                                Read More
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path d="M5 12h14"></path>
-                                    <path d="M12 5l7 7-7 7"></path>
-                                </svg>
+                        <h3 class="text-xl font-bold text-blue-950 mb-4 group-hover:text-indigo-600 transition-colors leading-tight">${blog.title}</h3>
+                        <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">${blog.excerpt || 'Read more about this topic.'}</p>
+                        <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">${new Date(blog.publishedAt).toLocaleDateString()}</span>
+                            <a href="./blogdetails.html?id=${blog._id}" class="w-10 h-10 rounded-full bg-blue-950 text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+                                <i class="fas fa-arrow-right text-xs"></i>
                             </a>
                         </div>
                     </div>
@@ -247,68 +256,47 @@ function displayRelatedBlogs(blogs) {
             `).join('')}
             
             ${blogs.length > visibleCount ? `
-                <div class="col-span-full text-center mt-8">
-                    <button id="showMoreBlogs" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-3 rounded-md font-medium hover:opacity-90 transition-all">
-                        Show More Articles (${blogs.length - visibleCount} remaining)
-                    </button>
-                </div>
-            ` : ''}
-            
-            ${blogs.length > 6 && visibleCount >= blogs.length ? `
-                <div class="col-span-full text-center mt-8">
-                    <button id="showLessBlogs" class="bg-gray-500 text-white px-8 py-3 rounded-md font-medium hover:bg-gray-600 transition-all">
-                        Show Less
+                <div class="col-span-full text-center mt-12">
+                    <button id="showMoreBlogs" class="px-10 py-4 bg-blue-950 text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-indigo-600 transition-all shadow-lg">
+                        Load More Articles
                     </button>
                 </div>
             ` : ''}
         `;
         
-        // Add event listeners for show more/less buttons
         const showMoreBtn = document.getElementById('showMoreBlogs');
-        const showLessBtn = document.getElementById('showLessBlogs');
-        
         if (showMoreBtn) {
             showMoreBtn.addEventListener('click', () => {
                 visibleCount = Math.min(visibleCount + 6, blogs.length);
                 renderBlogs();
-                // Smooth scroll to new content
                 setTimeout(() => {
                     showMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
             });
         }
-        
-        if (showLessBtn) {
-            showLessBtn.addEventListener('click', () => {
-                visibleCount = 6;
-                renderBlogs();
-                // Scroll back to top of articles section
-                document.getElementById('relatedBlogs').scrollIntoView({ behavior: 'smooth' });
-            });
-        }
     }
-    
     renderBlogs();
 }
 
 // Show error message
 function showError(message) {
-    const blogContent = document.getElementById('blogContent');
-    blogContent.innerHTML = `
-        <div class="max-w-4xl mx-auto px-6 text-center py-20">
-            <i class="fas fa-exclamation-triangle text-red-500 text-6xl mb-6"></i>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Oops! Something went wrong</h2>
-            <p class="text-gray-600 mb-8">${message}</p>
-            <a href="./index.html" 
-               class="inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all">
-                <i class="fas fa-arrow-left mr-2"></i>
-                Back to Home
+    const blogBody = document.getElementById('blogBody');
+    const featuredImageContainer = document.getElementById('featuredImageContainer');
+    const headerPlaceholder = document.getElementById('headerPlaceholder');
+    
+    if (headerPlaceholder) headerPlaceholder.innerHTML = `
+        <div class="max-w-4xl mx-auto px-6 text-center py-10">
+            <i class="ri-error-warning-line text-red-500 text-6xl mb-6"></i>
+            <h2 class="text-2xl font-bold text-white mb-4">Article Not Found</h2>
+            <p class="text-gray-400 mb-8">${message}</p>
+            <a href="./blog.html" class="inline-flex items-center bg-white text-black px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-indigo-500 hover:text-white transition-all">
+                <i class="ri-arrow-left-line mr-3"></i> Back to Blog
             </a>
         </div>
     `;
     
-    // Hide other sections
-    document.getElementById('blogHeader').style.display = 'none';
+    if (featuredImageContainer) featuredImageContainer.style.display = 'none';
+    if (blogBody) blogBody.style.display = 'none';
     document.getElementById('relatedBlogs').style.display = 'none';
 }
 
@@ -316,28 +304,16 @@ function showError(message) {
 function hideLoadingSpinner() {
     const spinner = document.getElementById('loadingSpinner');
     if (spinner) {
-        spinner.style.display = 'none';
-    }
-}
-
-// Mobile menu toggle function
-function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        menu.style.opacity = 0;
+        spinner.style.transition = 'opacity 0.5s';
+        spinner.style.opacity = '0';
         setTimeout(() => {
-            menu.style.opacity = 1;
-        }, 10);
-    } else {
-        menu.style.opacity = 0;
-        setTimeout(() => {
-            menu.classList.add('hidden');
-        }, 300);
+            spinner.style.display = 'none';
+        }, 500);
     }
 }
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
+    initHeroGrid();
     fetchBlogDetails();
 });

@@ -4,1289 +4,412 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thundergits Technologies - Innovative Tech Solutions</title>
+  <title>Our Work - ThunderGits Technologies</title>
   <link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontSize: {
-            base: '1em',
-            sm: '14px',
-            md: '15px',
-            lg: '1.4em',
-            xl: '42px',
-            heading: '6.75vw',
-          },
-          lineHeight: {
-            tight: '1em',
-            normal: '1.2em',
-            relaxed: '1.5em',
-            loose: '1.6em',
-            heading: '0.95em',
-          },
-          letterSpacing: {
-            wide: '1.8px',
-            tighter: '0.01em',
-          },
-          fontWeight: {
-            medium: '500',
-          },
-          transitionProperty: {
-            all: 'all',
-          },
-          transitionTimingFunction: {
-            ease: 'ease',
-          },
-          transitionDuration: {
-            DEFAULT: '300ms',
-          },
-          colors: {
-            theme: {
-              text: '#DEDDDB',
-              textLight: '#848484',
-              textDark: '#EFE8CE',
-              link: '#E2725B',
-              hover: '#DD644C',
-              link2: '#7DA189',
-              hover2: '#6D967A',
-              link3: '#9D7246',
-              hover3: '#5B3918',
-              bg: '#141414',
-              bd: '#424040',
-              altBg: '#292828',
-              altBd: '#535353',
-            },
-            dark: '#0e0e0e',
-            offwhite: '#f5e9cd',
-            graytext: '#d9d9d9',
-            accent: '#f25835',
-            footer: '#121212',
-            linkhover: '#f5e9cd',
-          }
-        }
-      }
-    }
-  </script>
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-
-  <link rel="stylesheet" href="./style.css">
-
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="bg-dark text-theme-text">
+<body class="bg-black text-white font-['Inter',sans-serif]">
 
-  <!-- Work Page Hero Section -->
-  <section class="relative bg-cover bg-center flex flex-col justify-between sm:min-h-[50vh]"
-    style="background-image: url('./assets/bg2.png');">
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+  <!-- Navbar -->
+  <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+      <!-- LOGO -->
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+      </a>
 
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
-      <div class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
-        <div class="flex items-center gap-2 text-2xl font-bold text-offwhite">
-          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-          <span>ThunderGits</span>
-        </div>
-        <nav class="hidden md:flex gap-8 text-offwhite font-medium">
-          <a href="./index.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
-          <a href="./about.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-          <a href="./work.html" class="pb-1 border-b-2 border-linkhover">Work</a>
-          <a href="./service.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-          <a href="./career.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-          <a href="./contact.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-        </nav>
-        <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
-          <a href="./contact.html" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
-               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
-               border border-pink-500 hover:text-white transition-all duration-300 ease-out
-               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
-               before:scale-x-0 before:origin-left hover:before:scale-x-100 
-               before:transition-transform before:duration-300 before:z-[-1]">
-            Get a Quote
-          </a>
+      <!-- MOBILE BUTTON -->
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
 
-          <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars text-lg"></i>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-      class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-      <div class="flex justify-between items-center mb-10">
-        <div class="flex items-center gap-2 text-lg font-bold">
-          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-          <span class="text-white">ThunderGits</span>
-        </div>
-        <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
-          <span>Close</span>
-          <span class="text-2xl leading-none">×</span>
-        </button>
-      </div>
-
-      <div class="space-y-5">
-        <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Home</span><span class="text-sm">→</span>
-        </a>
-        <a href="./about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>About</span><span class="text-sm">→</span>
-        </a>
-        <a href="./work.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Work</span><span class="text-sm">→</span>
-        </a>
-        <a href="./service.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Services</span><span class="text-sm">→</span>
-        </a>
-        <a href="./career.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Career</span><span class="text-sm">→</span>
-        </a>
-        <a href="./contact.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Contact</span><span class="text-sm">→</span>
-        </a>
-
-        <!-- Get a Quote Button -->
-        <div class="pt-4">
-          <a href="./contact.html"
-            class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
-            Get a Quote
-          </a>
-        </div>
-      </div>
-
-      <!-- Footer Icons -->
-      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
-        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-        <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-x-twitter"></i></a> -->
+      <!-- MENU -->
+      <div id="menu" class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-gray-300 hover:text-white text-sm transition">Home</a>
+        <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
+        <a href="./work.html" class="text-white hover:text-white text-sm transition font-semibold">Work</a>
+        <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
+        <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Career</a>
+        <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
+        <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
+        <a href="./contact.html" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get a Quote</a>
       </div>
     </div>
 
-    <!-- Hero Text -->
-    <!-- Our Work Section -->
-
-
-
-
-
-
-    <!-- Hero Section -->
-    <!-- Hero Section -->
-    <div class="relative z-20 flex items-center min-h-[80vh] pt-24 pb-12">
-      <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 items-center gap-8">
-
-        <!-- Text Content Centered -->
-        <div class="relative flex flex-col items-center text-center" data-aos="fade-up">
-
-          <!-- Main Content -->
-          <div class="flex flex-col items-center">
-            <p
-              class="text-4xl sm:text-5xl font-bold leading-snug mb-2 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              Our Work
-            </p>
-            <h1 class="text-offwhite text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight max-w-2xl">
-              Turning Ideas Into Reality
-            </h1>
-            <p class="mt-2 sm:mt-4 text-base sm:text-lg text-offwhite/80 max-w-xl">
-              See how we turn ideas into impactful digital experiences with creativity and technology.
-            </p>
-          </div>
-
-          <!-- Bottom Gradient Border -->
-          <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded my-6"></div>
-
-          <!-- Button -->
-          <a href="#work">
-            <button class="relative font-bold uppercase py-3 px-6 w-auto text-white 
-                     bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow-md 
-                     hover:opacity-90 transition-all duration-300">
-              Explore More
-            </button>
-          </a>
-
-        </div>
-
-      </div>
+    <!-- MOBILE DROPDOWN -->
+    <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
+      <a href="./index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
+      <a href="./about.html" class="text-gray-300 hover:text-white text-sm">About</a>
+      <a href="./work.html" class="text-white hover:text-white text-sm font-semibold">Work</a>
+      <a href="./service.html" class="text-gray-300 hover:text-white text-sm">Services</a>
+      <a href="./career.html" class="text-gray-300 hover:text-white text-sm">Career</a>
+      <a href="./blog.html" class="text-gray-300 hover:text-white text-sm">Blog</a>
+      <a href="./contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
     </div>
+  </nav>
 
-
-  </section>
-
-  <script>
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        menu.style.opacity = 0;
-        setTimeout(() => {
-          menu.style.opacity = 1;
-        }, 10);
-      } else {
-        menu.style.opacity = 0;
-        setTimeout(() => {
-          menu.classList.add('hidden');
-        }, 300); // match with CSS transition
-      }
-    }
-  </script>
-
-
-  <!-- Floating Social Bar -->
-  <!-- <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
-    <a href="#"
-      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-      <i class="fas fa-shopping-cart"></i>
-    </a>
-    <a href="#"
-      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-purple-500/50 transition-all animate-float-up-down">
-      <i class="fas fa-image"></i>
-    </a>
-    <a href="#"
-      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-      <i class="fas fa-credit-card"></i>
-    </a>
-  </div> -->
-
-
-
-
-
-  <!-- Work Page - Projects Showcase Section -->
-  <section class="bg-gray-50 py-16 overflow-hidden hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
-
-      <!-- Content Row -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-
-        <!-- Left: Images Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <!-- Gradient Box -->
-          <div
-            class="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-6 flex flex-col justify-end min-h-[180px] sm:min-h-[200px] rounded-lg animate-fade-up delay-100">
-            <p class="text-xs sm:text-sm uppercase tracking-widest mb-2">Startup</p>
-            <h3 class="text-base sm:text-lg font-semibold leading-snug">
-              The team, driving the tech of tomorrow
-            </h3>
-          </div>
-
-          <!-- Image 1 -->
-          <img src="./assets/blogimg1.jpg" alt="Project 1"
-            class="w-full h-40 sm:h-full object-cover rounded-lg animate-fade-up delay-200">
-
-          <!-- Image 2 (Full span) -->
-          <img src="./assets/workimg3.jpeg" alt="Project 2"
-            class="w-full h-48 sm:h-full object-cover rounded-lg sm:col-span-2 animate-fade-up delay-300">
-        </div>
-
-        <!-- Right: Heading + Paragraph -->
-        <div class="text-left flex flex-col justify-start animate-fade-right delay-400">
-          <h4 class="text-xs sm:text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
-            Project of ThunderGits Technologies
-          </h4>
-          <h2
-            class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-snug relative inline-block pb-2 text-black">
-            Showcasing Our Expertise Through Innovative Projects
-            <!-- Gradient underline -->
-            <span class="absolute left-0 bottom-0 w-20 sm:w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-600"></span>
-          </h2>
-
-
-          <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mt-4 animate-fade-up delay-500">
-            Explore our portfolio of successful projects that highlight our dedication to delivering
-            cutting-edge IT solutions. At ThunderGits Technologies, we turn challenges into
-            opportunities through creativity and technology.
-          </p>
-          <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mt-4 animate-fade-up delay-600">
-            Our work spans diverse industries, from startups to enterprises, each tailored to meet
-            unique business goals. We pride ourselves on delivering not just software, but solutions
-            that empower growth and innovation.
-          </p>
-          <p class="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mt-4 animate-fade-up delay-700">
-            Every project reflects our core values of innovation, integrity, and excellence,
-            ensuring our clients achieve sustainable success in an ever-changing digital landscape.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-
-  <style>
-    /* Keyframe Animations */
-    @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeRight {
-      0% {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    /* Tailwind-like classes for animation */
-    .animate-fade-up {
-      animation: fadeUp 0.8s forwards;
-    }
-
-    .animate-fade-right {
-      animation: fadeRight 0.8s forwards;
-    }
-
-    .delay-100 {
-      animation-delay: 0.1s;
-    }
-
-    .delay-200 {
-      animation-delay: 0.2s;
-    }
-
-    .delay-300 {
-      animation-delay: 0.3s;
-    }
-
-    .delay-400 {
-      animation-delay: 0.4s;
-    }
-
-    .delay-500 {
-      animation-delay: 0.5s;
-    }
-
-    .delay-600 {
-      animation-delay: 0.6s;
-    }
-
-    .delay-700 {
-      animation-delay: 0.7s;
-    }
-  </style>
-
-
-
-
-
-  <!-- Work Page - Simple Animated Marquee Section -->
-  <!-- <section class="relative overflow-hidden bg-white py-4">
-    <div class="marquee">
-      <div class="marquee-content">
-        <h1>Innovation</h1>
-        <h1>Tech Solutions</h1>
-        <h1>Projects</h1>
-        <h1>Web Apps</h1>
-        <h1>AI</h1>
-        <h1>Startups</h1>
-        <h1>Development</h1>
-        <h1>Design</h1>
-        <h1>Automation</h1>
-      </div>
-      <div class="marquee-content">
-        <h1>Innovation</h1>
-        <h1>Tech Solutions</h1>
-        <h1>Projects</h1>
-        <h1>Web Apps</h1>
-        <h1>AI</h1>
-        <h1>Startups</h1>
-        <h1>Development</h1>
-        <h1>Design</h1>
-        <h1>Automation</h1>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- <style>
-    .marquee {
-      display: flex;
-      width: max-content;
-      animation: marquee 100s linear infinite;
-    }
-
-    .marquee-content {
-      display: flex;
-    }
-
-    .marquee h1 {
-      font-size: 16vw;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      background: linear-gradient(to right, #ec4899, #8b5cf6);
-      /* 🔥 Gradient applied */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      padding: 0 3rem;
-      white-space: nowrap;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-  </style> -->
-
-
-
-
-
-
-
-  <!-- Add AOS CSS in head -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
-  <section id="work" class="relative bg-theme-bg py-20 z-10">
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-      <img src="./assets/bg2.png" alt="Background" class="w-full h-full object-cover opacity-30">
-    </div>
-
-    <div class="relative max-w-8xl mx-auto px-6 lg:px-20 z-10">
-      <!-- Section Title -->
-      <div class="mb-16 text-left" data-aos="fade-up">
-        <h4 class="text-sm tracking-widest font-semibold uppercase mb-2 text-theme-textLight">Our Work</h4>
-        <h2
-          class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-theme-textDark">
-          Projects that define our expertise
-          <span class="absolute left-0 bottom-0 w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></span>
-        </h2>
-        <p class="text-theme-textLight text-base sm:text-lg leading-relaxed mt-4 max-w-3xl">
-          Here are some of the projects we've worked on, delivering innovative IT solutions across industries.
+  <!-- Aligent Hero Section -->
+  <section id="hero-section" class="relative pt-48 pb-24 bg-black overflow-hidden min-h-[80vh] flex items-center">
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);"></div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div data-aos="fade-up">
+        <span class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
+          Our Portfolio
+        </span>
+        <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
+          Turning Ideas Into <br/> <span class="text-indigo-400 font-semibold">Impactful Reality</span>
+        </h1>
+        <p class="text-gray-400 text-xl leading-relaxed mb-12 font-light max-w-2xl mx-auto">
+          Explore our collection of successful projects that highlight our dedication to delivering cutting-edge IT solutions across diverse industries.
         </p>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-1">
-
-        <!-- Card 1 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="100">
-          <!-- IMAGE / POSTER -->
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/crumbell.webp" alt="Crumbell Project" class="w-full object-cover" />
-          </div>
-
-          <!-- TEXT CONTENT -->
-          <div class="mt-4 text-left">
-            <!-- TITLE -->
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Crumbell Project
-            </h3>
-
-            <!-- DESCRIPTION -->
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A cross-platform mobile app and backend system designed for seamless order
-              and inventory management. Built with React Native, Express.js, and MongoDB.
-            </p>
-
-            <!-- VIEW PROJECT -->
-            <a target="_blank" href="#"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Tailwind Card with polygon clip-path (shape like your example).
-     NOTE: clip-path polygon is percentage-based, so the exact look depends on the card’s width/height.
-     Replace sizes (w/h) if needed. -->
-
-        <div class="min-h-screen bg-[#0b0b0b] flex items-center justify-center p-10">
-          <div class="relative w-[360px] h-[420px]">
-            <!-- Outer black base (your requested background-color: #000000) -->
-            <div class="absolute inset-0" style="
-        background-color:#000000;
-        clip-path: polygon(25% 25%, 75% 25%, 75% 56.63%, 58.51% 58.77%, 54.89% 75%, 25% 75%);
-      "></div>
-
-            <!-- Full rounded card (to match the reference overall card look) -->
-            <div class="absolute inset-0 rounded-[34px] overflow-hidden bg-[#15161b] shadow-2xl">
-              <!-- Purple header -->
-              <div class="relative h-[120px] bg-gradient-to-b from-[#6b2cff] to-[#3b1db9]">
-                <div class="absolute left-7 top-7 text-white text-[34px] font-semibold tracking-tight">
-                  UIUX Design
-                </div>
-                <div class="absolute left-0 right-0 bottom-0 h-px bg-white/15"></div>
-              </div>
-
-              <!-- Image stack area -->
-              <div class="relative h-[300px]">
-                <!-- Back image -->
-                <div
-                  class="absolute left-[84px] top-[22px] w-[255px] h-[240px] rounded-[24px] overflow-hidden bg-white/10 shadow-xl">
-                  <img src="YOUR_IMAGE_2.png" class="w-full h-full object-cover" alt="" />
-                  <div class="absolute inset-0 bg-white/10"></div>
-                </div>
-
-                <!-- Front image -->
-                <div
-                  class="absolute left-[22px] top-[74px] w-[270px] h-[260px] rounded-[24px] overflow-hidden bg-white shadow-2xl">
-                  <img src="YOUR_IMAGE_1.png" class="w-full h-full object-cover" alt="" />
-                  <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent"></div>
-                </div>
-
-                <!-- CTA button -->
-                <button
-                  class="absolute right-6 bottom-6 w-[74px] h-[74px] rounded-full bg-[#b7ff1b] grid place-items-center shadow-xl"
-                  type="button">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M7 17L17 7" stroke="#0b0b0b" stroke-width="2.4" stroke-linecap="round" />
-                    <path d="M10 7H17V14" stroke="#0b0b0b" stroke-width="2.4" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <!-- Card 2 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="200">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/enersol.png" alt="Enersol" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Enersol
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A brand promotional and e-commerce platform for one of India’s leading biomass gasifier and renewable
-              energy manufacturers. The site features SEO-driven landing pages, bilingual content, product catalogs,
-              and enquiry automation, helping the company expand globally while boosting digital brand presence.
-            </p>
-
-            <a target="_blank" href="https://enersolbiopower.com/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="300">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/icaim.png" alt="ICAI" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              ICAI
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              Official website for the Institute of Chartered Accountants of India, Muzaffarpur Branch. Built with a
-              secure CMS, event management tools, and member resources, the platform enables the branch to share
-              updates, conduct programs, and engage its local members efficiently.
-            </p>
-
-            <a target="_blank" href="https://icaimfp.org/index.html"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="400">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/appbihar.png" alt="AAP Bihar" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              AAP Bihar
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              Complete website and backend panel for political campaigns and membership drives. Features include
-              dynamic content management, volunteer onboarding, live news updates, and district-wise task assignment
-              for streamlined political operations.
-            </p>
-
-            <a target="_blank" href="https://aapbihar.org/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="500">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/loqoai.png" alt="Loqo AI" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Loqo AI
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A custom video streaming platform with Google Ads integration, HLS playback, and advanced analytics.
-              Includes features like custom player, adaptive quality, and monetization controls, ensuring smooth user
-              experience and ad revenue optimization.
-            </p>
-
-            <a target="_blank" href="https://loqo.ai/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="600">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/volcanic classes.png" alt="Volcanic Classes" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Volcanic Classes
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              An education commerce platform with course sales, live class management, and a full CMS + ERP module.
-              Integrated with payments, emails, and role-based admin panel for seamless learning and business
-              management.
-            </p>
-
-            <a target="_blank" href="https://volcanicclasses.org/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="700">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/prismstar.webp" alt="Prismstar Project" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Prismstar Project
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              An office leasing realty site providing details about available properties.
-            </p>
-
-            <a target="_blank" href="https://prismstar.in/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="800">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/edugit.png" alt="Edugits Platform" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Edugits
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A subscription-based ERP platform where multiple schools can onboard and manage academics, finance,
-              attendance, and examinations under one system. Features include role-based dashboards, Razorpay
-              integration,
-              and real-time reporting tailored for large student bases.
-            </p>
-
-            <a href="https://edugits.thundergits.com/" target="_blank"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 9 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="900">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/chikit.png" alt="Chikit Pharmacy Platform" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Chikit
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A chemist shop management platform designed for local pharmacies to handle inventory, billing, and
-              customer records with ease. The system streamlines medicine stock tracking, sales management, and daily
-              reporting,
-              helping small chemists go digital without complexity.
-            </p>
-
-            <a href="https://chikit.thundergits.com/signin" target="_blank"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 10 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="1000">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/opc.png" alt="Ocean Of Current Generation" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Ocean Of Current Generation
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A corporate promotional website with integrated e-commerce modules for a company specializing in solar
-              gensets and panels. Built with modern UI/UX, product showcases, and lead capture systems, the platform
-              enhances both brand storytelling and direct product sales.
-            </p>
-
-            <a target="_blank" href="https://oceanofcurrentgeneration.com/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 11 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="1100">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/trio.png" alt="Trio" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Trio
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A full-featured platform for an electric mobility startup offering vehicle leasing, employee transport,
-              EV charging stations, weekend rentals, and EV logistics. Built with clean UX, service-tier options, and
-              passive income models to enable fleet owners & corporates to reduce carbon footprint while earning.
-            </p>
-
-            <a target="_blank" href="https://trio-ev.com/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 12 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="1200">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/Howbee.webp" alt="Howbee Project" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Howbee Project
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A visually stunning website featuring complex animations and interactive designs that enhance user
-              engagement.
-            </p>
-
-            <a target="_blank" href="#"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 13 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="1300">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/LoginPageDemo.webp" alt="Social Media App" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Social Media App
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A social media app with test-driven learning capabilities, developed using ReactJS, Node.js, and SQLite.
-              This app replicates Instagram's UI while emphasizing student learning via test cases.
-            </p>
-
-            <a target="_blank" href="#"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 14 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="1400">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/pasusevaimg.png" alt="Pauseva" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Pauseva
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              Pasuseva is an NGO-type organization that facilitates loans for setting up poultry farms, cow farms, and
-              fish farms at very minimal interest rates. It also provides guidance and ongoing support to help farmers
-              grow their businesses. The platform includes online payment support and a custom admin panel to manage
-              members, jobs, and various yojnas (schemes).
-            </p>
-
-            <a target="_blank" href="https://pasuseva.in/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 15 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="1500">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/codingpandaimg.png" alt="Coding Pandas" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Coding Pandas
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              A leetcode type plateform which provide facility to practice the coding in various languages like
-              python,c++ etc. also plateform is responsible to sell courses and manage from stock to checkout process.
-              it has rbca feature which provide secure layer and SSE system to notify immediately to user about
-              action.
-            </p>
-
-            <a target="_blank" href="https://codingpandas.in/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 16 -->
-        <div class="group rounded-xl overflow-hidden flex flex-col bg-transparent transition-all duration-300"
-          data-aos="fade-up" data-aos-delay="1600">
-          <div class="overflow-hidden rounded-lg bg-white ">
-            <img src="./assets/netajeeimg.png" alt="Netajee" class="w-full object-cover" />
-          </div>
-
-          <div class="mt-4 text-left">
-            <h3 class="text-lg font-semibold text-white mb-1">
-              Netajee
-            </h3>
-
-            <p class="text-sm text-white leading-relaxed mb-3">
-              Netajee is election management plateform with admin panel,website and mobile application. in this we are
-              managing volunteer,volunteer tracking,driver tracking, resource deploye tracking, all
-              story,poster,media,press release.. etc will managed and published via admin panel. also we are showing
-              election analytics based on kyc collected from voters. there is facility to create dynamic form and
-              table to store dynamic data collected for election analysis.
-            </p>
-
-            <a target="_blank" href="https://netajee.in/"
-              class="inline-block text-sm font-medium text-white border-b border-white opacity-80 hover:opacity-100 transition">
-              View Project →
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-
-    </div>
-
-    <style>
-      /* Equal height cards with image pinned at bottom */
-      /* Equal height cards with image pinned at bottom */
-      #work .project-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        height: 100%;
-        transition: all 0.3s;
-        padding: 1.5rem;
-        /* 🔥 sab side se equal padding (top, right, bottom, left) */
-        border-radius: 0.75rem;
-        /* card rounded corner */
-        background: #000;
-        /* black bg */
-      }
-
-      #work .project-card>div {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-
-      /* Image fixed height */
-      #work .project-card img {
-        height: 14rem;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 0.375rem;
-        margin-top: 0.75rem;
-      }
-
-      /* Hover effects for link */
-      #work .project-card .project-link {
-        opacity: 0;
-        transition: opacity 0.3s, transform 0.3s;
-        margin-left: auto;
-        /* 🔥 right side align */
-        display: block;
-      }
-
-      #work .project-card:hover .project-link {
-        opacity: 1;
-        transform: translateX(0.25rem);
-      }
-
-      /* Title & description spacing */
-      #work .project-card .project-desc {
-        margin-top: 0;
-        margin-bottom: 0.75rem;
-        transition: margin 0.3s;
-      }
-
-      #work .project-card:hover .project-desc {
-        margin-top: 0.5rem;
-      }
-
-      /* Grid gaps */
-      #work .grid {
-        gap: 2.5rem;
-        /* vertical & horizontal gap between cards */
-      }
-
-
-      /* All screens: link right side */
-      #work .project-card .project-link {
-        margin-left: auto;
-        display: block;
-        transform: translateX(0);
-      }
-    </style>
-
-  </section>
-
-
-
-  <!-- Add AOS JS before closing body -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-      mirror: false
-    });
-  </script>
-
-
-
-  <section class="bg-[#FAF7F2] py-20">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start px-4 sm:px-6 lg:px-8">
-
-      <!-- Left: Image -->
-      <div data-aos="fade-right" class="w-full h-64 sm:h-80 md:h-96 lg:h-full relative overflow-hidden rounded-md">
-        <img src="./assets/about-img.png" alt="Contact Us"
-          class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-      </div>
-
-      <!-- Right: Title + Form -->
-      <div class="flex flex-col justify-start">
-
-        <!-- Title -->
-        <div data-aos="fade-left" class="mb-8">
-          <p class="text-sm uppercase tracking-wide text-gray-600 mb-2">Contact Us</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-black relative inline-block pb-2">
-            Have a cool project?<br>Get in touch!
-            <!-- Gradient underline -->
-            <span class="absolute left-0 bottom-0 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></span>
-          </h2>
-          <p class="text-gray-700 text-base sm:text-lg mt-3">
-            We’d love to hear about your ideas. Drop us a message and our team will get back to you promptly.
-          </p>
-        </div>
-
-        <!-- Form -->
-        <div data-aos="fade-up" class="bg-white p-6 sm:p-10 shadow-md rounded-md">
-          <form id="feedback-form" class="space-y-6">
-            <!-- Name -->
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
-                <i class="fa-regular fa-user"></i>
-              </span>
-              <input name="name" type="text" placeholder="Name" required class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
-            </div>
-
-            <!-- Phone -->
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
-                <i class="fa-solid fa-phone"></i>
-              </span>
-              <input name="phone" type="text" placeholder="Phone" required class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
-            </div>
-
-            <!-- Email -->
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
-                <i class="fa-regular fa-envelope"></i>
-              </span>
-              <input name="email" type="email" placeholder="Email Address" required class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
-            </div>
-
-            <!-- Subject -->
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
-                <i class="fa-regular fa-pen-to-square"></i>
-              </span>
-              <input name="subject" type="text" placeholder="Subject" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
-            </div>
-
-            <!-- Message -->
-            <div class="relative">
-              <span class="absolute left-3 top-4 text-pink-500 text-[18px]">
-                <i class="fa-regular fa-comment"></i>
-              </span>
-              <textarea name="message" placeholder="How can we help you? Feel free to get in touch!" rows="4" required
-                class="w-full border border-gray-300 rounded-md pl-11 pr-4 pt-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300 resize-y"></textarea>
-            </div>
-
-            <!-- Checkbox -->
-            <div class="flex items-center text-sm text-gray-600">
-              <input type="checkbox" id="agree" class="mr-2" required>
-              <label for="agree">
-                I agree that my data is
-                <a href="#"
-                  class="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent underline">collected</a>.
-              </label>
-            </div>
-
-            <!-- Button -->
-            <button type="submit" class="relative font-bold uppercase py-3 px-6 w-full sm:w-auto text-white 
-           bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow-md 
-           hover:opacity-90 transition-all duration-300">
-              Get in touch
-            </button>
-          </form>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="#work-grid" class="px-10 py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 text-center shadow-lg shadow-indigo-900/50">
+            Explore Projects
+          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Work Grid Section -->
+  <section id="work-grid" class="relative bg-[#050505] py-24 border-t border-white/5">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        
+        <!-- Project 1: Crumbell -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/crumbell.webp" alt="Crumbell" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Crumbell Project</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A cross-platform mobile app and backend system designed for seamless order and inventory management. Built with React Native, Express.js, and MongoDB.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 2: Enersol -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/enersol.png" alt="Enersol" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Enersol</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A brand promotional and e-commerce platform for one of India’s leading biomass gasifier and renewable energy manufacturers.</p>
+            <a href="https://enersolbiopower.com/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 3: ICAI -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/icaim.png" alt="ICAI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">ICAI</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">Official website for the Institute of Chartered Accountants of India, Muzaffarpur Branch. Built with a secure CMS and event tools.</p>
+            <a href="https://icaimfp.org/index.html" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 4: AAP Bihar -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/appbihar.png" alt="AAP Bihar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">AAP Bihar</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">Complete website and backend panel for political campaigns. Features dynamic CMS, volunteer onboarding, and analytics.</p>
+            <a href="https://aapbihar.org/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 5: Loqo AI -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/loqoai.png" alt="Loqo AI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Loqo AI</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A custom video streaming platform with Google Ads integration, HLS playback, and advanced analytics.</p>
+            <a href="https://loqo.ai/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 6: Volcanic Classes -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/volcanic classes.png" alt="Volcanic Classes" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Volcanic Classes</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">An education commerce platform with course sales, live class management, and a full CMS + ERP module.</p>
+            <a href="https://volcanicclasses.org/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 7: Prismstar -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/prismstar.webp" alt="Prismstar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Prismstar</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">An office leasing realty site providing details about available properties and inquiry management.</p>
+            <a href="https://prismstar.in/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 8: Edugits -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/edugit.png" alt="Edugits" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Edugits</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A subscription-based ERP platform for schools to manage academics, finance, and attendance globally.</p>
+            <a href="https://edugits.thundergits.com/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 9: Chikit -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/chikit.png" alt="Chikit" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Chikit</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A chemist shop management platform designed for local pharmacies to handle inventory and billing.</p>
+            <a href="https://chikit.thundergits.com/signin" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 10: Ocean of Current Generation -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/opc.png" alt="Ocean of Current Generation" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Ocean Of Current Generation</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A corporate promotional website with integrated e-commerce modules for a solar genset and panel company.</p>
+            <a href="https://oceanofcurrentgeneration.com/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
+        <!-- Project 11: Trio -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/trio.png" alt="Trio" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Trio</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A full-featured platform for an electric mobility startup offering vehicle leasing and EV charging stations.</p>
+            <a href="https://trio-ev.com/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
-  <footer class="relative text-[#EDE6D6] pt-16">
+        <!-- Project 12: Howbee -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/Howbee.webp" alt="Howbee" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Howbee Project</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A visually stunning website featuring complex animations and interactive designs that enhance user engagement.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
 
-    <!-- 🔥 Background Image Only -->
-    <div class="absolute inset-0">
-      <img src="./assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
+        <!-- Project 13: Social Media App -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/LoginPageDemo.webp" alt="Social Media App" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Social Media App</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A social media app with test-driven learning capabilities, replicates Instagram's UI with advanced React logic.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Project 14: Pauseva -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/pasusevaimg.png" alt="Pauseva" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Pauseva</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">NGO-type organization facilitating loans for poultry and cow farms with guidance and support.</p>
+            <a href="https://pasuseva.in/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Project 15: Coding Pandas -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/codingpandaimg.png" alt="Coding Pandas" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Coding Pandas</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A LeetCode type platform providing practice in various languages, course sales, and secure RBAC.</p>
+            <a href="https://codingpandas.in/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Project 16: Netajee -->
+        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./assets/netajeeimg.png" alt="Netajee" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          </div>
+          <div class="p-10 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Netajee</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">An election management platform with admin panel, website, and app for volunteer tracking and analytics.</p>
+            <a href="https://netajee.in/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
-
-      <!-- Logo Section -->
-      <div class="flex flex-col items-center md:items-start">
-        <a class="flex items-center justify-center md:justify-start text-white mb-4">
-          <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
-          <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
-        </a>
-        <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
-          Innovating through technology and creativity, building the future.
-        </p>
+  <!-- CTA Section -->
+  <section class="bg-white py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div data-aos="fade-right">
+        <span class="text-indigo-600 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Get in Touch</span>
+        <h2 class="text-5xl font-light text-black mb-8 leading-tight">Have a Cool Project? <br/> <span class="font-bold">Let's Build It.</span></h2>
+        <p class="text-gray-600 text-lg font-light leading-relaxed mb-12 max-w-lg">We’d love to hear about your ideas. Drop us a message and our team will get back to you promptly to turn your vision into reality.</p>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="./contact.html" class="inline-flex items-center gap-4 px-14 py-6 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-2xl shadow-indigo-900/50">
+            Start Your Project <i class="ri-arrow-right-up-line text-lg"></i>
+          </a>
+        </div>
       </div>
-
-      <!-- Explore -->
-      <div>
-        <h3 class="font-semibold mb-3 text-lg">Explore</h3>
-        <ul class="space-y-2">
-          <li><a href="./index.html" class="hover:text-pink-400 transition">Home</a></li>
-          <li><a href="./about.html" class="hover:text-pink-400 transition">About</a></li>
-          <li><a href="./work.html" class="hover:text-pink-400 transition">Work</a></li>
-          <li><a href="./index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
-        </ul>
-      </div>
-
-      <!-- Company -->
-      <div>
-        <h3 class="font-semibold mb-3 text-lg">Company</h3>
-        <ul class="space-y-2">
-          <li><a href="./privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
-          <li><a href="./career.html" class="hover:text-pink-400 transition">Career</a></li>
-          <li><a href="./contact.html" class="hover:text-pink-400 transition">Contact</a></li>
-          <li><a href="./service.html" class="hover:text-pink-400 transition">Services</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div>
-        <h3 class="font-semibold mb-3 text-lg">Contact</h3>
-        <ul class="space-y-3">
-          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-            <i class="ri-map-pin-fill mt-1"></i>
-            <span>2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
-          </li>
-          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-            <i class="ri-phone-fill mt-1"></i>
-            <span>+91-7765979725</span>
-          </li>
-          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-            <i class="ri-mail-fill mt-1"></i>
-            <a href="mailto:contact@thundergits.com" class="hover:text-pink-400 transition">info@thundergits.com</a>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Bottom -->
-    <div
-      class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
-      <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
-      <div class="flex space-x-6 text-gray-300">
-        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-        <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-                        class="fab fa-x-twitter"></i></a> -->
-
-
+      <div data-aos="fade-left" class="relative">
+        <div class="absolute -inset-4 bg-indigo-500/5 blur-2xl rounded-3xl"></div>
+        <img src="./assets/about-img.png" alt="Contact Us" class="relative w-full rounded-[3rem] shadow-2xl object-cover aspect-[4/5]" />
       </div>
     </div>
+  </section>
 
-    <!-- Floating Presale Chat -->
-    <!-- <div class="fixed bottom-16 left-4 flex items-center z-40">
-            <div
-                class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
-                <img src="./assets/call-center (1).png" alt="">
-            </div>
-            <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
-           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
-                AI Assistant
-            </span>
-        </div> -->
-
-    <!-- Scroll To Top -->
-    <button id="scrollToggleBtn"
-      class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
-      <i id="scrollIcon" class="fas fa-arrow-up"></i>
-    </button>
+  <!-- Footer -->
+  <footer class="w-full bg-gray-100 text-black border-t border-gray-200">
+      <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
+          <div class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-300">
+              <div class="mb-6">
+                  <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
+              </div>
+              <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
+                  Redefining the digital landscape through innovation and precision. ThunderGits delivers future-ready technology solutions.
+              </p>
+          </div>
+          <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Facebook</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Instagram</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Youtube</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold text-center md:text-left hover:bg-gray-200 transition-colors">Linkedin</a>
+          </div>
+          <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+              <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">LET'S TALK</h2>
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+                  <span class="flex items-start gap-2 min-w-[220px] flex-1">
+                      <i class="ri-map-pin-line mt-0.5"></i>
+                      <span class="leading-relaxed">2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+                      <i class="ri-phone-line"></i> +91-7765979725
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+                      <i class="ri-mail-line"></i> info@thundergits.com
+                  </span>
+              </div>
+          </div>
+      </div>
+      <div class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-black">© 2025 | All rights reserved by ThunderGits Technology</p>
+          <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
+              <a href="./about.html">About us</a>
+              <a href="./blog.html">Blogs</a>
+              <a href="./contact.html">Contact</a>
+              <a href="./career.html">Career</a>
+          </nav>
+      </div>
   </footer>
-
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true,     // Only animate once
+    AOS.init({ duration: 1000, once: true });
+
+    // Interactive Grid Logic
+    const gridContainer = document.getElementById('hero-grid');
+    function buildGrid() {
+        if (!gridContainer) return;
+        gridContainer.innerHTML = '';
+        const columns = Math.ceil(window.innerWidth / 50);
+        const rows = Math.ceil(window.innerHeight / 50);
+        const totalCells = columns * rows;
+        for (let i = 0; i < totalCells; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
+            gridContainer.appendChild(cell);
+        }
+    }
+    buildGrid();
+    window.addEventListener('resize', buildGrid);
+
+    // Navbar Scroll Logic
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        nav.style.background = "rgba(10, 10, 10, 0.85)";
+        nav.style.backdropFilter = "blur(12px)";
+        nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+      } else {
+        nav.style.background = "transparent";
+        nav.style.backdropFilter = "none";
+        nav.style.borderBottom = "none";
+      }
+    });
+
+    // Mobile Menu Toggle
+    const btn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => {
+      const isOpen = mobileMenu.style.display === "flex";
+      mobileMenu.style.display = isOpen ? "none" : "flex";
     });
   </script>
-
-  <div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50">
-    <div class="rounded-lg bg-white p-8 text-center shadow-lg">
-      <div class="mb-4 text-6xl text-green-500">
-        <i class="fas fa-check-circle"></i>
-      </div>
-      <h2 class="mb-2 text-2xl font-bold">Thank You!</h2>
-      <p class="text-gray-600">Your message has been sent successfully.</p>
-      <button id="closeModal" class="mt-6 rounded-md bg-gray-800 px-4 py-2 text-white">Close</button>
-    </div>
-  </div>
-  <script src="./script.js"></script>
-  <script src="./form.js"></script>
-
 </body>
-
 </html>

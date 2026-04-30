@@ -1,1682 +1,1057 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thundergits Technologies - Innovative Tech Solutions</title>
-  <link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontSize: {
-            base: '1em',
-            sm: '14px',
-            md: '15px',
-            lg: '1.4em',
-            xl: '42px',
-            heading: '6.75vw',
-          },
-          lineHeight: {
-            tight: '1em',
-            normal: '1.2em',
-            relaxed: '1.5em',
-            loose: '1.6em',
-            heading: '0.95em',
-          },
-          letterSpacing: {
-            wide: '1.8px',
-            tighter: '0.01em',
-          },
-          fontWeight: {
-            medium: '500',
-          },
-          transitionProperty: {
-            all: 'all',
-          },
-          transitionTimingFunction: {
-            ease: 'ease',
-          },
-          transitionDuration: {
-            DEFAULT: '300ms',
-          },
-          colors: {
-            theme: {
-              text: '#DEDDDB',
-              textLight: '#848484',
-              textDark: '#EFE8CE',
-              link: '#E2725B',
-              hover: '#DD644C',
-              link2: '#7DA189',
-              hover2: '#6D967A',
-              link3: '#9D7246',
-              hover3: '#5B3918',
-              bg: '#141414',
-              bd: '#424040',
-              altBg: '#292828',
-              altBd: '#535353',
-            },
-            dark: '#0e0e0e',
-            offwhite: '#f5e9cd',
-            graytext: '#d9d9d9',
-            accent: '#f25835',
-            footer: '#121212',
-            linkhover: '#f5e9cd',
-          }
-        }
-      }
-    }
-  </script>
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css">
-
-
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThunderGits Technologies - Innovative Tech Solutions</title>
+    <link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="./index-styles.css" rel="stylesheet">
 </head>
 
-<body class="bg-dark text-theme-text">
-
-
-  <section class="relative bg-cover bg-center flex flex-col justify-between sm:min-h-[85vh]"
-    style="background-image: url('./assets/bg2.png');">
-
-    <!-- Overlay with fade animation -->
-    <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10 animate-overlay"></div>
+<body>
 
     <!-- Navbar -->
-    <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
-      <div
-        class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
-        <!-- Logo -->
-        <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
-          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-          <span>ThunderGits</span>
-        </div>
-
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
-          <a href="#" class="pb-1 border-b-2 border-linkhover">Home</a>
-          <a href="./about.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-          <a href="./work.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
-          <a href="./service.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-          <a href="./career.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-            <a href="./product.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Products</a>
-          <a href="./contact.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-        </nav>
-
-        <!-- Quote + Hamburger -->
-        <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
-          <a href="./contact.html" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
-               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
-               border border-pink-500 hover:text-white transition-all duration-300 ease-out
-               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
-               before:scale-x-0 before:origin-left hover:before:scale-x-100 
-               before:transition-transform before:duration-300 before:z-[-1]">
-            Get a Quote
-          </a>
-
-          <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars text-lg"></i>
-          </button>
-        </div>
-      </div>
-    </header>
-
-
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-      class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-      <div class="flex justify-between items-center mb-10">
-        <div class="flex items-center gap-2 text-lg font-bold">
-          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-          <span class="text-white">ThunderGits</span>
-        </div>
-        <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
-          <span>Close</span>
-          <span class="text-2xl leading-none">×</span>
-        </button>
-      </div>
-
-      <div class="space-y-5">
-        <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Home</span><span class="text-sm">→</span>
-        </a>
-        <a href="./about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>About</span><span class="text-sm">→</span>
-        </a>
-        <a href="./work.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Work</span><span class="text-sm">→</span>
-        </a>
-        <a href="./service.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Services</span><span class="text-sm">→</span>
-        </a>
-        <a href="./career.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Career</span><span class="text-sm">→</span>
-        </a>
-        <a href="./product.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Products</span><span class="text-sm">→</span>
-        </a>
-        <a href="./contact.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Contact</span><span class="text-sm">→</span>
-        </a>
-
-        <!-- Get a Quote Button -->
-        <div class="pt-4">
-          <a href="./contact.html"
-            class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
-            Get a Quote
-          </a>
-        </div>
-      </div>
-
-      <!-- Footer Icons -->
-      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
-        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-        <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-x-twitter"></i></a> -->
-      </div>
-    </div>
-
-
-    <!-- Hero Text -->
-    <div class="relative z-20 flex-grow flex items-center mt-20 py-8 sm:py-0">
-      <div class="max-w-8xl mx-auto px-6 sm:px-10 lg:px-20 text-left">
-        <p class="text-offwhite text-3xl sm:text-5xl lg:text-6xl font-medium drop-shadow-lg mb-2 
-           leading-snug sm:leading-snug lg:leading-[1.3] animate-slide-fade-up">
-          Welcome to
-        </p>
-
-        <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 
-               text-4xl sm:text-7xl lg:text-8xl font-bold 
-               leading-[1.3] sm:leading-[1.5] lg:leading-[1.3] 
-               drop-shadow-lg animate-slide-fade-up-delay1">
-          ThunderGits Technologies
-        </h1>
-      </div>
-    </div>
-
-    <!-- Bottom Text + Social Links -->
-    <div class="relative z-30 mb-6 py-4 sm:py-0 animate-slide-fade-up-delay2">
-      <div
-        class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 sm:gap-4 text-offwhite text-sm">
-        <p class="text-graytext text-lg font-medium">
-          Empower your digital presence<br> with ThunderGits
-        </p>
-        <div class="flex flex-wrap gap-4 sm:gap-6 justify-start sm:justify-end">
-          <a href="https://www.linkedin.com/company/thundergits" target="_blank"
-            class="flex items-center gap-2 transition hover:text-pink-400">
-            <i class="fab fa-linkedin-in"></i> Linkedin
-          </a>
-
-          <a href="https://www.instagram.com/thundergits/" target="_blank"
-            class="flex items-center gap-2 transition hover:text-pink-400">
-            <i class="fab fa-instagram"></i> Instagram
-          </a>
-
-          <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-            class="flex items-center gap-2 transition hover:text-pink-400">
-            <i class="fab fa-facebook-f"></i> Facebook
-          </a>
-
-          <!-- <a href="https://x.com/thundergits" target="_blank"
-            class="flex items-center gap-2 transition hover:text-pink-400">
-            <i class="fab fa-x-twitter"></i> Twitter
-          </a> -->
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Floating Social Bar -->
-  <!-- <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
-    <a href="#"
-      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-      <i class="fas fa-shopping-cart"></i>
-    </a>
-    <a href="#"
-      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-purple-500/50 transition-all animate-float-up-down">
-      <i class="fas fa-image"></i>
-    </a>
-    <a href="#"
-      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-      <i class="fas fa-credit-card"></i>
-    </a>
-  </div> -->
-
-
-
-
-
-
-
-  <!-- <section class="relative bg-cover bg-center pt-20 pb-6 sm:pt-28 sm:pb-8"
-  style="background-image: url('./assets/bd-img.png');"> -->
-
-  <!-- Diagonal Overlay -->
-  <!-- <div class="absolute inset-0 bg-gradient-to-br from-dark/90 to-transparent z-10"></div> -->
-
-  <!-- Header -->
-  <!-- <header class="absolute top-0 left-0 w-full z-30 px-6 sm:px-10 lg:px-20 pt-8 flex justify-between items-center"> -->
-  <!-- Logo -->
-  <!-- <div class="flex items-center gap-2 text-2xl font-bold text-offwhite z-30">
-      <img src="./assets/thundergits logo.webp" alt="Logo" class="w-8 h-8 object-contain" />
-      <span>ThunderGits</span>
-    </div> -->
-
-  <!-- Desktop Nav -->
-  <!-- <nav class="hidden md:flex gap-8 text-offwhite font-medium z-30">
-      <a href="#" class="border-b-2 border-linkhover pb-1">Home</a>
-      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
-      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-      <a href="#" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-    </nav> -->
-
-  <!-- Get a Quote Button + Hamburger -->
-  <!-- <div class="flex items-center gap-6 z-30">
-      <a href="#quote"
-        class="hidden md:inline-block bg-accent text-white font-semibold px-5 py-2 shadow-lg border-2 border-transparent hover:border-accent hover:bg-transparent hover:text-accent transition-all duration-300">
-        Get a Quote
-      </a>
-      <button class="md:hidden w-8 h-8 text-center leading-8 text-[16px] focus:outline-none text-offwhite hover:text-theme-text_dark"
-        onclick="toggleMobileMenu()">
-        <i class="fas fa-bars w-full h-full inline-block"></i>
-      </button>
-    </div>
-  </header> -->
-
-  <!-- Mobile Menu -->
-  <!-- <div id="mobileMenu"
-    class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-    <div class="flex justify-between items-center mb-10">
-      <div class="flex items-center gap-2 text-2xl font-bold">
-        <div class="w-4 h-6 bg-accent rounded-sm"></div>
-        <span class="text-white">ThunderGits</span>
-      </div>
-      <button onclick="toggleMobileMenu()" class="text-gray-300 text-lg">
-        Close <span class="ml-2 text-xl">×</span>
-      </button>
-    </div>
-
-    <div class="space-y-6">
-      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-        <span>Home</span><span class="ml-2">→</span>
-      </a>
-      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-        <span>About</span><span class="ml-2">→</span>
-      </a>
-      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-        <span>Work</span><span class="ml-2">→</span>
-      </a>
-      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-        <span>Services</span><span class="ml-2">→</span>
-      </a>
-      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-        <span>Career</span><span class="ml-2">→</span>
-      </a>
-      <a href="#" class="flex items-center gap-6 text-lg font-semibold hover:text-linkhover transition">
-        <span>Contact</span><span class="ml-2">→</span>
-      </a> -->
-
-  <!-- Get a Quote Button in Mobile Menu -->
-  <!-- <div class="pt-4">
-        <a href="#quote"
-          class="block text-center bg-accent text-white font-semibold px-5 py-2 shadow-lg border-2 border-transparent hover:border-accent hover:bg-transparent hover:text-accent transition-all duration-300">
-          Get a Quote
-        </a>
-      </div>
-    </div> -->
-
-  <!-- Footer Icons in Mobile -->
-  <!-- <div class="pt-8 border-t border-theme-bd mt-10 flex gap-6 text-base text-graytext">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-x-twitter"></i></a>
-      <a href="#"><i class="fab fa-dribbble"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div> -->
-
-
-
-
-  <!-- Hero Text -->
-  <!-- <div
-  class="relative z-20 px-6 sm:px-10 lg:px-20 max-w-8xl flex-grow flex items-center pb-0 sm:pb-16 pt-16 sm:pt-20"
->
-  <h1
-    class="text-heading font-semibold leading-heading tracking-tighter text-offwhite mb-10"
-  >
-    Welcome to Thundergits Technologies
-  </h1>
-</div> -->
-
-
-  <!-- Combined Bottom Section -->
-  <!-- <div
-    class="relative z-30 px-6 sm:px-10 lg:px-20 mt-6 mb-0 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 text-offwhite text-sm"
-  >
-    <div class="max-w-md">
-      <p class="text-graytext text-base sm:text-lg font-medium">
-        Empower your digital presence<br /> with ThunderGits
-      </p>
-    </div>
-   <div class="flex flex-wrap gap-4 sm:gap-6">
-  <a href="#" class="flex items-center gap-2 hover:text-linkhover social-facebook">
-    <i class="fab fa-facebook-f"></i> Facebook
-  </a>
-  <a href="#" class="flex items-center gap-2 hover:text-linkhover social-twitter">
-    <i class="fab fa-x-twitter"></i> Twitter
-  </a>
-  <a href="#" class="flex items-center gap-2 hover:text-linkhover social-dribbble">
-    <i class="fab fa-dribbble"></i> Dribbble
-  </a>
-  <a href="#" class="flex items-center gap-2 hover:text-linkhover social-instagram">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-</div>
-
-  </div>
-
-</section> -->
-
-  <!-- Vertical Right Social Bar -->
-  <!-- <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 space-y-1">
-  <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
-    <i class="fas fa-shopping-cart"></i>
-  </a>
-  <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
-    <i class="fas fa-image"></i>
-  </a>
-  <a href="#" class="bg-accent w-12 h-12 flex items-center justify-center rounded-sm text-white text-lg">
-    <i class="fas fa-credit-card"></i>
-  </a>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-  <!-- Image with Overlay Content Section -->
-  <section class="relative w-full h-[70vh]" data-aos="fade-up">
-    <!-- Background Image -->
-    <div class="absolute inset-0">
-      <img src="./assets/image thundergits.jpg" alt="ThunderGits Overview"
-        class="w-full h-full object-cover shadow-md" />
-      <!-- Dark Overlay -->
-      <div class="absolute inset-0 bg-black/75"></div>
-    </div>
-
-    <!-- Content Overlay -->
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
-      <h2 class="text-lg sm:text-xl md:text-2xl font-semibold max-w-2xl leading-snug" data-aos="zoom-in"
-        data-aos-delay="200">
-        At ThunderGits Technologies, we specialize in delivering innovative digital experiences.
-      </h2>
-      <p class="mt-3 max-w-xl text-sm sm:text-base leading-relaxed" data-aos="fade-up" data-aos-delay="400">
-        With ThunderGits solutions, we help your business grow and thrive in the digital age.
-        Our team is committed to crafting customized solutions tailored to your unique needs.
-      </p>
-
-      <!-- Stylish Gradient Button -->
-      <a href="./contact.html" class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg
-      text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
-      border border-pink-500 hover:text-white transition-all duration-300 ease-out
-      before:absolute before:inset-0 before:rounded-lg 
-      before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
-      before:scale-x-0 before:origin-left hover:before:scale-x-100 
-      before:transition-transform before:duration-300 before:z-[-1]" data-aos="flip-up" data-aos-delay="600">
-        Get a Free Consultation
-      </a>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="py-20 bg-white" data-aos="fade-up">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Heading -->
-      <div class="text-left max-w-3xl mx-auto lg:mx-0 mb-4">
-        <h4
-          class="text-sm font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent tracking-widest uppercase mb-3"
-          data-aos="fade-right">
-          What We Offer
-        </h4>
-
-        <h2 class="text-gray-900 font-bold leading-snug text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block"
-          data-aos="fade-left" data-aos-delay="200">
-          Services That Drive Results
-          <span
-            class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
-        </h2>
-
-        <p class="text-gray-700 text-base sm:text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="400">
-          Empowering your business with end-to-end digital solutions—from web to cloud and AI.
-        </p>
-      </div>
-
-      <!-- See More -->
-      <div class="mx-auto lg:mx-0 mb-4 px-0 flex justify-end" data-aos="fade-left" data-aos-delay="600">
-        <a href="./service.html" class="inline-flex items-center font-semibold transition-all group 
-             bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-          See More
-          <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
-            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-
-      <!-- Services Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card Template -->
-        <div class="space-y-3 text-left p-6 border rounded-lg hover:shadow-lg transition-shadow duration-300"
-          data-aos="zoom-in" data-aos-delay="100">
-          <i
-            class="fas fa-bullhorn text-4xl bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"></i>
-          <h3 class="text-lg font-medium text-gray-900">Digital Marketing</h3>
-          <p class="text-theme-textLight text-base leading-relaxed">
-            Boost online visibility with SEO, PPC, and social media campaigns tailored for your brand.
-          </p>
-        </div>
-
-        <div class="space-y-3 text-left p-6 border rounded-lg hover:shadow-lg transition-shadow duration-300"
-          data-aos="zoom-in" data-aos-delay="200">
-          <i
-            class="fas fa-code text-4xl bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"></i>
-          <h3 class="text-lg font-medium text-gray-900">Website Development</h3>
-          <p class="text-theme-textLight text-base leading-relaxed">
-            Custom, fast, and responsive websites built for intuitive user experience.
-          </p>
-        </div>
-
-        <div class="space-y-3 text-left p-6 border rounded-lg hover:shadow-lg transition-shadow duration-300"
-          data-aos="zoom-in" data-aos-delay="300">
-          <i
-            class="fas fa-mobile-alt text-4xl bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"></i>
-          <h3 class="text-lg font-medium text-gray-900">Application Development</h3>
-          <p class="text-theme-textLight text-base leading-relaxed">
-            Robust mobile and web apps designed for scalability and performance.
-          </p>
-        </div>
-
-        <div class="space-y-3 text-left p-6 border rounded-lg hover:shadow-lg transition-shadow duration-300"
-          data-aos="zoom-in" data-aos-delay="400">
-          <i
-            class="fas fa-shopping-cart text-4xl bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"></i>
-          <h3 class="text-lg font-medium text-gray-900">E-Commerce Solutions</h3>
-          <p class="text-theme-textLight text-base leading-relaxed">
-            Seamless e-commerce journeys with optimized payment systems.
-          </p>
-        </div>
-
-        <div class="space-y-3 text-left p-6 border rounded-lg hover:shadow-lg transition-shadow duration-300"
-          data-aos="zoom-in" data-aos-delay="500">
-          <i
-            class="fas fa-robot text-4xl bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"></i>
-          <h3 class="text-lg font-medium text-gray-900">Machine Learning & AI</h3>
-          <p class="text-theme-textLight text-base leading-relaxed">
-            Predictive analytics and intelligent automation tailored to your needs.
-          </p>
-        </div>
-
-        <div class="space-y-3 text-left p-6 border rounded-lg hover:shadow-lg transition-shadow duration-300"
-          data-aos="zoom-in" data-aos-delay="600">
-          <i
-            class="fas fa-tools text-4xl bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"></i>
-          <h3 class="text-lg font-medium text-gray-900">Custom Software</h3>
-          <p class="text-theme-textLight text-base leading-relaxed">
-            Software solutions built specifically for your business goals.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-  <!-- ML & AI -->
-  <!-- <div class="space-y-5">
-        <i class="fas fa-robot text-6xl text-accent"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Machine Learning & AI</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Predictive analytics and intelligent automation tailored to your needs.
-        </p>
-      </div> -->
-
-  <!-- Custom Software -->
-  <!-- <div class="space-y-5">
-        <i class="fas fa-tools text-6xl text-accent"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Custom Software</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Software solutions built specifically for your business goals.
-        </p>
-      </div> -->
-
-  <!-- Cloud Services -->
-  <!-- <div class="space-y-5">
-        <i class="fas fa-cloud text-6xl text-accent"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Cloud Services</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Scale effortlessly with secure and efficient cloud infrastructure.
-        </p>
-      </div> -->
-
-  <!-- AI Consulting -->
-  <!-- <div class="space-y-5">
-        <i class="fas fa-brain text-6xl text-accent"></i>
-        <h3 class="text-xl font-semibold text-gray-900">AI Consulting</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Strategize and implement AI to unlock new business opportunities.
-        </p>
-      </div> -->
-
-  <!-- DevOps & CloudOps -->
-  <!-- <div class="space-y-5">
-        <i class="fas fa-sync-alt text-6xl text-accent"></i>
-        <h3 class="text-xl font-semibold text-gray-900">DevOps & CloudOps</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Streamline development and operations for reliable delivery.
-        </p>
-      </div> -->
-
-  <!-- BI & Analytics -->
-  <!-- <div class="space-y-5">
-        <i class="fas fa-chart-line text-6xl text-accent"></i>
-        <h3 class="text-xl font-semibold text-gray-900">Business Intelligence</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Convert data into actionable insights using advanced analytics.
-        </p>
-      </div> -->
-
-  <!-- IT Consultancy -->
-  <!-- <div class="space-y-5">
-        <i class="fas fa-user-tie text-6xl text-accent"></i>
-        <h3 class="text-xl font-semibold text-gray-900">IT Consultancy</h3>
-        <p class="text-gray-600 text-base leading-relaxed">
-          Your trusted advisor for navigating complex tech landscapes.
-        </p>
-      </div> -->
-
-
-
-  <!-- <section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-   
-    <div class="text-center lg:text-left mb-12">
-      <h4 class="text-sm font-medium text-gray-900 tracking-wide uppercase mb-2">
-        What We Offer
-      </h4>
-      <h2 class="text-heading text-gray-900 leading-tight font-bold tracking-[-0.02em] text-2xl sm:text-3xl lg:text-4xl relative inline-block">
-        Services That Drive Results
-        <span class="absolute left-0 -bottom-2 w-16 h-[3px] bg-accent"></span>
-      </h2>
-      <p class="mt-4 text-base sm:text-lg text-gray-900 leading-relaxed max-w-xl mx-auto lg:mx-0">
-        Empowering your business with end-to-end digital solutions—from web to cloud and AI.
-      </p>
-    </div>
-
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-
-   
-      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-          <i class="fas fa-robot"></i>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">Machine Learning & AI</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Predictive analytics and intelligent automation tailored to your needs.
-        </p>
-      </div>
-
-      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-          <i class="fas fa-tools"></i>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">Custom Software</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Software solutions built specifically for your business goals.
-        </p>
-      </div>
-
-      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-          <i class="fas fa-cloud"></i>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">Cloud Services</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Scale effortlessly with secure and efficient cloud infrastructure.
-        </p>
-      </div>
-
-      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-          <i class="fas fa-brain"></i>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">AI Consulting</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Strategize and implement AI to unlock new business opportunities.
-        </p>
-      </div>
-
-      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-          <i class="fas fa-sync-alt"></i>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">DevOps & CloudOps</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Streamline development and operations for reliable delivery.
-        </p>
-      </div>
-
-      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">Business Intelligence</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Convert data into actionable insights using advanced analytics.
-        </p>
-      </div>
-
-      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-          <i class="fas fa-user-tie"></i>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">IT Consultancy</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Your trusted advisor for navigating complex tech landscapes.
-        </p>
-      </div>
-
-      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-          <i class="fas fa-user-tie"></i>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">IT Consultancy</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Your trusted advisor for navigating complex tech landscapes.
-        </p>
-      </div>
-
-      <div class="group text-center sm:text-left p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-lg hover:border-accent transition-all duration-300">
-        <div class="w-14 h-14 flex items-center justify-center mx-auto sm:mx-0 bg-accent/10 rounded-full text-accent text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-          <i class="fas fa-user-tie"></i>
-        </div>
-        <h3 class="text-lg font-medium text-gray-900 mb-2">IT Consultancy</h3>
-        <p class="text-theme-textLight text-base leading-relaxed">
-          Your trusted advisor for navigating complex tech landscapes.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section> -->
-
-
-
-
-  <section class="relative py-20 bg-white overflow-hidden">
-
-    <!-- Right-side Background Image -->
-    <div class="absolute top-0 right-0 w-[60%] h-full z-0 hidden lg:block">
-      <img src="./assets/bg2.png" alt="Background" class="w-full h-full object-cover">
-    </div>
-
-    <!-- Mobile Background Image -->
-    <div class="absolute top-0 left-0 w-full h-full z-0 lg:hidden">
-      <img src="./assets/bg2.png" alt="Background" class="w-full h-full object-cover">
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 px-4 sm:px-6 items-center">
-
-      <!-- Left Image -->
-      <div class="relative w-full order-1" data-aos="fade-right">
-        <div
-          class="absolute top-4 -right-4 w-full h-full border-[6px] border-transparent -z-10 overflow-hidden rounded-md">
-          <div class="absolute bottom-0 right-0 w-1/2 h-1/2" style="background: radial-gradient(circle at bottom right,
-                     rgba(236,72,153,0.9) 10%,
-                     rgba(236,72,153,0.6) 30%,
-                     rgba(147,51,234,0.4) 50%,
-                     rgba(147,51,234,0.2) 75%,
-                     transparent 100%);">
-          </div>
-        </div>
-        <img src="./assets/about-img.png" alt="Team Image"
-          class="w-full h-[400px] sm:h-[500px] lg:h-[560px] object-cover shadow-sm rounded-md" />
-      </div>
-
-      <!-- Right Content -->
-      <div class="space-y-6 text-white order-2" data-aos="fade-left">
-        <h4 class="text-sm text-gray-300 tracking-widest font-semibold uppercase">
-          Why ThunderGits?
-        </h4>
-
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2">
-          Discover why businesses <br /> trust us for innovation
-          <span class="absolute left-0 bottom-0 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></span>
-        </h2>
-
-        <p class="text-gray-200 text-base sm:text-lg leading-relaxed">
-          We deliver future-ready solutions — from web and mobile to AI and cloud — that accelerate growth and digital
-          transformation globally.
-        </p>
-
-        <ul class="space-y-3 text-gray-200">
-          <li class="flex items-start bg-white/10 p-3 rounded-md shadow-sm hover:shadow-md transition"
-            data-aos="fade-up" data-aos-delay="100">
-            <i
-              class="fab fa-teamspeak text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 text-lg mr-3 mt-1"></i>
-            <span>Expert Team — Skilled professionals delivering cutting-edge technology.</span>
-          </li>
-          <li class="flex items-start bg-white/10 p-3 rounded-md shadow-sm hover:shadow-md transition"
-            data-aos="fade-up" data-aos-delay="200">
-            <i
-              class="fas fa-tools text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 text-lg mr-3 mt-1"></i>
-            <span>Custom Solutions — Designed to meet your unique business goals.</span>
-          </li>
-          <li class="flex items-start bg-white/10 p-3 rounded-md shadow-sm hover:shadow-md transition"
-            data-aos="fade-up" data-aos-delay="300">
-            <i
-              class="fas fa-robot text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 text-lg mr-3 mt-1"></i>
-            <span>Advanced Technologies — Leveraging AI, ML, and cloud infrastructure.</span>
-          </li>
-          <li class="flex items-start bg-white/10 p-3 rounded-md shadow-sm hover:shadow-md transition"
-            data-aos="fade-up" data-aos-delay="400">
-            <i
-              class="fas fa-user-check text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 text-lg mr-3 mt-1"></i>
-            <span>Customer Focused — Your satisfaction and growth are our priorities.</span>
-          </li>
-          <li class="flex items-start bg-white/10 p-3 rounded-md shadow-sm hover:shadow-md transition"
-            data-aos="fade-up" data-aos-delay="500">
-            <i
-              class="fas fa-globe text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 text-lg mr-3 mt-1"></i>
-            <span>Global Reach — Trusted by clients across continents.</span>
-          </li>
-        </ul>
-
-        <a href="./about.html" class="inline-block mt-6 relative px-6 py-3 rounded-lg font-medium text-white
-               bg-gradient-to-r from-pink-500 to-purple-500 shadow-md hover:opacity-90 transition-all duration-300"
-          data-aos="zoom-in" data-aos-delay="600">
-          ABOUT US
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-
-
-
-
-  <style>
-    /* Custom angled background shape */
-    /* .clip-path-custom {
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
-} */
-  </style>
-
-
-
-
-
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Section Heading -->
-      <div class="mb-16 text-left">
-        <h4 class="text-sm text-gray-500 tracking-widest font-semibold uppercase mb-2">
-          Our Clients
-        </h4>
-
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug relative inline-block pb-2 text-black">
-          Check our best clients & partners <br class="hidden md:block" />
-          <span class="absolute left-0 bottom-0 w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></span>
-        </h2>
-
-        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl">
-          We pride ourselves on working with some of the most innovative and forward-thinking
-          companies around the world.
-        </p>
-      </div>
-
-      <!-- Clients Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- Card for AAP Bihar -->
-        <div
-          class="group relative flex flex-col text-left rounded-xl overflow-hidden shadow-md bg-gradient-to-r from-pink-50 to-purple-50 transition-all duration-500 hover:shadow-xl p-6">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500">
-              <img src="./assets/appbihar.png" alt="AAP Bihar"
-                class="h-20 w-20 object-cover rounded-full bg-white p-1" />
-            </div>
-            <h3
-              class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              AAP Bihar
-            </h3>
-          </div>
-          <div class="flex flex-col justify-between h-full">
-            <p class="text-gray-700 text-base leading-relaxed">
-              The platform developed by ThunderGits has been instrumental in our campaigns. It's a powerful tool for our
-              political operations.
-            </p>
-            <span class="mt-6 text-sm font-medium text-gray-600 italic">
-              — Sahil Saxena, AAP Bihar
-            </span>
-          </div>
-        </div>
-
-        <!-- Card for ICAI -->
-        <div
-          class="group relative flex flex-col text-left rounded-xl overflow-hidden shadow-md bg-gradient-to-r from-pink-50 to-purple-50 transition-all duration-500 hover:shadow-xl p-6">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500">
-              <img src="./assets/icaim.png" alt="ICAI" class="h-20 w-20 object-cover rounded-full bg-white p-1" />
-            </div>
-            <h3
-              class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              ICAI
-            </h3>
-          </div>
-          <div class="flex flex-col justify-between h-full">
-            <p class="text-gray-700 text-base leading-relaxed">
-              The website ThunderGits created for our branch is professional and easy to manage. It has improved our
-              communication with members.
-            </p>
-            <span class="mt-6 text-sm font-medium text-gray-600 italic">
-              — CA. Shashi Bhushan Kumar, ICAI
-            </span>
-          </div>
-        </div>
-
-        <!-- Card for Enersol -->
-        <div
-          class="group relative flex flex-col text-left rounded-xl overflow-hidden shadow-md bg-gradient-to-r from-pink-50 to-purple-50 transition-all duration-500 hover:shadow-xl p-6">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="p-[2px] rounded-full bg-gradient-to-r from-pink-500 to-purple-500">
-              <img src="./assets/enersol.png" alt="Enersol" class="h-20 w-20 object-cover rounded-full bg-white p-1" />
-            </div>
-            <h3
-              class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              Enersol
-            </h3>
-          </div>
-          <div class="flex flex-col justify-between h-full">
-            <p class="text-gray-700 text-base leading-relaxed">
-              ThunderGits developed a fantastic e-commerce platform for us. It's robust, scalable, and has significantly
-              improved our online presence.
-            </p>
-            <span class="mt-6 text-sm font-medium text-gray-600 italic">
-              — Neeru Chahar, Enersol Biopower
-            </span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- See More Button -->
-      <div class="mt-12 text-center">
-        <a href="./work.html" class="inline-flex items-center font-semibold transition-all group 
-           bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-          See More
-          <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
-            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-
-
-  <!-- Swiper JS -->
-  <script>
-    const clientSwiper = new Swiper(".clients-swiper", {
-      slidesPerView: 1,
-      spaceBetween: 24,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 24,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 32,
-        },
-      },
-    });
-  </script>
-
-
-  <!-- Animation CSS -->
-  <style>
-    .card-animate {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-in-out;
-    }
-
-    .swiper-slide-active .card-animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-
-
-
-
-
-
-  <!-- <section class="relative overflow-hidden bg-white py-4">
-    <div class="marquee">
-      <h1>THUNDERGITS</h1>
-      <h1>THUNDERGITS</h1>
-      <h1>THUNDERGITS</h1>
-      <h1>THUNDERGITS</h1>
-      <h1>THUNDERGITS</h1>
-      <h1>THUNDERGITS</h1>
-      <h1>THUNDERGITS</h1>
-      <h1>THUNDERGITS</h1>
-    </div>
-  </section> -->
-
-  <!-- <style>
-    .marquee {
-      display: flex;
-      width: max-content;
-      animation: marquee 30s linear infinite;
-    }
-
-    .marquee h1 {
-      font-size: 16vw;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      background: linear-gradient(to right, #ec4899, #9333ea);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      padding: 0 3rem;
-      white-space: nowrap;
-      display: inline-block;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-  </style> -->
-
-
-
-
-
-  <section class="relative bg-[#0B0B0B] pt-16 pb-16">
-    <!-- Background -->
-    <div class="absolute inset-0">
-      <img src="./assets/bg2.png" alt="Background" class="w-full h-full object-cover">
-    </div>
-
-    <div class="relative max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <p class="text-gray-300 uppercase tracking-wide font-medium">Testimonials</p>
-        <h2 class="text-white text-4xl font-bold">What people say</h2>
-      </div>
-
-      <!-- Swiper -->
-      <div class="swiper testimonialSwiper pb-8">
-        <div class="swiper-wrapper">
-
-          <!-- Slides -->
-          <div class="swiper-slide flex flex-col items-center" data-aos="fade-up" data-aos-duration="800">
-            <div
-              class="testimonial-box relative p-8 text-center text-white rounded-2xl shadow-lg bg-white/15 backdrop-blur-sm hover:scale-105 transition-transform duration-500 h-full flex flex-col justify-center min-h-[280px]">
-              <span class="quote text-accent text-4xl block mb-4">“</span>
-              <p>ThunderGits developed a fantastic e-commerce platform for us. It's robust, scalable, and has
-                significantly improved our online presence.</p>
-            </div>
-            <img src="./assets/enersol.png" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
-            <p class="font-bold text-white">Neeru Chahar</p>
-            <p class="text-gray-400 text-sm">Enersol Biopower</p>
-          </div>
-
-          <div class="swiper-slide flex flex-col items-center" data-aos="fade-up" data-aos-delay="100"
-            data-aos-duration="800">
-            <div
-              class="testimonial-box relative p-8 text-center text-white rounded-2xl shadow-lg bg-white/15 backdrop-blur-sm hover:scale-105 transition-transform duration-500 h-full flex flex-col justify-center min-h-[280px]">
-              <span class="quote text-accent text-4xl block mb-4">“</span>
-              <p>The platform developed by ThunderGits has been instrumental in our campaigns. It's a powerful tool for
-                our political operations.</p>
-            </div>
-            <img src="./assets/appbihar.png" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
-            <p class="font-bold text-white">Sahil Saxena</p>
-            <p class="text-gray-400 text-sm">AAP Bihar</p>
-          </div>
-
-          <div class="swiper-slide flex flex-col items-center" data-aos="fade-up" data-aos-delay="200"
-            data-aos-duration="800">
-            <div
-              class="testimonial-box relative p-8 text-center text-white rounded-2xl shadow-lg bg-white/15 backdrop-blur-sm hover:scale-105 transition-transform duration-500 h-full flex flex-col justify-center min-h-[280px]">
-              <span class="quote text-accent text-4xl block mb-4">“</span>
-              <p>The website ThunderGits created for our branch is professional and easy to manage. It has improved our
-                communication with members.</p>
-            </div>
-            <img src="./assets/icaim.png" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
-            <p class="font-bold text-white">CA. Shashi Bhushan Kumar</p>
-            <p class="text-gray-400 text-sm">ICAI</p>
-          </div>
-
-          <div class="swiper-slide flex flex-col items-center" data-aos="fade-up" data-aos-delay="300"
-            data-aos-duration="800">
-            <div
-              class="testimonial-box relative p-8 text-center text-white rounded-2xl shadow-lg bg-white/15 backdrop-blur-sm hover:scale-105 transition-transform duration-500 h-full flex flex-col justify-center min-h-[280px]">
-              <span class="quote text-accent text-4xl block mb-4">“</span>
-              <p>The e-commerce platform for our educational services is excellent. ThunderGits provided a complete
-                solution that is easy to manage.</p>
-            </div>
-            <img src="./assets/volcanic classes.png" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
-            <p class="font-bold text-white">Anand Kumar</p>
-            <p class="text-gray-400 text-sm">Volcanic Classes</p>
-          </div>
-
-
-          <div class="swiper-slide flex flex-col items-center" data-aos="fade-up" data-aos-delay="300"
-            data-aos-duration="800">
-            <div
-              class="testimonial-box relative p-8 text-center text-white rounded-2xl shadow-lg bg-white/15 backdrop-blur-sm hover:scale-105 transition-transform duration-500 h-full flex flex-col justify-center min-h-[280px]">
-              <span class="quote text-accent text-4xl block mb-4">“</span>
-              <p>The realty site is exactly what we wanted. It's user-friendly and showcases our properties beautifully.
-              </p>
-            </div>
-            <img src="./assets/prismstar.webp" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
-            <p class="font-bold text-white">Himanshu Garkhel</p>
-            <p class="text-gray-400 text-sm">Prism Star</p>
-          </div>
-
-
-          <div class="swiper-slide flex flex-col items-center" data-aos="fade-up" data-aos-delay="300"
-            data-aos-duration="800">
-            <div
-              class="testimonial-box relative p-8 text-center text-white rounded-2xl shadow-lg bg-white/15 backdrop-blur-sm hover:scale-105 transition-transform duration-500 h-full flex flex-col justify-center min-h-[280px]">
-              <span class="quote text-accent text-4xl block mb-4">“</span>
-              <p>Our ERP platform for schools is a huge success. ThunderGits delivered a complex project with impressive
-                results.</p>
-            </div>
-            <img src="./assets/edugit.png" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
-            <p class="font-bold text-white">A Customer</p>
-            <p class="text-gray-400 text-sm">Edugits</p>
-          </div>
-
-
-          <div class="swiper-slide flex flex-col items-center" data-aos="fade-up" data-aos-delay="300"
-            data-aos-duration="800">
-            <div
-              class="testimonial-box relative p-8 text-center text-white rounded-2xl shadow-lg bg-white/15 backdrop-blur-sm hover:scale-105 transition-transform duration-500 h-full flex flex-col justify-center min-h-[280px]">
-              <span class="quote text-accent text-4xl block mb-4">“</span>
-              <p>The pharmacy management platform is simple and effective. It has helped our local chemists digitalize
-                their operations.</p>
-            </div>
-            <img src="./assets/chikit.png" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
-            <p class="font-bold text-white">A Customer</p>
-            <p class="text-gray-400 text-sm">Chikit</p>
-          </div>
-
-          <div class="swiper-slide flex flex-col items-center" data-aos="fade-up" data-aos-delay="300"
-            data-aos-duration="800">
-            <div
-              class="testimonial-box relative p-8 text-center text-white rounded-2xl shadow-lg bg-white/15 backdrop-blur-sm hover:scale-105 transition-transform duration-500 h-full flex flex-col justify-center min-h-[280px]">
-              <span class="quote text-accent text-4xl block mb-4">“</span>
-              <p>ThunderGits delivered a high-quality video streaming platform that met all our requirements. Their
-                expertise in this domain is impressive.</p>
-            </div>
-            <img src="./assets/loqoai.png" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
-            <p class="font-bold text-white">Deepak</p>
-            <p class="text-gray-400 text-sm">Loqoai</p>
-          </div>
-
-          <div class="swiper-slide flex flex-col items-center" data-aos="fade-up" data-aos-delay="300"
-            data-aos-duration="800">
-            <div
-              class="testimonial-box relative p-8 text-center text-white rounded-2xl shadow-lg bg-white/15 backdrop-blur-sm hover:scale-105 transition-transform duration-500 h-full flex flex-col justify-center min-h-[280px]">
-              <span class="quote text-accent text-4xl block mb-4">“</span>
-              <p>Thundergits delivered a high-quality software solution that streamlined our operations and improved
-                efficiency. Their team was professional, responsive, and a pleasure to work with.</p>
-            </div>
-            <img src="./assets/web-scrap.webp" class="w-16 h-16 rounded-full mt-6 mb-2" alt="">
-            <p class="font-bold text-white">Girish Phalak</p>
-            <p class="text-gray-400 text-sm">Psoft</p>
-          </div>
-
-        </div>
-
-        <!-- Dots -->
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-  <section class="bg-[#FAF7F2] py-20">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start px-4 sm:px-6 lg:px-8">
-
-      <!-- Left: Image -->
-      <div data-aos="fade-right" class="w-full h-64 sm:h-80 md:h-96 lg:h-full relative overflow-hidden rounded-md">
-        <img src="./assets/about-img.png" alt="Contact Us"
-          class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-      </div>
-
-      <!-- Right: Title + Form -->
-      <div class="flex flex-col justify-start">
-
-        <!-- Title -->
-        <div data-aos="fade-left" class="mb-8">
-          <p class="text-sm uppercase tracking-wide text-gray-600 mb-2">Contact Us</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-black relative inline-block pb-2">
-            Have a cool project?<br>Get in touch!
-            <!-- Gradient underline -->
-            <span class="absolute left-0 bottom-0 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></span>
-          </h2>
-          <p class="text-gray-700 text-base sm:text-lg mt-3">
-            We’d love to hear about your ideas. Drop us a message and our team will get back to you promptly.
-          </p>
-        </div>
-
-        <!-- Form -->
-        <div data-aos="fade-up" class="bg-white p-6 sm:p-10 shadow-md rounded-md">
-          <form id="feedback-form" class="space-y-6">
-            <!-- Name -->
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
-                <i class="fa-regular fa-user"></i>
-              </span>
-              <input name="name" type="text" placeholder="Name" required class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
-            </div>
-
-            <!-- Phone -->
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
-                <i class="fa-solid fa-phone"></i>
-              </span>
-              <input name="phone" type="text" placeholder="Phone" required class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
-            </div>
-
-            <!-- Email -->
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
-                <i class="fa-regular fa-envelope"></i>
-              </span>
-              <input name="email" type="email" placeholder="Email Address" required class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
-            </div>
-
-            <!-- Subject -->
-            <div class="relative">
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500 text-[18px]">
-                <i class="fa-regular fa-pen-to-square"></i>
-              </span>
-              <input name="subject" type="text" placeholder="Subject" class="w-full border border-gray-300 rounded-md pl-11 pr-4 py-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300">
-            </div>
-
-            <!-- Message -->
-            <div class="relative">
-              <span class="absolute left-3 top-4 text-pink-500 text-[18px]">
-                <i class="fa-regular fa-comment"></i>
-              </span>
-              <textarea name="message" placeholder="How can we help you? Feel free to get in touch!" rows="4" required
-                class="w-full border border-gray-300 rounded-md pl-11 pr-4 pt-3 outline-none text-gray-700 
-             placeholder-gray-400 focus:ring-2 focus:ring-pink-500 transition-all duration-300 resize-y"></textarea>
-            </div>
-
-            <!-- Checkbox -->
-            <div class="flex items-center text-sm text-gray-600">
-              <input type="checkbox" id="agree" class="mr-2" required>
-              <label for="agree">
-                I agree that my data is
-                <a href="#"
-                  class="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent underline">collected</a>.
-              </label>
-            </div>
-
-            <!-- Button -->
-            <button type="submit" class="relative font-bold uppercase py-3 px-6 w-full sm:w-auto text-white 
-           bg-gradient-to-r from-pink-500 to-purple-500 rounded-md shadow-md 
-           hover:opacity-90 transition-all duration-300">
-              Get in touch
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+        <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+
+            <!-- LOGO -->
+            <a href="#" class="flex items-center">
+                <img src="./assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+            </a>
+
+            <!-- MOBILE BUTTON -->
+            <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
             </button>
-          </form>
 
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- <section class="py-20 relative overflow-hidden bg-gradient-to-br from-pink-50 via-[#FAF7F2] to-purple-100">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start md:items-center px-4 sm:px-6 lg:px-8">
-
-      <div class="flex flex-col h-full justify-between" data-aos="fade-right" data-aos-duration="1000">
-        <div>
-          <p class="text-sm uppercase tracking-widest text-gray-600 mb-2 text-left" data-aos="fade-down"
-            data-aos-delay="200">ThunderGit Metrics</p>
-
-          <h2
-            class="text-3xl sm:text-4xl font-extrabold leading-tight text-black max-w-xl relative text-left pb-3 sm:pb-2"
-            data-aos="fade-up" data-aos-delay="400">
-            Tracking Your Repositories:<br class="hidden sm:block">From Commit to Deployment
-            <span class="absolute left-0 bottom-0 w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500"></span>
-          </h2>
-
-          <p class="text-black mt-6 max-w-lg leading-relaxed text-left" data-aos="fade-up" data-aos-delay="600">
-            ThunderGit provides real-time analytics for your repositories. Track commits, pull requests, CI/CD
-            performance, and deployment success — all in one powerful dashboard.
-          </p>
+            <!-- MENU -->
+            <div id="menu" class="hidden md:flex items-center gap-8">
+                <a href="./index.html" class="text-white hover:text-white text-sm transition font-semibold">Home</a>
+                <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
+                <a href="./work.html" class="text-gray-300 hover:text-white text-sm transition">Work</a>
+                <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
+                <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Career</a>
+                <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
+                <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
+                <a href="./contact.html" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get a Quote</a>
+            </div>
         </div>
 
-        <div class="hidden sm:flex flex-row gap-4 mt-8 sm:justify-start sm:items-start" data-aos="zoom-in"
-          data-aos-delay="800">
-          <a href="#"
-            class="bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90 transition-colors duration-300 text-white px-6 py-3 text-sm font-semibold uppercase shadow-md text-center sm:w-auto rounded-md">
-            Explore Features
-          </a>
-          <a href="#"
-            class="flex items-center gap-3 text-black font-medium hover:text-pink-600 transition-colors duration-300">
-            <span
-              class="w-11 h-11 border border-gray-300 flex items-center justify-center text-sm text-black bg-white/80 hover:bg-white transition-colors duration-300 rounded-full shadow">
-              <i class="fa-solid fa-play"></i>
+        <!-- MOBILE DROPDOWN -->
+        <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
+            <a href="./index.html" class="text-white hover:text-white text-sm font-semibold">Home</a>
+            <a href="./about.html" class="text-gray-300 hover:text-white text-sm">About</a>
+            <a href="./work.html" class="text-gray-300 hover:text-white text-sm">Work</a>
+            <a href="./service.html" class="text-gray-300 hover:text-white text-sm">Services</a>
+            <a href="./career.html" class="text-gray-300 hover:text-white text-sm">Career</a>
+            <a href="./blog.html" class="text-gray-300 hover:text-white text-sm">Blog</a>
+            <a href="./contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero-section" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden bg-black">
+
+        <!-- STATIC CSS GRID LINES (always visible, faint) -->
+        <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+
+        <!-- INTERACTIVE HIGHLIGHT CELLS (JS fills this — no borders, just color fill) -->
+        <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+
+        <!-- TOP CENTER GLOW -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.55) 0%, rgba(56,189,248,0.35) 20%, rgba(99,102,241,0.12) 50%, transparent 75%);"></div>
+
+        <!-- BOTTOM FADE -->
+        <div class="absolute bottom-0 left-0 w-full h-40 pointer-events-none"
+            style="background: linear-gradient(to bottom, transparent, #000);">
+        </div>
+
+        <!-- CONTENT -->
+        <div class="relative z-10 px-6 max-w-6xl mx-auto flex flex-col items-center">
+
+            <!-- BADGE -->
+            <span class="inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-gray-300 mb-8 uppercase">
+                AI-Driven Tech Solutions
             </span>
-            Watch Demo
-          </a>
-        </div>
-      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 text-center sm:text-left" data-aos="fade-left"
-        data-aos-duration="1000">
-        <div data-aos="flip-left" data-aos-delay="200">
-          <p class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
-            id="reposCounter">0</p>
-          <p class="font-semibold mt-3 text-black text-lg">Repositories Managed</p>
-          <p class="text-gray-600 text-sm mt-1">From startups to enterprises, ThunderGit is powering efficient
-            development.</p>
-        </div>
-        <div data-aos="flip-left" data-aos-delay="400">
-          <p class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
-            id="commitsCounter">0</p>
-          <p class="font-semibold mt-3 text-black text-lg">Commits Tracked</p>
-          <p class="text-gray-600 text-sm mt-1">Monitor commits and code quality metrics in real time.</p>
-        </div>
-      </div>
+            <!-- HEADING -->
+            <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: 0em; margin-bottom: 1.5rem; text-align: center;">
+                ThunderGits Technologies
+            </h1>
 
-    </div>
+            <!-- DESCRIPTION -->
+            <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mb-10">
+                We build powerful digital solutions — from web apps to mobile platforms,
+                UI/UX to cybersecurity. Whether you're a startup or an enterprise,
+                we've got the tech to take you further.
+            </p>
 
-    <div class="flex flex-col sm:hidden gap-4 mt-10 items-center" data-aos="zoom-in-up" data-aos-delay="600">
-      <a href="#"
-        class="bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90 transition-colors duration-300 text-white px-6 py-3 text-sm font-semibold uppercase shadow-md text-center w-auto rounded-md">
-        Explore Features
-      </a>
-      <a href="#"
-        class="flex items-center gap-3 text-black font-medium hover:text-pink-600 transition-colors duration-300">
-        <span
-          class="w-11 h-11 border border-gray-300 flex items-center justify-center text-sm text-black bg-white/80 hover:bg-white transition-colors duration-300 rounded-full shadow">
-          <i class="fa-solid fa-play"></i>
-        </span>
-        Watch Demo
-      </a>
-    </div>
-  </section> -->
+            <!-- CTA ROW -->
+            <div class="flex items-center gap-6 flex-wrap justify-center">
 
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-full font-semibold text-sm shadow-lg shadow-indigo-900/50 hover:scale-105 transition duration-300">
+                    Get Quote
+                    <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs">→</span>
+                </button>
 
-  <!-- <script>
-    function formatNumber(num) {
-      if (num >= 1000000) return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-      if (num >= 1000) return (num / 1000).toFixed(0) + 'k';
-      return num;
-    }
-
-    function animateCounter(id, target) {
-      const element = document.getElementById(id);
-      let count = 0;
-      const duration = 1500;
-      const stepTime = 20;
-      const step = target / (duration / stepTime);
-
-      const timer = setInterval(() => {
-        count += step;
-        if (count >= target) {
-          count = target;
-          clearInterval(timer);
-        }
-        element.textContent = formatNumber(count);
-      }, stepTime);
-    }
-
-    animateCounter("reposCounter", 5000);
-    animateCounter("commitsCounter", 1200000);
-  </script> -->
-
-
-
-
-  <!-- Latest News Section -->
-  <!-- <section id="blog" class="py-20 bg-white">
-    <div class="text-center mb-10 px-4 max-w-7xl mx-auto">
-      <p class="text-sm uppercase tracking-widest text-pink-600" data-aos="fade-down" data-aos-duration="800">ThunderGit
-        Blog</p>
-      <h2 class="text-4xl font-bold text-black" data-aos="fade-up" data-aos-duration="1000">Latest from the Dev World
-      </h2>
-    </div>
-
-  
-    <div class="max-w-7xl mx-auto px-4" data-aos="zoom-in-up" data-aos-duration="1200">
-      <div class="swiper blogSwiper">
-        <div class="swiper-wrapper">
-
-         
-          <div class="swiper-slide p-2">
-            <div
-              class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <img src="./assets/web-scrap.webp" alt="The Ethical Web Scraper" class="w-full h-56 object-cover">
-              <div class="flex flex-col flex-1 p-6">
-                <p class="text-xs uppercase text-pink-600 font-semibold mb-2">Ethical Web Scraping</p>
-                <h3 class="font-bold text-lg text-black mb-2">The Ethical Web Scraper: Navigating the Gray Areas</h3>
-                <p class="text-gray-500 text-sm mb-4 flex-1">
-                  As web scraping continues to be a powerful tool for extracting valuable data, it is important to
-                  understand the ethical considerations surrounding its use.
-                </p>
-                <div class="mt-auto">
-                  <a class="inline-flex items-center text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 px-5 py-2 rounded-md shadow hover:opacity-90 transition-all duration-300"
-                    href="./blogs/the-ethical-web-scraping.html">
-                    Learn More
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path d="M5 12h14"></path>
-                      <path d="M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
+                <!-- AVATAR STACK + COUNT -->
+                <div class="flex items-center gap-3">
+                    <div class="flex -space-x-2">
+                        <img class="w-9 h-9 rounded-full border-2 border-black object-cover" src="https://i.pravatar.cc/100?img=11">
+                        <img class="w-9 h-9 rounded-full border-2 border-black object-cover" src="https://i.pravatar.cc/100?img=22">
+                        <img class="w-9 h-9 rounded-full border-2 border-black object-cover" src="https://i.pravatar.cc/100?img=33">
+                    </div>
+                    <div class="text-left">
+                        <p class="text-white text-sm font-bold leading-none">+20K</p>
+                        <p class="text-gray-400 text-xs mt-0.5">Trusted Customers</p>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          
-          <div class="swiper-slide p-2">
-            <div
-              class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <img src="./assets/why-react-native.webp" alt="React Native for Enterprise"
-                class="w-full h-56 object-cover">
-              <div class="flex flex-col flex-1 p-6">
-                <p class="text-xs uppercase text-pink-600 font-semibold mb-2">Mobile App Development</p>
-                <h3 class="font-bold text-lg text-black mb-2">Why React Native is Perfect for Building Enterprise
-                  Applications</h3>
-                <p class="text-gray-500 text-sm mb-4 flex-1">
-                  React Native offers significant advantages for enterprise application development, including
-                  cross-platform capabilities, performance, scalability, and cost-effectiveness.
-                </p>
-                <div class="mt-auto">
-                  <a class="inline-flex items-center text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 px-5 py-2 rounded-md shadow hover:opacity-90 transition-all duration-300"
-                    href="./blogs/why-react-native.html">
-                    Learn More
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path d="M5 12h14"></path>
-                      <path d="M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
 
-        
-          <div class="swiper-slide p-2">
-            <div
-              class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <img src="./assets/Deepseek.webp" alt="DeepSeek AI Search" class="w-full h-56 object-cover">
-              <div class="flex flex-col flex-1 p-6">
-                <p class="text-xs uppercase text-pink-600 font-semibold mb-2">AI & Search Technology</p>
-                <h3 class="font-bold text-lg text-black mb-2">How DeepSeek is Transforming AI-Powered Search</h3>
-                <p class="text-gray-500 text-sm mb-4 flex-1">
-                  DeepSeek is revolutionizing search with AI-driven algorithms, delivering more accurate, personalized,
-                  and contextual search results.
-                </p>
-                <div class="mt-auto">
-                  <a class="inline-flex items-center text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 px-5 py-2 rounded-md shadow hover:opacity-90 transition-all duration-300"
-                    href="./blogs/deepseek.html">
-                    Learn More
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path d="M5 12h14"></path>
-                      <path d="M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
+            <!-- SCROLLING LOGOS -->
+            <div class="mt-20 w-full max-w-3xl overflow-hidden relative">
+                <!-- LEFT FADE -->
+                <div class="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none"
+                    style="background: linear-gradient(to right, #000, transparent)"></div>
+                <!-- RIGHT FADE -->
+                <div class="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none"
+                    style="background: linear-gradient(to left, #000, transparent)"></div>
+
+                <div class="flex w-max animate-scroll gap-0">
+                    <!-- Group 1 -->
+                    <div class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
+                        <span class="whitespace-nowrap">Davabharti</span>
+                        <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
+                        <span class="whitespace-nowrap">Ganesha Foundation</span>
+                        <span class="whitespace-nowrap">AAP Bihar</span>
+                        <span class="whitespace-nowrap">Pasuseva</span>
+                        <span class="whitespace-nowrap">Coding Pandas</span>
+                    </div>
+                    <!-- Group 2 (duplicate for seamless loop) -->
+                    <div class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
+                        <span class="whitespace-nowrap">Davabharti</span>
+                        <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
+                        <span class="whitespace-nowrap">Ganesha Foundation</span>
+                        <span class="whitespace-nowrap">AAP Bihar</span>
+                        <span class="whitespace-nowrap">Pasuseva</span>
+                        <span class="whitespace-nowrap">Coding Pandas</span>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- about section -->
+    <section class="bg-black  text-white overflow-hidden ">
+        <section class="bg-gray-100 py-16 h-[350px]">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+
+                <!-- Heading -->
+                <p class="text-xl tracking-[0.2em] text-black mb-12 font-bold">
+                    WE WORKED WITH GLOBAL LARGEST BRANDS
+                </p>
+
+                <!-- Logos -->
+                <div class="flex  gap-10 items-center justify-between">
+
+                    <img src="./assets/brands/davabharti.png" class="mx-auto h-20 cursor-pointer " />
+
+                    <img src="./assets/brands/enersol.png" class="mx-auto h-20  cursor-pointer " />
+
+                    <img src="./assets/brands/header.png" class="mx-auto h-20 cursor-pointer   " />
+
+                    <img src="./assets/brands/logo.png" class="mx-auto h-20  cursor-pointer  " />
+
+                    <img src="./assets/brands/thikana.png" class="mx-auto h-20  cursor-pointer 0" />
+
+                </div>
+
+            </div>
+        </section>
+        <div class=" hidden lg:grid relative mx-auto  md:grid-cols-2 gap-6">
+
+            <div class="px-6 sm:px-8 md:px-16 py-12 md:py-16 mt-20 ml-10">
+
+                <!-- Tag -->
+                <p class="text-2xl font-semibold  text-white mb-4">
+                    WHO WE ARE
+                </p>
+
+                <!-- Heading -->
+                <h1 class="text-5xl sm:text-4xl lg:text-5xl font-bold leading-tight  mb-6">
+                    BUILDING TOMORROW <br class="hidden sm:block" />
+                    WITH TECHNOLOGY
+                </h1>
+
+                <!-- Description -->
+                <p class="text-md text-md mb-8 md:mb-10">
+                    We're a team of strategic digital marketing experts working globally with
+                    leading brands. We believe real progress happens when you refuse to play safe.
+                </p>
+
+                <!-- Button -->
+                <button
+                    class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border border-gray-600 flex items-center justify-center text-xs sm:text-sm hover:bg-white hover:text-black transition-all duration-300">
+                    Explore Us ↗
+                </button>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="flex justify-end items-center h-full w-full">
+                <img src="./assets/about.webp" alt="About"
+                    class=" parallax-img w-full lg:w-1/2 absolute top-10 right-0 " />
+            </div>
 
         </div>
 
-     
-        <div class="swiper-pagination mt-6"></div>
-      </div>
-    </div>
-  </section> -->
 
+        <!-- for mobile -->
+        <div class="grid md:hidden xl:hidden relative mx-auto grid-cols-1 gap-6 items-center">
 
+            <!-- LEFT CONTENT -->
+            <div class="px-6 sm:px-8 md:px-16 py-12 md:py-16 mt-10 md:mt-20">
 
-   <!-- Latest News Section -->
-  <section id="blog" class="py-20 bg-white">
-    <div class="text-center mb-10 px-4 max-w-7xl mx-auto">
-      <p class="text-sm uppercase tracking-widest text-pink-600" data-aos="fade-down" data-aos-duration="800">ThunderGit
-        Blog</p>
-      <h2 class="text-4xl font-bold text-black" data-aos="fade-up" data-aos-duration="1000">Latest from the Dev World
-      </h2>
-    </div>
+                <!-- Tag -->
+                <p class="text-xl md:text-2xl font-semibold text-white mb-4">
+                    WHO WE ARE
+                </p>
 
-    <!-- Swiper -->
-    <div class="max-w-7xl mx-auto px-4" data-aos="zoom-in-up" data-aos-duration="1200">
-      <div class="swiper blogSwiper">
-        <div class="swiper-wrapper" id="blogContainer">
-          <!-- Blog cards will be dynamically loaded here -->
-          <div class="swiper-slide p-2">
-            <div class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-sm animate-pulse">
-              <div class="w-full h-56 bg-gray-300 rounded-t-xl"></div>
-              <div class="flex flex-col flex-1 p-6">
-                <div class="h-4 bg-gray-300 rounded mb-2"></div>
-                <div class="h-6 bg-gray-300 rounded mb-2"></div>
-                <div class="h-20 bg-gray-300 rounded mb-4 flex-1"></div>
-                <div class="h-10 bg-gray-300 rounded"></div>
-              </div>
+                <!-- Heading -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                    BUILDING TOMORROW <br class="hidden sm:block" />
+                    WITH TECHNOLOGY
+                </h1>
+
+                <!-- Description -->
+                <p class="text-sm md:text-base mb-8 md:mb-10 text-gray-200">
+                    We're a team of strategic digital marketing experts working globally with
+                    leading brands. We believe real progress happens when you refuse to play safe.
+                </p>
+
+                <!-- Button -->
+                <button
+                    class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border border-gray-500 flex items-center justify-center text-xs sm:text-sm hover:bg-white hover:text-black transition-all duration-300">
+                    Explore Us ↗
+                </button>
+
             </div>
-          </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="flex justify-center md:justify-end items-center w-full px-0 md:px-0">
+                <img src="./assets/about.webp" alt="About"
+                    class="parallax-img w-full max-w-sm sm:max-w-md md:max-w-full rounded-lg h-auto object-cover" />
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Services section -->
+    <section class="relative w-full bg-white py-20 overflow-hidden">
+
+        <div class="max-w-7xl mx-auto px-6  gap-10">
+
+            <div class="flex flex-col items-start">
+
+                <!-- TAG -->
+                <p class="text-xl font-smeibold text-black uppercase mb-5">
+                    Services
+                </p>
+
+                <!-- MAIN HEADING -->
+                <h2 class=" text-4xl md:text-5xl font-bold leading-[1.05] text-black">
+                    <span class="text-black">What We Can Do </span>
+                    <span class="text-black">for Our Clients</span>
+                </h2>
+
+                <!-- DESCRIPTION -->
+                <p class="mt-6 text-black text-lg font-semibold  leading-relaxed max-w-2xl">
+                    We're a team of strategic digital experts working globally with leading brands.
+                    We believe progress happens when you refuse to play safe and choose innovation over comfort.
+                </p>
+
+                <!-- SMALL HIGHLIGHT LINE -->
+                <div class="mt-8 flex items-center gap-3">
+                    <div class="w-10 h-[1px] bg-black"></div>
+                    <p class="text-xs tracking-widest text-gray-500 uppercase">
+                        Explore our services
+                    </p>
+                    <div class="w-10 h-[1px] bg-black"></div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SERVICES LIST -->
+            <div class="lg:col-span-2 space-y-10 mt-10 ">
+
+                <!-- SERVICE ITEM -->
+                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+
+                    <div
+                        class="flex flex-col md:flex-row items-center md:items-start md:justify-between gap-3 md:gap-10">
+
+                        <!-- TITLE -->
+                        <h3 class="text-4xl font-bold text-center md:text-left ">
+
+                            <span class="word block">
+                                <span>W</span><span>e</span><span>b</span>
+                            </span>
+
+                            <span class="word block">
+                                <span>D</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>m</span><span>e</span><span>n</span><span>t</span>
+                            </span>
+
+                        </h3>
+
+                        <!-- DESCRIPTION -->
+                        <div class="relative max-w-2xl overflow-hidden px-0 md:px-15">
+
+                            <!-- BG IMAGE -->
+                            <div class="absolute inset-[-10px] opacity-0 scale-105
+                        group-hover:opacity-100 group-hover:scale-100
+                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+
+                                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                    class="w-full h-full object-cover rounded-md" />
+
+                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                            </div>
+
+                            <!-- TEXT -->
+                            <p class="relative z-10 text-gray-600 text-center md:text-left
+                      group-hover:text-gray-200 transition duration-500 p-4">
+                                Our company have specialists in SEO that will work on your website so that your website
+                                improves search engine rankings and increases organic traffic.
+                            </p>
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                       rounded-full border border-gray-400 text-sm
+                       transition-all duration-500
+                       group-hover:bg-black group-hover:text-white ">
+                            Explore ↗
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- SERVICE ITEM -->
+                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+
+                    <div
+                        class="flex flex-col md:flex-row  items-center md:items-start md:justify-between gap-3 md:gap-10">
+
+                        <!-- TITLE -->
+                        <h3 class="text-4xl font-bold text-center md:text-left">
+
+                            <span class="word block">
+                                <span>D</span><span>i</span><span>g</span><span>i</span><span>t</span><span>a</span><span>l</span>
+                            </span>
+
+                            <span class="word block">
+                                <span>M</span><span>a</span><span>r</span><span>k</span><span>e</span><span>t</span><span>i</span><span>n</span><span>g</span>
+                            </span>
+
+                        </h3>
+
+                        <!-- DESCRIPTION -->
+                        <div class="relative max-w-2xl overflow-hidden px-0 md:px-15">
+
+                            <!-- BG IMAGE -->
+                            <div class="absolute inset-[-10px] opacity-0 scale-105
+                        group-hover:opacity-100 group-hover:scale-100
+                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+
+                                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                    class="w-full h-full object-cover rounded-md" />
+
+                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                            </div>
+
+                            <!-- TEXT -->
+                            <p class="relative z-10 text-gray-600 text-center md:text-left
+                      group-hover:text-gray-200 transition duration-500 p-4">
+                                Our company have specialists in SEO that will work on your website so that your website
+                                improves search engine rankings and increases organic traffic.
+                            </p>
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                       rounded-full border border-gray-400 text-sm
+                       transition-all duration-500
+                       group-hover:bg-black group-hover:text-white">
+                            Explore ↗
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- SERVICE ITEM -->
+                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+
+                    <div
+                        class="flex flex-col md:flex-row  items-center md:items-start md:justify-between gap-3 md:gap-10">
+
+                        <!-- TITLE -->
+                        <h3 class="text-4xl font-bold text-center md:text-left">
+
+                            <span class="word block">
+                                <span>U</span><span>I</span><span>/</span><span>U</span><span>X</span>
+                            </span>
+
+                            <span class="word block">
+                                <span>S</span><span>o</span><span>l</span><span>u</span><span>t</span><span>i</span><span>o</span><span>n</span>
+                            </span>
+
+                        </h3>
+
+                        <!-- DESCRIPTION -->
+                        <div class="relative max-w-2xl overflow-hidden px-0 md:px-15">
+
+                            <!-- BG IMAGE -->
+                            <div class="absolute inset-[-10px] opacity-0 scale-105
+                        group-hover:opacity-100 group-hover:scale-100
+                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+
+                                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                    class="w-full h-full object-cover rounded-md" />
+
+                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                            </div>
+
+                            <!-- TEXT -->
+                            <p class="relative z-10 text-gray-600 text-center md:text-left
+                      group-hover:text-gray-200 transition duration-500 p-4">
+                                Our company have specialists in SEO that will work on your website so that your website
+                                improves search engine rankings and increases organic traffic.
+                            </p>
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                       rounded-full border border-gray-400 text-sm
+                       transition-all duration-500
+                       group-hover:bg-black group-hover:text-white">
+                            Explore ↗
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- SERVICE ITEM -->
+                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+
+                    <div
+                        class="flex flex-col md:flex-row  items-center md:items-start md:justify-between gap-3 md:gap-10">
+
+                        <!-- TITLE -->
+                        <h3 class="text-4xl  font-bold text-center md:text-left">
+
+                            <span class="word block">
+                                <span>C</span><span>y</span><span>b</span><span>e</span><span>r</span>
+                                <span>S</span><span>e</span><span>c</span><span>u</span><span>r</span><span>i</span><span>t</span><span>y</span>
+                            </span>
+
+                            <span class="word block">
+                                <span>S</span><span>o</span><span>l</span><span>u</span><span>t</span><span>i</span><span>o</span><span>n</span>
+                            </span>
+
+                        </h3>
+
+                        <!-- DESCRIPTION -->
+                        <div class="relative max-w-2xl overflow-hidden px-0 md:px-15">
+
+                            <!-- BG IMAGE -->
+                            <div class="absolute inset-[-10px] opacity-0 scale-105
+                        group-hover:opacity-100 group-hover:scale-100
+                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+
+                                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                    class="w-full h-full object-cover rounded-md" />
+
+                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                            </div>
+
+                            <!-- TEXT -->
+                            <p class="relative z-10 text-gray-600 text-center md:text-left
+                      group-hover:text-gray-200 transition duration-500 p-4">
+                                Our company have specialists in SEO that will work on your website so that your website
+                                improves search engine rankings and increases organic traffic.
+                            </p>
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                       rounded-full border border-gray-400 text-sm
+                       transition-all duration-500
+                       group-hover:bg-black group-hover:text-white">
+                            Explore ↗
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- SERVICE ITEM -->
+                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+
+                    <div
+                        class="flex flex-col md:flex-row  items-center md:items-start md:justify-between gap-3 md:gap-10">
+
+                        <!-- TITLE -->
+                        <h3 class="text-4xl font-bold text-center md:text-left">
+
+                            <span class="word block">
+                                <span>M</span><span>o</span><span>b</span><span>i</span><span>l</span><span>e</span><span>A</span><span>p</span><span>p</span>
+                            </span>
+
+
+                            <span class="word block">
+                                <span>D</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>m</span><span>e</span><span>n</span><span>t</span>
+                            </span>
+
+                        </h3>
+
+                        <!-- DESCRIPTION -->
+                        <div class="relative max-w-2xl overflow-hidden px-0 md:px-15">
+
+                            <!-- BG IMAGE -->
+                            <div class="absolute inset-[-10px] opacity-0 scale-105
+                        group-hover:opacity-100 group-hover:scale-100
+                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+
+                                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                    class="w-full h-full object-cover rounded-md" />
+
+                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                            </div>
+
+                            <!-- TEXT -->
+                            <p class="relative z-10 text-gray-600 text-center md:text-left
+                      group-hover:text-gray-200 transition duration-500 p-4">
+                                Our company have specialists in SEO that will work on your website so that your website
+                                improves search engine rankings and increases organic traffic.
+                            </p>
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                       rounded-full border border-gray-400 text-sm
+                       transition-all duration-500
+                       group-hover:bg-black group-hover:text-white">
+                            Explore ↗
+                        </button>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Teams section -->
+    <section class="bg-black text-white py-16 px-4 md:px-10">
+
+        <!-- Heading -->
+        <div class="max-w-6xl mx-auto mb-12">
+            <div class="text-5xl font-semibold mb-4">Our Teams</div>
+            <p class="text-gray-400 max-w-3xl">
+                Start strong, stay informed, and grow with confidence. We makes managing money effortless with a smart,
+                guided process.
+            </p>
         </div>
 
-        <!-- Pagination -->
-        <div class="swiper-pagination mt-6"></div>
-      </div>
-    </div>
-  </section>
+        <!-- Cards -->
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- DEVELOPERS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
+                <!-- CEO -->
+                <div class="group cursor-pointer text-center">
+                    <div class="overflow-hidden rounded-2xl bg-white/5">
+                        <img src="./assets/team/CEO.png" alt="CEO"
+                            class="w-full h-[320px] object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <h3 class="text-xl font-bold mt-4">Chief Executive Officer</h3>
+                    <p class="text-indigo-400 text-sm font-semibold">CEO</p>
+                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Visionary leader driving ThunderGits towards global innovation and digital excellence.</p>
+                </div>
 
+                <!-- COO -->
+                <div class="group cursor-pointer text-center">
+                    <div class="overflow-hidden rounded-2xl bg-white/5">
+                        <img src="./assets/team/COO_abhishek_agrawaal.jpeg" alt="Abhishek Agrawaal"
+                            class="w-full h-[320px] object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <h3 class="text-xl font-bold mt-4">Abhishek Agrawaal</h3>
+                    <p class="text-indigo-400 text-sm font-semibold">Chief Operating Officer (COO)</p>
+                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Operations expert focused on scaling technical teams and ensuring seamless project delivery.</p>
+                </div>
 
+                <!-- TECH LEAD / PREM PRAKASH -->
+                <div class="group cursor-pointer text-center">
+                    <div class="overflow-hidden rounded-2xl bg-white/5">
+                        <img src="./assets/team/tech_lead_premprakash.jpeg" alt="Prem Prakash"
+                            class="w-full h-[320px] object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <h3 class="text-xl font-bold mt-4">Prem Prakash</h3>
+                    <p class="text-indigo-400 text-sm font-semibold">Tech Lead & Full Stack Developer</p>
+                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Worked on 50+ projects including SaaS-based platforms.</p>
+                </div>
 
-  <footer class="relative text-[#EDE6D6] pt-16">
+                <!-- FULL STACK DEV / TARUN -->
+                <div class="group cursor-pointer text-center">
+                    <div class="overflow-hidden rounded-2xl bg-white/5">
+                        <img src="./assets/team/full_statck_developer_tarun_chaoudhary.jpeg" alt="Tarun Choudhary"
+                            class="w-full h-[320px] object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <h3 class="text-xl font-bold mt-4">Tarun Choudhary</h3>
+                    <p class="text-indigo-400 text-sm font-semibold">Full Stack Developer</p>
+                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Versatile developer specializing in scalable architectures and pixel-perfect user interfaces.</p>
+                </div>
 
-    <!-- 🔥 Background Image Only -->
-    <div class="absolute inset-0">
-      <img src="./assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
-    </div>
+            </div>
 
-    <!-- Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
+        </div>
+    </section>
 
-      <!-- Logo Section -->
-      <div class="flex flex-col items-center md:items-start">
-        <a class="flex items-center justify-center md:justify-start text-white mb-4">
-          <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
-          <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
-        </a>
-        <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
-          Innovating through technology and creativity, building the future.
-        </p>
-      </div>
+    <!-- Why Choose Us -->
+    <section class="relative h-[400vh] bg-black">
 
-      <!-- Explore -->
-      <div>
-        <h3 class="font-semibold mb-3 text-lg">Explore</h3>
-        <ul class="space-y-2">
-          <li><a href="./index.html" class="hover:text-pink-400 transition">Home</a></li>
-          <li><a href="./about.html" class="hover:text-pink-400 transition">About</a></li>
-          <li><a href="./work.html" class="hover:text-pink-400 transition">Work</a></li>
-          <li><a href="./index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
-        </ul>
-      </div>
+        <!-- STICKY CONTAINER -->
+        <div class="sticky top-0 h-screen overflow-hidden">
 
-      <!-- Company -->
-      <div>
-        <h3 class="font-semibold mb-3 text-lg">Company</h3>
-        <ul class="space-y-2">
-          <li><a href="./privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
-          <li><a href="./career.html" class="hover:text-pink-400 transition">Career</a></li>
-          <li><a href="./contact.html" class="hover:text-pink-400 transition">Contact</a></li>
-          <li><a href="./service.html" class="hover:text-pink-400 transition">Services</a></li>
-        </ul>
-      </div>
+            <!-- HORIZONTAL TRACK -->
+            <div id="horizontal" class="flex h-full w-[400vw]">
 
-      <!-- Contact -->
-      <div>
-        <h3 class="font-semibold mb-3 text-lg">Contact</h3>
-        <ul class="space-y-3">
-          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-            <i class="ri-map-pin-fill mt-1"></i>
-            <span>2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
-          </li>
-          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-            <i class="ri-phone-fill mt-1"></i>
-            <span>+91-7765979725</span>
-          </li>
-          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-            <i class="ri-mail-fill mt-1"></i>
-            <a href="mailto:contact@thundergits.com" class="hover:text-pink-400 transition">info@thundergits.com</a>
-          </li>
-        </ul>
-      </div>
+                <!-- SLIDE 1 -->
+                <div class="w-screen h-full flex flex-col items-center justify-center bg-[#FFFAF0] text-black">
 
-    </div>
+                    <div class="font-bold leading-none text-[12vw] md:text-[10vw] lg:text-[8vw]">
+                        Why
+                    </div>
 
-    <!-- Bottom -->
-    <div
-      class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
-      <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
-      <div class="flex space-x-6 text-gray-300">
-        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-        <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-x-twitter"></i></a> -->
+                    <div class="font-bold leading-none text-[12vw] md:text-[10vw] lg:text-[8vw]">
+                        Choose Us
+                    </div>
 
+                </div>
 
-      </div>
-    </div>
+                <!-- SLIDE 2 -->
+                <div class="w-screen h-full flex items-start justify-center bg-[#F3ECEC]">
+                    <div class="w-full px-6 md:px-12 py-14 md:py-20">
 
-    <!-- Floating Presale Chat -->
-    <!-- <div class="fixed bottom-16 left-4 flex items-center z-40">
-      <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
-        <img src="./assets/call-center (1).png" alt="">
-      </div>
-      <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
-           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
-        AI Assistant
-      </span>
-    </div> -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
 
-    <!-- Scroll To Top -->
-    <button id="scrollToggleBtn"
-      class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
-      <i id="scrollIcon" class="fas fa-arrow-up"></i>
-    </button>
-  </footer>
+                            <!-- LEFT -->
+                            <div>
+                                <p class="text-xl font-bold text-black leading-snug mb-4">Why<br>choose us</p>
+                                <h2
+                                    class="text-5xl md:text-6xl lg:text-6xl font-semibold text-black uppercase leading-none tracking-tight mb-8">
+                                    Keyword,Research<br>Strategy,Survey, &<br>Analytics
+                                </h2>
+                                <p class="text-xl text-gray-700 leading-relaxed max-w-xl">
+                                    Attention, we take out our round glasses and our sweater with elbow patches to
+                                    go back to the origins of the user experience: the first mention of the user and its
+                                    importance was born in the field of human-computer interaction.
+                                </p>
+                            </div>
 
+                            <!-- RIGHT: STATS -->
+                            <div class="flex flex-col gap-10 pt-2 md:pt-16">
 
+                                <!-- STAT 1 -->
+                                <div>
+                                    <div class="flex items-baseline gap-4">
+                                        <span
+                                            class="text-6xl md:text-7xl font-semibold text-black leading-none">60%</span>
+                                        <p class="text-xl font-bold text-black">Strategy</p>
+                                    </div>
+                                    <p class="text-xl text-gray-700 leading-relaxed mt-2">
+                                        Your marketing strategy optimizing performances doesn't have to be a guessing
+                                        game.
+                                    </p>
+                                </div>
 
+                                <!-- STAT 2 -->
+                                <div>
+                                    <div class="flex items-baseline gap-4">
+                                        <span
+                                            class="text-6xl md:text-7xl font-semibold text-black leading-none">95%</span>
+                                        <p class="text-xl font-bold text-black">Audience</p>
+                                    </div>
+                                    <p class="text-xl text-gray-700 leading-relaxed mt-2">
+                                        Reaching the right audience is more than just running ads — it's about creating
+                                        meaningful connections that drive real results.
+                                    </p>
+                                </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000, // Animation duration
-      once: true,     // Only animate once
-    });
-  </script>
+                            </div>
+                        </div>
 
-  <div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50">
-    <div class="rounded-lg bg-white p-8 text-center shadow-lg">
-      <div class="mb-4 text-6xl text-green-500">
-        <i class="fas fa-check-circle"></i>
-      </div>
-      <h2 class="mb-2 text-2xl font-bold">Thank You!</h2>
-      <p class="text-gray-600">Your message has been sent successfully.</p>
-      <button id="closeModal" class="mt-6 rounded-md bg-gray-800 px-4 py-2 text-white">Close</button>
-    </div>
-  </div>
-  <script src="./script.js"></script>
-  <!-- <script src="./form.js"></script> -->
-    <script src="./index.js"></script>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="w-screen h-full flex items-center justify-center bg-[#F5F0E8]">
+                    <div
+                        class="w-full max-w-7xl px-6 md:px-12 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+                        <!-- LEFT: STATS -->
+                        <div>
+                            <!-- Label -->
+                            <p class="text-xl font-bold text-black leading-snug mb-16">Why<br>choose us</p>
+
+                            <!-- Stats Grid -->
+                            <div class="grid grid-cols-2 gap-x-8 gap-y-12">
+
+                                <!-- 800+ -->
+                                <div>
+                                    <p class="text-6xl md:text-7xl font-semibold text-black leading-none">800+</p>
+                                    <p class="text-sm text-gray-900 mt-2">Project completed</p>
+                                </div>
+
+                                <!-- 900+ -->
+                                <div>
+                                    <p class="text-6xl md:text-7xl font-semibold text-black leading-none">900+</p>
+                                    <p class="text-sm text-gray-900 mt-2">Happy customers</p>
+                                </div>
+
+                                <!-- 15+ -->
+                                <div>
+                                    <p class="text-6xl md:text-7xl font-semibold text-black leading-none">15+</p>
+                                    <p class="text-sm text-gray-900 mt-2">year experience</p>
+                                </div>
+
+                                <!-- 25+ -->
+                                <div>
+                                    <p class="text-6xl md:text-7xl font-semibold text-black leading-none">25+</p>
+                                    <p class="text-sm text-gray-900 mt-2">Team Member</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: IMAGE -->
+                        <div class="flex items-center justify-center">
+                            <img src="./assets/counter-3.png" alt="Team" class="w-full h-full object-cover" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- SLIDE 4 -->
+                <div class="w-screen h-full flex flex-col items-center justify-center bg-[#D9DCCA]">
+
+                    <!-- HEADING -->
+                    <h2
+                        class="text-5xl md:text-7xl lg:text-8xl font-bold text-black text-center uppercase leading-tight px-6 md:px-16 ">
+                        Let's make something great together!
+                    </h2>
+
+                    <!-- EXPLORE BUTTON -->
+                    <div class="mt-12 md:mt-16">
+                        <button
+                            class="w-36 h-36 md:w-44 md:h-44 rounded-full border border-gray-800 text-xl md:text-base text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300 flex items-center justify-center">
+                            Explore Us ↗
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="w-full min-h-screen flex flex-col md:flex-row mb-10">
+
+        <!-- LEFT: MAP -->
+        <div class="w-full md:w-1/2 h-64 md:h-auto min-h-[300px]">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.0!2d77.3!3d28.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI0JzAwLjAiTiA3N8KwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
+                width="100%" height="100%" style="border:0; display:block; min-height: 300px;" allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <div class="w-full md:w-1/2 bg-white flex items-center justify-center px-8 md:px-16 py-16">
+            <div class="w-full ">
+
+                <!-- HEADING -->
+                <p class="text-xl md:text-2xl font-bold text-black mb-1">Arrange a Free</p>
+                <h2 class="text-5xl md:text-6xl font-black text-black mb-6">Consultation !</h2>
+                <p class="text-sm text-gray-600 mb-10">
+                    Great! We're excited to hear from you and let's start something
+                </p>
+
+                <!-- FORM -->
+                <form class="w-full space-y-8">
+
+                    <!-- Row 1: Name + Email -->
+                    <div class="flex flex-col sm:flex-row gap-8">
+                        <div class="flex-1 border-b border-gray-800 pb-2">
+                            <input type="text" placeholder="Full name*"
+                                class="w-full bg-transparent text-sm text-gray-800 placeholder-gray-700 outline-none" />
+                        </div>
+                        <div class="flex-1 border-b border-gray-800 pb-2">
+                            <input type="email" placeholder="Email address*"
+                                class="w-full bg-transparent text-sm text-gray-800 placeholder-gray-700 outline-none" />
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Website -->
+                    <div class="border-b border-gray-800 pb-2">
+                        <input type="url" placeholder="Website link"
+                            class="w-full bg-transparent text-sm text-gray-800 placeholder-gray-700 outline-none" />
+                    </div>
+
+                    <!-- Row 3: Textarea -->
+                    <div class="border-b border-gray-800 pb-2">
+                        <textarea placeholder="How Can We Help You*" rows="4"
+                            class="w-full bg-transparent text-sm text-gray-800 placeholder-gray-700 outline-none resize-none"></textarea>
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <div class="flex  pt-2">
+                        <button type="submit"
+                            class="px-4 py-2 border-2 text-xl font-bold cursor-pointer border-gray-800 text-gray-800  hover:bg-gray-800 hover:text-white transition-all duration-300 flex items-center justify-center">
+                            Send Message
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="w-full bg-gray-100 text-black">
+
+        <!-- TOP SECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
+
+            <!-- COL 1: LOGO + DESC -->
+            <div
+                class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-700">
+                <div class="mb-6">
+                    <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
+                </div>
+                <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
+                    When do they work well, and when do they on us and finally, when do we
+                    actually need how can we avoid them.
+                </p>
+            </div>
+
+            <!-- COL 2: SOCIAL LINKS -->
+            <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-black">
+                <a href="#"
+                    class="px-12 py-8 text-gray-800 font-semibold border-b border-black  text-center md:text-left">Facebook</a>
+                <a href="#"
+                    class="px-12 py-8 text-gray-800 font-semibold border-b border-black  text-center md:text-left">Instagram</a>
+                <a href="#"
+                    class="px-12 py-8 text-gray-800 font-semibold border-b border-black  text-center md:text-left">Youtube</a>
+                <a href="#" class="px-12 py-8 text-gray-800 font-semibold  text-center md:text-left">Linkedin</a>
+            </div>
+
+            <!-- COL 3: LET'S TALK + CONTACT INFO -->
+            <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+                <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">
+                    LET'S TALK
+                </h2>
+                <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+
+                    <span class="flex items-start gap-2 min-w-[220px] flex-1">
+                        <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                        <span class="leading-relaxed">
+                            2nd Floor, E 1/74, near YMCA,<br>
+                            Sector 11, Faridabad, Haryana 121006
+                        </span>
+                    </span>
+
+                    <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
+                        </svg>
+                        +91-7765979725
+                    </span>
+
+                    <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
+                        </svg>
+                        info@thundergits.com
+                    </span>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div
+            class="border-t border-black px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-black">© 2025 | All rights reserved by ThunderGits Technology</p>
+            <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
+                <a href="./about.html">About us</a>
+                <a href="./blog.html">Blogs</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./career.html">Career</a>
+            </nav>
+        </div>
+
+    </footer>
 
 </body>
+<script>
+    const btn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    btn.addEventListener("click", () => {
+        const isOpen = mobileMenu.style.display === "flex";
+        mobileMenu.style.display = isOpen ? "none" : "flex";
+    });
+
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 80) {
+            nav.style.background = "rgba(0, 0, 0, 0.75)";
+            nav.style.backdropFilter = "blur(12px)";
+            nav.style.webkitBackdropFilter = "blur(12px)";
+            nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
+        } else {
+            nav.style.background = "transparent";
+            nav.style.backdropFilter = "none";
+            nav.style.webkitBackdropFilter = "none";
+            nav.style.borderBottom = "none";
+        }
+    });
+</script>
+<style>
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-scroll {
+        animation: scroll 15s linear infinite;
+    }
+</style>
+
+<script>
+    const img = document.querySelector(".parallax-img");
+
+    window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const offset = scrollY * -0.15;
+        img.style.transform = `translateY(${offset}px)`;
+    });
+</script>
+
+<script>
+    const horizontal = document.getElementById("horizontal");
+
+    window.addEventListener("scroll", () => {
+        const section = horizontal.parentElement.parentElement;
+        const scrollTop = window.scrollY;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight - window.innerHeight;
+
+        if (scrollTop >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
+            const progress = (scrollTop - sectionTop) / sectionHeight;
+            const move = progress * (horizontal.scrollWidth - window.innerWidth);
+            horizontal.style.transform = `translateX(-${move}px)`;
+        }
+    });
+</script>
+
+<script>
+    /* Interactive Hero Grid */
+    const heroSection = document.getElementById("hero-section");
+    const gridEl = document.getElementById("hero-grid");
+    const CELL = 50;
+    let cols = 0, rows = 0, cellEls = [];
+
+    function buildGrid() {
+        gridEl.innerHTML = "";
+        cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
+        rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
+
+        gridEl.style.display = "grid";
+        gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+        gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+
+        cellEls = [];
+        for (let i = 0; i < cols * rows; i++) {
+            const d = document.createElement("div");
+            d.style.cssText = "transition: background 0.55s ease;";
+            gridEl.appendChild(d);
+            cellEls.push(d);
+        }
+    }
+
+    buildGrid();
+    window.addEventListener("resize", buildGrid);
+
+    heroSection.addEventListener("mousemove", (e) => {
+        const rect = gridEl.getBoundingClientRect();
+        const cx = Math.floor((e.clientX - rect.left) / CELL);
+        const cy = Math.floor((e.clientY - rect.top) / CELL);
+
+        const pattern = [
+            [0,  0,  0.40],
+            [-1, 0,  0.20], [1,  0,  0.20], [0, -1, 0.20], [0,  1, 0.20],
+            [-1,-1,  0.09], [1, -1,  0.09], [-1, 1, 0.09], [1,  1, 0.09],
+            [-2, 0,  0.04], [2,  0,  0.04], [0, -2, 0.04], [0,  2, 0.04],
+        ];
+
+        pattern.forEach(([dx, dy, alpha]) => {
+            const x = cx + dx, y = cy + dy;
+            if (x < 0 || x >= cols || y < 0 || y >= rows) return;
+            const cell = cellEls[y * cols + x];
+            if (!cell) return;
+            clearTimeout(cell._t);
+            cell.style.background = `rgba(99, 102, 241, ${alpha})`;
+            cell._t = setTimeout(() => {
+                cell.style.background = "";
+            }, 650);
+        });
+    });
+</script>
 
 </html>

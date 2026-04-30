@@ -2,786 +2,404 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thundergits Technologies - Innovative Tech Solutions</title>
-<link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontSize: {
-                        base: '1em',
-                        sm: '14px',
-                        md: '15px',
-                        lg: '1.4em',
-                        xl: '42px',
-                        heading: '6.75vw',
-                    },
-                    lineHeight: {
-                        tight: '1em',
-                        normal: '1.2em',
-                        relaxed: '1.5em',
-                        loose: '1.6em',
-                        heading: '0.95em',
-                    },
-                    letterSpacing: {
-                        wide: '1.8px',
-                        tighter: '0.01em',
-                    },
-                    fontWeight: {
-                        medium: '500',
-                    },
-                    transitionProperty: {
-                        all: 'all',
-                    },
-                    transitionTimingFunction: {
-                        ease: 'ease',
-                    },
-                    transitionDuration: {
-                        DEFAULT: '300ms',
-                    },
-                    colors: {
-                        theme: {
-                            text: '#DEDDDB',
-                            textLight: '#848484',
-                            textDark: '#EFE8CE',
-                            link: '#E2725B',
-                            hover: '#DD644C',
-                            link2: '#7DA189',
-                            hover2: '#6D967A',
-                            link3: '#9D7246',
-                            hover3: '#5B3918',
-                            bg: '#141414',
-                            bd: '#424040',
-                            altBg: '#292828',
-                            altBd: '#535353',
-                        },
-                        dark: '#0e0e0e',
-                        offwhite: '#f5e9cd',
-                        graytext: '#d9d9d9',
-                        accent: '#f25835',
-                        footer: '#121212',
-                        linkhover: '#f5e9cd',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="./style.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers - ThunderGits Technologies</title>
+  <link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="bg-dark text-theme-text">
+<body class="bg-black text-white font-['Inter',sans-serif]">
 
-    <section class="relative bg-cover bg-center flex flex-col justify-between min-h-[90vh] pt-20"
-        style="background-image: url('./assets/bg2.png');">
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+  <!-- Navbar -->
+  <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+      <!-- LOGO -->
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+      </a>
 
-        <!-- Navbar -->
-        <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
-            <div
-                class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
-                <div class="flex items-center gap-2 text-2xl font-bold text-offwhite">
-                    <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-                    <span>ThunderGits</span>
-                </div>
-                <nav class="hidden md:flex gap-8 text-offwhite font-medium">
-                    <a href="./index.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
-                    <a href="./about.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-                    <a href="./work.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">Work</a>
-                    <a href="./service.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-                    <a href="./career.html" class="pb-1 border-b-2 border-linkhover ">Career</a>
-                    <a href="./contact.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-                </nav>
-                <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
-                    <a href="./contact.html" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
-               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
-               border border-pink-500 hover:text-white transition-all duration-300 ease-out
-               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
-               before:scale-x-0 before:origin-left hover:before:scale-x-100 
-               before:transition-transform before:duration-300 before:z-[-1]">
-                        Get a Quote
-                    </a>
+      <!-- MOBILE BUTTON -->
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
 
-                    <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-lg"></i>
-                    </button>
-                </div>
+      <!-- MENU -->
+      <div id="menu" class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-gray-300 hover:text-white text-sm transition">Home</a>
+        <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
+        <a href="./work.html" class="text-gray-300 hover:text-white text-sm transition">Work</a>
+        <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
+        <a href="./career.html" class="text-white hover:text-white text-sm transition font-semibold">Career</a>
+        <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
+        <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
+        <a href="./contact.html" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get a Quote</a>
+      </div>
+    </div>
+
+    <!-- MOBILE DROPDOWN -->
+    <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
+      <a href="./index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
+      <a href="./about.html" class="text-gray-300 hover:text-white text-sm">About</a>
+      <a href="./work.html" class="text-gray-300 hover:text-white text-sm">Work</a>
+      <a href="./service.html" class="text-gray-300 hover:text-white text-sm">Services</a>
+      <a href="./career.html" class="text-white hover:text-white text-sm font-semibold">Career</a>
+      <a href="./blog.html" class="text-gray-300 hover:text-white text-sm">Blog</a>
+      <a href="./contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Aligent Hero Section -->
+  <section id="hero-section" class="relative pt-48 pb-24 bg-black overflow-hidden min-h-[90vh] flex items-center">
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left Content -->
+      <div data-aos="fade-right">
+        <span class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
+          Join Our Mission
+        </span>
+        <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
+          Your Future at <br/> <span class="text-indigo-400 font-semibold">ThunderGits Technologies</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed mb-10 font-light max-w-xl">
+          Empowering You to Build the Future of Technology. At ThunderGits, we are a community of innovators who strive to solve real-world challenges with cutting-edge solutions.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="#positions" class="px-10 py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 text-center shadow-lg shadow-indigo-900/50">
+            Explore Open Positions
+          </a>
+          <a href="#why-join" class="px-10 py-4 border border-indigo-500/30 text-indigo-400 text-[10px] font-black uppercase tracking-widest rounded-2xl hover:bg-indigo-500/10 transition duration-300 text-center">
+            Why Join Us?
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div data-aos="fade-left" class="relative group">
+        <div class="absolute -inset-4 bg-indigo-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition duration-700"></div>
+        <img src="./assets/blogimg1.jpg" alt="Careers at ThunderGits" class="relative w-full rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 border border-white/10" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Positions Section -->
+  <section id="positions" class="relative bg-[#050505] py-24 border-t border-white/5">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="text-4xl font-light text-white mb-4">Open Positions</h2>
+        <div class="w-12 h-1 bg-indigo-500 mx-auto"></div>
+        <p class="mt-8 text-gray-400 max-w-2xl mx-auto">Join our passionate team and build innovative solutions that make an impact. We are looking for talented individuals to shape the future with us.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Job Card 1 -->
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <i class="ri-palette-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
             </div>
-        </header>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu"
-            class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-            <div class="flex justify-between items-center mb-10">
-                <div class="flex items-center gap-2 text-lg font-bold">
-                    <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-                    <span class="text-white">ThunderGits</span>
-                </div>
-                <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
-                    <span>Close</span>
-                    <span class="text-2xl leading-none">×</span>
-                </button>
-            </div>
-
-            <div class="space-y-5">
-                <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Home</span><span class="text-sm">→</span>
-                </a>
-                <a href="./about.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>About</span><span class="text-sm">→</span>
-                </a>
-                <a href="./work.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Work</span><span class="text-sm">→</span>
-                </a>
-                <a href="./service.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Services</span><span class="text-sm">→</span>
-                </a>
-                <a href="./career.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Career</span><span class="text-sm">→</span>
-                </a>
-                <a href="./contact.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Contact</span><span class="text-sm">→</span>
-                </a>
-
-                <!-- Get a Quote Button -->
-                <div class="pt-4">
-                    <a href="./contact.html"
-                        class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
-                        Get a Quote
-                    </a>
-                </div>
-            </div>
-
-            <!-- Footer Icons -->
-            <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
-                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/thundergits/" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-                <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-                        class="fab fa-x-twitter"></i></a> -->
-            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Graphic Designer</h3>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 flex-grow">Create visually stunning designs ensuring brand consistency and engaging content. Strong design thinking skills & Canva expertise required.</p>
+          <a href="./jobs/graphic_designer.html" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
 
-
-
-        <!-- Career Section (Now Hero Section) -->
-        <div class="relative z-20 py-20 sm:py-32">
-            <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
-
-                <!-- Right Side Image (Mobile First) -->
-                <div data-aos="fade-left" data-aos-duration="1200" class="order-1 lg:order-2">
-                    <img src="./assets/blogimg1.jpg" alt="Careers" class="rounded-2xl shadow-2xl" />
-                </div>
-
-                <!-- Left Content (Mobile Second) -->
-                <div data-aos="fade-right" data-aos-duration="1200" class="order-2 lg:order-1">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                        YOUR FUTURE AT <span class="text-accent">THUNDERGITS TECHNOLOGIES</span>
-                    </h2>
-                    <p class="text-lg text-gray-300 mb-6">
-                        Empowering You to Build the Future of Technology.
-                        At ThunderGits Technologies, we are more than a workplace.
-                        We are a community of innovators who strive to solve real-world challenges
-                        with cutting-edge solutions. Be part of our journey and redefine the tech industry.
-                    </p>
-
-                    <!-- Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 mt-6 items-center justify-center sm:justify-start">
-
-                        <!-- First Button -->
-                        <a href="#positions" class="group relative inline-flex items-center justify-center min-w-[220px] px-8 py-3 
-          text-sm sm:text-base font-semibold uppercase border border-pink-500 text-white 
-          overflow-hidden rounded-md shadow-lg text-center">
-                            <span class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-right scale-x-100 
-            transition-transform duration-500 ease-in-out group-hover:scale-x-0 z-0 rounded-md"></span>
-                            <span class="relative z-10 transition-colors duration-500 ease-in-out 
-            group-hover:text-transparent group-hover:bg-clip-text 
-            group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500">
-                                Explore Open Positions
-                            </span>
-                        </a>
-
-                        <!-- Second Button -->
-                        <a href="#why-join" class="group relative inline-flex items-center justify-center min-w-[220px] px-8 py-3 
-          text-sm sm:text-base font-semibold uppercase border border-pink-500 text-pink-500 
-          overflow-hidden rounded-md shadow-lg text-center">
-                            <span class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-left scale-x-0 
-            transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0 rounded-md"></span>
-                            <span
-                                class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-white">
-                                Why Join Us?
-                            </span>
-                        </a>
-
-                    </div>
-                </div>
-
+        <!-- Job Card 2 -->
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <i class="ri-megaphone-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
             </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Social Media Manager</h3>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 flex-grow">Help define product roadmap and collaborate closely with cross-functional teams to bring ideas to life.</p>
+          <a href="./jobs/social-media-manager.html" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
 
-    </section>
-
-
-
-
-    <!-- Floating Social Bar -->
-    <!-- <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
-        <a href="#"
-            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-            <i class="fas fa-shopping-cart"></i>
-        </a>
-        <a href="#"
-            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-purple-500/50 transition-all animate-float-up-down">
-            <i class="fas fa-image"></i>
-        </a>
-        <a href="#"
-            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-            <i class="fas fa-credit-card"></i>
-        </a>
-    </div> -->
-
-
-
-
-
-
-
-     <!-- Open Positions Section -->
-    <section id="positions" class="relative bg-white py-20">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-
-            <!-- Heading -->
-            <div class="text-left max-w-3xl mx-auto lg:mx-0 mb-12" data-aos="fade-up">
-                <!-- Subtitle -->
-                <h4 class="text-sm font-semibold text-accent tracking-widest uppercase mb-3">
-                    Careers
-                </h4>
-
-                <!-- Main Heading with Underline -->
-                <h2
-                    class="text-gray-900 font-bold leading-snug text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block">
-                    Open Positions
-                    <span
-                        class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded"></span>
-                </h2>
-
-                <!-- Short Paragraph -->
-                <p class="text-gray-700 text-base sm:text-lg leading-relaxed max-w-2xl">
-                    Join our passionate team and build innovative solutions that make an impact.
-                    We are looking for talented individuals to shape the future with us.
-                </p>
+        <!-- Job Card 3 -->
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <i class="ri-search-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
             </div>
-
-            <!-- Jobs Grid -->
-            <div id="jobsContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Job Card -->
-                <div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition-all duration-300 bg-white flex flex-col"
-                    data-aos="fade-up">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-paint-brush text-accent text-lg mr-2"></i>
-                        <h3
-                            class="text-lg font-semibold text-dark group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-                            Graphic Designer
-                        </h3>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-6">
-                        Create visually stunning designs ensuring brand consistency and engaging content.
-                        Strong design thinking skills & Canva expertise required.
-                    </p>
-                    <div class="mt-auto flex justify-center">
-                        <a href="./jobs/graphic_designer.html" class="inline-block px-4 py-1.5 text-xs font-medium border border-accent text-accent 
-            hover:bg-accent hover:text-white transition duration-300">
-                            Apply Now
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Job Card -->
-                <div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition-all duration-300 bg-white flex flex-col"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-bullhorn text-accent text-lg mr-2"></i>
-                        <h3
-                            class="text-lg font-semibold text-dark group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-                            Social Media Manager
-                        </h3>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-6">
-                        Help define product roadmap and collaborate closely with cross-functional
-                        teams to bring ideas to life.
-                    </p>
-                    <div class="mt-auto flex justify-center">
-                        <a href="./jobs/social-media-manager.html" class="inline-block px-4 py-1.5 text-xs font-medium border border-accent text-accent 
-            hover:bg-accent hover:text-white transition duration-300">
-                            Apply Now
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Job Card -->
-                <div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition-all duration-300 bg-white flex flex-col"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-search text-accent text-lg mr-2"></i>
-                        <h3
-                            class="text-lg font-semibold text-dark group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-                            SEO Expert
-                        </h3>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-6">
-                        Optimize websites, boost search rankings, and drive growth
-                        with smart SEO strategies & analytics expertise.
-                    </p>
-                    <div class="mt-auto flex justify-center">
-                        <a href="./jobs/seo-expert.html" class="inline-block px-4 py-1.5 text-xs font-medium border border-accent text-accent 
-            hover:bg-accent hover:text-white transition duration-300">
-                            Apply Now
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Job Card -->
-                <div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition-all duration-300 bg-white flex flex-col"
-                    data-aos="fade-up">
-                    <div class="flex items-center mb-3">
-                        <i class="fab fa-react text-accent text-lg mr-2"></i>
-                        <h3
-                            class="text-lg font-semibold text-dark group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-                            React Native Developer
-                        </h3>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-6">
-                        Build scalable mobile apps with smooth UX. Collaborate
-                        with cross-functional teams to deliver high-quality solutions.
-                    </p>
-                    <div class="mt-auto flex justify-center">
-                        <a href="./jobs/react-native-developer.html" class="inline-block px-4 py-1.5 text-xs font-medium border border-accent text-accent 
-            hover:bg-accent hover:text-white transition duration-300">
-                            Apply Now
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Job Card -->
-                <div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition-all duration-300 bg-white flex flex-col"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-brain text-accent text-lg mr-2"></i>
-                        <h3
-                            class="text-lg font-semibold text-dark group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-                            Deep Learning Engineer
-                        </h3>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-6">
-                        Expertise in CNN, custom loss functions & advanced ML models.
-                        Drive AI innovation with real-world applications.
-                    </p>
-                    <div class="mt-auto flex justify-center">
-                        <a href="./jobs/deepLearning.html" class="inline-block px-4 py-1.5 text-xs font-medium border border-accent text-accent 
-            hover:bg-accent hover:text-white transition duration-300">
-                            Apply Now
-                        </a>
-                    </div>
-                </div>
-
-
-                <!-- Backend Developer Card -->
-<div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition-all duration-300 bg-white flex flex-col" data-aos="fade-up">
-  <div class="flex items-center mb-3">
-    <i class="fab fa-node-js text-accent text-lg mr-2"></i>
-    <h3 class="text-lg font-semibold text-dark group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-      Backend Developer
-    </h3>
-  </div>
-  <p class="text-gray-600 text-sm mb-6">
-    Design robust APIs and scalable services. Optimize databases, security, and performance for production-grade systems.
-  </p>
-  <div class="mt-auto flex justify-center">
-    <a href="./jobs/backend_development.html" class="inline-block px-4 py-1.5 text-xs font-medium border border-accent text-accent hover:bg-accent hover:text-white transition duration-300">
-      Apply Now
-    </a>
-  </div>
-</div>
-
-<!-- Frontend Developer Card -->
-<div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition-all duration-300 bg-white flex flex-col" data-aos="fade-up" data-aos-delay="100">
-  <div class="flex items-center mb-3">
-    <i class="fab fa-html5 text-accent text-lg mr-2"></i>
-    <h3 class="text-lg font-semibold text-dark group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-      Frontend Developer
-    </h3>
-  </div>
-  <p class="text-gray-600 text-sm mb-6">
-    Build responsive UIs with clean, accessible code. Collaborate on design systems and deliver pixel-perfect experiences.
-  </p>
-  <div class="mt-auto flex justify-center">
-    <a href="./jobs/frontend_developer.html" class="inline-block px-4 py-1.5 text-xs font-medium border border-accent text-accent hover:bg-accent hover:text-white transition duration-300">
-      Apply Now
-    </a>
-  </div>
-</div>
-
-<!-- Kotlin Developer Card -->
-<div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition-all duration-300 bg-white flex flex-col" data-aos="fade-up" data-aos-delay="200">
-  <div class="flex items-center mb-3">
-    <i class="fas fa-mobile-alt text-accent text-lg mr-2"></i>
-    <h3 class="text-lg font-semibold text-dark group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-      Kotlin Developer
-    </h3>
-  </div>
-  <p class="text-gray-600 text-sm mb-6">
-    Develop high-quality Android apps with Kotlin. Implement clean architecture, integrate APIs, and ensure smooth performance.
-  </p>
-  <div class="mt-auto flex justify-center">
-    <a href="./jobs/kotlin-developer.html" class="inline-block px-4 py-1.5 text-xs font-medium border border-accent text-accent hover:bg-accent hover:text-white transition duration-300">
-      Apply Now
-    </a>
-  </div>
-</div>
-
-
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-    <!-- Why Join Section -->
-    <section id="why-join" class="relative bg-black bg-cover bg-center py-20"
-        style="background-image: url('./assets/bg2.png');">
-        <div class="absolute inset-0 bg-black/30"></div> <!-- Dark overlay for readability -->
-
-        <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
-
-            <!-- Heading -->
-            <div class="text-left mb-12" data-aos="fade-up">
-                <h4 class="text-sm font-semibold text-accent tracking-widest uppercase mb-3">
-                    Why Join Us
-                </h4>
-                <h2
-                    class="text-white font-bold leading-snug text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block">
-                    Why Join ThunderGits Technologies?
-                    <span
-                        class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded"></span>
-                </h2>
-                <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-                    ThunderGits Technologies is more than just a place to work—it's a place to grow, innovate, and make
-                    an impact.
-                </p>
-            </div>
-
-            <!-- Feature Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-
-                <!-- Card -->
-                <div class="group bg-white/10 border border-white/20 p-8 shadow-md hover:shadow-xl backdrop-blur-md transition-all duration-300"
-                    data-aos="fade-up">
-                    <div class="text-accent mb-5">
-                        <i class="fas fa-chart-line text-4xl"></i>
-                    </div>
-                    <h3
-                        class="text-lg font-semibold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-                        Career Growth
-                    </h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        We offer ample opportunities for professional development, mentoring, and career advancement.
-                    </p>
-                </div>
-
-                <!-- Card -->
-                <div class="group bg-white/10 border border-white/20 p-8 shadow-md hover:shadow-xl backdrop-blur-md transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-accent mb-5">
-                        <i class="fas fa-users text-4xl"></i>
-                    </div>
-                    <h3
-                        class="text-lg font-semibold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-                        Inclusive Team Culture
-                    </h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        Join a collaborative and inclusive team that thrives on diverse perspectives and creativity.
-                    </p>
-                </div>
-
-                <!-- Card -->
-                <div class="group bg-white/10 border border-white/20 p-8 shadow-md hover:shadow-xl backdrop-blur-md transition-all duration-300"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-accent mb-5">
-                        <i class="fas fa-balance-scale text-4xl"></i>
-                    </div>
-                    <h3
-                        class="text-lg font-semibold text-white mb-3 group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition">
-                        Work-Life Balance
-                    </h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        We prioritize a healthy work-life balance, offering flexibility and support for personal growth.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Hiring Process Section -->
-    <section class="text-gray-600 body-font bg-white">
-        <div class="max-w-7xl mx-auto px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
-            <!-- Left: Timeline -->
-            <div class="flex flex-col">
-                <!-- Heading -->
-                <div class="text-left mb-16 w-full" data-aos="fade-up">
-                    <h4 class="text-sm font-semibold text-accent tracking-widest uppercase mb-3">
-                        Our Process
-                    </h4>
-                    <h2
-                        class="text-gray-900 font-bold leading-snug text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block">
-                        The Hiring Process
-                        <span
-                            class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded"></span>
-                    </h2>
-                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed max-w-2xl">
-                        Our hiring process is simple and transparent. We believe in providing a seamless experience from
-                        application to onboarding.
-                    </p>
-                </div>
-
-                <!-- Timeline (this defines the image height) -->
-                <div id="timeline-box" class="relative flex-grow">
-                    <!-- Step 1 -->
-                    <div class="flex relative pt-10 pb-20 sm:items-center w-full" data-aos="fade-up">
-                        <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-                        </div>
-                        <!-- Timeline Step Number with Gradient BG -->
-                        <div
-                            class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center bg-gradient-to-r from-pink-500 to-purple-500 text-white relative z-10 font-medium text-sm">
-                            1
-                        </div>
-                        <div class="flex-grow md:pl-8 pl-6 flex items-start flex-col sm:flex-row">
-                            <div
-                                class="flex-shrink-0 w-16 h-16 bg-accent/10 text-accent rounded-full inline-flex items-center justify-center">
-                                <i class="fas fa-file-alt text-xl"></i>
-                            </div>
-                            <div class="flex-grow sm:pl-6 mt-6 sm:mt-0 text-left">
-                                <h3 class="font-semibold text-gray-900 mb-2 text-lg">Step 1: Apply</h3>
-                                <p class="leading-relaxed text-gray-600 text-sm">Submit your application through our
-                                    portal. Make sure your resume reflects your best work!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="flex relative pb-20 sm:items-center w-full" data-aos="fade-up" data-aos-delay="100">
-                        <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-                        </div>
-                        <!-- Timeline Step Number with Gradient BG -->
-                        <div
-                            class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center bg-gradient-to-r from-pink-500 to-purple-500 text-white relative z-10 font-medium text-sm">
-                            2
-                        </div>
-                        <div class="flex-grow md:pl-8 pl-6 flex items-start flex-col sm:flex-row">
-                            <div
-                                class="flex-shrink-0 w-16 h-16 bg-accent/10 text-accent rounded-full inline-flex items-center justify-center">
-                                <i class="fas fa-comments text-xl"></i>
-                            </div>
-                            <div class="flex-grow sm:pl-6 mt-6 sm:mt-0 text-left">
-                                <h3 class="font-semibold text-gray-900 mb-2 text-lg">Step 2: Interview</h3>
-                                <p class="leading-relaxed text-gray-600 text-sm">We'll schedule an interview to get to
-                                    know you better and discuss how you can contribute to the team.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="flex relative pb-10 sm:items-center w-full" data-aos="fade-up" data-aos-delay="200">
-                        <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-                        </div>
-                        <!-- Timeline Step Number with Gradient BG -->
-                        <div
-                            class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center bg-gradient-to-r from-pink-500 to-purple-500 text-white relative z-10 font-medium text-sm">
-                            3
-                        </div>
-                        <div class="flex-grow md:pl-8 pl-6 flex items-start flex-col sm:flex-row">
-                            <div
-                                class="flex-shrink-0 w-16 h-16 bg-accent/10 text-accent rounded-full inline-flex items-center justify-center">
-                                <i class="fas fa-handshake text-xl"></i>
-                            </div>
-                            <div class="flex-grow sm:pl-6 mt-6 sm:mt-0 text-left">
-                                <h3 class="font-semibold text-gray-900 mb-2 text-lg">Step 3: Offer</h3>
-                                <p class="leading-relaxed text-gray-600 text-sm">Once we've completed the interview
-                                    process, we'll extend an offer to join our team!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right: Image (matched to timeline height only) -->
-            <div class="flex">
-                <img src="./assets/about-img.png" alt="Hiring Process"
-                    class="w-full h-full object-cover rounded-xl shadow-lg" style="height: auto; max-height: 100%;">
-            </div>
-
-        </div>
-    </section>
-
-
-
-
-
-
-
-    <footer class="relative text-[#EDE6D6] pt-16">
-
-        <!-- 🔥 Background Image Only -->
-        <div class="absolute inset-0">
-            <img src="./assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
+            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">SEO Expert</h3>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 flex-grow">Optimize websites, boost search rankings, and drive growth with smart SEO strategies & analytics expertise.</p>
+          <a href="./jobs/seo-expert.html" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
 
-        <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
-
-            <!-- Logo Section -->
-            <div class="flex flex-col items-center md:items-start">
-                <a class="flex items-center justify-center md:justify-start text-white mb-4">
-                    <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
-                    <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
-                </a>
-                <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
-                    Innovating through technology and creativity, building the future.
-                </p>
+        <!-- Job Card 4 -->
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <i class="ri-reactjs-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
             </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">React Native Developer</h3>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 flex-grow">Build scalable mobile apps with smooth UX. Collaborate with cross-functional teams to deliver high-quality solutions.</p>
+          <a href="./jobs/react-native-developer.html" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
 
-            <!-- Explore -->
+        <!-- Job Card 5 -->
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <i class="ri-cpu-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Deep Learning Engineer</h3>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 flex-grow">Expertise in CNN, custom loss functions & advanced ML models. Drive AI innovation with real-world applications.</p>
+          <a href="./jobs/deepLearning.html" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+
+        <!-- Job Card 6 -->
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <i class="ri-code-s-slash-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Backend Developer</h3>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 flex-grow">Design robust APIs and scalable services. Optimize databases, security, and performance for production-grade systems.</p>
+          <a href="./jobs/backend_development.html" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+
+        <!-- Job Card 7 -->
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <i class="ri-layout-masonry-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Frontend Developer</h3>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 flex-grow">Build responsive UIs with clean, accessible code. Collaborate on design systems and deliver pixel-perfect experiences.</p>
+          <a href="./jobs/frontend_developer.html" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+
+        <!-- Job Card 8 -->
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <i class="ri-smartphone-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">Kotlin Developer</h3>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 flex-grow">Develop high-quality Android apps with Kotlin. Implement clean architecture, integrate APIs, and ensure smooth performance.</p>
+          <a href="./jobs/kotlin-developer.html" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join Us Section -->
+  <section id="why-join" class="relative bg-black py-24 overflow-hidden">
+    <!-- Glow effects -->
+    <div class="absolute top-1/2 left-0 w-96 h-96 bg-indigo-500/10 blur-[120px] -translate-y-1/2 -ml-48"></div>
+    <div class="absolute top-1/2 right-0 w-96 h-96 bg-indigo-500/10 blur-[120px] -translate-y-1/2 -mr-48"></div>
+
+    <div class="max-w-screen-xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="text-4xl font-light text-white mb-4">Why Join Us</h2>
+        <div class="w-12 h-1 bg-indigo-500 mx-auto"></div>
+        <p class="mt-8 text-gray-400 max-w-2xl mx-auto">ThunderGits Technologies is more than just a place to work—it's a place to grow, innovate, and make an impact.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Growth -->
+        <div class="group text-center p-8 bg-white/[0.02] border border-white/10 rounded-[2.5rem] hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-20 h-20 mx-auto rounded-3xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+            <i class="ri-line-chart-line text-4xl text-indigo-400"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Career Growth</h3>
+          <p class="text-gray-400 leading-relaxed">We offer ample opportunities for professional development, mentoring, and career advancement.</p>
+        </div>
+
+        <!-- Culture -->
+        <div class="group text-center p-8 bg-white/[0.02] border border-white/10 rounded-[2.5rem] hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-20 h-20 mx-auto rounded-3xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+            <i class="ri-group-line text-4xl text-indigo-400"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Inclusive Culture</h3>
+          <p class="text-gray-400 leading-relaxed">Join a collaborative and inclusive team that thrives on diverse perspectives and creativity.</p>
+        </div>
+
+        <!-- Balance -->
+        <div class="group text-center p-8 bg-white/[0.02] border border-white/10 rounded-[2.5rem] hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-20 h-20 mx-auto rounded-3xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+            <i class="ri-scales-3-line text-4xl text-indigo-400"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Work-Life Balance</h3>
+          <p class="text-gray-400 leading-relaxed">We prioritize a healthy work-life balance, offering flexibility and support for personal growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hiring Process Section -->
+  <section class="relative bg-white py-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <!-- Left: Timeline -->
+      <div data-aos="fade-right">
+        <div class="mb-16">
+          <span class="text-indigo-600 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Our Process</span>
+          <h2 class="text-5xl font-light text-black mb-6">The Hiring Process</h2>
+          <p class="text-gray-600 text-lg font-light leading-relaxed">Our hiring process is simple and transparent. We believe in providing a seamless experience from application to onboarding.</p>
+        </div>
+
+        <div class="space-y-12">
+          <!-- Step 1 -->
+          <div class="flex gap-8 group">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">1</div>
             <div>
-                <h3 class="font-semibold mb-3 text-lg">Explore</h3>
-                <ul class="space-y-2">
-                    <li><a href="./index.html" class="hover:text-pink-400 transition">Home</a></li>
-                    <li><a href="./about.html" class="hover:text-pink-400 transition">About</a></li>
-                    <li><a href="./work.html" class="hover:text-pink-400 transition">Work</a></li>
-                    <li><a href="./index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
-                </ul>
+              <h3 class="text-2xl font-bold text-black mb-2">Step 1: Apply</h3>
+              <p class="text-gray-500 leading-relaxed">Submit your application through our portal. Make sure your resume reflects your best work!</p>
             </div>
-
-            <!-- Company -->
+          </div>
+          <!-- Step 2 -->
+          <div class="flex gap-8 group">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">2</div>
             <div>
-                <h3 class="font-semibold mb-3 text-lg">Company</h3>
-                <ul class="space-y-2">
-                    <li><a href="./privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
-                    <li><a href="./career.html" class="hover:text-pink-400 transition">Career</a></li>
-                    <li><a href="./contact.html" class="hover:text-pink-400 transition">Contact</a></li>
-                    <li><a href="./service.html" class="hover:text-pink-400 transition">Services</a></li>
-                </ul>
+              <h3 class="text-2xl font-bold text-black mb-2">Step 2: Interview</h3>
+              <p class="text-gray-500 leading-relaxed">We'll schedule an interview to get to know you better and discuss how you can contribute to the team.</p>
             </div>
-
-            <!-- Contact -->
+          </div>
+          <!-- Step 3 -->
+          <div class="flex gap-8 group">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">3</div>
             <div>
-                <h3 class="font-semibold mb-3 text-lg">Contact</h3>
-                <ul class="space-y-3">
-                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-                        <i class="ri-map-pin-fill mt-1"></i>
-                        <span>2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
-                    </li>
-                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-                        <i class="ri-phone-fill mt-1"></i>
-                        <span>+91-7765979725</span>
-                    </li>
-                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-                        <i class="ri-mail-fill mt-1"></i>
-                        <a href="mailto:contact@thundergits.com"
-                            class="hover:text-pink-400 transition">info@thundergits.com</a>
-                    </li>
-                </ul>
+              <h3 class="text-2xl font-bold text-black mb-2">Step 3: Offer</h3>
+              <p class="text-gray-500 leading-relaxed">Once we've completed the interview process, we'll extend an offer to join our team!</p>
             </div>
-
+          </div>
         </div>
+      </div>
 
-        <!-- Bottom -->
-        <div
-            class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
-            <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
-            <div class="flex space-x-6 text-gray-300">
-                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/thundergits/" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-                <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-                        class="fab fa-x-twitter"></i></a> -->
+      <!-- Right: Image -->
+      <div data-aos="fade-left" class="relative">
+        <div class="absolute -inset-4 bg-indigo-500/5 blur-2xl rounded-3xl"></div>
+        <img src="./assets/about-img.png" alt="Hiring Process" class="relative w-full rounded-[3rem] shadow-2xl object-cover aspect-[4/5]" />
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer class="w-full bg-gray-100 text-black border-t border-gray-200">
+      <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
+          <div class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-300">
+              <div class="mb-6">
+                  <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
+              </div>
+              <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
+                  Redefining the digital landscape through innovation and precision. ThunderGits delivers future-ready technology solutions.
+              </p>
+          </div>
+          <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Facebook</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Instagram</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Youtube</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold text-center md:text-left hover:bg-gray-200 transition-colors">Linkedin</a>
+          </div>
+          <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+              <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">LET'S TALK</h2>
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+                  <span class="flex items-start gap-2 min-w-[220px] flex-1">
+                      <i class="ri-map-pin-line mt-0.5"></i>
+                      <span class="leading-relaxed">2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+                      <i class="ri-phone-line"></i> +91-7765979725
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+                      <i class="ri-mail-line"></i> info@thundergits.com
+                  </span>
+              </div>
+          </div>
+      </div>
+      <div class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-black">© 2025 | All rights reserved by ThunderGits Technology</p>
+          <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
+              <a href="./about.html">About us</a>
+              <a href="./blog.html">Blogs</a>
+              <a href="./contact.html">Contact</a>
+              <a href="./career.html">Career</a>
+          </nav>
+      </div>
+  </footer>
 
-            </div>
-        </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
 
-        <!-- Floating Presale Chat -->
-        <!-- <div class="fixed bottom-16 left-4 flex items-center z-40">
-            <div
-                class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
-                <img src="./assets/call-center (1).png" alt="">
-            </div>
-            <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
-           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
-                AI Assistant
-            </span>
-        </div> -->
+    // Interactive Grid Logic
+    const gridContainer = document.getElementById('hero-grid');
+    function buildGrid() {
+        if (!gridContainer) return;
+        gridContainer.innerHTML = '';
+        const columns = Math.ceil(window.innerWidth / 50);
+        const rows = Math.ceil(window.innerHeight / 50);
+        const totalCells = columns * rows;
+        for (let i = 0; i < totalCells; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
+            gridContainer.appendChild(cell);
+        }
+    }
+    buildGrid();
+    window.addEventListener('resize', buildGrid);
 
-        <!-- Scroll To Top -->
-        <button id="scrollToggleBtn"
-            class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
-            <i id="scrollIcon" class="fas fa-arrow-up"></i>
-        </button>
-    </footer>
+    // Navbar Scroll Logic
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        nav.style.background = "rgba(10, 10, 10, 0.85)";
+        nav.style.backdropFilter = "blur(12px)";
+        nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+      } else {
+        nav.style.background = "transparent";
+        nav.style.backdropFilter = "none";
+        nav.style.borderBottom = "none";
+      }
+    });
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000, // Animation duration
-            once: true,     // Only animate once
-        });
-    </script>
-
-    <script src="./script.js"></script>
-    <script src="./index.js"></script>
-
+    // Mobile Menu Toggle
+    const btn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => {
+      const isOpen = mobileMenu.style.display === "flex";
+      mobileMenu.style.display = isOpen ? "none" : "flex";
+    });
+  </script>
 </body>
-
 </html>

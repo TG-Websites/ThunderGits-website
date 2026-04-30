@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Blog - ThunderGits Technologies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              text: '#DEDDDB',
+              textLight: '#848484',
+              bg: '#141414',
+              bd: '#424040',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-white font-sans text-blue-950 overflow-x-hidden">
+
+  <!-- Navbar -->
+  <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+      </a>
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <div id="menu" class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-gray-300 hover:text-white text-sm transition">Home</a>
+        <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
+        <a href="./work.html" class="text-gray-300 hover:text-white text-sm transition">Work</a>
+        <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
+        <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Career</a>
+        <a href="./blog.html" class="text-white text-sm transition font-bold border-b-2 border-indigo-500">Blog</a>
+        <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
+        <a href="./contact.html" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get a Quote</a>
+      </div>
+    </div>
+    <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
+      <a href="./index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
+      <a href="./about.html" class="text-gray-300 hover:text-white text-sm">About</a>
+      <a href="./work.html" class="text-gray-300 hover:text-white text-sm">Work</a>
+      <a href="./service.html" class="text-gray-300 hover:text-white text-sm">Services</a>
+      <a href="./career.html" class="text-gray-300 hover:text-white text-sm">Career</a>
+      <a href="./blog.html" class="text-white text-sm font-bold">Blog</a>
+      <a href="./contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero-section" class="relative min-h-[70vh] flex items-center justify-center text-center text-white overflow-hidden bg-black">
+    <!-- STATIC CSS GRID LINES -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    
+    <!-- INTERACTIVE HIGHLIGHT CELLS -->
+    <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+
+    <!-- TOP CENTER GLOW -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.55) 0%, rgba(56,189,248,0.35) 20%, rgba(99,102,241,0.12) 50%, transparent 75%);"></div>
+
+    <!-- CONTENT -->
+    <div class="relative z-10 px-6 max-w-6xl mx-auto flex flex-col items-center" data-aos="fade-up">
+      <span class="inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-gray-300 mb-8 uppercase">
+        Our Editorial Hub
+      </span>
+      <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.5rem;">
+        Stories, Ideas <br/> & <span class="text-indigo-400">Innovation</span>
+      </h1>
+      <p class="text-gray-400 text-lg leading-relaxed max-w-2xl">
+        Insights from our team on artificial intelligence, <br class="hidden md:block"/> 
+        modern engineering, and the future of digital products.
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Listing -->
+  <main class="bg-white py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Static Blogs -->
+        <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up">
+          <div class="h-60 overflow-hidden relative">
+            <img src="./assets/why-react-native.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="React Native">
+            <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">Strategy</span>
+              <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">5 min read</span>
+            </div>
+            <h3 class="text-xl font-bold text-blue-950 mb-4 group-hover:text-indigo-600 transition-colors leading-tight">Why React Native for Enterprise Apps</h3>
+            <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">Discover why leading enterprises are choosing React Native for their cross-platform mobile strategy.</p>
+            <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Jan 01, 2025</span>
+              <a href="./blogs/why-react-native.html" class="w-10 h-10 rounded-full bg-blue-950 text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-60 overflow-hidden relative">
+            <img src="./assets/deepseek.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Deepseek AI">
+            <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">AI</span>
+              <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">8 min read</span>
+            </div>
+            <h3 class="text-xl font-bold text-blue-950 mb-4 group-hover:text-indigo-600 transition-colors leading-tight">Deepseek: AI-Powered Search</h3>
+            <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">The future of search is here. Learn how Deepseek is revolutionizing information retrieval with AI.</p>
+            <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Dec 20, 2024</span>
+              <a href="./blogs/deepseek.html" class="w-10 h-10 rounded-full bg-blue-950 text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-60 overflow-hidden relative">
+            <img src="./assets/the-ethical-web-scraping.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Ethical Scraping">
+            <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">Data</span>
+              <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">6 min read</span>
+            </div>
+            <h3 class="text-xl font-bold text-blue-950 mb-4 group-hover:text-indigo-600 transition-colors leading-tight">The Ethical Side of Web Scraping</h3>
+            <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">Navigating the complex landscape of web scraping ethics and legal considerations for businesses.</p>
+            <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Dec 15, 2024</span>
+              <a href="./blogs/the-ethical-web-scraping.html" class="w-10 h-10 rounded-full bg-blue-950 text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+                <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Blogs will be injected here -->
+      </div>
+      
+      <!-- Loading Indicator -->
+      <div id="blogLoading" class="mt-24 text-center hidden">
+        <div class="inline-block w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+        <p class="mt-4 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Fetching more stories...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-gray-100 text-black border-t border-gray-200">
+      <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
+          <div class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-300">
+              <div class="mb-6">
+                  <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
+              </div>
+              <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
+                  Redefining the digital landscape through innovation and precision. ThunderGits delivers future-ready technology solutions.
+              </p>
+          </div>
+          <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Facebook</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Instagram</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Youtube</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold text-center md:text-left hover:bg-gray-200 transition-colors">Linkedin</a>
+          </div>
+          <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+              <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">LET'S TALK</h2>
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+                  <span class="flex items-start gap-2 min-w-[220px] flex-1">
+                      <i class="ri-map-pin-line mt-0.5"></i>
+                      <span class="leading-relaxed">2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+                      <i class="ri-phone-line"></i> +91-7765979725
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+                      <i class="ri-mail-line"></i> info@thundergits.com
+                  </span>
+              </div>
+          </div>
+      </div>
+      <div class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-black">© 2025 | All rights reserved by ThunderGits Technology</p>
+          <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
+              <a href="./about.html">About us</a>
+              <a href="./blog.html">Blogs</a>
+              <a href="./contact.html">Contact</a>
+              <a href="./career.html">Career</a>
+          </nav>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    
+    // Interactive Grid Logic
+    const gridContainer = document.getElementById('hero-grid');
+    function buildGrid() {
+        gridContainer.innerHTML = '';
+        const columns = Math.ceil(window.innerWidth / 50);
+        const rows = Math.ceil(window.innerHeight / 50);
+        const totalCells = columns * rows;
+        for (let i = 0; i < totalCells; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
+            gridContainer.appendChild(cell);
+        }
+    }
+    buildGrid();
+    window.addEventListener('resize', buildGrid);
+
+    // Navbar scroll logic
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        nav.style.background = "rgba(10, 10, 10, 0.85)";
+        nav.style.backdropFilter = "blur(12px)";
+        nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+      } else {
+        nav.style.background = "transparent";
+        nav.style.backdropFilter = "none";
+        nav.style.borderBottom = "none";
+      }
+    });
+
+    // Mobile menu toggle
+    const btn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => {
+      const isOpen = mobileMenu.style.display === "flex";
+      mobileMenu.style.display = isOpen ? "none" : "flex";
+    });
+
+    // Dynamic Blog Loading
+    async function loadDynamicBlogs() {
+      const grid = document.getElementById('blogGrid');
+      const loader = document.getElementById('blogLoading');
+      loader.classList.remove('hidden');
+
+      try {
+        const res = await fetch("https://tgspace-back.thundergits.com/api/blogs/published?sortBy=publishedAt&sortOrder=desc");
+        const data = await res.json();
+        const blogs = data.data || [];
+
+        blogs.forEach(blog => {
+          const card = `
+            <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up">
+              <div class="h-60 overflow-hidden relative">
+                <img src="${blog.featuredImage || './assets/default-blog.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}" onerror="this.src='./assets/default-blog.webp'">
+                <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
+              </div>
+              <div class="p-8 flex flex-col flex-grow">
+                <div class="flex items-center gap-3 mb-5">
+                  <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">${blog.category || 'General'}</span>
+                  <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Read More</span>
+                </div>
+                <h3 class="text-xl font-bold text-blue-950 mb-4 group-hover:text-indigo-600 transition-colors leading-tight">${blog.title}</h3>
+                <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">${blog.excerpt || 'Read the latest updates from ThunderGits.'}</p>
+                <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">${new Date(blog.publishedAt).toLocaleDateString()}</span>
+                  <a href="./blogdetails.html?id=${blog._id}" class="w-10 h-10 rounded-full bg-blue-950 text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+                    <i class="fas fa-arrow-right text-xs"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+          grid.insertAdjacentHTML('beforeend', card);
+        });
+      } catch (err) {
+        console.error("Failed to fetch dynamic blogs", err);
+      } finally {
+        loader.classList.add('hidden');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadDynamicBlogs);
+  </script>
+</body>
+</html>

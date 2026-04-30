@@ -85,403 +85,341 @@
 <body class="bg-dark text-theme-text">
 
 
-  <section class="relative bg-cover bg-center" style="background-image: url('./../assets/bg2.png');">
+  <!-- Reading Progress Bar -->
+  <div id="progress-container" class="fixed top-0 left-0 w-full h-1 z-[100] bg-transparent transition-all duration-300">
+    <div id="progress-bar" class="h-full bg-blue-600 w-0 transition-all duration-150 shadow-[0_0_10px_rgba(37,99,235,0.5)]"></div>
+  </div>
 
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+  <!-- Navbar -->
+  <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+      <!-- LOGO -->
+      <a href="./../index.html" class="flex items-center">
+        <img src="./../assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+      </a>
 
-    <!-- Fixed Header -->
-    <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
-      <div
-        class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
-        <!-- Logo -->
-        <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
-          <img src="./../assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-          <span>ThunderGits</span>
-        </div>
+      <!-- MOBILE BUTTON -->
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
 
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
-          <a href="./../index.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">Home</a>
-          <a href="./../about.html"
-           class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-          <a href="./../work.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
-          <a href="./../service.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-          <a href="./../career.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-          <a href="./../contact.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-        </nav>
-
-        <!-- Quote + Hamburger -->
-        <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
-          <a href="#quote" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
-               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
-               border border-pink-500 hover:text-white transition-all duration-300 ease-out
-               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
-               before:scale-x-0 before:origin-left hover:before:scale-x-100 
-               before:transition-transform before:duration-300 before:z-[-1]">
-            Get a Quote
-          </a>
-
-          <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars text-lg"></i>
-          </button>
-        </div>
-      </div>
-    </header>
-
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-      class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-      <div class="flex justify-between items-center mb-10">
-        <div class="flex items-center gap-2 text-lg font-bold">
-          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-          <span class="text-white">ThunderGits</span>
-        </div>
-        <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
-          <span>Close</span>
-          <span class="text-2xl leading-none">×</span>
-        </button>
-      </div>
-
-      <div class="space-y-5">
-        <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Home</span><span class="text-sm">→</span>
-        </a>
-        <a href="./../about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>About</span><span class="text-sm">→</span>
-        </a>
-        <a href="./../work.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Work</span><span class="text-sm">→</span>
-        </a>
-        <a href="./../service.html"
-          class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Services</span><span class="text-sm">→</span>
-        </a>
-        <a href="./../career.html"
-          class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Career</span><span class="text-sm">→</span>
-        </a>
-        <a href="./../contact.html"
-          class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Contact</span><span class="text-sm">→</span>
-        </a>
-
-        <!-- Get a Quote Button -->
-        <div class="pt-4">
-          <a href="#"
-            class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
-            Get a Quote
-          </a>
-        </div>
-      </div>
-
-      <!-- Footer Icons -->
-      <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
-        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-         <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-x-twitter"></i></a> -->
+      <!-- MENU -->
+      <div id="menu" class="hidden md:flex items-center gap-8">
+        <a href="./../about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
+        <a href="./../service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
+        <a href="./../blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
+        <a href="./../contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
+        <a href="./../career.html" class="text-gray-300 hover:text-white text-sm transition">Careers</a>
       </div>
     </div>
 
+    <!-- MOBILE DROPDOWN -->
+    <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
+      <a href="./../about.html" class="text-gray-300 hover:text-white text-sm">About</a>
+      <a href="./../service.html" class="text-gray-300 hover:text-white text-sm">Services</a>
+      <a href="./../blog.html" class="text-gray-300 hover:text-white text-sm">Blog</a>
+      <a href="./../contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
+      <a href="./../career.html" class="text-gray-300 hover:text-white text-sm">Careers</a>
+    </div>
+  </nav>
 
+  <!-- Aligent Hero -->
+  <section id="hero-section" class="relative pt-64 pb-32 bg-black overflow-hidden">
+      <!-- STATIC CSS GRID LINES -->
+      <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+      
+      <!-- INTERACTIVE HIGHLIGHT CELLS -->
+      <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
 
-
-
-
-    <!-- <script>
-  function adjustHeroContent() {
-    const img = document.getElementById('hero-image');
-    const content = document.getElementById('hero-content');
-    const border = document.getElementById('gradient-border');
-
-    const imgHeight = img.clientHeight;
-    content.style.height = imgHeight + 'px';
-    border.style.height = imgHeight + 'px';
-  }
-
-  window.addEventListener('load', adjustHeroContent);
-  window.addEventListener('resize', adjustHeroContent);
-</script> -->
-
-
-
+      <!-- TOP CENTER GLOW -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 800px; height: 400px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);"></div>
+      
+      <div class="relative z-10 text-center px-6 max-w-5xl mx-auto" data-aos="fade-up">
+          <span class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
+            Technology Insights
+          </span>
+          <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2.5rem;">
+              Deepseek: AI-Powered Search <br/> <span class="text-indigo-400">for the Future</span>
+          </h1>
+          <div class="flex justify-center items-center gap-10 text-gray-400 text-xs font-medium uppercase tracking-widest">
+            <div class="flex items-center gap-3">
+                <i class="ri-user-line text-indigo-400"></i>
+                <span>Shivam Kumar Jha</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <i class="ri-calendar-line text-indigo-400"></i>
+                <span>February 16, 2025</span>
+            </div>
+        </div>
+      </div>
   </section>
 
 
+  <main class="bg-white">
+    <section class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-16">
+        
+        <!-- Sidebar -->
+        <aside class="hidden lg:block w-64 flex-shrink-0 sticky top-32 h-fit">
+          <div class="space-y-12">
+            <div>
+              <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-6 block">Share Article</span>
+              <div class="flex flex-col gap-4">
+                <a href="#" class="w-12 h-12 rounded-2xl border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 hover:bg-gray-50 transition-all"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="w-12 h-12 rounded-2xl border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 hover:bg-gray-50 transition-all"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="w-12 h-12 rounded-2xl border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 hover:bg-gray-50 transition-all"><i class="far fa-envelope"></i></a>
+              </div>
+            </div>
+            
+            <div>
+              <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-6 block">Reading Info</span>
+              <div class="space-y-6">
+                <div class="flex items-center gap-4 text-blue-950">
+                  <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+                    <i class="far fa-clock text-xs"></i>
+                  </div>
+                  <span class="text-[10px] font-black uppercase tracking-widest">6 Min Read</span>
+                </div>
+                <div class="flex items-center gap-4 text-blue-950">
+                  <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+                    <i class="far fa-eye text-xs"></i>
+                  </div>
+                  <span class="text-[10px] font-black uppercase tracking-widest">2.4k Views</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
 
-  <script>
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        menu.style.opacity = 0;
-        setTimeout(() => {
-          menu.style.opacity = 1;
-        }, 10);
-      } else {
-        menu.style.opacity = 0;
-        setTimeout(() => {
-          menu.classList.add('hidden');
-        }, 300); // match with CSS transition
-      }
-    }
-  </script>
+        <!-- Article Body -->
+        <div class="flex-grow max-w-3xl">
+          <div class="mb-16 overflow-hidden rounded-[40px] shadow-2xl shadow-blue-950/10" data-aos="zoom-in">
+            <img src="./../assets/Deepseek.webp" class="w-full h-auto object-cover transition-transform duration-700 hover:scale-105">
+          </div>
 
+          <article class="prose prose-lg md:prose-xl prose-blue max-w-none prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter prose-p:text-gray-600 prose-p:leading-relaxed prose-img:rounded-3xl prose-strong:text-blue-950">
+            <p class="text-2xl md:text-3xl text-blue-950 font-black tracking-tighter mb-16 leading-tight">
+              In a world where search is evolving beyond keywords, Deepseek is emerging as a powerful contender, leveraging artificial intelligence to redefine how we discover and interact with information online.
+            </p>
 
-  <!-- Floating Social Bar -->
-    <!-- <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
-    <a href="#"
-      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-      <i class="fas fa-shopping-cart"></i>
-    </a>
-    <a href="#"
-      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-purple-500/50 transition-all animate-float-up-down">
-      <i class="fas fa-image"></i>
-    </a>
-    <a href="#"
-      class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-      <i class="fas fa-credit-card"></i>
-    </a>
-  </div> -->
+            <h2 class="text-4xl font-black uppercase tracking-tighter text-blue-950 mb-10 leading-none">Introduction</h2>
+            <p>Artificial intelligence is no longer just a buzzword; it’s the backbone of modern information retrieval. Traditional search engines are being challenged by intelligent systems that understand context, intent, and complex queries. Deepseek is at the forefront of this revolution.</p>
 
-  <div class="container mx-auto flex flex-wrap py-6 mt-5 px-4 sm:px-6 lg:px-8 max-w-7xl" style="margin-top: 5rem;">
-    <!-- Post Section -->
-    <section class="w-full md:w-2/3 flex flex-col items-center px-3 text-white">
-      <article class="flex flex-col shadow-lg my-4">
-        <!-- Article Image -->
-        <a href="#" class="hover:opacity-75">
-          <img src="./../assets/Deepseek.webp" class="rounded-lg shadow h-82 w-82 ml-5">
-        </a>
-        <div class="flex flex-col justify-start p-6">
-          <a href="#" class="text-sm font-bold uppercase pb-4 purple-clr">Technology</a>
-          <a href="#" class="text-3xl font-bold hover:text-gray-300 pb-4">Deepseek: AI-Powered Search for the Future</a>
-          <p class="text-sm pb-8">By <a href="#" class="font-semibold hover:text-gray-300">Shivam Kumar Jha</a>,
-            Published on February 16th, 2025</p>
+            <h2 class="text-4xl font-black uppercase tracking-tighter text-blue-950 mb-10 leading-none">What is Deepseek App?</h2>
+            <p>
+              Deepseek is an <strong>AI-powered search engine</strong> that utilizes <strong>Machine Learning (ML)</strong> and <strong>Natural Language Processing (NLP)</strong> to deliver highly accurate, intent-based results rather than just keyword matches.
+            </p>
 
-          <h2 class="text-2xl font-bold pb-3">Introduction</h2>
-          <p class="pb-3">Deepseek is revolutionizing search technology with AI-driven algorithms that enhance user
-            experience and provide more relevant search results. This blog explores how Deepseek works, its unique
-            features, and its impact on the digital world.</p>
+            <h2 class="text-4xl font-black uppercase tracking-tighter text-blue-950 mb-10 leading-none">Key Features</h2>
+            <ul class="space-y-6 mb-16">
+              <li class="flex items-start gap-4">
+                <span class="w-6 h-6 bg-blue-950 text-white rounded-full flex items-center justify-center text-[10px] font-black shrink-0 mt-1">01</span>
+                <p class="text-gray-600 text-lg"><strong>Contextual Search:</strong> Understands the intent behind a query for meaningful results.</p>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="w-6 h-6 bg-blue-950 text-white rounded-full flex items-center justify-center text-[10px] font-black shrink-0 mt-1">02</span>
+                <p class="text-gray-600 text-lg"><strong>AI-Powered Personalization:</strong> Learns from interactions to provide tailored suggestions.</p>
+              </li>
+            </ul>
 
-          <h2 class="text-2xl font-bold pb-3">What is Deepseek App?</h2>
-          <p class="pb-3">
-            Deepseek is an <strong>AI-powered search engine</strong> that utilizes <strong>Machine Learning
-              (ML)</strong> and <strong>Natural Language Processing (NLP)</strong> to deliver highly accurate,
-            intent-based results rather than just keyword matches. Unlike traditional search engines, Deepseek focuses
-            on <strong>understanding context</strong> and <strong>personalizing recommendations</strong> based on user
-            behavior. It adapts to user preferences and delivers highly relevant search results.
-          </p>
+            <div class="my-16 p-10 bg-gray-50 rounded-[40px] border border-gray-100 relative overflow-hidden group">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-150"></div>
+              <h2 class="text-blue-950 font-black uppercase tracking-tighter text-3xl mb-6 relative z-10">Conclusion</h2>
+              <p class="text-gray-600 leading-relaxed text-lg relative z-10 italic">Deepseek is setting new standards in search technology. As we move towards a more <strong>AI-integrated future</strong>, Deepseek ensures a smarter, faster, and ethical search experience.</p>
+            </div>
+          </article>
 
-          <h2 class="text-2xl font-bold pb-3">Key Features of Deepseek</h2>
-          <ul class="list-disc pl-6 pb-3">
-            <li><strong>Contextual Search:</strong> Deepseek understands the intent behind a query and delivers more
-              meaningful results.</li>
-            <li><strong>AI-Powered Personalization:</strong> It learns from user interactions to provide tailored
-              suggestions.</li>
-            <li><strong>Privacy-Centric:</strong> Unlike many other search engines, Deepseek ensures user data is
-              protected.</li>
-            <li><strong>Multimodal Search:</strong> Supports text, voice, and image-based searches.</li>
-            <li><strong>Real-time Insights:</strong> AI-driven insights offer faster and more accurate information.</li>
-          </ul>
-
-          <h2 class="text-2xl font-bold pb-3">Why Deepseek is the Future of Search?</h2>
-          <p class="pb-3">Search engines have traditionally relied on keyword-based indexing, often delivering
-            <strong>irrelevant</strong> or <strong>spam-heavy results</strong>. Deepseek disrupts this approach by:</p>
-          <ul class="list-disc pl-6 pb-3">
-            <li><strong>Understanding Natural Language:</strong> Instead of just matching words, it processes meaning.
-            </li>
-            <li><strong>Faster and Smarter Search:</strong> AI optimizations reduce clutter and improve efficiency.</li>
-            <li><strong>Ethical AI Implementation:</strong> Focuses on <strong>unbiased</strong> and
-              <strong>transparent</strong> information retrieval.</li>
-          </ul>
-
-          <h2 class="text-2xl font-bold pb-3">Challenges and Ethical Considerations</h2>
-          <p class="pb-3">AI-powered search engines, while innovative, face certain challenges:</p>
-          <ul class="list-disc pl-6 pb-3">
-            <li><strong>Data Bias:</strong> AI models must be trained on diverse data to avoid biased search results.
-            </li>
-            <li><strong>Privacy Concerns:</strong> Users need <strong>assurance</strong> that their search data remains
-              confidential.</li>
-            <li><strong>Transparency Issues:</strong> It’s important that AI-driven search results remain
-              <strong>explainable</strong> and <strong>unmanipulated</strong>.</li>
-          </ul>
-
-          <h2 class="text-2xl font-bold pb-3">Conclusion</h2>
-          <p class="pb-3">Deepseek is setting new standards in search technology with AI and ML innovations. As we move
-            towards a more <strong>AI-integrated future</strong>, Deepseek ensures a <strong>smarter, faster, and
-              ethical</strong> search experience. Whether you're a researcher, student, or business, Deepseek is poised
-            to <strong>transform the way we access information</strong>.</p>
-        </div>
-      </article>
-
-      <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow mt-10 mb-10 p-6">
-        <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
-          <img src="./../assets/shivam.png" class="rounded-full shadow h-32 w-32">
-        </div>
-        <div class="flex-1 flex flex-col justify-center md:justify-start">
-          <p class="font-semibold text-2xl">Shivam Jha</p>
-          <p class="pt-2">Shivam is a seasoned web and mobile app developer with years of experience in
-            building scalable, high-performance solutions using the latest technologies like React, React
-            Native, and Node.js. He enjoys sharing his knowledge and helping businesses grow by adopting
-            modern development practices.</p>
-          <div class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-400 pt-4">
-            <a class="" href="#">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a class="pl-4" href="#">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a class="pl-4" href="#">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a class="pl-4" href="#">
-              <i class="fab fa-linkedin"></i>
-            </a>
+          <!-- Author Info -->
+          <div class="mt-24 pt-16 border-t border-gray-100">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-10 p-10 bg-gray-50 rounded-[40px]">
+              <div class="w-24 h-24 bg-blue-950 rounded-[30px] flex items-center justify-center text-white font-black text-3xl shadow-2xl shadow-blue-950/20 flex-shrink-0">
+                S
+              </div>
+              <div>
+                <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-3 block">About Author</span>
+                <h4 class="text-3xl font-black uppercase tracking-tighter text-blue-950 mb-4">Shivam Kumar Jha</h4>
+                <p class="text-gray-500 leading-relaxed text-lg max-w-xl">
+                  AI Researcher and Tech Enthusiast. Shivam specializes in exploring the intersection of neural networks and consumer technology.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Sidebar Section -->
-    <aside class="w-full md:w-1/3 flex flex-col items-center px-3 text-white">
-      <div class="w-full shadow flex flex-col my-4 p-6">
-        <p class="text-xl font-semibold pb-5">About Us</p>
-        <p class="pb-2">We are a team of AI-driven developers committed to creating <strong>intelligent</strong> and
-          <strong>privacy-first</strong> solutions. Our mission is to enhance the way people search and interact with
-          information online.</p>
-        <a href="/pages/about.html"
-          class="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white flex items-center justify-center px-2 py-3 mt-4">Get
-          to know us</a>
+    <!-- More Articles (Related) -->
+    <section class="py-24 bg-gray-100/50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+        <span class="text-[10px] tracking-[0.4em] font-black uppercase text-blue-950/40 mb-4 block">Recommended</span>
+        <h2 class="text-4xl font-black uppercase tracking-tighter text-blue-950 mb-16">Further Reading</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
+          <a href="./the-ethical-web-scraping.html" class="group bg-white p-10 rounded-[40px] border border-gray-100 hover:border-blue-950 transition-all duration-500">
+            <span class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-4 block">Ethics</span>
+            <h3 class="text-2xl font-black uppercase tracking-tighter text-blue-950 mb-6 group-hover:text-blue-600 transition-colors">The Ethical Side of Web Scraping</h3>
+            <div class="flex items-center gap-2 text-blue-950 font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+              Read More <span>→</span>
+            </div>
+          </a>
+          <a href="./why-react-native.html" class="group bg-white p-10 rounded-[40px] border border-gray-100 hover:border-blue-950 transition-all duration-500">
+            <span class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-4 block">Development</span>
+            <h3 class="text-2xl font-black uppercase tracking-tighter text-blue-950 mb-6 group-hover:text-blue-600 transition-colors">Why React Native for Enterprises</h3>
+            <div class="flex items-center gap-2 text-blue-950 font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+              Read More <span>→</span>
+            </div>
+          </a>
+        </div>
       </div>
-    </aside>
+    </section>
+  </main>
   </div>
 
 
 
- <footer class="relative text-[#EDE6D6] pt-16">
+  <!-- FOOTER -->
+  <footer class="w-full bg-gray-100 text-black">
 
-        <!-- 🔥 Background Image Only -->
-        <div class="absolute inset-0">
-            <img src="./../assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
-        </div>
+      <!-- TOP SECTION -->
+      <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
 
-        <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
+          <!-- COL 1: LOGO + DESC -->
+          <div
+              class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-700">
+              <div class="mb-6">
+                  <img src="./../assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
+              </div>
+              <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
+                  When do they work well, and when do they on us and finally, when do we
+                  actually need how can we avoid them.
+              </p>
+          </div>
 
-            <!-- Logo Section -->
-            <div class="flex flex-col items-center md:items-start">
-                <a class="flex items-center justify-center md:justify-start text-white mb-4">
-                    <img src="./../assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
-                    <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
-                </a>
-                <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
-                    Innovating through technology and creativity, building the future.
-                </p>
-            </div>
+          <!-- COL 2: SOCIAL LINKS -->
+          <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-black">
+              <a href="#"
+                  class="px-12 py-8 text-gray-800 font-semibold border-b border-black  text-center md:text-left">Facebook</a>
+              <a href="#"
+                  class="px-12 py-8 text-gray-800 font-semibold border-b border-black  text-center md:text-left">Instagram</a>
+              <a href="#"
+                  class="px-12 py-8 text-gray-800 font-semibold border-b border-black  text-center md:text-left">Youtube</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold  text-center md:text-left">Linkedin</a>
+          </div>
 
-            <!-- Explore -->
-            <div>
-                <h3 class="font-semibold mb-3 text-lg">Explore</h3>
-                <ul class="space-y-2">
-                    <li><a href="./../index.html" class="hover:text-pink-400 transition">Home</a></li>
-                    <li><a href="./../about.html" class="hover:text-pink-400 transition">About</a></li>
-                    <li><a href="./../work.html" class="hover:text-pink-400 transition">Work</a></li>
-                    <li><a href="./../index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
-                </ul>
-            </div>
+          <!-- COL 3: LET'S TALK + CONTACT INFO -->
+          <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+              <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">
+                  LET'S TALK
+              </h2>
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
 
-            <!-- Company -->
-            <div>
-                <h3 class="font-semibold mb-3 text-lg">Company</h3>
-                <ul class="space-y-2">
-                    <li><a href="./../privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
-                    <li><a href="./../career.html" class="hover:text-pink-400 transition">Career</a></li>
-                    <li><a href="./../contact.html" class="hover:text-pink-400 transition">Contact</a></li>
-                    <li><a href="./../service.html" class="hover:text-pink-400 transition">Services</a></li>
-                </ul>
-            </div>
+                  <span class="flex items-start gap-2 min-w-[220px] flex-1">
+                      <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                      </svg>
+                      <span class="leading-relaxed">
+                          2nd Floor, E 1/74, near YMCA,<br>
+                          Sector 11, Faridabad, Haryana 121006
+                      </span>
+                  </span>
 
-            <!-- Contact -->
-            <div>
-                <h3 class="font-semibold mb-3 text-lg">Contact</h3>
-                <ul class="space-y-3">
-                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-                        <i class="ri-map-pin-fill mt-1"></i>
-                        <span>2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
-                    </li>
-                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-                        <i class="ri-phone-fill mt-1"></i>
-                        <span>+91-7765979725</span>
-                    </li>
-                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-                        <i class="ri-mail-fill mt-1"></i>
-                        <a href="mailto:contact@thundergits.com"
-                            class="hover:text-pink-400 transition">info@thundergits.com</a>
-                    </li>
-                </ul>
-            </div>
+                  <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+                      <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
+                      </svg>
+                      +91-7765979725
+                  </span>
 
-        </div>
+                  <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+                      <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
+                      </svg>
+                      info@thundergits.com
+                  </span>
 
-        <!-- Bottom -->
-        <div
-            class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
-            <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
-            <div class="flex space-x-6 text-gray-300">
-                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/thundergits/" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-                <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-                        class="fab fa-x-twitter"></i></a> -->
+              </div>
+          </div>
 
+      </div>
 
-            </div>
-        </div>
+      <!-- BOTTOM BAR -->
+      <div
+          class="border-t border-black px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-black">© 2025 | All rights reserved by ThunderGits Technology</p>
+          <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
+              <a href="./../about.html">About us</a>
+              <a href="./../blog.html">Blogs</a>
+              <a href="./../contact.html">Contact</a>
+              <a href="./../career.html">Career</a>
+          </nav>
+      </div>
 
-        <!-- Floating Presale Chat -->
-        <!-- <div class="fixed bottom-16 left-4 flex items-center z-40">
-            <div
-                class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
-                <img src="./assets/call-center (1).png" alt="">
-            </div>
-            <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
-           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
-                AI Assistant
-            </span>
-        </div> -->
-
-        <!-- Scroll To Top -->
-        <button id="scrollToggleBtn"
-            class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
-            <i id="scrollIcon" class="fas fa-arrow-up"></i>
-        </button>
-    </footer>
+  </footer>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        // Animate when the page loads
-        window.addEventListener('DOMContentLoaded', () => {
-            const hero = document.querySelector('.hero-content');
-            setTimeout(() => {
-                hero.classList.add('animate');
-            }, 200); // delay for smooth effect
+        AOS.init({ duration: 1000, once: true });
+
+        // Interactive Grid Logic
+        const gridContainer = document.getElementById('hero-grid');
+        function buildGrid() {
+            if (!gridContainer) return;
+            gridContainer.innerHTML = '';
+            const columns = Math.ceil(window.innerWidth / 50);
+            const rows = Math.ceil(window.innerHeight / 50);
+            const totalCells = columns * rows;
+            for (let i = 0; i < totalCells; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
+                gridContainer.appendChild(cell);
+            }
+        }
+        buildGrid();
+        window.addEventListener('resize', buildGrid);
+
+        // Navbar and Progress Logic
+        const nav = document.getElementById('main-nav');
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.getElementById('progress-container');
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            if (progressBar) progressBar.style.width = scrolled + "%";
+
+            if (winScroll > 80) {
+                nav.style.background = "rgba(10, 10, 10, 0.85)";
+                nav.style.backdropFilter = "blur(12px)";
+                nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+                if (progressContainer) progressContainer.style.background = "rgba(255,255,255,0.05)";
+            } else {
+                nav.style.background = "transparent";
+                nav.style.backdropFilter = "none";
+                nav.style.borderBottom = "none";
+                if (progressContainer) progressContainer.style.background = "transparent";
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        btn.addEventListener("click", () => {
+            const isOpen = mobileMenu.style.display === "flex";
+            mobileMenu.style.display = isOpen ? "none" : "flex";
         });
     </script>
-
     <script src="./../script.js"></script>
 
 </body>

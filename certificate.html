@@ -4,456 +4,308 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ThunderGits • Certificate Verification</title>
-  <link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            tg: {
-              pink: "#ec4899",
-              violet: "#8b5cf6",
-              bg: "#070A12",
-              card: "rgba(255,255,255,0.06)",
-              stroke: "rgba(255,255,255,0.12)",
-            },
-            theme: {
-              text: "#DEDDDB",
-              textLight: "#848484",
-              textDark: "#EFE8CE",
-              bg: "#141414",
-              bd: "#424040",
-            },
-            dark: "#0e0e0e",
-            offwhite: "#f5e9cd",
-            graytext: "#d9d9d9",
-            linkhover: "#f5e9cd",
-          },
-        },
-      },
-    };
-  </script>
-
+  <title>Certificate Verification - ThunderGits Technologies</title>
+  <link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="bg-dark text-theme-text min-h-screen">
+<body class="bg-black text-white font-['Inter',sans-serif]">
 
-  <!-- Background -->
-  <section class="relative bg-cover bg-center" style="background-image: url('./assets/bg2.png'); min-height: 100vh;">
+  <!-- Navbar -->
+  <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+      <!-- LOGO -->
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+      </a>
 
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent"></div>
+      <!-- MOBILE BUTTON -->
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
 
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-sm bg-dark/70">
-      <div class="w-full mx-auto px-6 sm:px-10 flex justify-between items-center h-20 border-b border-theme-bd">
-        <div class="flex items-center gap-2 text-2xl font-bold text-offwhite">
-          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-          <span>ThunderGits</span>
-        </div>
-
-        <nav class="hidden md:flex gap-8 text-offwhite font-medium">
-          <a href="./index.html" class="pb-1 border-b-2 border-linkhover transition-all">Home</a>
-          <a href="./about.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-          <a href="./work.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
-          <a href="./service.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-          <a href="./career.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-          <a href="./product.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Products</a>
-          <a href="./contact.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-        </nav>
-
-        <div class="flex items-center gap-6">
-          <a href="./contact.html" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
-            text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
-            border border-pink-500 hover:text-white transition-all duration-300 ease-out
-            before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
-            before:scale-x-0 before:origin-left hover:before:scale-x-100 
-            before:transition-transform before:duration-300 before:z-[-1]">
-            Get a Quote
-          </a>
-
-          <button class="md:hidden text-offwhite hover:text-theme-textDark" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars text-lg"></i>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-      class="md:hidden hidden fixed inset-0 z-[60] bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-      <div class="flex justify-between items-center mb-10">
-        <div class="flex items-center gap-2 text-lg font-bold">
-          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-          <span class="text-white">ThunderGits</span>
-        </div>
-        <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
-          <span>Close</span>
-          <span class="text-2xl leading-none">×</span>
-        </button>
-      </div>
-
-      <div class="space-y-5">
-        <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Home</span><span class="text-sm">→</span>
-        </a>
-        <a href="./about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>About</span><span class="text-sm">→</span>
-        </a>
-        <a href="./work.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Work</span><span class="text-sm">→</span>
-        </a>
-        <a href="./service.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Services</span><span class="text-sm">→</span>
-        </a>
-        <a href="./career.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Career</span><span class="text-sm">→</span>
-        </a>
-        <a href="./product.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Products</span><span class="text-sm">→</span>
-        </a>
-        <a href="./contact.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Contact</span><span class="text-sm">→</span>
-        </a>
+      <!-- MENU -->
+      <div id="menu" class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-gray-300 hover:text-white text-sm transition">Home</a>
+        <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
+        <a href="./work.html" class="text-gray-300 hover:text-white text-sm transition">Work</a>
+        <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
+        <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Career</a>
+        <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
+        <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
+        <a href="./contact.html" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get a Quote</a>
       </div>
     </div>
 
-    <!-- PAGE CONTENT (padding-top for fixed navbar) -->
-    <main class="relative z-10 mx-auto max-w-6xl px-4 pt-28 pb-12">
+    <!-- MOBILE DROPDOWN -->
+    <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
+      <a href="./index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
+      <a href="./about.html" class="text-gray-300 hover:text-white text-sm">About</a>
+      <a href="./work.html" class="text-gray-300 hover:text-white text-sm">Work</a>
+      <a href="./service.html" class="text-gray-300 hover:text-white text-sm">Services</a>
+      <a href="./career.html" class="text-gray-300 hover:text-white text-sm">Career</a>
+      <a href="./blog.html" class="text-gray-300 hover:text-white text-sm">Blog</a>
+      <a href="./contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
+    </div>
+  </nav>
 
-      <!-- HERO + STATUS -->
-      <div class="grid gap-6 md:grid-cols-[1.35fr_0.9fr]">
-        <div class="rounded-2xl border border-tg-stroke bg-tg-card p-6 md:p-10">
-          <div class="text-xs tracking-[0.28em] text-white/60">CERTIFICATE VERIFICATION</div>
-
-          <h1 class="mt-4 leading-tight">
-            <span
-              class="block text-4xl md:text-6xl font-semibold bg-gradient-to-r from-tg-pink to-tg-violet bg-clip-text text-transparent">
-              Verified Internship
-            </span>
-            <span class="block text-4xl md:text-6xl font-semibold text-offwhite/95">
-              Certificate
-            </span>
+  <!-- Hero Section with Background Grid -->
+  <section id="hero-section" class="relative pt-48 pb-24 bg-black overflow-hidden min-h-[60vh] flex items-center">
+    <!-- Grid Overlay -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+    
+    <!-- Top Glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);"></div>
+    
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 w-full">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Left: Hero Text -->
+        <div data-aos="fade-right">
+          <span class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-8 uppercase font-bold">
+            Verification Portal
+          </span>
+          <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
+            Verified <span class="text-indigo-400 font-semibold">Internship</span> <br/> Certificates
           </h1>
-
-          <p class="mt-4 max-w-xl text-sm md:text-base text-white/60">
-            Scan verified. This certificate is issued by ThunderGits Technologies and matches our official records.
+          <p class="text-gray-400 text-lg leading-relaxed mb-8 font-light max-w-xl">
+            Authenticity matters. Use our secure portal to verify internship completion records issued by ThunderGits Technologies.
           </p>
+        </div>
 
-          <!-- Glow line -->
-          <div class="relative mt-6 h-6 max-w-md">
-            <div class="absolute inset-0 flex items-center">
-              <div
-                class="w-full h-1 rounded-full bg-gradient-to-r from-transparent via-tg-pink to-transparent blur-sm opacity-70">
-              </div>
-            </div>
-            <div class="absolute inset-0 flex items-center">
-              <div
-                class="w-full h-[4px] rounded-full bg-gradient-to-r from-transparent via-tg-pink to-transparent opacity-90">
-              </div>
-            </div>
+        <!-- Right: Status Card (Shows up immediately or during loading) -->
+        <div data-aos="fade-left" class="relative group">
+          <div class="absolute -inset-4 bg-indigo-500/10 blur-2xl rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition duration-700"></div>
+          <div class="relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] p-8 md:p-10 backdrop-blur-md">
+             <div class="flex items-center gap-6 mb-8">
+               <div id="status-icon" class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                 <i class="ri-shield-user-line text-3xl text-gray-400"></i>
+               </div>
+               <div>
+                 <div id="status-text" class="text-sm font-black uppercase tracking-widest text-gray-500">Checking Status...</div>
+                 <div id="status-cert-id" class="text-2xl font-bold text-white mt-1"># —</div>
+               </div>
+             </div>
+             
+             <div class="space-y-4 mb-8">
+               <div class="flex justify-between items-center py-3 border-b border-white/5">
+                 <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Domain</span>
+                 <span id="domainTop" class="text-white text-sm font-semibold">—</span>
+               </div>
+               <div class="flex justify-between items-center py-3 border-b border-white/5">
+                 <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Mode</span>
+                 <span id="modeTop" class="text-white text-sm font-semibold">—</span>
+               </div>
+               <div class="flex justify-between items-center py-3 border-b border-white/5">
+                 <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Duration</span>
+                 <span id="durationTop" class="text-white text-sm font-semibold">—</span>
+               </div>
+             </div>
+
+             <div class="flex flex-col gap-4">
+                <a href="./contact.html" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition duration-300 text-center shadow-lg shadow-indigo-900/50">
+                  Contact Support
+                </a>
+             </div>
           </div>
         </div>
 
-        <div class="rounded-2xl border border-tg-stroke bg-tg-card p-6">
-          <div class="flex items-center gap-3">
-            <div
-              class="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 ring-1 ring-emerald-400/30">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M20 6L9 17l-5-5" stroke="rgba(52,211,153,1)" stroke-width="2.4" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div>
-              <div class="text-sm font-semibold text-emerald-200">VERIFIED</div>
-              <div class="text-xs text-white/60">
-                Certificate ID: <span id="certificateIdTop" class="text-white/80">—</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="my-5 h-px w-full bg-white/10"></div>
-
-          <div class="mt-5 space-y-3 text-sm">
-            <div class="flex items-center justify-between text-white/70">
-              <span>Domain</span>
-              <span id="domainTop" class="text-white">—</span>
-            </div>
-            <div class="flex items-center justify-between text-white/70">
-              <span>Mode</span>
-              <span id="modeTop" class="text-white">—</span>
-            </div>
-            <div class="flex items-center justify-between text-white/70">
-              <span>Duration</span>
-              <span id="durationTop" class="text-white">—</span>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-2">
-             <a id="openLinkBtn" href="./contact.html"
-            class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-tg-pink to-tg-violet px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(236,72,153,0.22)] hover:opacity-95 active:opacity-90">
-            CONTACT SUPPORT
-          </a>
-
-          <a id="openLinkBtn" href="./about.html"
-            class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center">
-            About
-          </a>
-          </div>
-         
-
-         
-        </div>
       </div>
-
-      <!-- Loading -->
-      <section id="loading" class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
-        <div class="flex items-center gap-4">
-          <div class="h-10 w-10 animate-pulse rounded-xl bg-white/10"></div>
-          <div class="flex-1">
-            <div class="h-4 w-40 animate-pulse rounded bg-white/10"></div>
-            <div class="mt-2 h-3 w-72 animate-pulse rounded bg-white/10"></div>
-          </div>
-        </div>
-        <div class="mt-6 grid gap-4 md:grid-cols-2">
-          <div class="h-36 animate-pulse rounded-2xl bg-white/5"></div>
-          <div class="h-36 animate-pulse rounded-2xl bg-white/5"></div>
-        </div>
-      </section>
-
-      <!-- Error -->
-      <section id="errorBox" class="hidden mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
-        <div class="flex items-start gap-4">
-          <div class="mt-1 h-10 w-10 rounded-xl bg-red-500/15 ring-1 ring-red-500/30"></div>
-          <div>
-            <div id="errorTitle" class="text-lg font-semibold">Invalid Certificate</div>
-            <div id="errorMsg" class="mt-1 text-sm text-white/70">No record found for this certificate.</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Verified Content -->
-      <section id="content" class="hidden mt-8">
-        <div class="grid gap-6 md:grid-cols-2">
-
-          <!-- Profile -->
-          <div class="rounded-2xl border border-tg-stroke bg-tg-card p-6">
-            <div class="flex items-center gap-4">
-              <div class="h-16 w-16 rounded-2xl bg-white/10 ring-1 ring-white/10 overflow-hidden">
-                <img id="profile" alt="Intern Avatar" class="h-full w-full object-cover"
-                  src='./assets/user.png' />
-              </div>
-
-              <div class="flex-1">
-                <div id="name" class="text-xl font-bold">—</div>
-                <div class="mt-1 text-sm text-white/70">Candidate</div>
-                <div
-                  class="mt-2 inline-flex rounded-full bg-tg-pink/15 px-3 py-1 text-xs font-semibold text-tg-pink ring-1 ring-tg-pink/25">
-                  COMPLETED
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-6 grid gap-3 text-sm">
-              <div class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                <span class="text-white/60">Certificate ID</span>
-                <span id="certificateId" class="font-semibold">—</span>
-              </div>
-
-              <div class="grid gap-3 sm:grid-cols-2">
-                <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  <div class="text-xs text-white/60">Start Date</div>
-                  <div id="startDate" class="mt-1 font-semibold">—</div>
-                </div>
-
-                <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  <div class="text-xs text-white/60">End Date</div>
-                  <div id="endDate" class="mt-1 font-semibold">—</div>
-                </div>
-              </div>
-
-              <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                <div class="text-xs text-white/60">Location</div>
-                <div id="location" class="mt-1 font-semibold">—</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Summary -->
-          <div class="rounded-2xl border border-tg-stroke bg-tg-card p-6">
-            <div class="text-lg font-semibold">Internship Summary</div>
-            <div class="mt-4 grid gap-3">
-              <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                <div class="text-xs text-white/60">Domain</div>
-                <div id="domain" class="mt-1 font-semibold">—</div>
-              </div>
-
-              <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                <div class="text-xs text-white/60">Mode</div>
-                <div id="mode" class="mt-1 font-semibold">—</div>
-              </div>
-
-              <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                <div class="text-xs text-white/60">Record Link</div>
-                <a id="link" class="mt-1 block break-all font-semibold text-tg-pink hover:underline" href="#"
-                  target="_blank" rel="noreferrer">—</a>
-              </div>
-
-              <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                <div class="text-xs text-white/60">Last Updated</div>
-                <div id="updatedAt" class="mt-1 font-semibold">—</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-        <div class="mt-8 rounded-2xl border border-tg-stroke bg-tg-card p-6">
-          <div class="text-lg font-semibold">Audit Trail</div>
-
-          <div class="mt-4 grid gap-3 md:grid-cols-3">
-            <!-- <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-              <div class="text-xs text-white/60">Created At</div>
-              <div id="createdAt" class="mt-1 font-semibold">—</div>
-            </div>
-            <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-              <div class="text-xs text-white/60">Updated At</div>
-              <div id="updatedAt2" class="mt-1 font-semibold">—</div>
-            </div> -->
-            <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-              <div class="text-xs text-white/60">Verified</div>
-              <div id="verifiedNow" class="mt-1 font-semibold">Just now</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/50 hidden">
-        © <span id="year"></span> ThunderGits Technologies. All rights reserved.
-      </footer>
-
-    </main>
+    </div>
   </section>
 
-  <footer class="relative text-[#EDE6D6] pt-16">
+  <!-- Main Content Area -->
+  <main class="relative z-10 max-w-screen-xl mx-auto px-6 pb-24 -mt-12">
+    
+    <!-- Loading State -->
+    <section id="loading" class="grid gap-8 md:grid-cols-2">
+      <div class="h-80 bg-white/[0.02] border border-white/10 rounded-[2.5rem] animate-pulse"></div>
+      <div class="h-80 bg-white/[0.02] border border-white/10 rounded-[2.5rem] animate-pulse"></div>
+    </section>
 
-    <!-- 🔥 Background Image Only -->
-    <div class="absolute inset-0">
-      <img src="./assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
-    </div>
+    <!-- Error State -->
+    <section id="errorBox" class="hidden max-w-2xl mx-auto bg-red-500/5 border border-red-500/20 rounded-[2.5rem] p-12 text-center">
+       <div class="w-20 h-20 bg-red-500/10 rounded-3xl flex items-center justify-center mx-auto mb-8">
+         <i class="ri-error-warning-line text-4xl text-red-500"></i>
+       </div>
+       <h2 id="errorTitle" class="text-3xl font-bold text-white mb-4">Invalid Certificate</h2>
+       <p id="errorMsg" class="text-gray-400 text-lg font-light leading-relaxed mb-8">The certificate record could not be found or the link is malformed.</p>
+       <a href="./contact.html" class="inline-flex px-8 py-3 border border-red-500/30 text-red-400 text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-red-500/10 transition">Report Issue</a>
+    </section>
 
-    <!-- Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
+    <!-- Verified Content -->
+    <section id="content" class="hidden">
+      <div class="grid gap-12 lg:grid-cols-2">
+        
+        <!-- Intern Profile Card -->
+        <div class="bg-white/[0.02] border border-white/10 rounded-[2.5rem] p-10 backdrop-blur-md" data-aos="fade-up">
+          <div class="flex items-center gap-8 mb-10">
+            <div class="w-24 h-24 rounded-3xl overflow-hidden border border-white/10 bg-white/5">
+              <img id="profile" src="./assets/user.png" alt="Intern Avatar" class="w-full h-full object-cover grayscale" />
+            </div>
+            <div>
+              <h2 id="name" class="text-3xl font-bold text-white mb-2">—</h2>
+              <p class="text-indigo-400 text-sm font-semibold uppercase tracking-widest">Verified Intern</p>
+              <span class="inline-block mt-3 px-3 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-black uppercase tracking-widest rounded-md border border-emerald-500/20">Completed</span>
+            </div>
+          </div>
 
-      <!-- Logo Section -->
-      <div class="flex flex-col items-center md:items-start">
-        <a class="flex items-center justify-center md:justify-start text-white mb-4">
-          <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
-          <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
-        </a>
-        <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
-          Innovating through technology and creativity, building the future.
-        </p>
+          <div class="grid gap-4">
+             <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6 flex justify-between items-center">
+               <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Certificate ID</span>
+               <span id="certificateId" class="text-white font-mono font-bold tracking-wider">—</span>
+             </div>
+             <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+                  <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Start Date</span>
+                  <span id="startDate" class="text-white font-bold">—</span>
+                </div>
+                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+                  <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">End Date</span>
+                  <span id="endDate" class="text-white font-bold">—</span>
+                </div>
+             </div>
+             <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+               <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Location</span>
+               <span id="location" class="text-white font-bold">—</span>
+             </div>
+          </div>
+        </div>
+
+        <!-- Internship Details Card -->
+        <div class="bg-white/[0.02] border border-white/10 rounded-[2.5rem] p-10 backdrop-blur-md" data-aos="fade-up" data-aos-delay="100">
+           <h3 class="text-xl font-bold text-white mb-8">Internship Summary</h3>
+           
+           <div class="grid gap-4">
+              <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+                <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Domain</span>
+                <span id="domain" class="text-white font-bold text-lg">—</span>
+              </div>
+              <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+                <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Execution Mode</span>
+                <span id="mode" class="text-white font-bold text-lg">—</span>
+              </div>
+              <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+                <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Project/Record Link</span>
+                <a id="link" href="#" target="_blank" class="text-indigo-400 font-bold hover:text-white transition break-all">Checking record...</a>
+              </div>
+              <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
+                <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Verification Timestamp</span>
+                <span id="verifiedNow" class="text-white font-bold">—</span>
+              </div>
+           </div>
+
+           <div class="mt-8 pt-8 border-t border-white/5 text-center">
+             <p class="text-gray-500 text-xs italic">"This certificate is an official document of ThunderGits Technologies. Any alteration without authorization renders this document void."</p>
+           </div>
+        </div>
+
       </div>
+    </section>
 
-      <!-- Explore -->
-      <div>
-        <h3 class="font-semibold mb-3 text-lg">Explore</h3>
-        <ul class="space-y-2">
-          <li><a href="./index.html" class="hover:text-pink-400 transition">Home</a></li>
-          <li><a href="./about.html" class="hover:text-pink-400 transition">About</a></li>
-          <li><a href="./work.html" class="hover:text-pink-400 transition">Work</a></li>
-          <li><a href="./index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
-        </ul>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-gray-100 text-black border-t border-gray-200">
+      <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
+          <div class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-300">
+              <div class="mb-6">
+                  <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
+              </div>
+              <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
+                  Redefining the digital landscape through innovation and precision. ThunderGits delivers future-ready technology solutions.
+              </p>
+          </div>
+          <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Facebook</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Instagram</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Youtube</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold text-center md:text-left hover:bg-gray-200 transition-colors">Linkedin</a>
+          </div>
+          <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+              <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">LET'S TALK</h2>
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+                  <span class="flex items-start gap-2 min-w-[220px] flex-1">
+                      <i class="ri-map-pin-line mt-0.5"></i>
+                      <span class="leading-relaxed">2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+                      <i class="ri-phone-line"></i> +91-7765979725
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+                      <i class="ri-mail-line"></i> info@thundergits.com
+                  </span>
+              </div>
+          </div>
       </div>
-
-      <!-- Company -->
-      <div>
-        <h3 class="font-semibold mb-3 text-lg">Company</h3>
-        <ul class="space-y-2">
-          <li><a href="./privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
-          <li><a href="./career.html" class="hover:text-pink-400 transition">Career</a></li>
-          <li><a href="./contact.html" class="hover:text-pink-400 transition">Contact</a></li>
-          <li><a href="./service.html" class="hover:text-pink-400 transition">Services</a></li>
-        </ul>
+      <div class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-black">© 2025 | All rights reserved by ThunderGits Technology</p>
+          <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
+              <a href="./about.html">About us</a>
+              <a href="./blog.html">Blogs</a>
+              <a href="./contact.html">Contact</a>
+              <a href="./career.html">Career</a>
+          </nav>
       </div>
-
-      <!-- Contact -->
-      <div>
-        <h3 class="font-semibold mb-3 text-lg">Contact</h3>
-        <ul class="space-y-3">
-          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-            <i class="ri-map-pin-fill mt-1"></i>
-            <span>2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
-          </li>
-          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-            <i class="ri-phone-fill mt-1"></i>
-            <span>+91-7765979725</span>
-          </li>
-          <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-            <i class="ri-mail-fill mt-1"></i>
-            <a href="mailto:contact@thundergits.com" class="hover:text-pink-400 transition">info@thundergits.com</a>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Bottom -->
-    <div
-      class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
-      <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
-      <div class="flex space-x-6 text-gray-300">
-        <a href="https://www.linkedin.com/company/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/thundergits/" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-        <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-            class="fab fa-x-twitter"></i></a> -->
-
-
-      </div>
-    </div>
-
-    <!-- Floating Presale Chat -->
-    <!-- <div class="fixed bottom-16 left-4 flex items-center z-40">
-      <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
-        <img src="./assets/call-center (1).png" alt="">
-      </div>
-      <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
-           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
-        AI Assistant
-      </span>
-    </div> -->
-
-    <!-- Scroll To Top -->
-    <button id="scrollToggleBtn"
-      class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
-      <i id="scrollIcon" class="fas fa-arrow-up"></i>
-    </button>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    function toggleMobileMenu() {
-      const m = document.getElementById("mobileMenu");
-      m.classList.toggle("hidden");
-    }
+    AOS.init({ duration: 1000, once: true });
 
+    // Interactive Grid Logic
+    const gridContainer = document.getElementById('hero-grid');
+    function buildGrid() {
+        if (!gridContainer) return;
+        gridContainer.innerHTML = '';
+        const columns = Math.ceil(window.innerWidth / 50);
+        const rows = Math.ceil(window.innerHeight / 50);
+        const totalCells = columns * rows;
+        for (let i = 0; i < totalCells; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
+            gridContainer.appendChild(cell);
+        }
+    }
+    buildGrid();
+    window.addEventListener('resize', buildGrid);
+
+    // Navbar Scroll Logic
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        nav.style.background = "rgba(10, 10, 10, 0.85)";
+        nav.style.backdropFilter = "blur(12px)";
+        nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+      } else {
+        nav.style.background = "transparent";
+        nav.style.backdropFilter = "none";
+        nav.style.borderBottom = "none";
+      }
+    });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuBtn.addEventListener("click", () => {
+      const isOpen = mobileMenu.style.display === "flex";
+      mobileMenu.style.display = isOpen ? "none" : "flex";
+    });
+
+    // --- Certificate Verification Logic ---
     const API_BASE = "https://tgspace-back.thundergits.com";
     const CERT_ENDPOINT = (certificateId) => `${API_BASE}/api/certificate/${encodeURIComponent(certificateId)}`;
 
@@ -496,14 +348,21 @@
       $("errorBox").classList.remove("hidden");
       $("errorTitle").textContent = title;
       $("errorMsg").textContent = msg;
+
+      // Update Status Card
+      $("status-text").textContent = "Verification Failed";
+      $("status-text").className = "text-sm font-black uppercase tracking-widest text-red-500";
+      $("status-icon").innerHTML = '<i class="ri-error-warning-line text-3xl text-red-500"></i>';
     }
 
     function setText(id, value) {
-      $(id).textContent = value ?? "—";
+      const el = $(id);
+      if (el) el.textContent = value ?? "—";
     }
 
     function setHref(id, url) {
       const el = $(id);
+      if (!el) return;
       if (!url) {
         el.textContent = "—";
         el.href = "#";
@@ -513,16 +372,14 @@
       el.href = url;
     }
 
-
-
     (async function init() {
-      $("year").textContent = new Date().getFullYear();
-
       const certificateId = getCertificateIdFromUrl();
       if (!certificateId) {
-        showError("Invalid Link", "Missing certificateId in URL. Use ?certificateId=CERT1002");
+        showError("Invalid Link", "Missing certificateId in URL. Please use a valid verification link.");
         return;
       }
+
+      $("status-cert-id").textContent = `# ${certificateId}`;
 
       try {
         const res = await fetch(CERT_ENDPOINT(certificateId), {
@@ -531,34 +388,40 @@
         });
 
         if (res.status === 404) {
-          showError("Invalid Certificate", "No record found for this certificate ID.");
+          showError("Not Found", "No record exists for this certificate ID.");
           return;
         }
 
         if (!res.ok) {
-          showError("Server Error", `Unable to verify right now. (HTTP ${res.status})`);
+          showError("System Error", "Unable to verify certificate at this time.");
           return;
         }
 
         const record = await res.json();
 
         if (!record || !record.certificateId) {
-          showError("Invalid Response", "Verification record is malformed.");
+          showError("Invalid Data", "The verification record is incomplete.");
           return;
         }
 
+        // Hide Loaders / Errors
         $("loading").classList.add("hidden");
         $("errorBox").classList.add("hidden");
         $("content").classList.remove("hidden");
 
-        
-        setText("certificateIdTop", record.certificateId);
+        // Update Status Card
+        $("status-text").textContent = "Record Verified";
+        $("status-text").className = "text-sm font-black uppercase tracking-widest text-emerald-400";
+        $("status-icon").innerHTML = '<i class="ri-checkbox-circle-line text-3xl text-emerald-400"></i>';
+        $("status-icon").className = "w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center";
+
+        // Fill Status Details
         setText("domainTop", record.domain || "—");
         setText("modeTop", record.mode || "—");
         setText("durationTop", `${formatDate(record.startDate)} - ${formatDate(record.endDate)}`);
-        console.log('image', record.image)
 
-       $("profile").src = record.image || "./assets/user.png";
+        // Fill Profile Card
+        $("profile").src = record.image || "./assets/user.png";
         setText("name", record.name || "—");
         setText("certificateId", record.certificateId);
         setText("startDate", formatDate(record.startDate));
@@ -568,24 +431,17 @@
         const loc = [a.city, a.district, a.state, a.pincode].filter(Boolean).join(", ");
         setText("location", loc || "N/A");
 
+        // Fill Summary Card
         setText("domain", record.domain || "—");
         setText("mode", record.mode || "—");
         setHref("link", record.link);
-        setText("updatedAt", formatDateTime(record.updatedAt));
-
-        // setText("createdAt", formatDateTime(record.createdAt));
-        // setText("updatedAt2", formatDateTime(record.updatedAt));
         setText("verifiedNow", new Date().toLocaleString());
 
-        // $("openLinkBtn").href = record.link || "./";
-
-
       } catch (err) {
-        showError("Network Error", "Unable to reach verification server. Please try again later.");
+        showError("Network Error", "Verification server is currently unreachable.");
       }
     })();
   </script>
-  
 </body>
 
 </html>

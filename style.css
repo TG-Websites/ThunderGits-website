@@ -13,7 +13,7 @@
   display: inline-block;
   margin-bottom: 1.25rem;
   /* Gradient text for quote */
-  background: linear-gradient(to right, #ec4899, #9333ea);
+  background: linear-gradient(to right, #172554, #1e3a8a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -33,13 +33,13 @@
 /* Active (center) Slide Styling */
 /* Active (center) Slide Styling */
 .swiper-slide-active .testimonial-box {
-  background: linear-gradient(to right, #ec4899, #9333ea) !important;
+  background: linear-gradient(to right, #172554, #1e3a8a) !important;
 }
 
 .swiper-slide-active .testimonial-box::before {
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-top: 12px solid #ba77f8; /* Use gradient start color to make it visible */
+  border-top: 12px solid #3b82f6; /* Use gradient start color to make it visible */
   transform: translate(-50%, 100%);
   left: 50%;
 }
@@ -67,7 +67,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: linear-gradient(to right, #ec4899, #9333ea);
+  background: linear-gradient(to right, #172554, #1e3a8a);
   opacity: 1;
 }
 
@@ -92,7 +92,7 @@
   font-weight: bold;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: linear-gradient(to right, #ec4899, #9333ea);
+  background: linear-gradient(to right, #172554, #1e3a8a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0 3rem;
@@ -116,7 +116,7 @@
   font-weight: bold;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: linear-gradient(to right, #ec4899, #9333ea);
+  background: linear-gradient(to right, #172554, #1e3a8a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0 3rem;
@@ -136,20 +136,20 @@
 
 /* Tailwind accent color replacement */
 .text-accent { 
-  background: linear-gradient(to right, #ec4899, #9333ea);
+  background: linear-gradient(to right, #172554, #1e3a8a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }        
 .border-accent { 
-  border-image: linear-gradient(to right, #ec4899, #9333ea) 1; 
+  border-image: linear-gradient(to right, #172554, #1e3a8a) 1; 
 }
 .before\:bg-accent::before { 
-  background: linear-gradient(to right, #ec4899, #9333ea); 
+  background: linear-gradient(to right, #172554, #1e3a8a); 
 }
 
 /* Blog Swiper Pagination Dots */
 .blogSwiper .swiper-pagination-bullet-active {
-  background: linear-gradient(to right, #ec4899, #9333ea);
+  background: linear-gradient(to right, #172554, #1e3a8a);
 }
 
 

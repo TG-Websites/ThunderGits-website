@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const res = await fetch("http://localhost:5000/api/contact/create", {
+            const res = await fetch("https://tgspace-back.thundergits.com/api/contact/create", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("resume", form.resume.files[0]); // ✅ real file
 
         try {
-            const res = await fetch("http://localhost:5000/api/applications", {
+            const res = await fetch("https://tgspace-back.thundergits.com/api/applications", {
                 method: "POST",
                 body: formData, // ✅ no headers, browser sets automatically
             });
@@ -84,7 +84,7 @@ async function fetchJobs() {
         const container = document.getElementById("jobsContainer");
         if (!container) return; // Exit if container doesn't exist on this page
         
-        const res = await fetch("http://localhost:5000/api/jobs?role=superadmin");
+        const res = await fetch("https://tgspace-back.thundergits.com/api/jobs?role=superadmin");
         const data = await res.json();
 
         console.log("Raw API response:", data);
@@ -144,7 +144,7 @@ async function fetchLatestBlogs() {
         const container = document.getElementById("blogContainer");
         if (!container) return;
 
-        const res = await fetch("http://localhost:5000/api/blogs/published?limit=3&sortBy=publishedAt&sortOrder=desc");
+        const res = await fetch("https://tgspace-back.thundergits.com/api/blogs/published?limit=3&sortBy=publishedAt&sortOrder=desc");
         const data = await res.json();
 
         console.log("Blog API response:", data);

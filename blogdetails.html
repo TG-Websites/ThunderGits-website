@@ -83,163 +83,252 @@
 <body class="bg-dark text-theme-text">
 
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
-    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex justify-between items-center h-20 border-b border-theme-bd">
-      
-      <!-- Logo -->
-      <div class="flex items-center gap-3 animate-slide-fade-up">
-        <img src="./assets/thundergits logo.webp" alt="ThunderGits" class="h-10 w-auto">
-      </div>
+  <!-- Navbar -->
+  <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+      <!-- LOGO -->
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+      </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
-        <a href="./index.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
-        <a href="./about.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
-        <a href="./services.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-        <a href="./work.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
-        <a href="./career.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-        <a href="./contact.html" class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-      </nav>
+      <!-- MOBILE BUTTON -->
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
 
-      <!-- Quote + Hamburger -->
-      <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
-        <a href="./contact.html" class="hidden sm:block bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-md font-medium hover:opacity-90 transition-all">
-          Get a Quote
-        </a>
-        
-        <!-- Hamburger Menu -->
-        <button onclick="toggleMobileMenu()" class="md:hidden text-offwhite text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
+      <!-- MENU -->
+      <div id="menu" class="hidden md:flex items-center gap-8">
+        <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
+        <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
+        <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
+        <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
+        <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Careers</a>
       </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-dark/95 backdrop-blur-sm border-t border-theme-bd">
-      <nav class="flex flex-col p-6 space-y-4 text-offwhite">
-        <a href="./index.html" class="hover:text-linkhover transition-all">Home</a>
-        <a href="./about.html" class="hover:text-linkhover transition-all">About</a>
-        <a href="./services.html" class="hover:text-linkhover transition-all">Services</a>
-        <a href="./work.html" class="hover:text-linkhover transition-all">Work</a>
-        <a href="./career.html" class="hover:text-linkhover transition-all">Career</a>
-        <a href="./contact.html" class="hover:text-linkhover transition-all">Contact</a>
-        <a href="./contact.html" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-md font-medium hover:opacity-90 transition-all text-center mt-4">
-          Get a Quote
-        </a>
-      </nav>
+    <!-- MOBILE DROPDOWN -->
+    <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
+      <a href="./about.html" class="text-gray-300 hover:text-white text-sm">About</a>
+      <a href="./service.html" class="text-gray-300 hover:text-white text-sm">Services</a>
+      <a href="./blog.html" class="text-gray-300 hover:text-white text-sm">Blog</a>
+      <a href="./contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
+      <a href="./career.html" class="text-gray-300 hover:text-white text-sm">Careers</a>
     </div>
-  </header>
+  </nav>
+
+  <!-- Reading Progress Bar -->
+  <div id="progress-container" class="fixed top-0 left-0 w-full h-1 z-[100] bg-transparent">
+    <div id="progress-bar" class="h-full bg-blue-600 w-0 transition-all duration-150"></div>
+  </div>
 
   <!-- Loading Spinner -->
-  <div id="loadingSpinner" class="fixed inset-0 bg-dark/80 flex items-center justify-center z-50">
-    <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-pink-500"></div>
+  <div id="loadingSpinner" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+    <div class="flex flex-col items-center">
+      <div class="w-16 h-16 border-4 border-blue-950/10 border-t-blue-950 rounded-full animate-spin mb-4"></div>
+      <span class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-950/40">Loading Article</span>
+    </div>
   </div>
 
   <!-- Blog Content -->
-  <main class="pt-20 min-h-screen bg-white">
-    <!-- Blog Header -->
-    <section id="blogHeader" class="py-20 bg-gradient-to-br from-dark via-dark/90 to-transparent">
-      <div class="max-w-4xl mx-auto px-6 text-center">
+  <main class="min-h-screen bg-white">
+    <!-- Aligent Hero -->
+    <section id="blogHeader" class="relative pt-48 pb-32 bg-black overflow-hidden">
+      <!-- STATIC CSS GRID LINES -->
+      <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+      
+      <!-- INTERACTIVE HIGHLIGHT CELLS (JS fills this) -->
+      <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+
+      <!-- TOP CENTER GLOW -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 800px; height: 400px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);"></div>
+
+      <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
         <!-- Loading placeholder -->
-        <div class="animate-pulse">
-          <div class="h-8 bg-gray-700 rounded mb-4"></div>
-          <div class="h-12 bg-gray-700 rounded mb-6"></div>
-          <div class="flex justify-center space-x-4 text-sm">
-            <div class="h-4 bg-gray-700 rounded w-24"></div>
-            <div class="h-4 bg-gray-700 rounded w-20"></div>
-            <div class="h-4 bg-gray-700 rounded w-16"></div>
+        <div id="headerPlaceholder" class="animate-pulse">
+          <div class="h-4 bg-white/10 rounded w-24 mx-auto mb-8"></div>
+          <div class="h-16 bg-white/10 rounded w-4/5 mx-auto mb-10"></div>
+          <div class="flex justify-center items-center gap-10">
+            <div class="h-4 bg-white/10 rounded w-32"></div>
+            <div class="h-4 bg-white/10 rounded w-32"></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Blog Content -->
-    <section id="blogContent" class="py-16">
-      <div class="max-w-4xl mx-auto px-6">
-        <!-- Featured Image -->
-        <div id="featuredImageContainer" class="mb-12">
-          <div class="animate-pulse bg-gray-300 h-96 rounded-lg"></div>
-        </div>
-
-        <!-- Blog Body -->
-        <article id="blogBody" class="prose prose-lg max-w-none">
-          <div class="animate-pulse space-y-4">
-            <div class="h-4 bg-gray-300 rounded w-full"></div>
-            <div class="h-4 bg-gray-300 rounded w-5/6"></div>
-            <div class="h-4 bg-gray-300 rounded w-4/6"></div>
-            <div class="h-4 bg-gray-300 rounded w-full"></div>
-            <div class="h-4 bg-gray-300 rounded w-3/4"></div>
-          </div>
-        </article>
-
-        <!-- Author Info -->
-        <div id="authorInfo" class="mt-12 p-6 bg-gray-50 rounded-lg">
-          <div class="animate-pulse flex items-center space-x-4">
-            <div class="rounded-full bg-gray-300 h-16 w-16"></div>
-            <div class="flex-1 space-y-2">
-              <div class="h-4 bg-gray-300 rounded w-1/4"></div>
-              <div class="h-3 bg-gray-300 rounded w-1/2"></div>
+        
+        <!-- Real Header (Hidden initially) -->
+        <div id="headerContent" class="hidden opacity-0 transition-opacity duration-1000">
+          <span id="blogCategory" class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold"></span>
+          <h1 id="blogTitle" style="font-family: 'Inter', sans-serif; font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;"></h1>
+          <div class="flex justify-center items-center gap-8 text-gray-400 text-xs font-medium uppercase tracking-widest">
+            <div class="flex items-center gap-2">
+              <i class="ri-calendar-line text-indigo-400"></i>
+              <span id="blogDate"></span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="ri-time-line text-indigo-400"></i>
+              <span id="blogReadTime">8 min read</span>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Tags -->
-        <div id="blogTags" class="mt-8">
-          <div class="animate-pulse flex flex-wrap gap-2">
-            <div class="h-8 bg-gray-300 rounded-full w-16"></div>
-            <div class="h-8 bg-gray-300 rounded-full w-20"></div>
-            <div class="h-8 bg-gray-300 rounded-full w-14"></div>
+    <!-- Featured Image -->
+    <div id="featuredImageContainer" class="relative z-20 -mt-24 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="animate-pulse bg-gray-200 h-[500px] rounded-3xl shadow-2xl"></div>
+      </div>
+    </div>
+
+    <section id="blogContent" class="py-24 relative">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-16">
+        
+        <!-- Sidebar Info (Desktop Only) -->
+        <aside class="hidden lg:block w-64 flex-shrink-0 sticky top-32 h-fit">
+          <div class="space-y-12">
+            <div>
+              <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-4 block">Share</span>
+              <div class="flex flex-col gap-4">
+                <a href="#" class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 transition-all"><i class="fab fa-linkedin-in text-sm"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 transition-all"><i class="fab fa-twitter text-sm"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 transition-all"><i class="far fa-envelope text-sm"></i></a>
+              </div>
+            </div>
+            
+            <div id="readingStats">
+              <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-4 block">Stats</span>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3 text-blue-950">
+                  <i class="far fa-eye text-sm text-gray-300"></i>
+                  <span class="text-xs font-black uppercase tracking-widest">1.2k Views</span>
+                </div>
+                <div class="flex items-center gap-3 text-blue-950">
+                  <i class="far fa-clock text-sm text-gray-300"></i>
+                  <span class="text-xs font-black uppercase tracking-widest" id="timeToRead">5 Min Read</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Body -->
+        <div class="flex-grow max-w-3xl">
+          <article id="blogBody" class="prose prose-lg prose-blue max-w-none prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter prose-p:text-gray-600 prose-p:leading-relaxed prose-img:rounded-3xl">
+            <div class="animate-pulse space-y-6">
+              <div class="h-4 bg-gray-100 rounded w-full"></div>
+              <div class="h-4 bg-gray-100 rounded w-5/6"></div>
+              <div class="h-4 bg-gray-100 rounded w-4/6"></div>
+              <div class="h-4 bg-gray-100 rounded w-full"></div>
+              <div class="h-4 bg-gray-100 rounded w-3/4"></div>
+            </div>
+          </article>
+
+          <!-- Tags -->
+          <div id="blogTags" class="mt-16 pt-12 border-t border-gray-100">
+            <div class="animate-pulse flex flex-wrap gap-3">
+              <div class="h-10 bg-gray-100 rounded-full w-24"></div>
+              <div class="h-10 bg-gray-100 rounded-full w-32"></div>
+            </div>
+          </div>
+
+          <!-- Author Info -->
+          <div id="authorInfo" class="mt-16">
+            <div class="animate-pulse flex items-center gap-8">
+              <div class="w-24 h-24 bg-gray-100 rounded-3xl"></div>
+              <div class="flex-1 space-y-3">
+                <div class="h-4 bg-gray-100 rounded w-1/4"></div>
+                <div class="h-6 bg-gray-100 rounded w-1/2"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Related Blogs Section -->
-    <section id="relatedBlogs" class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">More Articles</h2>
-          <p class="text-gray-600">Discover more insights and stories from our blog</p>
+    <!-- More Articles -->
+    <section id="relatedBlogs" class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="mb-16 text-center">
+          <span class="text-[10px] tracking-[0.4em] font-black uppercase text-blue-950/40 mb-4 block">Keep Reading</span>
+          <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-blue-950 mb-6">More Articles</h2>
+          <div class="w-12 h-1 bg-blue-950 mx-auto rounded-full"></div>
         </div>
 
         <!-- Related Blogs Container -->
-        <div id="relatedBlogsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="relatedBlogsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <!-- Loading placeholders -->
-          <div class="animate-pulse">
-            <div class="bg-gray-300 h-48 rounded-lg mb-4"></div>
-            <div class="h-4 bg-gray-300 rounded mb-2"></div>
-            <div class="h-6 bg-gray-300 rounded mb-2"></div>
-            <div class="h-16 bg-gray-300 rounded"></div>
+          <div class="animate-pulse space-y-6">
+            <div class="bg-gray-200 h-64 rounded-2xl"></div>
+            <div class="space-y-3">
+              <div class="h-4 bg-gray-200 rounded w-1/4"></div>
+              <div class="h-6 bg-gray-200 rounded w-3/4"></div>
+            </div>
           </div>
-          <div class="animate-pulse">
-            <div class="bg-gray-300 h-48 rounded-lg mb-4"></div>
-            <div class="h-4 bg-gray-300 rounded mb-2"></div>
-            <div class="h-6 bg-gray-300 rounded mb-2"></div>
-            <div class="h-16 bg-gray-300 rounded"></div>
+          <div class="animate-pulse space-y-6">
+            <div class="bg-gray-200 h-64 rounded-2xl"></div>
+            <div class="space-y-3">
+              <div class="h-4 bg-gray-200 rounded w-1/4"></div>
+              <div class="h-6 bg-gray-200 rounded w-3/4"></div>
+            </div>
           </div>
-          <div class="animate-pulse">
-            <div class="bg-gray-300 h-48 rounded-lg mb-4"></div>
-            <div class="h-4 bg-gray-300 rounded mb-2"></div>
-            <div class="h-6 bg-gray-300 rounded mb-2"></div>
-            <div class="h-16 bg-gray-300 rounded"></div>
+          <div class="animate-pulse space-y-6">
+            <div class="bg-gray-200 h-64 rounded-2xl"></div>
+            <div class="space-y-3">
+              <div class="h-4 bg-gray-200 rounded w-1/4"></div>
+              <div class="h-6 bg-gray-200 rounded w-3/4"></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-footer text-graytext py-12">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <div class="flex items-center justify-center gap-3 mb-6">
-        <img src="./assets/thundergits logo.webp" alt="ThunderGits" class="h-10 w-auto">
+  <!-- FOOTER -->
+  <footer class="w-full bg-gray-100 text-black border-t border-gray-200">
+      <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
+          <div class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-300">
+              <div class="mb-6">
+                  <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
+              </div>
+              <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
+                  Redefining the digital landscape through innovation and precision. ThunderGits delivers future-ready technology solutions.
+              </p>
+          </div>
+          <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Facebook</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Instagram</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Youtube</a>
+              <a href="#" class="px-12 py-8 text-gray-800 font-semibold text-center md:text-left hover:bg-gray-200 transition-colors">Linkedin</a>
+          </div>
+          <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+              <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">LET'S TALK</h2>
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+                  <span class="flex items-start gap-2 min-w-[220px] flex-1">
+                      <i class="ri-map-pin-line mt-0.5"></i>
+                      <span class="leading-relaxed">2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+                      <i class="ri-phone-line"></i> +91-7765979725
+                  </span>
+                  <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+                      <i class="ri-mail-line"></i> info@thundergits.com
+                  </span>
+              </div>
+          </div>
       </div>
-      <p class="text-sm">&copy; 2024 ThunderGits. All rights reserved.</p>
-    </div>
+      <div class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-black">© 2025 | All rights reserved by ThunderGits Technology</p>
+          <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
+              <a href="./about.html">About us</a>
+              <a href="./blog.html">Blogs</a>
+              <a href="./contact.html">Contact</a>
+              <a href="./career.html">Career</a>
+          </nav>
+      </div>
   </footer>
 
   <!-- Scroll Button -->
-  <button id="scrollToggleBtn" class="fixed bottom-6 right-6 bg-gradient-to-r from-pink-500 to-purple-500 text-white p-3 rounded-full shadow-lg hover:opacity-90 transition-all z-30">
+  <button id="scrollToggleBtn" class="fixed bottom-10 right-10 w-12 h-12 bg-blue-950 text-white flex items-center justify-center rounded-full shadow-2xl hover:scale-110 transition-all z-40">
     <i id="scrollIcon" class="fas fa-arrow-down"></i>
   </button>
 
@@ -253,6 +342,30 @@
   </script>
 
   <script src="./script.js"></script>
+  <script>
+    const btn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    btn.addEventListener("click", () => {
+        const isOpen = mobileMenu.style.display === "flex";
+        mobileMenu.style.display = isOpen ? "none" : "flex";
+    });
+
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 80) {
+            nav.style.background = "rgba(0, 0, 0, 0.75)";
+            nav.style.backdropFilter = "blur(12px)";
+            nav.style.webkitBackdropFilter = "blur(12px)";
+            nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
+        } else {
+            nav.style.background = "transparent";
+            nav.style.backdropFilter = "none";
+            nav.style.webkitBackdropFilter = "none";
+            nav.style.borderBottom = "none";
+        }
+    });
+  </script>
   <script src="./blogdetails.js"></script>
 </body>
 

@@ -10,6 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="./index-styles.css" rel="stylesheet">
+  <style>
+    .hero-letter {
+      display: inline-block;
+      cursor: default;
+    }
+    @keyframes thunder-text-glow {
+      0%,100% { text-shadow: 0 0 6px #fff, 0 0 16px #93c5fd, 0 0 35px #3b82f6, 0 0 60px #1d4ed8; }
+      15%     { text-shadow: 0 0 3px #fff, 0 0 8px #93c5fd, 0 0 18px #3b82f6; }
+      30%     { text-shadow: 0 0 14px #fff, 0 0 35px #bae6fd, 0 0 70px #60a5fa; }
+      50%     { text-shadow: none; }
+      52%     { text-shadow: 0 0 12px #fff, 0 0 28px #93c5fd, 0 0 55px #3b82f6; }
+      54%     { text-shadow: none; }
+      56%     { text-shadow: 0 0 7px #fff, 0 0 18px #93c5fd, 0 0 36px #3b82f6; }
+    }
+    .thunderstrike { animation: thunder-text-glow 1.2s ease-in-out infinite; }
+  </style>
 </head>
 
 <body>
@@ -81,7 +97,7 @@
             </span>
 
             <!-- HEADING -->
-            <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: 0em; margin-bottom: 1.5rem; text-align: center;">
+            <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 600; line-height: 1.1; color: #ffffff; letter-spacing: 0em; margin-bottom: 1.5rem; text-align: center;">
                 ThunderGits
             </h1>
 
@@ -93,7 +109,7 @@
             </p>
 
             <!-- CTA ROW -->
-            <div class="flex items-center gap-6 flex-wrap justify-center">
+            <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center">
 
                 <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-full font-semibold text-sm shadow-lg shadow-indigo-900/50 hover:scale-105 transition duration-300">
                     Get Quote
@@ -1126,6 +1142,79 @@
             btnLoader.classList.add('hidden');
         }
     });
+</script>
+
+<script>
+  // ThunderGits hero — letter free-fall on hover, instant reappear on leave
+  const heroH1 = document.querySelector('#hero-section h1');
+  if (heroH1) {
+    heroH1.innerHTML = [...heroH1.textContent.trim()].map(c =>
+      `<span class="hero-letter">${c === ' ' ? '&nbsp;' : c}</span>`
+    ).join('');
+
+    heroH1.querySelectorAll('.hero-letter').forEach(l => {
+      l._anim = null;
+      l.addEventListener('mouseenter', () => {
+        if (l._anim) return; // already falling
+        const rotation = (Math.random() - 0.5) * 70;
+        const drift    = (Math.random() - 0.5) * 60;
+        l.style.pointerEvents = 'none'; // block false mouseleave as transform moves element
+        l._anim = l.animate([
+          { transform: 'translateY(0) scale(1)',       opacity: 1, offset: 0,    easing: 'ease-out' },
+          { transform: 'translateY(-8px) scale(1.28)', opacity: 1, offset: 0.07, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)' },
+          { transform: `translateY(150vh) translateX(${drift}px) rotate(${rotation}deg) scale(0.5)`, opacity: 0, offset: 1 }
+        ], { duration: 1400, fill: 'forwards' });
+        l._anim.onfinish = () => {
+          l._anim.cancel(); // release fill:forwards so inline styles can take effect
+          l._anim = null;
+          l.style.transition = 'none';
+          l.style.transform  = '';
+          l.style.opacity    = '0';
+          l.offsetHeight;
+          l.style.transition = 'opacity 1s ease-out';
+          l.style.opacity    = '1';
+          setTimeout(() => { l.style.transition = ''; l.style.pointerEvents = ''; }, 1050);
+        };
+      });
+    });
+
+    // Lightning strike effect on h1 hover
+    heroH1.style.position = 'relative';
+    let _ltInterval = null;
+
+    function _spawnBolt() {
+      const bolt = document.createElement('div');
+      const h    = 55 + Math.random() * 35;
+      const segs = 5 + Math.floor(Math.random() * 3);
+      let d = 'M 10 0';
+      for (let i = 1; i <= segs; i++) {
+        d += ` L ${2 + Math.random() * 16} ${(h / segs) * i}`;
+      }
+      bolt.style.cssText = `position:absolute;pointer-events:none;z-index:20;left:${Math.random()*92}%;top:0;`;
+      bolt.innerHTML = `<svg width="20" height="${h}" viewBox="0 0 20 ${h}">
+        <path d="${d}" fill="none" stroke="#93c5fd" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="${d}" fill="none" stroke="#ffffff" stroke-width="0.7" stroke-linecap="round"/>
+      </svg>`;
+      heroH1.appendChild(bolt);
+      bolt.animate([
+        { opacity: 1, transform: 'scaleY(0)', transformOrigin: 'top' },
+        { opacity: 1, transform: 'scaleY(1)', transformOrigin: 'top', offset: 0.18 },
+        { opacity: 0.8, offset: 0.4 },
+        { opacity: 0 }
+      ], { duration: 280 + Math.random() * 180, fill: 'forwards' }).onfinish = () => bolt.remove();
+    }
+
+    heroH1.addEventListener('mouseenter', () => {
+      heroH1.classList.add('thunderstrike');
+      _spawnBolt();
+      _ltInterval = setInterval(_spawnBolt, 200);
+    });
+    heroH1.addEventListener('mouseleave', () => {
+      heroH1.classList.remove('thunderstrike');
+      clearInterval(_ltInterval);
+      _ltInterval = null;
+    });
+  }
 </script>
 
 </html>

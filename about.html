@@ -22,9 +22,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
-
-</head>
-
 <body class="bg-black text-white font-['Inter',sans-serif]">
 
     <!-- Navbar -->
@@ -52,6 +49,7 @@
                 <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Career</a>
                 <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
                 <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
+                <a href="./certificate.html" class="text-gray-300 hover:text-white text-sm transition">Certificates</a>
                 <a href="./contact.html" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get a Quote</a>
             </div>
         </div>
@@ -65,52 +63,51 @@
             <a href="./career.html" class="text-gray-300 hover:text-white text-sm">Career</a>
             <a href="./blog.html" class="text-gray-300 hover:text-white text-sm">Blog</a>
             <a href="./contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
+            <a href="./certificate.html" class="text-gray-300 hover:text-white text-sm">Certificates</a>
         </div>
     </nav>
 
-    <section class="relative bg-blue-950 min-h-[90vh] overflow-hidden">
-        <!-- Animated Background Pattern -->
-        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#6366f1 0.5px, transparent 0.5px); background-size: 30px 30px;"></div>
-        <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900/80 to-transparent z-10"></div>
+    <!-- Aligent Hero Section -->
+    <section id="hero-section" class="relative pt-48 pb-24 bg-black overflow-hidden min-h-[85vh] flex items-center">
+        <!-- STATIC CSS GRID LINES -->
+        <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        
+        <!-- INTERACTIVE HIGHLIGHT CELLS -->
+        <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
 
-        <div class="relative z-20 flex items-center min-h-[90vh] pt-28">
-            <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 items-center gap-8 lg:gap-12">
-
-                <!-- Left Video -->
-                <div class="flex justify-center md:justify-end items-center order-1 md:order-1" data-aos="fade-right">
-                    <div class="relative w-[260px] sm:w-[340px] lg:w-[380px] h-[200px] sm:h-[250px] lg:h-[300px] rounded-xl overflow-hidden shadow-lg">
-                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                            <source src="./assets/about-video.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                        <!-- Overlay for blend -->
-                        <div class="absolute inset-0 bg-gradient-to-l from-black/60 via-black/30 to-transparent">
-                        </div>
-                    </div>
+        <!-- TOP CENTER GLOW -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Left Content -->
+            <div data-aos="fade-right">
+                <span class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
+                    Innovating the future
+                </span>
+                <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
+                    We Build. <br/> We <span class="text-indigo-400 font-semibold">Innovate.</span>
+                </h1>
+                <p class="text-gray-400 text-lg leading-relaxed mb-10 font-light max-w-xl">
+                    Driving digital success with creativity & technology. Our team thrives on blending design, innovation, and cutting-edge technology to deliver transformative digital solutions that empower global enterprises.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#identity" class="px-10 py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 text-center shadow-lg shadow-indigo-900/50">
+                        Our Identity
+                    </a>
+                    <a href="./contact.html" class="px-10 py-4 border border-indigo-500/30 text-indigo-400 text-[10px] font-black uppercase tracking-widest rounded-2xl hover:bg-indigo-500/10 transition duration-300 text-center">
+                        Get in Touch
+                    </a>
                 </div>
+            </div>
 
-                <!-- Right Content -->
-                <div id="hero-content" class="relative flex flex-col md:flex-row items-stretch justify-start order-2 md:order-2 w-full">
-
-                    <!-- Gradient Border -->
-                    <div id="gradient-border" class="bg-gradient-to-b from-blue-950 to-blue-500 h-[4px] w-full mb-4 md:mb-0 md:h-auto md:w-[4px] md:rounded-l-xl">
-                    </div>
-
-                    <!-- Text -->
-                    <div class="md:border-l-4 border-blue-950 md:pl-6 pl-0 flex flex-col justify-start min-h-[200px] sm:min-h-[250px] lg:min-h-[300px] py-2 sm:py-4" data-aos="fade-left">
-
-                        <p class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter leading-none mb-2 text-white">
-                            About Us
-                        </p>
-                        <h1 class="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug max-w-2xl">
-                            We Build. We Innovate.
-                        </h1>
-                        <p class="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg text-gray-300 max-w-2xl">
-                            Driving digital success with creativity & technology. Our team thrives on blending design,
-                            innovation, and cutting-edge technology to deliver transformative digital solutions.
-                        </p>
-                    </div>
+            <!-- Right Video/Image -->
+            <div data-aos="fade-left" class="relative group">
+                <div class="absolute -inset-4 bg-indigo-500/20 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition duration-700"></div>
+                <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                    <video autoplay muted loop playsinline class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                        <source src="./assets/about-video.mp4" type="video/mp4" />
+                    </video>
                 </div>
             </div>
         </div>
@@ -159,7 +156,7 @@
 
 
 
-  <section class="w-full bg-white py-24 sm:py-32 overflow-hidden">
+  <section id="identity" class="w-full bg-white py-24 sm:py-32 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
@@ -723,6 +720,61 @@
       once: true,
       offset: 100
     });
+
+    /* Interactive Hero Grid */
+    const heroSection = document.getElementById("hero-section");
+    const gridEl = document.getElementById("hero-grid");
+    const CELL = 50;
+    let cols = 0, rows = 0, cellEls = [];
+
+    function buildGrid() {
+        if(!gridEl) return;
+        gridEl.innerHTML = "";
+        cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
+        rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
+
+        gridEl.style.display = "grid";
+        gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+        gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+
+        cellEls = [];
+        for (let i = 0; i < cols * rows; i++) {
+            const d = document.createElement("div");
+            d.style.cssText = "transition: background 0.55s ease;";
+            gridEl.appendChild(d);
+            cellEls.push(d);
+        }
+    }
+
+    buildGrid();
+    window.addEventListener("resize", buildGrid);
+
+    if(heroSection && gridEl) {
+        heroSection.addEventListener("mousemove", (e) => {
+            const rect = gridEl.getBoundingClientRect();
+            const cx = Math.floor((e.clientX - rect.left) / CELL);
+            const cy = Math.floor((e.clientY - rect.top) / CELL);
+
+            const pattern = [
+                [0,  0,  0.40],
+                [-1, 0,  0.20], [1,  0,  0.20], [0, -1, 0.20], [0,  1, 0.20],
+                [-1,-1,  0.09], [1, -1,  0.09], [-1, 1, 0.09], [1,  1, 0.09],
+                [-2, 0,  0.04], [2,  0,  0.04], [0, -2, 0.04], [0,  2, 0.04],
+            ];
+
+            pattern.forEach(([dx, dy, alpha]) => {
+                const x = cx + dx, y = cy + dy;
+                if (x < 0 || x >= cols || y < 0 || y >= rows) return;
+                const cell = cellEls[y * cols + x];
+                if (!cell) return;
+                clearTimeout(cell._t);
+                cell.style.background = `rgba(99, 102, 241, ${alpha})`;
+                cell._t = setTimeout(() => {
+                    cell.style.background = "";
+                }, 650);
+            });
+        });
+    }
 </script>
 
 </html>

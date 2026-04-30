@@ -17,6 +17,26 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   
   <link rel="stylesheet" href="./style.css">
+  <style>
+    #work-list {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(99,102,241,0.35) transparent;
+    }
+    #work-list::-webkit-scrollbar {
+      width: 4px;
+    }
+    #work-list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #work-list::-webkit-scrollbar-thumb {
+      background: rgba(99,102,241,0.35);
+      border-radius: 100px;
+      transition: background 0.3s;
+    }
+    #work-list::-webkit-scrollbar-thumb:hover {
+      background: rgba(99,102,241,0.75);
+    }
+  </style>
 </head>
 
 <body class="bg-black text-white font-['Inter',sans-serif]">
@@ -87,221 +107,223 @@
     </div>
   </section>
 
-  <!-- Work Grid Section -->
-  <section id="work-grid" class="relative bg-[#050505] py-24 border-t border-white/5">
-    <div class="max-w-screen-xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        
-        <!-- Project 1: Crumbell -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/crumbell.webp" alt="Crumbell" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Crumbell Project</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A cross-platform mobile app and backend system designed for seamless order and inventory management. Built with React Native, Express.js, and MongoDB.</p>
-            <a href="#" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+  <!-- Work Showcase Section -->
+  <section id="work-grid" class="relative bg-black border-t border-white/5">
+    <div class="lg:flex" style="height:calc(100vh - 4rem);">
 
-        <!-- Project 2: Enersol -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/enersol.png" alt="Enersol" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Enersol</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A brand promotional and e-commerce platform for one of India’s leading biomass gasifier and renewable energy manufacturers.</p>
-            <a href="https://enersolbiopower.com/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+    <!-- LEFT: Vertically scrollable list -->
+    <div id="work-list" class="lg:w-1/2 overflow-y-auto h-full px-6 lg:px-14 py-12 lg:border-r border-white/5">
 
-        <!-- Project 3: ICAI -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/icaim.png" alt="ICAI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">ICAI</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">Official website for the Institute of Chartered Accountants of India, Muzaffarpur Branch. Built with a secure CMS and event tools.</p>
-            <a href="https://icaimfp.org/index.html" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="#" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="0">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">01</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Crumbell</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">Mobile App</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 4: AAP Bihar -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/appbihar.png" alt="AAP Bihar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">AAP Bihar</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">Complete website and backend panel for political campaigns. Features dynamic CMS, volunteer onboarding, and analytics.</p>
-            <a href="https://aapbihar.org/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://enersolbiopower.com/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="1">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">02</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Enersol</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">E-Commerce</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 5: Loqo AI -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/loqoai.png" alt="Loqo AI" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Loqo AI</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A custom video streaming platform with Google Ads integration, HLS playback, and advanced analytics.</p>
-            <a href="https://loqo.ai/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://icaimfp.org/index.html" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="2">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">03</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">ICAI</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">Corporate</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 6: Volcanic Classes -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/volcanic classes.png" alt="Volcanic Classes" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Volcanic Classes</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">An education commerce platform with course sales, live class management, and a full CMS + ERP module.</p>
-            <a href="https://volcanicclasses.org/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://aapbihar.org/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="3">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">04</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">AAP Bihar</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">GovTech</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 7: Prismstar -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/prismstar.webp" alt="Prismstar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Prismstar</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">An office leasing realty site providing details about available properties and inquiry management.</p>
-            <a href="https://prismstar.in/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://loqo.ai/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="4">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">05</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Loqo AI</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">AI Platform</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 8: Edugits -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/edugit.png" alt="Edugits" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Edugits</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A subscription-based ERP platform for schools to manage academics, finance, and attendance globally.</p>
-            <a href="https://edugits.thundergits.com/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://volcanicclasses.org/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="5">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">06</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Volcanic Classes</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">EdTech</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 9: Chikit -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/chikit.png" alt="Chikit" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Chikit</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A chemist shop management platform designed for local pharmacies to handle inventory and billing.</p>
-            <a href="https://chikit.thundergits.com/signin" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://prismstar.in/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="6">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">07</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Prismstar</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">Real Estate</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 10: Ocean of Current Generation -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/opc.png" alt="Ocean of Current Generation" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Ocean Of Current Generation</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A corporate promotional website with integrated e-commerce modules for a solar genset and panel company.</p>
-            <a href="https://oceanofcurrentgeneration.com/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://edugits.thundergits.com/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="7">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">08</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Edugits</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">SaaS ERP</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 11: Trio -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/trio.png" alt="Trio" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Trio</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A full-featured platform for an electric mobility startup offering vehicle leasing and EV charging stations.</p>
-            <a href="https://trio-ev.com/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://chikit.thundergits.com/signin" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="8">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">09</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Chikit</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">Pharma SaaS</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 12: Howbee -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/Howbee.webp" alt="Howbee" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Howbee Project</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A visually stunning website featuring complex animations and interactive designs that enhance user engagement.</p>
-            <a href="#" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://oceanofcurrentgeneration.com/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="9">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">10</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Ocean of Current Generation</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">Corporate</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 13: Social Media App -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/LoginPageDemo.webp" alt="Social Media App" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Social Media App</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A social media app with test-driven learning capabilities, replicates Instagram's UI with advanced React logic.</p>
-            <a href="#" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://trio-ev.com/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="10">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">11</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Trio</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">EV Mobility</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 14: Pauseva -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/pasusevaimg.png" alt="Pauseva" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Pauseva</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">NGO-type organization facilitating loans for poultry and cow farms with guidance and support.</p>
-            <a href="https://pasuseva.in/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="#" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="11">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">12</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Howbee</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">UI / UX</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 15: Coding Pandas -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/codingpandaimg.png" alt="Coding Pandas" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Coding Pandas</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">A LeetCode type platform providing practice in various languages, course sales, and secure RBAC.</p>
-            <a href="https://codingpandas.in/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="#" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="12">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">13</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Social Media App</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">Social</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-        <!-- Project 16: Netajee -->
-        <div class="group relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up">
-          <div class="relative h-64 overflow-hidden">
-            <img src="./assets/netajeeimg.png" alt="Netajee" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-          </div>
-          <div class="p-10 flex flex-col flex-grow">
-            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Netajee</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">An election management platform with admin panel, website, and app for volunteer tracking and analytics.</p>
-            <a href="https://netajee.in/" target="_blank" class="inline-flex items-center gap-2 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">View Project <i class="ri-arrow-right-up-line"></i></a>
-          </div>
-        </div>
+          <a href="https://pasuseva.in/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="13">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">14</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Pauseva</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">NGO</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
 
-      </div>
+          <a href="https://codingpandas.in/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="14">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">15</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Coding Pandas</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">EdTech</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
+
+          <a href="https://netajee.in/" target="_blank" class="project-row group flex items-center gap-5 py-6 border-b border-white/6 hover:border-white/12 transition-all duration-300" data-index="15">
+            <span class="text-[10px] text-white/20 font-mono w-6 shrink-0 group-hover:text-indigo-500 transition-colors duration-300">16</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl lg:text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 leading-tight">Netajee</h3>
+            </div>
+            <span class="hidden sm:inline text-[9px] text-gray-700 uppercase tracking-[0.2em] shrink-0 group-hover:text-gray-400 transition-colors duration-300">GovTech</span>
+            <div class="w-7 h-7 rounded-full border border-white/8 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all duration-300">
+              <i class="ri-arrow-right-up-line text-xs text-gray-600 group-hover:text-white transition-colors"></i>
+            </div>
+          </a>
+
     </div>
+
+    <!-- RIGHT: Preview panel — fills height, no scroll -->
+    <div class="hidden lg:flex lg:w-1/2 items-center px-8 py-6">
+      <div class="relative w-full h-full rounded-2xl overflow-hidden">
+
+          <!-- Images: first project shown by default -->
+          <img data-work-img="0"  src="./assets/crumbell.webp"        alt="Crumbell"             class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:1;transition:opacity 0.4s;" />
+          <img data-work-img="1"  src="./assets/enersol.png"          alt="Enersol"              class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="2"  src="./assets/icaim.png"            alt="ICAI"                 class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="3"  src="./assets/appbihar.png"         alt="AAP Bihar"            class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="4"  src="./assets/loqoai.png"           alt="Loqo AI"              class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="5"  src="./assets/volcanic classes.png" alt="Volcanic Classes"     class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="6"  src="./assets/prismstar.webp"       alt="Prismstar"            class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="7"  src="./assets/edugit.png"           alt="Edugits"              class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="8"  src="./assets/chikit.png"           alt="Chikit"               class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="9"  src="./assets/opc.png"              alt="Ocean of Current Gen" class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="10" src="./assets/trio.png"             alt="Trio"                 class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="11" src="./assets/Howbee.webp"          alt="Howbee"               class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="12" src="./assets/LoginPageDemo.webp"   alt="Social Media App"     class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="13" src="./assets/pasusevaimg.png"      alt="Pauseva"              class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="14" src="./assets/codingpandaimg.png"   alt="Coding Pandas"        class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+          <img data-work-img="15" src="./assets/netajeeimg.png"       alt="Netajee"              class="work-preview-img absolute inset-0 w-full h-full object-cover rounded-2xl" style="opacity:0;transition:opacity 0.4s;" />
+
+          <!-- Info overlay (first project shown by default) -->
+          <div id="work-img-overlay" class="absolute bottom-0 left-0 right-0 px-6 py-5 rounded-b-2xl pointer-events-none" style="background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);opacity:1;transition:opacity 0.4s;">
+            <p id="work-img-name" class="text-white font-semibold text-xl leading-tight">Crumbell</p>
+            <p id="work-img-tech" class="text-gray-400 text-xs mt-1 font-mono tracking-wider">React Native · MongoDB</p>
+          </div>
+
+        </div>
+    </div>
+
+    </div><!-- end lg:flex -->
   </section>
 
   <!-- CTA Section -->
@@ -409,6 +431,53 @@
     btn.addEventListener("click", () => {
       const isOpen = mobileMenu.style.display === "flex";
       mobileMenu.style.display = isOpen ? "none" : "flex";
+    });
+
+    // Work hover-reveal interaction (fixed panel)
+    const workMeta = [
+      { name: 'Crumbell',                   tech: 'React Native · MongoDB'  },
+      { name: 'Enersol',                     tech: 'Next.js · E-Commerce'    },
+      { name: 'ICAI',                        tech: 'CMS · Security'          },
+      { name: 'AAP Bihar',                   tech: 'CMS · Analytics'         },
+      { name: 'Loqo AI',                     tech: 'HLS · Google Ads'        },
+      { name: 'Volcanic Classes',            tech: 'ERP · CMS'               },
+      { name: 'Prismstar',                   tech: 'CMS · Listings'          },
+      { name: 'Edugits',                     tech: 'ERP · SaaS'              },
+      { name: 'Chikit',                      tech: 'Inventory · Billing'     },
+      { name: 'Ocean of Current Generation', tech: 'E-Commerce · Solar'      },
+      { name: 'Trio',                        tech: 'EV · Platform'           },
+      { name: 'Howbee',                      tech: 'Animations · Design'     },
+      { name: 'Social Media App',            tech: 'React · Mobile'          },
+      { name: 'Pauseva',                     tech: 'Finance · NGO'           },
+      { name: 'Coding Pandas',               tech: 'DSA · RBAC'              },
+      { name: 'Netajee',                     tech: 'Elections · Analytics'   },
+    ];
+
+    const workRows    = document.querySelectorAll('.project-row');
+    const workImgs    = document.querySelectorAll('.work-preview-img');
+    const workOverlay = document.getElementById('work-img-overlay');
+    const workImgName = document.getElementById('work-img-name');
+    const workImgTech = document.getElementById('work-img-tech');
+
+    // Hover: switch image
+    workRows.forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        const idx = parseInt(row.dataset.index);
+        workImgs.forEach(img => img.style.opacity = '0');
+        const target = document.querySelector(`[data-work-img="${idx}"]`);
+        if (target)      target.style.opacity    = '1';
+        if (workImgName) workImgName.textContent = workMeta[idx]?.name || '';
+        if (workImgTech) workImgTech.textContent = workMeta[idx]?.tech || '';
+      });
+    });
+
+    // Leave list: revert to first project
+    document.getElementById('work-list')?.addEventListener('mouseleave', () => {
+      workImgs.forEach(img => img.style.opacity = '0');
+      const first = document.querySelector('[data-work-img="0"]');
+      if (first)       first.style.opacity      = '1';
+      if (workImgName) workImgName.textContent  = workMeta[0].name;
+      if (workImgTech) workImgTech.textContent  = workMeta[0].tech;
     });
   </script>
 </body>

@@ -28,38 +28,71 @@
 </head>
 <body class="bg-white font-sans text-blue-950 overflow-x-hidden">
 
-  <!-- Navbar -->
-  <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
-    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
-      <a href="./index.html" class="flex items-center">
-        <img src="./assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
-      </a>
-      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-      <div id="menu" class="hidden md:flex items-center gap-8">
-        <a href="./index.html" class="text-gray-300 hover:text-white text-sm transition">Home</a>
-        <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
-        <a href="./work.html" class="text-gray-300 hover:text-white text-sm transition">Work</a>
-        <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
-        <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Career</a>
-        <a href="./blog.html" class="text-white text-sm transition font-bold ">Blog</a>
-        <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
-        <a href="./contact.html" class="px-6 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get a Quote</a>
-      </div>
+    <!-- Navbar -->
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+        <div class=" flex items-center justify-between mx-auto px-4 md:px-8 lg:px-20 py-4">
+
+            <!-- LOGO -->
+            <a href="#" class="flex items-start ">
+                <img src="./assets/logo.png" class="h-9" alt="logo"
+                    style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+            </a>
+
+            <!-- MOBILE BUTTON -->
+            <button id="menu-btn" type="button"
+                class="lg:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- MENU -->
+            <div id="menu" class="hidden lg:flex items-center px-5 gap-8">
+                <a href="./index.html" class="text-white hover:text-white text-sm transition font-semibold">Home</a>
+                <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
+                <a href="./work.html" class="text-gray-300 hover:text-white text-sm transition">Work</a>
+                <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
+                <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Career</a>
+                <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
+                <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
+                <a href="./contact.html"
+                    class="px-3 py-1.5 md:px-4 md:py-2 lg:px-6 lg:py-2 bg-primary hover:bg-primary-dark text-white text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-full transition duration-300 whitespace-nowrap">Get
+                    a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-[#0b1f3a] text-white z-[999] transform translate-x-full transition-transform duration-500 ease-in-out">
+
+        <!-- TOP BAR -->
+        <div class="flex items-center justify-between px-6 py-4">
+            <a href="#" class="flex items-center">
+                <img src="./assets/logo.png" class="h-10" alt="logo"
+                    style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+            </a>
+
+            <!-- CLOSE BUTTON -->
+            <button id="close-menu"
+                class="w-10 h-10 flex items-center justify-center border border-blue-400 rounded-xl">
+                ✕
+            </button>
+        </div>
+
+        <!-- MENU LINKS -->
+        <div
+            class="flex flex-col justify-center items-center font-semibold h-[50%] px-10 space-y-6 text-4xl font-light">
+            <a href="./index.html" class="hover:translate-x-2 transition">Home</a>
+            <a href="./about.html" class="hover:translate-x-2 transition">About</a>
+            <a href="./work.html" class="hover:translate-x-2 transition">Work</a>
+            <a href="./service.html" class="hover:translate-x-2 transition">Services</a>
+            <a href="./career.html" class="hover:translate-x-2 transition">Career</a>
+            <a href="./blog.html" class="hover:translate-x-2 transition">Blog</a>
+            <a href="./contact.html" class="hover:translate-x-2 transition">Contact</a>
+        </div>
+
     </div>
-    <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
-      <a href="./index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
-      <a href="./about.html" class="text-gray-300 hover:text-white text-sm">About</a>
-      <a href="./work.html" class="text-gray-300 hover:text-white text-sm">Work</a>
-      <a href="./service.html" class="text-gray-300 hover:text-white text-sm">Services</a>
-      <a href="./career.html" class="text-gray-300 hover:text-white text-sm">Career</a>
-      <a href="./blog.html" class="text-white text-sm font-bold">Blog</a>
-      <a href="./contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
-    </div>
-  </nav>
+
 
   <!-- Hero Section -->
   <section id="hero-section" class="relative min-h-[70vh] flex items-center justify-center text-center text-white overflow-hidden bg-black">
@@ -246,11 +279,7 @@
 
     // Mobile menu toggle
     const btn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    btn.addEventListener("click", () => {
-      const isOpen = mobileMenu.style.display === "flex";
-      mobileMenu.style.display = isOpen ? "none" : "flex";
-    });
+
 
     // Dynamic Blog Loading
     async function loadDynamicBlogs() {
@@ -297,5 +326,22 @@
 
     document.addEventListener('DOMContentLoaded', loadDynamicBlogs);
   </script>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    // OPEN (from right → left)
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("translate-x-full");
+        mobileMenu.classList.add("translate-x-0");
+    });
+
+    // CLOSE (back to right)
+    closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("translate-x-0");
+        mobileMenu.classList.add("translate-x-full");
+    });
+</script>
 </body>
 </html>

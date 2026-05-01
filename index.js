@@ -287,18 +287,3 @@ slider.addEventListener("touchmove", (e) => {
 
 
 
-    const menuBtn = document.getElementById("menu-btn");
-    const closeBtn = document.getElementById("close-menu");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    // OPEN (from right → left)
-    menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("translate-x-full");
-        mobileMenu.classList.add("translate-x-0");
-    });
-
-    // CLOSE (back to right)
-    closeBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("translate-x-0");
-        mobileMenu.classList.add("translate-x-full");
-    });

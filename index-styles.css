@@ -1,3 +1,31 @@
+:root {
+  --primary: #4338CA;       /* similar to indigo-700 */
+  --primary-dark: #3730A3;  /* similar to indigo-800 */
+}
+/* TEXT COLORS */
+.text-primary {
+    color: var(--primary);
+}
+
+.text-primary-dark {
+    color: var(--primary-dark);
+}
+
+/* BACKGROUND COLORS */
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.bg-primary-dark {
+    background-color: var(--primary-dark);
+}
+.hover\:bg-primary-dark:hover {
+  background-color: var(--primary-dark) !important;
+}
+.hover\:text-primary-dark:hover {
+  color: var(--primary-dark) !important;
+}
+
 .hero {
     background-color: #060d18;
     background-image:
@@ -11,16 +39,17 @@
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .animate-scroll {
-  animation: scroll 20s linear infinite;
+    animation: scroll 20s linear infinite;
 }
 
 .word span {
@@ -79,3 +108,27 @@
     transition-delay: 0.5s;
 }
 
+.carousal {
+    width: 100%;
+    margin: 100px auto;
+    overflow-x: auto;
+    /* enable scroll */
+    scroll-behavior: smooth;
+    cursor: grab;
+}
+
+.carousal::-webkit-scrollbar {
+    display: none;
+}
+
+.carousal:active {
+    cursor: grabbing;
+}
+
+.logo {
+    height: 80px;
+    flex-shrink: 0;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+}

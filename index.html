@@ -7,25 +7,52 @@
     <title>ThunderGits Technologies - Innovative Tech Solutions</title>
     <link rel="icon" href="./assets/tg-favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="./index-styles.css" rel="stylesheet">
-  <style>
-    .hero-letter {
-      display: inline-block;
-      cursor: default;
-    }
-    @keyframes thunder-text-glow {
-      0%,100% { text-shadow: 0 0 6px #fff, 0 0 16px #93c5fd, 0 0 35px #3b82f6, 0 0 60px #1d4ed8; }
-      15%     { text-shadow: 0 0 3px #fff, 0 0 8px #93c5fd, 0 0 18px #3b82f6; }
-      30%     { text-shadow: 0 0 14px #fff, 0 0 35px #bae6fd, 0 0 70px #60a5fa; }
-      50%     { text-shadow: none; }
-      52%     { text-shadow: 0 0 12px #fff, 0 0 28px #93c5fd, 0 0 55px #3b82f6; }
-      54%     { text-shadow: none; }
-      56%     { text-shadow: 0 0 7px #fff, 0 0 18px #93c5fd, 0 0 36px #3b82f6; }
-    }
-    .thunderstrike { animation: thunder-text-glow 1.2s ease-in-out infinite; }
-  </style>
+    <style>
+        .hero-letter {
+            display: inline-block;
+            cursor: default;
+        }
+
+        @keyframes thunder-text-glow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 6px #fff, 0 0 16px #93c5fd, 0 0 35px #3b82f6, 0 0 60px #1d4ed8;
+            }
+
+            15% {
+                text-shadow: 0 0 3px #fff, 0 0 8px #93c5fd, 0 0 18px #3b82f6;
+            }
+
+            30% {
+                text-shadow: 0 0 14px #fff, 0 0 35px #bae6fd, 0 0 70px #60a5fa;
+            }
+
+            50% {
+                text-shadow: none;
+            }
+
+            52% {
+                text-shadow: 0 0 12px #fff, 0 0 28px #93c5fd, 0 0 55px #3b82f6;
+            }
+
+            54% {
+                text-shadow: none;
+            }
+
+            56% {
+                text-shadow: 0 0 7px #fff, 0 0 18px #93c5fd, 0 0 36px #3b82f6;
+            }
+        }
+
+        .thunderstrike {
+            animation: thunder-text-glow 1.2s ease-in-out infinite;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,11 +63,13 @@
 
             <!-- LOGO -->
             <a href="#" class="flex items-center">
-                <img src="./assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+                <img src="./assets/logo.png" class="h-10" alt="logo"
+                    style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
             </a>
 
             <!-- MOBILE BUTTON -->
-            <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
+            <button id="menu-btn" type="button"
+                class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -55,12 +84,15 @@
                 <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Career</a>
                 <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
                 <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
-                <a href="./contact.html" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get a Quote</a>
+                <a href="./contact.html"
+                    class="px-6 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get
+                    a Quote</a>
             </div>
         </div>
 
         <!-- MOBILE DROPDOWN -->
-        <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
+        <div id="mobile-menu" style="display:none"
+            class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
             <a href="./index.html" class="text-white hover:text-white text-sm font-semibold">Home</a>
             <a href="./about.html" class="text-gray-300 hover:text-white text-sm">About</a>
             <a href="./work.html" class="text-gray-300 hover:text-white text-sm">Work</a>
@@ -72,16 +104,21 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="hero-section" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden bg-black">
+    <section id="hero-section"
+        class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden bg-black">
 
         <!-- STATIC CSS GRID LINES (always visible, faint) -->
-        <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        <div class="absolute inset-0 z-0 pointer-events-none"
+            style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
 
         <!-- INTERACTIVE HIGHLIGHT CELLS (JS fills this — no borders, just color fill) -->
         <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
 
         <!-- TOP CENTER GLOW -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.55) 0%, rgba(56,189,248,0.35) 20%, rgba(99,102,241,0.12) 50%, transparent 75%);"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
+            style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.55) 0%, rgba(56,189,248,0.35) 20%, rgba(99,102,241,0.12) 50%, transparent 75%);">
+        </div>
 
         <!-- BOTTOM FADE -->
         <div class="absolute bottom-0 left-0 w-full h-40 pointer-events-none"
@@ -92,12 +129,14 @@
         <div class="relative z-10 px-6 max-w-6xl mx-auto flex flex-col items-center">
 
             <!-- BADGE -->
-            <span class="inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-gray-300 mb-8 uppercase">
+            <span
+                class="inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-gray-300 mb-8 uppercase">
                 AI-Driven Tech Solutions
             </span>
 
             <!-- HEADING -->
-            <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 600; line-height: 1.1; color: #ffffff; letter-spacing: 0em; margin-bottom: 1.5rem; text-align: center;">
+            <h1
+                style="font-family: 'Inter', sans-serif; font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 600; line-height: 1.1; color: #ffffff; letter-spacing: 0em; margin-bottom: 1.5rem; text-align: center;">
                 ThunderGits
             </h1>
 
@@ -111,22 +150,37 @@
             <!-- CTA ROW -->
             <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center">
 
-                <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-full font-semibold text-sm shadow-lg shadow-indigo-900/50 hover:scale-105 transition duration-300">
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+                    class="flex items-center gap-2 bg-primary hover:bg-primary-dark cursor-pointer text-white px-8 py-4 rounded-full font-semibold text-sm shadow-lg shadow-indigo-900/50 hover:scale-105 transition duration-300">
                     Get Quote
                     <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs">→</span>
                 </button>
 
                 <!-- AVATAR STACK + COUNT -->
-                <div class="flex items-center gap-3">
-                    <div class="flex -space-x-2">
-                        <img class="w-9 h-9 rounded-full border-2 border-black object-cover" src="https://i.pravatar.cc/100?img=11">
-                        <img class="w-9 h-9 rounded-full border-2 border-black object-cover" src="https://i.pravatar.cc/100?img=22">
-                        <img class="w-9 h-9 rounded-full border-2 border-black object-cover" src="https://i.pravatar.cc/100?img=33">
+                <div class="flex items-center gap-4">
+
+                    <!-- BRAND LOGOS -->
+                    <div class="flex -space-x-3">
+                        <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain"
+                            src="./assets/brands/davabharti.png" alt="Dava Bharti">
+
+                        <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain"
+                            src="./assets/brands/enersol.png" alt="Enersol">
+
+                        <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain"
+                            src="./assets/brands/thikana.png" alt="Thikana">
                     </div>
+
+                    <!-- TEXT -->
                     <div class="text-left">
-                        <p class="text-white text-sm font-bold leading-none">+20K</p>
-                        <p class="text-gray-400 text-xs mt-0.5">Trusted Customers</p>
+                        <p class="text-white text-sm font-semibold leading-none">
+                            50+ Brands
+                        </p>
+                        <p class="text-gray-400 text-xs mt-1">
+                            Trusted by Leading Companies
+                        </p>
                     </div>
+
                 </div>
 
             </div>
@@ -142,7 +196,8 @@
 
                 <div class="flex w-max animate-scroll gap-0">
                     <!-- Group 1 -->
-                    <div class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
+                    <div
+                        class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
                         <span class="whitespace-nowrap">Davabharti</span>
                         <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
                         <span class="whitespace-nowrap">Ganesha Foundation</span>
@@ -151,7 +206,8 @@
                         <span class="whitespace-nowrap">Coding Pandas</span>
                     </div>
                     <!-- Group 2 (duplicate for seamless loop) -->
-                    <div class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
+                    <div
+                        class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
                         <span class="whitespace-nowrap">Davabharti</span>
                         <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
                         <span class="whitespace-nowrap">Ganesha Foundation</span>
@@ -168,7 +224,7 @@
 
 
     <!-- about section -->
-    <section class="bg-black  text-white overflow-hidden ">
+    <section class="bg-black text-white overflow-hidden ">
         <section class="bg-gray-100 py-16 h-[350px]">
             <div class="max-w-7xl mx-auto px-6 text-center">
 
@@ -177,18 +233,16 @@
                     WE WORKED WITH GLOBAL LARGEST BRANDS
                 </p>
 
-                <!-- Logos -->
-                <div class="flex  gap-10 items-center justify-between">
+                <div class="carousal" id="carousel">
 
-                    <img src="./assets/brands/davabharti.png" class="mx-auto h-20 cursor-pointer " />
+                    <div class="carousalgroup flex gap-10 items-center justify-start sm:justify-center">
+                        <img src="./assets/brands/davabharti.png" class="logo" />
+                        <img src="./assets/brands/enersol.png" class="logo" />
+                        <img src="./assets/brands/header.png" class="logo" />
+                        <img src="./assets/brands/logo.png" class="logo" />
+                        <img src="./assets/brands/thikana.png" class="logo" />
+                    </div>
 
-                    <img src="./assets/brands/enersol.png" class="mx-auto h-20  cursor-pointer " />
-
-                    <img src="./assets/brands/header.png" class="mx-auto h-20 cursor-pointer   " />
-
-                    <img src="./assets/brands/logo.png" class="mx-auto h-20  cursor-pointer  " />
-
-                    <img src="./assets/brands/thikana.png" class="mx-auto h-20  cursor-pointer 0" />
 
                 </div>
 
@@ -216,10 +270,12 @@
                 </p>
 
                 <!-- Button -->
-                <button
-                    class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border border-gray-600 flex items-center justify-center text-xs sm:text-sm hover:bg-white hover:text-black transition-all duration-300">
-                    Explore Us ↗
-                </button>
+                <a href="./work.html">
+                    <button
+                        class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full cursor-pointer border border-gray-600 flex items-center justify-center text-xs sm:text-sm hover:bg-white hover:text-black transition-all duration-300">
+                        Explore Us ↗
+                    </button>
+                </a>
 
             </div>
 
@@ -257,7 +313,7 @@
 
                 <!-- Button -->
                 <button
-                    class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full border border-gray-500 flex items-center justify-center text-xs sm:text-sm hover:bg-white hover:text-black transition-all duration-300">
+                    class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 cursor-pointer rounded-full border border-gray-500 flex items-center justify-center text-xs sm:text-sm hover:bg-white hover:text-black transition-all duration-300">
                     Explore Us ↗
                 </button>
 
@@ -354,12 +410,13 @@
                         </div>
 
                         <!-- BUTTON -->
-                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                        <a href="./work.html">
+                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
                        rounded-full border border-gray-400 text-sm
                        transition-all duration-500
-                       group-hover:bg-black group-hover:text-white ">
-                            Explore ↗
-                        </button>
+                       group-hover:bg-blue-950 group-hover:text-white cursor-pointer ">
+                                Explore ↗
+                            </button></a>
 
                     </div>
                 </div>
@@ -407,12 +464,14 @@
                         </div>
 
                         <!-- BUTTON -->
-                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                        <a href="./work.html">
+                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
                        rounded-full border border-gray-400 text-sm
                        transition-all duration-500
-                       group-hover:bg-black group-hover:text-white">
-                            Explore ↗
-                        </button>
+                       group-hover:bg-blue-950 group-hover:text-white cursor-pointer">
+                                Explore ↗
+                            </button>
+                        </a>
 
                     </div>
                 </div>
@@ -460,12 +519,14 @@
                         </div>
 
                         <!-- BUTTON -->
-                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                        <a href="./work.html">
+                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
                        rounded-full border border-gray-400 text-sm
                        transition-all duration-500
-                       group-hover:bg-black group-hover:text-white">
-                            Explore ↗
-                        </button>
+                       group-hover:bg-blue-950 group-hover:text-white cursor-pointer">
+                                Explore ↗
+                            </button>
+                        </a>
 
                     </div>
                 </div>
@@ -514,12 +575,14 @@
                         </div>
 
                         <!-- BUTTON -->
-                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                        <a href="./work.html">
+                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
                        rounded-full border border-gray-400 text-sm
                        transition-all duration-500
-                       group-hover:bg-black group-hover:text-white">
-                            Explore ↗
-                        </button>
+                       group-hover:bg-blue-950 group-hover:text-white cursor-pointer">
+                                Explore ↗
+                            </button>
+                        </a>
 
                     </div>
                 </div>
@@ -568,12 +631,15 @@
                         </div>
 
                         <!-- BUTTON -->
-                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                        <a href="./work.html">
+                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
                        rounded-full border border-gray-400 text-sm
                        transition-all duration-500
-                       group-hover:bg-black group-hover:text-white">
-                            Explore ↗
-                        </button>
+                       group-hover:bg-blue-950 group-hover:text-white cursor-pointer">
+                                Explore ↗
+                            </button>
+                        </a>
+
 
                     </div>
                 </div>
@@ -608,7 +674,8 @@
                     </div>
                     <h3 class="text-xl font-bold mt-4">Chief Executive Officer</h3>
                     <p class="text-indigo-400 text-sm font-semibold">CEO</p>
-                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Visionary leader driving ThunderGits towards global innovation and digital excellence.</p>
+                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Visionary leader driving ThunderGits
+                        towards global innovation and digital excellence.</p>
                 </div>
 
                 <!-- COO -->
@@ -619,7 +686,8 @@
                     </div>
                     <h3 class="text-xl font-bold mt-4">Abhishek Agrawaal</h3>
                     <p class="text-indigo-400 text-sm font-semibold">Chief Operating Officer (COO)</p>
-                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Operations expert focused on scaling technical teams and ensuring seamless project delivery.</p>
+                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Operations expert focused on scaling
+                        technical teams and ensuring seamless project delivery.</p>
                 </div>
 
                 <!-- TECH LEAD / PREM PRAKASH -->
@@ -630,7 +698,8 @@
                     </div>
                     <h3 class="text-xl font-bold mt-4">Prem Prakash</h3>
                     <p class="text-indigo-400 text-sm font-semibold">Tech Lead & Full Stack Developer</p>
-                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Worked on 50+ projects including SaaS-based platforms.</p>
+                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Worked on 50+ projects including
+                        SaaS-based platforms.</p>
                 </div>
 
                 <!-- FULL STACK DEV / TARUN -->
@@ -641,7 +710,8 @@
                     </div>
                     <h3 class="text-xl font-bold mt-4">Tarun Choudhary</h3>
                     <p class="text-indigo-400 text-sm font-semibold">Full Stack Developer</p>
-                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Versatile developer specializing in scalable architectures and pixel-perfect user interfaces.</p>
+                    <p class="text-gray-500 text-xs mt-2 px-4 leading-relaxed">Versatile developer specializing in
+                        scalable architectures and pixel-perfect user interfaces.</p>
                 </div>
 
             </div>
@@ -785,10 +855,12 @@
 
                     <!-- EXPLORE BUTTON -->
                     <div class="mt-12 md:mt-16">
-                        <button
-                            class="w-36 h-36 md:w-44 md:h-44 rounded-full border border-gray-800 text-xl md:text-base text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300 flex items-center justify-center">
-                            Explore Us ↗
-                        </button>
+                        <a href="./work.html">
+                            <button
+                                class="w-36 h-36 md:w-44 md:h-44 rounded-full cursor-pointer border border-primary text-xl md:text-base text-gray-800 hover:bg-blue-950 hover:text-white transition-all duration-300 flex items-center justify-center">
+                                Explore Us ↗
+                            </button>
+                        </a>
                     </div>
 
                 </div>
@@ -856,9 +928,13 @@
                             class="px-4 py-2 border-2 text-xl font-bold cursor-pointer border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed">
                             <span id="btnText">Send Message</span>
                             <span id="btnLoader" class="hidden ml-2">
-                                <svg class="animate-spin h-5 w-5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3.5-3.5L12 0v4a8 8 0 100 16v-4l-3.5 3.5L12 24v-4a8 8 0 01-8-8z"></path>
+                                <svg class="animate-spin h-5 w-5 text-current" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8v4l3.5-3.5L12 0v4a8 8 0 100 16v-4l-3.5 3.5L12 24v-4a8 8 0 01-8-8z">
+                                    </path>
                                 </svg>
                             </span>
                         </button>
@@ -890,13 +966,16 @@
 
             <!-- COL 2: SOCIAL LINKS -->
             <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-black">
-                <a href="#"
+                <a href="#" target="_blank" rel="noopener noreferrer"
                     class="px-12 py-8 text-gray-800 font-semibold border-b border-black  text-center md:text-left">Facebook</a>
-                <a href="#"
+                <a href="https://www.instagram.com/thundergits?igsh=NDhjcnNvNGh1d3Vq" target="_blank"
+                    rel="noopener noreferrer"
                     class="px-12 py-8 text-gray-800 font-semibold border-b border-black  text-center md:text-left">Instagram</a>
-                <a href="#"
+                <a href="https://www.youtube.com/@thundergits" target="_blank" rel="noopener noreferrer"
                     class="px-12 py-8 text-gray-800 font-semibold border-b border-black  text-center md:text-left">Youtube</a>
-                <a href="#" class="px-12 py-8 text-gray-800 font-semibold  text-center md:text-left">Linkedin</a>
+                <a href="https://www.linkedin.com/company/thundergits/posts/?feedView=all" target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-12 py-8 text-gray-800 font-semibold  text-center md:text-left">Linkedin</a>
             </div>
 
             <!-- COL 3: LET'S TALK + CONTACT INFO -->
@@ -1059,10 +1138,10 @@
         const cy = Math.floor((e.clientY - rect.top) / CELL);
 
         const pattern = [
-            [0,  0,  0.40],
-            [-1, 0,  0.20], [1,  0,  0.20], [0, -1, 0.20], [0,  1, 0.20],
-            [-1,-1,  0.09], [1, -1,  0.09], [-1, 1, 0.09], [1,  1, 0.09],
-            [-2, 0,  0.04], [2,  0,  0.04], [0, -2, 0.04], [0,  2, 0.04],
+            [0, 0, 0.40],
+            [-1, 0, 0.20], [1, 0, 0.20], [0, -1, 0.20], [0, 1, 0.20],
+            [-1, -1, 0.09], [1, -1, 0.09], [-1, 1, 0.09], [1, 1, 0.09],
+            [-2, 0, 0.04], [2, 0, 0.04], [0, -2, 0.04], [0, 2, 0.04],
         ];
 
         pattern.forEach(([dx, dy, alpha]) => {
@@ -1081,25 +1160,25 @@
 
 <script>
     /* Consultation Form Submission */
-    document.getElementById('consultationForm').addEventListener('submit', async function(e) {
+    document.getElementById('consultationForm').addEventListener('submit', async function (e) {
         e.preventDefault();
-        
+
         const form = this;
         const btn = document.getElementById('submitBtn');
         const btnText = document.getElementById('btnText');
         const btnLoader = document.getElementById('btnLoader');
         const status = document.getElementById('formStatus');
-        
+
         // Form Data
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-        
+
         // UI State: Loading
         btn.disabled = true;
         btnText.textContent = "Sending...";
         btnLoader.classList.remove('hidden');
         status.classList.add('hidden');
-        
+
         try {
             const emailHtml = `
                 <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
@@ -1145,76 +1224,76 @@
 </script>
 
 <script>
-  // ThunderGits hero — letter free-fall on hover, instant reappear on leave
-  const heroH1 = document.querySelector('#hero-section h1');
-  if (heroH1) {
-    heroH1.innerHTML = [...heroH1.textContent.trim()].map(c =>
-      `<span class="hero-letter">${c === ' ' ? '&nbsp;' : c}</span>`
-    ).join('');
+    // ThunderGits hero — letter free-fall on hover, instant reappear on leave
+    const heroH1 = document.querySelector('#hero-section h1');
+    if (heroH1) {
+        heroH1.innerHTML = [...heroH1.textContent.trim()].map(c =>
+            `<span class="hero-letter">${c === ' ' ? '&nbsp;' : c}</span>`
+        ).join('');
 
-    heroH1.querySelectorAll('.hero-letter').forEach(l => {
-      l._anim = null;
-      l.addEventListener('mouseenter', () => {
-        if (l._anim) return; // already falling
-        const rotation = (Math.random() - 0.5) * 70;
-        const drift    = (Math.random() - 0.5) * 60;
-        l.style.pointerEvents = 'none'; // block false mouseleave as transform moves element
-        l._anim = l.animate([
-          { transform: 'translateY(0) scale(1)',       opacity: 1, offset: 0,    easing: 'ease-out' },
-          { transform: 'translateY(-8px) scale(1.28)', opacity: 1, offset: 0.07, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)' },
-          { transform: `translateY(150vh) translateX(${drift}px) rotate(${rotation}deg) scale(0.5)`, opacity: 0, offset: 1 }
-        ], { duration: 1400, fill: 'forwards' });
-        l._anim.onfinish = () => {
-          l._anim.cancel(); // release fill:forwards so inline styles can take effect
-          l._anim = null;
-          l.style.transition = 'none';
-          l.style.transform  = '';
-          l.style.opacity    = '0';
-          l.offsetHeight;
-          l.style.transition = 'opacity 1s ease-out';
-          l.style.opacity    = '1';
-          setTimeout(() => { l.style.transition = ''; l.style.pointerEvents = ''; }, 1050);
-        };
-      });
-    });
+        heroH1.querySelectorAll('.hero-letter').forEach(l => {
+            l._anim = null;
+            l.addEventListener('mouseenter', () => {
+                if (l._anim) return; // already falling
+                const rotation = (Math.random() - 0.5) * 70;
+                const drift = (Math.random() - 0.5) * 60;
+                l.style.pointerEvents = 'none'; // block false mouseleave as transform moves element
+                l._anim = l.animate([
+                    { transform: 'translateY(0) scale(1)', opacity: 1, offset: 0, easing: 'ease-out' },
+                    { transform: 'translateY(-8px) scale(1.28)', opacity: 1, offset: 0.07, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)' },
+                    { transform: `translateY(150vh) translateX(${drift}px) rotate(${rotation}deg) scale(0.5)`, opacity: 0, offset: 1 }
+                ], { duration: 1400, fill: 'forwards' });
+                l._anim.onfinish = () => {
+                    l._anim.cancel(); // release fill:forwards so inline styles can take effect
+                    l._anim = null;
+                    l.style.transition = 'none';
+                    l.style.transform = '';
+                    l.style.opacity = '0';
+                    l.offsetHeight;
+                    l.style.transition = 'opacity 1s ease-out';
+                    l.style.opacity = '1';
+                    setTimeout(() => { l.style.transition = ''; l.style.pointerEvents = ''; }, 1050);
+                };
+            });
+        });
 
-    // Lightning strike effect on h1 hover
-    heroH1.style.position = 'relative';
-    let _ltInterval = null;
+        // Lightning strike effect on h1 hover
+        heroH1.style.position = 'relative';
+        let _ltInterval = null;
 
-    function _spawnBolt() {
-      const bolt = document.createElement('div');
-      const h    = 55 + Math.random() * 35;
-      const segs = 5 + Math.floor(Math.random() * 3);
-      let d = 'M 10 0';
-      for (let i = 1; i <= segs; i++) {
-        d += ` L ${2 + Math.random() * 16} ${(h / segs) * i}`;
-      }
-      bolt.style.cssText = `position:absolute;pointer-events:none;z-index:20;left:${Math.random()*92}%;top:0;`;
-      bolt.innerHTML = `<svg width="20" height="${h}" viewBox="0 0 20 ${h}">
+        function _spawnBolt() {
+            const bolt = document.createElement('div');
+            const h = 55 + Math.random() * 35;
+            const segs = 5 + Math.floor(Math.random() * 3);
+            let d = 'M 10 0';
+            for (let i = 1; i <= segs; i++) {
+                d += ` L ${2 + Math.random() * 16} ${(h / segs) * i}`;
+            }
+            bolt.style.cssText = `position:absolute;pointer-events:none;z-index:20;left:${Math.random() * 92}%;top:0;`;
+            bolt.innerHTML = `<svg width="20" height="${h}" viewBox="0 0 20 ${h}">
         <path d="${d}" fill="none" stroke="#93c5fd" stroke-width="2.2" stroke-linecap="round"/>
         <path d="${d}" fill="none" stroke="#ffffff" stroke-width="0.7" stroke-linecap="round"/>
       </svg>`;
-      heroH1.appendChild(bolt);
-      bolt.animate([
-        { opacity: 1, transform: 'scaleY(0)', transformOrigin: 'top' },
-        { opacity: 1, transform: 'scaleY(1)', transformOrigin: 'top', offset: 0.18 },
-        { opacity: 0.8, offset: 0.4 },
-        { opacity: 0 }
-      ], { duration: 280 + Math.random() * 180, fill: 'forwards' }).onfinish = () => bolt.remove();
-    }
+            heroH1.appendChild(bolt);
+            bolt.animate([
+                { opacity: 1, transform: 'scaleY(0)', transformOrigin: 'top' },
+                { opacity: 1, transform: 'scaleY(1)', transformOrigin: 'top', offset: 0.18 },
+                { opacity: 0.8, offset: 0.4 },
+                { opacity: 0 }
+            ], { duration: 280 + Math.random() * 180, fill: 'forwards' }).onfinish = () => bolt.remove();
+        }
 
-    heroH1.addEventListener('mouseenter', () => {
-      heroH1.classList.add('thunderstrike');
-      _spawnBolt();
-      _ltInterval = setInterval(_spawnBolt, 200);
-    });
-    heroH1.addEventListener('mouseleave', () => {
-      heroH1.classList.remove('thunderstrike');
-      clearInterval(_ltInterval);
-      _ltInterval = null;
-    });
-  }
+        heroH1.addEventListener('mouseenter', () => {
+            heroH1.classList.add('thunderstrike');
+            _spawnBolt();
+            _ltInterval = setInterval(_spawnBolt, 200);
+        });
+        heroH1.addEventListener('mouseleave', () => {
+            heroH1.classList.remove('thunderstrike');
+            clearInterval(_ltInterval);
+            _ltInterval = null;
+        });
+    }
 </script>
 
 </html>

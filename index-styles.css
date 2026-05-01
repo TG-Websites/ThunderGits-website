@@ -1,3 +1,6 @@
+*{
+    scroll-behavior: smooth;
+}
 :root {
   --primary: #4338CA;       /* similar to indigo-700 */
   --primary-dark: #3730A3;  /* similar to indigo-800 */

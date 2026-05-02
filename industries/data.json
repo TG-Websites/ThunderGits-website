@@ -1,0 +1,491 @@
+{
+  "banking": {
+    "hero": {
+      "badge": "Neo Banking Solutions",
+      "title": "Powering the Future of Digital Banking",
+      "highlight": "Digital Banking",
+      "description": "We help fintech startups and enterprises launch, scale, and innovate in the neo banking space. From seamless user experiences to secure, scalable platforms — we build solutions that accelerate growth, enhance customer engagement, and redefine modern banking.",
+      "video": "../../assets/about-video.mp4"
+    },
+    "useCases": {
+      "title": "Real-World <span class='text-indigo-500'>Use Cases</span>",
+      "subtitle": "Our neo banking solutions power diverse fintech experiences across industries.",
+      "items": [
+        {
+          "icon": "fas fa-user-friends",
+          "title": "Digital Savings Accounts",
+          "description": "Enable users to open and manage bank accounts instantly with seamless onboarding and KYC."
+        },
+        {
+          "icon": "fas fa-credit-card",
+          "title": "Smart Payments",
+          "description": "Provide fast, secure, and contactless payment solutions with real-time transaction tracking."
+        },
+        {
+          "icon": "fas fa-briefcase",
+          "title": "Business Banking",
+          "description": "Offer SMEs powerful tools for managing finances, payroll, and business transactions."
+        },
+        {
+          "icon": "fas fa-robot",
+          "title": "AI Financial Insights",
+          "description": "Deliver personalized insights and recommendations using AI-driven analytics."
+        },
+        {
+          "icon": "fas fa-globe",
+          "title": "Global Transactions",
+          "description": "Enable cross-border payments with multi-currency support and low transaction fees."
+        },
+        {
+          "icon": "fas fa-lock",
+          "title": "Fraud Detection",
+          "description": "Protect users with real-time fraud detection and advanced risk management systems."
+        }
+      ]
+    },
+    "stats": [
+      { "value": "50+", "label": "Banking Clients" },
+      { "value": "₹2B+", "label": "Transactions Processed" },
+      { "value": "99.99%", "label": "Platform Uptime" },
+      { "value": "0", "label": "Security Breaches" }
+    ],
+    "services": {
+      "title": "How We Help Neo Banks Grow",
+      "items": [
+        {
+          "icon": "fa-mobile-alt",
+          "title": "Mobile Banking Apps",
+          "desc": "Fast and secure mobile-first experiences."
+        },
+        {
+          "icon": "fa-shield-alt",
+          "title": "Secure Infrastructure",
+          "desc": "Enterprise-grade security systems."
+        },
+        {
+          "icon": "fa-chart-line",
+          "title": "Growth & Analytics",
+          "desc": "Boost engagement with insights."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Neo Banking?",
+      "description": "We craft scalable fintech ecosystems that drive innovation and growth.",
+      "features": [
+        {
+          "icon": "fa-bolt",
+          "title": "Fast & Scalable",
+          "desc": "Optimized systems that grow."
+        },
+        {
+          "icon": "fa-lock",
+          "title": "Enterprise Security",
+          "desc": "Top-tier protection systems."
+        },
+        {
+          "icon": "fa-layer-group",
+          "title": "End-to-End",
+          "desc": "From idea to launch."
+        }
+      ],
+      "impact": [
+        { "label": "Performance Boost", "value": "80" },
+        { "label": "User Engagement", "value": "65" },
+        { "label": "Security Efficiency", "value": "99" }
+      ]
+    }
+  },
+
+  "stock-market": {
+    "hero": {
+      "badge": "Stock Market Solutions",
+      "title": "Smarter Trading. Faster Decisions.",
+      "highlight": "Trading Intelligence",
+      "description": "We build high-performance trading platforms, analytics dashboards, and AI-driven market tools that help investors and firms make data-backed decisions in real time.",
+      "video": "../../assets/stock-video.mp4"
+    },
+    "useCases": {
+      "title": "Real-World <span class='text-indigo-500'>Trading Use Cases</span>",
+      "subtitle": "Powering modern stock trading ecosystems.",
+      "items": [
+        {
+          "icon": "fas fa-chart-line",
+          "title": "Real-Time Trading Dashboards",
+          "description": "Live market tracking with ultra-fast data visualization."
+        },
+        {
+          "icon": "fas fa-robot",
+          "title": "AI Trading Signals",
+          "description": "Predictive models for smarter investment decisions."
+        },
+        {
+          "icon": "fas fa-coins",
+          "title": "Portfolio Management",
+          "description": "Track, optimize, and balance investment portfolios."
+        },
+        {
+          "icon": "fas fa-bolt",
+          "title": "High-Frequency Systems",
+          "description": "Ultra-low latency trading infrastructure."
+        },
+        {
+          "icon": "fas fa-globe",
+          "title": "Global Market Access",
+          "description": "Access multiple global exchanges from one platform."
+        },
+        {
+          "icon": "fas fa-shield-alt",
+          "title": "Risk Analytics",
+          "description": "Advanced risk detection and financial safety systems."
+        }
+      ]
+    },
+    "stats": [
+      { "value": "120+", "label": "Trading Clients" },
+      { "value": "₹5B+", "label": "Trade Volume Processed" },
+      { "value": "0.5ms", "label": "Avg. Latency" },
+      { "value": "40+", "label": "Global Exchanges Supported" }
+    ],
+    "services": {
+      "title": "How We Power Trading Platforms",
+      "items": [
+        {
+          "icon": "fa-chart-bar",
+          "title": "Real-Time Analytics",
+          "desc": "Live market data and charting tools."
+        },
+        {
+          "icon": "fa-robot",
+          "title": "Algorithmic Trading",
+          "desc": "AI-powered automated trading systems."
+        },
+        {
+          "icon": "fa-shield-alt",
+          "title": "Risk Management",
+          "desc": "Smart risk controls and compliance tools."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Stock Market Solutions?",
+      "description": "We deliver ultra-fast, reliable, and intelligent trading platforms built for the modern investor.",
+      "features": [
+        {
+          "icon": "fa-bolt",
+          "title": "Ultra-Low Latency",
+          "desc": "Millisecond-level execution speed."
+        },
+        {
+          "icon": "fa-brain",
+          "title": "AI-Driven Insights",
+          "desc": "Predictive signals and analytics."
+        },
+        {
+          "icon": "fa-globe",
+          "title": "Global Reach",
+          "desc": "Access to worldwide markets."
+        }
+      ],
+      "impact": [
+        { "label": "Trade Execution Speed", "value": "95" },
+        { "label": "Portfolio Performance", "value": "72" },
+        { "label": "Risk Reduction", "value": "88" }
+      ]
+    }
+  },
+
+  "corporate": {
+    "hero": {
+      "badge": "Corporate Solutions",
+      "title": "Digital Transformation for Enterprises",
+      "highlight": "Enterprise Growth",
+      "description": "We help enterprises modernize operations, automate workflows, and build scalable digital ecosystems that improve productivity and efficiency.",
+      "video": "../../assets/corporate-video.mp4"
+    },
+    "useCases": {
+      "title": "Enterprise <span class='text-indigo-500'>Solutions</span>",
+      "subtitle": "Transforming modern corporate systems.",
+      "items": [
+        {
+          "icon": "fas fa-building",
+          "title": "Enterprise Dashboards",
+          "description": "Centralized control systems for business operations."
+        },
+        {
+          "icon": "fas fa-network-wired",
+          "title": "Workflow Automation",
+          "description": "Automate repetitive corporate processes."
+        },
+        {
+          "icon": "fas fa-users",
+          "title": "HR Management Systems",
+          "description": "Employee tracking and performance systems."
+        },
+        {
+          "icon": "fas fa-chart-pie",
+          "title": "Business Intelligence",
+          "description": "Data-driven enterprise decision-making."
+        },
+        {
+          "icon": "fas fa-lock",
+          "title": "Enterprise Security",
+          "description": "Secure internal communication and data protection."
+        },
+        {
+          "icon": "fas fa-cloud",
+          "title": "Cloud Infrastructure",
+          "description": "Scalable cloud-based enterprise systems."
+        }
+      ]
+    },
+    "stats": [
+      { "value": "200+", "label": "Enterprise Clients" },
+      { "value": "5M+", "label": "Workflows Automated" },
+      { "value": "60%", "label": "Avg. Productivity Gain" },
+      { "value": "99.9%", "label": "System Reliability" }
+    ],
+    "services": {
+      "title": "How We Drive Enterprise Growth",
+      "items": [
+        {
+          "icon": "fa-cogs",
+          "title": "Process Automation",
+          "desc": "Streamline operations end-to-end."
+        },
+        {
+          "icon": "fa-chart-pie",
+          "title": "BI & Reporting",
+          "desc": "Actionable insights from enterprise data."
+        },
+        {
+          "icon": "fa-cloud",
+          "title": "Cloud Solutions",
+          "desc": "Scalable and secure cloud platforms."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Enterprise Solutions?",
+      "description": "We build resilient digital infrastructure that empowers enterprises to scale and adapt in a fast-changing market.",
+      "features": [
+        {
+          "icon": "fa-network-wired",
+          "title": "Seamless Integration",
+          "desc": "Works with your existing systems."
+        },
+        {
+          "icon": "fa-tachometer-alt",
+          "title": "High Performance",
+          "desc": "Built for enterprise-scale demands."
+        },
+        {
+          "icon": "fa-layer-group",
+          "title": "End-to-End Delivery",
+          "desc": "Strategy to deployment."
+        }
+      ],
+      "impact": [
+        { "label": "Operational Efficiency", "value": "75" },
+        { "label": "Cost Reduction", "value": "55" },
+        { "label": "Employee Productivity", "value": "68" }
+      ]
+    }
+  },
+
+  "real-estate": {
+    "hero": {
+      "badge": "Real Estate Tech",
+      "title": "Smart Property Digital Ecosystem",
+      "highlight": "PropTech Innovation",
+      "description": "We build modern real estate platforms for property listing, management, and smart buyer-seller connections with automation and AI-driven insights.",
+      "video": "../../assets/realestate-video.mp4"
+    },
+    "useCases": {
+      "title": "Smart <span class='text-indigo-500'>Real Estate Solutions</span>",
+      "subtitle": "Next-gen property technology platforms.",
+      "items": [
+        {
+          "icon": "fas fa-home",
+          "title": "Property Listings",
+          "description": "Advanced searchable property marketplace."
+        },
+        {
+          "icon": "fas fa-map-marked-alt",
+          "title": "Geo-Based Search",
+          "description": "Find properties based on location intelligence."
+        },
+        {
+          "icon": "fas fa-handshake",
+          "title": "Buyer-Seller Platform",
+          "description": "Direct property transactions without middlemen."
+        },
+        {
+          "icon": "fas fa-video",
+          "title": "Virtual Tours",
+          "description": "3D and video-based property walkthroughs."
+        },
+        {
+          "icon": "fas fa-file-contract",
+          "title": "Digital Documentation",
+          "description": "Paperless property documentation systems."
+        },
+        {
+          "icon": "fas fa-chart-area",
+          "title": "Market Analytics",
+          "description": "Property pricing and investment insights."
+        }
+      ]
+    },
+    "stats": [
+      { "value": "80+", "label": "Real Estate Clients" },
+      { "value": "1M+", "label": "Properties Listed" },
+      { "value": "₹10B+", "label": "Property Value Managed" },
+      { "value": "3x", "label": "Faster Deal Closures" }
+    ],
+    "services": {
+      "title": "How We Transform Real Estate Tech",
+      "items": [
+        {
+          "icon": "fa-home",
+          "title": "Property Portals",
+          "desc": "Feature-rich listing platforms."
+        },
+        {
+          "icon": "fa-map-marked-alt",
+          "title": "Location Intelligence",
+          "desc": "Geo-powered property search."
+        },
+        {
+          "icon": "fa-file-contract",
+          "title": "Digital Transactions",
+          "desc": "End-to-end paperless property deals."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Real Estate Tech?",
+      "description": "We build intelligent PropTech platforms that connect buyers, sellers, and agents in a seamless digital experience.",
+      "features": [
+        {
+          "icon": "fa-search-location",
+          "title": "Smart Discovery",
+          "desc": "AI-powered property recommendations."
+        },
+        {
+          "icon": "fa-handshake",
+          "title": "Transparent Deals",
+          "desc": "Secure and direct transactions."
+        },
+        {
+          "icon": "fa-chart-area",
+          "title": "Market Insights",
+          "desc": "Real-time property analytics."
+        }
+      ],
+      "impact": [
+        { "label": "Lead Conversion Rate", "value": "70" },
+        { "label": "Listing Visibility", "value": "85" },
+        { "label": "Transaction Speed", "value": "60" }
+      ]
+    }
+  },
+
+  "sales-marketing": {
+    "hero": {
+      "badge": "Sales & Marketing Tech",
+      "title": "Accelerate Growth With Smart Marketing",
+      "highlight": "Revenue Growth",
+      "description": "We build automation tools, CRM systems, and marketing platforms that help businesses generate leads, track performance, and increase conversions.",
+      "video": "../../assets/marketing-video.mp4"
+    },
+    "useCases": {
+      "title": "Powerful <span class='text-indigo-500'>Marketing Tools</span>",
+      "subtitle": "Boost sales with intelligent systems.",
+      "items": [
+        {
+          "icon": "fas fa-bullhorn",
+          "title": "Campaign Management",
+          "description": "Run and track multi-channel marketing campaigns."
+        },
+        {
+          "icon": "fas fa-users-cog",
+          "title": "CRM Systems",
+          "description": "Manage customer relationships effectively."
+        },
+        {
+          "icon": "fas fa-chart-bar",
+          "title": "Sales Analytics",
+          "description": "Monitor performance and revenue growth."
+        },
+        {
+          "icon": "fas fa-envelope",
+          "title": "Email Automation",
+          "description": "Automated email marketing workflows."
+        },
+        {
+          "icon": "fas fa-funnel-dollar",
+          "title": "Lead Generation",
+          "description": "Capture and convert high-quality leads."
+        },
+        {
+          "icon": "fas fa-ad",
+          "title": "Ad Optimization",
+          "description": "AI-powered ad performance optimization."
+        }
+      ]
+    },
+    "stats": [
+      { "value": "300+", "label": "Marketing Clients" },
+      { "value": "10M+", "label": "Leads Generated" },
+      { "value": "4x", "label": "Avg. ROI Improvement" },
+      { "value": "90%", "label": "Campaign Success Rate" }
+    ],
+    "services": {
+      "title": "How We Accelerate Sales & Marketing",
+      "items": [
+        {
+          "icon": "fa-bullhorn",
+          "title": "Campaign Automation",
+          "desc": "Multi-channel marketing on autopilot."
+        },
+        {
+          "icon": "fa-users-cog",
+          "title": "CRM & Lead Tools",
+          "desc": "Convert and retain more customers."
+        },
+        {
+          "icon": "fa-chart-bar",
+          "title": "Revenue Analytics",
+          "desc": "Track and optimize sales performance."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Sales & Marketing?",
+      "description": "We deliver data-driven marketing platforms that turn prospects into loyal customers and campaigns into revenue engines.",
+      "features": [
+        {
+          "icon": "fa-funnel-dollar",
+          "title": "High Conversion",
+          "desc": "Optimized funnels that close deals."
+        },
+        {
+          "icon": "fa-robot",
+          "title": "Smart Automation",
+          "desc": "AI tools that work 24/7 for you."
+        },
+        {
+          "icon": "fa-chart-line",
+          "title": "Growth Focused",
+          "desc": "Metrics that matter to your business."
+        }
+      ],
+      "impact": [
+        { "label": "Lead Quality Score", "value": "82" },
+        { "label": "Conversion Rate Boost", "value": "74" },
+        { "label": "Marketing ROI", "value": "90" }
+      ]
+    }
+  }
+}

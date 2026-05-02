@@ -58,39 +58,324 @@
 
 <body>
 
-    <!-- Navbar -->
-    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
-        <div class=" flex items-center justify-between mx-auto px-4 md:px-8 lg:px-20 py-4">
+    <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
+        <div class="flex items-center justify-between sm:justify-center gap-20 mx-auto px-4 py-3">
 
             <!-- LOGO -->
-            <a href="#" class="flex items-start ">
-                <img src="./assets/logo.png" class="h-9" alt="logo"
-                    style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+            <a href="#" class="flex items-center">
+                <img src="./assets/logo.png" class="h-9" alt="Logo" />
             </a>
 
-            <!-- MOBILE BUTTON -->
-            <button id="menu-btn" type="button"
-                class="lg:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <!-- HAMBURGER BUTTON (mobile only) -->
+            <button id="mobile-menu-btn" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                <span class="sr-only">Open main menu</span>
+                <!-- Hamburger icon -->
+                <svg id="icon-open" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+                </svg>
+                <!-- Close icon -->
+                <svg id="icon-close" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
 
-            <!-- MENU -->
-            <div id="menu" class="hidden lg:flex items-center px-5 gap-8">
-                <a href="./index.html" class="text-white hover:text-white text-sm transition font-semibold">Home</a>
-                <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
-                <a href="./work.html" class="text-gray-300 hover:text-white text-sm transition">Work</a>
-                <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
-                <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Career</a>
-                <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
-                <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
-                <a href="./contact.html"
-                    class="px-3 py-1.5 md:px-4 md:py-2 lg:px-6 lg:py-2 bg-primary hover:bg-primary-dark text-white text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-full transition duration-300 whitespace-nowrap">Get
-                    a Quote</a>
-            </div>
+            <!-- DESKTOP NAV -->
+            <ul class="hidden md:flex items-center gap-10 font-medium text-sm">
+                <li><a href="#" class="text-fg-brand font-semibold">Home</a></li>
+                <li><a href="#" class="text-black hover:text-purple-600 transition">About</a></li>
+                <li><a href="#" class="text-black hover:text-purple-600 transition">Work</a></li>
+                <li><a href="#" class="text-black hover:text-purple-600 transition">Services</a></li>
+                <li><a href="#" class="text-black hover:text-purple-600 transition">Career</a></li>
+
+                <!-- INDUSTRIES DROPDOWN -->
+                <li class="relative group">
+                    <button class="flex items-center gap-1 text-black hover:text-purple-600 transition">
+                        Industries
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100
+                            opacity-0 invisible translate-y-2
+                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                            transition-all duration-300 z-50">
+                        <ul class="p-2 text-sm text-gray-700">
+
+                            <!-- Finance & Business -->
+                            <li class="relative group/sub">
+                                <div
+                                    class="flex items-center justify-between p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg cursor-pointer transition">
+                                    Finance & Business <span class="text-gray-400">›</span>
+                                </div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
+                                        transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="./industries/industry.html?industry=manufacturing"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">NEO
+                                                Banking</a></li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Stock
+                                                Market</a></li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Corporate</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Real
+                                                Estate</a></li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Sales
+                                                & Marketing</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!-- Technology & Media -->
+                            <li class="relative group/sub">
+                                <div
+                                    class="flex items-center justify-between p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg cursor-pointer transition">
+                                    Technology & Media <span class="text-gray-400">›</span>
+                                </div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
+                                        transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Gaming</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Media
+                                                & Entertainment</a></li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Education</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!-- Commerce & Lifestyle -->
+                            <li class="relative group/sub">
+                                <div
+                                    class="flex items-center justify-between p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg cursor-pointer transition">
+                                    Commerce & Lifestyle <span class="text-gray-400">›</span>
+                                </div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
+                                        transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Retail
+                                                & Ecommerce</a></li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Household</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Food
+                                                & Beverages</a></li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Travel
+                                                & Hospitality</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <!-- Industry & Services -->
+                            <li class="relative group/sub">
+                                <div
+                                    class="flex items-center justify-between p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg cursor-pointer transition">
+                                    Industry & Services <span class="text-gray-400">›</span>
+                                </div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
+                                        transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Transportation
+                                                & Logistics</a></li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Healthcare</a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="block p-2 hover:bg-purple-50 hover:text-purple-700 rounded-lg transition">Automotive</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li><a href="#" class="text-black hover:text-purple-600 transition">Blog</a></li>
+                <li><a href="#" class="text-black hover:text-purple-600 transition">Contact</a></li>
+
+                <li>
+                    <a href="#"
+                        class="px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white text-sm font-semibold hover:opacity-90 transition">
+                        GET A QUOTE
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-gray-100 px-4 pb-6 pt-2 max-h-[80vh] overflow-y-auto">
+            <ul class="flex flex-col gap-1 text-sm font-medium">
+
+                <li><a href="#" class="block py-2.5 px-3 rounded-lg text-purple-600 font-semibold bg-purple-50">Home</a>
+                </li>
+                <li><a href="#" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a>
+                </li>
+                <li><a href="#" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a>
+                </li>
+                <li><a href="#"
+                        class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
+                <li><a href="#"
+                        class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
+
+                <!-- INDUSTRIES ACCORDION -->
+                <li>
+                    <button onclick="toggleAccordion('industries')"
+                        class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
+                        <span>Industries</span>
+                        <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    <div id="industries" class="hidden pl-3 mt-1 flex flex-col gap-1">
+
+                        <!-- Finance & Business -->
+                        <div>
+                            <button onclick="toggleAccordion('finance')"
+                                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Finance & Business</span>
+                                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="finance" class="hidden pl-4 mt-0.5 flex flex-col">
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO
+                                    Banking</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock
+                                    Market</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real
+                                    Estate</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales
+                                    & Marketing</a>
+                            </div>
+                        </div>
+
+                        <!-- Technology & Media -->
+                        <div>
+                            <button onclick="toggleAccordion('tech')"
+                                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Technology & Media</span>
+                                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="tech" class="hidden pl-4 mt-0.5 flex flex-col">
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media
+                                    & Entertainment</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
+                            </div>
+                        </div>
+
+                        <!-- Commerce & Lifestyle -->
+                        <div>
+                            <button onclick="toggleAccordion('commerce')"
+                                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Commerce & Lifestyle</span>
+                                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="commerce" class="hidden pl-4 mt-0.5 flex flex-col">
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail
+                                    & Ecommerce</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food
+                                    & Beverages</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel
+                                    & Hospitality</a>
+                            </div>
+                        </div>
+
+                        <!-- Industry & Services -->
+                        <div>
+                            <button onclick="toggleAccordion('industry')"
+                                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Industry & Services</span>
+                                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m19 9-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div id="industry" class="hidden pl-4 mt-0.5 flex flex-col">
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation
+                                    & Logistics</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
+                                <a href="#"
+                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li><a href="#" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a>
+                </li>
+                <li><a href="#"
+                        class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
+
+                <li class="mt-2">
+                    <a href="#"
+                        class="block text-center px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white text-sm font-semibold hover:opacity-90 transition">
+                        GET A QUOTE
+                    </a>
+                </li>
+
+            </ul>
         </div>
     </nav>
+
+
+
 
     <div id="mobile-menu"
         class="fixed inset-0 bg-[#0b1f3a] text-white z-[999] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col">
@@ -1347,22 +1632,28 @@
         });
     }
 </script>
+
 <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const closeBtn = document.getElementById("close-menu");
-    const mobileMenu = document.getElementById("mobile-menu");
+    // Hamburger toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
 
-    // OPEN (from right → left)
-    menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("translate-x-full");
-        mobileMenu.classList.add("translate-x-0");
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
     });
 
-    // CLOSE (back to right)
-    closeBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("translate-x-0");
-        mobileMenu.classList.add("translate-x-full");
-    });
+    // Accordion toggle
+    function toggleAccordion(id) {
+        const el = document.getElementById(id);
+        const icon = document.getElementById(id + '-icon');
+        el.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+    }
 </script>
+<script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
 
 </html>

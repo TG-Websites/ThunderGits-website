@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Blog - ThunderGits Technology</title>
+  <link rel="icon" href="./assets/tg-favicon.png" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -26,10 +28,11 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./index-styles.css">
 </head>
+
 <body class="bg-white font-sans text-blue-950 overflow-x-hidden">
 
-    <!-- Navbar -->
-    <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
+  <!-- Navbar -->
+  <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
     <div class="flex items-center justify-between  gap-6 lg:gap-20 mx-auto px-3 lg:px-20 py-3">
 
       <!-- LOGO -->
@@ -182,7 +185,7 @@
           </div>
         </li>
 
-        <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
+        <li><a href="./blog.html" class=" text-primary font-semibold transition">Blog</a></li>
         <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
 
         <li>
@@ -199,14 +202,19 @@
       class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pb-6 pt-2 max-h-[80vh] overflow-y-auto">
       <ul class="flex flex-col gap-1 text-sm font-medium">
 
-        <li><a href="#" class="block py-2.5 px-3 rounded-lg text-purple-600 font-semibold bg-purple-50">Home</a>
+        <li><a href="./index.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Home</a>
         </li>
-        <li><a href="#" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a>
+        <li><a href="./about.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a>
         </li>
-        <li><a href="#" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a>
+        <li><a href="./work.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800  hover:bg-gray-50 transition">Work</a>
         </li>
-        <li><a href="#" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
-        <li><a href="#" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
+        <li><a href="./service.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
+        <li><a href="./career.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
 
         <!-- INDUSTRIES ACCORDION -->
         <li>
@@ -232,7 +240,7 @@
                 </svg>
               </button>
               <div id="finance" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="#"
+                <a href="./index.html?page=banking"
                   class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO
                   Banking</a>
                 <a href="#"
@@ -319,12 +327,14 @@
           </div>
         </li>
 
-        <li><a href="#" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a>
+        <li><a href="./blog.html"
+            class="block py-2.5 px-3 rounded-lg text-primary bg-blue-50 transition">Blog</a>
         </li>
-        <li><a href="#" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
+        <li><a href="./contact.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
 
         <li class="mt-2">
-          <a href="#"
+          <a href="./contact.html"
             class="block text-center px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:opacity-90 transition">
             GET A QUOTE
           </a>
@@ -336,26 +346,33 @@
 
 
   <!-- Hero Section -->
-  <section id="hero-section" class="relative min-h-[70vh] flex items-center justify-center text-center text-white overflow-hidden bg-black">
+  <section id="hero-section"
+    class="relative min-h-[70vh] flex items-center justify-center text-center text-white overflow-hidden bg-black">
     <!-- STATIC CSS GRID LINES -->
-    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
-    
+    <div class="absolute inset-0 z-0 pointer-events-none"
+      style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
+    </div>
+
     <!-- INTERACTIVE HIGHLIGHT CELLS -->
     <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
 
     <!-- TOP CENTER GLOW -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.55) 0%, rgba(56,189,248,0.35) 20%, rgba(99,102,241,0.12) 50%, transparent 75%);"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
+      style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.55) 0%, rgba(56,189,248,0.35) 20%, rgba(99,102,241,0.12) 50%, transparent 75%);">
+    </div>
 
     <!-- CONTENT -->
     <div class="relative z-10 px-6 max-w-6xl mx-auto flex flex-col items-center" data-aos="fade-up">
-      <span class="inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-gray-300 mb-8 uppercase">
+      <span
+        class="inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-gray-300 mb-8 uppercase">
         Our Editorial Hub
       </span>
-      <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.5rem;">
-        Stories, Ideas <br/> & <span class="text-indigo-400">Innovation</span>
+      <h1
+        style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.5rem;">
+        Stories, Ideas <br /> & <span class="text-indigo-400">Innovation</span>
       </h1>
       <p class="text-gray-400 text-lg leading-relaxed max-w-2xl">
-        Insights from our team on artificial intelligence, <br class="hidden md:block"/> 
+        Insights from our team on artificial intelligence, <br class="hidden md:block" />
         modern engineering, and the future of digital products.
       </p>
     </div>
@@ -366,63 +383,90 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         <!-- Static Blogs -->
-        <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up">
+        <div
+          class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col"
+          data-aos="fade-up">
           <div class="h-60 overflow-hidden relative">
-            <img src="./assets/why-react-native.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="React Native">
+            <img src="./assets/why-react-native.webp"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="React Native">
             <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
             <div class="flex items-center gap-3 mb-5">
-              <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">Strategy</span>
+              <span
+                class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">Strategy</span>
               <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">5 min read</span>
             </div>
-            <h3 class="text-xl font-bold text-primary mb-4 group-hover:text-primary-dark transition-colors leading-tight">Why React Native for Enterprise Apps</h3>
-            <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">Discover why leading enterprises are choosing React Native for their cross-platform mobile strategy.</p>
+            <h3
+              class="text-xl font-bold text-primary mb-4 group-hover:text-primary-dark transition-colors leading-tight">
+              Why React Native for Enterprise Apps</h3>
+            <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">Discover why leading enterprises are
+              choosing React Native for their cross-platform mobile strategy.</p>
             <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
               <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Jan 01, 2025</span>
-              <a href="./blogs/why-react-native.html" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-dark transition-colors shadow-lg group-hover:scale-110">
+              <a href="./blogs/why-react-native.html"
+                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-dark transition-colors shadow-lg group-hover:scale-110">
                 <i class="fas fa-arrow-right text-xs"></i>
               </a>
             </div>
           </div>
         </div>
 
-        <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col"
+          data-aos="fade-up" data-aos-delay="100">
           <div class="h-60 overflow-hidden relative">
-            <img src="./assets/Deepseek.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Deepseek AI">
+            <img src="./assets/Deepseek.webp"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Deepseek AI">
             <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
             <div class="flex items-center gap-3 mb-5">
-              <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">AI</span>
+              <span
+                class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">AI</span>
               <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">8 min read</span>
             </div>
-            <h3 class="text-xl font-bold text-primary mb-4 group-hover:text-primary-dark transition-colors leading-tight">Deepseek: AI-Powered Search</h3>
-            <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">The future of search is here. Learn how Deepseek is revolutionizing information retrieval with AI.</p>
+            <h3
+              class="text-xl font-bold text-primary mb-4 group-hover:text-primary-dark transition-colors leading-tight">
+              Deepseek: AI-Powered Search</h3>
+            <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">The future of search is here. Learn how
+              Deepseek is revolutionizing information retrieval with AI.</p>
             <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
               <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Dec 20, 2024</span>
-              <a href="./blogs/deepseek.html" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+              <a href="./blogs/deepseek.html"
+                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
                 <i class="fas fa-arrow-right text-xs"></i>
               </a>
             </div>
           </div>
         </div>
 
-        <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col"
+          data-aos="fade-up" data-aos-delay="200">
           <div class="h-60 overflow-hidden relative">
-            <img src="./assets/web-scrap.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Ethical Scraping">
+            <img src="./assets/web-scrap.jpg"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Ethical Scraping">
             <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
             <div class="flex items-center gap-3 mb-5">
-              <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">Data</span>
+              <span
+                class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">Data</span>
               <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">6 min read</span>
             </div>
-            <h3 class="text-xl font-bold text-primary mb-4 group-hover:text-primary-dark transition-colors leading-tight">The Ethical Side of Web Scraping</h3>
-            <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">Navigating the complex landscape of web scraping ethics and legal considerations for businesses.</p>
+            <h3
+              class="text-xl font-bold text-primary mb-4 group-hover:text-primary-dark transition-colors leading-tight">
+              The Ethical Side of Web Scraping</h3>
+            <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">Navigating the complex landscape of web
+              scraping ethics and legal considerations for businesses.</p>
             <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
               <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Dec 15, 2024</span>
-              <a href="./blogs/the-ethical-web-scraping.html" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+              <a href="./blogs/the-ethical-web-scraping.html"
+                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
                 <i class="fas fa-arrow-right text-xs"></i>
               </a>
             </div>
@@ -431,7 +475,7 @@
 
         <!-- Dynamic Blogs will be injected here -->
       </div>
-      
+
       <!-- Loading Indicator -->
       <div id="blogLoading" class="mt-24 text-center hidden">
         <div class="inline-block w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
@@ -440,111 +484,107 @@
     </div>
   </main>
 
- <!-- FOOTER -->
-    <footer class="w-full bg-gray-100 text-black">
+  <!-- FOOTER -->
+  <footer class="w-full bg-gray-100 text-black">
 
-        <!-- TOP SECTION -->
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+    <!-- TOP SECTION -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
 
-            <!-- COL 1: LOGO + DESC -->
-            <div
-                class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
-                <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
-                <p class="text-sm font-medium leading-relaxed max-w-sm">
-                    When do they work well, and when do they on us and finally, when do we
-                    actually need how can we avoid them.
-                </p>
-            </div>
+      <!-- COL 1: LOGO + DESC -->
+      <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
+        <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+        <p class="text-sm font-medium leading-relaxed max-w-sm">
+          When do they work well, and when do they on us and finally, when do we
+          actually need how can we avoid them.
+        </p>
+      </div>
 
-            <!-- COL 2: SOCIAL LINKS -->
-            <div class="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-300">
-                <a href="#"
-                    class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Facebook</a>
-                <a href="https://www.instagram.com/thundergits"
-                    class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Instagram</a>
-                <a href="https://www.youtube.com/@thundergits"
-                    class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">YouTube</a>
-                <a href="https://www.linkedin.com/company/thundergits"
-                    class="px-8 py-5 text-center md:text-left font-semibold hover:bg-gray-200 transition">LinkedIn</a>
-            </div>
+      <!-- COL 2: SOCIAL LINKS -->
+      <div class="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-300">
+        <a href="#"
+          class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Facebook</a>
+        <a href="https://www.instagram.com/thundergits"
+          class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Instagram</a>
+        <a href="https://www.youtube.com/@thundergits"
+          class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">YouTube</a>
+        <a href="https://www.linkedin.com/company/thundergits"
+          class="px-8 py-5 text-center md:text-left font-semibold hover:bg-gray-200 transition">LinkedIn</a>
+      </div>
 
-            <!-- COL 3: LET'S TALK -->
-            <div class="flex flex-col justify-between px-8 md:px-12 py-12">
-                <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">
-                    LET'S TALK
-                </h2>
-                <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+      <!-- COL 3: LET'S TALK -->
+      <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+        <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">
+          LET'S TALK
+        </h2>
+        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
 
-                    <span class="flex items-start gap-2 min-w-[220px] flex-1">
-                        <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                        </svg>
-                        <span class="leading-relaxed">
-                            2nd Floor, E 1/74, near YMCA,<br>
-                            Sector 11, Faridabad, Haryana 121006
-                        </span>
-                    </span>
+          <span class="flex items-start gap-2 min-w-[220px] flex-1">
+            <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <span class="leading-relaxed">
+              2nd Floor, E 1/74, near YMCA,<br>
+              Sector 11, Faridabad, Haryana 121006
+            </span>
+          </span>
 
-                    <span class="flex items-center gap-2 flex-1 min-w-[180px]">
-                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
-                        </svg>
-                        +91-7765979725
-                    </span>
+          <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
+            </svg>
+            +91-7765979725
+          </span>
 
-                    <span class="flex items-center gap-2 flex-1 min-w-[200px]">
-                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
-                        </svg>
-                        info@thundergits.com
-                    </span>
-
-                </div>
-            </div>
+          <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
+            </svg>
+            info@thundergits.com
+          </span>
 
         </div>
+      </div>
 
-        <!-- BOTTOM BAR -->
-        <div
-            class="border-t border-gray-300 px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-center md:text-left">
-                © 2025 | All rights reserved by ThunderGits Technology
-            </p>
+    </div>
 
-            <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-semibold">
-                <a href="./about.html">About</a>
-                <a href="./blog.html">Blogs</a>
-                <a href="./contact.html">Contact</a>
-                <a href="./career.html">Career</a>
-            </nav>
-        </div>
+    <!-- BOTTOM BAR -->
+    <div
+      class="border-t border-gray-300 px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-center md:text-left">
+        © 2025 | All rights reserved by ThunderGits Technology
+      </p>
 
-    </footer>
+      <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-semibold">
+        <a href="./about.html">About</a>
+        <a href="./blog.html">Blogs</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./career.html">Career</a>
+      </nav>
+    </div>
+
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });
-    
+
     // Interactive Grid Logic
     const gridContainer = document.getElementById('hero-grid');
     function buildGrid() {
-        gridContainer.innerHTML = '';
-        const columns = Math.ceil(window.innerWidth / 50);
-        const rows = Math.ceil(window.innerHeight / 50);
-        const totalCells = columns * rows;
-        for (let i = 0; i < totalCells; i++) {
-            const cell = document.createElement('div');
-            cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
-            gridContainer.appendChild(cell);
-        }
+      gridContainer.innerHTML = '';
+      const columns = Math.ceil(window.innerWidth / 50);
+      const rows = Math.ceil(window.innerHeight / 50);
+      const totalCells = columns * rows;
+      for (let i = 0; i < totalCells; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
+        gridContainer.appendChild(cell);
+      }
     }
     buildGrid();
     window.addEventListener('resize', buildGrid);
@@ -612,7 +652,7 @@
 
     document.addEventListener('DOMContentLoaded', loadDynamicBlogs);
   </script>
-<script>
+  <script>
     // Hamburger toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -620,18 +660,19 @@
     const iconClose = document.getElementById('icon-close');
 
     mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        iconOpen.classList.toggle('hidden');
-        iconClose.classList.toggle('hidden');
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
     });
 
     // Accordion toggle
     function toggleAccordion(id) {
-        const el = document.getElementById(id);
-        const icon = document.getElementById(id + '-icon');
-        el.classList.toggle('hidden');
-        icon.classList.toggle('rotate-180');
+      const el = document.getElementById(id);
+      const icon = document.getElementById(id + '-icon');
+      el.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
     }
-</script>
+  </script>
 </body>
+
 </html>

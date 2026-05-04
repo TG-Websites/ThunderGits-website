@@ -143,7 +143,7 @@ function displayBlogContent(blog) {
                     <span class="text-[10px] tracking-[0.3em] font-black uppercase text-indigo-500/60 mb-3 block">Written By</span>
                     <h4 class="text-3xl font-bold text-blue-950 mb-4">${blog.author?.username || 'ThunderGits Team'}</h4>
                     <p class="text-gray-500 leading-relaxed text-lg max-w-2xl font-light">
-                        ${blog.author?.bio || 'Leading the digital transformation frontier at ThunderGits Technologies. Expert in building scalable architectures and premium user experiences.'}
+                        ${blog.author?.bio || 'Leading the digital transformation frontier at ThunderGits Technology. Expert in building scalable architectures and premium user experiences.'}
                     </p>
                     <div class="flex gap-4 mt-8">
                         <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-500 transition-all shadow-sm"><i class="ri-linkedin-fill"></i></a>

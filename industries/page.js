@@ -15,6 +15,7 @@ async function loadHero() {
       document.getElementById("hero-badge").textContent = hero.badge;
       document.getElementById("hero-title").textContent = hero.title;
       document.getElementById("hero-description").textContent = hero.description;
+      document.getElementById("hero-img").src = hero.image;
     }
 
     /* ---------------- USE CASES ---------------- */

@@ -4,90 +4,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thundergits Technologies - Innovative Tech Solutions</title>
-
+  <title>Our Blog - ThunderGits Technology</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontSize: {
-            base: '1em',
-            sm: '14px',
-            md: '15px',
-            lg: '1.4em',
-            xl: '42px',
-            heading: '6.75vw',
-          },
-          lineHeight: {
-            tight: '1em',
-            normal: '1.2em',
-            relaxed: '1.5em',
-            loose: '1.6em',
-            heading: '0.95em',
-          },
-          letterSpacing: {
-            wide: '1.8px',
-            tighter: '0.01em',
-          },
-          fontWeight: {
-            medium: '500',
-          },
-          transitionProperty: {
-            all: 'all',
-          },
-          transitionTimingFunction: {
-            ease: 'ease',
-          },
-          transitionDuration: {
-            DEFAULT: '300ms',
-          },
           colors: {
             theme: {
               text: '#DEDDDB',
               textLight: '#848484',
-              textDark: '#EFE8CE',
-              link: '#E2725B',
-              hover: '#DD644C',
-              link2: '#7DA189',
-              hover2: '#6D967A',
-              link3: '#9D7246',
-              hover3: '#5B3918',
               bg: '#141414',
               bd: '#424040',
-              altBg: '#292828',
-              altBd: '#535353',
-            },
-            dark: '#0e0e0e',
-            offwhite: '#f5e9cd',
-            graytext: '#d9d9d9',
-            accent: '#f25835',
-            footer: '#121212',
-            linkhover: '#f5e9cd',
+            }
           }
         }
       }
     }
   </script>
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0f172a',     // deep slate for elegance
+            secondary: '#334155',
+            accent: '#3b82f6',      // clean blue for CTAs
+            softgray: '#f8fafc',
+            cardborder: '#e2e8f0',
+          },
+          spacing: {
+            '18': '4.5rem',
+          },
+          maxWidth: {
+            'prose': '65ch',
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -12px rgba(0, 0, 0, 0.08), 0 4px 12px -6px rgba(0, 0, 0, 0.02)',
+            'hover': '0 20px 35px -12px rgba(0, 0, 0, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./../style.css">
-
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="../index-styles.css">
 
+  <style>
+    /* subtle smooth scroll & focus outline improvements */
+    html {
+      scroll-behavior: smooth;
+    }
 
+    body {
+      background-color: #f9fafb;
+    }
+
+    /* custom prose styling for blog content (clean reading) */
+    .blog-content p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+      color: #1e293b;
+    }
+
+    .blog-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+    }
+
+    .blog-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #1e293b;
+    }
+
+    .blog-content blockquote {
+      border-left: 4px solid #3b82f6;
+      padding-left: 1.5rem;
+      font-style: italic;
+      margin: 1.75rem 0;
+      color: #334155;
+      background-color: #f1f5f9;
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      font-weight: 400;
+    }
+
+    .blog-content ul,
+    .blog-content ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+      color: #1e293b;
+    }
+
+    .blog-content li {
+      margin-bottom: 0.4rem;
+    }
+
+    .blog-content a {
+      color: #3b82f6;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-weight: 500;
+    }
+
+    .blog-content img {
+      border-radius: 1rem;
+      margin: 1.8rem 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    /* custom scrollbar for modern look */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #e2e8f0;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #5b6e8c;
+    }
+  </style>
 </head>
 
 <body class="bg-white font-sans text-blue-950 overflow-x-hidden">
 
-
   <!-- Navbar -->
-<nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
+  <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
     <div class="flex items-center justify-between  gap-6 lg:gap-20 mx-auto px-3 lg:px-20 py-3">
 
       <!-- LOGO -->
@@ -257,14 +319,19 @@
       class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pb-6 pt-2 max-h-[80vh] overflow-y-auto">
       <ul class="flex flex-col gap-1 text-sm font-medium">
 
-        <li><a href="../index.html" class="block py-2.5 px-3 rounded-lg text-purple-600 font-semibold bg-purple-50">Home</a>
+        <li><a href="../index.html"
+            class="block py-2.5 px-3 rounded-lg text-purple-600 font-semibold bg-purple-50">Home</a>
         </li>
-        <li><a href="../about.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a>
+        <li><a href="../about.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a>
         </li>
-        <li><a href="../work.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a>
+        <li><a href="../work.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a>
         </li>
-        <li><a href="../service.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
-        <li><a href="../career.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
+        <li><a href="../service.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
+        <li><a href="../career.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
 
         <!-- INDUSTRIES ACCORDION -->
         <li>
@@ -377,9 +444,11 @@
           </div>
         </li>
 
-        <li><a href="../blog.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a>
+        <li><a href="../blog.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a>
         </li>
-        <li><a href="../contact.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
+        <li><a href="../contact.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
 
         <li class="mt-2">
           <a href="#"
@@ -392,9 +461,9 @@
     </div>
   </nav>
 
-
-  <!-- Aligent Hero -->
-  <section id="hero-section" class="relative pt-64 pb-32 bg-black overflow-hidden">
+  <!-- Hero Section -->
+  <section id="hero-section"
+    class="relative min-h-[70vh] flex items-center justify-center text-center text-white overflow-hidden bg-black">
     <!-- STATIC CSS GRID LINES -->
     <div class="absolute inset-0 z-0 pointer-events-none"
       style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
@@ -405,179 +474,226 @@
 
     <!-- TOP CENTER GLOW -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-      style="width: 800px; height: 400px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+      style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.55) 0%, rgba(56,189,248,0.35) 20%, rgba(99,102,241,0.12) 50%, transparent 75%);">
     </div>
 
-    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto" data-aos="fade-up">
-      <span
-        class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
-        Mobile Strategy
-      </span>
-      <h1
-        style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2.5rem;">
-        Why React Native for <br /> <span class="text-indigo-400">Enterprise Apps</span>
-      </h1>
-      <div class="flex justify-center items-center gap-10 text-gray-400 text-xs font-medium uppercase tracking-widest">
-        <div class="flex items-center gap-3">
-          <i class="ri-user-line text-indigo-400"></i>
-          <span>Shivam Jha</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <i class="ri-calendar-line text-indigo-400"></i>
-          <span>January 1, 2025</span>
-        </div>
-      </div>
-    </div>
+<!-- CONTENT -->
+<div class="relative z-10 px-6 max-w-6xl mx-auto flex flex-col items-center text-center" data-aos="fade-up">
+
+  <!-- Category -->
+  <span
+    class="inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-indigo-400 mb-6 uppercase">
+    Mobile Development
+  </span>
+
+  <!-- Blog Title -->
+  <h1
+    style="font-family: 'Inter', sans-serif; font-size: clamp(2.2rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.15; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.2rem;">
+    Why React Native for Enterprise Apps
+  </h1>
+
+  <!-- Description -->
+  <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mb-6">
+    Discover why leading enterprises are choosing React Native to build scalable, high-performance
+    mobile applications with faster development cycles and reduced costs.
+  </p>
+
+  <!-- Meta Info -->
+  <div class="flex items-center gap-4 text-sm text-gray-400">
+    <span>By Shivam Jha</span>
+    <span class="w-1 h-1 bg-gray-500 rounded-full"></span>
+    <span>May 4, 2026</span>
+  </div>
+
+</div>
   </section>
 
+  <!-- ========== MAIN BLOG DETAIL CONTENT ========== -->
+  <main class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 md:py-12">
 
-  <main class="bg-white">
-    <section class="py-24 relative">
-      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-16">
+    <!-- Grid layout: main article column + sidebar (right) responsive -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
 
-        <!-- Sidebar -->
-        <aside class="hidden lg:block w-64 flex-shrink-0 sticky top-32 h-fit">
-          <div class="space-y-12">
-            <div>
-              <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-6 block">Share
-                Article</span>
-              <div class="flex flex-col gap-4">
-                <a href="https://www.linkedin.com/company/thundergits/posts/?feedView=all"
-                  class="w-12 h-12 rounded-2xl border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 hover:bg-gray-50 transition-all"><i
-                    class="fab fa-linkedin-in"></i></a>
-                <a href="#"
-                  class="w-12 h-12 rounded-2xl border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 hover:bg-gray-50 transition-all"><i
-                    class="fab fa-twitter"></i></a>
-                <a href="#"
-                  class="w-12 h-12 rounded-2xl border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 hover:bg-gray-50 transition-all"><i
-                    class="far fa-envelope"></i></a>
-              </div>
-            </div>
-
-            <div>
-              <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-6 block">Reading
-                Info</span>
-              <div class="space-y-6">
-                <div class="flex items-center gap-4 text-blue-950">
-                  <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
-                    <i class="far fa-clock text-xs"></i>
-                  </div>
-                  <span class="text-[10px] font-black uppercase tracking-widest">7 Min Read</span>
-                </div>
-                <div class="flex items-center gap-4 text-blue-950">
-                  <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
-                    <i class="far fa-eye text-xs"></i>
-                  </div>
-                  <span class="text-[10px] font-black uppercase tracking-widest">3.1k Views</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </aside>
-
-        <!-- Article Body -->
-        <div class="flex-grow max-w-3xl">
-          <div class="mb-16 overflow-hidden rounded-[40px] shadow-2xl shadow-blue-950/10" data-aos="zoom-in">
-            <img src="./../assets/why-react-native.webp"
-              class="w-full h-auto object-cover transition-transform duration-700 hover:scale-105">
-          </div>
-
-          <article
-            class="prose prose-lg md:prose-xl prose-blue max-w-none prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter prose-p:text-gray-600 prose-p:leading-relaxed prose-img:rounded-3xl prose-strong:text-blue-950">
-            <p class="text-2xl md:text-3xl text-blue-950 font-black tracking-tighter mb-16 leading-tight">
-              React Native has emerged as a top choice for enterprise mobile applications. By combining the best of web
-              and native development, it offers a powerful framework for building high-quality, cross-platform apps.
-            </p>
-
-            <h2 class="text-4xl font-black uppercase tracking-tighter text-blue-950 mb-10 leading-none">Why Choose React
-              Native?</h2>
-            <p>Artificial intelligence is no longer just a buzzword; it’s the backbone of modern information retrieval.
-              Traditional search engines are being challenged by intelligent systems that understand context, intent,
-              and complex queries.</p>
-
-            <ul class="space-y-6 mb-16">
-              <li class="flex items-start gap-4">
-                <span
-                  class="w-6 h-6 bg-blue-950 text-white rounded-full flex items-center justify-center text-[10px] font-black shrink-0 mt-1">01</span>
-                <p class="text-gray-600 text-lg"><strong>Code Reusability:</strong> Share up to 90% of code across iOS
-                  and Android, drastically reducing time-to-market.</p>
-              </li>
-              <li class="flex items-start gap-4">
-                <span
-                  class="w-6 h-6 bg-blue-950 text-white rounded-full flex items-center justify-center text-[10px] font-black shrink-0 mt-1">02</span>
-                <p class="text-gray-600 text-lg"><strong>Native Performance:</strong> Unlike traditional hybrid apps,
-                  React Native uses native components for a buttery-smooth experience.</p>
-              </li>
-            </ul>
-
-            <div class="my-16 p-10 bg-gray-50 rounded-[40px] border border-gray-100 relative overflow-hidden group">
-              <div
-                class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-150">
-              </div>
-              <h2 class="text-blue-950 font-black uppercase tracking-tighter text-3xl mb-6 relative z-10">Conclusion
-              </h2>
-              <p class="text-gray-600 leading-relaxed text-lg relative z-10 italic">For enterprises looking to scale
-                their mobile presence without doubling their development efforts, React Native is the ultimate solution.
-              </p>
-            </div>
-          </article>
-
-          <!-- Author Info -->
-          <div class="mt-24 pt-16 border-t border-gray-100">
-            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-10 p-10 bg-gray-50 rounded-[40px]">
-              <div
-                class="w-24 h-24 bg-blue-950 rounded-[30px] flex items-center justify-center text-white font-black text-3xl shadow-2xl shadow-blue-950/20 flex-shrink-0">
-                S
-              </div>
+      <!-- LEFT / MAIN CONTENT (2/3 on desktop) -->
+      <div class="lg:col-span-2">
+        <!-- Hero meta + title -->
+        <div class="mb-7">
+          <!-- Author & date row -->
+          <div class="flex flex-wrap items-center justify-between gap-4 mt-6 border-b border-gray-200 pb-6">
+            <div class="flex items-center gap-3">
+              <img src="../assets/team/CEO.jpg" alt="author avatar"
+                class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm">
               <div>
-                <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-3 block">About
-                  Author</span>
-                <h4 class="text-3xl font-black uppercase tracking-tighter text-blue-950 mb-4">Shivam Jha</h4>
-                <p class="text-gray-500 leading-relaxed text-lg max-w-xl">
-                  Shivam is an expert in React Native and specialized in building complex enterprise mobile applications
-                  with high performance requirements.
-                </p>
+                <p class="font-semibold text-gray-800">Shivam Jha</p>
+                <p class="text-xs text-gray-500">CEO</p>
               </div>
+            </div>
+            <div class="flex gap-4 text-gray-500 text-sm">
+              <span><i class="far fa-calendar-alt mr-1"></i> April 12, 2026</span>
+              <span><i class="far fa-clock mr-1"></i> 8 min read</span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- More Articles (Related) -->
-    <section class="py-24 bg-gray-100/50">
-      <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-        <span class="text-[10px] tracking-[0.4em] font-black uppercase text-blue-950/40 mb-4 block">Recommended</span>
-        <h2 class="text-4xl font-black uppercase tracking-tighter text-blue-950 mb-16">Further Reading</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
-          <a href="./deepseek.html"
-            class="group bg-white p-10 rounded-[40px] border border-gray-100 hover:border-blue-950 transition-all duration-500">
-            <span class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-4 block">AI & Search</span>
-            <h3
-              class="text-2xl font-black uppercase tracking-tighter text-blue-950 mb-6 group-hover:text-blue-600 transition-colors">
-              Deepseek: AI-Powered Search</h3>
-            <div
-              class="flex items-center gap-2 text-blue-950 font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
-              Read More <span>→</span>
-            </div>
-          </a>
-          <a href="./the-ethical-web-scraping.html"
-            class="group bg-white p-10 rounded-[40px] border border-gray-100 hover:border-blue-950 transition-all duration-500">
-            <span class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-4 block">Ethics</span>
-            <h3
-              class="text-2xl font-black uppercase tracking-tighter text-blue-950 mb-6 group-hover:text-blue-600 transition-colors">
-              The Ethical Side of Web Scraping</h3>
-            <div
-              class="flex items-center gap-2 text-blue-950 font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
-              Read More <span>→</span>
-            </div>
-          </a>
+        <!-- Featured Image with overlay caption -->
+        <div class="relative rounded-2xl overflow-hidden shadow-soft mb-10">
+          <img src="../assets/why-react-native.webp" alt="design abstract" class="w-full h-auto object-cover max-h-[500px]">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+          </div>
         </div>
+
+        <!-- Article Body (React Native Blog Content) -->
+        <article class="blog-content prose prose-lg max-w-none">
+
+          <p class="text-lg text-secondary leading-relaxed">
+            Building enterprise-grade mobile applications has always been a challenge — balancing performance,
+            scalability,
+            and development speed. In recent years, React Native has emerged as a powerful solution, enabling
+            organizations to
+            build high-quality cross-platform apps with a single codebase. From startups to global enterprises,
+            companies are
+            embracing React Native to accelerate their mobile strategy.
+          </p>
+
+          <h2>The Rise of Cross-Platform Development</h2>
+          <p>
+            Traditional mobile development often requires separate teams for iOS and Android, increasing both cost and
+            complexity. React Native changes this by allowing developers to write code once and deploy it across
+            multiple
+            platforms. Backed by a strong ecosystem and continuous improvements, it delivers near-native performance
+            while
+            significantly reducing development time.
+          </p>
+
+          <h3>Efficiency Meets Performance</h3>
+          <p>
+            One of React Native’s biggest advantages is its ability to combine efficiency with performance. Using native
+            components under the hood, apps feel smooth and responsive. Features like hot reloading, reusable
+            components, and
+            a vast library ecosystem empower development teams to iterate quickly and maintain consistency across
+            platforms.
+            This is especially valuable for enterprises managing large-scale applications.
+          </p>
+
+          <blockquote>
+            "React Native is not just a framework — it’s a strategic advantage for enterprises looking to scale faster
+            while
+            maintaining high-quality user experiences." —
+            <strong>Mobile Tech Conference, 2026</strong>
+          </blockquote>
+
+          <h2>Scalability & Enterprise Benefits</h2>
+          <p>
+            For enterprise applications, scalability and maintainability are critical. React Native supports modular
+            architecture, making it easier to manage large codebases and integrate with existing systems. Additionally,
+            strong
+            community support and backing from major companies ensure long-term reliability and innovation.
+          </p>
+
+          <ul>
+            <li><strong>Single codebase:</strong> Build once and deploy across iOS and Android.</li>
+            <li><strong>Faster development:</strong> Reduce time-to-market with reusable components.</li>
+            <li><strong>Cost efficiency:</strong> Lower development and maintenance costs.</li>
+            <li><strong>Strong ecosystem:</strong> Access a vast library of tools and community support.</li>
+          </ul>
+
+          <h2>The Future of Enterprise Apps</h2>
+          <p>
+            As digital transformation accelerates, enterprises need flexible and scalable solutions to stay competitive.
+            React Native continues to evolve with better performance, improved tooling, and deeper native integrations.
+            With
+            the rise of AI-driven features and real-time data processing, it is well-positioned to power the next
+            generation
+            of enterprise mobile applications.
+          </p>
+
+          <p>
+            For decision-makers, adopting React Native is more than a technical choice — it’s a strategic move toward
+            agility,
+            efficiency, and innovation. In a fast-changing digital landscape, the ability to build and scale quickly can
+            make
+            all the difference.
+          </p>
+
+        </article>
+
+        <!-- Tags & Share Section -->
+        <div class="flex flex-wrap justify-between items-center gap-4 pt-8 mt-8 border-t border-gray-200">
+          <div class="flex gap-2 flex-wrap">
+            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#DesignSystems</span>
+            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#AI</span>
+            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#UIEngineering</span>
+            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#Tailwind</span>
+          </div>
+          <div class="flex gap-3 text-gray-500">
+            <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter text-lg"></i></a>
+            <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in text-lg"></i></a>
+            <a href="#" class="hover:text-accent transition"><i class="fab fa-facebook-f text-lg"></i></a>
+            <button class="ml-2 text-gray-400 hover:text-accent"><i class="far fa-bookmark text-lg"></i></button>
+          </div>
+        </div>
+
+
       </div>
-    </section>
+
+      <!-- RIGHT SIDEBAR (professional widgets, responsive) -->
+      <aside class=" ">
+        <div class="sticky top-28 space-y-8">
+          <!-- Newsletter / CTA card -->
+          <div class="bg-gradient-to-br from-primary to-slate-800 rounded-2xl shadow-xl p-6 text-white ">
+            <div class="flex justify-between items-start"><i
+                class="fas fa-envelope-open-text text-3xl opacity-70"></i><span
+                class="bg-white/20 text-white text-xs px-2 py-1 rounded-full">weekly</span></div>
+            <h4 class="text-xl font-bold mt-4">Never miss an insight</h4>
+            <p class="text-sm text-gray-200 mt-1 leading-relaxed">Get the latest design & tech stories delivered to your
+              inbox.</p>
+            <div class="mt-4 flex flex-col gap-2">
+              <button
+                class="bg-indigo-700 hover:bg-indigo-800 text-white font-medium py-2 rounded-xl text-sm transition">Subscribe
+                →</button>
+            </div>
+          </div>
+
+          <!-- Recommended Posts (suggestions) -->
+          <div class="bg-white rounded-2xl shadow-soft border border-cardborder p-5 ">
+            <h3 class="font-bold text-primary text-lg mb-4">Recommended for you</h3>
+            <div class="space-y-4">
+              <div class="flex gap-3 items-start">
+                <div class="w-16 h-16 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0"><img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100&auto=format"
+                    class="h-full w-full object-cover"></div>
+                <div><a href="#" class="font-semibold text-gray-800 hover:text-accent text-sm">Micro-frontends and
+                    design
+                    tokens synergy</a>
+                  <p class="text-xs text-gray-500 mt-1">5 min read</p>
+                </div>
+              </div>
+              <div class="flex gap-3 items-start">
+                <div class="w-16 h-16 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0"><img
+                    src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=100&auto=format"
+                    class="h-full w-full object-cover"></div>
+                <div><a href="#" class="font-semibold text-gray-800 hover:text-accent text-sm">Accessibility-first:
+                    beyond
+                    WCAG 2.2</a>
+                  <p class="text-xs text-gray-500 mt-1">12 min read</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sticky social badge on desktop (optional) -->
+          <!-- <div class="hidden lg:block bg-white rounded-full shadow-sm border border-gray-100 p-2 text-center  ">
+            <div class="flex justify-center gap-5">
+              <i class="fab fa-twitter text-gray-500 hover:text-accent cursor-pointer text-lg"></i>
+              <i class="fab fa-linkedin-in text-gray-500 hover:text-accent cursor-pointer text-lg"></i>
+              <i class="fas fa-link text-gray-500 hover:text-accent cursor-pointer text-lg"></i>
+            </div>
+          </div> -->
+        </div>
+
+      </aside>
+    </div>
   </main>
-  </div>
 
   <!-- FOOTER -->
   <footer class="w-full bg-gray-100 text-black">
@@ -587,7 +703,7 @@
 
       <!-- COL 1: LOGO + DESC -->
       <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
-        <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+        <img src="../assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
         <p class="text-sm font-medium leading-relaxed max-w-sm">
           When do they work well, and when do they on us and finally, when do we
           actually need how can we avoid them.
@@ -664,57 +780,86 @@
 
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
 
-    // Interactive Grid Logic
-    const gridContainer = document.getElementById('hero-grid');
-    function buildGrid() {
-      if (!gridContainer) return;
-      gridContainer.innerHTML = '';
-      const columns = Math.ceil(window.innerWidth / 50);
-      const rows = Math.ceil(window.innerHeight / 50);
-      const totalCells = columns * rows;
-      for (let i = 0; i < totalCells; i++) {
-        const cell = document.createElement('div');
-        cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
-        gridContainer.appendChild(cell);
-      }
-    }
-    buildGrid();
-    window.addEventListener('resize', buildGrid);
-
-    // Navbar and Progress Logic
-    const nav = document.getElementById('main-nav');
-    const progressBar = document.getElementById('progress-bar');
-    const progressContainer = document.getElementById('progress-container');
-
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      if (progressBar) progressBar.style.width = scrolled + "%";
-
-      if (winScroll > 80) {
-        nav.style.background = "rgba(10, 10, 10, 0.85)";
+    const nav = document.getElementById("main-nav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        nav.style.background = "rgba(0, 0, 0, 0.75)";
         nav.style.backdropFilter = "blur(12px)";
-        nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
-        if (progressContainer) progressContainer.style.background = "rgba(255,255,255,0.05)";
+        nav.style.webkitBackdropFilter = "blur(12px)";
+        nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
       } else {
         nav.style.background = "transparent";
         nav.style.backdropFilter = "none";
+        nav.style.webkitBackdropFilter = "none";
         nav.style.borderBottom = "none";
-        if (progressContainer) progressContainer.style.background = "transparent";
       }
     });
 
-    // Mobile menu toggle
-    const btn = document.getElementById("menu-btn");
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
 
+    /* Interactive Hero Grid */
+    const heroSection = document.getElementById("hero-section");
+    const gridEl = document.getElementById("hero-grid");
+    const CELL = 50;
+    let cols = 0, rows = 0, cellEls = [];
+
+    function buildGrid() {
+      if (!gridEl) return;
+      gridEl.innerHTML = "";
+      cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
+      rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
+
+      gridEl.style.display = "grid";
+      gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+      gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+
+      cellEls = [];
+      for (let i = 0; i < cols * rows; i++) {
+        const d = document.createElement("div");
+        d.style.cssText = "transition: background 0.55s ease;";
+        gridEl.appendChild(d);
+        cellEls.push(d);
+      }
+    }
+
+    buildGrid();
+    window.addEventListener("resize", buildGrid);
+
+    if (heroSection && gridEl) {
+      heroSection.addEventListener("mousemove", (e) => {
+        const rect = gridEl.getBoundingClientRect();
+        const cx = Math.floor((e.clientX - rect.left) / CELL);
+        const cy = Math.floor((e.clientY - rect.top) / CELL);
+
+        const pattern = [
+          [0, 0, 0.40],
+          [-1, 0, 0.20], [1, 0, 0.20], [0, -1, 0.20], [0, 1, 0.20],
+          [-1, -1, 0.09], [1, -1, 0.09], [-1, 1, 0.09], [1, 1, 0.09],
+          [-2, 0, 0.04], [2, 0, 0.04], [0, -2, 0.04], [0, 2, 0.04],
+        ];
+
+        pattern.forEach(([dx, dy, alpha]) => {
+          const x = cx + dx, y = cy + dy;
+          if (x < 0 || x >= cols || y < 0 || y >= rows) return;
+          const cell = cellEls[y * cols + x];
+          if (!cell) return;
+          clearTimeout(cell._t);
+          cell.style.background = `rgba(99, 102, 241, ${alpha})`;
+          cell._t = setTimeout(() => {
+            cell.style.background = "";
+          }, 650);
+        });
+      });
+    }
   </script>
-  <script src="./../script.js"></script>
   <script>
     // Hamburger toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -736,7 +881,6 @@
       icon.classList.toggle('rotate-180');
     }
   </script>
-
 </body>
 
 </html>

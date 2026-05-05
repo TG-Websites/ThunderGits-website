@@ -4,394 +4,309 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thundergits Technologies - Innovative Tech Solutions</title>
+    <title>Privacy Policy - ThunderGits Technology</title>
     <link rel="icon" href="./assets/tg-favicon.png" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontSize: {
-                        base: '1em',
-                        sm: '14px',
-                        md: '15px',
-                        lg: '1.4em',
-                        xl: '42px',
-                        heading: '6.75vw',
-                    },
-                    lineHeight: {
-                        tight: '1em',
-                        normal: '1.2em',
-                        relaxed: '1.5em',
-                        loose: '1.6em',
-                        heading: '0.95em',
-                    },
-                    letterSpacing: {
-                        wide: '1.8px',
-                        tighter: '0.01em',
-                    },
-                    fontWeight: {
-                        medium: '500',
-                    },
-                    transitionProperty: {
-                        all: 'all',
-                    },
-                    transitionTimingFunction: {
-                        ease: 'ease',
-                    },
-                    transitionDuration: {
-                        DEFAULT: '300ms',
-                    },
-                    colors: {
-                        theme: {
-                            text: '#DEDDDB',
-                            textLight: '#848484',
-                            textDark: '#EFE8CE',
-                            link: '#E2725B',
-                            hover: '#DD644C',
-                            link2: '#7DA189',
-                            hover2: '#6D967A',
-                            link3: '#9D7246',
-                            hover3: '#5B3918',
-                            bg: '#141414',
-                            bd: '#424040',
-                            altBg: '#292828',
-                            altBd: '#535353',
-                        },
-                        dark: '#0e0e0e',
-                        offwhite: '#f5e9cd',
-                        graytext: '#d9d9d9',
-                        accent: '#f25835',
-                        footer: '#121212',
-                        linkhover: '#f5e9cd',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="./style.css">
-
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="bg-dark text-theme-text">
+<body class="bg-black text-white font-['Inter',sans-serif]">
 
+    <!-- Navbar -->
+    <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
+        <div class="flex items-center justify-between gap-6 lg:gap-20 mx-auto px-3 lg:px-20 py-3">
 
-    <section class="relative bg-cover bg-center" style="background-image: url('./assets/bg2.png');">
+            <!-- LOGO -->
+            <a href="./index.html" class="flex items-center">
+                <img src="./assets/logo.png" class="h-9" alt="Logo" />
+            </a>
 
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
+            <!-- HAMBURGER BUTTON (mobile only) -->
+            <button id="mobile-menu-btn" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                <span class="sr-only">Open main menu</span>
+                <svg id="icon-open" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+                </svg>
+                <svg id="icon-close" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
 
-        <!-- Fixed Header -->
-        <header class="fixed top-0 left-0 w-full z-40 backdrop-blur-sm bg-dark/70">
-            <div
-                class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
-                <!-- Logo -->
-                <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
-                    <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-                    <span>ThunderGits</span>
-                </div>
+            <!-- DESKTOP NAV -->
+            <ul class="hidden lg:flex items-center gap-10 font-medium text-sm">
+                <li><a href="./index.html" class="text-black hover:text-primary-dark transition">Home</a></li>
+                <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
+                <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
+                <li><a href="./service.html" class="text-black hover:text-primary-dark transition">Services</a></li>
+                <li><a href="./career.html" class="text-black hover:text-primary-dark transition">Career</a></li>
 
-                <!-- Desktop Nav -->
-                <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
-                    <a href="./index.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">Home</a>
-                    <a href="./about.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all ">About</a>
-                    <a href="./work.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
-                    <a href="./service.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Services</a>
-                    <a href="./career.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Career</a>
-                    <a href="./contact.html"
-                        class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Contact</a>
-                </nav>
-
-                <!-- Quote + Hamburger -->
-                <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
-                    <a href="./contact.html" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
-               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
-               border border-pink-500 hover:text-white transition-all duration-300 ease-out
-               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
-               before:scale-x-0 before:origin-left hover:before:scale-x-100 
-               before:transition-transform before:duration-300 before:z-[-1]">
-                        Get a Quote
-                    </a>
-
-                    <button class="md:hidden text-offwhite hover:text-theme-text_dark" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-lg"></i>
+                <!-- INDUSTRIES DROPDOWN -->
+                <li class="relative group">
+                    <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
+                        Industries
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
                     </button>
-                </div>
-            </div>
-        </header>
+                    <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
+                        <ul class="p-2 text-sm text-gray-700">
+                            <li class="relative group/sub">
+                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Finance & Business <span class="text-gray-400">›</span></div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="./industries/index.html?page=banking" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO Banking</a></li>
+                                        <li><a href="./industries/index.html?page=stock-market" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock Market</a></li>
+                                        <li><a href="./industries/index.html?page=corporate" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a></li>
+                                        <li><a href="./industries/index.html?page=real-estate" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real Estate</a></li>
+                                        <li><a href="./industries/index.html?page=sales-marketing" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales & Marketing</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group/sub">
+                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Technology & Media <span class="text-gray-400">›</span></div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media & Entertainment</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group/sub">
+                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Commerce & Lifestyle <span class="text-gray-400">›</span></div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail & Ecommerce</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food & Beverages</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel & Hospitality</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group/sub">
+                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Industry & Services <span class="text-gray-400">›</span></div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation & Logistics</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
 
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu"
-            class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
-            <div class="flex justify-between items-center mb-10">
-                <div class="flex items-center gap-2 text-lg font-bold">
-                    <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
-                    <span class="text-white">ThunderGits</span>
-                </div>
-                <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
-                    <span>Close</span>
-                    <span class="text-2xl leading-none">×</span>
-                </button>
-            </div>
-
-            <div class="space-y-5">
-                <a href="#" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Home</span><span class="text-sm">→</span>
-                </a>
-                <a href="./about.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>About</span><span class="text-sm">→</span>
-                </a>
-                <a href="./work.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Work</span><span class="text-sm">→</span>
-                </a>
-                <a href="./service.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Services</span><span class="text-sm">→</span>
-                </a>
-                <a href="./career.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Career</span><span class="text-sm">→</span>
-                </a>
-                <a href="./contact.html"
-                    class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-                    <span>Contact</span><span class="text-sm">→</span>
-                </a>
-
-                <!-- Get a Quote Button -->
-                <div class="pt-4">
-                    <a href="./contact.html"
-                        class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
-                        Get a Quote
+                <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
+                <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+                <li>
+                    <a href="./contact.html" class="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold hover:opacity-90 transition">
+                        GET A QUOTE
                     </a>
-                </div>
-            </div>
-
-            <!-- Footer Icons -->
-            <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
-                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/thundergits/" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-                <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-                        class="fab fa-x-twitter"></i></a> -->
-            </div>
+                </li>
+            </ul>
         </div>
 
-
-
-
-        <!-- Hero Section -->
-        <div class="relative z-20 flex items-center min-h-[50vh] pt-20">
-            <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
-
-
-
-                <!-- Right Content -->
-                <div id="hero-content" class="relative flex items-center">
-                    <!-- Left Gradient Border -->
-                    <div id="gradient-border"
-                        class="absolute left-0 top-0 bg-gradient-to-b from-pink-500 to-purple-500 rounded-l-xl"
-                        style="width: 4px;"></div>
-
-                    <!-- Content -->
-                    <div class="border-l-4 border-accent" data-aos="fade-right">
-
-                        <div class="pl-4 flex flex-col  h-full">
-                            <p
-                                class="text-4xl sm:text-5xl font-bold leading-snug mb-2 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-                                Privacy Policy
-                            </p>
-
-                            <p class="mt-2 sm:mt-4 text-base sm:text-lg text-offwhite/80 max-w-xl">
-                                Your privacy matters. Learn how we protect and use your information.
-                            </p>
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pb-6 pt-2 max-h-[80vh] overflow-y-auto">
+            <ul class="flex flex-col gap-1 text-sm font-medium">
+                <li><a href="./index.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Home</a></li>
+                <li><a href="./about.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a></li>
+                <li><a href="./work.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a></li>
+                <li><a href="./service.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
+                <li><a href="./career.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
+                <li>
+                    <button onclick="toggleAccordion('industries')" class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
+                        <span>Industries</span>
+                        <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="industries" class="hidden pl-3 mt-1">
+                        <div>
+                            <button onclick="toggleAccordion('finance')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Finance & Business</span>
+                                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
+                            </button>
+                            <div id="finance" class="hidden pl-4 mt-0.5">
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO Banking</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock Market</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real Estate</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales & Marketing</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="toggleAccordion('tech')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Technology & Media</span>
+                                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
+                            </button>
+                            <div id="tech" class="hidden pl-4 mt-0.5">
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media & Entertainment</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="toggleAccordion('commerce')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Commerce & Lifestyle</span>
+                                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
+                            </button>
+                            <div id="commerce" class="hidden pl-4 mt-0.5">
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail & Ecommerce</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food & Beverages</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel & Hospitality</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="toggleAccordion('industry')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Industry & Services</span>
+                                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
+                            </button>
+                            <div id="industry" class="hidden pl-4 mt-0.5">
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation & Logistics</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
+                            </div>
                         </div>
                     </div>
+                </li>
+                <li><a href="./blog.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a></li>
+                <li><a href="./contact.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
+                <li class="mt-2">
+                    <a href="./contact.html" class="block text-center px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:opacity-90 transition">
+                        GET A QUOTE
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="hero-section" class="relative pt-25 sm:pt-48 pb-24 bg-black overflow-hidden min-h-[60vh] flex items-center">
+        <!-- STATIC CSS GRID LINES -->
+        <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+        <!-- INTERACTIVE HIGHLIGHT CELLS -->
+        <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+        <!-- TOP CENTER GLOW -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);"></div>
 
-                </div>
-            </div>
-
-            <!-- <script>
-  function adjustHeroContent() {
-    const img = document.getElementById('hero-image');
-    const content = document.getElementById('hero-content');
-    const border = document.getElementById('gradient-border');
-
-    const imgHeight = img.clientHeight;
-    content.style.height = imgHeight + 'px';
-    border.style.height = imgHeight + 'px';
-  }
-
-  window.addEventListener('load', adjustHeroContent);
-  window.addEventListener('resize', adjustHeroContent);
-</script> -->
-
-
-
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12" data-aos="fade-right">
+            <span class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
+                Legal
+            </span>
+            <h1 style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
+                Privacy <span class="text-indigo-400 font-semibold">Policy</span>
+            </h1>
+            <p class="text-gray-400 text-lg leading-relaxed font-light max-w-xl">
+                Your privacy matters. Learn how we protect and use your information.
+            </p>
+        </div>
     </section>
 
-
-
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                menu.style.opacity = 0;
-                setTimeout(() => {
-                    menu.style.opacity = 1;
-                }, 10);
-            } else {
-                menu.style.opacity = 0;
-                setTimeout(() => {
-                    menu.classList.add('hidden');
-                }, 300); // match with CSS transition
-            }
-        }
-    </script>
-
-
-    <!-- Floating Social Bar -->
-    <!-- <div class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1">
-        <a href="#"
-            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-            <i class="fas fa-shopping-cart"></i>
-        </a>
-        <a href="#"
-            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-purple-500/50 transition-all animate-float-up-down">
-            <i class="fas fa-image"></i>
-        </a>
-        <a href="#"
-            class="bg-gradient-to-r from-pink-500 to-purple-500 w-12 h-12 flex items-center justify-center text-white text-lg shadow-lg hover:scale-110 hover:shadow-pink-500/50 transition-all animate-float-up-down">
-            <i class="fas fa-credit-card"></i>
-        </a>
-    </div> -->
-
-
-
-
-
-
     <!-- Privacy Policy Section -->
-    <section class="py-20 bg-white">
+    <section class="relative bg-[#050505] py-24 border-t border-white/5">
         <div class="max-w-5xl mx-auto px-6 lg:px-12">
 
             <!-- Title -->
-            <div class="text-left mb-12">
-                <h4 class="text-sm font-semibold text-pink-500 tracking-widest uppercase mb-3">
-                    Legal
-                </h4>
-                <h2 class="text-gray-900 font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block">
+            <div class="text-left mb-12" data-aos="fade-up">
+                <h4 class="text-sm font-semibold text-indigo-400 tracking-widest uppercase mb-3">Legal</h4>
+                <h2 class="text-white font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block">
                     Privacy Policy
-                    <span
-                        class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded"></span>
+                    <span class="absolute left-0 -bottom-2 w-20 h-1 bg-indigo-500 rounded"></span>
                 </h2>
-                <p class="text-gray-600 max-w-2xl">
+                <p class="text-gray-400 max-w-2xl mt-6">
                     ThunderGits Consultancy Services Pvt Ltd ("we", "our", or "us") operates the website
-                    <span class="font-semibold text-pink-500">thundergits.com</span>.
+                    <span class="font-semibold text-indigo-400">thundergits.com</span>.
                     This Privacy Policy outlines how we collect, use, and safeguard your information.
                 </p>
             </div>
 
             <!-- Policy Content -->
-            <div class="space-y-8">
+            <div class="space-y-6">
 
                 <!-- 1. Information We Collect -->
-                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">1. Information We Collect</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold text-white mb-3">1. Information We Collect</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
                         We collect personal data submitted through the website via:
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 text-sm mt-3 space-y-1">
+                    <ul class="list-disc list-inside text-gray-400 text-sm mt-3 space-y-1">
                         <li>Contact forms</li>
                         <li>Job application forms</li>
                     </ul>
-                    <p class="text-gray-700 text-sm mt-3">
+                    <p class="text-gray-400 text-sm mt-3">
                         Information includes your name, email, phone number, and service requirements.
                     </p>
                 </div>
 
                 <!-- 2. Use of Information -->
-                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">2. Use of Information</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold text-white mb-3">2. Use of Information</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
                         The collected data is used internally to respond to your queries or evaluate job applications.
                     </p>
                 </div>
 
                 <!-- 3. Data Sharing -->
-                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">3. Data Sharing</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold text-white mb-3">3. Data Sharing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
                         We do not share your data with third parties. All data is accessed only by our internal sales
                         and HR teams.
                     </p>
                 </div>
 
                 <!-- 4. Cookies -->
-                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">4. Cookies</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold text-white mb-3">4. Cookies</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
                         We do not use cookies or external analytics tools on this website.
                     </p>
                 </div>
 
                 <!-- 5. Data Security -->
-                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">5. Data Security</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold text-white mb-3">5. Data Security</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
                         Your information is protected with access control mechanisms to ensure safety and privacy.
                     </p>
                 </div>
 
-                <!-- 6. Children’s Privacy -->
-                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">6. Children’s Privacy</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
+                <!-- 6. Children's Privacy -->
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold text-white mb-3">6. Children's Privacy</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
                         Our website is safe for users under 13. We do not knowingly collect sensitive data from
                         children.
                     </p>
                 </div>
 
                 <!-- 7. Policy Changes -->
-                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">7. Policy Changes</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold text-white mb-3">7. Policy Changes</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
                         Since we do not register users, we may update this policy without individual notifications.
-                        Please check this
-                        page periodically.
+                        Please check this page periodically.
                     </p>
                 </div>
 
                 <!-- 8. Contact Us -->
-                <div class="border-l-4 border-pink-500 p-6 bg-white shadow-md rounded-md hover:shadow-lg transition">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">8. Contact Us</h3>
-                    <p class="text-gray-700 text-sm leading-relaxed">
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500" data-aos="fade-up">
+                    <h3 class="text-lg font-semibold text-white mb-3">8. Contact Us</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
                         For questions or concerns about this policy:
                     </p>
-                    <ul class="list-none text-gray-700 text-sm mt-3 space-y-1">
-                        <li><strong>Email:</strong> info@thundergits.com</li>
-                        <li><strong>Address:</strong> Vill- Dagarua, PO-Bisambharpur Ailoth, PS- Musrigharari,
+                    <ul class="list-none text-gray-400 text-sm mt-3 space-y-1">
+                        <li><strong class="text-white">Email:</strong> info@thundergits.com</li>
+                        <li><strong class="text-white">Address:</strong> Vill- Dagarua, PO-Bisambharpur Ailoth, PS- Musrigharari,
                             Samastipur, Bihar, India, 848101</li>
                     </ul>
                 </div>
@@ -400,125 +315,107 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="w-full bg-gray-100 text-black">
 
+        <!-- TOP SECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
 
-
-
-
-    <footer class="relative text-[#EDE6D6] pt-16">
-
-        <!-- 🔥 Background Image Only -->
-        <div class="absolute inset-0">
-            <img src="./assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
-        </div>
-
-        <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-4 gap-12 text-center md:text-left">
-
-            <!-- Logo Section -->
-            <div class="flex flex-col items-center md:items-start">
-                <a class="flex items-center justify-center md:justify-start text-white mb-4">
-                    <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
-                    <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
-                </a>
-                <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
-                    Innovating through technology and creativity, building the future.
+            <!-- COL 1: LOGO + DESC -->
+            <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
+                <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+                <p class="text-sm font-medium leading-relaxed max-w-sm">
+                    When do they work well, and when do they on us and finally, when do we
+                    actually need how can we avoid them.
                 </p>
             </div>
 
-            <!-- Explore -->
-            <div>
-                <h3 class="font-semibold mb-3 text-lg">Explore</h3>
-                <ul class="space-y-2">
-                    <li><a href="./index.html" class="hover:text-pink-400 transition">Home</a></li>
-                    <li><a href="./about.html" class="hover:text-pink-400 transition">About</a></li>
-                    <li><a href="./work.html" class="hover:text-pink-400 transition">Work</a></li>
-                    <li><a href="./index.html#blog" class="hover:text-pink-400 transition">Blog</a></li>
-                </ul>
+            <!-- COL 2: SOCIAL LINKS -->
+            <div class="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-300">
+                <a href="#" class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Facebook</a>
+                <a href="https://www.instagram.com/thundergits" class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Instagram</a>
+                <a href="https://www.youtube.com/@thundergits" class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">YouTube</a>
+                <a href="https://www.linkedin.com/company/thundergits" class="px-8 py-5 text-center md:text-left font-semibold hover:bg-gray-200 transition">LinkedIn</a>
             </div>
 
-            <!-- Company -->
-            <div>
-                <h3 class="font-semibold mb-3 text-lg">Company</h3>
-                <ul class="space-y-2">
-                    <li><a href="./privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
-                    <li><a href="./career.html" class="hover:text-pink-400 transition">Career</a></li>
-                    <li><a href="./contact.html" class="hover:text-pink-400 transition">Contact</a></li>
-                    <li><a href="./service.html" class="hover:text-pink-400 transition">Services</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact -->
-            <div>
-                <h3 class="font-semibold mb-3 text-lg">Contact</h3>
-                <ul class="space-y-3">
-                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-                        <i class="ri-map-pin-fill mt-1"></i>
-                        <span>2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
-                    </li>
-                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-                        <i class="ri-phone-fill mt-1"></i>
-                        <span>+91-7765979725</span>
-                    </li>
-                    <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
-                        <i class="ri-mail-fill mt-1"></i>
-                        <a href="mailto:contact@thundergits.com"
-                            class="hover:text-pink-400 transition">info@thundergits.com</a>
-                    </li>
-                </ul>
+            <!-- COL 3: LET'S TALK -->
+            <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+                <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">LET'S TALK</h2>
+                <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+                    <span class="flex items-start gap-2 min-w-[220px] flex-1">
+                        <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                        <span class="leading-relaxed">2nd Floor, E 1/74, near YMCA,<br>Sector 11, Faridabad, Haryana 121006</span>
+                    </span>
+                    <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
+                        </svg>
+                        +91-7765979725
+                    </span>
+                    <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
+                        </svg>
+                        info@thundergits.com
+                    </span>
+                </div>
             </div>
 
         </div>
 
-        <!-- Bottom -->
-        <div
-            class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
-            <p class="mb-4 md:mb-0">© 2025 ThunderGits — All Rights Reserved</p>
-            <div class="flex space-x-6 text-gray-300">
-                <a href="https://www.linkedin.com/company/thundergits" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/thundergits/" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-                    class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-                <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
-                        class="fab fa-x-twitter"></i></a> -->
-
-
-            </div>
+        <!-- BOTTOM BAR -->
+        <div class="border-t border-gray-300 px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-center md:text-left">© 2026 | All rights reserved by ThunderGits</p>
+            <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-semibold">
+                <a href="./privacy.html">Privacy</a>
+            </nav>
         </div>
 
-        <!-- Floating Presale Chat -->
-        <!-- <div class="fixed bottom-16 left-4 flex items-center z-40">
-            <div
-                class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
-                <img src="./assets/call-center (1).png" alt="">
-            </div>
-            <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
-           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
-                AI Assistant
-            </span>
-        </div> -->
-
-        <!-- Scroll To Top -->
-        <button id="scrollToggleBtn"
-            class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
-            <i id="scrollIcon" class="fas fa-arrow-up"></i>
-        </button>
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        // Animate when the page loads
-        window.addEventListener('DOMContentLoaded', () => {
-            const hero = document.querySelector('.hero-content');
-            setTimeout(() => {
-                hero.classList.add('animate');
-            }, 200); // delay for smooth effect
-        });
-    </script>
+        AOS.init({ duration: 1000, once: true });
 
-    <script src="./script.js"></script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            el.classList.toggle('hidden');
+            if (icon) icon.classList.toggle('rotate-180');
+        }
+
+        // Interactive Hero Grid
+        const gridContainer = document.getElementById('hero-grid');
+        function buildGrid() {
+            if (!gridContainer) return;
+            gridContainer.innerHTML = '';
+            const columns = Math.ceil(window.innerWidth / 50);
+            const rows = Math.ceil(window.innerHeight / 50);
+            for (let i = 0; i < columns * rows; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
+                gridContainer.appendChild(cell);
+            }
+            gridContainer.style.display = 'grid';
+            gridContainer.style.gridTemplateColumns = `repeat(${columns}, 50px)`;
+        }
+        buildGrid();
+        window.addEventListener('resize', buildGrid);
+    </script>
 
 </body>
 

@@ -26,7 +26,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./index-styles.css">
 </head>
 
 <body class="bg-white font-sans text-blue-950 overflow-x-hidden">
@@ -406,7 +405,7 @@
             <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
               <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Jan 01, 2025</span>
               <a href="./blogs/why-react-native.html"
-                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-dark transition-colors shadow-lg group-hover:scale-110">
+                class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center border border-indigo-500 hover:bg-indigo-700 transition-colors shadow-lg group-hover:scale-110">
                 <i class="fas fa-arrow-right text-xs"></i>
               </a>
             </div>
@@ -436,7 +435,7 @@
             <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
               <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Dec 20, 2024</span>
               <a href="./blogs/deepseek.html"
-                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+                class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center border border-indigo-500 hover:bg-indigo-700 transition-colors shadow-lg group-hover:scale-110">
                 <i class="fas fa-arrow-right text-xs"></i>
               </a>
             </div>
@@ -466,7 +465,7 @@
             <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
               <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Dec 15, 2024</span>
               <a href="./blogs/the-ethical-web-scraping.html"
-                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+                class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center border border-indigo-500 hover:bg-indigo-700 transition-colors shadow-lg group-hover:scale-110">
                 <i class="fas fa-arrow-right text-xs"></i>
               </a>
             </div>
@@ -560,10 +559,7 @@
       </p>
 
       <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-semibold">
-        <a href="./about.html">About</a>
-        <a href="./blog.html">Blogs</a>
-        <a href="./contact.html">Contact</a>
-        <a href="./career.html">Career</a>
+        <a href="./privacy.html">Privacy</a>
       </nav>
     </div>
 
@@ -634,7 +630,7 @@
                 <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">${blog.excerpt || 'Read the latest updates from ThunderGits.'}</p>
                 <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
                   <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">${new Date(blog.publishedAt).toLocaleDateString()}</span>
-                  <a href="./blogdetails.html?id=${blog._id}" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+                  <a href="./blogdetails.html?id=${blog._id}" class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center border border-indigo-500 hover:bg-indigo-700 transition-colors shadow-lg group-hover:scale-110">
                     <i class="fas fa-arrow-right text-xs"></i>
                   </a>
                 </div>

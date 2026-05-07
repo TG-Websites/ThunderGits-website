@@ -607,7 +607,7 @@
       const grid = document.getElementById('blogGrid');
       const loader = document.getElementById('blogLoading');
       loader.classList.remove('hidden');
-      // grid.innerHTML = "";
+      grid.innerHTML = "";
 
       try {
         const res = await fetch("http://localhost:5000/api/blog");

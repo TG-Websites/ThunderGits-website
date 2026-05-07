@@ -103,7 +103,7 @@
                     <!-- Description -->
                     <div data-aos="fade-up">
                         <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-600 mb-6">About the Role</h3>
-                        <div id="job-description" class="text-gray-700 text-lg leading-relaxed font-light space-y-4">
+                        <div id="job-description" class="text-black text-lg leading-relaxed  space-y-4">
                             <div class="animate-pulse space-y-4">
                                 <div class="h-4 bg-gray-100 rounded w-full"></div>
                                 <div class="h-4 bg-gray-100 rounded w-5/6"></div>
@@ -115,7 +115,7 @@
                     <!-- Responsibilities -->
                     <div data-aos="fade-up">
                         <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-600 mb-6">What you'll do</h3>
-                        <div id="job-responsibilities" class="text-gray-700 text-lg leading-relaxed font-light custom-list">
+                        <div id="job-responsibilities" class="text-black text-lg leading-relaxed font-light custom-list">
                             <div class="animate-pulse space-y-4">
                                 <div class="h-4 bg-gray-100 rounded w-full"></div>
                                 <div class="h-4 bg-gray-100 rounded w-5/6"></div>
@@ -126,7 +126,7 @@
                     <!-- Qualifications -->
                     <div data-aos="fade-up">
                         <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-600 mb-6">Who you are</h3>
-                        <div id="job-qualifications" class="text-gray-700 text-lg leading-relaxed font-light custom-list">
+                        <div id="job-qualifications" class="text-black text-lg leading-relaxed font-light custom-list">
                             <div class="animate-pulse space-y-4">
                                 <div class="h-4 bg-gray-100 rounded w-full"></div>
                                 <div class="h-4 bg-gray-100 rounded w-5/6"></div>
@@ -233,7 +233,7 @@
             </div>
         </div>
         <div class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-black">© 2026 | All rights reserved by ThunderGits</p>
+            <p class="text-xs text-black">© 2026 | All rights reserved by Thundergits Consultancy Services Private Limited</p>
             <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
                 <a href="./../privacy.html">Privacy</a>
             </nav>
@@ -304,7 +304,7 @@
             currentJobId = jobId;
 
             try {
-                const res = await fetch(`https://tgspace-back.thundergits.com/api/jobs/${jobId}`);
+                const res = await fetch(`http://localhost:5000/api/jobs/${jobId}`);
                 const { success, data: job } = await res.json();
 
                 if (!success || !job) {
@@ -365,7 +365,7 @@
                     formData.append("resume", resumeFile);
                 }
 
-                const response = await fetch("https://tgspace-back.thundergits.com/api/applications", {
+                const response = await fetch("http://localhost:5000/api/applications", {
                     method: "POST",
                     body: formData
                 });

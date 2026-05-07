@@ -4,366 +4,1252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Details - ThunderGits</title>
+  <title>Our Blog - ThunderGits Technology</title>
+  <meta name="description"
+    content="Read the latest blogs, insights, web development trends, React, MERN stack tutorials, and technology updates from ThunderGits Technology." />
+
+  <meta name="keywords"
+    content="ThunderGits blog, web development, React JS, MERN stack, JavaScript, frontend development, backend development, technology blog" />
+  <link rel="icon" href="../assets/tg-favicon.png" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontSize: {
-            base: '1em',
-            sm: '14px',
-            md: '15px',
-            lg: '1.4em',
-            xl: '42px',
-            heading: '6.75vw',
-          },
-          lineHeight: {
-            tight: '1em',
-            normal: '1.2em',
-            relaxed: '1.5em',
-            loose: '1.6em',
-            heading: '0.95em',
-          },
-          letterSpacing: {
-            wide: '1.8px',
-            tighter: '0.01em',
-          },
-          fontWeight: {
-            medium: '500',
-          },
-          transitionProperty: {
-            all: 'all',
-          },
-          transitionTimingFunction: {
-            ease: 'ease',
-          },
-          transitionDuration: {
-            DEFAULT: '300ms',
-          },
           colors: {
             theme: {
               text: '#DEDDDB',
               textLight: '#848484',
-              textDark: '#EFE8CE',
-              link: '#E2725B',
-              hover: '#DD644C',
-              link2: '#7DA189',
-              hover2: '#6D967A',
-              link3: '#9D7246',
-              hover3: '#5B3918',
               bg: '#141414',
               bd: '#424040',
-              altBg: '#292828',
-              altBd: '#535353',
-            },
-            dark: '#0e0e0e',
-            offwhite: '#f5e9cd',
-            graytext: '#d9d9d9',
-            accent: '#f25835',
-            footer: '#121212',
-            linkhover: '#f5e9cd',
+            }
           }
         }
       }
     }
   </script>
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0f172a',     // deep slate for elegance
+            secondary: '#334155',
+            accent: '#3b82f6',      // clean blue for CTAs
+            softgray: '#f8fafc',
+            cardborder: '#e2e8f0',
+          },
+          spacing: {
+            '18': '4.5rem',
+          },
+          maxWidth: {
+            'prose': '65ch',
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -12px rgba(0, 0, 0, 0.08), 0 4px 12px -6px rgba(0, 0, 0, 0.02)',
+            'hover': '0 20px 35px -12px rgba(0, 0, 0, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <link rel="stylesheet" href="./style.css">
 
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* subtle smooth scroll & focus outline improvements */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #f9fafb;
+    }
+
+    /* custom prose styling for blog content (clean reading) */
+    .blog-content p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+      color: #1e293b;
+    }
+
+    .blog-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+    }
+
+    .blog-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #1e293b;
+    }
+
+    .blog-content blockquote {
+      border-left: 4px solid #3b82f6;
+      padding-left: 1.5rem;
+      font-style: italic;
+      margin: 1.75rem 0;
+      color: #334155;
+      background-color: #f1f5f9;
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      font-weight: 400;
+    }
+
+    .blog-content ul,
+    .blog-content ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+      color: #1e293b;
+    }
+
+    .blog-content li {
+      margin-bottom: 0.4rem;
+    }
+
+    .blog-content a {
+      color: #3b82f6;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-weight: 500;
+    }
+
+    .blog-content img {
+      border-radius: 1rem;
+      margin: 1.8rem 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    /* custom scrollbar for modern look */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #e2e8f0;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #5b6e8c;
+    }
+  </style>
 </head>
 
-<body class="bg-dark text-theme-text">
+<body class="bg-white font-sans text-blue-950 overflow-x-hidden">
 
   <!-- Navbar -->
-  <!-- Navbar -->
-  <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
-    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+  <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
+    <div class="flex items-center justify-between  gap-6 lg:gap-20 mx-auto px-3 lg:px-20 py-3">
+
       <!-- LOGO -->
-      <a href="./index.html" class="flex items-center">
-        <img src="./assets/logo.png" class="h-10" alt="logo" style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+      <a href="#" class="flex items-center">
+        <img src="../assets/logo.png" class="h-9" alt="Logo" />
       </a>
 
-      <!-- MOBILE BUTTON -->
-      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg hover:bg-white/10 transition">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      <!-- HAMBURGER BUTTON (mobile only) -->
+      <button id="mobile-menu-btn" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+        <span class="sr-only">Open main menu</span>
+        <!-- Hamburger icon -->
+        <svg id="icon-open" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+        </svg>
+        <!-- Close icon -->
+        <svg id="icon-close" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
-      <!-- MENU -->
-      <div id="menu" class="hidden md:flex items-center gap-8">
-        <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
-        <a href="./service.html" class="text-gray-300 hover:text-white text-sm transition">Services</a>
-        <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
-        <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
-        <a href="./career.html" class="text-gray-300 hover:text-white text-sm transition">Careers</a>
-      </div>
+      <!-- DESKTOP NAV -->
+      <ul class="hidden lg:flex items-center gap-10 font-medium text-sm">
+        <li><a href="../index.html" class="text-fg-brand hover:text-primary-dark">Home</a></li>
+        <li><a href="../about.html" class="text-black hover:text-primary-dark transition">About</a></li>
+        <li><a href="../work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
+        <li><a href="../service.html" class="text-black hover:text-primary-dark transition">Services</a></li>
+        <li><a href="../career.html" class="text-black hover:text-primary-dark transition">Career</a></li>
+
+        <!-- INDUSTRIES DROPDOWN -->
+        <li class="relative group">
+          <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
+            Industries
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100
+                            opacity-0 invisible translate-y-2
+                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                            transition-all duration-300 z-50">
+            <ul class="p-2 text-sm text-gray-700">
+
+              <!-- Finance & Business -->
+              <li class="relative group/sub">
+                <div
+                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
+                  Finance & Business <span class="text-gray-400">›</span>
+                </div>
+                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
+                                        transition-all duration-300 z-50">
+                  <ul class="p-2 text-sm">
+                    <li><a href="../industries/index.html?page=banking"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO
+                        Banking</a></li>
+                    <li><a href="../industries/index.html?page=stock-market"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock
+                        Market</a></li>
+                    <li><a href="../industries/index.html?page=corporate"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a>
+                    </li>
+                    <li><a href="../industries/index.html?page=real-estate"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real
+                        Estate</a></li>
+                    <li><a href="../industries/index.html?page=sales-marketing"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales
+                        & Marketing</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- Technology & Media -->
+              <li class="relative group/sub">
+                <div
+                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
+                  Technology & Media <span class="text-gray-400">›</span>
+                </div>
+                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
+                                        transition-all duration-300 z-50">
+                  <ul class="p-2 text-sm">
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a>
+                    </li>
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media
+                        & Entertainment</a></li>
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- Commerce & Lifestyle -->
+              <li class="relative group/sub">
+                <div
+                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
+                  Commerce & Lifestyle <span class="text-gray-400">›</span>
+                </div>
+                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
+                                        transition-all duration-300 z-50">
+                  <ul class="p-2 text-sm">
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail
+                        & Ecommerce</a></li>
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a>
+                    </li>
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food
+                        & Beverages</a></li>
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel
+                        & Hospitality</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <!-- Industry & Services -->
+              <li class="relative group/sub">
+                <div
+                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
+                  Industry & Services <span class="text-gray-400">›</span>
+                </div>
+                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
+                                        transition-all duration-300 z-50">
+                  <ul class="p-2 text-sm">
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation
+                        & Logistics</a></li>
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a>
+                    </li>
+                    <li><a href="#"
+                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+
+        <li><a href="../blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
+        <li><a href="../contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+
+        <li>
+          <a href="#"
+            class="px-5 py-2 rounded-full bg-primary-dark text-white text-sm font-semibold hover:opacity-90 transition">
+            GET A QUOTE
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <!-- MOBILE DROPDOWN -->
-    <div id="mobile-menu" style="display:none" class="bg-black/90 backdrop-blur-md border-t border-white/10 px-6 py-4 flex-col gap-4">
-      <a href="./about.html" class="text-gray-300 hover:text-white text-sm">About</a>
-      <a href="./service.html" class="text-gray-300 hover:text-white text-sm">Services</a>
-      <a href="./blog.html" class="text-gray-300 hover:text-white text-sm">Blog</a>
-      <a href="./contact.html" class="text-gray-300 hover:text-white text-sm">Contact</a>
-      <a href="./career.html" class="text-gray-300 hover:text-white text-sm">Careers</a>
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu"
+      class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pb-6 pt-2 max-h-[80vh] overflow-y-auto">
+      <ul class="flex flex-col gap-1 text-sm font-medium">
+
+        <li><a href="../index.html"
+            class="block py-2.5 px-3 rounded-lg text-purple-600 font-semibold bg-purple-50">Home</a>
+        </li>
+        <li><a href="../about.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a>
+        </li>
+        <li><a href="../work.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a>
+        </li>
+        <li><a href="../service.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
+        <li><a href="../career.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
+
+        <!-- INDUSTRIES ACCORDION -->
+        <li>
+          <button onclick="toggleAccordion('industries')"
+            class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
+            <span>Industries</span>
+            <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div id="industries" class="hidden pl-3 mt-1 flex flex-col gap-1">
+
+            <!-- Finance & Business -->
+            <div>
+              <button onclick="toggleAccordion('finance')"
+                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                <span>Finance & Business</span>
+                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="finance" class="hidden pl-4 mt-0.5 flex flex-col">
+                <a href="../industries/index.html?page=banking"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO
+                  Banking</a>
+                <a href="../industries/index.html?page=stock-market"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock
+                  Market</a>
+                <a href="../industries/index.html?page=corporate"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
+                <a href="../industries/index.html?page=real-estate"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real
+                  Estate</a>
+                <a href="../industries/index.html?page=sales-marketing"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales
+                  & Marketing</a>
+              </div>
+            </div>
+
+            <!-- Technology & Media -->
+            <div>
+              <button onclick="toggleAccordion('tech')"
+                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                <span>Technology & Media</span>
+                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="tech" class="hidden pl-4 mt-0.5 flex flex-col">
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media
+                  & Entertainment</a>
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
+              </div>
+            </div>
+
+            <!-- Commerce & Lifestyle -->
+            <div>
+              <button onclick="toggleAccordion('commerce')"
+                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                <span>Commerce & Lifestyle</span>
+                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="commerce" class="hidden pl-4 mt-0.5 flex flex-col">
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail
+                  & Ecommerce</a>
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food
+                  & Beverages</a>
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel
+                  & Hospitality</a>
+              </div>
+            </div>
+
+            <!-- Industry & Services -->
+            <div>
+              <button onclick="toggleAccordion('industry')"
+                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                <span>Industry & Services</span>
+                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="industry" class="hidden pl-4 mt-0.5 flex flex-col">
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation
+                  & Logistics</a>
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
+                <a href="#"
+                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
+              </div>
+            </div>
+
+          </div>
+        </li>
+
+        <li><a href="../blog.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a>
+        </li>
+        <li><a href="../contact.html"
+            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
+
+        <li class="mt-2">
+          <a href="#"
+            class="block text-center px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white text-sm font-semibold hover:opacity-90 transition">
+            GET A QUOTE
+          </a>
+        </li>
+
+      </ul>
     </div>
   </nav>
 
-  <!-- Reading Progress Bar -->
-  <div id="progress-container" class="fixed top-0 left-0 w-full h-1 z-[100] bg-transparent">
-    <div id="progress-bar" class="h-full bg-blue-600 w-0 transition-all duration-150"></div>
-  </div>
-
-  <!-- Loading Spinner -->
-  <div id="loadingSpinner" class="fixed inset-0 bg-white flex items-center justify-center z-50">
-    <div class="flex flex-col items-center">
-      <div class="w-16 h-16 border-4 border-blue-950/10 border-t-blue-950 rounded-full animate-spin mb-4"></div>
-      <span class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-950/40">Loading Article</span>
-    </div>
-  </div>
-
-  <!-- Blog Content -->
-  <main class="min-h-screen bg-white">
-    <!-- Aligent Hero -->
-    <section id="blogHeader" class="relative pt-48 pb-32 bg-black overflow-hidden">
-      <!-- STATIC CSS GRID LINES -->
-      <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
-      
-      <!-- INTERACTIVE HIGHLIGHT CELLS (JS fills this) -->
-      <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
-
-      <!-- TOP CENTER GLOW -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style="width: 800px; height: 400px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);"></div>
-
-      <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-        <!-- Loading placeholder -->
-        <div id="headerPlaceholder" class="animate-pulse">
-          <div class="h-4 bg-white/10 rounded w-24 mx-auto mb-8"></div>
-          <div class="h-16 bg-white/10 rounded w-4/5 mx-auto mb-10"></div>
-          <div class="flex justify-center items-center gap-10">
-            <div class="h-4 bg-white/10 rounded w-32"></div>
-            <div class="h-4 bg-white/10 rounded w-32"></div>
-          </div>
-        </div>
-        
-        <!-- Real Header (Hidden initially) -->
-        <div id="headerContent" class="hidden opacity-0 transition-opacity duration-1000">
-          <span id="blogCategory" class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold"></span>
-          <h1 id="blogTitle" style="font-family: 'Inter', sans-serif; font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;"></h1>
-          <div class="flex justify-center items-center gap-8 text-gray-400 text-xs font-medium uppercase tracking-widest">
-            <div class="flex items-center gap-2">
-              <i class="ri-calendar-line text-indigo-400"></i>
-              <span id="blogDate"></span>
-            </div>
-            <div class="flex items-center gap-2">
-              <i class="ri-time-line text-indigo-400"></i>
-              <span id="blogReadTime">8 min read</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Image -->
-    <div id="featuredImageContainer" class="relative z-20 -mt-24 px-6">
-      <div class="max-w-5xl mx-auto">
-        <div class="animate-pulse bg-gray-200 h-[500px] rounded-3xl shadow-2xl"></div>
-      </div>
+  <!-- Hero Section -->
+  <section id="hero-section"
+    class="relative min-h-[70vh] flex items-center justify-center text-center text-white overflow-hidden bg-black">
+    <!-- STATIC CSS GRID LINES -->
+    <div class="absolute inset-0 z-0 pointer-events-none"
+      style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
     </div>
 
-    <section id="blogContent" class="py-24 relative">
-      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-16">
-        
-        <!-- Sidebar Info (Desktop Only) -->
-        <aside class="hidden lg:block w-64 flex-shrink-0 sticky top-32 h-fit">
-          <div class="space-y-12">
-            <div>
-              <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-4 block">Share</span>
-              <div class="flex flex-col gap-4">
-                <a href="#" class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 transition-all"><i class="fab fa-linkedin-in text-sm"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 transition-all"><i class="fab fa-twitter text-sm"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:border-blue-950 hover:text-blue-950 transition-all"><i class="far fa-envelope text-sm"></i></a>
-              </div>
-            </div>
-            
-            <div id="readingStats">
-              <span class="text-[10px] tracking-[0.3em] font-black uppercase text-blue-950/30 mb-4 block">Stats</span>
-              <div class="space-y-4">
-                <div class="flex items-center gap-3 text-blue-950">
-                  <i class="far fa-eye text-sm text-gray-300"></i>
-                  <span class="text-xs font-black uppercase tracking-widest">1.2k Views</span>
-                </div>
-                <div class="flex items-center gap-3 text-blue-950">
-                  <i class="far fa-clock text-sm text-gray-300"></i>
-                  <span class="text-xs font-black uppercase tracking-widest" id="timeToRead">5 Min Read</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </aside>
+    <!-- INTERACTIVE HIGHLIGHT CELLS -->
+    <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
 
-        <!-- Main Body -->
-        <div class="flex-grow max-w-3xl">
-          <article id="blogBody" class="prose prose-lg prose-blue max-w-none prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tighter prose-p:text-gray-600 prose-p:leading-relaxed prose-img:rounded-3xl">
-            <div class="animate-pulse space-y-6">
-              <div class="h-4 bg-gray-100 rounded w-full"></div>
-              <div class="h-4 bg-gray-100 rounded w-5/6"></div>
-              <div class="h-4 bg-gray-100 rounded w-4/6"></div>
-              <div class="h-4 bg-gray-100 rounded w-full"></div>
-              <div class="h-4 bg-gray-100 rounded w-3/4"></div>
-            </div>
-          </article>
+    <!-- TOP CENTER GLOW -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
+      style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.55) 0%, rgba(56,189,248,0.35) 20%, rgba(99,102,241,0.12) 50%, transparent 75%);">
+    </div>
 
-          <!-- Tags -->
-          <div id="blogTags" class="mt-16 pt-12 border-t border-gray-100">
-            <div class="animate-pulse flex flex-wrap gap-3">
-              <div class="h-10 bg-gray-100 rounded-full w-24"></div>
-              <div class="h-10 bg-gray-100 rounded-full w-32"></div>
-            </div>
-          </div>
+    <!-- CONTENT -->
+    <div class="relative z-10 px-6 max-w-6xl mx-auto flex flex-col items-center text-center" data-aos="fade-up">
 
-          <!-- Author Info -->
-          <div id="authorInfo" class="mt-16">
-            <div class="animate-pulse flex items-center gap-8">
-              <div class="w-24 h-24 bg-gray-100 rounded-3xl"></div>
-              <div class="flex-1 space-y-3">
-                <div class="h-4 bg-gray-100 rounded w-1/4"></div>
-                <div class="h-6 bg-gray-100 rounded w-1/2"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Category -->
+      <span 
+        class="blog-category inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-indigo-400 mb-6 uppercase">
+        Category
+      </span>
+
+      <!-- Blog Title -->
+      <h1 class="blog-title"
+        style="font-family: 'Inter', sans-serif; font-size: clamp(2.2rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.15; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.2rem;">
+        Deepseek: AI-Powered Search
+      </h1>
+
+      <!-- Description -->
+      <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mb-6 blog-description" The future of search is here.
+        Discover how Deepseek is transforming the way we find, analyze, and interact with information using advanced AI.
+        </p>
+
+        <!-- Meta Info -->
+      <div class="flex items-center gap-4 text-sm text-gray-400">
+        <span class="blog-author">By Shivam Jha</span>
+        <span class="w-1 h-1 bg-gray-500 rounded-full"></span>
+        <span class="blog-updated-date">May 4, 2026</span>
       </div>
-    </section>
 
-    <!-- More Articles -->
-    <section id="relatedBlogs" class="py-24 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="mb-16 text-center">
-          <span class="text-[10px] tracking-[0.4em] font-black uppercase text-blue-950/40 mb-4 block">Keep Reading</span>
-          <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-blue-950 mb-6">More Articles</h2>
-          <div class="w-12 h-1 bg-blue-950 mx-auto rounded-full"></div>
-        </div>
+    </div>
+  </section>
 
-        <!-- Related Blogs Container -->
-        <div id="relatedBlogsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <!-- Loading placeholders -->
-          <div class="animate-pulse space-y-6">
-            <div class="bg-gray-200 h-64 rounded-2xl"></div>
-            <div class="space-y-3">
-              <div class="h-4 bg-gray-200 rounded w-1/4"></div>
-              <div class="h-6 bg-gray-200 rounded w-3/4"></div>
+  <!-- ========== MAIN BLOG DETAIL CONTENT ========== -->
+  <main class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 md:py-12">
+
+    <!-- Grid layout: main article column + sidebar (right) responsive -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
+
+      <!-- LEFT / MAIN CONTENT (2/3 on desktop) -->
+      <div class="lg:col-span-2">
+        <!-- Hero meta + title -->
+        <div class="mb-7">
+          <!-- Author & date row -->
+          <div class="flex flex-wrap items-center justify-between gap-4 mt-6 border-b border-gray-200 pb-6">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-circle-user text-3xl"></i>
+              <div>
+                <p class="blog-author font-semibold text-gray-800">Shivam Jha</p>
+                <p class=" blog-author-role text-xs text-gray-500">CEO</p>
+              </div>
             </div>
-          </div>
-          <div class="animate-pulse space-y-6">
-            <div class="bg-gray-200 h-64 rounded-2xl"></div>
-            <div class="space-y-3">
-              <div class="h-4 bg-gray-200 rounded w-1/4"></div>
-              <div class="h-6 bg-gray-200 rounded w-3/4"></div>
-            </div>
-          </div>
-          <div class="animate-pulse space-y-6">
-            <div class="bg-gray-200 h-64 rounded-2xl"></div>
-            <div class="space-y-3">
-              <div class="h-4 bg-gray-200 rounded w-1/4"></div>
-              <div class="h-6 bg-gray-200 rounded w-3/4"></div>
+            <div class="flex gap-4 text-gray-500 text-sm">
+              <span><i class="far fa-calendar-alt mr-1"></i> <span class="blog-updated-date">April 12,
+                  2026</span></span>
+              <span><i class="far fa-clock mr-1"></i> <span class="blog-read">8 min read</span></span>  
             </div>
           </div>
         </div>
+
+        <!-- Featured Image with overlay caption -->
+        <div class="relative rounded-2xl overflow-hidden shadow-soft mb-10">
+          <img src="../assets/Deepseek.webp" alt="design abstract" class="w-full h-auto object-cover max-h-[500px]">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+          </div>
+        </div>
+
+        <!-- Article Body (Deepseek Blog Content) -->
+        <article class="blog-content prose prose-lg max-w-none">
+
+          <p class="text-lg text-secondary leading-relaxed">
+            The way we search for information is undergoing a massive transformation. Traditional keyword-based engines
+            are
+            being replaced by intelligent systems that understand context, intent, and meaning. Deepseek stands at the
+            forefront of this shift, leveraging advanced AI to deliver more accurate, relevant, and conversational
+            search
+            experiences.
+          </p>
+
+          <h2>The Rise of AI-Powered Search</h2>
+          <p>
+            Unlike conventional search engines, Deepseek doesn’t just match keywords — it interprets queries using
+            natural
+            language understanding. This means users can ask complex questions in plain English and receive precise,
+            human-like responses. By combining large language models with real-time data retrieval, Deepseek bridges the
+            gap
+            between search and intelligent assistance.
+          </p>
+
+          <h3>From Queries to Conversations</h3>
+          <p>
+            One of the biggest innovations Deepseek introduces is conversational search. Instead of refining queries
+            manually,
+            users can engage in a dialogue with the system. Each follow-up question builds on previous context, making
+            the
+            experience faster and more intuitive. This reduces search friction and significantly improves productivity
+            for
+            developers, researchers, and everyday users alike.
+          </p>
+
+          <blockquote>
+            "Search is no longer about finding links — it’s about understanding knowledge. AI-powered engines like
+            Deepseek are
+            redefining how humans interact with information." —
+            <strong>Global AI Summit, 2026</strong>
+          </blockquote>
+
+          <h2>Smarter Results, Better Insights</h2>
+          <p>
+            Deepseek goes beyond surface-level answers by analyzing multiple sources and synthesizing insights into a
+            single,
+            coherent response. This eliminates the need to browse through dozens of links. Additionally, it adapts to
+            user
+            behavior over time, offering personalized results that align with individual preferences and intent.
+          </p>
+
+          <ul>
+            <li><strong>Context-aware responses:</strong> Understands user intent rather than relying on exact keywords.
+            </li>
+            <li><strong>Multi-source synthesis:</strong> Combines information from various sources into one clear
+              answer.</li>
+            <li><strong>Conversational interface:</strong> Enables follow-up questions without losing context.</li>
+          </ul>
+
+          <h2>The Future of Search with Deepseek</h2>
+          <p>
+            As AI continues to evolve, Deepseek is paving the way for a new era where search engines act more like
+            intelligent
+            companions. Integration with apps, real-time updates, and multimodal capabilities (text, voice, and images)
+            will
+            further enhance how users interact with digital information.
+          </p>
+
+          <p>
+            For businesses and developers, this shift opens new opportunities to build smarter products and deliver
+            richer user
+            experiences. The future of search is not just faster — it’s more human, adaptive, and intelligent. And
+            Deepseek is
+            leading that transformation.
+          </p>
+
+        </article>
+
+        <!-- Tags & Share Section -->
+        <div class="flex flex-wrap justify-between items-center gap-4 pt-8 mt-8 border-t border-gray-200">
+          <div class="blog-hashtags flex gap-2 flex-wrap">
+            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#DesignSystems</span>
+            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#AI</span>
+            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#UIEngineering</span>
+            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#Tailwind</span>
+          </div>
+          <div class="flex gap-3 text-gray-500">
+            <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter text-lg"></i></a>
+            <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in text-lg"></i></a>
+            <a href="#" class="hover:text-accent transition"><i class="fab fa-facebook-f text-lg"></i></a>
+            <button class="ml-2 text-gray-400 hover:text-accent"><i class="far fa-bookmark text-lg"></i></button>
+          </div>
+        </div>
+
+
       </div>
-    </section>
+
+      <!-- RIGHT SIDEBAR (professional widgets, responsive) -->
+      <aside class=" ">
+        <div class="sticky top-28 space-y-8">
+          <!-- Newsletter / CTA card -->
+          <div class="bg-gradient-to-br from-primary to-slate-800 rounded-2xl shadow-xl p-6 text-white ">
+            <div class="flex justify-between items-start"><i
+                class="fas fa-envelope-open-text text-3xl opacity-70"></i><span
+                class="bg-white/20 text-white text-xs px-2 py-1 rounded-full">weekly</span></div>
+            <h4 class="text-xl font-bold mt-4">Never miss an insight</h4>
+            <p class="text-sm text-gray-200 mt-1 leading-relaxed">Get the latest design & tech stories delivered to your
+              inbox.</p>
+            <div class="mt-4 flex flex-col gap-2">
+              <button
+                class="bg-indigo-700 hover:bg-indigo-800 text-white font-medium py-2 rounded-xl text-sm transition">Subscribe
+                →</button>
+            </div>
+          </div>
+
+          <!-- Recommended Posts (suggestions) -->
+          <div class="bg-white rounded-2xl shadow-soft border border-cardborder p-5 ">
+            <h3 class="font-bold text-primary text-lg mb-4">Recommended for you</h3>
+            <div id="recommended-posts" class=" space-y-4">
+              
+            </div>
+          </div>
+
+          <!-- sticky social badge on desktop (optional) -->
+          <!-- <div class="hidden lg:block bg-white rounded-full shadow-sm border border-gray-100 p-2 text-center  ">
+            <div class="flex justify-center gap-5">
+              <i class="fab fa-twitter text-gray-500 hover:text-accent cursor-pointer text-lg"></i>
+              <i class="fab fa-linkedin-in text-gray-500 hover:text-accent cursor-pointer text-lg"></i>
+              <i class="fas fa-link text-gray-500 hover:text-accent cursor-pointer text-lg"></i>
+            </div>
+          </div> -->
+        </div>
+
+      </aside>
+    </div>
   </main>
 
   <!-- FOOTER -->
-  <footer class="w-full bg-gray-100 text-black border-t border-gray-200">
-      <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
-          <div class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-300">
-              <div class="mb-6">
-                  <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
-              </div>
-              <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
-                  Redefining the digital landscape through innovation and precision. ThunderGits delivers future-ready technology solutions.
-              </p>
-          </div>
-          <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
-              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Facebook</a>
-              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Instagram</a>
-              <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Youtube</a>
-              <a href="#" class="px-12 py-8 text-gray-800 font-semibold text-center md:text-left hover:bg-gray-200 transition-colors">Linkedin</a>
-          </div>
-          <div class="flex flex-col justify-between px-8 md:px-12 py-12">
-              <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">LET'S TALK</h2>
-              <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
-                  <span class="flex items-start gap-2 min-w-[220px] flex-1">
-                      <i class="ri-map-pin-line mt-0.5"></i>
-                      <span class="leading-relaxed">2nd Floor, E 1/74, near YMCA, Sector 11, Faridabad, Haryana 121006</span>
-                  </span>
-                  <span class="flex items-center gap-2 flex-1 min-w-[180px]">
-                      <i class="ri-phone-line"></i> +91-7765979725
-                  </span>
-                  <span class="flex items-center gap-2 flex-1 min-w-[200px]">
-                      <i class="ri-mail-line"></i> info@thundergits.com
-                  </span>
-              </div>
-          </div>
+  <footer class="w-full bg-gray-100 text-black">
+
+    <!-- TOP SECTION -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+
+      <!-- COL 1: LOGO + DESC -->
+      <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
+        <img src="../assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+        <p class="text-sm font-medium leading-relaxed max-w-sm">
+          When do they work well, and when do they on us and finally, when do we
+          actually need how can we avoid them.
+        </p>
       </div>
-      <div class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p class="text-xs text-black">© 2026 | All rights reserved by ThunderGits</p>
-          <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
-              <a href="./privacy.html">Privacy</a>
-          </nav>
+
+      <!-- COL 2: SOCIAL LINKS -->
+      <div class="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-300">
+        <a href="#"
+          class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Facebook</a>
+        <a href="https://www.instagram.com/thundergits"
+          class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Instagram</a>
+        <a href="https://www.youtube.com/@thundergits"
+          class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">YouTube</a>
+        <a href="https://www.linkedin.com/company/thundergits"
+          class="px-8 py-5 text-center md:text-left font-semibold hover:bg-gray-200 transition">LinkedIn</a>
       </div>
+
+      <!-- COL 3: LET'S TALK -->
+      <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+        <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">
+          LET'S TALK
+        </h2>
+        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+
+          <span class="flex items-start gap-2 min-w-[220px] flex-1">
+            <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <span class="leading-relaxed">
+              2nd Floor, E 1/74, near YMCA,<br>
+              Sector 11, Faridabad, Haryana 121006
+            </span>
+          </span>
+
+          <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
+            </svg>
+            +91-7765979725
+          </span>
+
+          <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
+            </svg>
+            info@thundergits.com
+          </span>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div
+      class="border-t border-gray-300 px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-center md:text-left">
+        © 2026 | All rights reserved by Thundergits Consultancy Services Private Limited
+      </p>
+
+      <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-semibold">
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+    </div>
+
   </footer>
 
-  <!-- Scroll Button -->
-  <button id="scrollToggleBtn" class="fixed bottom-10 right-10 w-12 h-12 bg-blue-950 text-white flex items-center justify-center rounded-full shadow-2xl hover:scale-110 transition-all z-40">
-    <i id="scrollIcon" class="fas fa-arrow-down"></i>
-  </button>
-
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  </script>
-
-  <script src="./script.js"></script>
-  <script>
-    const btn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    btn.addEventListener("click", () => {
-        const isOpen = mobileMenu.style.display === "flex";
-        mobileMenu.style.display = isOpen ? "none" : "flex";
-    });
 
     const nav = document.getElementById("main-nav");
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 80) {
-            nav.style.background = "rgba(0, 0, 0, 0.75)";
-            nav.style.backdropFilter = "blur(12px)";
-            nav.style.webkitBackdropFilter = "blur(12px)";
-            nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
-        } else {
-            nav.style.background = "transparent";
-            nav.style.backdropFilter = "none";
-            nav.style.webkitBackdropFilter = "none";
-            nav.style.borderBottom = "none";
-        }
+      if (window.scrollY > 80) {
+        nav.style.background = "rgba(0, 0, 0, 0.75)";
+        nav.style.backdropFilter = "blur(12px)";
+        nav.style.webkitBackdropFilter = "blur(12px)";
+        nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
+      } else {
+        nav.style.background = "transparent";
+        nav.style.backdropFilter = "none";
+        nav.style.webkitBackdropFilter = "none";
+        nav.style.borderBottom = "none";
+      }
     });
+
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    /* Interactive Hero Grid */
+    const heroSection = document.getElementById("hero-section");
+    const gridEl = document.getElementById("hero-grid");
+    const CELL = 50;
+    let cols = 0, rows = 0, cellEls = [];
+
+    function buildGrid() {
+      if (!gridEl) return;
+      gridEl.innerHTML = "";
+      cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
+      rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
+
+      gridEl.style.display = "grid";
+      gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+      gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+
+      cellEls = [];
+      for (let i = 0; i < cols * rows; i++) {
+        const d = document.createElement("div");
+        d.style.cssText = "transition: background 0.55s ease;";
+        gridEl.appendChild(d);
+        cellEls.push(d);
+      }
+    }
+
+    buildGrid();
+    window.addEventListener("resize", buildGrid);
+
+    if (heroSection && gridEl) {
+      heroSection.addEventListener("mousemove", (e) => {
+        const rect = gridEl.getBoundingClientRect();
+        const cx = Math.floor((e.clientX - rect.left) / CELL);
+        const cy = Math.floor((e.clientY - rect.top) / CELL);
+
+        const pattern = [
+          [0, 0, 0.40],
+          [-1, 0, 0.20], [1, 0, 0.20], [0, -1, 0.20], [0, 1, 0.20],
+          [-1, -1, 0.09], [1, -1, 0.09], [-1, 1, 0.09], [1, 1, 0.09],
+          [-2, 0, 0.04], [2, 0, 0.04], [0, -2, 0.04], [0, 2, 0.04],
+        ];
+
+        pattern.forEach(([dx, dy, alpha]) => {
+          const x = cx + dx, y = cy + dy;
+          if (x < 0 || x >= cols || y < 0 || y >= rows) return;
+          const cell = cellEls[y * cols + x];
+          if (!cell) return;
+          clearTimeout(cell._t);
+          cell.style.background = `rgba(99, 102, 241, ${alpha})`;
+          cell._t = setTimeout(() => {
+            cell.style.background = "";
+          }, 650);
+        });
+      });
+    }
   </script>
-  <script src="./blogdetails.js"></script>
+  <script>
+    // Hamburger toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    // Accordion toggle
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById(id + '-icon');
+      el.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    }
+  </script>
+
+  <script>
+    async function loadBlogDetail() {
+      try {
+        // GET BLOG ID
+        const params = new URLSearchParams(
+          window.location.search
+        );
+
+        const id = params.get("id");
+
+        if (!id) {
+          console.error("No blog ID found");
+          return;
+        }
+
+        // FETCH BLOG
+        const res = await fetch(
+          `http://localhost:5000/api/blog/${id}`
+        );
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch blog");
+        }
+
+        const data = await res.json();
+        const blog = data.data;
+
+        console.log(blog);
+
+        // =========================
+        // SEO META
+        // =========================
+
+        document.title =
+          blog.metaTitle ||
+          `${blog.title} - ThunderGits Technology`;
+
+        const metaDesc = document.querySelector(
+          'meta[name="description"]'
+        );
+
+        if (metaDesc) {
+          metaDesc.setAttribute(
+            "content",
+            blog.metaDescription ||
+            blog.description ||
+            ""
+          );
+        }
+
+        const metaKeywords =
+          document.querySelector(
+            'meta[name="keywords"]'
+          );
+
+        if (metaKeywords) {
+          metaKeywords.setAttribute(
+            "content",
+            blog.metaKeywords?.join(", ") || ""
+          );
+        }
+
+        // =========================
+        // TITLE
+        // =========================
+
+        document
+          .querySelectorAll(".blog-title")
+          .forEach((el) => {
+            el.innerText =
+              blog.title || "No Title";
+          });
+
+        // =========================
+        // DESCRIPTION
+        // =========================
+
+        document
+          .querySelectorAll(".blog-description")
+          .forEach((el) => {
+            el.innerText =
+              blog.description || "";
+          });
+
+        // =========================
+        // CONTENT
+        // =========================
+
+        document
+          .querySelectorAll(".blog-content")
+          .forEach((el) => {
+            el.innerHTML =
+              blog.content || "";
+          });
+
+        // =========================
+        // IMAGE
+        // =========================
+
+        document
+          .querySelectorAll(".blog-image")
+          .forEach((el) => {
+            el.src =
+              blog.image ||
+              "../assets/Deepseek.webp";
+
+            el.alt =
+              blog.title || "Blog Image";
+          });
+
+        // =========================
+        // AUTHOR
+        // =========================
+
+        document
+          .querySelectorAll(".blog-author")
+          .forEach((el) => {
+            el.innerText =
+              blog.author?.username ||
+              "Admin";
+          });
+
+        document
+          .querySelectorAll(".blog-author-role")
+          .forEach((el) => {
+            el.innerText =
+              blog.author?.role ||
+              "Admin";
+          });
+
+        document
+          .querySelectorAll(
+            ".blog-author-prefix"
+          )
+          .forEach((el) => {
+            el.innerText = `By ${blog.author?.username ||
+              "Admin"
+              }`;
+          });
+
+        // =========================
+        // AUTHOR EMAIL
+        // =========================
+
+        document
+          .querySelectorAll(
+            ".blog-author-email"
+          )
+          .forEach((el) => {
+            el.innerText =
+              blog.author?.email || "";
+          });
+
+        // =========================
+        // STATUS
+        // =========================
+
+        document
+          .querySelectorAll(".blog-status")
+          .forEach((el) => {
+            el.innerText =
+              blog.status || "draft";
+          });
+
+        // =========================
+        // SLUG
+        // =========================
+
+        document
+          .querySelectorAll(".blog-slug")
+          .forEach((el) => {
+            el.innerText =
+              blog.slug || "";
+          });
+
+
+        document
+          .querySelectorAll(".blog-category")
+          .forEach((el) => {
+            el.innerText =
+              blog.category || "";
+          });
+
+
+        document
+          .querySelectorAll(".blog-read")
+          .forEach((el) => {
+            el.innerText =
+              blog.read || "";
+          });
+
+
+        document
+          .querySelectorAll(".blog-hashtags")
+          .forEach((el) => {
+            el.innerText =
+              blog.hashtags?.join(" ") || "";
+          });
+
+        // =========================
+        // BLOG ID
+        // =========================
+
+        document
+          .querySelectorAll(".blog-id")
+          .forEach((el) => {
+            el.innerText =
+              blog.blogId || "";
+          });
+
+        // =========================
+        // DATES
+        // =========================
+
+        const updatedDate = new Date(
+          blog.updatedAt
+        ).toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        });
+
+        const createdDate = new Date(
+          blog.createdAt
+        ).toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        });
+
+        document
+          .querySelectorAll(
+            ".blog-updated-date"
+          )
+          .forEach((el) => {
+            el.innerText = updatedDate;
+          });
+
+        document
+          .querySelectorAll(
+            ".blog-created-date"
+          )
+          .forEach((el) => {
+            el.innerText = createdDate;
+          });
+
+        // =========================
+        // TAGS
+        // =========================
+
+        document
+          .querySelectorAll(".blog-tags")
+          .forEach((container) => {
+            container.innerHTML = "";
+
+            if (
+              blog.metaKeywords &&
+              blog.metaKeywords.length > 0
+            ) {
+              blog.metaKeywords.forEach(
+                (tag) => {
+                  const span =
+                    document.createElement(
+                      "span"
+                    );
+
+                  span.className =
+                    "px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm";
+
+                  span.innerText = tag;
+
+                  container.appendChild(
+                    span
+                  );
+                }
+              );
+            }
+          });
+      } catch (err) {
+        console.error(
+          "Error loading blog:",
+          err
+        );
+
+        document
+          .querySelectorAll(".blog-content")
+          .forEach((el) => {
+            el.innerHTML = `
+            <div class="text-center py-20">
+              <h2 class="text-3xl font-bold text-red-500 mb-4">
+                Failed to load blog
+              </h2>
+
+              <p class="text-gray-600">
+                Something went wrong while fetching blog details.
+              </p>
+            </div>
+          `;
+          });
+      }
+    }
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      loadBlogDetail
+    );
+  </script>
+
+<script>
+  async function loadRecommendedBlogs() {
+    try {
+      // FETCH BLOGS
+      const res = await fetch(
+        "http://localhost:5000/api/blog"
+      );
+
+      const data = await res.json();
+
+      const blogs = data.data || [];
+
+      // CONTAINER
+      const recommendedEl =
+        document.getElementById(
+          "recommended-posts"
+        );
+
+      // RENDER
+      if (
+        recommendedEl &&
+        blogs.length > 0
+      ) {
+        recommendedEl.innerHTML =
+          blogs
+            .slice(0, 4)
+            .map(
+              (blog) => `
+              <div class="flex gap-3 items-start">
+
+                <!-- IMAGE -->
+                <div class="w-16 h-16 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
+                  <img
+                    src="${
+                      blog.image ||
+                      "../assets/Deepseek.webp"
+                    }"
+                    class="h-full w-full object-cover"
+                    alt="${blog.title}"
+                  >
+                </div>
+
+                <!-- CONTENT -->
+                <div>
+                  <a
+                    href="./blog-detail.html?id=${
+                      blog._id
+                    }"
+                    class="font-semibold text-gray-800 hover:text-indigo-600 text-sm transition line-clamp-2"
+                  >
+                    ${blog.title}
+                  </a>
+
+                  <p class="text-xs text-gray-500 mt-1">
+                    ${
+                      blog.readTime ||
+                      "5 min read"
+                    }
+                  </p>
+                </div>
+
+              </div>
+            `
+            )
+            .join("");
+      }
+    } catch (err) {
+      console.error(
+        "Failed to fetch blogs:",
+        err
+      );
+    }
+  }
+
+  // CALL FUNCTION
+  loadRecommendedBlogs();
+</script>
 </body>
 
 </html>

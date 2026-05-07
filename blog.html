@@ -326,8 +326,7 @@
           </div>
         </li>
 
-        <li><a href="./blog.html"
-            class="block py-2.5 px-3 rounded-lg text-primary bg-blue-50 transition">Blog</a>
+        <li><a href="./blog.html" class="block py-2.5 px-3 rounded-lg text-primary bg-blue-50 transition">Blog</a>
         </li>
         <li><a href="./contact.html"
             class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
@@ -555,7 +554,7 @@
     <div
       class="border-t border-gray-300 px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-xs text-center md:text-left">
-        © 2026 | All rights reserved by ThunderGits
+        © 2026 | All rights reserved by Thundergits Consultancy Services Private Limited
       </p>
 
       <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-semibold">
@@ -608,17 +607,19 @@
       const grid = document.getElementById('blogGrid');
       const loader = document.getElementById('blogLoading');
       loader.classList.remove('hidden');
+      // grid.innerHTML = "";
 
       try {
-        const res = await fetch("https://tgspace-back.thundergits.com/api/blogs/published?sortBy=publishedAt&sortOrder=desc");
+        const res = await fetch("http://localhost:5000/api/blog");
         const data = await res.json();
         const blogs = data.data || [];
+
 
         blogs.forEach(blog => {
           const card = `
             <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up">
               <div class="h-60 overflow-hidden relative">
-                <img src="${blog.featuredImage || './assets/default-blog.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}" onerror="this.src='./assets/default-blog.webp'">
+                <img src="${blog.image || './assets/default-blog.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}">
                 <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
               </div>
               <div class="p-8 flex flex-col flex-grow">
@@ -629,7 +630,13 @@
                 <h3 class="text-xl font-bold text-primary mb-4 group-hover:text-primary-dark transition-colors leading-tight">${blog.title}</h3>
                 <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">${blog.excerpt || 'Read the latest updates from ThunderGits.'}</p>
                 <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
-                  <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">${new Date(blog.publishedAt).toLocaleDateString()}</span>
+                 <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+  ${new Date(blog.updatedAt).toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })}
+</span>
                   <a href="./blogdetails.html?id=${blog._id}" class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center border border-indigo-500 hover:bg-indigo-700 transition-colors shadow-lg group-hover:scale-110">
                     <i class="fas fa-arrow-right text-xs"></i>
                   </a>

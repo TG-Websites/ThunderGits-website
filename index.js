@@ -84,7 +84,7 @@ async function fetchJobs() {
         const container = document.getElementById("jobsContainer");
         if (!container) return; // Exit if container doesn't exist on this page
         
-        const res = await fetch("https://tgspace-back.thundergits.com/api/jobs?role=superadmin");
+        const res = await fetch("http://localhost:5000/api/jobs?role=superadmin");
         const data = await res.json();
 
         console.log("Raw API response:", data);
@@ -103,25 +103,17 @@ async function fetchJobs() {
             console.log("Rendering job:", job.jobTitle);
 
             const card = `
-        <div class="group border-l-4 border-accent p-6 shadow-md hover:shadow-lg transition-all duration-300 bg-white flex flex-col"
-            data-aos="fade-up">
-            <div class="flex items-center mb-3">
-                <i class="fas fa-briefcase text-accent text-lg mr-2"></i>
-                <h3 class="text-lg font-semibold text-dark line-clamp-1">
-                    ${job.jobTitle}
-                </h3>
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-4 ">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <i class="ri-palette-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
             </div>
-            <div class="text-gray-600 text-sm mb-6 line-clamp-4 ">
-                ${job.jobDescription}
-            </div>
-           <div class="mt-auto flex justify-center">
-            <a href="./jobs/jobDetail.html?id=${job._id}" 
-              class="inline-block px-4 py-1.5 text-xs font-medium border border-accent text-accent 
-              hover:bg-accent hover:text-white transition duration-300">
-             Apply Now
-            </a>
-        </div>
-
+            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors"> ${job.jobTitle}</h3>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 flex-grow">${job.jobDescription} </p>
+          <a href="./jobs/jobDetail.html?id=${job._id}"  class="inline-flex items-center gap-2 mt-10 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+            Apply Now <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
       `;
 

@@ -52,7 +52,7 @@ async function fetchBlogDetails() {
     }
 
     try {
-        const response = await fetch(`https://tgspace-back.thundergits.com/api/blogs/public/${blogId}`);
+        const response = await fetch(`https://api.thundergits.com/api/blogs/public/${blogId}`);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -198,7 +198,7 @@ function formatBlogContent(content) {
 // Fetch and display related blogs
 async function fetchRelatedBlogs(category, currentBlogId) {
     try {
-        const response = await fetch(`https://tgspace-back.thundergits.com/api/blogs/published?limit=20&sortBy=publishedAt&sortOrder=desc`);
+        const response = await fetch(`https://api.thundergits.com/api/blogs/published?limit=20&sortBy=publishedAt&sortOrder=desc`);
         const data = await response.json();
         
         if (data.success && data.data) {

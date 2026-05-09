@@ -52,6 +52,24 @@
         .thunderstrike {
             animation: thunder-text-glow 1.2s ease-in-out infinite;
         }
+
+        /* Hero hover hint (desktop only) */
+        @keyframes hover-hint-float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .hover-hint {
+                display: block !important;
+            }
+        }
     </style>
 </head>
 
@@ -410,10 +428,22 @@
             </span>
 
             <!-- HEADING -->
-            <h1
-                style="font-family: 'Inter', sans-serif; font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 600; line-height: 1.1; color: #ffffff; letter-spacing: 0em; margin-bottom: 1.5rem; text-align: center;">
-                ThunderGits
-            </h1>
+            <div style="position:relative; display:inline-block;">
+                <h1
+                    style="font-family: 'Inter', sans-serif; font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 600; line-height: 1.1; color: #ffffff; letter-spacing: 0em; margin-bottom: 1.5rem; text-align: center;">
+                    ThunderGits
+                </h1>
+
+                <!-- Hover hint: freehand arrow PNG + finger pointer (desktop only) -->
+                <div class="hover-hint"
+                    style="display:none; position:absolute; left:-120px; top:10px; width:140px; height:70px; pointer-events:none; opacity:0.95; filter: drop-shadow(0 10px 22px rgba(59,130,246,0.25)); animation: hover-hint-float 1.9s ease-in-out infinite;">
+                    <img src="./assets/arrow.png" alt="" style="width:240px; height:auto; display:block;" />
+                    <div
+                        style="position:absolute; left:92px; bottom:0px; font-family: Inter, ui-sans-serif, system-ui; font-size: 8px; font-weight: 600; color: #e5e7eb;">
+                        Hover here
+                    </div>
+                </div>
+            </div>
 
             <!-- DESCRIPTION -->
             <p
@@ -609,7 +639,7 @@
     <!-- Services section -->
     <section class="relative w-full bg-white py-20 overflow-hidden">
 
-        <div class="max-w-full mx-auto px-6  gap-10">
+        <div class="max-w-7xl mx-auto px-6 sm:px-0  gap-10">
 
             <div class="flex flex-col items-start">
 
@@ -937,7 +967,7 @@
     </section>
 
     <!-- Our Teams section -->
-    <section class="bg-black text-white py-16 px-4 md:px-10 ">
+    <section id="team" class="bg-black text-white py-16 px-4 md:px-10 ">
 
         <!-- Heading -->
         <div class="max-w-6xl mx-auto ">
@@ -950,7 +980,25 @@
         </div>
 
         <!-- Cards -->
-        <div class="max-w-6xl mx-auto px-2 carousal" id="carousel">
+        <div class="max-w-7xl mx-auto px-2" style="position:relative;">
+            <!-- Carousel controls -->
+            <button id="team-prev" type="button" aria-label="Previous team members"
+                style="position:absolute;left:8px;top:50%;transform:translateY(-50%);z-index:50;width:44px;height:44px;border-radius:9999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;display:grid;place-items:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);cursor:pointer;transition:background .2s ease;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <button id="team-next" type="button" aria-label="Next team members"
+                style="position:absolute;right:8px;top:50%;transform:translateY(-50%);z-index:50;width:44px;height:44px;border-radius:9999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;display:grid;place-items:center;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);cursor:pointer;transition:background .2s ease;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
+
+            <!-- Scrolling track -->
+            <div class="carousal" id="team-carousel">
             <!-- DEVELOPERS -->
             <div class="carousalgroup flex gap-6 scroll-smooth snap-x snap-mandatory px-2 ">
 
@@ -966,6 +1014,17 @@
                         towards global innovation and digital excellence.</p>
                 </div>
 
+                <!-- Digital Marketing Head -->
+                <div class="min-w-[280px] max-w-[280px] group cursor-pointer text-center">
+                    <div class="overflow-hidden rounded-2xl bg-white/5">
+                        <img src="./assets/team/akriti_suman_digital_marketing_head.jpeg" alt="Akriti Suman"
+                            class="w-full h-[320px] object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <h3 class="text-xl font-bold mt-4">Akriti Suman</h3>
+                    <p class="text-indigo-400 text-sm font-semibold">Digital Marketing Head</p>
+                    <p class="text-gray-200 text-xs mt-2 px-4 leading-relaxed">Strategic marketer driving brand
+                        awareness and customer engagement through innovative digital campaigns.</p>
+                </div>
 
                 <!-- COO -->
                 <div class="min-w-[280px] max-w-[280px] group cursor-pointer text-center">
@@ -979,6 +1038,18 @@
                         technical teams and ensuring seamless project delivery.</p>
                 </div>
 
+                <!-- Sales Executive -->
+                <div class="min-w-[280px] max-w-[280px] group cursor-pointer text-center">
+                    <div class="overflow-hidden rounded-2xl bg-white/5">
+                        <img src="./assets/team/shubham_jha_sales_excutive.png" alt="Shubham Jha"
+                            class="w-full h-[320px] object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <h3 class="text-xl font-bold mt-4">Shubham Jha</h3>
+                    <p class="text-indigo-400 text-sm font-semibold">Sales Executive</p>
+                    <p class="text-gray-200 text-xs mt-2 px-4 leading-relaxed">Helping clients find the right solutions
+                        by aligning business goals with our services.</p>
+                </div>
+
                 <!-- TECH LEAD / PREM PRAKASH -->
                 <div class=" min-w-[280px] max-w-[280px] group cursor-pointer text-center">
                     <div class="overflow-hidden rounded-2xl bg-white/5">
@@ -990,21 +1061,9 @@
                     <p class="text-gray-200 text-xs mt-2 px-4 leading-relaxed">Worked on 50+ projects including
                         SaaS-based platforms.</p>
                 </div>
-
-
-                <!-- Digital Marketing Head -->
-                <div class="min-w-[280px] max-w-[280px] group cursor-pointer text-center">
-                    <div class="overflow-hidden rounded-2xl bg-white/5">
-                        <img src="./assets/team/akriti_suman_digital_marketing_head.jpeg" alt="Akriti Suman"
-                            class="w-full h-[320px] object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition duration-500" />
-                    </div>
-                    <h3 class="text-xl font-bold mt-4">Akriti Suman</h3>
-                    <p class="text-indigo-400 text-sm font-semibold">Digital Marketing Head</p>
-                    <p class="text-gray-200 text-xs mt-2 px-4 leading-relaxed">Strategic marketer driving brand
-                        awareness and customer engagement through innovative digital campaigns.</p>
-                </div>
             </div>
 
+            </div>
         </div>
     </section>
 
@@ -1606,6 +1665,43 @@
         el.classList.toggle('hidden');
         icon.classList.toggle('rotate-180');
     }
+</script>
+
+<script>
+    // Team carousel chevrons
+    (() => {
+        const scroller = document.getElementById('team-carousel');
+        const track = scroller ? scroller.querySelector('.carousalgroup') : null;
+        const prevBtn = document.getElementById('team-prev');
+        const nextBtn = document.getElementById('team-next');
+        if (!scroller || !track || !prevBtn || !nextBtn) return;
+
+        const cards = Array.from(track.children).filter(el => el.nodeType === 1);
+        if (cards.length === 0) return;
+
+        const currentIndex = () => {
+            const scrollerRect = scroller.getBoundingClientRect();
+            let bestIndex = 0;
+            let bestDistance = Infinity;
+            cards.forEach((card, idx) => {
+                const rect = card.getBoundingClientRect();
+                const distance = Math.abs(rect.left - scrollerRect.left);
+                if (distance < bestDistance) {
+                    bestDistance = distance;
+                    bestIndex = idx;
+                }
+            });
+            return bestIndex;
+        };
+
+        const goTo = (idx) => {
+            const clamped = Math.max(0, Math.min(cards.length - 1, idx));
+            cards[clamped].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+        };
+
+        prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+        nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
+    })();
 </script>
 <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
 

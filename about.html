@@ -984,19 +984,21 @@
 <script>
 
   const nav = document.getElementById("main-nav");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 80) {
-      nav.style.background = "rgba(0, 0, 0, 0.75)";
-      nav.style.backdropFilter = "blur(12px)";
-      nav.style.webkitBackdropFilter = "blur(12px)";
-      nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
-    } else {
-      nav.style.background = "transparent";
-      nav.style.backdropFilter = "none";
-      nav.style.webkitBackdropFilter = "none";
-      nav.style.borderBottom = "none";
-    }
-  });
+  if (nav) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        nav.style.background = "rgba(0, 0, 0, 0.75)";
+        nav.style.backdropFilter = "blur(12px)";
+        nav.style.webkitBackdropFilter = "blur(12px)";
+        nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
+      } else {
+        nav.style.background = "transparent";
+        nav.style.backdropFilter = "none";
+        nav.style.webkitBackdropFilter = "none";
+        nav.style.borderBottom = "none";
+      }
+    });
+  }
 
   // Initialize AOS
   AOS.init({

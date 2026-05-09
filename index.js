@@ -3,7 +3,7 @@
 // contact us
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contactForm");
-    
+
     if (!form) return; // Exit if form doesn't exist on this page
 
     form.addEventListener("submit", async (e) => {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("applicationForm");
-    
+
     if (!form) return; // Exit if form doesn't exist on this page
 
     form.addEventListener("submit", async (e) => {
@@ -83,8 +83,8 @@ async function fetchJobs() {
     try {
         const container = document.getElementById("jobsContainer");
         if (!container) return; // Exit if container doesn't exist on this page
-        
-        const res = await fetch("http://localhost:5000/api/jobs?role=superadmin");
+
+        const res = await fetch("https://api.thundergits.com/api/jobs?role=superadmin");
         const data = await res.json();
 
         console.log("Raw API response:", data);
@@ -159,11 +159,11 @@ async function fetchLatestBlogs() {
         }
 
         blogs.forEach((blog) => {
-            const excerpt = blog.excerpt && blog.excerpt.length > 120 
-                ? blog.excerpt.substring(0, 120) + '...' 
+            const excerpt = blog.excerpt && blog.excerpt.length > 120
+                ? blog.excerpt.substring(0, 120) + '...'
                 : blog.excerpt || 'No description available';
 
-            const categoryDisplay = blog.category 
+            const categoryDisplay = blog.category
                 ? blog.category.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())
                 : 'General';
 

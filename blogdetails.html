@@ -882,7 +882,7 @@
 
         // FETCH BLOG
         const res = await fetch(
-          `http://localhost:5000/api/blog/${id}`
+          `https://api.thundergits.com/api/blog/${id}`
         );
 
         if (!res.ok) {
@@ -1178,7 +1178,7 @@
       try {
         // FETCH BLOGS
         const res = await fetch(
-          "http://localhost:5000/api/blog"
+          "https://api.thundergits.com/api/blog"
         );
 
         const data = await res.json();

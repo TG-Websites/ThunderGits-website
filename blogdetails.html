@@ -486,7 +486,7 @@
     <div class="relative z-10 px-6 max-w-6xl mx-auto flex flex-col items-center text-center" data-aos="fade-up">
 
       <!-- Category -->
-      <span 
+      <span
         class="blog-category inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-indigo-400 mb-6 uppercase">
         Category
       </span>
@@ -534,7 +534,7 @@
             <div class="flex gap-4 text-gray-500 text-sm">
               <span><i class="far fa-calendar-alt mr-1"></i> <span class="blog-updated-date">April 12,
                   2026</span></span>
-              <span><i class="far fa-clock mr-1"></i> <span class="blog-read">8 min read</span></span>  
+              <span><i class="far fa-clock mr-1"></i> <span class="blog-read">8 min read</span></span>
             </div>
           </div>
         </div>
@@ -663,7 +663,7 @@
           <div class="bg-white rounded-2xl shadow-soft border border-cardborder p-5 ">
             <h3 class="font-bold text-primary text-lg mb-4">Recommended for you</h3>
             <div id="recommended-posts" class=" space-y-4">
-              
+
             </div>
           </div>
 
@@ -723,8 +723,8 @@
                 d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
             </svg>
             <span class="leading-relaxed">
-              2nd Floor, E 1/74, near YMCA,<br>
-              Sector 11, Faridabad, Haryana 121006
+              HN-75, W-8, P-3, Dagarua, B. Ailoth,<br>
+              Musrigharari, Samastipur, Bihar, India, 848101
             </span>
           </span>
 
@@ -1173,43 +1173,42 @@
     );
   </script>
 
-<script>
-  async function loadRecommendedBlogs() {
-    try {
-      // FETCH BLOGS
-      const res = await fetch(
-        "http://localhost:5000/api/blog"
-      );
-
-      const data = await res.json();
-
-      const blogs = data.data || [];
-
-      // CONTAINER
-      const recommendedEl =
-        document.getElementById(
-          "recommended-posts"
+  <script>
+    async function loadRecommendedBlogs() {
+      try {
+        // FETCH BLOGS
+        const res = await fetch(
+          "http://localhost:5000/api/blog"
         );
 
-      // RENDER
-      if (
-        recommendedEl &&
-        blogs.length > 0
-      ) {
-        recommendedEl.innerHTML =
-          blogs
-            .slice(0, 4)
-            .map(
-              (blog) => `
+        const data = await res.json();
+
+        const blogs = data.data || [];
+
+        // CONTAINER
+        const recommendedEl =
+          document.getElementById(
+            "recommended-posts"
+          );
+
+        // RENDER
+        if (
+          recommendedEl &&
+          blogs.length > 0
+        ) {
+          recommendedEl.innerHTML =
+            blogs
+              .slice(0, 4)
+              .map(
+                (blog) => `
               <div class="flex gap-3 items-start">
 
                 <!-- IMAGE -->
                 <div class="w-16 h-16 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
                   <img
-                    src="${
-                      blog.image ||
-                      "../assets/Deepseek.webp"
-                    }"
+                    src="${blog.image ||
+                  "../assets/Deepseek.webp"
+                  }"
                     class="h-full w-full object-cover"
                     alt="${blog.title}"
                   >
@@ -1218,39 +1217,37 @@
                 <!-- CONTENT -->
                 <div>
                   <a
-                    href="./blog-detail.html?id=${
-                      blog._id
-                    }"
+                    href="./blog-detail.html?id=${blog._id
+                  }"
                     class="font-semibold text-gray-800 hover:text-indigo-600 text-sm transition line-clamp-2"
                   >
                     ${blog.title}
                   </a>
 
                   <p class="text-xs text-gray-500 mt-1">
-                    ${
-                      blog.readTime ||
-                      "5 min read"
-                    }
+                    ${blog.readTime ||
+                  "5 min read"
+                  }
                   </p>
                 </div>
 
               </div>
             `
-            )
-            .join("");
+              )
+              .join("");
+        }
+      } catch (err) {
+        console.error(
+          "Failed to fetch blogs:",
+          err
+        );
       }
-    } catch (err) {
-      console.error(
-        "Failed to fetch blogs:",
-        err
-      );
     }
-  }
 
-  // CALL FUNCTION
-  loadRecommendedBlogs();
-</script>
-<script src="./cursor.js"></script>
+    // CALL FUNCTION
+    loadRecommendedBlogs();
+  </script>
+  <script src="./cursor.js"></script>
 </body>
 
 </html>

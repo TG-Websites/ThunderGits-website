@@ -1,0 +1,620 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Free Consultancy — ThunderGits</title>
+    <link rel="icon" href="./assets/tg-favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-black text-white font-['Inter',sans-serif]">
+
+    <!-- Navbar -->
+    <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
+        <div class="flex items-center justify-between gap-6 lg:gap-20 mx-auto px-3 lg:px-20 py-5">
+
+            <!-- LOGO -->
+            <a href="./index.html" class="flex items-center">
+                <img src="./assets/logo.png" class="h-9" alt="Logo" />
+            </a>
+
+            <!-- HAMBURGER BUTTON (mobile only) -->
+            <button id="mobile-menu-btn" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                <span class="sr-only">Open main menu</span>
+                <svg id="icon-open" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+                </svg>
+                <svg id="icon-close" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- DESKTOP NAV -->
+            <ul class="hidden lg:flex items-center gap-10 font-medium text-sm">
+                <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark transition">Home</a></li>
+                <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
+                <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
+                <li><a href="./service.html" class="text-black hover:text-primary-dark transition">Services</a></li>
+                <li><a href="./career.html" class="text-black hover:text-primary-dark transition">Career</a></li>
+
+                <!-- INDUSTRIES DROPDOWN -->
+                <li class="relative group">
+                    <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
+                        Industries
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100
+                            opacity-0 invisible translate-y-2
+                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                            transition-all duration-300 z-50">
+                        <ul class="p-2 text-sm text-gray-700">
+                            <li class="relative group/sub">
+                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Finance & Business <span class="text-gray-400">›</span></div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="./industries/index.html?page=banking" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO Banking</a></li>
+                                        <li><a href="./industries/index.html?page=stock-market" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock Market</a></li>
+                                        <li><a href="./industries/index.html?page=corporate" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a></li>
+                                        <li><a href="./industries/index.html?page=real-estate" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real Estate</a></li>
+                                        <li><a href="./industries/index.html?page=sales-marketing" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales & Marketing</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group/sub">
+                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Technology & Media <span class="text-gray-400">›</span></div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media & Entertainment</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group/sub">
+                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Commerce & Lifestyle <span class="text-gray-400">›</span></div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail & Ecommerce</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food & Beverages</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel & Hospitality</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group/sub">
+                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Industry & Services <span class="text-gray-400">›</span></div>
+                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
+                                    <ul class="p-2 text-sm">
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation & Logistics</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a></li>
+                                        <li><a href="#" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
+                <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+
+                <li>
+                    <a href="./consultancy.html"
+                        class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+                        Book Free Consultancy
+                    </a>
+                </li>
+                <li>
+                    <a href="./contact.html"
+                        class="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold hover:opacity-90 transition">
+                        GET A QUOTE
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pb-6 pt-2 max-h-[80vh] overflow-y-auto">
+            <ul class="flex flex-col gap-1 text-sm font-medium">
+                <li><a href="./index.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Home</a></li>
+                <li><a href="./about.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a></li>
+                <li><a href="./work.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a></li>
+                <li><a href="./service.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
+                <li><a href="./career.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
+
+                <!-- INDUSTRIES ACCORDION -->
+                <li>
+                    <button onclick="toggleAccordion('industries')"
+                        class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
+                        <span>Industries</span>
+                        <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="industries" class="hidden pl-3 mt-1 flex flex-col gap-1">
+                        <div>
+                            <button onclick="toggleAccordion('finance')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Finance & Business</span>
+                                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
+                            </button>
+                            <div id="finance" class="hidden pl-4 mt-0.5 flex flex-col">
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO Banking</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock Market</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real Estate</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales & Marketing</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="toggleAccordion('tech')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Technology & Media</span>
+                                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
+                            </button>
+                            <div id="tech" class="hidden pl-4 mt-0.5 flex flex-col">
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media & Entertainment</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="toggleAccordion('commerce')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Commerce & Lifestyle</span>
+                                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
+                            </button>
+                            <div id="commerce" class="hidden pl-4 mt-0.5 flex flex-col">
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail & Ecommerce</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food & Beverages</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel & Hospitality</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button onclick="toggleAccordion('industry')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                                <span>Industry & Services</span>
+                                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
+                            </button>
+                            <div id="industry" class="hidden pl-4 mt-0.5 flex flex-col">
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation & Logistics</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
+                                <a href="#" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="./blog.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a></li>
+                <li><a href="./contact.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
+
+                <li class="mt-2">
+                    <a href="./consultancy.html"
+                        class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+                        Book Free Consultancy
+                    </a>
+                </li>
+                <li class="mt-1">
+                    <a href="./contact.html"
+                        class="block text-center px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:opacity-90 transition">
+                        GET A QUOTE
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-black overflow-hidden flex items-center" style="min-height:45vh; padding-top:7rem; padding-bottom:3rem;">
+        <!-- STATIC CSS GRID LINES -->
+        <div class="absolute inset-0 z-0 pointer-events-none"
+            style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
+        <!-- INTERACTIVE HIGHLIGHT CELLS -->
+        <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+        <!-- TOP CENTER GLOW -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
+            style="width: 900px; height: 420px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+        </div>
+        <div class="relative z-10 max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full border border-white/15 text-indigo-300 mb-8 uppercase font-bold" style="background:rgba(255,255,255,0.05)">
+                Free · No Obligation
+            </span>
+            <h1 style="font-family:'Inter',sans-serif; font-size:clamp(2.2rem,6vw,4rem); font-weight:600; line-height:1.15; color:#ffffff; letter-spacing:-0.02em; margin-bottom:1.25rem;">
+                Book a Free Consultancy
+            </h1>
+            <p class="text-gray-400 text-lg leading-relaxed font-light max-w-xl mx-auto">
+                Tell us about your project or idea. Our team will reach out within 24 hours — completely free.
+            </p>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section class="relative" style="background:#f8f9fa; padding-top:5rem; padding-bottom:5rem;">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12" style="display:grid; grid-template-columns:1fr; gap:4rem; align-items:start;">
+
+            <!-- LEFT: Content -->
+            <div data-aos="fade-right" style="display:none;" id="left-col">
+                <span style="display:inline-flex;align-items:center;padding:6px 16px;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;border-radius:9999px;border:1px solid #1e3a8a;color:#1e3a8a;background:#eff6ff;margin-bottom:2rem;">
+                    100% Free · No Commitment
+                </span>
+                <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;line-height:1.2;color:#0f172a;letter-spacing:-0.02em;margin-bottom:1.5rem;">
+                    Let's talk about<br><span style="color:#1e3a8a;font-weight:600;">your project</span>
+                </h2>
+                <p style="font-size:15px;color:#64748b;line-height:1.8;margin-bottom:2.5rem;font-weight:300;">
+                    Whether you have a fully scoped idea or just a rough concept, our experts will help you define the right path forward — completely free of charge.
+                </p>
+
+                <!-- What happens next -->
+                <div style="margin-bottom:2.5rem;">
+                    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#94a3b8;margin-bottom:1rem;">What happens next</p>
+                    <div style="display:flex;flex-direction:column;gap:16px;">
+                        <div style="display:flex;align-items:flex-start;gap:14px;">
+                            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1e40af;">01</div>
+                            <div>
+                                <p style="margin:0 0 3px;font-size:14px;font-weight:600;color:#1e293b;">We review your requirement</p>
+                                <p style="margin:0;font-size:13px;color:#64748b;">Our team analyses your submitted brief within hours.</p>
+                            </div>
+                        </div>
+                        <div style="display:flex;align-items:flex-start;gap:14px;">
+                            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1e40af;">02</div>
+                            <div>
+                                <p style="margin:0 0 3px;font-size:14px;font-weight:600;color:#1e293b;">We call you within 24 hours</p>
+                                <p style="margin:0;font-size:13px;color:#64748b;">A dedicated consultant contacts you on your mobile.</p>
+                            </div>
+                        </div>
+                        <div style="display:flex;align-items:flex-start;gap:14px;">
+                            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1e40af;">03</div>
+                            <div>
+                                <p style="margin:0 0 3px;font-size:14px;font-weight:600;color:#1e293b;">We propose the best solution</p>
+                                <p style="margin:0;font-size:13px;color:#64748b;">Get a tailored roadmap, tech stack & cost estimate.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust badges -->
+                <div style="display:flex;flex-wrap:wrap;gap:12px;">
+                    <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;background:#ffffff;border:1px solid #e2e8f0;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#1e40af" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        <span style="font-size:12px;color:#475569;font-weight:500;">100% Confidential</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;background:#ffffff;border:1px solid #e2e8f0;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#1e40af" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span style="font-size:12px;color:#475569;font-weight:500;">Reply in 24 hrs</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;background:#ffffff;border:1px solid #e2e8f0;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#1e40af" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        <span style="font-size:12px;color:#475569;font-weight:500;">Zero Cost</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Form -->
+            <div data-aos="fade-left" data-aos-delay="100" id="right-col">
+                <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:24px;padding:40px;box-shadow:0 4px 24px rgba(0,0,0,0.06);">
+                    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#1e40af;margin:0 0 6px;">Get Started</p>
+                    <h3 style="font-size:20px;font-weight:700;color:#0f172a;margin:0 0 28px;letter-spacing:-0.3px;">Book your free session</h3>
+
+                    <form id="consultancy-form" style="display:flex;flex-direction:column;gap:20px;" novalidate>
+
+                        <!-- Name -->
+                        <div>
+                            <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
+                                Full Name <span style="color:#f87171;">*</span>
+                            </label>
+                            <input id="c-name" type="text" name="name" required autocomplete="name"
+                                placeholder="e.g. Rahul Sharma"
+                                style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;background:#f8fafc;border:1px solid #e2e8f0;" />
+                            <p id="err-name" style="display:none;color:#f87171;font-size:12px;margin:6px 0 0;">Name is required</p>
+                        </div>
+
+                        <!-- Mobile -->
+                        <div>
+                            <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
+                                Mobile Number <span style="color:#f87171;">*</span>
+                            </label>
+                            <input id="c-mobile" type="tel" name="mobile" required autocomplete="tel"
+                                placeholder="+91 98765 43210"
+                                style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;background:#f8fafc;border:1px solid #e2e8f0;" />
+                            <p id="err-mobile" style="display:none;color:#f87171;font-size:12px;margin:6px 0 0;">Mobile number is required</p>
+                        </div>
+
+                        <!-- Requirement -->
+                        <div>
+                            <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
+                                Your Requirement <span style="color:#f87171;">*</span>
+                            </label>
+                            <textarea id="c-requirement" name="requirement" required rows="4"
+                                placeholder="Tell us what you're looking for — e.g. a mobile app, website, digital marketing, etc."
+                                style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;resize:none;background:#f8fafc;border:1px solid #e2e8f0;font-family:inherit;"></textarea>
+                            <p id="err-requirement" style="display:none;color:#f87171;font-size:12px;margin:6px 0 0;">Please describe your requirement</p>
+                        </div>
+
+                        <!-- Email + Business side by side on desktop -->
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                            <div>
+                                <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
+                                    Email <span style="color:#94a3b8;font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span>
+                                </label>
+                                <input id="c-email" type="email" name="email" autocomplete="email"
+                                    placeholder="you@example.com"
+                                    style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;background:#f8fafc;border:1px solid #e2e8f0;" />
+                            </div>
+                            <div>
+                                <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
+                                    Business <span style="color:#94a3b8;font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span>
+                                </label>
+                                <input id="c-business" type="text" name="businessName"
+                                    placeholder="e.g. Acme Tech"
+                                    style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;background:#f8fafc;border:1px solid #e2e8f0;" />
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" id="submit-btn"
+                            style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;border-radius:14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#ffffff;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:4px;"
+                            class="bg-primary hover:bg-primary-dark">
+                            <span id="btn-text">Book Free Consultancy</span>
+                            <svg id="btn-loader" style="display:none;width:16px;height:16px;animation:spin 1s linear infinite;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle style="opacity:0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path style="opacity:0.75;" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                            </svg>
+                        </button>
+
+                        <p id="form-status" style="display:none;text-align:center;font-size:13px;font-weight:500;"></p>
+
+                    </form>
+                </div>
+
+                <p style="text-align:center;font-size:11px;color:#94a3b8;margin-top:16px;">
+                    Your information is safe with us. We never share your data.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @media (min-width: 1024px) {
+            #left-col { display: block !important; }
+            .form-section-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+    </style>
+    <script>
+        /* Apply two-col grid on lg screens */
+        (function() {
+            const grid = document.querySelector('#left-col').parentElement;
+            grid.classList.add('form-section-grid');
+            function applyGrid() {
+                if (window.innerWidth >= 1024) {
+                    grid.style.gridTemplateColumns = '1fr 1fr';
+                    document.getElementById('left-col').style.display = 'block';
+                } else {
+                    grid.style.gridTemplateColumns = '1fr';
+                    document.getElementById('left-col').style.display = 'none';
+                }
+            }
+            applyGrid();
+            window.addEventListener('resize', applyGrid);
+        })();
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="w-full bg-gray-100 text-black">
+
+        <!-- TOP SECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+
+            <!-- COL 1: LOGO + DESC -->
+            <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
+                <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+                <p class="text-sm font-medium leading-relaxed max-w-sm">
+                    When do they work well, and when do they on us and finally, when do we
+                    actually need how can we avoid them.
+                </p>
+            </div>
+
+            <!-- COL 2: SOCIAL LINKS -->
+            <div class="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-300">
+                <a href="#" class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Facebook</a>
+                <a href="https://www.instagram.com/thundergits" class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Instagram</a>
+                <a href="https://www.youtube.com/@thundergits" class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">YouTube</a>
+                <a href="https://www.linkedin.com/company/thundergits" class="px-8 py-5 text-center md:text-left font-semibold hover:bg-gray-200 transition">LinkedIn</a>
+            </div>
+
+            <!-- COL 3: LET'S TALK -->
+            <div class="flex flex-col justify-between px-8 md:px-12 py-12">
+                <h2 class="text-6xl md:text-8xl font-black text-blue-950 uppercase leading-none">LET'S TALK</h2>
+                <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+                    <span class="flex items-start gap-2 min-w-[220px] flex-1">
+                        <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                        <span class="leading-relaxed">HN-75, W-8, P-3, Dagarua, B. Ailoth,<br>Musrigharari, Samastipur, Bihar, India, 848101</span>
+                    </span>
+                    <span class="flex items-center gap-2 flex-1 min-w-[180px]">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
+                        </svg>
+                        +91-7765979725
+                    </span>
+                    <span class="flex items-center gap-2 flex-1 min-w-[200px]">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0l-9.75 6.75L2.25 6.75" />
+                        </svg>
+                        info@thundergits.com
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="border-t border-gray-300 px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-center md:text-left">
+                © 2026 | All rights reserved by Thundergits Consultancy Services Private Limited
+            </p>
+            <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-semibold">
+                <a href="./privacy.html">Privacy</a>
+            </nav>
+        </div>
+
+    </footer>
+
+    <!-- SUCCESS OVERLAY -->
+    <div id="success-overlay" style="display:none;position:fixed;inset:0;z-index:50;align-items:center;justify-content:center;padding:0 16px;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);">
+        <div class="bg-white/[0.05] border border-white/10 rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style="background:rgba(99,102,241,0.15); border:1px solid rgba(99,102,241,0.3);">
+                <svg class="w-8 h-8 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">Booking Confirmed!</h2>
+            <p class="text-gray-400 text-sm mb-8">Thank you! Our team will contact you within 24 hours.</p>
+            <a href="./index.html"
+                class="inline-block px-8 py-3 text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 bg-primary hover:bg-primary-dark">
+                Back to Home
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true });
+
+        const API_BASE = 'https://api.thundergits.com';
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+
+        // Industries accordion
+        function toggleAccordion(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            el.classList.toggle('hidden');
+            if (icon) icon.style.transform = el.classList.contains('hidden') ? '' : 'rotate(180deg)';
+        }
+
+        // Input styling on focus
+        const inputs = document.querySelectorAll('#consultancy-form input, #consultancy-form textarea');
+        inputs.forEach(inp => {
+            inp.addEventListener('focus', () => { inp.style.border = '1px solid #93c5fd'; inp.style.boxShadow = '0 0 0 3px rgba(59,130,246,0.1)'; });
+            inp.addEventListener('blur', () => { inp.style.border = '1px solid #e2e8f0'; inp.style.boxShadow = ''; });
+        });
+
+        // Form submit
+        document.getElementById('consultancy-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name         = document.getElementById('c-name').value.trim();
+            const mobile       = document.getElementById('c-mobile').value.trim();
+            const requirement  = document.getElementById('c-requirement').value.trim();
+            const email        = document.getElementById('c-email').value.trim();
+            const businessName = document.getElementById('c-business').value.trim();
+
+            let valid = true;
+            ['name', 'mobile', 'requirement'].forEach(f => {
+                const el  = document.getElementById(`c-${f}`);
+                const err = document.getElementById(`err-${f}`);
+                if (!el.value.trim()) {
+                    err.style.display = 'block';
+                    el.style.border = '1px solid #fca5a5';
+                    valid = false;
+                } else {
+                    err.style.display = 'none';
+                    el.style.border = '1px solid #e2e8f0';
+                }
+            });
+            if (!valid) return;
+
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText   = document.getElementById('btn-text');
+            const btnLoader = document.getElementById('btn-loader');
+            const status    = document.getElementById('form-status');
+
+            submitBtn.disabled = true;
+            btnText.textContent = 'Booking...';
+            btnLoader.style.display = 'inline-block';
+            status.style.display = 'none';
+
+            try {
+                const res = await fetch(`${API_BASE}/api/consultancy`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, mobile, requirement, email: email || undefined, businessName: businessName || undefined }),
+                });
+
+                if (res.ok) {
+                    document.getElementById('success-overlay').style.display = 'flex';
+                } else {
+                    const data = await res.json();
+                    status.textContent = data.message || 'Something went wrong. Please try again.';
+                    status.style.color = '#f87171';
+                    status.style.display = 'block';
+                }
+            } catch (err) {
+                status.textContent = 'Network error. Please check your connection and try again.';
+                status.style.color = '#f87171';
+                status.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                btnText.textContent = 'Book Free Consultancy';
+                btnLoader.style.display = 'none';
+            }
+        });
+
+        // Clear error on input
+        ['c-name', 'c-mobile', 'c-requirement'].forEach(id => {
+            const map = { 'c-name': 'name', 'c-mobile': 'mobile', 'c-requirement': 'requirement' };
+            document.getElementById(id).addEventListener('input', () => {
+                document.getElementById(`err-${map[id]}`).style.display = 'none';
+                document.getElementById(id).style.border = '1px solid rgba(255,255,255,0.1)';
+            });
+        });
+
+        // Hero grid interaction (same as other pages)
+        const heroGrid = document.getElementById('hero-grid');
+        if (heroGrid) {
+            const CELL = 50;
+            let cols, rows;
+            function buildGrid() {
+                cols = Math.ceil(window.innerWidth / CELL);
+                rows = Math.ceil(heroGrid.parentElement.offsetHeight / CELL);
+                heroGrid.innerHTML = '';
+                heroGrid.style.display = 'grid';
+                heroGrid.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+                heroGrid.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+                for (let i = 0; i < cols * rows; i++) {
+                    const cell = document.createElement('div');
+                    cell.style.cssText = 'transition:background 0.4s ease;';
+                    cell.addEventListener('mouseenter', () => { cell.style.background = 'rgba(99,102,241,0.12)'; });
+                    cell.addEventListener('mouseleave', () => { cell.style.background = ''; });
+                    heroGrid.appendChild(cell);
+                }
+            }
+            buildGrid();
+            window.addEventListener('resize', buildGrid);
+        }
+    </script>
+
+</body>
+</html>

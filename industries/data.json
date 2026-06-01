@@ -1,46 +1,22 @@
 {
   "banking": {
+    "variant": "indigo",
     "hero": {
       "badge": "Neo Banking Solutions",
       "title": "Powering the Future of Digital Banking",
-      "highlight": "Digital Banking",
       "description": "We help fintech startups and enterprises launch, scale, and innovate in the neo banking space. From seamless user experiences to secure, scalable platforms — we build solutions that accelerate growth, enhance customer engagement, and redefine modern banking.",
-      "image": "../../assets/bg2.png"
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80"
     },
     "useCases": {
       "title": "Real-World <span class='text-indigo-500'>Use Cases</span>",
       "subtitle": "Our neo banking solutions power diverse fintech experiences across industries.",
       "items": [
-        {
-          "icon": "fas fa-user-friends",
-          "title": "Digital Savings Accounts",
-          "description": "Enable users to open and manage bank accounts instantly with seamless onboarding and KYC."
-        },
-        {
-          "icon": "fas fa-credit-card",
-          "title": "Smart Payments",
-          "description": "Provide fast, secure, and contactless payment solutions with real-time transaction tracking."
-        },
-        {
-          "icon": "fas fa-briefcase",
-          "title": "Business Banking",
-          "description": "Offer SMEs powerful tools for managing finances, payroll, and business transactions."
-        },
-        {
-          "icon": "fas fa-robot",
-          "title": "AI Financial Insights",
-          "description": "Deliver personalized insights and recommendations using AI-driven analytics."
-        },
-        {
-          "icon": "fas fa-globe",
-          "title": "Global Transactions",
-          "description": "Enable cross-border payments with multi-currency support and low transaction fees."
-        },
-        {
-          "icon": "fas fa-lock",
-          "title": "Fraud Detection",
-          "description": "Protect users with real-time fraud detection and advanced risk management systems."
-        }
+        { "icon": "fas fa-user-friends", "title": "Digital Savings Accounts", "description": "Enable users to open and manage bank accounts instantly with seamless onboarding and KYC." },
+        { "icon": "fas fa-credit-card", "title": "Smart Payments", "description": "Provide fast, secure, and contactless payment solutions with real-time transaction tracking." },
+        { "icon": "fas fa-briefcase", "title": "Business Banking", "description": "Offer SMEs powerful tools for managing finances, payroll, and business transactions." },
+        { "icon": "fas fa-robot", "title": "AI Financial Insights", "description": "Deliver personalized insights and recommendations using AI-driven analytics." },
+        { "icon": "fas fa-globe", "title": "Global Transactions", "description": "Enable cross-border payments with multi-currency support and low transaction fees." },
+        { "icon": "fas fa-lock", "title": "Fraud Detection", "description": "Protect users with real-time fraud detection and advanced risk management systems." }
       ]
     },
     "stats": [
@@ -52,42 +28,18 @@
     "services": {
       "title": "How We Help Neo Banks Grow",
       "items": [
-        {
-          "icon": "fa-mobile-alt",
-          "title": "Mobile Banking Apps",
-          "desc": "Fast and secure mobile-first experiences."
-        },
-        {
-          "icon": "fa-shield-alt",
-          "title": "Secure Infrastructure",
-          "desc": "Enterprise-grade security systems."
-        },
-        {
-          "icon": "fa-chart-line",
-          "title": "Growth & Analytics",
-          "desc": "Boost engagement with insights."
-        }
+        { "icon": "fa-mobile-alt", "title": "Mobile Banking Apps", "desc": "Fast and secure mobile-first experiences." },
+        { "icon": "fa-shield-alt", "title": "Secure Infrastructure", "desc": "Enterprise-grade security systems." },
+        { "icon": "fa-chart-line", "title": "Growth & Analytics", "desc": "Boost engagement with insights." }
       ]
     },
     "why": {
       "title": "Why Choose ThunderGits for Neo Banking?",
       "description": "We craft scalable fintech ecosystems that drive innovation and growth.",
       "features": [
-        {
-          "icon": "fa-bolt",
-          "title": "Fast & Scalable",
-          "desc": "Optimized systems that grow."
-        },
-        {
-          "icon": "fa-lock",
-          "title": "Enterprise Security",
-          "desc": "Top-tier protection systems."
-        },
-        {
-          "icon": "fa-layer-group",
-          "title": "End-to-End",
-          "desc": "From idea to launch."
-        }
+        { "icon": "fa-bolt", "title": "Fast & Scalable", "desc": "Optimized systems that grow." },
+        { "icon": "fa-lock", "title": "Enterprise Security", "desc": "Top-tier protection systems." },
+        { "icon": "fa-layer-group", "title": "End-to-End", "desc": "From idea to launch." }
       ],
       "impact": [
         { "label": "Performance Boost", "value": "80" },
@@ -98,47 +50,23 @@
   },
 
   "stock-market": {
+    "variant": "indigo",
     "hero": {
       "badge": "Stock Market Solutions",
       "title": "Smarter Trading. Faster Decisions.",
-      "highlight": "Trading Intelligence",
       "description": "We build high-performance trading platforms, analytics dashboards, and AI-driven market tools that help investors and firms make data-backed decisions in real time.",
-      "video": "../../assets/stock-video.mp4"
+      "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80"
     },
     "useCases": {
       "title": "Real-World <span class='text-indigo-500'>Trading Use Cases</span>",
       "subtitle": "Powering modern stock trading ecosystems.",
       "items": [
-        {
-          "icon": "fas fa-chart-line",
-          "title": "Real-Time Trading Dashboards",
-          "description": "Live market tracking with ultra-fast data visualization."
-        },
-        {
-          "icon": "fas fa-robot",
-          "title": "AI Trading Signals",
-          "description": "Predictive models for smarter investment decisions."
-        },
-        {
-          "icon": "fas fa-coins",
-          "title": "Portfolio Management",
-          "description": "Track, optimize, and balance investment portfolios."
-        },
-        {
-          "icon": "fas fa-bolt",
-          "title": "High-Frequency Systems",
-          "description": "Ultra-low latency trading infrastructure."
-        },
-        {
-          "icon": "fas fa-globe",
-          "title": "Global Market Access",
-          "description": "Access multiple global exchanges from one platform."
-        },
-        {
-          "icon": "fas fa-shield-alt",
-          "title": "Risk Analytics",
-          "description": "Advanced risk detection and financial safety systems."
-        }
+        { "icon": "fas fa-chart-line", "title": "Real-Time Trading Dashboards", "description": "Live market tracking with ultra-fast data visualization." },
+        { "icon": "fas fa-robot", "title": "AI Trading Signals", "description": "Predictive models for smarter investment decisions." },
+        { "icon": "fas fa-coins", "title": "Portfolio Management", "description": "Track, optimize, and balance investment portfolios." },
+        { "icon": "fas fa-bolt", "title": "High-Frequency Systems", "description": "Ultra-low latency trading infrastructure." },
+        { "icon": "fas fa-globe", "title": "Global Market Access", "description": "Access multiple global exchanges from one platform." },
+        { "icon": "fas fa-shield-alt", "title": "Risk Analytics", "description": "Advanced risk detection and financial safety systems." }
       ]
     },
     "stats": [
@@ -150,42 +78,18 @@
     "services": {
       "title": "How We Power Trading Platforms",
       "items": [
-        {
-          "icon": "fa-chart-bar",
-          "title": "Real-Time Analytics",
-          "desc": "Live market data and charting tools."
-        },
-        {
-          "icon": "fa-robot",
-          "title": "Algorithmic Trading",
-          "desc": "AI-powered automated trading systems."
-        },
-        {
-          "icon": "fa-shield-alt",
-          "title": "Risk Management",
-          "desc": "Smart risk controls and compliance tools."
-        }
+        { "icon": "fa-chart-bar", "title": "Real-Time Analytics", "desc": "Live market data and charting tools." },
+        { "icon": "fa-robot", "title": "Algorithmic Trading", "desc": "AI-powered automated trading systems." },
+        { "icon": "fa-shield-alt", "title": "Risk Management", "desc": "Smart risk controls and compliance tools." }
       ]
     },
     "why": {
       "title": "Why Choose ThunderGits for Stock Market Solutions?",
       "description": "We deliver ultra-fast, reliable, and intelligent trading platforms built for the modern investor.",
       "features": [
-        {
-          "icon": "fa-bolt",
-          "title": "Ultra-Low Latency",
-          "desc": "Millisecond-level execution speed."
-        },
-        {
-          "icon": "fa-brain",
-          "title": "AI-Driven Insights",
-          "desc": "Predictive signals and analytics."
-        },
-        {
-          "icon": "fa-globe",
-          "title": "Global Reach",
-          "desc": "Access to worldwide markets."
-        }
+        { "icon": "fa-bolt", "title": "Ultra-Low Latency", "desc": "Millisecond-level execution speed." },
+        { "icon": "fa-brain", "title": "AI-Driven Insights", "desc": "Predictive signals and analytics." },
+        { "icon": "fa-globe", "title": "Global Reach", "desc": "Access to worldwide markets." }
       ],
       "impact": [
         { "label": "Trade Execution Speed", "value": "95" },
@@ -196,47 +100,23 @@
   },
 
   "corporate": {
+    "variant": "violet",
     "hero": {
       "badge": "Corporate Solutions",
       "title": "Digital Transformation for Enterprises",
-      "highlight": "Enterprise Growth",
       "description": "We help enterprises modernize operations, automate workflows, and build scalable digital ecosystems that improve productivity and efficiency.",
-      "video": "../../assets/corporate-video.mp4"
+      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
     },
     "useCases": {
-      "title": "Enterprise <span class='text-indigo-500'>Solutions</span>",
+      "title": "Enterprise <span class='text-violet-500'>Solutions</span>",
       "subtitle": "Transforming modern corporate systems.",
       "items": [
-        {
-          "icon": "fas fa-building",
-          "title": "Enterprise Dashboards",
-          "description": "Centralized control systems for business operations."
-        },
-        {
-          "icon": "fas fa-network-wired",
-          "title": "Workflow Automation",
-          "description": "Automate repetitive corporate processes."
-        },
-        {
-          "icon": "fas fa-users",
-          "title": "HR Management Systems",
-          "description": "Employee tracking and performance systems."
-        },
-        {
-          "icon": "fas fa-chart-pie",
-          "title": "Business Intelligence",
-          "description": "Data-driven enterprise decision-making."
-        },
-        {
-          "icon": "fas fa-lock",
-          "title": "Enterprise Security",
-          "description": "Secure internal communication and data protection."
-        },
-        {
-          "icon": "fas fa-cloud",
-          "title": "Cloud Infrastructure",
-          "description": "Scalable cloud-based enterprise systems."
-        }
+        { "icon": "fas fa-building", "title": "Enterprise Dashboards", "description": "Centralized control systems for business operations." },
+        { "icon": "fas fa-network-wired", "title": "Workflow Automation", "description": "Automate repetitive corporate processes." },
+        { "icon": "fas fa-users", "title": "HR Management Systems", "description": "Employee tracking and performance systems." },
+        { "icon": "fas fa-chart-pie", "title": "Business Intelligence", "description": "Data-driven enterprise decision-making." },
+        { "icon": "fas fa-lock", "title": "Enterprise Security", "description": "Secure internal communication and data protection." },
+        { "icon": "fas fa-cloud", "title": "Cloud Infrastructure", "description": "Scalable cloud-based enterprise systems." }
       ]
     },
     "stats": [
@@ -248,42 +128,18 @@
     "services": {
       "title": "How We Drive Enterprise Growth",
       "items": [
-        {
-          "icon": "fa-cogs",
-          "title": "Process Automation",
-          "desc": "Streamline operations end-to-end."
-        },
-        {
-          "icon": "fa-chart-pie",
-          "title": "BI & Reporting",
-          "desc": "Actionable insights from enterprise data."
-        },
-        {
-          "icon": "fa-cloud",
-          "title": "Cloud Solutions",
-          "desc": "Scalable and secure cloud platforms."
-        }
+        { "icon": "fa-cogs", "title": "Process Automation", "desc": "Streamline operations end-to-end." },
+        { "icon": "fa-chart-pie", "title": "BI & Reporting", "desc": "Actionable insights from enterprise data." },
+        { "icon": "fa-cloud", "title": "Cloud Solutions", "desc": "Scalable and secure cloud platforms." }
       ]
     },
     "why": {
       "title": "Why Choose ThunderGits for Enterprise Solutions?",
       "description": "We build resilient digital infrastructure that empowers enterprises to scale and adapt in a fast-changing market.",
       "features": [
-        {
-          "icon": "fa-network-wired",
-          "title": "Seamless Integration",
-          "desc": "Works with your existing systems."
-        },
-        {
-          "icon": "fa-tachometer-alt",
-          "title": "High Performance",
-          "desc": "Built for enterprise-scale demands."
-        },
-        {
-          "icon": "fa-layer-group",
-          "title": "End-to-End Delivery",
-          "desc": "Strategy to deployment."
-        }
+        { "icon": "fa-network-wired", "title": "Seamless Integration", "desc": "Works with your existing systems." },
+        { "icon": "fa-tachometer-alt", "title": "High Performance", "desc": "Built for enterprise-scale demands." },
+        { "icon": "fa-layer-group", "title": "End-to-End Delivery", "desc": "Strategy to deployment." }
       ],
       "impact": [
         { "label": "Operational Efficiency", "value": "75" },
@@ -294,47 +150,23 @@
   },
 
   "real-estate": {
+    "variant": "emerald",
     "hero": {
       "badge": "Real Estate Tech",
       "title": "Smart Property Digital Ecosystem",
-      "highlight": "PropTech Innovation",
       "description": "We build modern real estate platforms for property listing, management, and smart buyer-seller connections with automation and AI-driven insights.",
-      "video": "../../assets/realestate-video.mp4"
+      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80"
     },
     "useCases": {
-      "title": "Smart <span class='text-indigo-500'>Real Estate Solutions</span>",
+      "title": "Smart <span class='text-emerald-500'>Real Estate Solutions</span>",
       "subtitle": "Next-gen property technology platforms.",
       "items": [
-        {
-          "icon": "fas fa-home",
-          "title": "Property Listings",
-          "description": "Advanced searchable property marketplace."
-        },
-        {
-          "icon": "fas fa-map-marked-alt",
-          "title": "Geo-Based Search",
-          "description": "Find properties based on location intelligence."
-        },
-        {
-          "icon": "fas fa-handshake",
-          "title": "Buyer-Seller Platform",
-          "description": "Direct property transactions without middlemen."
-        },
-        {
-          "icon": "fas fa-video",
-          "title": "Virtual Tours",
-          "description": "3D and video-based property walkthroughs."
-        },
-        {
-          "icon": "fas fa-file-contract",
-          "title": "Digital Documentation",
-          "description": "Paperless property documentation systems."
-        },
-        {
-          "icon": "fas fa-chart-area",
-          "title": "Market Analytics",
-          "description": "Property pricing and investment insights."
-        }
+        { "icon": "fas fa-home", "title": "Property Listings", "description": "Advanced searchable property marketplace." },
+        { "icon": "fas fa-map-marked-alt", "title": "Geo-Based Search", "description": "Find properties based on location intelligence." },
+        { "icon": "fas fa-handshake", "title": "Buyer-Seller Platform", "description": "Direct property transactions without middlemen." },
+        { "icon": "fas fa-video", "title": "Virtual Tours", "description": "3D and video-based property walkthroughs." },
+        { "icon": "fas fa-file-contract", "title": "Digital Documentation", "description": "Paperless property documentation systems." },
+        { "icon": "fas fa-chart-area", "title": "Market Analytics", "description": "Property pricing and investment insights." }
       ]
     },
     "stats": [
@@ -346,42 +178,18 @@
     "services": {
       "title": "How We Transform Real Estate Tech",
       "items": [
-        {
-          "icon": "fa-home",
-          "title": "Property Portals",
-          "desc": "Feature-rich listing platforms."
-        },
-        {
-          "icon": "fa-map-marked-alt",
-          "title": "Location Intelligence",
-          "desc": "Geo-powered property search."
-        },
-        {
-          "icon": "fa-file-contract",
-          "title": "Digital Transactions",
-          "desc": "End-to-end paperless property deals."
-        }
+        { "icon": "fa-home", "title": "Property Portals", "desc": "Feature-rich listing platforms." },
+        { "icon": "fa-map-marked-alt", "title": "Location Intelligence", "desc": "Geo-powered property search." },
+        { "icon": "fa-file-contract", "title": "Digital Transactions", "desc": "End-to-end paperless property deals." }
       ]
     },
     "why": {
       "title": "Why Choose ThunderGits for Real Estate Tech?",
       "description": "We build intelligent PropTech platforms that connect buyers, sellers, and agents in a seamless digital experience.",
       "features": [
-        {
-          "icon": "fa-search-location",
-          "title": "Smart Discovery",
-          "desc": "AI-powered property recommendations."
-        },
-        {
-          "icon": "fa-handshake",
-          "title": "Transparent Deals",
-          "desc": "Secure and direct transactions."
-        },
-        {
-          "icon": "fa-chart-area",
-          "title": "Market Insights",
-          "desc": "Real-time property analytics."
-        }
+        { "icon": "fa-search-location", "title": "Smart Discovery", "desc": "AI-powered property recommendations." },
+        { "icon": "fa-handshake", "title": "Transparent Deals", "desc": "Secure and direct transactions." },
+        { "icon": "fa-chart-area", "title": "Market Insights", "desc": "Real-time property analytics." }
       ],
       "impact": [
         { "label": "Lead Conversion Rate", "value": "70" },
@@ -392,47 +200,23 @@
   },
 
   "sales-marketing": {
+    "variant": "amber",
     "hero": {
       "badge": "Sales & Marketing Tech",
       "title": "Accelerate Growth With Smart Marketing",
-      "highlight": "Revenue Growth",
       "description": "We build automation tools, CRM systems, and marketing platforms that help businesses generate leads, track performance, and increase conversions.",
-      "video": "../../assets/marketing-video.mp4"
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
     },
     "useCases": {
-      "title": "Powerful <span class='text-indigo-500'>Marketing Tools</span>",
+      "title": "Powerful <span class='text-amber-500'>Marketing Tools</span>",
       "subtitle": "Boost sales with intelligent systems.",
       "items": [
-        {
-          "icon": "fas fa-bullhorn",
-          "title": "Campaign Management",
-          "description": "Run and track multi-channel marketing campaigns."
-        },
-        {
-          "icon": "fas fa-users-cog",
-          "title": "CRM Systems",
-          "description": "Manage customer relationships effectively."
-        },
-        {
-          "icon": "fas fa-chart-bar",
-          "title": "Sales Analytics",
-          "description": "Monitor performance and revenue growth."
-        },
-        {
-          "icon": "fas fa-envelope",
-          "title": "Email Automation",
-          "description": "Automated email marketing workflows."
-        },
-        {
-          "icon": "fas fa-funnel-dollar",
-          "title": "Lead Generation",
-          "description": "Capture and convert high-quality leads."
-        },
-        {
-          "icon": "fas fa-ad",
-          "title": "Ad Optimization",
-          "description": "AI-powered ad performance optimization."
-        }
+        { "icon": "fas fa-bullhorn", "title": "Campaign Management", "description": "Run and track multi-channel marketing campaigns." },
+        { "icon": "fas fa-users-cog", "title": "CRM Systems", "description": "Manage customer relationships effectively." },
+        { "icon": "fas fa-chart-bar", "title": "Sales Analytics", "description": "Monitor performance and revenue growth." },
+        { "icon": "fas fa-envelope", "title": "Email Automation", "description": "Automated email marketing workflows." },
+        { "icon": "fas fa-funnel-dollar", "title": "Lead Generation", "description": "Capture and convert high-quality leads." },
+        { "icon": "fas fa-ad", "title": "Ad Optimization", "description": "AI-powered ad performance optimization." }
       ]
     },
     "stats": [
@@ -444,47 +228,523 @@
     "services": {
       "title": "How We Accelerate Sales & Marketing",
       "items": [
-        {
-          "icon": "fa-bullhorn",
-          "title": "Campaign Automation",
-          "desc": "Multi-channel marketing on autopilot."
-        },
-        {
-          "icon": "fa-users-cog",
-          "title": "CRM & Lead Tools",
-          "desc": "Convert and retain more customers."
-        },
-        {
-          "icon": "fa-chart-bar",
-          "title": "Revenue Analytics",
-          "desc": "Track and optimize sales performance."
-        }
+        { "icon": "fa-bullhorn", "title": "Campaign Automation", "desc": "Multi-channel marketing on autopilot." },
+        { "icon": "fa-users-cog", "title": "CRM & Lead Tools", "desc": "Convert and retain more customers." },
+        { "icon": "fa-chart-bar", "title": "Revenue Analytics", "desc": "Track and optimize sales performance." }
       ]
     },
     "why": {
       "title": "Why Choose ThunderGits for Sales & Marketing?",
       "description": "We deliver data-driven marketing platforms that turn prospects into loyal customers and campaigns into revenue engines.",
       "features": [
-        {
-          "icon": "fa-funnel-dollar",
-          "title": "High Conversion",
-          "desc": "Optimized funnels that close deals."
-        },
-        {
-          "icon": "fa-robot",
-          "title": "Smart Automation",
-          "desc": "AI tools that work 24/7 for you."
-        },
-        {
-          "icon": "fa-chart-line",
-          "title": "Growth Focused",
-          "desc": "Metrics that matter to your business."
-        }
+        { "icon": "fa-funnel-dollar", "title": "High Conversion", "desc": "Optimized funnels that close deals." },
+        { "icon": "fa-robot", "title": "Smart Automation", "desc": "AI tools that work 24/7 for you." },
+        { "icon": "fa-chart-line", "title": "Growth Focused", "desc": "Metrics that matter to your business." }
       ],
       "impact": [
         { "label": "Lead Quality Score", "value": "82" },
         { "label": "Conversion Rate Boost", "value": "74" },
         { "label": "Marketing ROI", "value": "90" }
+      ]
+    }
+  },
+
+  "gaming": {
+    "variant": "violet",
+    "hero": {
+      "badge": "Gaming Technology",
+      "title": "Build Next-Gen Gaming Experiences",
+      "description": "From immersive multiplayer platforms to in-game economies and live streaming integrations — we engineer gaming products that captivate players and scale globally.",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "Powering <span class='text-violet-500'>Gaming Platforms</span>",
+      "subtitle": "End-to-end tech for game studios and publishers.",
+      "items": [
+        { "icon": "fas fa-gamepad", "title": "Multiplayer Infrastructure", "description": "Low-latency real-time servers for competitive gaming." },
+        { "icon": "fas fa-coins", "title": "In-Game Economy", "description": "Virtual currencies, NFT items, and marketplace systems." },
+        { "icon": "fas fa-broadcast-tower", "title": "Live Streaming", "description": "Built-in streaming and spectator mode integration." },
+        { "icon": "fas fa-trophy", "title": "Leaderboards & Tournaments", "description": "Real-time ranking and esports tournament systems." },
+        { "icon": "fas fa-robot", "title": "AI NPCs", "description": "Intelligent non-player characters with adaptive behavior." },
+        { "icon": "fas fa-mobile-alt", "title": "Cross-Platform Play", "description": "Seamless play across mobile, PC, and console." }
+      ]
+    },
+    "stats": [
+      { "value": "30+", "label": "Game Studios Served" },
+      { "value": "5M+", "label": "Active Players" },
+      { "value": "99.9%", "label": "Server Uptime" },
+      { "value": "40ms", "label": "Avg. Latency" }
+    ],
+    "services": {
+      "title": "How We Power Game Studios",
+      "items": [
+        { "icon": "fa-server", "title": "Game Backend", "desc": "Scalable multiplayer server infrastructure." },
+        { "icon": "fa-paint-brush", "title": "UI/UX Design", "desc": "Immersive game interface and UX flows." },
+        { "icon": "fa-coins", "title": "Monetization", "desc": "In-app purchases and economy systems." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Gaming?",
+      "description": "We understand the technical demands of modern gaming — speed, scale, and seamless player experience.",
+      "features": [
+        { "icon": "fa-bolt", "title": "Ultra-Low Latency", "desc": "Real-time gameplay without lag." },
+        { "icon": "fa-users", "title": "Massive Scale", "desc": "Handle millions of concurrent players." },
+        { "icon": "fa-shield-alt", "title": "Anti-Cheat Systems", "desc": "Fair play enforcement at scale." }
+      ],
+      "impact": [
+        { "label": "Player Retention", "value": "78" },
+        { "label": "Session Length Boost", "value": "62" },
+        { "label": "Monetization Rate", "value": "55" }
+      ]
+    }
+  },
+
+  "media-entertainment": {
+    "variant": "amber",
+    "hero": {
+      "badge": "Media & Entertainment",
+      "title": "Streaming, Content & Digital Media Platforms",
+      "description": "We build OTT platforms, content management systems, and audience engagement tools that power the next generation of media and entertainment companies.",
+      "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "Modern <span class='text-amber-500'>Media Solutions</span>",
+      "subtitle": "Technology that brings stories to life.",
+      "items": [
+        { "icon": "fas fa-play-circle", "title": "OTT Streaming Platforms", "description": "Netflix-style video streaming with adaptive bitrate." },
+        { "icon": "fas fa-film", "title": "Content Management", "description": "Rich CMS for organizing and publishing media assets." },
+        { "icon": "fas fa-users", "title": "Audience Analytics", "description": "Deep insights into viewer behavior and preferences." },
+        { "icon": "fas fa-ad", "title": "Programmatic Ads", "description": "Automated ad insertion and revenue optimization." },
+        { "icon": "fas fa-podcast", "title": "Podcast Platforms", "description": "End-to-end podcast hosting and distribution." },
+        { "icon": "fas fa-comments", "title": "Community Features", "description": "Ratings, reviews, comments, and social sharing." }
+      ]
+    },
+    "stats": [
+      { "value": "45+", "label": "Media Clients" },
+      { "value": "20M+", "label": "Streams Delivered" },
+      { "value": "4K", "label": "Max Stream Quality" },
+      { "value": "150+", "label": "Countries Reached" }
+    ],
+    "services": {
+      "title": "How We Power Media Companies",
+      "items": [
+        { "icon": "fa-video", "title": "Video Infrastructure", "desc": "CDN-backed streaming at any scale." },
+        { "icon": "fa-palette", "title": "Content Experiences", "desc": "Beautiful, fast media interfaces." },
+        { "icon": "fa-chart-bar", "title": "Audience Insights", "desc": "Data to grow and retain viewers." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Media & Entertainment?",
+      "description": "We combine media expertise with modern engineering to ship platforms that delight audiences and drive revenue.",
+      "features": [
+        { "icon": "fa-play", "title": "Seamless Streaming", "desc": "Buffer-free experience at global scale." },
+        { "icon": "fa-chart-line", "title": "Revenue Growth", "desc": "Subscriptions, ads, and pay-per-view." },
+        { "icon": "fa-mobile-alt", "title": "Multi-Device", "desc": "Web, mobile, smart TV — all covered." }
+      ],
+      "impact": [
+        { "label": "Viewer Retention", "value": "73" },
+        { "label": "Content Engagement", "value": "68" },
+        { "label": "Ad Revenue Lift", "value": "55" }
+      ]
+    }
+  },
+
+  "education": {
+    "variant": "emerald",
+    "hero": {
+      "badge": "Education Technology",
+      "title": "Reimagine Learning With EdTech",
+      "description": "We build e-learning platforms, LMS solutions, and AI-powered tutoring systems that make quality education accessible, engaging, and measurable at scale.",
+      "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "Smart <span class='text-emerald-500'>EdTech Solutions</span>",
+      "subtitle": "Technology that transforms how the world learns.",
+      "items": [
+        { "icon": "fas fa-laptop", "title": "E-Learning Platforms", "description": "Feature-rich online learning with video, quizzes, and assignments." },
+        { "icon": "fas fa-robot", "title": "AI Tutoring", "description": "Personalized learning paths powered by AI." },
+        { "icon": "fas fa-certificate", "title": "Digital Certifications", "description": "Blockchain-verified certificates and credentials." },
+        { "icon": "fas fa-users", "title": "Live Classes", "description": "Real-time virtual classrooms with collaboration tools." },
+        { "icon": "fas fa-chart-bar", "title": "Learning Analytics", "description": "Track student progress and engagement metrics." },
+        { "icon": "fas fa-mobile-alt", "title": "Mobile Learning", "description": "Learn on-the-go with offline-capable mobile apps." }
+      ]
+    },
+    "stats": [
+      { "value": "60+", "label": "EdTech Clients" },
+      { "value": "2M+", "label": "Learners Served" },
+      { "value": "95%", "label": "Course Completion Rate" },
+      { "value": "40+", "label": "Languages Supported" }
+    ],
+    "services": {
+      "title": "How We Build EdTech Products",
+      "items": [
+        { "icon": "fa-chalkboard-teacher", "title": "LMS Platforms", "desc": "Complete learning management systems." },
+        { "icon": "fa-brain", "title": "AI Personalization", "desc": "Adaptive content for every learner." },
+        { "icon": "fa-certificate", "title": "Credentialing", "desc": "Secure digital certificates and badges." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Education?",
+      "description": "We build EdTech platforms that deliver real learning outcomes — not just content delivery.",
+      "features": [
+        { "icon": "fa-users", "title": "Learner-First", "desc": "Designed for engagement and outcomes." },
+        { "icon": "fa-bolt", "title": "Scalable Systems", "desc": "Handles millions of concurrent learners." },
+        { "icon": "fa-lock", "title": "Data Privacy", "desc": "GDPR and FERPA compliant platforms." }
+      ],
+      "impact": [
+        { "label": "Learner Engagement", "value": "85" },
+        { "label": "Course Completion", "value": "72" },
+        { "label": "Instructor Productivity", "value": "60" }
+      ]
+    }
+  },
+
+  "retail-ecommerce": {
+    "variant": "amber",
+    "hero": {
+      "badge": "Retail & Ecommerce",
+      "title": "Build Stores That Convert and Scale",
+      "description": "We design and build high-performance ecommerce platforms, inventory systems, and personalized shopping experiences that drive revenue and customer loyalty.",
+      "image": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "Ecommerce <span class='text-amber-500'>Solutions</span>",
+      "subtitle": "Commerce infrastructure for the digital era.",
+      "items": [
+        { "icon": "fas fa-store", "title": "Custom Storefronts", "description": "Beautiful, fast-loading online stores built to convert." },
+        { "icon": "fas fa-box", "title": "Inventory Management", "description": "Real-time stock tracking across multiple warehouses." },
+        { "icon": "fas fa-credit-card", "title": "Payment Gateways", "description": "Secure multi-gateway payment integration." },
+        { "icon": "fas fa-robot", "title": "AI Recommendations", "description": "Personalized product suggestions that increase AOV." },
+        { "icon": "fas fa-truck", "title": "Order Fulfillment", "description": "End-to-end order tracking and logistics management." },
+        { "icon": "fas fa-chart-bar", "title": "Sales Analytics", "description": "Real-time dashboards for revenue and customer insights." }
+      ]
+    },
+    "stats": [
+      { "value": "150+", "label": "Ecommerce Clients" },
+      { "value": "₹8B+", "label": "GMV Processed" },
+      { "value": "3.2x", "label": "Avg. Conversion Lift" },
+      { "value": "99.95%", "label": "Platform Uptime" }
+    ],
+    "services": {
+      "title": "How We Scale Your Commerce",
+      "items": [
+        { "icon": "fa-store", "title": "Storefront Development", "desc": "Custom, performance-first online stores." },
+        { "icon": "fa-truck", "title": "Logistics Integration", "desc": "Real-time shipping and fulfillment." },
+        { "icon": "fa-chart-line", "title": "Growth Analytics", "desc": "Data to drive more revenue." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Ecommerce?",
+      "description": "We build commerce platforms that combine beautiful design, fast performance, and intelligent automation.",
+      "features": [
+        { "icon": "fa-bolt", "title": "Blazing Fast", "desc": "Sub-second page loads that retain shoppers." },
+        { "icon": "fa-robot", "title": "AI-Powered", "desc": "Smart recommendations that increase spend." },
+        { "icon": "fa-shield-alt", "title": "Secure Checkout", "desc": "PCI-DSS compliant payment flows." }
+      ],
+      "impact": [
+        { "label": "Conversion Rate", "value": "78" },
+        { "label": "Cart Abandonment Reduction", "value": "55" },
+        { "label": "Revenue per Visitor", "value": "67" }
+      ]
+    }
+  },
+
+  "household": {
+    "variant": "emerald",
+    "hero": {
+      "badge": "Household & Smart Home",
+      "title": "Connected Living, Smarter Homes",
+      "description": "We build IoT-powered smart home platforms, home services marketplaces, and household management apps that make everyday living more efficient and connected.",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "Smart <span class='text-emerald-500'>Home Solutions</span>",
+      "subtitle": "Technology that makes home life easier.",
+      "items": [
+        { "icon": "fas fa-home", "title": "Smart Home Control", "description": "Unified app to control lights, locks, and appliances." },
+        { "icon": "fas fa-wifi", "title": "IoT Device Management", "description": "Connect and manage all household IoT devices." },
+        { "icon": "fas fa-tools", "title": "Home Services Marketplace", "description": "On-demand plumbing, cleaning, and repair services." },
+        { "icon": "fas fa-bolt", "title": "Energy Monitoring", "description": "Track and optimize household energy consumption." },
+        { "icon": "fas fa-shield-alt", "title": "Home Security", "description": "Smart cameras, alarms, and access control systems." },
+        { "icon": "fas fa-robot", "title": "AI Automation", "description": "Smart routines and predictive home management." }
+      ]
+    },
+    "stats": [
+      { "value": "25+", "label": "Smart Home Clients" },
+      { "value": "500K+", "label": "Connected Devices" },
+      { "value": "30%", "label": "Avg. Energy Savings" },
+      { "value": "4.8★", "label": "User Rating" }
+    ],
+    "services": {
+      "title": "How We Build Smart Home Products",
+      "items": [
+        { "icon": "fa-wifi", "title": "IoT Platform", "desc": "Device connectivity and management at scale." },
+        { "icon": "fa-mobile-alt", "title": "Control App", "desc": "Intuitive home management app." },
+        { "icon": "fa-bolt", "title": "Energy Dashboard", "desc": "Usage monitoring and optimization tools." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Smart Home?",
+      "description": "We bridge the gap between hardware and software to deliver seamless, reliable smart home experiences.",
+      "features": [
+        { "icon": "fa-wifi", "title": "Reliable Connectivity", "desc": "Rock-solid IoT device communication." },
+        { "icon": "fa-lock", "title": "Privacy First", "desc": "Encrypted data, local processing options." },
+        { "icon": "fa-bolt", "title": "Easy Setup", "desc": "Zero-friction device onboarding." }
+      ],
+      "impact": [
+        { "label": "Energy Efficiency", "value": "72" },
+        { "label": "User Satisfaction", "value": "88" },
+        { "label": "Automation Adoption", "value": "65" }
+      ]
+    }
+  },
+
+  "food-beverages": {
+    "variant": "amber",
+    "hero": {
+      "badge": "Food & Beverages Tech",
+      "title": "Digital Platforms for F&B Brands",
+      "description": "We build food ordering platforms, restaurant management systems, supply chain tools, and loyalty programs that help F&B businesses thrive in the digital age.",
+      "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "F&B <span class='text-amber-500'>Digital Solutions</span>",
+      "subtitle": "From kitchen to customer — fully digitized.",
+      "items": [
+        { "icon": "fas fa-utensils", "title": "Food Ordering App", "description": "Seamless online ordering for dine-in, takeaway, and delivery." },
+        { "icon": "fas fa-truck", "title": "Delivery Management", "description": "Real-time driver tracking and route optimization." },
+        { "icon": "fas fa-clipboard-list", "title": "Kitchen Display System", "description": "Digital order management for restaurant kitchens." },
+        { "icon": "fas fa-gift", "title": "Loyalty Programs", "description": "Points, rewards, and personalized offers." },
+        { "icon": "fas fa-box", "title": "Supply Chain", "description": "Inventory and supplier management for F&B brands." },
+        { "icon": "fas fa-chart-bar", "title": "Sales Dashboard", "description": "Real-time revenue, order volume, and customer analytics." }
+      ]
+    },
+    "stats": [
+      { "value": "80+", "label": "F&B Clients" },
+      { "value": "5M+", "label": "Orders Processed" },
+      { "value": "18min", "label": "Avg. Delivery Time" },
+      { "value": "4.7★", "label": "Customer Rating" }
+    ],
+    "services": {
+      "title": "How We Power F&B Businesses",
+      "items": [
+        { "icon": "fa-mobile-alt", "title": "Ordering Apps", "desc": "Branded mobile apps for your customers." },
+        { "icon": "fa-truck", "title": "Delivery Platform", "desc": "End-to-end delivery operations." },
+        { "icon": "fa-chart-line", "title": "Business Analytics", "desc": "Insights to grow your F&B brand." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for F&B Tech?",
+      "description": "We understand the speed, complexity, and customer expectations of the food industry — and build tech to match.",
+      "features": [
+        { "icon": "fa-bolt", "title": "Fast Operations", "desc": "Optimized order flow, zero delays." },
+        { "icon": "fa-users", "title": "Customer Delight", "desc": "Intuitive apps customers love to use." },
+        { "icon": "fa-chart-line", "title": "Revenue Growth", "desc": "Upsell, loyalty, and repeat orders." }
+      ],
+      "impact": [
+        { "label": "Order Volume Growth", "value": "70" },
+        { "label": "Customer Retention", "value": "65" },
+        { "label": "Operational Efficiency", "value": "55" }
+      ]
+    }
+  },
+
+  "travel-hospitality": {
+    "variant": "emerald",
+    "hero": {
+      "badge": "Travel & Hospitality",
+      "title": "Smart Tech for Modern Travel Brands",
+      "description": "We build booking engines, hotel management systems, and travel experience platforms that delight guests and streamline operations for hospitality businesses worldwide.",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "Travel <span class='text-emerald-500'>Technology Solutions</span>",
+      "subtitle": "Powering seamless travel experiences.",
+      "items": [
+        { "icon": "fas fa-plane", "title": "Flight Booking Engine", "description": "Real-time flight search and booking integration." },
+        { "icon": "fas fa-hotel", "title": "Hotel Management", "description": "PMS and channel management for hotels." },
+        { "icon": "fas fa-map-marked-alt", "title": "Travel Itinerary Apps", "description": "Personalized trip planning and booking apps." },
+        { "icon": "fas fa-star", "title": "Guest Experience", "description": "Digital check-in, concierge, and loyalty systems." },
+        { "icon": "fas fa-chart-bar", "title": "Revenue Management", "description": "Dynamic pricing and occupancy optimization." },
+        { "icon": "fas fa-comments", "title": "Review Management", "description": "Automated review collection and response tools." }
+      ]
+    },
+    "stats": [
+      { "value": "55+", "label": "Travel Clients" },
+      { "value": "1M+", "label": "Bookings Processed" },
+      { "value": "4.9★", "label": "Guest Rating" },
+      { "value": "35%", "label": "RevPAR Improvement" }
+    ],
+    "services": {
+      "title": "How We Power Travel Businesses",
+      "items": [
+        { "icon": "fa-plane", "title": "Booking Systems", "desc": "End-to-end travel booking platforms." },
+        { "icon": "fa-hotel", "title": "Hotel Tech", "desc": "PMS, CRS, and guest experience tools." },
+        { "icon": "fa-chart-line", "title": "Revenue Optimization", "desc": "Dynamic pricing and demand forecasting." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Travel & Hospitality?",
+      "description": "We build travel tech that drives bookings, improves guest satisfaction, and increases operational efficiency.",
+      "features": [
+        { "icon": "fa-bolt", "title": "Instant Booking", "desc": "Real-time availability and confirmation." },
+        { "icon": "fa-star", "title": "Guest-Centric", "desc": "Experiences designed around guest delight." },
+        { "icon": "fa-chart-line", "title": "Revenue Growth", "desc": "Dynamic pricing that maximizes yield." }
+      ],
+      "impact": [
+        { "label": "Booking Conversion", "value": "72" },
+        { "label": "Guest Satisfaction", "value": "88" },
+        { "label": "Operational Cost Reduction", "value": "42" }
+      ]
+    }
+  },
+
+  "transportation-logistics": {
+    "variant": "indigo",
+    "hero": {
+      "badge": "Transportation & Logistics",
+      "title": "Intelligent Logistics for the Modern Supply Chain",
+      "description": "We build fleet management systems, route optimization platforms, and supply chain visibility tools that reduce costs, improve delivery speed, and scale operations efficiently.",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "Logistics <span class='text-indigo-500'>Tech Solutions</span>",
+      "subtitle": "Moving the world with smarter software.",
+      "items": [
+        { "icon": "fas fa-truck", "title": "Fleet Management", "description": "Real-time GPS tracking and fleet optimization." },
+        { "icon": "fas fa-route", "title": "Route Optimization", "description": "AI-powered delivery route planning." },
+        { "icon": "fas fa-warehouse", "title": "Warehouse Management", "description": "Inventory and fulfillment center operations." },
+        { "icon": "fas fa-box", "title": "Shipment Tracking", "description": "End-to-end package visibility for customers." },
+        { "icon": "fas fa-chart-bar", "title": "Supply Chain Analytics", "description": "Demand forecasting and logistics intelligence." },
+        { "icon": "fas fa-handshake", "title": "Carrier Integration", "description": "Connect with 100+ logistics carriers via API." }
+      ]
+    },
+    "stats": [
+      { "value": "70+", "label": "Logistics Clients" },
+      { "value": "10M+", "label": "Deliveries Managed" },
+      { "value": "28%", "label": "Fuel Cost Reduction" },
+      { "value": "99.5%", "label": "On-Time Delivery Rate" }
+    ],
+    "services": {
+      "title": "How We Power Logistics Operations",
+      "items": [
+        { "icon": "fa-truck", "title": "Fleet Tracking", "desc": "Live GPS tracking and driver management." },
+        { "icon": "fa-route", "title": "Route Planning", "desc": "AI-optimized delivery routes." },
+        { "icon": "fa-warehouse", "title": "WMS", "desc": "Warehouse and inventory management." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Logistics?",
+      "description": "We bring cutting-edge software to the complex world of transportation and supply chain management.",
+      "features": [
+        { "icon": "fa-bolt", "title": "Real-Time Visibility", "desc": "Track every shipment, anywhere." },
+        { "icon": "fa-robot", "title": "AI Optimization", "desc": "Smart routing that cuts costs." },
+        { "icon": "fa-chart-line", "title": "Scalable Platform", "desc": "Grows with your fleet and volume." }
+      ],
+      "impact": [
+        { "label": "Delivery Speed", "value": "80" },
+        { "label": "Fuel Efficiency", "value": "65" },
+        { "label": "Customer Satisfaction", "value": "75" }
+      ]
+    }
+  },
+
+  "healthcare": {
+    "variant": "emerald",
+    "hero": {
+      "badge": "Healthcare Technology",
+      "title": "Digital Health Solutions That Save Lives",
+      "description": "We build telemedicine platforms, hospital management systems, and health data analytics tools that improve patient outcomes and operational efficiency for healthcare providers.",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "Modern <span class='text-emerald-500'>Healthcare Solutions</span>",
+      "subtitle": "Technology that transforms patient care.",
+      "items": [
+        { "icon": "fas fa-video", "title": "Telemedicine Platform", "description": "Secure video consultations between patients and doctors." },
+        { "icon": "fas fa-heartbeat", "title": "Patient Monitoring", "description": "Remote IoT-based vital sign tracking." },
+        { "icon": "fas fa-file-medical", "title": "Electronic Health Records", "description": "Unified, secure digital patient records." },
+        { "icon": "fas fa-pills", "title": "Pharmacy Management", "description": "Prescription tracking and medication management." },
+        { "icon": "fas fa-robot", "title": "AI Diagnostics", "description": "Machine learning-assisted medical imaging and diagnosis." },
+        { "icon": "fas fa-calendar-check", "title": "Appointment Scheduling", "description": "Smart booking systems for clinics and hospitals." }
+      ]
+    },
+    "stats": [
+      { "value": "40+", "label": "Healthcare Clients" },
+      { "value": "500K+", "label": "Patients Served" },
+      { "value": "HIPAA", "label": "Compliant Platform" },
+      { "value": "40%", "label": "Admin Cost Reduction" }
+    ],
+    "services": {
+      "title": "How We Modernize Healthcare",
+      "items": [
+        { "icon": "fa-video", "title": "Telemedicine", "desc": "Secure remote consultation platforms." },
+        { "icon": "fa-file-medical", "title": "EHR Systems", "desc": "Unified patient record management." },
+        { "icon": "fa-robot", "title": "AI Diagnostics", "desc": "ML-powered clinical decision support." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Healthcare?",
+      "description": "We build healthcare platforms with the highest standards of security, compliance, and patient-first design.",
+      "features": [
+        { "icon": "fa-lock", "title": "HIPAA Compliant", "desc": "Enterprise-grade health data security." },
+        { "icon": "fa-heartbeat", "title": "Patient-First", "desc": "Designed to improve health outcomes." },
+        { "icon": "fa-clock", "title": "24/7 Availability", "desc": "Systems that never go down." }
+      ],
+      "impact": [
+        { "label": "Patient Satisfaction", "value": "85" },
+        { "label": "Diagnostic Accuracy", "value": "78" },
+        { "label": "Administrative Efficiency", "value": "65" }
+      ]
+    }
+  },
+
+  "automotive": {
+    "variant": "violet",
+    "hero": {
+      "badge": "Automotive Technology",
+      "title": "Driving the Future of Mobility",
+      "description": "We build connected vehicle platforms, dealership management systems, and EV infrastructure software that power the next generation of automotive businesses.",
+      "image": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1200&q=80"
+    },
+    "useCases": {
+      "title": "Automotive <span class='text-violet-500'>Tech Solutions</span>",
+      "subtitle": "Software for the connected car era.",
+      "items": [
+        { "icon": "fas fa-car", "title": "Connected Vehicle Platform", "description": "Real-time vehicle diagnostics and telematics." },
+        { "icon": "fas fa-charging-station", "title": "EV Charging Network", "description": "Management software for EV charging infrastructure." },
+        { "icon": "fas fa-store", "title": "Dealership Management", "description": "Inventory, sales, and CRM for dealerships." },
+        { "icon": "fas fa-tools", "title": "Service & Maintenance", "description": "Predictive maintenance and service scheduling." },
+        { "icon": "fas fa-map-marked-alt", "title": "Fleet & Ride-Hailing", "description": "Mobility-as-a-service and fleet dispatch platforms." },
+        { "icon": "fas fa-robot", "title": "ADAS Integration", "description": "Software for advanced driver assistance systems." }
+      ]
+    },
+    "stats": [
+      { "value": "35+", "label": "Automotive Clients" },
+      { "value": "200K+", "label": "Vehicles Connected" },
+      { "value": "50+", "label": "EV Stations Managed" },
+      { "value": "45%", "label": "Service Cost Reduction" }
+    ],
+    "services": {
+      "title": "How We Power Automotive Businesses",
+      "items": [
+        { "icon": "fa-car", "title": "Telematics Platform", "desc": "Connected vehicle data and diagnostics." },
+        { "icon": "fa-store", "title": "Dealer Management", "desc": "End-to-end dealership operations software." },
+        { "icon": "fa-charging-station", "title": "EV Infrastructure", "desc": "Charging network management systems." }
+      ]
+    },
+    "why": {
+      "title": "Why Choose ThunderGits for Automotive?",
+      "description": "We understand the intersection of hardware, software, and mobility — and build platforms that move the automotive industry forward.",
+      "features": [
+        { "icon": "fa-bolt", "title": "Real-Time Data", "desc": "Live vehicle telemetry and diagnostics." },
+        { "icon": "fa-shield-alt", "title": "Cyber Security", "desc": "Automotive-grade OTA security updates." },
+        { "icon": "fa-chart-line", "title": "Revenue Models", "desc": "Software-defined vehicle monetization." }
+      ],
+      "impact": [
+        { "label": "Fleet Efficiency", "value": "70" },
+        { "label": "Service Revenue", "value": "58" },
+        { "label": "Customer Retention", "value": "72" }
       ]
     }
   }

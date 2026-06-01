@@ -241,8 +241,14 @@ async function loadPage() {
       showSection('section-' + key);
     });
 
+    document.getElementById('page-loader').style.display = 'none';
+
   } catch (err) {
     console.error('Error loading page data:', err);
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+      loader.innerHTML = '<p class="text-red-400 text-sm font-semibold">Failed to load page. Please refresh.</p>';
+    }
   }
 }
 

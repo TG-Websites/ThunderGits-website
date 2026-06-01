@@ -337,50 +337,34 @@
 
 
 
-    <!-- Aligent Hero Section -->
-    <section id="hero-section"
+    <!-- ═══ SECTION: HERO ═══ -->
+    <section id="section-hero" style="display:none"
         class="relative pt-25 sm:pt-48 pb-24 bg-black overflow-hidden min-h-[85vh] flex items-center">
-        <!-- STATIC CSS GRID LINES -->
         <div class="absolute inset-0 z-0 pointer-events-none"
-            style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
-        </div>
-
-        <!-- INTERACTIVE HIGHLIGHT CELLS -->
+            style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
         <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
-
-        <!-- TOP CENTER GLOW -->
         <div id="hero-glow" class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-            style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+            style="width:1000px;height:500px;background:radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
         </div>
-
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
-            <!-- Left Content -->
-            <div data-aos="fade-right">
+            <div>
                 <span id="hero-badge"
-                    class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
-                </span>
-
-                <h1 id="hero-title" class="font-bold text-white text-left leading-tight 
-        text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-5">
-                </h1>
-
-                <p id="hero-description" class="text-gray-400 text-lg leading-relaxed mb-10 font-light max-w-xl">
-                </p>
-
+                    class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 mb-8 uppercase font-bold"></span>
+                <h1 id="hero-title"
+                    class="font-bold text-white leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-5"></h1>
+                <p id="hero-description" class="text-gray-400 text-lg leading-relaxed mb-10 font-light max-w-xl"></p>
                 <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#solutions"
-                        class="px-10 py-4 bg-primary hover:bg-primary-dark text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 text-center shadow-lg shadow-indigo-900/50">
+                    <a href="#solutions" id="hero-cta-primary"
+                        class="px-10 py-4 text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 text-center">
                         Explore Solutions
                     </a>
-                    <a href="./contact.html"
-                        class="px-10 py-4 border border-indigo-500/30 text-indigo-400 text-[10px] font-black uppercase tracking-widest rounded-2xl hover:bg-indigo-500/10 transition duration-300 text-center">
+                    <a href="../contact.html"
+                        class="px-10 py-4 border border-white/20 text-white/70 text-[10px] font-black uppercase tracking-widest rounded-2xl hover:bg-white/5 transition duration-300 text-center">
                         Start Your Project
                     </a>
                 </div>
             </div>
-
-            <!-- Right Video/Image -->
-            <div data-aos="fade-left" class="relative group">
+            <div class="relative">
                 <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
                     <img id="hero-img"
                         class="w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover rounded-2xl" />
@@ -389,63 +373,102 @@
         </div>
     </section>
 
-    <!-- USE CASES -->
-    <section class="bg-white text-black py-24 px-6 lg:px-12">
+    <!-- ═══ SECTION: USE CASES ═══ -->
+    <section id="section-use-cases" class="hidden bg-white text-black py-24 px-6 lg:px-12">
         <div class="max-w-7xl mx-auto">
-
-            <!-- Heading -->
             <div class="text-center mb-16">
                 <h2 id="usecase-title" class="text-3xl md:text-5xl font-bold"></h2>
-                <p id="usecase-subtitle" class="text-gray-600 mt-4 max-w-2xl mx-auto"></p>
+                <p id="usecase-subtitle" class="text-gray-500 mt-4 max-w-2xl mx-auto text-lg"></p>
             </div>
-
-            <!-- Cards -->
-            <div id="usecase-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
-
+            <div id="usecase-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
-
-    <!-- STATS STRIP -->
-    <div id="stats-grid" class="grid grid-cols-2 lg:grid-cols-4 border-t border-b border-white/10"></div>
-
-
-    <!-- how -->
-
-    <section class="bg-white text-black py-24 px-6 lg:px-12">
+    <!-- ═══ SECTION: FEATURES LIST (alternating 2-col rows) ═══ -->
+    <section id="section-features" class="hidden bg-gray-50 text-black py-24 px-6 lg:px-12">
         <div class="max-w-7xl mx-auto">
-
-            <h2 id="services-title" class="text-3xl md:text-5xl font-bold mb-16 text-center"></h2>
-
-            <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
-
+            <div class="text-center mb-16">
+                <h2 id="features-title" class="text-3xl md:text-5xl font-bold"></h2>
+                <p id="features-subtitle" class="text-gray-500 mt-4 max-w-2xl mx-auto text-lg"></p>
+            </div>
+            <div id="features-list" class="space-y-10"></div>
         </div>
     </section>
 
+    <!-- ═══ SECTION: HIGHLIGHT (full-width image with text overlay) ═══ -->
+    <section id="section-highlight" style="display:none"
+        class="relative overflow-hidden min-h-[55vh] flex items-center">
+        <div id="highlight-bg" class="absolute inset-0 bg-cover bg-center bg-no-repeat"></div>
+        <div class="absolute inset-0 bg-black/65"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span id="highlight-badge"
+                    class="inline-block px-4 py-1 text-[10px] font-black uppercase tracking-widest rounded-full bg-white/15 border border-white/25 text-white mb-6"></span>
+                <h2 id="highlight-title" class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight"></h2>
+                <p id="highlight-description" class="text-gray-300 text-lg leading-relaxed mb-8"></p>
+                <a href="../contact.html" id="highlight-cta"
+                    class="inline-block px-8 py-3 rounded-xl text-white text-sm font-bold uppercase tracking-widest transition duration-300">
+                    Talk to an Expert
+                </a>
+            </div>
+            <div id="highlight-stats" class="grid grid-cols-2 gap-4"></div>
+        </div>
+    </section>
 
-    <section class="bg-[#0b0f1a] text-white py-24 px-6 lg:px-12">
+    <!-- ═══ SECTION: STATS STRIP ═══ -->
+    <div id="section-stats" class="hidden">
+        <div id="stats-grid" class="grid grid-cols-2 lg:grid-cols-4 border-t border-b border-white/10"></div>
+    </div>
+
+    <!-- ═══ SECTION: PROCESS (numbered steps) ═══ -->
+    <section id="section-process" class="hidden bg-white text-black py-24 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 id="process-title" class="text-3xl md:text-5xl font-bold"></h2>
+                <p id="process-subtitle" class="text-gray-500 mt-4 max-w-2xl mx-auto text-lg"></p>
+            </div>
+            <div id="process-steps" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative"></div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION: SERVICES (3-col cards) ═══ -->
+    <section id="section-services" class="hidden bg-white text-black py-24 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <h2 id="services-title" class="text-3xl md:text-5xl font-bold mb-16 text-center"></h2>
+            <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION: WHY THUNDERGITS ═══ -->
+    <section id="section-why" class="hidden bg-[#0b0f1a] text-white py-24 px-6 lg:px-12">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-
-            <!-- LEFT TEXT -->
             <div>
                 <h2 id="why-title" class="text-3xl md:text-5xl font-bold mb-6 leading-tight"></h2>
-
                 <p id="why-description" class="text-gray-400 mb-10 max-w-lg"></p>
-
                 <div id="why-features" class="space-y-6"></div>
             </div>
-
-            <!-- RIGHT CARD -->
             <div class="relative">
-                <div class="absolute -inset-4 bg-indigo-500/20 blur-2xl rounded-3xl opacity-40"></div>
-
+                <div id="why-glow" class="absolute -inset-4 blur-2xl rounded-3xl opacity-40"></div>
                 <div class="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-10 shadow-2xl">
                     <h3 class="text-xl font-semibold mb-6">Our Impact</h3>
-
                     <div id="why-impact" class="space-y-6"></div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- ═══ SECTION: CTA BANNER ═══ -->
+    <section id="section-cta" class="hidden py-24 px-6 text-white text-center">
+        <div class="max-w-3xl mx-auto">
+            <span id="cta-badge"
+                class="inline-block px-4 py-1 text-[10px] font-black uppercase tracking-widest rounded-full bg-white/15 border border-white/25 mb-6"></span>
+            <h2 id="cta-title" class="text-3xl md:text-5xl font-black mb-5 leading-tight"></h2>
+            <p id="cta-subtitle" class="text-lg opacity-75 mb-10 max-w-xl mx-auto"></p>
+            <a href="../contact.html"
+                class="inline-block px-10 py-4 bg-white font-black text-[10px] uppercase tracking-widest rounded-2xl transition duration-300 hover:opacity-90"
+                id="cta-btn">
+                Get Started Today
+            </a>
         </div>
     </section>
 

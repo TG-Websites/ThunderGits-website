@@ -1,32 +1,9 @@
-const THEMES = {
-  indigo: {
-    glow: 'radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%)',
-    badgeColor: '#a5b4fc', accentHex: '#6366f1',
-    statFirstBg: '#4338CA', statAccentColor: '#818cf8', barColor: '#6366f1',
-    ctaBg: 'linear-gradient(135deg, #312e81 0%, #1e1b4b 100%)', ctaTextColor: '#6366f1',
-    whyGlow: '#6366f1'
-  },
-  emerald: {
-    glow: 'radial-gradient(ellipse at 50% 0%, rgba(180,255,220,0.45) 0%, rgba(52,211,153,0.25) 20%, rgba(16,185,129,0.08) 50%, transparent 75%)',
-    badgeColor: '#6ee7b7', accentHex: '#10b981',
-    statFirstBg: '#059669', statAccentColor: '#34d399', barColor: '#10b981',
-    ctaBg: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)', ctaTextColor: '#10b981',
-    whyGlow: '#10b981'
-  },
-  amber: {
-    glow: 'radial-gradient(ellipse at 50% 0%, rgba(255,237,180,0.45) 0%, rgba(251,191,36,0.25) 20%, rgba(245,158,11,0.08) 50%, transparent 75%)',
-    badgeColor: '#fcd34d', accentHex: '#f59e0b',
-    statFirstBg: '#d97706', statAccentColor: '#fbbf24', barColor: '#f59e0b',
-    ctaBg: 'linear-gradient(135deg, #78350f 0%, #92400e 100%)', ctaTextColor: '#f59e0b',
-    whyGlow: '#f59e0b'
-  },
-  violet: {
-    glow: 'radial-gradient(ellipse at 50% 0%, rgba(210,180,255,0.45) 0%, rgba(167,139,250,0.25) 20%, rgba(139,92,246,0.08) 50%, transparent 75%)',
-    badgeColor: '#c4b5fd', accentHex: '#8b5cf6',
-    statFirstBg: '#7c3aed', statAccentColor: '#a78bfa', barColor: '#8b5cf6',
-    ctaBg: 'linear-gradient(135deg, #2e1065 0%, #3b0764 100%)', ctaTextColor: '#8b5cf6',
-    whyGlow: '#8b5cf6'
-  }
+const THEME = {
+  glow: 'radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%)',
+  badgeColor: '#a5b4fc', accentHex: '#4338CA',
+  statFirstBg: '#4338CA', statAccentColor: '#818cf8', barColor: '#4338CA',
+  ctaBg: 'linear-gradient(135deg, #312e81 0%, #1e1b4b 100%)', ctaTextColor: '#4338CA',
+  whyGlow: '#4338CA'
 };
 
 /* ─── show a section ─── */
@@ -255,7 +232,7 @@ async function loadPage() {
     const content = data[page];
     if (!content) return;
 
-    const theme = THEMES[content.variant] || THEMES.indigo;
+    const theme = THEME;
     const sections = content.sections || ['hero', 'use-cases', 'stats', 'services', 'why'];
 
     sections.forEach(key => {

@@ -105,11 +105,11 @@ function displayBlogContent(blog) {
 
     // Update featured image
     const featuredImageContainer = document.getElementById('featuredImageContainer');
-    if (blog.featuredImage) {
+    if (blog.image) {
         featuredImageContainer.innerHTML = `
             <div class="max-w-6xl mx-auto px-6">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-indigo-500/10 group">
-                    <img src="${blog.featuredImage}" 
+                    <img src="${blog.image}"
                          alt="${blog.title}" 
                          class="w-full h-[400px] md:h-[700px] object-cover transition-transform duration-1000 group-hover:scale-105"
                          onerror="this.src='./assets/blogimg1.webp'"
@@ -235,7 +235,7 @@ function displayRelatedBlogs(blogs) {
             ${blogsToShow.map((blog, index) => `
                 <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="${(index % 3) * 100}">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="${blog.featuredImage || './assets/default-blog.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}" onerror="this.src='./assets/default-blog.webp'">
+                        <img src="${blog.image || './assets/default-blog.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}" onerror="this.src='./assets/default-blog.webp'">
                         <div class="absolute inset-0 bg-indigo-950/10 group-hover:bg-transparent transition-colors duration-700"></div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">

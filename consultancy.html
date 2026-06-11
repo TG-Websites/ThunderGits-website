@@ -1,10 +1,30 @@
 ﻿<!doctype html>
-<html>
+<html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Free Consultancy — ThunderGits</title>
+    <title>Book a Free IT Consultancy — ThunderGits</title>
+  <meta name="description" content="Schedule a free IT consultation with ThunderGits. Get expert advice on web development, mobile apps, AI strategy, cloud migration, digital marketing, and custom software.">
+  <meta name="author" content="ThunderGits Consultancy Services Pvt Ltd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thundergits.com/consultancy.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thundergits.com/consultancy.html">
+  <meta property="og:title" content="Book a Free IT Consultancy — ThunderGits">
+  <meta property="og:description" content="Schedule a free IT consultation with ThunderGits. Get expert advice on web development, mobile apps, AI strategy, cloud migration, digital marketing, and custom software.">
+  <meta property="og:image" content="https://thundergits.com/assets/logo.webp">
+  <meta property="og:site_name" content="ThunderGits">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book a Free IT Consultancy — ThunderGits">
+  <meta name="twitter:description" content="Schedule a free IT consultation with ThunderGits. Get expert advice on web development, mobile apps, AI strategy, cloud migration, digital marketing, and custom software.">
+  <meta name="twitter:image" content="https://thundergits.com/assets/logo.webp">
     <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,17 +34,38 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thundergits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Consultancy",
+      "item": "https://thundergits.com/consultancy.html"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="bg-black text-white font-['Inter',sans-serif]">
 
     <!-- Navbar -->
     <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
-        <div class="flex items-center justify-between gap-6 lg:gap-20 mx-auto px-3 lg:px-20 py-5">
+        <div class="flex items-center justify-between gap-4 lg:gap-4 xl:gap-16 mx-auto px-3 lg:px-8 xl:px-20 py-5">
 
             <!-- LOGO -->
             <a href="./index.html" class="flex items-center">
-                <img src="./assets/logo.png" class="h-14" alt="Logo" />
+                <img src="./assets/logo.webp" class="h-14 w-auto" alt="ThunderGits Logo" loading="eager" fetchpriority="high" width="2172" height="724"/>
             </a>
 
             <!-- HAMBURGER BUTTON (mobile only) -->
@@ -40,7 +81,7 @@
             </button>
 
             <!-- DESKTOP NAV -->
-            <ul class="hidden lg:flex items-center gap-10 font-medium text-sm">
+            <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
                 <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark transition">Home</a></li>
                 <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
                 <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
@@ -110,9 +151,9 @@
                 <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
                 <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
 
-                <li>
+                <li class="shrink-0">
                     <a href="./consultancy.html"
-                        class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+                        class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
                         Book Free Consultancy
                     </a>
                 </li>
@@ -193,7 +234,7 @@
 
                 <li class="mt-2">
                     <a href="./consultancy.html"
-                        class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+                        class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
                         Book Free Consultancy
                     </a>
                 </li>
@@ -406,10 +447,9 @@
 
             <!-- COL 1: LOGO + DESC -->
             <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
-                <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+                <img src="./assets/logo.webp" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" loading="lazy" decoding="async" width="2172" height="724"/>
                 <p class="text-sm font-medium leading-relaxed max-w-sm">
-                    When do they work well, and when do they on us and finally, when do we
-                    actually need how can we avoid them.
+                    ThunderGits Consultancy Services Pvt Ltd — building powerful web, mobile, and AI-driven digital solutions for startups and enterprises worldwide.
                 </p>
             </div>
 
@@ -478,132 +518,136 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 700, once: true });
-
-        const API_BASE = 'https://api.thundergits.com';
-
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const iconOpen = document.getElementById('icon-open');
-        const iconClose = document.getElementById('icon-close');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            iconOpen.classList.toggle('hidden');
-            iconClose.classList.toggle('hidden');
-        });
-
-        // Industries accordion
-        function toggleAccordion(id) {
-            const el = document.getElementById(id);
-            const icon = document.getElementById(id + '-icon');
-            el.classList.toggle('hidden');
-            if (icon) icon.style.transform = el.classList.contains('hidden') ? '' : 'rotate(180deg)';
-        }
-
-        // Input styling on focus
-        const inputs = document.querySelectorAll('#consultancy-form input, #consultancy-form textarea');
-        inputs.forEach(inp => {
-            inp.addEventListener('focus', () => { inp.style.border = '1px solid #93c5fd'; inp.style.boxShadow = '0 0 0 3px rgba(59,130,246,0.1)'; });
-            inp.addEventListener('blur', () => { inp.style.border = '1px solid #e2e8f0'; inp.style.boxShadow = ''; });
-        });
-
-        // Form submit
-        document.getElementById('consultancy-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const name         = document.getElementById('c-name').value.trim();
-            const mobile       = document.getElementById('c-mobile').value.trim();
-            const requirement  = document.getElementById('c-requirement').value.trim();
-            const email        = document.getElementById('c-email').value.trim();
-            const businessName = document.getElementById('c-business').value.trim();
-
-            let valid = true;
-            ['name', 'mobile', 'requirement'].forEach(f => {
-                const el  = document.getElementById(`c-${f}`);
-                const err = document.getElementById(`err-${f}`);
-                if (!el.value.trim()) {
-                    err.style.display = 'block';
-                    el.style.border = '1px solid #fca5a5';
-                    valid = false;
-                } else {
-                    err.style.display = 'none';
-                    el.style.border = '1px solid #e2e8f0';
-                }
-            });
-            if (!valid) return;
-
-            const submitBtn = document.getElementById('submit-btn');
-            const btnText   = document.getElementById('btn-text');
-            const btnLoader = document.getElementById('btn-loader');
-            const status    = document.getElementById('form-status');
-
-            submitBtn.disabled = true;
-            btnText.textContent = 'Booking...';
-            btnLoader.style.display = 'inline-block';
-            status.style.display = 'none';
-
-            try {
-                const res = await fetch(`${API_BASE}/api/consultancy`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, mobile, requirement, email: email || undefined, businessName: businessName || undefined }),
-                });
-
-                if (res.ok) {
-                    document.getElementById('success-overlay').style.display = 'flex';
-                } else {
-                    const data = await res.json();
-                    status.textContent = data.message || 'Something went wrong. Please try again.';
-                    status.style.color = '#f87171';
-                    status.style.display = 'block';
-                }
-            } catch (err) {
-                status.textContent = 'Network error. Please check your connection and try again.';
-                status.style.color = '#f87171';
-                status.style.display = 'block';
-            } finally {
-                submitBtn.disabled = false;
-                btnText.textContent = 'Book Free Consultancy';
-                btnLoader.style.display = 'none';
-            }
-        });
-
-        // Clear error on input
-        ['c-name', 'c-mobile', 'c-requirement'].forEach(id => {
-            const map = { 'c-name': 'name', 'c-mobile': 'mobile', 'c-requirement': 'requirement' };
-            document.getElementById(id).addEventListener('input', () => {
-                document.getElementById(`err-${map[id]}`).style.display = 'none';
-                document.getElementById(id).style.border = '1px solid rgba(255,255,255,0.1)';
-            });
-        });
-
-        // Hero grid interaction (same as other pages)
-        const heroGrid = document.getElementById('hero-grid');
-        if (heroGrid) {
-            const CELL = 50;
-            let cols, rows;
-            function buildGrid() {
-                cols = Math.ceil(window.innerWidth / CELL);
-                rows = Math.ceil(heroGrid.parentElement.offsetHeight / CELL);
-                heroGrid.innerHTML = '';
-                heroGrid.style.display = 'grid';
-                heroGrid.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
-                heroGrid.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
-                for (let i = 0; i < cols * rows; i++) {
-                    const cell = document.createElement('div');
-                    cell.style.cssText = 'transition:background 0.4s ease;';
-                    cell.addEventListener('mouseenter', () => { cell.style.background = 'rgba(99,102,241,0.12)'; });
-                    cell.addEventListener('mouseleave', () => { cell.style.background = ''; });
-                    heroGrid.appendChild(cell);
-                }
-            }
-            buildGrid();
-            window.addEventListener('resize', buildGrid);
-        }
-    </script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+          AOS.init({ duration: 700, once: true });
+  
+          const API_BASE = 'https://api.thundergits.com';
+  
+          // Mobile menu toggle
+          const menuBtn = document.getElementById('mobile-menu-btn');
+          const mobileMenu = document.getElementById('mobile-menu');
+          const iconOpen = document.getElementById('icon-open');
+          const iconClose = document.getElementById('icon-close');
+          menuBtn.addEventListener('click', () => {
+              mobileMenu.classList.toggle('hidden');
+              iconOpen.classList.toggle('hidden');
+              iconClose.classList.toggle('hidden');
+          });
+  
+          // Industries accordion
+          function toggleAccordion(id) {
+              const el = document.getElementById(id);
+              const icon = document.getElementById(id + '-icon');
+              el.classList.toggle('hidden');
+              if (icon) icon.style.transform = el.classList.contains('hidden') ? '' : 'rotate(180deg)';
+          }
+  
+          // Input styling on focus
+          const inputs = document.querySelectorAll('#consultancy-form input, #consultancy-form textarea');
+          inputs.forEach(inp => {
+              inp.addEventListener('focus', () => { inp.style.border = '1px solid #93c5fd'; inp.style.boxShadow = '0 0 0 3px rgba(59,130,246,0.1)'; });
+              inp.addEventListener('blur', () => { inp.style.border = '1px solid #e2e8f0'; inp.style.boxShadow = ''; });
+          });
+  
+          // Form submit
+          document.getElementById('consultancy-form').addEventListener('submit', async (e) => {
+              e.preventDefault();
+  
+              const name         = document.getElementById('c-name').value.trim();
+              const mobile       = document.getElementById('c-mobile').value.trim();
+              const requirement  = document.getElementById('c-requirement').value.trim();
+              const email        = document.getElementById('c-email').value.trim();
+              const businessName = document.getElementById('c-business').value.trim();
+  
+              let valid = true;
+              ['name', 'mobile', 'requirement'].forEach(f => {
+                  const el  = document.getElementById(`c-${f}`);
+                  const err = document.getElementById(`err-${f}`);
+                  if (!el.value.trim()) {
+                      err.style.display = 'block';
+                      el.style.border = '1px solid #fca5a5';
+                      valid = false;
+                  } else {
+                      err.style.display = 'none';
+                      el.style.border = '1px solid #e2e8f0';
+                  }
+              });
+              if (!valid) return;
+  
+              const submitBtn = document.getElementById('submit-btn');
+              const btnText   = document.getElementById('btn-text');
+              const btnLoader = document.getElementById('btn-loader');
+              const status    = document.getElementById('form-status');
+  
+              submitBtn.disabled = true;
+              btnText.textContent = 'Booking...';
+              btnLoader.style.display = 'inline-block';
+              status.style.display = 'none';
+  
+              try {
+                  const res = await fetch(`${API_BASE}/api/consultancy`, {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ name, mobile, requirement, email: email || undefined, businessName: businessName || undefined }),
+                  });
+  
+                  if (res.ok) {
+                      document.getElementById('success-overlay').style.display = 'flex';
+                  } else {
+                      const data = await res.json();
+                      status.textContent = data.message || 'Something went wrong. Please try again.';
+                      status.style.color = '#f87171';
+                      status.style.display = 'block';
+                  }
+              } catch (err) {
+                  status.textContent = 'Network error. Please check your connection and try again.';
+                  status.style.color = '#f87171';
+                  status.style.display = 'block';
+              } finally {
+                  submitBtn.disabled = false;
+                  btnText.textContent = 'Book Free Consultancy';
+                  btnLoader.style.display = 'none';
+              }
+          });
+  
+          // Clear error on input
+          ['c-name', 'c-mobile', 'c-requirement'].forEach(id => {
+              const map = { 'c-name': 'name', 'c-mobile': 'mobile', 'c-requirement': 'requirement' };
+              document.getElementById(id).addEventListener('input', () => {
+                  document.getElementById(`err-${map[id]}`).style.display = 'none';
+                  document.getElementById(id).style.border = '1px solid rgba(255,255,255,0.1)';
+              });
+          });
+  
+          // Hero grid interaction (same as other pages)
+          const heroGrid = document.getElementById('hero-grid');
+          if (heroGrid) {
+              const CELL = 50;
+              let cols, rows;
+              function buildGrid() {
+                  cols = Math.ceil(window.innerWidth / CELL);
+                  rows = Math.ceil(heroGrid.parentElement.offsetHeight / CELL);
+                  heroGrid.innerHTML = '';
+                  heroGrid.style.display = 'grid';
+                  heroGrid.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+                  heroGrid.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+                  for (let i = 0; i < cols * rows; i++) {
+                      const cell = document.createElement('div');
+                      cell.style.cssText = 'transition:background 0.4s ease;';
+                      cell.addEventListener('mouseenter', () => { cell.style.background = 'rgba(99,102,241,0.12)'; });
+                      cell.addEventListener('mouseleave', () => { cell.style.background = ''; });
+                      heroGrid.appendChild(cell);
+                  }
+              }
+              buildGrid();
+              window.addEventListener('resize', buildGrid);
+          }
+      
+});
+</script>
 
 </body>
 </html>

@@ -243,6 +243,19 @@ async function loadPage() {
 
     document.getElementById('page-loader').style.display = 'none';
 
+    // Update <title>, meta description and canonical dynamically for SEO/GEO
+    const pageTitle = `${content.hero.title} IT Solutions — ThunderGits`;
+    document.title = pageTitle;
+    const descText = content.hero.description.slice(0, 155);
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', descText);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', descText);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', `https://thundergits.com/industries/index.html?page=${page}`);
+
   } catch (err) {
     console.error('Error loading page data:', err);
     const loader = document.getElementById('page-loader');

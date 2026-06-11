@@ -2,9 +2,23 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Blog - ThunderGits Technology</title>
+  <title>Blog Details — ThunderGits</title>
+  <link rel="canonical" href="https://thundergits.com/blogdetails.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thundergits.com/blogdetails.html">
+  <meta property="og:title" content="Blog Details — ThunderGits">
+  <meta property="og:description" content="Read in-depth tech articles, tutorials, and industry insights from the ThunderGits team.">
+  <meta property="og:image" content="https://thundergits.com/assets/logo.webp">
+  <meta property="og:site_name" content="ThunderGits">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog Details — ThunderGits">
+  <meta name="twitter:description" content="Read in-depth tech articles from the ThunderGits team.">
+  <meta name="twitter:image" content="https://thundergits.com/assets/logo.webp">
   <meta name="description"
     content="Read the latest blogs, insights, web development trends, React, MERN stack tutorials, and technology updates from ThunderGits Technology." />
 
@@ -150,17 +164,44 @@
       background: #5b6e8c;
     }
   </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thundergits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://thundergits.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Article",
+      "item": "https://thundergits.com/blogdetails.html"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="bg-white font-sans text-blue-950 overflow-x-hidden">
 
   <!-- Navbar -->
   <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
-    <div class="flex items-center justify-between  gap-6 lg:gap-20 mx-auto px-3 lg:px-20 py-2">
+    <div class="flex items-center justify-between  gap-4 lg:gap-4 xl:gap-16 mx-auto px-3 lg:px-8 xl:px-20 py-2">
 
       <!-- LOGO -->
-      <a href="#" class="flex items-center">
-        <img src="./assets/logo.png" class="h-14" alt="Logo" />
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/logo.webp" class="h-14 w-auto" alt="ThunderGits Logo" loading="eager" fetchpriority="high" width="2172" height="724"/>
       </a>
 
       <!-- HAMBURGER BUTTON (mobile only) -->
@@ -180,7 +221,7 @@
       </button>
 
       <!-- DESKTOP NAV -->
-      <ul class="hidden lg:flex items-center gap-10 font-medium text-sm">
+      <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
         <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark">Home</a></li>
         <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
         <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
@@ -311,9 +352,9 @@
         <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
         <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
 
-        <li>
+        <li class="shrink-0">
           <a href="./consultancy.html"
-            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
             Book Free Consultancy
           </a>
         </li>
@@ -458,7 +499,7 @@
 
         <li class="mt-2">
           <a href="./consultancy.html"
-            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
             Book Free Consultancy
           </a>
         </li>
@@ -542,7 +583,7 @@
 
         <!-- Featured Image with overlay caption -->
         <div class="relative rounded-2xl overflow-hidden shadow-soft mb-10">
-          <img src="./assets/Deepseek.webp" alt="design abstract" class="w-full h-auto object-cover max-h-[500px]">
+          <img src="./assets/Deepseek.webp" alt="design abstract" class="w-full h-auto object-cover max-h-[500px]" loading="lazy" decoding="async" width="1080" height="1080">
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
           </div>
         </div>
@@ -690,10 +731,9 @@
 
       <!-- COL 1: LOGO + DESC -->
       <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
-        <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+        <img src="./assets/logo.webp" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" loading="lazy" decoding="async" width="2172" height="724"/>
         <p class="text-sm font-medium leading-relaxed max-w-sm">
-          When do they work well, and when do they on us and finally, when do we
-          actually need how can we avoid them.
+          ThunderGits Consultancy Services Pvt Ltd — building powerful web, mobile, and AI-driven digital solutions for startups and enterprises worldwide.
         </p>
       </div>
 
@@ -764,86 +804,90 @@
 
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-
-    const nav = document.getElementById("main-nav");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 80) {
-        nav.style.background = "rgba(0, 0, 0, 0.75)";
-        nav.style.backdropFilter = "blur(12px)";
-        nav.style.webkitBackdropFilter = "blur(12px)";
-        nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
-      } else {
-        nav.style.background = "transparent";
-        nav.style.backdropFilter = "none";
-        nav.style.webkitBackdropFilter = "none";
-        nav.style.borderBottom = "none";
-      }
-    });
-
-    // Initialize AOS
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100
-    });
-
-    /* Interactive Hero Grid */
-    const heroSection = document.getElementById("hero-section");
-    const gridEl = document.getElementById("hero-grid");
-    const CELL = 50;
-    let cols = 0, rows = 0, cellEls = [];
-
-    function buildGrid() {
-      if (!gridEl) return;
-      gridEl.innerHTML = "";
-      cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
-      rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
-
-      gridEl.style.display = "grid";
-      gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
-      gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
-
-      cellEls = [];
-      for (let i = 0; i < cols * rows; i++) {
-        const d = document.createElement("div");
-        d.style.cssText = "transition: background 0.55s ease;";
-        gridEl.appendChild(d);
-        cellEls.push(d);
-      }
-    }
-
-    buildGrid();
-    window.addEventListener("resize", buildGrid);
-
-    if (heroSection && gridEl) {
-      heroSection.addEventListener("mousemove", (e) => {
-        const rect = gridEl.getBoundingClientRect();
-        const cx = Math.floor((e.clientX - rect.left) / CELL);
-        const cy = Math.floor((e.clientY - rect.top) / CELL);
-
-        const pattern = [
-          [0, 0, 0.40],
-          [-1, 0, 0.20], [1, 0, 0.20], [0, -1, 0.20], [0, 1, 0.20],
-          [-1, -1, 0.09], [1, -1, 0.09], [-1, 1, 0.09], [1, 1, 0.09],
-          [-2, 0, 0.04], [2, 0, 0.04], [0, -2, 0.04], [0, 2, 0.04],
-        ];
-
-        pattern.forEach(([dx, dy, alpha]) => {
-          const x = cx + dx, y = cy + dy;
-          if (x < 0 || x >= cols || y < 0 || y >= rows) return;
-          const cell = cellEls[y * cols + x];
-          if (!cell) return;
-          clearTimeout(cell._t);
-          cell.style.background = `rgba(99, 102, 241, ${alpha})`;
-          cell._t = setTimeout(() => {
-            cell.style.background = "";
-          }, 650);
-        });
+document.addEventListener('DOMContentLoaded', function() {
+  
+  
+      const nav = document.getElementById("main-nav");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 80) {
+          if (nav) nav.style.background = "rgba(0, 0, 0, 0.75)";
+          if (nav) nav.style.backdropFilter = "blur(12px)";
+          if (nav) nav.style.webkitBackdropFilter = "blur(12px)";
+          if (nav) nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
+        } else {
+          if (nav) nav.style.background = "transparent";
+          if (nav) nav.style.backdropFilter = "none";
+          if (nav) nav.style.webkitBackdropFilter = "none";
+          if (nav) nav.style.borderBottom = "none";
+        }
       });
-    }
-  </script>
+  
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+      });
+  
+      /* Interactive Hero Grid */
+      const heroSection = document.getElementById("hero-section");
+      const gridEl = document.getElementById("hero-grid");
+      const CELL = 50;
+      let cols = 0, rows = 0, cellEls = [];
+  
+      function buildGrid() {
+        if (!gridEl) return;
+        gridEl.innerHTML = "";
+        cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
+        rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
+  
+        gridEl.style.display = "grid";
+        gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+        gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+  
+        cellEls = [];
+        for (let i = 0; i < cols * rows; i++) {
+          const d = document.createElement("div");
+          d.style.cssText = "transition: background 0.55s ease;";
+          gridEl.appendChild(d);
+          cellEls.push(d);
+        }
+      }
+  
+      buildGrid();
+      window.addEventListener("resize", buildGrid);
+  
+      if (heroSection && gridEl) {
+        heroSection.addEventListener("mousemove", (e) => {
+          const rect = gridEl.getBoundingClientRect();
+          const cx = Math.floor((e.clientX - rect.left) / CELL);
+          const cy = Math.floor((e.clientY - rect.top) / CELL);
+  
+          const pattern = [
+            [0, 0, 0.40],
+            [-1, 0, 0.20], [1, 0, 0.20], [0, -1, 0.20], [0, 1, 0.20],
+            [-1, -1, 0.09], [1, -1, 0.09], [-1, 1, 0.09], [1, 1, 0.09],
+            [-2, 0, 0.04], [2, 0, 0.04], [0, -2, 0.04], [0, 2, 0.04],
+          ];
+  
+          pattern.forEach(([dx, dy, alpha]) => {
+            const x = cx + dx, y = cy + dy;
+            if (x < 0 || x >= cols || y < 0 || y >= rows) return;
+            const cell = cellEls[y * cols + x];
+            if (!cell) return;
+            clearTimeout(cell._t);
+            cell.style.background = `rgba(99, 102, 241, ${alpha})`;
+            cell._t = setTimeout(() => {
+              cell.style.background = "";
+            }, 650);
+          });
+        });
+      }
+    
+});
+</script>
   <script>
     // Hamburger toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -1211,8 +1255,7 @@
                   "./assets/Deepseek.webp"
                   }"
                     class="h-full w-full object-cover"
-                    alt="${blog.title}"
-                  >
+                    alt="${blog.title}" loading="lazy" decoding="async">
                 </div>
 
                 <!-- CONTENT -->
@@ -1248,7 +1291,7 @@
     // CALL FUNCTION
     loadRecommendedBlogs();
   </script>
-  <script src="./cursor.js"></script>
+  <script defer src="./cursor.js"></script>
 </body>
 
 </html>

@@ -1,10 +1,48 @@
 ﻿<!doctype html>
-<html>
+<html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - ThunderGits Technology</title>
+  <title>About ThunderGits | Our Team, Values & Process — IT Solutions India</title>
+  <meta name="description" content="Learn about ThunderGits — a 25+ member team of digital experts delivering innovative IT solutions globally. Explore our mission, values, 7-step process, and the people behind our technology.">
+  <meta name="author" content="ThunderGits Consultancy Services Pvt Ltd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thundergits.com/about.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thundergits.com/about.html">
+  <meta property="og:title" content="About ThunderGits | Our Team, Values & Process">
+  <meta property="og:description" content="25+ digital experts, 50+ projects, 3+ years of experience. Discover how ThunderGits transforms ideas into powerful IT solutions.">
+  <meta property="og:image" content="https://thundergits.com/assets/logo.webp">
+  <meta property="og:site_name" content="ThunderGits">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About ThunderGits | Our Team, Values & Process">
+  <meta name="twitter:description" content="25+ digital experts, 50+ projects, 3+ years of experience. Discover how ThunderGits transforms ideas into powerful IT solutions.">
+  <meta name="twitter:image" content="https://thundergits.com/assets/logo.webp">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "url": "https://thundergits.com/about.html",
+    "name": "About ThunderGits",
+    "description": "Learn about ThunderGits Consultancy Services — our team, mission, values, and the 7-step process we follow to deliver impactful IT solutions.",
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://thundergits.com/#organization",
+      "name": "ThunderGits Consultancy Services Pvt Ltd"
+    }
+  }
+  </script>
+
   <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,24 +52,45 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thundergits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About Us",
+      "item": "https://thundergits.com/about.html"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="bg-black text-white font-['Inter',sans-serif]">
 
   <!-- Navbar -->
   <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
-    <div class="flex items-center justify-between  gap-6 lg:gap-20 mx-auto px-3 lg:px-20 py-2">
+    <div class="flex items-center justify-between  gap-4 lg:gap-4 xl:gap-16 mx-auto px-3 lg:px-8 xl:px-20 py-2">
 
       <!-- LOGO -->
-      <a href="#" class="flex items-center">
-        <img src="./assets/logo.png" class="h-14" alt="Logo" />
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/logo.webp" class="h-14 w-auto" alt="ThunderGits Logo" loading="eager" fetchpriority="high" width="2172" height="724"/>
       </a>
 
       <!-- HAMBURGER BUTTON (mobile only) -->
@@ -51,7 +110,7 @@
       </button>
 
       <!-- DESKTOP NAV -->
-      <ul class="hidden lg:flex items-center gap-10 font-medium text-sm">
+      <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
         <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark transition">Home</a></li>
         <li><a href="./about.html" class=" text-primary font-semibold transition">About</a></li>
         <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
@@ -182,9 +241,9 @@
         <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
         <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
 
-        <li>
+        <li class="shrink-0">
           <a href="./consultancy.html"
-            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
             Book Free Consultancy
           </a>
         </li>
@@ -328,7 +387,7 @@
 
         <li class="mt-2">
           <a href="./consultancy.html"
-            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
             Book Free Consultancy
           </a>
         </li>
@@ -446,8 +505,8 @@
         <!-- Left: Image with Pattern -->
         <div class="relative group" data-aos="fade-right">
           <div class="relative z-10 w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-            <img src="./assets/about-img.png" alt="About ThunderGits"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <img src="./assets/about-img.webp" alt="About ThunderGits"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async" width="1024" height="1536"/>
           </div>
           <!-- Decorative element -->
           <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-100 rounded-full -z-10 animate-pulse"></div>
@@ -535,8 +594,8 @@
       <div class="order-1 lg:order-2 relative" data-aos="zoom-out">
         <div
           class="relative z-10 w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-          <img src="./assets/image thundergits.jpg" alt="Who We Are"
-            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+          <img src="./assets/image thundergits.webp" alt="Who We Are"
+            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" loading="lazy" decoding="async"/>
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
         </div>
         <!-- Floating Glow -->
@@ -582,7 +641,7 @@
             <div class="swiper-slide h-full rounded-2xl overflow-hidden shadow-xl bg-white border border-gray-100">
               <div class="flex flex-row h-full">
                 <div class="w-1/2 h-full">
-                  <img src="./assets/tgimg1.avif" class="w-full h-full object-cover" alt="Consultation">
+                  <img src="./assets/tgimg1.avif" class="w-full h-full object-cover" alt="Consultation" loading="lazy" decoding="async" width="2940" height="1960">
                 </div>
                 <div class="w-1/2 flex flex-col justify-center px-12 py-8">
                   <span class="text-5xl font-black text-blue-100 mb-4">01</span>
@@ -599,7 +658,7 @@
             <div class="swiper-slide h-full rounded-2xl overflow-hidden shadow-xl bg-white border border-gray-100">
               <div class="flex flex-row h-full">
                 <div class="w-1/2 h-full">
-                  <img src="./assets/tgimg2.jpeg" class="w-full h-full object-cover" alt="Understand">
+                  <img src="./assets/tgimg2.webp" class="w-full h-full object-cover" alt="Understand" loading="lazy" decoding="async" width="1280" height="720">
                 </div>
                 <div class="w-1/2 flex flex-col justify-center px-12 py-8">
                   <span class="text-5xl font-black text-blue-100 mb-4">02</span>
@@ -616,7 +675,7 @@
             <div class="swiper-slide h-full rounded-2xl overflow-hidden shadow-xl bg-white border border-gray-100">
               <div class="flex flex-row h-full">
                 <div class="w-1/2 h-full">
-                  <img src="./assets/tgimg3.jpeg" class="w-full h-full object-cover" alt="Proposal">
+                  <img src="./assets/tgimg3.webp" class="w-full h-full object-cover" alt="Proposal" loading="lazy" decoding="async" width="1280" height="871">
                 </div>
                 <div class="w-1/2 flex flex-col justify-center px-12 py-8">
                   <span class="text-5xl font-black text-blue-100 mb-4">03</span>
@@ -633,7 +692,7 @@
             <div class="swiper-slide h-full rounded-2xl overflow-hidden shadow-xl bg-white border border-gray-100">
               <div class="flex flex-row h-full">
                 <div class="w-1/2 h-full">
-                  <img src="./assets/blogimg1.jpg" class="w-full h-full object-cover" alt="Agreement">
+                  <img src="./assets/blogimg1.webp" class="w-full h-full object-cover" alt="Agreement" loading="lazy" decoding="async" width="890" height="664">
                 </div>
                 <div class="w-1/2 flex flex-col justify-center px-12 py-8">
                   <span class="text-5xl font-black text-blue-100 mb-4">04</span>
@@ -650,7 +709,7 @@
             <div class="swiper-slide h-full rounded-2xl overflow-hidden shadow-xl bg-white border border-gray-100">
               <div class="flex flex-row h-full">
                 <div class="w-1/2 h-full">
-                  <img src="./assets/strategy.jpeg" class="w-full h-full object-cover" alt="Strategize">
+                  <img src="./assets/strategy.webp" class="w-full h-full object-cover" alt="Strategize" loading="lazy" decoding="async" width="1024" height="682">
                 </div>
                 <div class="w-1/2 flex flex-col justify-center px-12 py-8">
                   <span class="text-5xl font-black text-blue-100 mb-4">05</span>
@@ -667,7 +726,7 @@
             <div class="swiper-slide h-full rounded-2xl overflow-hidden shadow-xl bg-white border border-gray-100">
               <div class="flex flex-row h-full">
                 <div class="w-1/2 h-full">
-                  <img src="./assets/image thundergits.jpg" class="w-full h-full object-cover" alt="Build">
+                  <img src="./assets/image thundergits.webp" class="w-full h-full object-cover" alt="Build" loading="lazy" decoding="async">
                 </div>
                 <div class="w-1/2 flex flex-col justify-center px-12 py-8">
                   <span class="text-5xl font-black text-blue-100 mb-4">06</span>
@@ -684,7 +743,7 @@
             <div class="swiper-slide h-full rounded-2xl overflow-hidden shadow-xl bg-white border border-gray-100">
               <div class="flex flex-row h-full">
                 <div class="w-1/2 h-full">
-                  <img src="./assets/about-img.png" class="w-full h-full object-cover" alt="Support">
+                  <img src="./assets/about-img.webp" class="w-full h-full object-cover" alt="Support" loading="lazy" decoding="async" width="1024" height="1536">
                 </div>
                 <div class="w-1/2 flex flex-col justify-center px-12 py-8">
                   <span class="text-5xl font-black text-blue-100 mb-4">07</span>
@@ -718,7 +777,7 @@
             <div class="swiper-wrapper">
               <!-- Step 1 -->
               <div class="swiper-slide rounded-xl overflow-hidden shadow-lg bg-white">
-                <div class="h-1/2"><img src="./assets/tgimg1.avif" class="w-full h-full object-cover" alt=""></div>
+                <div class="h-1/2"><img src="./assets/tgimg1.avif" class="w-full h-full object-cover" alt="" loading="lazy" decoding="async" width="2940" height="1960"></div>
                 <div class="h-1/2 p-6 flex flex-col justify-center">
                   <span class="text-3xl font-black text-blue-100 mb-2">01</span>
                   <h3 class="text-xl font-bold text-gray-900">Consultation</h3>
@@ -727,7 +786,7 @@
               </div>
               <!-- Step 2 -->
               <div class="swiper-slide rounded-xl overflow-hidden shadow-lg bg-white">
-                <div class="h-1/2"><img src="./assets/tgimg2.jpeg" class="w-full h-full object-cover" alt=""></div>
+                <div class="h-1/2"><img src="./assets/tgimg2.webp" class="w-full h-full object-cover" alt="" loading="lazy" decoding="async" width="1280" height="720"></div>
                 <div class="h-1/2 p-6 flex flex-col justify-center">
                   <span class="text-3xl font-black text-blue-100 mb-2">02</span>
                   <h3 class="text-xl font-bold text-gray-900">Understand</h3>
@@ -736,7 +795,7 @@
               </div>
               <!-- Step 3 -->
               <div class="swiper-slide rounded-xl overflow-hidden shadow-lg bg-white">
-                <div class="h-1/2"><img src="./assets/tgimg3.jpeg" class="w-full h-full object-cover" alt=""></div>
+                <div class="h-1/2"><img src="./assets/tgimg3.webp" class="w-full h-full object-cover" alt="" loading="lazy" decoding="async" width="1280" height="871"></div>
                 <div class="h-1/2 p-6 flex flex-col justify-center">
                   <span class="text-3xl font-black text-blue-100 mb-2">03</span>
                   <h3 class="text-xl font-bold text-gray-900">Proposal</h3>
@@ -745,7 +804,7 @@
               </div>
               <!-- Step 4 -->
               <div class="swiper-slide rounded-xl overflow-hidden shadow-lg bg-white">
-                <div class="h-1/2"><img src="./assets/blogimg1.jpg" class="w-full h-full object-cover" alt=""></div>
+                <div class="h-1/2"><img src="./assets/blogimg1.webp" class="w-full h-full object-cover" alt="" loading="lazy" decoding="async" width="890" height="664"></div>
                 <div class="h-1/2 p-6 flex flex-col justify-center">
                   <span class="text-3xl font-black text-blue-100 mb-2">04</span>
                   <h3 class="text-xl font-bold text-gray-900">Agreement</h3>
@@ -754,7 +813,7 @@
               </div>
               <!-- Step 5 -->
               <div class="swiper-slide rounded-xl overflow-hidden shadow-lg bg-white">
-                <div class="h-1/2"><img src="./assets/strategy.jpeg" class="w-full h-full object-cover" alt=""></div>
+                <div class="h-1/2"><img src="./assets/strategy.webp" class="w-full h-full object-cover" alt="" loading="lazy" decoding="async" width="1024" height="682"></div>
                 <div class="h-1/2 p-6 flex flex-col justify-center">
                   <span class="text-3xl font-black text-blue-100 mb-2">05</span>
                   <h3 class="text-xl font-bold text-gray-900">Strategize</h3>
@@ -763,7 +822,7 @@
               </div>
               <!-- Step 6 -->
               <div class="swiper-slide rounded-xl overflow-hidden shadow-lg bg-white">
-                <div class="h-1/2"><img src="./assets/image thundergits.jpg" class="w-full h-full object-cover" alt="">
+                <div class="h-1/2"><img src="./assets/image thundergits.webp" class="w-full h-full object-cover" alt="" loading="lazy" decoding="async">
                 </div>
                 <div class="h-1/2 p-6 flex flex-col justify-center">
                   <span class="text-3xl font-black text-blue-100 mb-2">06</span>
@@ -773,7 +832,7 @@
               </div>
               <!-- Step 7 -->
               <div class="swiper-slide rounded-xl overflow-hidden shadow-lg bg-white">
-                <div class="h-1/2"><img src="./assets/about-img.png" class="w-full h-full object-cover" alt=""></div>
+                <div class="h-1/2"><img src="./assets/about-img.webp" class="w-full h-full object-cover" alt="" loading="lazy" decoding="async" width="1024" height="1536"></div>
                 <div class="h-1/2 p-6 flex flex-col justify-center">
                   <span class="text-3xl font-black text-blue-100 mb-2">07</span>
                   <h3 class="text-xl font-bold text-gray-900">Support</h3>
@@ -800,7 +859,7 @@
   </section>
 
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -905,10 +964,9 @@
 
       <!-- COL 1: LOGO + DESC -->
       <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
-        <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+        <img src="./assets/logo.webp" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" loading="lazy" decoding="async" width="2172" height="724"/>
         <p class="text-sm font-medium leading-relaxed max-w-sm">
-          When do they work well, and when do they on us and finally, when do we
-          actually need how can we avoid them.
+          ThunderGits Consultancy Services Pvt Ltd — building powerful web, mobile, and AI-driven digital solutions for startups and enterprises worldwide.
         </p>
       </div>
 
@@ -979,89 +1037,93 @@
 
   </footer>
 
-  <script src="./cursor.js"></script>
+  <script defer src="./cursor.js"></script>
 </body>
 
 <script>
-
-  const nav = document.getElementById("main-nav");
-  if (nav) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 80) {
-        nav.style.background = "rgba(0, 0, 0, 0.75)";
-        nav.style.backdropFilter = "blur(12px)";
-        nav.style.webkitBackdropFilter = "blur(12px)";
-        nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
-      } else {
-        nav.style.background = "transparent";
-        nav.style.backdropFilter = "none";
-        nav.style.webkitBackdropFilter = "none";
-        nav.style.borderBottom = "none";
-      }
-    });
-  }
-
-  // Initialize AOS
-  AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100
-  });
-
-  /* Interactive Hero Grid */
-  const heroSection = document.getElementById("hero-section");
-  const gridEl = document.getElementById("hero-grid");
-  const CELL = 50;
-  let cols = 0, rows = 0, cellEls = [];
-
-  function buildGrid() {
-    if (!gridEl) return;
-    gridEl.innerHTML = "";
-    cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
-    rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
-
-    gridEl.style.display = "grid";
-    gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
-    gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
-
-    cellEls = [];
-    for (let i = 0; i < cols * rows; i++) {
-      const d = document.createElement("div");
-      d.style.cssText = "transition: background 0.55s ease;";
-      gridEl.appendChild(d);
-      cellEls.push(d);
-    }
-  }
-
-  buildGrid();
-  window.addEventListener("resize", buildGrid);
-
-  if (heroSection && gridEl) {
-    heroSection.addEventListener("mousemove", (e) => {
-      const rect = gridEl.getBoundingClientRect();
-      const cx = Math.floor((e.clientX - rect.left) / CELL);
-      const cy = Math.floor((e.clientY - rect.top) / CELL);
-
-      const pattern = [
-        [0, 0, 0.40],
-        [-1, 0, 0.20], [1, 0, 0.20], [0, -1, 0.20], [0, 1, 0.20],
-        [-1, -1, 0.09], [1, -1, 0.09], [-1, 1, 0.09], [1, 1, 0.09],
-        [-2, 0, 0.04], [2, 0, 0.04], [0, -2, 0.04], [0, 2, 0.04],
-      ];
-
-      pattern.forEach(([dx, dy, alpha]) => {
-        const x = cx + dx, y = cy + dy;
-        if (x < 0 || x >= cols || y < 0 || y >= rows) return;
-        const cell = cellEls[y * cols + x];
-        if (!cell) return;
-        clearTimeout(cell._t);
-        cell.style.background = `rgba(99, 102, 241, ${alpha})`;
-        cell._t = setTimeout(() => {
-          cell.style.background = "";
-        }, 650);
+document.addEventListener('DOMContentLoaded', function() {
+  
+  
+    const nav = document.getElementById("main-nav");
+    if (nav) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 80) {
+          if (nav) nav.style.background = "rgba(0, 0, 0, 0.75)";
+          if (nav) nav.style.backdropFilter = "blur(12px)";
+          if (nav) nav.style.webkitBackdropFilter = "blur(12px)";
+          if (nav) nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
+        } else {
+          if (nav) nav.style.background = "transparent";
+          if (nav) nav.style.backdropFilter = "none";
+          if (nav) nav.style.webkitBackdropFilter = "none";
+          if (nav) nav.style.borderBottom = "none";
+        }
       });
+    }
+  
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
     });
-  }
+  
+    /* Interactive Hero Grid */
+    const heroSection = document.getElementById("hero-section");
+    const gridEl = document.getElementById("hero-grid");
+    const CELL = 50;
+    let cols = 0, rows = 0, cellEls = [];
+  
+    function buildGrid() {
+      if (!gridEl) return;
+      gridEl.innerHTML = "";
+      cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
+      rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
+  
+      gridEl.style.display = "grid";
+      gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+      gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+  
+      cellEls = [];
+      for (let i = 0; i < cols * rows; i++) {
+        const d = document.createElement("div");
+        d.style.cssText = "transition: background 0.55s ease;";
+        gridEl.appendChild(d);
+        cellEls.push(d);
+      }
+    }
+  
+    buildGrid();
+    window.addEventListener("resize", buildGrid);
+  
+    if (heroSection && gridEl) {
+      heroSection.addEventListener("mousemove", (e) => {
+        const rect = gridEl.getBoundingClientRect();
+        const cx = Math.floor((e.clientX - rect.left) / CELL);
+        const cy = Math.floor((e.clientY - rect.top) / CELL);
+  
+        const pattern = [
+          [0, 0, 0.40],
+          [-1, 0, 0.20], [1, 0, 0.20], [0, -1, 0.20], [0, 1, 0.20],
+          [-1, -1, 0.09], [1, -1, 0.09], [-1, 1, 0.09], [1, 1, 0.09],
+          [-2, 0, 0.04], [2, 0, 0.04], [0, -2, 0.04], [0, 2, 0.04],
+        ];
+  
+        pattern.forEach(([dx, dy, alpha]) => {
+          const x = cx + dx, y = cy + dy;
+          if (x < 0 || x >= cols || y < 0 || y >= rows) return;
+          const cell = cellEls[y * cols + x];
+          if (!cell) return;
+          clearTimeout(cell._t);
+          cell.style.background = `rgba(99, 102, 241, ${alpha})`;
+          cell._t = setTimeout(() => {
+            cell.style.background = "";
+          }, 650);
+        });
+      });
+    }
+  
+});
 </script>
 <script>
   // Hamburger toggle

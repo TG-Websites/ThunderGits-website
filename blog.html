@@ -2,9 +2,30 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Blog - ThunderGits Technology</title>
+  <title>Blog | Tech Articles on AI, Web Dev & Digital Marketing — ThunderGits</title>
+  <meta name="description" content="Read the latest articles on AI, web development, mobile apps, cybersecurity, and digital marketing from the ThunderGits team. Stay ahead with expert tech insights.">
+  <meta name="author" content="ThunderGits Consultancy Services Pvt Ltd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thundergits.com/blog.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thundergits.com/blog.html">
+  <meta property="og:title" content="Blog | Tech Articles on AI, Web Dev & Digital Marketing — ThunderGits">
+  <meta property="og:description" content="Read the latest articles on AI, web development, mobile apps, cybersecurity, and digital marketing from the ThunderGits team. Stay ahead with expert tech insights.">
+  <meta property="og:image" content="https://thundergits.com/assets/logo.webp">
+  <meta property="og:site_name" content="ThunderGits">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | Tech Articles on AI, Web Dev & Digital Marketing — ThunderGits">
+  <meta name="twitter:description" content="Read the latest articles on AI, web development, mobile apps, cybersecurity, and digital marketing from the ThunderGits team. Stay ahead with expert tech insights.">
+  <meta name="twitter:image" content="https://thundergits.com/assets/logo.webp">
   <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -27,17 +48,38 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <link rel="stylesheet" href="./style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thundergits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://thundergits.com/blog.html"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="bg-white font-sans text-blue-950 overflow-x-hidden">
 
   <!-- Navbar -->
   <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
-    <div class="flex items-center justify-between  gap-6 lg:gap-20 mx-auto px-3 lg:px-20 py-2">
+    <div class="flex items-center justify-between  gap-4 lg:gap-4 xl:gap-16 mx-auto px-3 lg:px-8 xl:px-20 py-2">
 
       <!-- LOGO -->
-      <a href="#" class="flex items-center">
-        <img src="./assets/logo.png" class="h-14" alt="Logo" />
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/logo.webp" class="h-14 w-auto" alt="ThunderGits Logo" loading="eager" fetchpriority="high" width="2172" height="724"/>
       </a>
 
       <!-- HAMBURGER BUTTON (mobile only) -->
@@ -57,7 +99,7 @@
       </button>
 
       <!-- DESKTOP NAV -->
-      <ul class="hidden lg:flex items-center gap-10 font-medium text-sm">
+      <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
         <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark transition">Home</a></li>
         <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
         <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
@@ -188,9 +230,9 @@
         <li><a href="./blog.html" class=" text-primary font-semibold transition">Blog</a></li>
         <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
 
-        <li>
+        <li class="shrink-0">
           <a href="./consultancy.html"
-            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
             Book Free Consultancy
           </a>
         </li>
@@ -334,7 +376,7 @@
 
         <li class="mt-2">
           <a href="./consultancy.html"
-            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition" style="background-color:#1e40af">
+            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
             Book Free Consultancy
           </a>
         </li>
@@ -388,7 +430,7 @@
           <div class="h-60 overflow-hidden relative">
             <img src="./assets/why-react-native.webp"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              alt="React Native">
+              alt="React Native" loading="lazy" decoding="async" width="1600" height="1067">
             <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
@@ -418,7 +460,7 @@
           <div class="h-60 overflow-hidden relative">
             <img src="./assets/Deepseek.webp"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              alt="Deepseek AI">
+              alt="Deepseek AI" loading="lazy" decoding="async" width="1080" height="1080">
             <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
@@ -446,9 +488,9 @@
           class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col"
           data-aos="fade-up" data-aos-delay="200">
           <div class="h-60 overflow-hidden relative">
-            <img src="./assets/web-scrap.jpg"
+            <img src="./assets/web-scrap.webp"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              alt="Ethical Scraping">
+              alt="Ethical Scraping" loading="lazy" decoding="async" width="6000" height="4000">
             <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
           </div>
           <div class="p-8 flex flex-col flex-grow">
@@ -491,10 +533,9 @@
 
       <!-- COL 1: LOGO + DESC -->
       <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
-        <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+        <img src="./assets/logo.webp" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" loading="lazy" decoding="async" width="2172" height="724"/>
         <p class="text-sm font-medium leading-relaxed max-w-sm">
-          When do they work well, and when do they on us and finally, when do we
-          actually need how can we avoid them.
+          ThunderGits Consultancy Services Pvt Ltd — building powerful web, mobile, and AI-driven digital solutions for startups and enterprises worldwide.
         </p>
       </div>
 
@@ -565,10 +606,8 @@
 
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-
     // Interactive Grid Logic
     const gridContainer = document.getElementById('hero-grid');
     function buildGrid() {
@@ -590,13 +629,13 @@
     if (nav) {
       window.addEventListener("scroll", () => {
         if (window.scrollY > 80) {
-          nav.style.background = "rgba(10, 10, 10, 0.85)";
-          nav.style.backdropFilter = "blur(12px)";
-          nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+          if (nav) nav.style.background = "rgba(10, 10, 10, 0.85)";
+          if (nav) nav.style.backdropFilter = "blur(12px)";
+          if (nav) nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
         } else {
-          nav.style.background = "transparent";
-          nav.style.backdropFilter = "none";
-          nav.style.borderBottom = "none";
+          if (nav) nav.style.background = "transparent";
+          if (nav) nav.style.backdropFilter = "none";
+          if (nav) nav.style.borderBottom = "none";
         }
       });
     }
@@ -622,7 +661,7 @@
           const card = `
             <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up">
               <div class="h-60 overflow-hidden relative">
-                <img src="${blog.image || './assets/default-blog.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}">
+                <img src="${blog.image || './assets/default-blog.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors"></div>
               </div>
               <div class="p-8 flex flex-col flex-grow">
@@ -656,7 +695,10 @@
       }
     }
 
-    document.addEventListener('DOMContentLoaded', loadDynamicBlogs);
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({ duration: 1000, once: true });
+      loadDynamicBlogs();
+    });
   </script>
   <script>
     // Hamburger toggle
@@ -679,7 +721,7 @@
       icon.classList.toggle('rotate-180');
     }
   </script>
-  <script src="./cursor.js"></script>
+  <script defer src="./cursor.js"></script>
 </body>
 
 </html>

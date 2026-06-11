@@ -2,9 +2,30 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ThunderGits - Innovative Tech Solutions</title>
+  <title>Products — ThunderGits Technology</title>
+  <meta name="description" content="Explore ThunderGits' tech products and SaaS platforms designed to accelerate your business digital transformation.">
+  <meta name="author" content="ThunderGits Consultancy Services Pvt Ltd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thundergits.com/product.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thundergits.com/product.html">
+  <meta property="og:title" content="Products — ThunderGits Technology">
+  <meta property="og:description" content="Explore ThunderGits' tech products and SaaS platforms designed to accelerate your business digital transformation.">
+  <meta property="og:image" content="https://thundergits.com/assets/logo.webp">
+  <meta property="og:site_name" content="ThunderGits">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Products — ThunderGits Technology">
+  <meta name="twitter:description" content="Explore ThunderGits' tech products and SaaS platforms designed to accelerate your business digital transformation.">
+  <meta name="twitter:image" content="https://thundergits.com/assets/logo.webp">
   <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -73,7 +94,7 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="./style.css">
@@ -81,12 +102,33 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thundergits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Products",
+      "item": "https://thundergits.com/product.html"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="bg-dark text-theme-text">
 
 
-  <section class="relative bg-cover bg-center " style="background-image: url('./assets/bg2.png');">
+  <section class="relative bg-cover bg-center " style="background-image: url('./assets/bg2.webp');">
 
     <!-- Global Section Overlay (dark tone for bg img) -->
     <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/70 to-transparent z-10"></div>
@@ -96,7 +138,7 @@
       <div class="w-full mx-auto px-6 sm:px-10  flex justify-between items-center h-20 border-b border-theme-bd">
         <!-- Logo -->
         <div class="flex items-center gap-2 text-2xl font-bold text-offwhite animate-slide-fade-up">
-          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-9 h-9 object-contain" loading="eager" fetchpriority="high" width="1310" height="1221"/>
           <span>ThunderGits</span>
         </div>
 
@@ -142,7 +184,7 @@
       class="md:hidden hidden fixed inset-0 z-50 bg-dark text-white flex flex-col px-8 py-10 transition-all duration-300">
       <div class="flex justify-between items-center mb-10">
         <div class="flex items-center gap-2 text-lg font-bold">
-          <img src="./assets/thundergits logo.webp" alt="Logo" class="w-9 h-9 object-contain" />
+          <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-9 h-9 object-contain" loading="lazy" decoding="async" width="1310" height="1221"/>
           <span class="text-white">ThunderGits</span>
         </div>
         <button onclick="toggleMobileMenu()" class="flex items-center gap-2 text-gray-300 text-lg">
@@ -207,8 +249,8 @@
         <div data-aos="fade-right" class="relative flex justify-center items-center order-1 md:order-2 mb-6 md:mb-0">
           <div
             class="relative w-[240px] sm:w-[300px] lg:w-[380px] h-[180px] sm:h-[240px] lg:h-[300px] bg-dark/70 rounded-xl overflow-hidden shadow-xl border border-white/10 hover:border-pink-500/40 transition-all duration-300 group">
-            <img src="./assets/product-hero.jpg" alt="Software Solutions"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="./assets/product-hero.webp" alt="Software Solutions"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="2730" height="2904"/>
             <!-- Overlay Text -->
             <div
               class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/40 to-transparent flex flex-col justify-end p-3 sm:p-4">
@@ -237,7 +279,8 @@
             class="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text font-bold uppercase tracking-wide text-xs sm:text-sm">
             Our Products
           </div>
-          <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-offwhite leading-snug">
+          <h1 class="sr-only">ThunderGits Products — Innovative Software Solutions</h1>
+<h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-offwhite leading-snug">
             Building
             <span class="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">Next-Gen Digital
               Experiences</span>
@@ -384,7 +427,7 @@
 
   <!-- Product Cards Section -->
   <section class="relative z-10 bg-dark/90 text-white py-24 overflow-hidden"
-    style="background: url('./assets/bg2.png') center/cover no-repeat;">
+    style="background: url('./assets/bg2.webp') center/cover no-repeat;">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
 
       <!-- Section Heading -->
@@ -412,7 +455,7 @@
         <article
           class="bg-black border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
           <figure class="w-full h-48 overflow-hidden relative">
-            <img src="./assets/edugit.png" alt="ThunderERP" class="w-full h-full object-cover">
+            <img src="./assets/edugit.webp" alt="ThunderERP" class="w-full h-full object-cover" loading="lazy" decoding="async" width="1867" height="827">
             <figcaption class="absolute bottom-2 left-2 text-white/80 text-xs bg-black/40 px-2 py-1 rounded">Enterprise
               Solution</figcaption>
           </figure>
@@ -438,7 +481,7 @@
         <!-- Product Card 2 -->
         <!-- <article class="bg-black border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
         <figure class="w-full h-48 overflow-hidden relative">
-          <img src="./assets/appbihar.png" alt="Enerlytics AI" class="w-full h-full object-cover">
+          <img src="./assets/appbihar.webp" alt="Enerlytics AI" class="w-full h-full object-cover" loading="lazy" decoding="async" width="1896" height="835">
           <figcaption class="absolute bottom-2 left-2 text-white/80 text-xs bg-black/40 px-2 py-1 rounded">Energy Management</figcaption>
         </figure>
         <div class="p-6 flex flex-col flex-1">
@@ -458,7 +501,7 @@
 
       <article class="bg-black border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
         <figure class="w-full h-48 overflow-hidden relative">
-          <img src="./assets/blogimg1.jpg" alt="FleetIQ" class="w-full h-full object-cover">
+          <img src="./assets/blogimg1.webp" alt="FleetIQ" class="w-full h-full object-cover" loading="lazy" decoding="async" width="890" height="664">
           <figcaption class="absolute bottom-2 left-2 text-white/80 text-xs bg-black/40 px-2 py-1 rounded">Fleet Management</figcaption>
         </figure>
         <div class="p-6 flex flex-col flex-1">
@@ -563,7 +606,7 @@
 
     <!-- 🔥 Background Image Only -->
     <div class="absolute inset-0">
-      <img src="./assets/bg2.png" alt="Footer Background" class="w-full h-full object-cover brightness-20">
+      <img src="./assets/bg2.webp" alt="Footer Background" class="w-full h-full object-cover brightness-20" loading="lazy" decoding="async" width="1024" height="1024">
     </div>
 
     <!-- Content -->
@@ -572,7 +615,7 @@
       <!-- Logo Section -->
       <div class="flex flex-col items-center md:items-start">
         <a class="flex items-center justify-center md:justify-start text-white mb-4">
-          <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" />
+          <img src="./assets/thundergits logo.webp" alt="ThunderGits Logo" class="w-12 h-12 p-2" loading="lazy" decoding="async" width="1310" height="1221"/>
           <span class="ml-2 text-2xl font-semibold">ThunderGits</span>
         </a>
         <p class="text-sm text-gray-300 max-w-xs text-center md:text-left">
@@ -641,7 +684,7 @@
     <!-- <div class="fixed bottom-16 left-4 flex items-center z-40">
             <div
                 class="w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl shadow-lg animate-bounce">
-                <img src="./assets/call-center (1).png" alt="">
+                <img src="./assets/call-center (1).webp" alt="" loading="lazy" decoding="async">
             </div>
             <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
            bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
@@ -667,9 +710,9 @@
     });
   </script>
 
-  <script src="./script.js"></script>
+  <script defer src="./script.js"></script>
 
-  <script src="./cursor.js"></script>
+  <script defer src="./cursor.js"></script>
 </body>
 
 </html>

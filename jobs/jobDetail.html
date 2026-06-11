@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Details - ThunderGits Technology</title>
@@ -25,11 +27,11 @@
 
     <!-- Navbar -->
     <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
-        <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+        <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 lg:px-6 py-4">
             <!-- LOGO -->
             <a href="./../index.html" class="flex items-center">
-                <img src="./../assets/logo.png" class="h-10" alt="logo"
-                    style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+                <img src="./../assets/logo.webp" class="h-10 w-auto" alt="logo"
+                    style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" loading="eager" fetchpriority="high" width="2172" height="724"/>
             </a>
 
             <!-- MOBILE BUTTON -->
@@ -41,7 +43,7 @@
             </button>
 
             <!-- MENU -->
-            <div id="menu" class="hidden md:flex items-center gap-8">
+            <div id="menu" class="hidden md:flex items-center gap-4 lg:gap-7">
                 <a href="./../index.html" class="text-gray-300 hover:text-white text-sm transition">Home</a>
                 <a href="./../about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
                 <a href="./../work.html" class="text-gray-300 hover:text-white text-sm transition">Work</a>
@@ -255,7 +257,7 @@
             <div
                 class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-300">
                 <div class="mb-6">
-                    <img src="./../assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
+                    <img src="./../assets/logo.webp" alt="ThunderGits Logo" class="h-16 w-auto" loading="lazy" decoding="async" width="2172" height="724"/>
                 </div>
                 <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
                     Innovating the future of digital experiences. ThunderGits delivers top-tier technology solutions for
@@ -299,10 +301,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
-
         // Interactive Grid Logic
         const gridContainer = document.getElementById('hero-grid');
         function buildGrid() {
@@ -352,6 +352,7 @@
         let currentJobId = null;
 
         document.addEventListener("DOMContentLoaded", async () => {
+            AOS.init({ duration: 1000, once: true });
             const params = new URLSearchParams(window.location.search);
             const jobId = params.get("id");
 
@@ -449,7 +450,7 @@
             }
         });
     </script>
-    <script src="../cursor.js"></script>
+    <script defer src="../cursor.js"></script>
 </body>
 
 </html>

@@ -1,10 +1,26 @@
 ﻿<!doctype html>
-<html>
+<html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThunderGits - Innovative Tech Solutions</title>
+    <title>NEO Banking IT Solutions — ThunderGits</title>
+  <meta name="description" content="ThunderGits delivers cutting-edge IT solutions for NEO banking and fintech — core banking platforms, digital wallets, compliance automation, fraud detection, and more.">
+  <meta name="author" content="ThunderGits Consultancy Services Pvt Ltd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thundergits.com/industries/index.html?page=banking">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thundergits.com/industries/index.html?page=banking">
+  <meta property="og:title" content="NEO Banking IT Solutions — ThunderGits">
+  <meta property="og:description" content="ThunderGits delivers cutting-edge IT solutions for NEO banking and fintech — core banking platforms, digital wallets, compliance automation, fraud detection, and more.">
+  <meta property="og:image" content="https://thundergits.com/assets/logo.webp">
+  <meta property="og:site_name" content="ThunderGits">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NEO Banking IT Solutions — ThunderGits">
+  <meta name="twitter:description" content="ThunderGits delivers cutting-edge IT solutions for NEO banking and fintech — core banking platforms, digital wallets, compliance automation, fraud detection, and more.">
+  <meta name="twitter:image" content="https://thundergits.com/assets/logo.webp">
     <link rel="icon" href="../../assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
     <link rel="icon" href="../../assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +38,7 @@
 
             <!-- LOGO -->
             <a href="#" class="flex items-center">
-                <img src="../../assets/logo.png" class="h-9" alt="Logo" />
+                <img src="../../assets/logo.webp" class="h-9 w-auto" alt="ThunderGits Logo" loading="eager" fetchpriority="high" width="2172" height="724"/>
             </a>
 
             <!-- HAMBURGER BUTTON (mobile only) -->
@@ -329,8 +345,8 @@
 
         <!-- TOP BAR -->
         <div class="flex items-center justify-between px-6 py-4">
-            <img src="./assets/logo.png" class="h-10"
-                style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+            <img alt="ThunderGits image" src="./assets/logo.webp" class="h-10 w-auto"
+                style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" loading="lazy" decoding="async" width="2172" height="724"/>
 
             <button id="close-menu"
                 class="w-10 h-10 flex items-center justify-center border border-blue-400 rounded-xl">
@@ -770,10 +786,9 @@
             <!-- COL 1: LOGO + DESC -->
             <div
                 class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
-                <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" />
+                <img src="./assets/logo.webp" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" loading="lazy" decoding="async" width="2172" height="724"/>
                 <p class="text-sm font-medium leading-relaxed max-w-sm">
-                    When do they work well, and when do they on us and finally, when do we
-                    actually need how can we avoid them.
+                    ThunderGits Consultancy Services Pvt Ltd — building powerful web, mobile, and AI-driven digital solutions for startups and enterprises worldwide.
                 </p>
             </div>
 
@@ -847,7 +862,7 @@
 
     </footer>
 
-    <script src="../../cursor.js"></script>
+    <script defer src="../../cursor.js"></script>
 </body>
 <script>
     const btn = document.getElementById("menu-btn");
@@ -856,15 +871,15 @@
     const nav = document.getElementById("main-nav");
     window.addEventListener("scroll", () => {
         if (window.scrollY > 80) {
-            nav.style.background = "rgba(0, 0, 0, 0.75)";
-            nav.style.backdropFilter = "blur(12px)";
-            nav.style.webkitBackdropFilter = "blur(12px)";
-            nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
+            if (nav) nav.style.background = "rgba(0, 0, 0, 0.75)";
+            if (nav) nav.style.backdropFilter = "blur(12px)";
+            if (nav) nav.style.webkitBackdropFilter = "blur(12px)";
+            if (nav) nav.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
         } else {
-            nav.style.background = "transparent";
-            nav.style.backdropFilter = "none";
-            nav.style.webkitBackdropFilter = "none";
-            nav.style.borderBottom = "none";
+            if (nav) nav.style.background = "transparent";
+            if (nav) nav.style.backdropFilter = "none";
+            if (nav) nav.style.webkitBackdropFilter = "none";
+            if (nav) nav.style.borderBottom = "none";
         }
     });
 </script>
@@ -1013,6 +1028,6 @@
         icon.classList.toggle('rotate-180');
     }
 </script>
-<script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
+<script defer src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
 
 </html>

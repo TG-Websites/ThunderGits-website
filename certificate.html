@@ -2,9 +2,25 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certificate Verification - ThunderGits Technology</title>
+  <title>Certificate — ThunderGits</title>
+  <meta name="description" content="Verify and view certificates issued by ThunderGits Consultancy Services for project completions, training programs, and partnerships.">
+  <meta name="author" content="ThunderGits Consultancy Services Pvt Ltd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thundergits.com/certificate.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thundergits.com/certificate.html">
+  <meta property="og:title" content="Certificate — ThunderGits">
+  <meta property="og:description" content="Verify and view certificates issued by ThunderGits Consultancy Services for project completions, training programs, and partnerships.">
+  <meta property="og:image" content="https://thundergits.com/assets/logo.webp">
+  <meta property="og:site_name" content="ThunderGits">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Certificate — ThunderGits">
+  <meta name="twitter:description" content="Verify and view certificates issued by ThunderGits Consultancy Services for project completions, training programs, and partnerships.">
+  <meta name="twitter:image" content="https://thundergits.com/assets/logo.webp">
   <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
 
@@ -19,17 +35,38 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="./style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thundergits.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Certificates",
+      "item": "https://thundergits.com/certificate.html"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="bg-black text-white font-['Inter',sans-serif]">
 
   <!-- Navbar -->
   <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
-    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4">
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 lg:px-6 py-4">
       <!-- LOGO -->
       <a href="./index.html" class="flex items-center">
-        <img src="./assets/logo.png" class="h-10" alt="logo"
-          style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" />
+        <img src="./assets/logo.webp" class="h-10 w-auto" alt="logo"
+          style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.6));" loading="eager" fetchpriority="high" width="2172" height="724"/>
       </a>
 
       <!-- MOBILE BUTTON -->
@@ -41,7 +78,7 @@
       </button>
 
       <!-- MENU -->
-      <div id="menu" class="hidden md:flex items-center gap-8">
+      <div id="menu" class="hidden md:flex items-center gap-4 lg:gap-7">
         <a href="./index.html" class="text-gray-300 hover:text-white text-sm transition">Home</a>
         <a href="./about.html" class="text-gray-300 hover:text-white text-sm transition">About</a>
         <a href="./work.html" class="text-gray-300 hover:text-white text-sm transition">Work</a>
@@ -177,8 +214,8 @@
         <div class="bg-white/[0.02] border border-white/10 rounded-[2.5rem] p-10 backdrop-blur-md" data-aos="fade-up">
           <div class="flex items-center gap-8 mb-10">
             <div class="w-24 h-24 rounded-3xl overflow-hidden border border-white/10 bg-white/5">
-              <img id="profile" src="./assets/user.png" alt="Intern Avatar"
-                class="w-full h-full object-cover grayscale" />
+              <img id="profile" src="./assets/user.webp" alt="Intern Avatar"
+                class="w-full h-full object-cover grayscale" loading="lazy" decoding="async" width="512" height="512"/>
             </div>
             <div>
               <h2 id="name" class="text-3xl font-bold text-white mb-2">—</h2>
@@ -255,7 +292,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
       <div class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-300">
         <div class="mb-6">
-          <img src="./assets/logo.png" alt="ThunderGits Logo" class="h-16 w-auto" />
+          <img src="./assets/logo.webp" alt="ThunderGits Logo" class="h-16 w-auto" loading="lazy" decoding="async" width="2172" height="724"/>
         </div>
         <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
           Redefining the digital landscape through innovation and precision. ThunderGits delivers future-ready
@@ -298,187 +335,191 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-
-    // Interactive Grid Logic
-    const gridContainer = document.getElementById('hero-grid');
-    function buildGrid() {
-      if (!gridContainer) return;
-      gridContainer.innerHTML = '';
-      const columns = Math.ceil(window.innerWidth / 50);
-      const rows = Math.ceil(window.innerHeight / 50);
-      const totalCells = columns * rows;
-      for (let i = 0; i < totalCells; i++) {
-        const cell = document.createElement('div');
-        cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
-        gridContainer.appendChild(cell);
+document.addEventListener('DOMContentLoaded', function() {
+  
+      AOS.init({ duration: 1000, once: true });
+  
+      // Interactive Grid Logic
+      const gridContainer = document.getElementById('hero-grid');
+      function buildGrid() {
+        if (!gridContainer) return;
+        gridContainer.innerHTML = '';
+        const columns = Math.ceil(window.innerWidth / 50);
+        const rows = Math.ceil(window.innerHeight / 50);
+        const totalCells = columns * rows;
+        for (let i = 0; i < totalCells; i++) {
+          const cell = document.createElement('div');
+          cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
+          gridContainer.appendChild(cell);
+        }
       }
-    }
-    buildGrid();
-    window.addEventListener('resize', buildGrid);
-
-    // Navbar Scroll Logic
-    const nav = document.getElementById("main-nav");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 80) {
-        nav.style.background = "rgba(10, 10, 10, 0.85)";
-        nav.style.backdropFilter = "blur(12px)";
-        nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
-      } else {
-        nav.style.background = "transparent";
-        nav.style.backdropFilter = "none";
-        nav.style.borderBottom = "none";
-      }
-    });
-
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    menuBtn.addEventListener("click", () => {
-      const isOpen = mobileMenu.style.display === "flex";
-      mobileMenu.style.display = isOpen ? "none" : "flex";
-    });
-
-    // --- Certificate Verification Logic ---
-    const API_BASE = "https://api.thundergits.com";
-    const CERT_ENDPOINT = (certificateId) => `${API_BASE}/api/certificate/${encodeURIComponent(certificateId)}`;
-
-    const $ = (id) => document.getElementById(id);
-
-    function formatDate(iso) {
-      if (!iso) return "—";
-      const d = new Date(iso);
-      if (Number.isNaN(d.getTime())) return "—";
-      return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
-    }
-
-    function formatDateTime(iso) {
-      if (!iso) return "—";
-      const d = new Date(iso);
-      if (Number.isNaN(d.getTime())) return "—";
-      return d.toLocaleString(undefined, {
-        year: "numeric",
-        month: "short",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit"
+      buildGrid();
+      window.addEventListener('resize', buildGrid);
+  
+      // Navbar Scroll Logic
+      const nav = document.getElementById("main-nav");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 80) {
+          nav.style.background = "rgba(10, 10, 10, 0.85)";
+          nav.style.backdropFilter = "blur(12px)";
+          nav.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+        } else {
+          nav.style.background = "transparent";
+          nav.style.backdropFilter = "none";
+          nav.style.borderBottom = "none";
+        }
       });
-    }
-
-    function getCertificateIdFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      const q = params.get("certificateId");
-      if (q) return q.trim();
-
-      const parts = window.location.pathname.split("/").filter(Boolean);
-      if (parts.length > 0) return parts[parts.length - 1];
-
-      return null;
-    }
-
-    function showError(title, msg) {
-      $("loading").classList.add("hidden");
-      $("content").classList.add("hidden");
-      $("errorBox").classList.remove("hidden");
-      $("errorTitle").textContent = title;
-      $("errorMsg").textContent = msg;
-
-      // Update Status Card
-      $("status-text").textContent = "Verification Failed";
-      $("status-text").className = "text-sm font-black uppercase tracking-widest text-red-500";
-      $("status-icon").innerHTML = '<i class="ri-error-warning-line text-3xl text-red-500"></i>';
-    }
-
-    function setText(id, value) {
-      const el = $(id);
-      if (el) el.textContent = value ?? "—";
-    }
-
-    function setHref(id, url) {
-      const el = $(id);
-      if (!el) return;
-      if (!url) {
-        el.textContent = "—";
-        el.href = "#";
-        return;
+  
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        const isOpen = mobileMenu.style.display === "flex";
+        mobileMenu.style.display = isOpen ? "none" : "flex";
+      });
+  
+      // --- Certificate Verification Logic ---
+      const API_BASE = "https://api.thundergits.com";
+      const CERT_ENDPOINT = (certificateId) => `${API_BASE}/api/certificate/${encodeURIComponent(certificateId)}`;
+  
+      const $ = (id) => document.getElementById(id);
+  
+      function formatDate(iso) {
+        if (!iso) return "—";
+        const d = new Date(iso);
+        if (Number.isNaN(d.getTime())) return "—";
+        return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
       }
-      el.textContent = url;
-      el.href = url;
-    }
-
-    (async function init() {
-      const certificateId = getCertificateIdFromUrl();
-      if (!certificateId) {
-        showError("Invalid Link", "Missing certificateId in URL. Please use a valid verification link.");
-        return;
-      }
-
-      $("status-cert-id").textContent = `# ${certificateId}`;
-
-      try {
-        const res = await fetch(CERT_ENDPOINT(certificateId), {
-          method: "GET",
-          headers: { "Accept": "application/json" },
+  
+      function formatDateTime(iso) {
+        if (!iso) return "—";
+        const d = new Date(iso);
+        if (Number.isNaN(d.getTime())) return "—";
+        return d.toLocaleString(undefined, {
+          year: "numeric",
+          month: "short",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit"
         });
-
-        if (res.status === 404) {
-          showError("Not Found", "No record exists for this certificate ID.");
-          return;
-        }
-
-        if (!res.ok) {
-          showError("System Error", "Unable to verify certificate at this time.");
-          return;
-        }
-
-        const record = await res.json();
-
-        if (!record || !record.certificateId) {
-          showError("Invalid Data", "The verification record is incomplete.");
-          return;
-        }
-
-        // Hide Loaders / Errors
-        $("loading").classList.add("hidden");
-        $("errorBox").classList.add("hidden");
-        $("content").classList.remove("hidden");
-
-        // Update Status Card
-        $("status-text").textContent = "Record Verified";
-        $("status-text").className = "text-sm font-black uppercase tracking-widest text-emerald-400";
-        $("status-icon").innerHTML = '<i class="ri-checkbox-circle-line text-3xl text-emerald-400"></i>';
-        $("status-icon").className = "w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center";
-
-        // Fill Status Details
-        setText("domainTop", record.domain || "—");
-        setText("modeTop", record.mode || "—");
-        setText("durationTop", `${formatDate(record.startDate)} - ${formatDate(record.endDate)}`);
-
-        // Fill Profile Card
-        $("profile").src = record.image || "./assets/user.png";
-        setText("name", record.name || "—");
-        setText("certificateId", record.certificateId);
-        setText("startDate", formatDate(record.startDate));
-        setText("endDate", formatDate(record.endDate));
-
-        const a = record.address || {};
-        const loc = [a.city, a.district, a.state, a.pincode].filter(Boolean).join(", ");
-        setText("location", loc || "N/A");
-
-        // Fill Summary Card
-        setText("domain", record.domain || "—");
-        setText("mode", record.mode || "—");
-        setHref("link", record.link);
-        setText("verifiedNow", new Date().toLocaleString());
-
-      } catch (err) {
-        showError("Network Error", "Verification server is currently unreachable.");
       }
-    })();
-  </script>
-  <script src="./cursor.js"></script>
+  
+      function getCertificateIdFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get("certificateId");
+        if (q) return q.trim();
+  
+        const parts = window.location.pathname.split("/").filter(Boolean);
+        if (parts.length > 0) return parts[parts.length - 1];
+  
+        return null;
+      }
+  
+      function showError(title, msg) {
+        $("loading").classList.add("hidden");
+        $("content").classList.add("hidden");
+        $("errorBox").classList.remove("hidden");
+        $("errorTitle").textContent = title;
+        $("errorMsg").textContent = msg;
+  
+        // Update Status Card
+        $("status-text").textContent = "Verification Failed";
+        $("status-text").className = "text-sm font-black uppercase tracking-widest text-red-500";
+        $("status-icon").innerHTML = '<i class="ri-error-warning-line text-3xl text-red-500"></i>';
+      }
+  
+      function setText(id, value) {
+        const el = $(id);
+        if (el) el.textContent = value ?? "—";
+      }
+  
+      function setHref(id, url) {
+        const el = $(id);
+        if (!el) return;
+        if (!url) {
+          el.textContent = "—";
+          el.href = "#";
+          return;
+        }
+        el.textContent = url;
+        el.href = url;
+      }
+  
+      (async function init() {
+        const certificateId = getCertificateIdFromUrl();
+        if (!certificateId) {
+          showError("Invalid Link", "Missing certificateId in URL. Please use a valid verification link.");
+          return;
+        }
+  
+        $("status-cert-id").textContent = `# ${certificateId}`;
+  
+        try {
+          const res = await fetch(CERT_ENDPOINT(certificateId), {
+            method: "GET",
+            headers: { "Accept": "application/json" },
+          });
+  
+          if (res.status === 404) {
+            showError("Not Found", "No record exists for this certificate ID.");
+            return;
+          }
+  
+          if (!res.ok) {
+            showError("System Error", "Unable to verify certificate at this time.");
+            return;
+          }
+  
+          const record = await res.json();
+  
+          if (!record || !record.certificateId) {
+            showError("Invalid Data", "The verification record is incomplete.");
+            return;
+          }
+  
+          // Hide Loaders / Errors
+          $("loading").classList.add("hidden");
+          $("errorBox").classList.add("hidden");
+          $("content").classList.remove("hidden");
+  
+          // Update Status Card
+          $("status-text").textContent = "Record Verified";
+          $("status-text").className = "text-sm font-black uppercase tracking-widest text-emerald-400";
+          $("status-icon").innerHTML = '<i class="ri-checkbox-circle-line text-3xl text-emerald-400"></i>';
+          $("status-icon").className = "w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center";
+  
+          // Fill Status Details
+          setText("domainTop", record.domain || "—");
+          setText("modeTop", record.mode || "—");
+          setText("durationTop", `${formatDate(record.startDate)} - ${formatDate(record.endDate)}`);
+  
+          // Fill Profile Card
+          $("profile").src = record.image || "./assets/user.webp";
+          setText("name", record.name || "—");
+          setText("certificateId", record.certificateId);
+          setText("startDate", formatDate(record.startDate));
+          setText("endDate", formatDate(record.endDate));
+  
+          const a = record.address || {};
+          const loc = [a.city, a.district, a.state, a.pincode].filter(Boolean).join(", ");
+          setText("location", loc || "N/A");
+  
+          // Fill Summary Card
+          setText("domain", record.domain || "—");
+          setText("mode", record.mode || "—");
+          setHref("link", record.link);
+          setText("verifiedNow", new Date().toLocaleString());
+  
+        } catch (err) {
+          showError("Network Error", "Verification server is currently unreachable.");
+        }
+      })();
+    
+});
+</script>
+  <script defer src="./cursor.js"></script>
 </body>
 
 </html>

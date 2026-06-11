@@ -112,7 +112,7 @@ function displayBlogContent(blog) {
                     <img src="${blog.featuredImage}" 
                          alt="${blog.title}" 
                          class="w-full h-[400px] md:h-[700px] object-cover transition-transform duration-1000 group-hover:scale-105"
-                         onerror="this.src='./assets/blogimg1.jpg'"
+                         onerror="this.src='./assets/blogimg1.webp'"
                          data-aos="zoom-in">
                     <div class="absolute inset-0 bg-indigo-950/10 group-hover:bg-transparent transition-colors duration-700"></div>
                 </div>

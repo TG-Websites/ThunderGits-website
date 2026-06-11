@@ -1,0 +1,75 @@
+# ThunderGits
+
+> ThunderGits Consultancy Services Pvt Ltd is an AI-driven IT solutions company founded in Bihar, India. We build web applications, mobile apps, custom software, and digital marketing solutions for startups, SMEs, and enterprises globally. Trusted by 50+ brands with a team of 25+ specialists.
+
+## Services
+
+- [Web Development](https://thundergits.com/service.html#website-development): Custom responsive websites, CMS integration, web applications, React, Next.js
+- [Mobile App Development](https://thundergits.com/service.html#application-development): iOS and Android apps using React Native and Flutter
+- [Digital Marketing](https://thundergits.com/service.html#digital-marketing): SEO, PPC, social media marketing, content strategy, analytics
+- [UI/UX Design](https://thundergits.com/service.html): User research, wireframing, prototyping, interface design
+- [Cybersecurity](https://thundergits.com/service.html): Vulnerability assessments, threat monitoring, encryption, security integrations
+- [Machine Learning & AI](https://thundergits.com/service.html#machine-learning-ai): Predictive analytics, NLP, computer vision, AI automation
+- [Cloud Computing](https://thundergits.com/service.html#cloud-computing): AWS/Azure/GCP migrations, cloud-native development, infrastructure management
+- [IT Consultancy](https://thundergits.com/service.html#it-consultancy): Technology roadmaps, governance, compliance, system integrations
+- [E-Commerce Solutions](https://thundergits.com/service.html#ecommerce-solutions): Online stores, payment gateways, inventory management, Shopify/WooCommerce
+- [Custom Software Development](https://thundergits.com/service.html#custom-software): CRMs, ERPs, SaaS platforms, bespoke enterprise systems
+- [Business Intelligence](https://thundergits.com/service.html#business-intelligence): Dashboards, KPI tracking, big-data analytics, Power BI
+- [DevOps & CloudOps](https://thundergits.com/service.html#devops-cloudops): CI/CD pipelines, monitoring, cost optimization, Kubernetes
+- [AI Consulting](https://thundergits.com/service.html#ai-consulting): AI strategy, model development and deployment, automation roadmaps
+
+## Industries Served
+
+- [NEO Banking & Fintech](https://thundergits.com/industries/index.html?page=banking)
+- [Stock Market & Trading](https://thundergits.com/industries/index.html?page=stock-market)
+- [Healthcare & MedTech](https://thundergits.com/industries/index.html?page=healthcare)
+- [Real Estate & PropTech](https://thundergits.com/industries/index.html?page=real-estate)
+- [Education & EdTech](https://thundergits.com/industries/index.html?page=education)
+- [Retail & Ecommerce](https://thundergits.com/industries/index.html?page=retail-ecommerce)
+- [Gaming](https://thundergits.com/industries/index.html?page=gaming)
+- [Automotive](https://thundergits.com/industries/index.html?page=automotive)
+- [Travel & Hospitality](https://thundergits.com/industries/index.html?page=travel-hospitality)
+- [Food & Beverages](https://thundergits.com/industries/index.html?page=food-beverages)
+- [Transportation & Logistics](https://thundergits.com/industries/index.html?page=transportation-logistics)
+- [Media & Entertainment](https://thundergits.com/industries/index.html?page=media-entertainment)
+- [Corporate & Enterprise](https://thundergits.com/industries/index.html?page=corporate)
+- [Sales & Marketing](https://thundergits.com/industries/index.html?page=sales-marketing)
+- [Household & Consumer](https://thundergits.com/industries/index.html?page=household)
+
+## Company Information
+
+ThunderGits Consultancy Services Pvt Ltd is registered in India. The company has completed 50+ projects for clients ranging from startups to established enterprises. The team comprises 25+ professionals including developers, designers, and strategists.
+
+**Key facts:**
+- 50+ projects completed
+- 55+ happy clients
+- 3+ years of experience
+- 25+ team members
+- Clients: Davabharti, Enersol, Thikana, WeThePeopleOfPatna, Ganesha Foundation, AAP Bihar, Pasuseva, Coding Pandas
+
+## Blog & Knowledge Base
+
+- [Why React Native for Cross-Platform Apps](https://thundergits.com/blogs/why-react-native.html)
+- [The Ethics of Web Scraping](https://thundergits.com/blogs/the-ethical-web-scraping.html)
+- [DeepSeek AI Analysis](https://thundergits.com/blogs/deepseek.html)
+- [All Blog Articles](https://thundergits.com/blog.html)
+
+## Careers
+
+- [Open Positions](https://thundergits.com/career.html): Backend Developer, Frontend Developer, React Native Developer, Kotlin Developer, Deep Learning Engineer, Graphic Designer, SEO Expert, Social Media Manager
+
+## Contact & Location
+
+- **Website**: https://thundergits.com
+- **Email**: info@thundergits.com
+- **Phone**: +91-7765979725
+- **Address**: HN-75, W-8, P-3, Dagarua, B. Ailoth, Musrigharari, Samastipur, Bihar, India - 848101
+- **Instagram**: https://www.instagram.com/thundergits
+- **YouTube**: https://www.youtube.com/@thundergits
+- **LinkedIn**: https://www.linkedin.com/company/thundergits
+
+## Optional
+
+- [Privacy Policy](https://thundergits.com/privacy.html)
+- [Free Consultancy Booking](https://thundergits.com/consultancy.html)
+- [Portfolio / Work](https://thundergits.com/work.html)

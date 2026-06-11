@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Banking Solutions — ThunderGits Technology</title>
@@ -9,7 +11,7 @@
   <link rel="stylesheet" href="../../tailwind.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
     body { font-family: 'DM Sans', sans-serif; }
     h1,h2,h3,h4,h5,.syne { font-family: 'Syne', sans-serif; }
@@ -463,29 +465,33 @@
   </footer>
 
   <script>
-    // Navbar scroll effect matching your site
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 80) {
-        nav.style.background = 'rgba(0,0,0,0.80)';
-        nav.style.backdropFilter = 'blur(14px)';
-        nav.style.borderBottom = '1px solid rgba(255,255,255,0.07)';
-      } else {
-        nav.style.background = 'transparent';
-        nav.style.backdropFilter = 'none';
-        nav.style.borderBottom = 'none';
-      }
-    });
-    // AOS
-    AOS.init({ duration: 900, once: true, offset: 80 });
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+document.addEventListener('DOMContentLoaded', function() {
+  
+      // Navbar scroll effect matching your site
+      const nav = document.getElementById('main-nav');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+          nav.style.background = 'rgba(0,0,0,0.80)';
+          nav.style.backdropFilter = 'blur(14px)';
+          nav.style.borderBottom = '1px solid rgba(255,255,255,0.07)';
+        } else {
+          nav.style.background = 'transparent';
+          nav.style.backdropFilter = 'none';
+          nav.style.borderBottom = 'none';
+        }
       });
-    });
-  </script>
-<script src="../../cursor.js"></script>
+      // AOS
+      AOS.init({ duration: 900, once: true, offset: 80 });
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const t = document.querySelector(a.getAttribute('href'));
+          if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+        });
+      });
+    
+});
+</script>
+<script defer src="../../cursor.js"></script>
 </body>
 </html>

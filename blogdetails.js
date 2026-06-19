@@ -132,16 +132,19 @@ function displayBlogContent(blog) {
     `;
 
     // Update author info
+    const tgAuthors = ['Shivam', 'Abhishek'];
+    const fallbackAuthor = tgAuthors[Math.floor(Math.random() * tgAuthors.length)];
+    const authorName = blog.author?.username || fallbackAuthor;
     const authorInfo = document.getElementById('authorInfo');
     authorInfo.innerHTML = `
         <div class="pt-24 border-t border-gray-100" data-aos="fade-up">
             <div class="flex flex-col sm:flex-row items-center sm:items-start gap-12 bg-gray-50/50 p-8 md:p-12 rounded-3xl border border-gray-100">
                 <div class="w-24 h-24 bg-gradient-to-br from-indigo-600 to-blue-800 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-xl shadow-indigo-500/20 flex-shrink-0">
-                    ${(blog.author?.username || 'TG').charAt(0).toUpperCase()}
+                    ${authorName.charAt(0).toUpperCase()}
                 </div>
                 <div>
                     <span class="text-[10px] tracking-[0.3em] font-black uppercase text-indigo-500/60 mb-3 block">Written By</span>
-                    <h4 class="text-3xl font-bold text-blue-950 mb-4">${blog.author?.username || 'ThunderGits Team'}</h4>
+                    <h4 class="text-3xl font-bold text-blue-950 mb-4">${authorName}</h4>
                     <p class="text-gray-500 leading-relaxed text-lg max-w-2xl font-light">
                         ${blog.author?.bio || 'Leading the digital transformation frontier at ThunderGits Technology. Expert in building scalable architectures and premium user experiences.'}
                     </p>
@@ -235,7 +238,7 @@ function displayRelatedBlogs(blogs) {
             ${blogsToShow.map((blog, index) => `
                 <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="${(index % 3) * 100}">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="${blog.image || './assets/default-blog.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}" onerror="this.src='./assets/default-blog.webp'">
+                        <img src="${blog.featuredImage || blog.image || './assets/blogimg1.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}" onerror="this.src='./assets/blogimg1.webp'">
                         <div class="absolute inset-0 bg-indigo-950/10 group-hover:bg-transparent transition-colors duration-700"></div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">

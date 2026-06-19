@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="language" content="en" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Enersol Biopower — ThunderGits</title>
+  <meta name="description" content="How ThunderGits built a full-stack e-commerce & brand platform for Enersol Biopower, helping them expand digitally and grow sales.">
+  <meta name="author" content="ThunderGits Consultancy Services Pvt Ltd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thundergits.com/case-study.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thundergits.com/case-study.html">
+  <meta property="og:title" content="Case Study: Enersol Biopower — ThunderGits">
+  <meta property="og:description" content="How ThunderGits built a full-stack e-commerce & brand platform for Enersol Biopower, helping them expand digitally and grow sales.">
+  <meta property="og:image" content="https://thundergits.com/assets/enersol.webp">
+  <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./tailwind.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-white text-black font-['Inter',sans-serif]">
+
+  <!-- NAV -->
+  <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+    <div class="flex items-center justify-between gap-4 mx-auto px-4 lg:px-8 xl:px-20 py-2">
+      <a href="./index.html" class="flex items-center">
+        <img src="./assets/logo.webp" class="h-14 w-auto" alt="ThunderGits Logo" loading="eager" width="2172" height="724"/>
+      </a>
+      <ul class="hidden lg:flex items-center gap-8 font-medium text-sm">
+        <li><a href="./index.html" class="text-black hover:text-indigo-600 transition">Home</a></li>
+        <li><a href="./about.html" class="text-black hover:text-indigo-600 transition">About</a></li>
+        <li><a href="./work.html" class="text-black hover:text-indigo-600 transition">Work</a></li>
+        <li><a href="./service.html" class="text-black hover:text-indigo-600 transition">Services</a></li>
+        <li><a href="./contact.html" class="px-5 py-2.5 bg-indigo-600 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-indigo-500 transition">Contact</a></li>
+      </ul>
+      <button id="mobile-menu-btn" class="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-700 rounded-lg lg:hidden hover:bg-gray-100">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden px-4 py-4 border-t border-gray-100 flex flex-col gap-3 text-sm font-medium">
+      <a href="./index.html" class="block hover:text-indigo-600">Home</a>
+      <a href="./about.html" class="block hover:text-indigo-600">About</a>
+      <a href="./work.html" class="block hover:text-indigo-600">Work</a>
+      <a href="./service.html" class="block hover:text-indigo-600">Services</a>
+      <a href="./contact.html" class="block hover:text-indigo-600">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-32 pb-16 bg-black relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/30 to-black pointer-events-none"></div>
+    <div class="max-w-5xl mx-auto px-6 relative z-10" data-aos="fade-up">
+      <a href="./work.html" class="inline-flex items-center gap-2 text-gray-500 text-xs uppercase tracking-widest hover:text-white transition mb-10">
+        <i class="ri-arrow-left-line"></i> All Projects
+      </a>
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="text-[10px] font-black uppercase tracking-widest text-indigo-400 px-3 py-1 border border-indigo-400/30 rounded-full">Case Study</span>
+        <span class="text-[10px] font-black uppercase tracking-widest text-gray-600 px-3 py-1 border border-white/10 rounded-full">E-Commerce</span>
+        <span class="text-[10px] font-black uppercase tracking-widest text-gray-600 px-3 py-1 border border-white/10 rounded-full">Brand Identity</span>
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-light text-white leading-tight mb-6">Enersol <span class="font-black">Biopower</span></h1>
+      <p class="text-gray-400 text-xl font-light max-w-2xl leading-relaxed">How ThunderGits transformed a traditional biomass energy company into a digital-first brand with a full e-commerce platform and strong online presence.</p>
+    </div>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <section class="bg-black pb-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="rounded-3xl overflow-hidden shadow-2xl shadow-indigo-500/10" data-aos="zoom-in">
+        <img src="./assets/enersol.webp" alt="Enersol Biopower website screenshot" class="w-full object-cover" loading="lazy" decoding="async"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW STATS -->
+  <section class="bg-white py-20 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+          <p class="text-4xl font-black text-indigo-600 mb-2">3x</p>
+          <p class="text-gray-500 text-sm font-light">Increase in Online Enquiries</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="80">
+          <p class="text-4xl font-black text-indigo-600 mb-2">8 wks</p>
+          <p class="text-gray-500 text-sm font-light">End-to-End Delivery</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="160">
+          <p class="text-4xl font-black text-indigo-600 mb-2">100%</p>
+          <p class="text-gray-500 text-sm font-light">Mobile Responsive</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="240">
+          <p class="text-4xl font-black text-indigo-600 mb-2">SEO</p>
+          <p class="text-gray-500 text-sm font-light">Indexed & Ranking</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="bg-white py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+
+        <!-- Sidebar metadata -->
+        <aside class="lg:col-span-1 space-y-10" data-aos="fade-right">
+          <div>
+            <h3 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">Client</h3>
+            <p class="text-blue-950 font-semibold">Enersol Biopower Pvt Ltd</p>
+          </div>
+          <div>
+            <h3 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">Industry</h3>
+            <p class="text-blue-950 font-semibold">Renewable Energy / Biomass</p>
+          </div>
+          <div>
+            <h3 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">Services Delivered</h3>
+            <ul class="space-y-2 text-blue-950 font-light text-sm">
+              <li class="flex gap-2"><i class="ri-check-line text-indigo-500 mt-0.5"></i> Brand Identity & Logo</li>
+              <li class="flex gap-2"><i class="ri-check-line text-indigo-500 mt-0.5"></i> UI/UX Design</li>
+              <li class="flex gap-2"><i class="ri-check-line text-indigo-500 mt-0.5"></i> E-Commerce Platform</li>
+              <li class="flex gap-2"><i class="ri-check-line text-indigo-500 mt-0.5"></i> Product Catalogue</li>
+              <li class="flex gap-2"><i class="ri-check-line text-indigo-500 mt-0.5"></i> SEO & On-page Optimization</li>
+              <li class="flex gap-2"><i class="ri-check-line text-indigo-500 mt-0.5"></i> Admin Dashboard</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">Tech Stack</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full">Next.js</span>
+              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full">Node.js</span>
+              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full">MongoDB</span>
+              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full">Tailwind CSS</span>
+              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full">Razorpay</span>
+            </div>
+          </div>
+          <a href="https://enersolbiopower.com/" target="_blank" rel="noopener"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-indigo-500 transition">
+            Visit Live Site <i class="ri-arrow-right-up-line"></i>
+          </a>
+        </aside>
+
+        <!-- Main article -->
+        <article class="lg:col-span-2 space-y-16">
+
+          <!-- The Challenge -->
+          <div data-aos="fade-up">
+            <span class="text-indigo-600 text-[10px] font-black uppercase tracking-[0.3em] mb-3 block">01 — The Challenge</span>
+            <h2 class="text-3xl font-bold text-blue-950 mb-5">A leading biomass producer with zero digital footprint</h2>
+            <div class="space-y-4 text-gray-600 font-light leading-relaxed">
+              <p>Enersol Biopower, a Bihar-based manufacturer of high-quality biomass briquettes and pellets, had been serving industrial clients for years. Despite their product quality and capacity, they had no website, no digital catalogue, and relied entirely on word-of-mouth and trade networks for business.</p>
+              <p>They approached ThunderGits with a clear need: establish a professional digital presence that would allow them to showcase their product line, attract national and international buyers, and accept inquiries and orders online.</p>
+              <p>The key challenges were:</p>
+              <ul class="list-disc list-inside space-y-2 text-gray-500 ml-4">
+                <li>No existing brand identity or visual language</li>
+                <li>Complex product catalogue with multiple specifications</li>
+                <li>Need to appeal to both B2B buyers and retail customers</li>
+                <li>Tight delivery timeline of 8 weeks</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Our Approach -->
+          <div data-aos="fade-up">
+            <span class="text-indigo-600 text-[10px] font-black uppercase tracking-[0.3em] mb-3 block">02 — Our Approach</span>
+            <h2 class="text-3xl font-bold text-blue-950 mb-5">Strategy-first, then execution</h2>
+            <div class="space-y-4 text-gray-600 font-light leading-relaxed">
+              <p>We started with a brand discovery workshop to understand Enersol's vision, their customers, and competitors. From this, we defined a clean, professional visual identity — a green-and-amber palette representing sustainability and energy — that would stand out in the biomass sector.</p>
+              <p>For the e-commerce platform, we chose Next.js for its SEO advantages and fast rendering, paired with a Node.js + MongoDB backend to handle the product management system and inquiry flows. We built a custom admin dashboard so the Enersol team could manage products, orders, and customer queries without any technical knowledge.</p>
+              <p>The website was structured to serve both audiences: B2B buyers got detailed product specification sheets and a bulk inquiry form, while retail customers were guided through a streamlined checkout powered by Razorpay.</p>
+            </div>
+          </div>
+
+          <!-- Solution -->
+          <div data-aos="fade-up">
+            <span class="text-indigo-600 text-[10px] font-black uppercase tracking-[0.3em] mb-3 block">03 — The Solution</span>
+            <h2 class="text-3xl font-bold text-blue-950 mb-5">A complete digital ecosystem</h2>
+            <div class="space-y-4 text-gray-600 font-light leading-relaxed">
+              <p>We delivered a full-stack platform with the following capabilities:</p>
+              <ul class="space-y-3 ml-4">
+                <li class="flex gap-3"><i class="ri-check-double-line text-indigo-500 text-lg mt-0.5 shrink-0"></i><span><strong class="text-blue-950">Product Catalogue:</strong> Dynamic pages for each SKU with specs, certifications, and bulk pricing. Products managed entirely from the admin panel.</span></li>
+                <li class="flex gap-3"><i class="ri-check-double-line text-indigo-500 text-lg mt-0.5 shrink-0"></i><span><strong class="text-blue-950">E-Commerce Checkout:</strong> Cart, order management, and Razorpay payment gateway for direct retail purchases.</span></li>
+                <li class="flex gap-3"><i class="ri-check-double-line text-indigo-500 text-lg mt-0.5 shrink-0"></i><span><strong class="text-blue-950">B2B Inquiry System:</strong> A dedicated bulk inquiry form with email notifications to the sales team for every submission.</span></li>
+                <li class="flex gap-3"><i class="ri-check-double-line text-indigo-500 text-lg mt-0.5 shrink-0"></i><span><strong class="text-blue-950">SEO Foundation:</strong> Meta tags, structured data, sitemap, and robots.txt configured to maximise indexation from day one.</span></li>
+                <li class="flex gap-3"><i class="ri-check-double-line text-indigo-500 text-lg mt-0.5 shrink-0"></i><span><strong class="text-blue-950">Admin Dashboard:</strong> Role-based access for the Enersol team to manage products, view orders, and respond to inquiries.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div data-aos="fade-up">
+            <span class="text-indigo-600 text-[10px] font-black uppercase tracking-[0.3em] mb-3 block">04 — Results</span>
+            <h2 class="text-3xl font-bold text-blue-950 mb-5">Measurable impact from day one</h2>
+            <div class="space-y-4 text-gray-600 font-light leading-relaxed">
+              <p>Within 4 weeks of launch, Enersol Biopower saw a significant lift in inbound business inquiries directly attributed to the website. The platform began ranking on Google for several biomass product keywords in Bihar and Jharkhand.</p>
+              <p>The client team, with zero technical background, was able to independently add new products, update pricing, and respond to inquiries via the admin dashboard — achieving full operational independence from day one.</p>
+              <p>Most importantly, Enersol now has a brand presence that matches the quality of their product — a professional identity that instils confidence in both domestic and export buyers.</p>
+            </div>
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-black py-24">
+    <div class="max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
+      <span class="text-indigo-400 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Start Your Project</span>
+      <h2 class="text-4xl lg:text-5xl font-light text-white mb-6 leading-tight">Want results like <span class="font-bold">Enersol?</span></h2>
+      <p class="text-gray-500 font-light mb-10 max-w-xl mx-auto">Let's build your next digital product. From idea to launch, ThunderGits handles it all.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="./contact.html" class="inline-flex items-center gap-3 px-10 py-5 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-indigo-500 transition-all hover:scale-105">
+          Book a Free Consultation <i class="ri-arrow-right-up-line text-lg"></i>
+        </a>
+        <a href="./work.html" class="inline-flex items-center gap-3 px-10 py-5 border border-white/15 text-white text-xs font-black uppercase tracking-widest rounded-full hover:border-white/40 transition-all">
+          View All Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-gray-100 text-black">
+    <div class="grid grid-cols-1 md:grid-cols-3">
+      <div class="flex flex-col justify-center px-8 py-10 border-b md:border-b-0 md:border-r border-gray-300">
+        <img src="./assets/logo.webp" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" loading="lazy" width="2172" height="724"/>
+        <p class="text-sm font-medium leading-relaxed max-w-sm">ThunderGits Consultancy Services Pvt Ltd — building powerful web, mobile, and AI-driven digital solutions for startups and enterprises worldwide.</p>
+      </div>
+      <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
+        <a href="#" class="px-8 py-5 border-b border-gray-300 font-semibold hover:bg-gray-200 transition">Facebook</a>
+        <a href="https://www.instagram.com/thundergits" class="px-8 py-5 border-b border-gray-300 font-semibold hover:bg-gray-200 transition">Instagram</a>
+        <a href="https://www.youtube.com/@thundergits" class="px-8 py-5 border-b border-gray-300 font-semibold hover:bg-gray-200 transition">YouTube</a>
+        <a href="https://www.linkedin.com/company/thundergits" class="px-8 py-5 font-semibold hover:bg-gray-200 transition">LinkedIn</a>
+      </div>
+      <div class="flex flex-col justify-between px-8 py-12">
+        <h2 class="font-black text-blue-950 uppercase leading-none text-5xl mb-6">LET'S TALK</h2>
+        <div class="space-y-2">
+          <p class="text-sm text-gray-600">tech.thundergits@gmail.com</p>
+          <p class="text-sm text-gray-600">+91 77659 79725</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-300 px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+      <p>© 2025 ThunderGits Consultancy Services Pvt Ltd. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="./privacy.html" class="hover:text-black transition">Privacy Policy</a>
+        <a href="./index.html" class="hover:text-black transition">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/917765979725" target="_blank" rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp"
+     style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.45);transition:transform 0.2s,box-shadow 0.2s;"
+     onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 32px rgba(37,211,102,0.6)'"
+     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 24px rgba(37,211,102,0.45)'">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30" fill="#fff"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.74 5.494 2.031 7.806L0 32l8.418-2.007A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.28 13.28 0 0 1-6.77-1.852l-.485-.288-5.002 1.193 1.216-4.858-.315-.5A13.28 13.28 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.28-9.72c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.896.2-.265.398-1.029 1.295-1.262 1.561-.232.265-.465.298-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.056-1.98-2.36-2.213-2.758-.233-.398-.025-.614.175-.812.18-.18.398-.465.597-.698.2-.232.265-.398.398-.664.133-.265.066-.498-.033-.698-.1-.2-.896-2.16-1.228-2.958-.323-.776-.65-.671-.896-.683l-.764-.013c-.265 0-.697.1-1.062.498-.365.398-1.394 1.362-1.394 3.32 0 1.96 1.427 3.852 1.627 4.118.2.265 2.808 4.288 6.803 6.016.951.41 1.693.655 2.272.839.954.303 1.822.26 2.508.158.765-.114 2.354-.963 2.686-1.893.333-.93.333-1.728.233-1.894-.099-.166-.365-.265-.763-.464z"/></svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, offset: 60 });
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

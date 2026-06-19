@@ -136,7 +136,7 @@ async function fetchLatestBlogs() {
         const container = document.getElementById("blogContainer");
         if (!container) return;
 
-        const res = await fetch("https://api.thundergits.com/api/blogs/published?limit=3&sortBy=publishedAt&sortOrder=desc");
+        const res = await fetch("https://api.thundergits.com/api/blog");
         const data = await res.json();
 
         console.log("Blog API response:", data);

@@ -687,18 +687,22 @@
       <aside class=" ">
         <div class="sticky top-28 space-y-8">
           <!-- Newsletter / CTA card -->
-          <div class="bg-gradient-to-br from-primary to-slate-800 rounded-2xl shadow-xl p-6 text-white ">
-            <div class="flex justify-between items-start"><i
-                class="fas fa-envelope-open-text text-3xl opacity-70"></i><span
-                class="bg-white/20 text-white text-xs px-2 py-1 rounded-full">weekly</span></div>
-            <h4 class="text-xl font-bold mt-4">Never miss an insight</h4>
-            <p class="text-sm text-gray-200 mt-1 leading-relaxed">Get the latest design & tech stories delivered to your
-              inbox.</p>
-            <div class="mt-4 flex flex-col gap-2">
-              <button
-                class="bg-indigo-700 hover:bg-indigo-800 text-white font-medium py-2 rounded-xl text-sm transition">Subscribe
-                →</button>
+          <div class="bg-gradient-to-br from-primary to-slate-800 rounded-2xl shadow-xl p-6 text-white">
+            <div class="flex justify-between items-start">
+              <i class="fas fa-envelope-open-text text-3xl opacity-70"></i>
+              <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full">weekly</span>
             </div>
+            <h4 class="text-xl font-bold mt-4">Never miss an insight</h4>
+            <p class="text-sm text-gray-200 mt-1 leading-relaxed">Get the latest articles delivered every week.</p>
+            <form id="sidebar-newsletter-form" class="mt-4 flex flex-col gap-2" onsubmit="handleSidebarSubscribe(event)">
+              <input id="sidebar-newsletter-email" type="email" required placeholder="your@email.com"
+                class="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:border-white/50 transition"/>
+              <button type="submit" id="sidebar-sub-btn"
+                class="bg-indigo-700 hover:bg-indigo-800 text-white font-medium py-2.5 rounded-xl text-sm transition">
+                Subscribe →
+              </button>
+            </form>
+            <p id="sidebar-newsletter-msg" class="hidden mt-2 text-xs text-white/80"></p>
           </div>
 
           <!-- Recommended Posts (suggestions) -->
@@ -1292,6 +1296,38 @@ document.addEventListener('DOMContentLoaded', function() {
     loadRecommendedBlogs();
   </script>
   <script defer src="./cursor.js"></script>
+  <script>
+  async function handleSidebarSubscribe(e) {
+    e.preventDefault();
+    const email = document.getElementById('sidebar-newsletter-email').value.trim();
+    const btn = document.getElementById('sidebar-sub-btn');
+    const msg = document.getElementById('sidebar-newsletter-msg');
+    btn.textContent = 'Subscribing...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://api.thundergits.com/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        msg.textContent = "You're subscribed!";
+        msg.className = 'mt-2 text-xs text-green-300';
+        document.getElementById('sidebar-newsletter-form').reset();
+      } else {
+        msg.textContent = data.message || 'Something went wrong.';
+        msg.className = 'mt-2 text-xs text-red-300';
+      }
+    } catch (_) {
+      msg.textContent = 'Unable to subscribe. Try again later.';
+      msg.className = 'mt-2 text-xs text-red-300';
+    }
+    msg.classList.remove('hidden');
+    btn.textContent = 'Subscribe →';
+    btn.disabled = false;
+  }
+  </script>
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/917765979725" target="_blank" rel="noopener noreferrer"
      aria-label="Chat on WhatsApp"

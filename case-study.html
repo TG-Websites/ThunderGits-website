@@ -196,7 +196,7 @@
   </nav>
 
   <!-- LOADING STATE -->
-  <div id="cs-loading" class="pt-40 pb-20 items-center justify-center min-h-screen bg-black" style="display:flex;">
+  <div id="cs-loading" class="items-center justify-center min-h-[70vh] bg-black" style="display:flex;">
     <div class="text-center">
       <div class="w-10 h-10 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
       <p class="text-gray-500 text-sm">Loading case study...</p>
@@ -204,7 +204,7 @@
   </div>
 
   <!-- ERROR STATE -->
-  <div id="cs-error" class="pt-40 pb-20 items-center justify-center min-h-screen bg-black" style="display:none;">
+  <div id="cs-error" class="items-center justify-center min-h-[70vh] bg-black" style="display:none;">
     <div class="text-center px-6">
       <i class="ri-error-warning-line text-red-500 text-5xl mb-4 block"></i>
       <h2 class="text-white text-2xl font-bold mb-3">Case Study Not Found</h2>
@@ -295,9 +295,9 @@
 
       document.getElementById('cs-content').innerHTML = `
         <!-- HERO -->
-        <section class="pt-40 pb-16 bg-black relative overflow-hidden">
+        <section class="min-h-[70vh] flex items-center bg-black relative overflow-hidden">
           <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/30 to-black pointer-events-none"></div>
-          <div class="max-w-5xl mx-auto px-6 relative z-10" data-aos="fade-up">
+          <div class="max-w-5xl mx-auto px-6 relative z-10 py-32 w-full" data-aos="fade-up">
             <a href="./work.html" class="inline-flex items-center gap-2 text-gray-500 text-xs uppercase tracking-widest hover:text-white transition mb-10">
               <i class="ri-arrow-left-line"></i> All Projects
             </a>

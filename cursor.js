@@ -5,7 +5,11 @@
         return;
     }
 
-    // Inject CSS styles dynamically
+    // Read theme color from CSS variable (auto-updates with theme)
+    const rgb = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--primary-rgb').trim() || '220, 38, 38';
+
+    // Inject CSS styles dynamically — colors read from theme variable
     const style = document.createElement('style');
     style.innerHTML = `
         /* Hide default cursor on desktop for main elements */
@@ -21,7 +25,7 @@
         .custom-cursor-dot {
             width: 8px;
             height: 8px;
-            background-color: #4f46e5; /* Modern Premium Indigo */
+            background-color: rgba(${rgb}, 1);
             border-radius: 50%;
             position: fixed;
             top: 0;
@@ -31,13 +35,13 @@
             z-index: 9999999;
             opacity: 0;
             transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, opacity 0.3s ease;
-            box-shadow: 0 0 8px rgba(79, 70, 229, 0.6);
+            box-shadow: 0 0 8px rgba(${rgb}, 0.6);
         }
 
         .custom-cursor-circle {
             width: 36px;
             height: 36px;
-            border: 1.5px solid rgba(79, 70, 229, 0.5);
+            border: 1.5px solid rgba(${rgb}, 0.5);
             border-radius: 50%;
             position: fixed;
             top: 0;
@@ -60,21 +64,21 @@
         .custom-cursor-circle.hover {
             width: 52px;
             height: 52px;
-            border-color: rgba(79, 70, 229, 0.9);
-            background-color: rgba(79, 70, 229, 0.12);
-            box-shadow: 0 0 15px rgba(79, 70, 229, 0.25);
+            border-color: rgba(${rgb}, 0.9);
+            background-color: rgba(${rgb}, 0.12);
+            box-shadow: 0 0 15px rgba(${rgb}, 0.25);
         }
 
         /* Click feedback */
         .custom-cursor-dot.click {
             transform: translate(-50%, -50%) scale(1.4);
-            background-color: #3b82f6;
+            background-color: rgba(${rgb}, 0.8);
         }
 
         .custom-cursor-circle.click {
             transform: translate(-50%, -50%) scale(0.8);
-            border-color: #3b82f6;
-            background-color: rgba(59, 130, 246, 0.1);
+            border-color: rgba(${rgb}, 1);
+            background-color: rgba(${rgb}, 0.1);
         }
     `;
     document.head.appendChild(style);
@@ -82,7 +86,7 @@
     // Create cursor DOM elements
     const dot = document.createElement('div');
     dot.className = 'custom-cursor-dot';
-    
+
     const circle = document.createElement('div');
     circle.className = 'custom-cursor-circle';
 
@@ -92,20 +96,20 @@
     // Position variables
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
-    
+
     let dotX = mouseX;
     let dotY = mouseY;
-    
+
     let circleX = mouseX;
     let circleY = mouseY;
-    
+
     let isVisible = false;
 
     // Track mouse movement
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        
+
         if (!isVisible) {
             dot.style.opacity = '1';
             circle.style.opacity = '1';
@@ -118,20 +122,20 @@
         // Dot follows fast (high speed factor)
         dotX += (mouseX - dotX) * 0.25;
         dotY += (mouseY - dotY) * 0.25;
-        
+
         // Circle follows slower for a premium elastic lag effect
         circleX += (mouseX - circleX) * 0.12;
         circleY += (mouseY - circleY) * 0.12;
 
         dot.style.left = `${dotX}px`;
         dot.style.top = `${dotY}px`;
-        
+
         circle.style.left = `${circleX}px`;
         circle.style.top = `${circleY}px`;
 
         requestAnimationFrame(animateCursor);
     }
-    
+
     requestAnimationFrame(animateCursor);
 
     // Handle mouse enter/leave browser viewport
@@ -140,7 +144,7 @@
         circle.style.opacity = '0';
         isVisible = false;
     });
-    
+
     document.addEventListener('mouseenter', () => {
         dot.style.opacity = '1';
         circle.style.opacity = '1';

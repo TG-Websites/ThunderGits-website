@@ -97,7 +97,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./tailwind.css">
 
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
@@ -144,9 +144,7 @@
 
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-8 text-offwhite font-medium animate-slide-fade-up-delay1">
-          <a href="./index.html"
-            class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Home</a>
-          <a href="./about.html"
+<a href="./about.html"
             class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">About</a>
           <a href="./work.html"
             class="pb-1 border-b-2 border-transparent hover:border-linkhover transition-all">Work</a>
@@ -194,10 +192,7 @@
       </div>
 
       <div class="space-y-5">
-        <a href="./index.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
-          <span>Home</span><span class="text-sm">→</span>
-        </a>
-        <a href="./about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
+<a href="./about.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
           <span>About</span><span class="text-sm">→</span>
         </a>
         <a href="./work.html" class="flex items-center gap-1 text-base font-medium hover:text-linkhover transition">
@@ -352,7 +347,7 @@
 
 
   <!-- Featured Solutions Section -->
-  <section class="relative z-10 bg-white text-dark py-16 sm:py-20 lg:py-24">
+  <section class="relative z-10 bg-section-light text-dark py-16 sm:py-20 lg:py-24">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
       <!-- Heading -->
       <div class="text-left max-w-3xl mx-auto lg:mx-0 mb-10">
@@ -362,14 +357,14 @@
           What We Offer
         </h4>
 
-        <h2 class="text-gray-900 font-bold leading-snug text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block"
+        <h2 class="text-theme-heading font-bold leading-snug text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block"
           data-aos="fade-left" data-aos-delay="200">
           Services That Drive Results
           <span
             class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
         </h2>
 
-        <p class="text-gray-700 text-base sm:text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+        <p class="text-theme-body text-base sm:text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="400">
           Empowering your business with end-to-end digital solutions — from IoT to Cloud and AI-powered
           innovation.
         </p>
@@ -379,7 +374,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
         <!-- Card 1 -->
         <div
-          class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-pink-500/20 hover:border-pink-500/40 transition-all duration-500">
+          class="group relative bg-section-light border border-default rounded-lg p-6 shadow-md hover:shadow-pink-500/20 hover:border-pink-500/40 transition-all duration-500">
           <div
             class="w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500 text-white mb-5">
             <i class="ri-cpu-line text-2xl"></i>
@@ -393,7 +388,7 @@
 
         <!-- Card 2 -->
         <div
-          class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-purple-500/20 hover:border-purple-500/40 transition-all duration-500">
+          class="group relative bg-section-light border border-default rounded-lg p-6 shadow-md hover:shadow-purple-500/20 hover:border-purple-500/40 transition-all duration-500">
           <div
             class="w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-r from-purple-500 to-pink-500 text-white mb-5">
             <i class="ri-brain-line text-2xl"></i>
@@ -407,7 +402,7 @@
 
         <!-- Card 3 -->
         <div
-          class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-pink-400/20 hover:border-pink-400/40 transition-all duration-500">
+          class="group relative bg-section-light border border-default rounded-lg p-6 shadow-md hover:shadow-pink-400/20 hover:border-pink-400/40 transition-all duration-500">
           <div
             class="w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500 text-white mb-5">
             <i class="ri-cloud-line text-2xl"></i>
@@ -453,7 +448,7 @@
 
         <!-- Product Card 1 -->
         <article
-          class="bg-black border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
+          class="bg-section-dark border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
           <figure class="w-full h-48 overflow-hidden relative">
             <img src="./assets/edugit.webp" alt="ThunderERP" class="w-full h-full object-cover" loading="lazy" decoding="async" width="1867" height="827">
             <figcaption class="absolute bottom-2 left-2 text-white/80 text-xs bg-black/40 px-2 py-1 rounded">Enterprise
@@ -479,7 +474,7 @@
         </article>
 
         <!-- Product Card 2 -->
-        <!-- <article class="bg-black border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
+        <!-- <article class="bg-section-dark border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
         <figure class="w-full h-48 overflow-hidden relative">
           <img src="./assets/appbihar.webp" alt="Enerlytics AI" class="w-full h-full object-cover" loading="lazy" decoding="async" width="1896" height="835">
           <figcaption class="absolute bottom-2 left-2 text-white/80 text-xs bg-black/40 px-2 py-1 rounded">Energy Management</figcaption>
@@ -499,7 +494,7 @@
         </div>
       </article>
 
-      <article class="bg-black border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
+      <article class="bg-section-dark border border-white/20 rounded-lg overflow-hidden flex flex-col transition-all duration-300 hover:scale-105">
         <figure class="w-full h-48 overflow-hidden relative">
           <img src="./assets/blogimg1.webp" alt="FleetIQ" class="w-full h-full object-cover" loading="lazy" decoding="async" width="890" height="664">
           <figcaption class="absolute bottom-2 left-2 text-white/80 text-xs bg-black/40 px-2 py-1 rounded">Fleet Management</figcaption>
@@ -530,11 +525,11 @@
 
 
   <!-- CTA / Demo Section -->
-  <section class="bg-white py-24 border-t border-gray-200">
+  <section class="bg-section-light py-24 border-t border-default">
     <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
 
       <!-- Heading -->
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-black leading-[1.2] mb-6 relative inline-block">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-theme-heading leading-[1.2] mb-6 relative inline-block">
         Experience Our Software in Action
         <!-- Underline -->
         <span
@@ -542,7 +537,7 @@
       </h2>
 
       <!-- Paragraph -->
-      <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-10">
+      <p class="text-theme-body text-lg max-w-2xl mx-auto mb-10">
         Book a demo or request a free trial to see how our intelligent platforms can transform your business operations
         and maximize efficiency.
       </p>
@@ -627,9 +622,8 @@
       <div>
         <h3 class="font-semibold mb-3 text-lg">Explore</h3>
         <ul class="space-y-2">
-          <li><a href="./index.html" class="hover:text-pink-400 transition">Home</a></li>
-          <li><a href="./work.html" class="hover:text-pink-400 transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-primary-dark transition">Case Studies</a></li>
+          <li><a href="./work.html" class="hover:text-linkhover transition">Portfolio</a></li>
+          <li><a href="./case-studies.html" class="hover:text-linkhover transition">Case Studies</a></li>
         </ul>
       </div>
 
@@ -688,7 +682,7 @@
                 <img src="./assets/call-center (1).webp" alt="" loading="lazy" decoding="async">
             </div>
             <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
-           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
+           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-default">
                 AI Assistant
             </span>
         </div> -->

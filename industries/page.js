@@ -1,9 +1,14 @@
+﻿/* Reads live CSS variable so this auto-updates with any theme change */
+const _p  = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim()  || '#dc2626';
+const _pd = getComputedStyle(document.documentElement).getPropertyValue('--primary-dark').trim() || '#b91c1c';
+const _s  = getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim() || '#1c0505';
+
 const THEME = {
-  glow: 'radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%)',
-  badgeColor: '#a5b4fc', accentHex: '#4338CA',
-  statFirstBg: '#4338CA', statAccentColor: '#818cf8', barColor: '#4338CA',
-  ctaBg: 'linear-gradient(135deg, #312e81 0%, #1e1b4b 100%)', ctaTextColor: '#4338CA',
-  whyGlow: '#4338CA'
+  glow: `radial-gradient(ellipse at 50% 0%, color-mix(in srgb, ${_p} 40%, transparent) 0%, color-mix(in srgb, ${_p} 20%, transparent) 25%, color-mix(in srgb, ${_p} 8%, transparent) 55%, transparent 75%)`,
+  badgeColor: _p, accentHex: _p,
+  statFirstBg: _p, statAccentColor: _pd, barColor: _p,
+  ctaBg: `linear-gradient(135deg, ${_s} 0%, ${_pd} 100%)`, ctaTextColor: _p,
+  whyGlow: _p
 };
 
 /* ─── show a section ─── */
@@ -42,11 +47,11 @@ function populateUseCases(content, theme) {
   grid.innerHTML = '';
   u.items.forEach(item => {
     const card = document.createElement('div');
-    card.className = 'p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition duration-300';
+    card.className = 'p-8 rounded-2xl border border-default hover:shadow-xl hover:-translate-y-1 transition duration-300';
     card.innerHTML = `
       <i class="${item.icon} text-3xl mb-6" style="color:${theme.accentHex}"></i>
       <h3 class="text-xl font-semibold mb-3">${item.title}</h3>
-      <p class="text-gray-600 text-sm leading-relaxed">${item.description}</p>`;
+      <p class="text-theme-body text-sm leading-relaxed">${item.description}</p>`;
     grid.appendChild(card);
   });
 }
@@ -61,14 +66,14 @@ function populateFeatures(content, theme) {
   f.items.forEach((item, i) => {
     const isEven = i % 2 === 0;
     const row = document.createElement('div');
-    row.className = `flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 items-center bg-white rounded-3xl p-10 shadow-sm border border-gray-100`;
+    row.className = `flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 items-center bg-section-light rounded-3xl p-10 shadow-sm border border-subtle`;
     row.innerHTML = `
       <div class="w-20 h-20 shrink-0 rounded-2xl flex items-center justify-center text-3xl" style="background:${theme.accentHex}18">
         <i class="${item.icon}" style="color:${theme.accentHex}"></i>
       </div>
       <div class="flex-1">
         <h3 class="text-2xl font-bold mb-3">${item.title}</h3>
-        <p class="text-gray-600 leading-relaxed">${item.description}</p>
+        <p class="text-theme-body leading-relaxed">${item.description}</p>
       </div>`;
     list.appendChild(row);
   });
@@ -126,7 +131,7 @@ function populateProcess(content, theme) {
   steps.innerHTML = '';
   p.steps.forEach((step, i) => {
     const div = document.createElement('div');
-    div.className = 'relative p-8 rounded-2xl border-2 border-gray-100 hover:border-opacity-100 transition duration-300';
+    div.className = 'relative p-8 rounded-2xl border-2 border-subtle hover:border-opacity-100 transition duration-300';
     div.style.borderColor = `${theme.accentHex}30`;
     div.innerHTML = `
       <div class="text-5xl font-black mb-4 leading-none" style="color:${theme.accentHex}18">${String(i + 1).padStart(2, '0')}</div>
@@ -134,7 +139,7 @@ function populateProcess(content, theme) {
         <i class="fas ${step.icon} text-white text-sm"></i>
       </div>
       <h3 class="text-lg font-bold mb-2">${step.title}</h3>
-      <p class="text-gray-500 text-sm leading-relaxed">${step.desc}</p>`;
+      <p class="text-theme-muted text-sm leading-relaxed">${step.desc}</p>`;
     steps.appendChild(div);
   });
 }
@@ -147,11 +152,11 @@ function populateServices(content, theme) {
   grid.innerHTML = '';
   s.items.forEach(item => {
     const card = document.createElement('div');
-    card.className = 'p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition duration-300';
+    card.className = 'p-8 rounded-2xl bg-section-card border border-default hover:shadow-xl hover:-translate-y-1 transition duration-300';
     card.innerHTML = `
       <i class="fas ${item.icon} text-3xl mb-6" style="color:${theme.accentHex}"></i>
       <h3 class="text-xl font-semibold mb-3">${item.title}</h3>
-      <p class="text-gray-600 text-sm leading-relaxed">${item.desc}</p>`;
+      <p class="text-theme-body text-sm leading-relaxed">${item.desc}</p>`;
     grid.appendChild(card);
   });
 }
@@ -174,7 +179,7 @@ function populateWhy(content, theme) {
       <div class="w-10 h-10 shrink-0 flex items-center justify-center rounded-xl" style="background:${theme.accentHex}22">
         <i class="fas ${item.icon}" style="color:${theme.accentHex}"></i>
       </div>
-      <div><h3 class="font-semibold">${item.title}</h3><p class="text-gray-400 text-sm">${item.desc}</p></div>`;
+      <div><h3 class="font-semibold">${item.title}</h3><p class="text-theme-muted text-sm">${item.desc}</p></div>`;
     featuresEl.appendChild(div);
   });
 

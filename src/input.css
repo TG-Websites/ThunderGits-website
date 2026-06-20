@@ -3,38 +3,236 @@
 @source "../**/*.html";
 @source "../**/*.js";
 
+/* ───────────────────────────────────────────────────────────
+   Tailwind v4 token registration
+   (generates utility classes like text-primary, bg-primary)
+   ─────────────────────────────────────────────────────────── */
 @theme {
-  --color-accent: #4338CA;
-  --color-dark: #111827;
-  --color-primary: #4338CA;
-  --color-primary-dark: #3730A3;
+  --color-primary:      #dc2626;   /* crimson red — buttons, highlights, icon accents */
+  --color-primary-dark: #b91c1c;   /* darker red  — hover state for primary buttons   */
+  --color-secondary:    #1c0505;   /* deep red-black — dark headings, deep sections   */
+  --color-tertiary:     #ffffff;   /* white — light sections, card backgrounds        */
 }
 
 * {
   scroll-behavior: smooth;
 }
 
+/* ═══════════════════════════════════════════════════════════
+   ██  THEME CONTROL  ██
+   Change only these 3 values to retheme the entire site.
+   Run `npm run build` after changing.
+
+   --primary   → CTA buttons, active links, icon colors,
+                 accent spans in headings ("Use Cases", etc.),
+                 hero badge glow, progress bars, swiper dots
+
+   --secondary → Dark section backgrounds, h1–h4 on light bg,
+                 testimonial gradient (from), footer deep bg,
+                 deep borders
+
+   --tertiary  → Light section backgrounds, card bg,
+                 text on dark sections (navs, heroes)
+   ═══════════════════════════════════════════════════════════ */
 :root {
-  --primary: #4338CA;
-  --primary-dark: #3730A3;
+  /* ── 3 base colors — CHANGE THESE ──────────────────────── */
+  --primary:     #dc2626;   /* red   — see above                */
+  --secondary:   #1c0505;   /* dark  — see above                */
+  --tertiary:    #ffffff;   /* light — see above                */
+
+  /* ── Derived shade — 1 per base ────────────────────────── */
+  --primary-dark: #b91c1c;  /* hover state — bg-primary-dark, hover:bg-primary-dark */
+
+  /* ── RGB components of primary — for rgba() usage in JS/CSS ─
+     cursor.js box-shadow, hero-grid hover cell bg, etc.
+     ⚠ Keep in sync with --primary above when you retheme.    */
+  --primary-rgb: 220, 38, 38;
+
+  /* ── Section backgrounds ────────────────────────────────── */
+  /* Used as: bg-section-* utility classes                     */
+  --section-dark:      #0d0101;          /* hero sections, nav bg, very dark areas    */
+  --section-light:     var(--tertiary);  /* navbar dropdown, light content sections   */
+  --section-muted:     #fff1f2;          /* alternating light sections, footer light  */
+  --section-highlight: #fee2e2;          /* dropdown hover, tag/badge backgrounds     */
+  --section-deep:      var(--secondary); /* CTA banner bg, deep dark content blocks   */
+  --section-card:      #fff5f5;          /* blog cards, portfolio cards, use-case cards */
+  --section-neutral:   #fce4e4;          /* testimonials section, soft alternating bg */
+  --section-team:      #166534;          /* "Our Teams" section on home page — CHANGE TO TEST THEME SWITCH */
+
+  /* ── Text colors ────────────────────────────────────────── */
+  /* Used as: text-theme-* utility classes                     */
+  --text-heading:    var(--primary);     /* h1–h4 on white/light sections             */
+  --text-body-dark:  #1c0505;            /* strong body text on very light bg         */
+  --text-body:       #6b1a1a;            /* general body text, card descriptions      */
+  --text-muted:      #ef4444;            /* labels, badges, secondary text on dark bg */
+  --text-on-dark:    var(--tertiary);    /* white text on dark/hero/colored sections  */
+
+  /* ── Border colors ──────────────────────────────────────── */
+  /* Used as: border-default, border-subtle, border-dark, border-deep */
+  --border-default:  #fecaca;            /* card borders, input field borders         */
+  --border-subtle:   #fff1f2;            /* dropdown borders, navbar bottom, dividers */
+  --border-dark:     #450a0a;            /* borders on dark sections                  */
+  --border-deep:     var(--secondary);   /* deepest borders — same as secondary       */
 }
 
-.text-primary { color: var(--primary); }
-.text-primary-dark { color: var(--primary-dark); }
-.bg-primary { background-color: var(--primary); }
-.bg-primary-dark { background-color: var(--primary-dark); }
-.hover\:bg-primary-dark:hover { background-color: var(--primary-dark) !important; }
-.hover\:text-primary-dark:hover { color: var(--primary-dark) !important; }
+/* ── Brand utilities ────────────────────────────────────────────── */
+/* text / bg / border — primary & primary-dark                       */
+.text-primary            { color: var(--primary); }
+.text-primary-dark       { color: var(--primary-dark); }
+.bg-primary              { background-color: var(--primary); }
+.bg-primary-dark         { background-color: var(--primary-dark); }
+.border-primary          { border-color: var(--primary); }
+.border-primary-dark     { border-color: var(--primary-dark); }
+.hover\:text-primary:hover         { color: var(--primary) !important; }
+.hover\:text-primary-dark:hover    { color: var(--primary-dark) !important; }
+.hover\:bg-primary:hover           { background-color: var(--primary) !important; }
+.hover\:bg-primary-dark:hover      { background-color: var(--primary-dark) !important; }
+.hover\:border-primary:hover       { border-color: var(--primary) !important; }
+.focus\:ring-primary:focus         { --tw-ring-color: var(--primary); }
+.shadow-primary          { --tw-shadow-color: var(--primary); }
 
+/* ── Section background utilities ──────────────────────────────── */
+/* index.html: hero=dark, team=team, testimonials=neutral           */
+/* about/service/career/blog heroes: dark                           */
+/* navbar dropdown, cards: light / card / highlight                 */
+.bg-section-dark      { background-color: var(--section-dark); }
+.bg-section-light     { background-color: var(--section-light); }
+.bg-section-muted     { background-color: var(--section-muted); }
+.bg-section-highlight { background-color: var(--section-highlight); }
+.bg-section-deep      { background-color: var(--section-deep); }
+.bg-section-card      { background-color: var(--section-card); }
+.bg-section-neutral   { background-color: var(--section-neutral); }
+.bg-section-team      { background-color: var(--section-team); }  /* Our Teams — index.html #team */
+
+/* ── Text utilities ─────────────────────────────────────────────── */
+/* headings on light, body text, muted labels, text on dark bg      */
+.text-section-dark      { color: var(--section-dark); }
+.text-section-light     { color: var(--section-light); }
+.text-theme-heading     { color: var(--text-heading); }     /* navbar links, section headings on white */
+.text-theme-body-dark   { color: var(--text-body-dark); }  /* mobile menu links, strong body copy     */
+.text-theme-body        { color: var(--text-body); }       /* card descriptions, sidebar text         */
+.text-theme-muted       { color: var(--text-muted); }      /* hero badges, sub-labels on dark bg      */
+.text-on-dark           { color: var(--text-on-dark); }    /* text inside dark hero / colored sections */
+
+/* ── Border utilities ───────────────────────────────────────────── */
+/* cards, inputs, dropdowns, section dividers                        */
+.border-default { border-color: var(--border-default); }   /* blog/portfolio card borders   */
+.border-subtle  { border-color: var(--border-subtle); }    /* navbar bottom, dropdown edges */
+.border-dark    { border-color: var(--border-dark); }      /* dark section inner borders    */
+.border-deep    { border-color: var(--border-deep); }      /* deepest — same as secondary   */
+
+/* ── Placeholder helper ─────────────────────────────────────────── */
+.placeholder-theme::placeholder { color: var(--text-muted); }
+
+/* ── Hero section ───────────────────────────────────────────────── */
+/* Used on: all main page hero sections (index, about, service, etc.) */
 .hero {
-  background-color: #060d18;
+  background-color: var(--section-dark);
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(57, 126, 255, 0.25) 0%, transparent 80%),
+    radial-gradient(ellipse 80% 50% at 50% 0%, color-mix(in srgb, var(--primary) 25%, transparent) 0%, transparent 80%),
     linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: auto, 80px 80px, 80px 80px;
 }
 
+/* ── Themed hero glow ───────────────────────────────────────────── */
+/* Used on: every page hero — the radial light at the top center.   */
+/* ⚠ RGBA values are hardcoded to match --primary (#dc2626 = red).  */
+/*   color-mix() gets stripped by the Tailwind v4 minifier.         */
+/*   If you change --primary, update these rgba() values too.       */
+.hero-glow {
+  width: clamp(700px, 80vw, 1000px);
+  height: 550px;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(220, 38, 38, 0.40)  0%,   /* primary at 40% opacity */
+    rgba(220, 38, 38, 0.20) 25%,   /* primary at 20% opacity */
+    rgba(220, 38, 38, 0.08) 55%,   /* primary at  8% opacity */
+    transparent 75%
+  );
+}
+
+/* ── Testimonial slider ─────────────────────────────────────────── */
+/* index.html — testimonialSwiper section                            */
+.testimonial-box {
+  background-color: #1e1e1e;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* "❝" quote mark — gradient from secondary → primary */
+.testimonial-box .quote {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(to right, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.testimonial-box::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #1e1e1e;
+  transition: all 0.3s ease;
+}
+
+/* Active slide — bg becomes secondary→primary gradient */
+.swiper-slide-active .testimonial-box {
+  background: linear-gradient(to right, var(--secondary), var(--primary)) !important;
+}
+
+.swiper-slide-active .testimonial-box::before {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--primary);
+  left: 50%;
+  transform: translate(-50%, 100%);
+}
+
+.swiper-slide-active img { border: 2px solid white; }
+
+.swiper-slide-active .testimonial-box .quote {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+/* Swiper pagination dots — inactive: gray, active: secondary→primary gradient */
+.testimonialSwiper .swiper-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.swiper-pagination-bullet { background: #d1d5db; opacity: 1; }
+.swiper-pagination-bullet-active {
+  background: linear-gradient(to right, var(--secondary), var(--primary));
+  opacity: 1;
+}
+
+/* ── Social icon brand colors (fixed — social platform colors) ──── */
+.social-facebook:hover i  { color: #1877f2; }
+.social-twitter:hover i   { color: #1da1f2; }
+.social-dribbble:hover i  { color: #ea4c89; }
+.social-instagram:hover i { color: #e4405f; }
+
+/* ── Logo carousel — client/partner logos on index.html ─────────── */
 @keyframes scroll {
   0%   { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
@@ -43,28 +241,6 @@
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
-
-.word span {
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.group:hover .word span {
-  color: #6366f1;
-  transform: translateY(-3px);
-}
-
-.word span:nth-child(1)  { transition-delay: 0s; }
-.word span:nth-child(2)  { transition-delay: 0.05s; }
-.word span:nth-child(3)  { transition-delay: 0.1s; }
-.word span:nth-child(4)  { transition-delay: 0.15s; }
-.word span:nth-child(5)  { transition-delay: 0.2s; }
-.word span:nth-child(6)  { transition-delay: 0.25s; }
-.word span:nth-child(7)  { transition-delay: 0.3s; }
-.word span:nth-child(8)  { transition-delay: 0.35s; }
-.word span:nth-child(9)  { transition-delay: 0.4s; }
-.word span:nth-child(10) { transition-delay: 0.45s; }
-.word span:nth-child(11) { transition-delay: 0.5s; }
 
 .carousal {
   width: 100%;
@@ -84,3 +260,26 @@
   user-select: none;
   pointer-events: none;
 }
+
+/* ── Word hover animation — work.html portfolio cards ───────────── */
+.word span {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.group:hover .word span {
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.word span:nth-child(1)  { transition-delay: 0s; }
+.word span:nth-child(2)  { transition-delay: 0.05s; }
+.word span:nth-child(3)  { transition-delay: 0.1s; }
+.word span:nth-child(4)  { transition-delay: 0.15s; }
+.word span:nth-child(5)  { transition-delay: 0.2s; }
+.word span:nth-child(6)  { transition-delay: 0.25s; }
+.word span:nth-child(7)  { transition-delay: 0.3s; }
+.word span:nth-child(8)  { transition-delay: 0.35s; }
+.word span:nth-child(9)  { transition-delay: 0.4s; }
+.word span:nth-child(10) { transition-delay: 0.45s; }
+.word span:nth-child(11) { transition-delay: 0.5s; }

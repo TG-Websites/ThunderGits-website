@@ -34,7 +34,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="./style.css">
+  
 
 <script type="application/ld+json">
 {
@@ -58,7 +58,7 @@
 </script>
 </head>
 
-<body class="bg-black text-white font-['Inter',sans-serif]">
+<body class="bg-section-dark text-white font-['Inter',sans-serif]">
 
   <!-- Navbar -->
   <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
@@ -106,7 +106,7 @@
   </nav>
 
   <!-- Hero Section with Background Grid -->
-  <section id="hero-section" class="relative pt-48 pb-24 bg-black overflow-hidden min-h-[60vh] flex items-center">
+  <section id="hero-section" class="relative pt-48 pb-24 bg-section-dark overflow-hidden min-h-[60vh] flex items-center">
     <!-- Grid Overlay -->
     <div class="absolute inset-0 z-0 pointer-events-none"
       style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
@@ -114,8 +114,7 @@
     <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
 
     <!-- Top Glow -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-      style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+    <div class="hero-glow absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none">
     </div>
 
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 w-full">
@@ -124,14 +123,14 @@
         <!-- Left: Hero Text -->
         <div data-aos="fade-right">
           <span
-            class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-8 uppercase font-bold">
+            class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-primary/10 border border-primary/20 text-primary mb-8 uppercase font-bold">
             Verification Portal
           </span>
           <h1
             style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
-            Verified <span class="text-indigo-400 font-semibold">Internship</span> <br /> Certificates
+            Verified <span class="text-primary font-semibold">Internship</span> <br /> Certificates
           </h1>
-          <p class="text-gray-400 text-lg leading-relaxed mb-8 font-light max-w-xl">
+          <p class="text-theme-muted text-lg leading-relaxed mb-8 font-light max-w-xl">
             Authenticity matters. Use our secure portal to verify internship completion records issued by ThunderGits
             Technology.
           </p>
@@ -140,16 +139,16 @@
         <!-- Right: Status Card (Shows up immediately or during loading) -->
         <div data-aos="fade-left" class="relative group">
           <div
-            class="absolute -inset-4 bg-indigo-500/10 blur-2xl rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition duration-700">
+            class="absolute -inset-4 bg-primary/10 blur-2xl rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition duration-700">
           </div>
           <div class="relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] p-8 md:p-10 backdrop-blur-md">
             <div class="flex items-center gap-6 mb-8">
               <div id="status-icon"
                 class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-                <i class="ri-shield-user-line text-3xl text-gray-400"></i>
+                <i class="ri-shield-user-line text-3xl text-theme-muted"></i>
               </div>
               <div>
-                <div id="status-text" class="text-sm font-black uppercase tracking-widest text-gray-500">Checking
+                <div id="status-text" class="text-sm font-black uppercase tracking-widest text-theme-muted">Checking
                   Status...</div>
                 <div id="status-cert-id" class="text-2xl font-bold text-white mt-1"># —</div>
               </div>
@@ -157,22 +156,22 @@
 
             <div class="space-y-4 mb-8">
               <div class="flex justify-between items-center py-3 border-b border-white/5">
-                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Domain</span>
+                <span class="text-theme-muted text-xs font-bold uppercase tracking-widest">Domain</span>
                 <span id="domainTop" class="text-white text-sm font-semibold">—</span>
               </div>
               <div class="flex justify-between items-center py-3 border-b border-white/5">
-                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Mode</span>
+                <span class="text-theme-muted text-xs font-bold uppercase tracking-widest">Mode</span>
                 <span id="modeTop" class="text-white text-sm font-semibold">—</span>
               </div>
               <div class="flex justify-between items-center py-3 border-b border-white/5">
-                <span class="text-gray-500 text-xs font-bold uppercase tracking-widest">Duration</span>
+                <span class="text-theme-muted text-xs font-bold uppercase tracking-widest">Duration</span>
                 <span id="durationTop" class="text-white text-sm font-semibold">—</span>
               </div>
             </div>
 
             <div class="flex flex-col gap-4">
               <a href="./contact.html"
-                class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition duration-300 text-center shadow-lg shadow-indigo-900/50">
+                class="w-full py-4 bg-primary hover:bg-primary text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition duration-300 text-center shadow-lg shadow-black/50">
                 Contact Support
               </a>
             </div>
@@ -199,7 +198,7 @@
         <i class="ri-error-warning-line text-4xl text-red-500"></i>
       </div>
       <h2 id="errorTitle" class="text-3xl font-bold text-white mb-4">Invalid Certificate</h2>
-      <p id="errorMsg" class="text-gray-400 text-lg font-light leading-relaxed mb-8">The certificate record could not be
+      <p id="errorMsg" class="text-theme-muted text-lg font-light leading-relaxed mb-8">The certificate record could not be
         found or the link is malformed.</p>
       <a href="./contact.html"
         class="inline-flex px-8 py-3 border border-red-500/30 text-red-400 text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-red-500/10 transition">Report
@@ -219,7 +218,7 @@
             </div>
             <div>
               <h2 id="name" class="text-3xl font-bold text-white mb-2">—</h2>
-              <p class="text-indigo-400 text-sm font-semibold uppercase tracking-widest">Verified Intern</p>
+              <p class="text-primary text-sm font-semibold uppercase tracking-widest">Verified Intern</p>
               <span
                 class="inline-block mt-3 px-3 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-black uppercase tracking-widest rounded-md border border-emerald-500/20">Completed</span>
             </div>
@@ -227,22 +226,22 @@
 
           <div class="grid gap-4">
             <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6 flex justify-between items-center">
-              <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Certificate ID</span>
+              <span class="text-theme-muted text-[10px] font-black uppercase tracking-widest">Certificate ID</span>
               <span id="certificateId" class="text-white font-mono font-bold tracking-wider">—</span>
             </div>
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-                <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Start
+                <span class="text-theme-muted text-[10px] font-black uppercase tracking-widest block mb-2">Start
                   Date</span>
                 <span id="startDate" class="text-white font-bold">—</span>
               </div>
               <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-                <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">End Date</span>
+                <span class="text-theme-muted text-[10px] font-black uppercase tracking-widest block mb-2">End Date</span>
                 <span id="endDate" class="text-white font-bold">—</span>
               </div>
             </div>
             <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-              <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Location</span>
+              <span class="text-theme-muted text-[10px] font-black uppercase tracking-widest block mb-2">Location</span>
               <span id="location" class="text-white font-bold">—</span>
             </div>
           </div>
@@ -255,29 +254,29 @@
 
           <div class="grid gap-4">
             <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-              <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Domain</span>
+              <span class="text-theme-muted text-[10px] font-black uppercase tracking-widest block mb-2">Domain</span>
               <span id="domain" class="text-white font-bold text-lg">—</span>
             </div>
             <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-              <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Execution
+              <span class="text-theme-muted text-[10px] font-black uppercase tracking-widest block mb-2">Execution
                 Mode</span>
               <span id="mode" class="text-white font-bold text-lg">—</span>
             </div>
             <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-              <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Project/Record
+              <span class="text-theme-muted text-[10px] font-black uppercase tracking-widest block mb-2">Project/Record
                 Link</span>
               <a id="link" href="#" target="_blank"
-                class="text-indigo-400 font-bold hover:text-white transition break-all">Checking record...</a>
+                class="text-primary font-bold hover:text-white transition break-all">Checking record...</a>
             </div>
             <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-              <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Verification
+              <span class="text-theme-muted text-[10px] font-black uppercase tracking-widest block mb-2">Verification
                 Timestamp</span>
               <span id="verifiedNow" class="text-white font-bold">—</span>
             </div>
           </div>
 
           <div class="mt-8 pt-8 border-t border-white/5 text-center">
-            <p class="text-gray-500 text-xs italic">"This certificate is an official document of ThunderGits Technology.
+            <p class="text-theme-muted text-xs italic">"This certificate is an official document of ThunderGits Technology.
               Any alteration without authorization renders this document void."</p>
           </div>
         </div>
@@ -288,30 +287,30 @@
   </main>
 
   <!-- Footer -->
-  <footer class="w-full bg-gray-100 text-black border-t border-gray-200">
+  <footer class="w-full bg-section-muted text-theme-heading border-t border-default">
     <div class="grid grid-cols-1 md:grid-cols-3 min-h-[400px]">
-      <div class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-gray-300">
+      <div class="flex flex-col justify-center px-8 md:px-12 py-12 border-b md:border-b-0 md:border-r border-default">
         <div class="mb-6">
           <img src="./assets/logo.webp" alt="ThunderGits Logo" class="h-16 w-auto" loading="lazy" decoding="async" width="2172" height="724"/>
         </div>
-        <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">
+        <p class="text-sm text-theme-heading leading-relaxed font-semibold max-w-xs">
           Redefining the digital landscape through innovation and precision. ThunderGits delivers future-ready
           technology solutions.
         </p>
       </div>
-      <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
+      <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-default">
         <a href="#"
-          class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Facebook</a>
+          class="px-12 py-8 text-theme-body-dark font-semibold border-b border-default text-center md:text-left hover:bg-gray-200 transition-colors">Facebook</a>
         <a href="#"
-          class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Instagram</a>
+          class="px-12 py-8 text-theme-body-dark font-semibold border-b border-default text-center md:text-left hover:bg-gray-200 transition-colors">Instagram</a>
         <a href="#"
-          class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Youtube</a>
+          class="px-12 py-8 text-theme-body-dark font-semibold border-b border-default text-center md:text-left hover:bg-gray-200 transition-colors">Youtube</a>
         <a href="#"
-          class="px-12 py-8 text-gray-800 font-semibold text-center md:text-left hover:bg-gray-200 transition-colors">Linkedin</a>
+          class="px-12 py-8 text-theme-body-dark font-semibold text-center md:text-left hover:bg-gray-200 transition-colors">Linkedin</a>
       </div>
       <div class="flex flex-col justify-between px-8 md:px-12 py-12">
-        <h2 class="font-black text-blue-950 uppercase leading-none" style="font-size:clamp(1.5rem,7vw,6rem);margin-bottom:1.5rem;">LET'S TALK</h2>
-        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+        <h2 class="font-black text-theme-heading uppercase leading-none" style="font-size:clamp(1.5rem,7vw,6rem);margin-bottom:1.5rem;">LET'S TALK</h2>
+        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-theme-body-dark">
           <span class="flex items-start gap-2 min-w-[220px] flex-1">
             <i class="ri-map-pin-line mt-0.5"></i>
             <span class="leading-relaxed">HN-75, W-8, P-3, Dagarua, B. Ailoth,Musrigharari, Samastipur, Bihar, India,
@@ -327,9 +326,9 @@
       </div>
     </div>
     <div
-      class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-black">© 2026 | All rights reserved by Thundergits Consultancy Services Private Limited</p>
-      <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
+      class="border-t border-default px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-theme-heading">© 2026 | All rights reserved by Thundergits Consultancy Services Private Limited</p>
+      <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-theme-heading">
         <a href="./privacy.html">Privacy</a>
       </nav>
     </div>
@@ -341,22 +340,52 @@ document.addEventListener('DOMContentLoaded', function() {
   
       AOS.init({ duration: 1000, once: true });
   
-      // Interactive Grid Logic
-      const gridContainer = document.getElementById('hero-grid');
+      // Interactive Hero Grid
+      const heroSection = document.getElementById("hero-section");
+      const gridEl = document.getElementById("hero-grid");
+      const CELL = 50;
+      const primaryRgb = getComputedStyle(document.documentElement).getPropertyValue('--primary-rgb').trim() || '220, 38, 38';
+      let cols = 0, rows = 0, cellEls = [];
       function buildGrid() {
-        if (!gridContainer) return;
-        gridContainer.innerHTML = '';
-        const columns = Math.ceil(window.innerWidth / 50);
-        const rows = Math.ceil(window.innerHeight / 50);
-        const totalCells = columns * rows;
-        for (let i = 0; i < totalCells; i++) {
-          const cell = document.createElement('div');
-          cell.className = 'hero-cell w-[50px] h-[50px] border-[0.5px] border-white/5 transition-all duration-700 hover:bg-white/10 hover:duration-0';
-          gridContainer.appendChild(cell);
+        if (!gridEl) return;
+        gridEl.innerHTML = "";
+        cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
+        rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
+        gridEl.style.display = "grid";
+        gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+        gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+        cellEls = [];
+        for (let i = 0; i < cols * rows; i++) {
+          const d = document.createElement("div");
+          d.style.cssText = "transition: background 0.55s ease;";
+          gridEl.appendChild(d);
+          cellEls.push(d);
         }
       }
       buildGrid();
-      window.addEventListener('resize', buildGrid);
+      window.addEventListener("resize", buildGrid);
+      if (heroSection) {
+        heroSection.addEventListener("mousemove", (e) => {
+          const rect = gridEl.getBoundingClientRect();
+          const cx = Math.floor((e.clientX - rect.left) / CELL);
+          const cy = Math.floor((e.clientY - rect.top) / CELL);
+          const hoverPattern = [
+            [0, 0, 0.40],
+            [-1, 0, 0.20], [1, 0, 0.20], [0, -1, 0.20], [0, 1, 0.20],
+            [-1, -1, 0.09], [1, -1, 0.09], [-1, 1, 0.09], [1, 1, 0.09],
+            [-2, 0, 0.04], [2, 0, 0.04], [0, -2, 0.04], [0, 2, 0.04],
+          ];
+          hoverPattern.forEach(([dx, dy, alpha]) => {
+            const x = cx + dx, y = cy + dy;
+            if (x < 0 || x >= cols || y < 0 || y >= rows) return;
+            const cell = cellEls[y * cols + x];
+            if (!cell) return;
+            clearTimeout(cell._t);
+            cell.style.background = `rgba(${primaryRgb}, ${alpha})`;
+            cell._t = setTimeout(() => { cell.style.background = ""; }, 200);
+          });
+        });
+      }
   
       // Navbar Scroll Logic
       const nav = document.getElementById("main-nav");

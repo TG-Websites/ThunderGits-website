@@ -3,7 +3,6 @@
 
 <head>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,143 +25,40 @@
     content="ThunderGits blog, web development, React JS, MERN stack, JavaScript, frontend development, backend development, technology blog" />
   <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            theme: {
-              text: '#DEDDDB',
-              textLight: '#848484',
-              bg: '#141414',
-              bd: '#424040',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'sans': ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
-          },
-          colors: {
-            primary: '#0f172a',     // deep slate for elegance
-            secondary: '#334155',
-            accent: '#3b82f6',      // clean blue for CTAs
-            softgray: '#f8fafc',
-            cardborder: '#e2e8f0',
-          },
-          spacing: {
-            '18': '4.5rem',
-          },
-          maxWidth: {
-            'prose': '65ch',
-          },
-          boxShadow: {
-            'soft': '0 10px 40px -12px rgba(0, 0, 0, 0.08), 0 4px 12px -6px rgba(0, 0, 0, 0.02)',
-            'hover': '0 20px 35px -12px rgba(0, 0, 0, 0.12)',
-          }
-        }
-      }
-    }
-  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./tailwind.css">
 
   <style>
-    /* subtle smooth scroll & focus outline improvements */
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
-    body {
-      background-color: #f9fafb;
-    }
+    /* shadow-soft — was defined in old CDN tailwind.config */
+    .shadow-soft { box-shadow: 0 10px 40px -12px rgba(0,0,0,0.08), 0 4px 12px -6px rgba(0,0,0,0.02); }
 
-    /* custom prose styling for blog content (clean reading) */
-    .blog-content p {
-      margin-bottom: 1.25rem;
-      line-height: 1.7;
-      color: #1e293b;
-    }
-
-    .blog-content h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-      color: #0f172a;
-    }
-
-    .blog-content h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-      color: #1e293b;
-    }
-
+    /* Blog article prose styles — themed */
+    .blog-content p  { margin-bottom: 1.25rem; line-height: 1.7; color: var(--text-body-dark); }
+    .blog-content h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; letter-spacing: -0.01em; color: var(--text-heading); }
+    .blog-content h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text-heading); }
     .blog-content blockquote {
-      border-left: 4px solid #3b82f6;
-      padding-left: 1.5rem;
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.5rem;
       font-style: italic;
       margin: 1.75rem 0;
-      color: #334155;
-      background-color: #f1f5f9;
-      padding: 1rem 1.5rem;
+      color: var(--text-body);
+      background-color: var(--section-highlight);
       border-radius: 1rem;
       font-weight: 400;
     }
+    .blog-content ul, .blog-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: var(--text-body-dark); }
+    .blog-content li  { margin-bottom: 0.4rem; }
+    .blog-content a   { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; font-weight: 500; }
+    .blog-content img { border-radius: 1rem; margin: 1.8rem 0; box-shadow: 0 4px 14px rgba(0,0,0,0.05); }
 
-    .blog-content ul,
-    .blog-content ol {
-      margin-bottom: 1.25rem;
-      padding-left: 1.5rem;
-      color: #1e293b;
-    }
-
-    .blog-content li {
-      margin-bottom: 0.4rem;
-    }
-
-    .blog-content a {
-      color: #3b82f6;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      font-weight: 500;
-    }
-
-    .blog-content img {
-      border-radius: 1rem;
-      margin: 1.8rem 0;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    }
-
-    /* custom scrollbar for modern look */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #e2e8f0;
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #94a3b8;
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #5b6e8c;
-    }
+    /* custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track  { background: var(--border-subtle); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb  { background: var(--text-body); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--secondary); }
   </style>
 
 <script type="application/ld+json">
@@ -193,10 +89,10 @@
 </script>
 </head>
 
-<body class="bg-white font-sans text-blue-950 overflow-x-hidden">
+<body class="bg-section-light font-sans text-theme-heading overflow-x-hidden">
 
   <!-- Navbar -->
-  <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
+  <nav class="bg-section-light text-theme-heading fixed w-full z-20 top-0 start-0 border-b border-default">
     <div class="flex items-center justify-between  gap-4 lg:gap-4 xl:gap-16 mx-auto px-3 lg:px-8 xl:px-20 py-2">
 
       <!-- LOGO -->
@@ -206,7 +102,7 @@
 
       <!-- HAMBURGER BUTTON (mobile only) -->
       <button id="mobile-menu-btn" type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-theme-body rounded-lg lg:hidden hover:bg-section-muted focus:outline-none focus:ring-2 focus:ring-gray-200">
         <span class="sr-only">Open main menu</span>
         <!-- Hamburger icon -->
         <svg id="icon-open" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -222,16 +118,27 @@
 
       <!-- DESKTOP NAV -->
       <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
-        <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark">Home</a></li>
-        <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
-        <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-primary-dark transition">Case Studies</a></li>
-        <li><a href="./service.html" class="text-black hover:text-primary-dark transition">Services</a></li>
-        <li><a href="./career.html" class="text-black hover:text-primary-dark transition">Career</a></li>
+        <li><a href="./about.html" class="text-theme-heading hover:text-primary-dark transition">About</a></li>
+        <!-- WORK DROPDOWN -->
+                <li class="relative group">
+                    <button class="flex items-center gap-1 text-theme-heading hover:text-primary-dark transition">
+                        Work
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-3 w-44 bg-section-light rounded-xl shadow-xl border border-subtle opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
+                        <ul class="p-2 text-sm text-theme-body">
+                            <li><a href="./work.html" class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Portfolio</a></li>
+                            <li><a href="./case-studies.html" class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Case Studies</a></li>
+                        </ul>
+                    </div>
+                </li>
+        <li><a href="./service.html" class="text-theme-heading hover:text-primary-dark transition">Services</a></li>
 
         <!-- INDUSTRIES DROPDOWN -->
         <li class="relative group">
-          <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
+          <button class="flex items-center gap-1 text-theme-heading hover:text-primary-dark transition">
             Industries
             <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg"
               fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -239,36 +146,36 @@
             </svg>
           </button>
 
-          <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100
+          <div class="absolute left-0 mt-3 w-52 bg-section-light rounded-xl shadow-xl border border-subtle
                             opacity-0 invisible translate-y-2
                             group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
                             transition-all duration-300 z-50">
-            <ul class="p-2 text-sm text-gray-700">
+            <ul class="p-2 text-sm text-theme-body">
 
               <!-- Finance & Business -->
               <li class="relative group/sub">
                 <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Finance & Business <span class="text-gray-400">›</span>
+                  class="flex items-center justify-between p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg cursor-pointer transition">
+                  Finance & Business <span class="text-theme-muted">›</span>
                 </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                <div class="absolute left-full top-0 ml-2 w-48 bg-section-light rounded-xl shadow-xl border border-subtle
                                         opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
                                         transition-all duration-300 z-50">
                   <ul class="p-2 text-sm">
                     <li><a href="./industries/index.html?page=banking"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">NEO
                         Banking</a></li>
                     <li><a href="./industries/index.html?page=stock-market"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Stock
                         Market</a></li>
                     <li><a href="./industries/index.html?page=corporate"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a>
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Corporate</a>
                     </li>
                     <li><a href="./industries/index.html?page=real-estate"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Real
                         Estate</a></li>
                     <li><a href="./industries/index.html?page=sales-marketing"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Sales
                         & Marketing</a></li>
                   </ul>
                 </div>
@@ -277,21 +184,21 @@
               <!-- Technology & Media -->
               <li class="relative group/sub">
                 <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Technology & Media <span class="text-gray-400">›</span>
+                  class="flex items-center justify-between p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg cursor-pointer transition">
+                  Technology & Media <span class="text-theme-muted">›</span>
                 </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                <div class="absolute left-full top-0 ml-2 w-48 bg-section-light rounded-xl shadow-xl border border-subtle
                                         opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
                                         transition-all duration-300 z-50">
                   <ul class="p-2 text-sm">
                     <li><a href="./industries/index.html?page=gaming"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a>
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Gaming</a>
                     </li>
                     <li><a href="./industries/index.html?page=media-entertainment"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Media
                         & Entertainment</a></li>
                     <li><a href="./industries/index.html?page=education"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a>
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Education</a>
                     </li>
                   </ul>
                 </div>
@@ -300,24 +207,24 @@
               <!-- Commerce & Lifestyle -->
               <li class="relative group/sub">
                 <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Commerce & Lifestyle <span class="text-gray-400">›</span>
+                  class="flex items-center justify-between p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg cursor-pointer transition">
+                  Commerce & Lifestyle <span class="text-theme-muted">›</span>
                 </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                <div class="absolute left-full top-0 ml-2 w-48 bg-section-light rounded-xl shadow-xl border border-subtle
                                         opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
                                         transition-all duration-300 z-50">
                   <ul class="p-2 text-sm">
                     <li><a href="./industries/index.html?page=retail-ecommerce"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Retail
                         & Ecommerce</a></li>
                     <li><a href="./industries/index.html?page=household"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a>
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Household</a>
                     </li>
                     <li><a href="./industries/index.html?page=food-beverages"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Food
                         & Beverages</a></li>
                     <li><a href="./industries/index.html?page=travel-hospitality"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Travel
                         & Hospitality</a></li>
                   </ul>
                 </div>
@@ -326,21 +233,21 @@
               <!-- Industry & Services -->
               <li class="relative group/sub">
                 <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Industry & Services <span class="text-gray-400">›</span>
+                  class="flex items-center justify-between p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg cursor-pointer transition">
+                  Industry & Services <span class="text-theme-muted">›</span>
                 </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
+                <div class="absolute left-full top-0 ml-2 w-48 bg-section-light rounded-xl shadow-xl border border-subtle
                                         opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
                                         transition-all duration-300 z-50">
                   <ul class="p-2 text-sm">
                     <li><a href="./industries/index.html?page=transportation-logistics"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Transportation
                         & Logistics</a></li>
                     <li><a href="./industries/index.html?page=healthcare"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a>
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Healthcare</a>
                     </li>
                     <li><a href="./industries/index.html?page=automotive"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a>
+                        class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Automotive</a>
                     </li>
                   </ul>
                 </div>
@@ -350,12 +257,26 @@
           </div>
         </li>
 
-        <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
-        <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+        <li><a href="./blog.html" class="text-theme-heading hover:text-primary-dark transition">Blog</a></li>
+        <!-- MORE DROPDOWN -->
+                <li class="relative group">
+                    <button class="flex items-center gap-1 text-theme-heading hover:text-primary-dark transition">
+                        More
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="absolute left-0 mt-3 w-36 bg-section-light rounded-xl shadow-xl border border-subtle opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
+                        <ul class="p-2 text-sm text-theme-body">
+                            <li><a href="./career.html" class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Career</a></li>
+                            <li><a href="./contact.html" class="block p-2 hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Contact</a></li>
+                        </ul>
+                    </div>
+                </li>
 
         <li class="shrink-0">
           <a href="./consultancy.html"
-            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:var(--primary)">
             Book Free Consultancy
           </a>
         </li>
@@ -364,28 +285,32 @@
 
     <!-- MOBILE MENU -->
     <div id="mobile-menu"
-      class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pb-6 pt-2 max-h-[80vh] overflow-y-auto">
+      class="hidden lg:hidden bg-section-light border-t border-subtle px-4 pb-6 pt-2 max-h-[80vh] overflow-y-auto">
       <ul class="flex flex-col gap-1 text-sm font-medium">
-
-        <li><a href="./index.html"
-            class="block py-2.5 px-3 rounded-lg text-primary font-semibold bg-blue-50">Home</a>
-        </li>
         <li><a href="./about.html"
-            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a>
+            class="block py-2.5 px-3 rounded-lg text-theme-body-dark hover:bg-section-card transition">About</a>
         </li>
-        <li><a href="./work.html"
-            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a>
-        </li>
-                <li><a href="./case-studies.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Case Studies</a></li>
+        <!-- WORK ACCORDION -->
+                <li>
+                    <button onclick="toggleAccordion('work-nav')"
+                        class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-theme-body-dark hover:bg-section-card transition">
+                        <span>Work</span>
+                        <svg id="work-nav-icon" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="work-nav" class="hidden pl-3 mt-1 flex flex-col gap-1">
+                        <a href="./work.html" class="block py-2 px-3 text-sm text-theme-body hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Portfolio</a>
+                        <a href="./case-studies.html" class="block py-2 px-3 text-sm text-theme-body hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Case Studies</a>
+                    </div>
+                </li>
         <li><a href="./service.html"
-            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
-        <li><a href="./career.html"
-            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
+            class="block py-2.5 px-3 rounded-lg text-theme-body-dark hover:bg-section-card transition">Services</a></li>
 
         <!-- INDUSTRIES ACCORDION -->
         <li>
           <button onclick="toggleAccordion('industries')"
-            class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
+            class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-theme-body-dark hover:bg-section-card transition">
             <span>Industries</span>
             <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300"
               xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -398,7 +323,7 @@
             <!-- Finance & Business -->
             <div>
               <button onclick="toggleAccordion('finance')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-theme-body hover:bg-section-highlight hover:text-primary transition text-sm">
                 <span>Finance & Business</span>
                 <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300"
                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -407,18 +332,18 @@
               </button>
               <div id="finance" class="hidden pl-4 mt-0.5 flex flex-col">
                 <a href="./industries/index.html?page=banking"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">NEO
                   Banking</a>
                 <a href="./industries/index.html?page=stock-market"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Stock
                   Market</a>
                 <a href="./industries/index.html?page=corporate"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Corporate</a>
                 <a href="./industries/index.html?page=real-estate"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Real
                   Estate</a>
                 <a href="./industries/index.html?page=sales-marketing"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Sales
                   & Marketing</a>
               </div>
             </div>
@@ -426,7 +351,7 @@
             <!-- Technology & Media -->
             <div>
               <button onclick="toggleAccordion('tech')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-theme-body hover:bg-section-highlight hover:text-primary transition text-sm">
                 <span>Technology & Media</span>
                 <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300"
                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -435,19 +360,19 @@
               </button>
               <div id="tech" class="hidden pl-4 mt-0.5 flex flex-col">
                 <a href="./industries/index.html?page=gaming"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Gaming</a>
                 <a href="./industries/index.html?page=media-entertainment"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Media
                   & Entertainment</a>
                 <a href="./industries/index.html?page=education"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Education</a>
               </div>
             </div>
 
             <!-- Commerce & Lifestyle -->
             <div>
               <button onclick="toggleAccordion('commerce')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-theme-body hover:bg-section-highlight hover:text-primary transition text-sm">
                 <span>Commerce & Lifestyle</span>
                 <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300"
                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -456,15 +381,15 @@
               </button>
               <div id="commerce" class="hidden pl-4 mt-0.5 flex flex-col">
                 <a href="./industries/index.html?page=retail-ecommerce"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Retail
                   & Ecommerce</a>
                 <a href="./industries/index.html?page=household"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Household</a>
                 <a href="./industries/index.html?page=food-beverages"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Food
                   & Beverages</a>
                 <a href="./industries/index.html?page=travel-hospitality"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Travel
                   & Hospitality</a>
               </div>
             </div>
@@ -472,7 +397,7 @@
             <!-- Industry & Services -->
             <div>
               <button onclick="toggleAccordion('industry')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
+                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-theme-body hover:bg-section-highlight hover:text-primary transition text-sm">
                 <span>Industry & Services</span>
                 <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300"
                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -481,12 +406,12 @@
               </button>
               <div id="industry" class="hidden pl-4 mt-0.5 flex flex-col">
                 <a href="./industries/index.html?page=transportation-logistics"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Transportation
                   & Logistics</a>
                 <a href="./industries/index.html?page=healthcare"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Healthcare</a>
                 <a href="./industries/index.html?page=automotive"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
+                  class="block py-1.5 px-3 text-xs text-theme-body hover:text-primary hover:bg-section-highlight rounded-lg transition">Automotive</a>
               </div>
             </div>
 
@@ -494,14 +419,26 @@
         </li>
 
         <li><a href="./blog.html"
-            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a>
+            class="block py-2.5 px-3 rounded-lg text-theme-body-dark hover:bg-section-card transition">Blog</a>
         </li>
-        <li><a href="./contact.html"
-            class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
+        <!-- MORE ACCORDION -->
+                <li>
+                    <button onclick="toggleAccordion('more-nav')"
+                        class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-theme-body-dark hover:bg-section-card transition">
+                        <span>More</span>
+                        <svg id="more-nav-icon" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div id="more-nav" class="hidden pl-3 mt-1 flex flex-col gap-1">
+                        <a href="./career.html" class="block py-2 px-3 text-sm text-theme-body hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Career</a>
+                        <a href="./contact.html" class="block py-2 px-3 text-sm text-theme-body hover:bg-section-highlight hover:text-primary-dark rounded-lg transition">Contact</a>
+                    </div>
+                </li>
 
         <li class="mt-2">
           <a href="./consultancy.html"
-            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:var(--primary)">
             Book Free Consultancy
           </a>
         </li>
@@ -512,7 +449,7 @@
 
   <!-- Hero Section -->
   <section id="hero-section"
-    class="relative flex items-center justify-center text-center text-white overflow-hidden bg-black" style="min-height:70vh; padding-top:5rem; padding-bottom:3rem;">
+    class="relative flex items-center justify-center text-center text-white overflow-hidden bg-section-dark" style="min-height:70vh; padding-top:5rem; padding-bottom:3rem;">
     <!-- STATIC CSS GRID LINES -->
     <div class="absolute inset-0 z-0 pointer-events-none"
       style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
@@ -522,8 +459,7 @@
     <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
 
     <!-- TOP CENTER GLOW -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-      style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.55) 0%, rgba(56,189,248,0.35) 20%, rgba(99,102,241,0.12) 50%, transparent 75%);">
+    <div class="hero-glow absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none">
     </div>
 
     <!-- CONTENT -->
@@ -531,8 +467,8 @@
 
       <!-- Category -->
       <span
-        class="blog-category inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-indigo-400 mb-6 uppercase">
-        Category
+        class="blog-category inline-flex items-center px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/10 border border-white/20 text-white mb-6 uppercase">
+        Technology
       </span>
 
       <!-- Blog Title -->
@@ -542,14 +478,14 @@
       </h1>
 
       <!-- Description -->
-      <p class="text-gray-400 text-lg leading-relaxed max-w-2xl mb-6 blog-description" The future of search is here.
+      <p class="text-theme-muted text-lg leading-relaxed max-w-2xl mb-6 blog-description" The future of search is here.
         Discover how Deepseek is transforming the way we find, analyze, and interact with information using advanced AI.
         </p>
 
         <!-- Meta Info -->
-      <div class="flex items-center gap-4 text-sm text-gray-400">
+      <div class="flex items-center gap-4 text-sm text-theme-muted">
         <span class="blog-author">By Shivam Jha</span>
-        <span class="w-1 h-1 bg-gray-500 rounded-full"></span>
+        <span class="w-1 h-1 bg-section-card0 rounded-full"></span>
         <span class="blog-updated-date">May 4, 2026</span>
       </div>
 
@@ -567,15 +503,15 @@
         <!-- Hero meta + title -->
         <div class="mb-7">
           <!-- Author & date row -->
-          <div class="flex flex-wrap items-center justify-between gap-4 mt-6 border-b border-gray-200 pb-6">
+          <div class="flex flex-wrap items-center justify-between gap-4 mt-6 border-b border-default pb-6">
             <div class="flex items-center gap-3">
               <i class="fa-solid fa-circle-user text-3xl"></i>
               <div>
-                <p class="blog-author font-semibold text-gray-800">Shivam Jha</p>
-                <p class=" blog-author-role text-xs text-gray-500">CEO</p>
+                <p class="blog-author font-semibold text-theme-body-dark">Shivam Jha</p>
+                <p class=" blog-author-role text-xs text-theme-muted">CEO</p>
               </div>
             </div>
-            <div class="flex gap-4 text-gray-500 text-sm">
+            <div class="flex gap-4 text-theme-muted text-sm">
               <span><i class="far fa-calendar-alt mr-1"></i> <span class="blog-updated-date">April 12,
                   2026</span></span>
               <span><i class="far fa-clock mr-1"></i> <span class="blog-read">8 min read</span></span>
@@ -593,7 +529,7 @@
         <!-- Article Body (Deepseek Blog Content) -->
         <article class="blog-content prose prose-lg max-w-none">
 
-          <p class="text-lg text-secondary leading-relaxed">
+          <p class="text-lg text-theme-body-dark leading-relaxed">
             The way we search for information is undergoing a massive transformation. Traditional keyword-based engines
             are
             being replaced by intelligent systems that understand context, intent, and meaning. Deepseek stands at the
@@ -667,17 +603,17 @@
         </article>
 
         <!-- Tags & Share Section -->
-        <div class="flex flex-wrap justify-between items-center gap-4 pt-8 mt-8 border-t border-gray-200">
+        <div class="flex flex-wrap justify-between items-center gap-4 pt-8 mt-8 border-t border-default">
           <div class="blog-hashtags flex gap-2 flex-wrap">
-            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#DesignSystems</span>
-            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#AI</span>
-            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#UIEngineering</span>
-            <span class="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full">#Tailwind</span>
+            <span class="text-xs font-medium bg-section-muted text-theme-body px-3 py-1.5 rounded-full">#DesignSystems</span>
+            <span class="text-xs font-medium bg-section-muted text-theme-body px-3 py-1.5 rounded-full">#AI</span>
+            <span class="text-xs font-medium bg-section-muted text-theme-body px-3 py-1.5 rounded-full">#UIEngineering</span>
+            <span class="text-xs font-medium bg-section-muted text-theme-body px-3 py-1.5 rounded-full">#Tailwind</span>
           </div>
-          <div class="flex gap-3 text-gray-500">
-            <a href="https://www.instagram.com/thundergits/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition"><i class="fab fa-instagram text-lg"></i></a>
-            <a href="https://www.linkedin.com/company/thundergits" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition"><i class="fab fa-linkedin-in text-lg"></i></a>
-            <a href="https://www.youtube.com/@thundergits" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition"><i class="fab fa-youtube text-lg"></i></a>
+          <div class="flex gap-3 text-theme-muted">
+            <a href="https://www.instagram.com/thundergits/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition"><i class="fab fa-instagram text-lg"></i></a>
+            <a href="https://www.linkedin.com/company/thundergits" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition"><i class="fab fa-linkedin-in text-lg"></i></a>
+            <a href="https://www.youtube.com/@thundergits" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition"><i class="fab fa-youtube text-lg"></i></a>
           </div>
         </div>
 
@@ -699,7 +635,7 @@
               <input id="sidebar-newsletter-email" type="email" required placeholder="your@email.com"
                 class="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:border-white/50 transition"/>
               <button type="submit" id="sidebar-sub-btn"
-                class="bg-indigo-700 hover:bg-indigo-800 text-white font-medium py-2.5 rounded-xl text-sm transition">
+                class="bg-primary-dark hover:bg-primary-dark text-white font-medium py-2.5 rounded-xl text-sm transition">
                 Subscribe →
               </button>
             </form>
@@ -707,7 +643,7 @@
           </div>
 
           <!-- Recommended Posts (suggestions) -->
-          <div class="bg-white rounded-2xl shadow-soft border border-cardborder p-5 ">
+          <div class="bg-section-light rounded-2xl shadow-soft border border-default p-5 ">
             <h3 class="font-bold text-primary text-lg mb-4">Recommended for you</h3>
             <div id="recommended-posts" class=" space-y-4">
 
@@ -715,11 +651,11 @@
           </div>
 
           <!-- sticky social badge on desktop (optional) -->
-          <!-- <div class="hidden lg:block bg-white rounded-full shadow-sm border border-gray-100 p-2 text-center  ">
+          <!-- <div class="hidden lg:block bg-section-light rounded-full shadow-sm border border-subtle p-2 text-center  ">
             <div class="flex justify-center gap-5">
-              <i class="fab fa-twitter text-gray-500 hover:text-accent cursor-pointer text-lg"></i>
-              <i class="fab fa-linkedin-in text-gray-500 hover:text-accent cursor-pointer text-lg"></i>
-              <i class="fas fa-link text-gray-500 hover:text-accent cursor-pointer text-lg"></i>
+              <i class="fab fa-twitter text-theme-muted hover:text-primary cursor-pointer text-lg"></i>
+              <i class="fab fa-linkedin-in text-theme-muted hover:text-primary cursor-pointer text-lg"></i>
+              <i class="fas fa-link text-theme-muted hover:text-primary cursor-pointer text-lg"></i>
             </div>
           </div> -->
         </div>
@@ -728,14 +664,25 @@
     </div>
   </main>
 
+  <!-- EXPLORE CASE STUDIES CTA -->
+  <section class="bg-section-dark py-20 text-center">
+    <p class="text-sm uppercase tracking-widest text-theme-muted mb-3">See Our Work</p>
+    <h2 class="text-3xl sm:text-4xl font-black text-white mb-8">Ready to explore real results?</h2>
+    <a href="./case-studies.html"
+      class="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-primary text-white text-xs font-black uppercase tracking-widest hover:bg-primary-dark transition-all duration-300 hover:scale-105">
+      Explore Case Studies
+      <i class="ri-arrow-right-up-line text-base"></i>
+    </a>
+  </section>
+
   <!-- FOOTER -->
-  <footer class="w-full bg-gray-100 text-black">
+  <footer class="w-full bg-section-muted text-theme-heading">
 
     <!-- TOP SECTION -->
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
 
       <!-- COL 1: LOGO + DESC -->
-      <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-gray-300">
+      <div class="flex flex-col justify-center px-6 sm:px-10 py-10 border-b lg:border-b-0 lg:border-r border-default">
         <img src="./assets/logo.webp" alt="ThunderGits Logo" class="h-14 mb-6 w-fit" loading="lazy" decoding="async" width="2172" height="724"/>
         <p class="text-sm font-medium leading-relaxed max-w-sm">
           ThunderGits Consultancy Services Pvt Ltd — building powerful web, mobile, and AI-driven digital solutions for startups and enterprises worldwide.
@@ -743,23 +690,23 @@
       </div>
 
       <!-- COL 2: SOCIAL LINKS -->
-      <div class="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-300">
+      <div class="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-default">
         <a href="#"
-          class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Facebook</a>
+          class="px-8 py-5 border-b border-default text-center md:text-left font-semibold hover:bg-gray-200 transition">Facebook</a>
         <a href="https://www.instagram.com/thundergits/" target="_blank" rel="noopener noreferrer"
-          class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Instagram</a>
+          class="px-8 py-5 border-b border-default text-center md:text-left font-semibold hover:bg-gray-200 transition">Instagram</a>
         <a href="https://www.youtube.com/@thundergits" target="_blank" rel="noopener noreferrer"
-          class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">YouTube</a>
+          class="px-8 py-5 border-b border-default text-center md:text-left font-semibold hover:bg-gray-200 transition">YouTube</a>
         <a href="https://www.linkedin.com/company/thundergits" target="_blank" rel="noopener noreferrer"
           class="px-8 py-5 text-center md:text-left font-semibold hover:bg-gray-200 transition">LinkedIn</a>
       </div>
 
       <!-- COL 3: LET'S TALK -->
       <div class="flex flex-col justify-between px-8 md:px-12 py-12">
-        <h2 class="font-black text-blue-950 uppercase leading-none" style="font-size:clamp(1.5rem,7vw,6rem);margin-bottom:1.5rem;">
+        <h2 class="font-black text-theme-heading uppercase leading-none" style="font-size:clamp(1.5rem,7vw,6rem);margin-bottom:1.5rem;">
           LET'S TALK
         </h2>
-        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-800">
+        <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-theme-body-dark">
 
           <span class="flex items-start gap-2 min-w-[220px] flex-1">
             <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -797,7 +744,7 @@
 
     <!-- BOTTOM BAR -->
     <div
-      class="border-t border-gray-300 px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      class="border-t border-default px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-xs text-center md:text-left">
         © 2026 | All rights reserved by Thundergits Consultancy Services Private Limited
       </p>
@@ -840,6 +787,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const heroSection = document.getElementById("hero-section");
       const gridEl = document.getElementById("hero-grid");
       const CELL = 50;
+    const primaryRgb = getComputedStyle(document.documentElement).getPropertyValue('--primary-rgb').trim() || '220, 38, 38';
       let cols = 0, rows = 0, cellEls = [];
   
       function buildGrid() {
@@ -883,7 +831,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const cell = cellEls[y * cols + x];
             if (!cell) return;
             clearTimeout(cell._t);
-            cell.style.background = `rgba(99, 102, 241, ${alpha})`;
+            cell.style.background = `rgba(${primaryRgb}, ${alpha})`;
             cell._t = setTimeout(() => {
               cell.style.background = "";
             }, 650);
@@ -1095,7 +1043,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .querySelectorAll(".blog-category")
           .forEach((el) => {
             el.innerText =
-              blog.category || "";
+              blog.category || "Technology";
           });
 
 
@@ -1182,7 +1130,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     );
 
                   span.className =
-                    "px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm";
+                    "px-3 py-1 bg-section-highlight text-primary rounded-full text-sm";
 
                   span.innerText = tag;
 
@@ -1208,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 Failed to load blog
               </h2>
 
-              <p class="text-gray-600">
+              <p class="text-theme-body">
                 Something went wrong while fetching blog details.
               </p>
             </div>
@@ -1254,7 +1202,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="flex gap-3 items-start">
 
                 <!-- IMAGE -->
-                <div class="w-16 h-16 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
+                <div class="w-16 h-16 bg-section-muted rounded-xl overflow-hidden flex-shrink-0">
                   <img
                     src="${blog.image ||
                   "./assets/Deepseek.webp"
@@ -1268,12 +1216,12 @@ document.addEventListener('DOMContentLoaded', function() {
                   <a
                     href="./blogdetails.html?id=${blog._id
                   }"
-                    class="font-semibold text-gray-800 hover:text-indigo-600 text-sm transition line-clamp-2"
+                    class="font-semibold text-theme-body-dark hover:text-primary text-sm transition line-clamp-2"
                   >
                     ${blog.title}
                   </a>
 
-                  <p class="text-xs text-gray-500 mt-1">
+                  <p class="text-xs text-theme-muted mt-1">
                     ${blog.readTime ||
                   "5 min read"
                   }

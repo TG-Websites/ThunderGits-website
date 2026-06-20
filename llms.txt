@@ -1,4 +1,4 @@
-# ThunderGits
+﻿# ThunderGits
 
 > ThunderGits Consultancy Services Pvt Ltd is an AI-driven IT solutions company founded in Bihar, India. We build web applications, mobile apps, custom software, and digital marketing solutions for startups, SMEs, and enterprises globally. Trusted by 50+ brands with a team of 25+ specialists.
 
@@ -62,7 +62,7 @@ ThunderGits Consultancy Services Pvt Ltd is registered in India. The company has
 
 - **Website**: https://thundergits.com
 - **Email**: info@thundergits.com
-- **Phone**: +91-7765979725
+- **Phone**: +91-8757807372
 - **Address**: HN-75, W-8, P-3, Dagarua, B. Ailoth, Musrigharari, Samastipur, Bihar, India - 848101
 - **Instagram**: https://www.instagram.com/thundergits
 - **YouTube**: https://www.youtube.com/@thundergits

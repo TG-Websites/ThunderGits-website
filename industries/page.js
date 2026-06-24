@@ -254,7 +254,7 @@ async function loadPage() {
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute('content', descText);
     const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', `https://thundergits.com/industries/index.html?page=${page}`);
+    if (canonical) canonical.setAttribute('href', `https://www.thundergits.com/industries/index.html?page=${page}`);
 
   } catch (err) {
     console.error('Error loading page data:', err);

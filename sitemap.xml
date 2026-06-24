@@ -1,57 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Core pages -->
   <url>
-    <loc>https://thundergits.com/</loc>
+    <loc>https://www.thundergits.com/</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/about.html</loc>
+    <loc>https://www.thundergits.com/about.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/service.html</loc>
+    <loc>https://www.thundergits.com/service.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/contact.html</loc>
+    <loc>https://www.thundergits.com/contact.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/consultancy.html</loc>
+    <loc>https://www.thundergits.com/consultancy.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/work.html</loc>
+    <loc>https://www.thundergits.com/work.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/blog.html</loc>
+    <loc>https://www.thundergits.com/blog.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/career.html</loc>
+    <loc>https://www.thundergits.com/career.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/privacy.html</loc>
+    <loc>https://www.thundergits.com/privacy.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -59,19 +59,19 @@
 
   <!-- Blog articles -->
   <url>
-    <loc>https://thundergits.com/blogs/deepseek.html</loc>
+    <loc>https://www.thundergits.com/blogs/deepseek.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/blogs/the-ethical-web-scraping.html</loc>
+    <loc>https://www.thundergits.com/blogs/the-ethical-web-scraping.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/blogs/why-react-native.html</loc>
+    <loc>https://www.thundergits.com/blogs/why-react-native.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
@@ -79,91 +79,91 @@
 
   <!-- Industries — dynamic, high value -->
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=banking</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=banking</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=stock-market</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=stock-market</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=corporate</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=corporate</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=real-estate</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=real-estate</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=sales-marketing</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=sales-marketing</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=gaming</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=gaming</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=media-entertainment</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=media-entertainment</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=education</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=education</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=retail-ecommerce</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=retail-ecommerce</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=household</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=household</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=food-beverages</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=food-beverages</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=travel-hospitality</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=travel-hospitality</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=transportation-logistics</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=transportation-logistics</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=healthcare</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=healthcare</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/industries/index.html?page=automotive</loc>
+    <loc>https://www.thundergits.com/industries/index.html?page=automotive</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -171,49 +171,49 @@
 
   <!-- Jobs -->
   <url>
-    <loc>https://thundergits.com/jobs/backend_development.html</loc>
+    <loc>https://www.thundergits.com/jobs/backend_development.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/jobs/frontend_developer.html</loc>
+    <loc>https://www.thundergits.com/jobs/frontend_developer.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/jobs/react-native-developer.html</loc>
+    <loc>https://www.thundergits.com/jobs/react-native-developer.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/jobs/kotlin-developer.html</loc>
+    <loc>https://www.thundergits.com/jobs/kotlin-developer.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/jobs/graphic_designer.html</loc>
+    <loc>https://www.thundergits.com/jobs/graphic_designer.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/jobs/deepLearning.html</loc>
+    <loc>https://www.thundergits.com/jobs/deepLearning.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/jobs/seo-expert.html</loc>
+    <loc>https://www.thundergits.com/jobs/seo-expert.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://thundergits.com/jobs/social-media-manager.html</loc>
+    <loc>https://www.thundergits.com/jobs/social-media-manager.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -8,9 +8,9 @@
    (generates utility classes like text-primary, bg-primary)
    ─────────────────────────────────────────────────────────── */
 @theme {
-  --color-primary:      #4338CA;   /* indigo — buttons, highlights, icon accents      */
-  --color-primary-dark: #3730A3;   /* dark indigo — hover state for primary buttons   */
-  --color-secondary:    #111827;   /* deep navy-black — dark headings, deep sections  */
+  --color-primary:      #ef7901;   /* orange — CTAs, buttons, highlights              */
+  --color-primary-dark: #c96400;   /* dark orange — hover state for primary buttons   */
+  --color-secondary:    #1f42ad;   /* blue — dark headings, deep sections             */
   --color-tertiary:     #ffffff;   /* white — light sections, card backgrounds        */
 }
 
@@ -36,42 +36,42 @@
    ═══════════════════════════════════════════════════════════ */
 :root {
   /* ── 3 base colors — CHANGE THESE ──────────────────────── */
-  --primary:     #4338CA;   /* indigo — see above               */
-  --secondary:   #111827;   /* dark   — see above               */
+  --primary:     #ef7901;   /* orange — see above               */
+  --secondary:   #1f42ad;   /* blue   — see above               */
   --tertiary:    #ffffff;   /* light  — see above               */
 
   /* ── Derived shade — 1 per base ────────────────────────── */
-  --primary-dark: #3730A3;  /* hover state — bg-primary-dark, hover:bg-primary-dark */
+  --primary-dark: #c96400;  /* hover state — bg-primary-dark, hover:bg-primary-dark */
 
   /* ── RGB components of primary — for rgba() usage in JS/CSS ─
      cursor.js box-shadow, hero-grid hover cell bg, etc.
      ⚠ Keep in sync with --primary above when you retheme.    */
-  --primary-rgb: 67, 56, 202;
+  --primary-rgb: 239, 121, 1;
 
   /* ── Section backgrounds ────────────────────────────────── */
   /* Used as: bg-section-* utility classes                     */
   --section-dark:      #060d18;          /* hero sections, nav bg, very dark areas    */
   --section-light:     var(--tertiary);  /* navbar dropdown, light content sections   */
   --section-muted:     #f1f5f9;          /* alternating light sections, footer light  */
-  --section-highlight: #ede9fe;          /* dropdown hover, tag/badge backgrounds     */
+  --section-highlight: #fff3e0;          /* dropdown hover, tag/badge backgrounds     */
   --section-deep:      var(--secondary); /* CTA banner bg, deep dark content blocks   */
   --section-card:      #f8fafc;          /* blog cards, portfolio cards, use-case cards */
-  --section-neutral:   #e0e7ff;          /* testimonials section, soft alternating bg */
-  --section-team:      #166534;          /* "Our Teams" section on home page — CHANGE TO TEST THEME SWITCH */
+  --section-neutral:   #e8eeff;          /* testimonials section, soft alternating bg */
+  --section-team:      #000000;          /* "Our Teams" section on home page          */
 
   /* ── Text colors ────────────────────────────────────────── */
   /* Used as: text-theme-* utility classes                     */
   --text-heading:    var(--primary);     /* h1–h4 on white/light sections             */
   --text-body-dark:  #1f2937;            /* strong body text on very light bg         */
   --text-body:       #4b5563;            /* general body text, card descriptions      */
-  --text-muted:      #818cf8;            /* labels, badges, secondary text on dark bg */
+  --text-muted:      #f4a443;            /* labels, badges, secondary text on dark bg */
   --text-on-dark:    var(--tertiary);    /* white text on dark/hero/colored sections  */
 
   /* ── Border colors ──────────────────────────────────────── */
   /* Used as: border-default, border-subtle, border-dark, border-deep */
-  --border-default:  #c7d2fe;            /* card borders, input field borders         */
-  --border-subtle:   #e0e7ff;            /* dropdown borders, navbar bottom, dividers */
-  --border-dark:     #312e81;            /* borders on dark sections                  */
+  --border-default:  #c5d0f5;            /* card borders, input field borders         */
+  --border-subtle:   #e2e8ff;            /* dropdown borders, navbar bottom, dividers */
+  --border-dark:     #1a3490;            /* borders on dark sections                  */
   --border-deep:     var(--secondary);   /* deepest borders — same as secondary       */
 }
 
@@ -145,9 +145,9 @@
   height: 550px;
   background: radial-gradient(
     ellipse at 50% 0%,
-    rgba(67, 56, 202, 0.40)  0%,   /* primary at 40% opacity */
-    rgba(67, 56, 202, 0.20) 25%,   /* primary at 20% opacity */
-    rgba(67, 56, 202, 0.08) 55%,   /* primary at  8% opacity */
+    rgba(239, 121, 1, 0.40)  0%,   /* primary at 40% opacity */
+    rgba(239, 121, 1, 0.20) 25%,   /* primary at  8% opacity */
+    rgba(239, 121, 1, 0.06) 55%,   /* primary at  6% opacity */
     transparent 75%
   );
 }

@@ -8,9 +8,9 @@
    (generates utility classes like text-primary, bg-primary)
    ─────────────────────────────────────────────────────────── */
 @theme {
-  --color-primary:      #ef7901;   /* orange — CTAs, buttons, highlights              */
-  --color-primary-dark: #c96400;   /* dark orange — hover state for primary buttons   */
-  --color-secondary:    #1f42ad;   /* blue — dark headings, deep sections             */
+  --color-primary:      #1f42ad;   /* blue — CTAs, buttons, highlights                */
+  --color-primary-dark: #193591;   /* dark blue — hover state for primary buttons     */
+  --color-secondary:    #ef7901;   /* orange — dark headings, deep sections           */
   --color-tertiary:     #ffffff;   /* white — light sections, card backgrounds        */
 }
 
@@ -36,17 +36,17 @@
    ═══════════════════════════════════════════════════════════ */
 :root {
   /* ── 3 base colors — CHANGE THESE ──────────────────────── */
-  --primary:     #ef7901;   /* orange — see above               */
-  --secondary:   #1f42ad;   /* blue   — see above               */
+  --primary:     #1f42ad;   /* blue   — see above               */
+  --secondary:   #ef7901;   /* orange — see above               */
   --tertiary:    #ffffff;   /* light  — see above               */
 
   /* ── Derived shade — 1 per base ────────────────────────── */
-  --primary-dark: #c96400;  /* hover state — bg-primary-dark, hover:bg-primary-dark */
+  --primary-dark: #193591;  /* hover state — bg-primary-dark, hover:bg-primary-dark */
 
   /* ── RGB components of primary — for rgba() usage in JS/CSS ─
      cursor.js box-shadow, hero-grid hover cell bg, etc.
      ⚠ Keep in sync with --primary above when you retheme.    */
-  --primary-rgb: 239, 121, 1;
+  --primary-rgb: 31, 66, 173;
 
   /* ── Section backgrounds ────────────────────────────────── */
   /* Used as: bg-section-* utility classes                     */
@@ -145,9 +145,9 @@
   height: 550px;
   background: radial-gradient(
     ellipse at 50% 0%,
-    rgba(239, 121, 1, 0.40)  0%,   /* primary at 40% opacity */
-    rgba(239, 121, 1, 0.20) 25%,   /* primary at  8% opacity */
-    rgba(239, 121, 1, 0.06) 55%,   /* primary at  6% opacity */
+    rgba(31, 66, 173, 0.40)  0%,   /* primary at 40% opacity */
+    rgba(31, 66, 173, 0.20) 25%,   /* primary at 20% opacity */
+    rgba(31, 66, 173, 0.06) 55%,   /* primary at  6% opacity */
     transparent 75%
   );
 }

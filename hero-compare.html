@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Variants — ThunderGits</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./theme.css">
+    <link rel="stylesheet" href="./tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .variant-label {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            height: 44px;
+            background: #0B1B30;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .variant-label a {
+            flex: 1;
+            text-align: center;
+            font-family: 'Manrope', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #6E8198;
+            text-decoration: none;
+            padding: 0 16px;
+            line-height: 44px;
+            transition: color 0.15s;
+            border-right: 1px solid rgba(255,255,255,0.08);
+        }
+        .variant-label a:last-child { border-right: none; }
+        @keyframes shimmer {
+            0%   { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        .shimmer-line {
+            background: linear-gradient(90deg, #1E5286 0%, #E0712F 50%, #1E5286 100%);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+        .variant-label a:hover { color: #E0712F; }
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: #E0712F;
+            font-family: 'Manrope', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        @keyframes scroll {
+            0%   { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll { animation: scroll 20s linear infinite; }
+    </style>
+</head>
+<body style="margin:0;padding:0;">
+
+    <!-- STICKY NAV LABEL -->
+    <div class="variant-label">
+        <a href="#v1">▲ Variant 1 — Centered Classic</a>
+        <a href="#v2">▼ Variant 2 — Split Layout</a>
+        <a href="#v3">▼ Variant 3 — Premium Editorial</a>
+    </div>
+
+    <!-- ============================================================
+         VARIANT 1 — Current Centered Hero
+         ============================================================ -->
+    <div id="v1" style="padding-top:44px;">
+        <div class="section-divider">⚡ Variant 1 — Centered Classic</div>
+
+        <section class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden bg-black">
+
+            <!-- GRID LINES -->
+            <div class="absolute inset-0 z-0 pointer-events-none"
+                style="background-image:linear-gradient(to right,rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:50px 50px;"></div>
+
+            <!-- INTERACTIVE GRID CELLS -->
+            <div id="hero-grid-v1" class="absolute inset-0 z-[1]"></div>
+
+            <!-- TOP CENTER GLOW -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
+                style="width:900px;height:520px;background:radial-gradient(ellipse at 50% 0%,rgba(134,180,223,0.55) 0%,rgba(79,143,203,0.35) 20%,rgba(30,82,134,0.12) 50%,transparent 75%);"></div>
+
+            <!-- BOTTOM FADE -->
+            <div class="absolute bottom-0 left-0 w-full h-40 pointer-events-none"
+                style="background:linear-gradient(to bottom,transparent,#000);"></div>
+
+            <!-- CONTENT -->
+            <div class="relative z-10 px-6 max-w-6xl mx-auto flex flex-col items-center">
+
+                <!-- BADGE -->
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-gray-300 mb-8 uppercase">
+                    <span class="text-white">⚡</span> Business Growth Partner
+                </span>
+
+                <!-- HEADING -->
+                <h1 style="font-family:'Manrope',sans-serif;font-size:clamp(2.8rem,7.5vw,5.8rem);font-weight:800;line-height:1.1;color:#ffffff;letter-spacing:-0.02em;margin-bottom:1.5rem;text-align:center;">
+                    ThunderGits
+                </h1>
+
+                <!-- SUB-HEADING -->
+                <p class="text-center text-lg sm:text-2xl md:text-3xl font-bold text-white/90 mb-4 leading-tight max-w-2xl">
+                    Your Business Doesn't Need Another Vendor.<br/>
+                    It Needs A <span class="text-white">Growth Partner.</span>
+                </p>
+
+                <!-- DESCRIPTION -->
+                <p class="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mb-10 px-2 sm:px-0">
+                    We are your Business Growth Partner — not an agency you hire for a project.
+                    We take ownership of your digital growth, stay with you long-term,
+                    and are accountable for results, not just deliverables.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center">
+                    <a href="./consultancy.html"
+                        class="group flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
+                        Book Free Consultancy
+                        <span class="group-hover:translate-x-0.5 transition-transform duration-200 text-xs">→</span>
+                    </a>
+                    <a href="./service.html"
+                        class="flex items-center gap-2 border border-white/20 hover:border-white/50 hover:bg-white/10 text-white/80 hover:text-white px-8 py-3 rounded-full font-semibold text-sm hover:scale-105 transition-all duration-300">
+                        See How We Work <span class="text-xs">→</span>
+                    </a>
+                </div>
+
+                <!-- AVATAR + COUNT -->
+                <div class="hidden sm:flex items-center gap-4 mt-10">
+                    <div class="flex -space-x-3">
+                        <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain" src="./assets/brands/davabharti.webp" alt="Dava Bharti" loading="lazy" width="300" height="160">
+                        <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain" src="./assets/brands/enersol.webp" alt="Enersol" loading="lazy" width="1270" height="488">
+                        <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain" src="./assets/brands/thikana.webp" alt="Thikana" loading="lazy" width="753" height="730">
+                    </div>
+                    <div class="text-left">
+                        <p class="text-white text-sm font-semibold leading-none">100+ Businesses</p>
+                        <p class="text-gray-400 text-xs mt-1">Across India</p>
+                    </div>
+                </div>
+
+                <!-- SCROLLING LOGOS -->
+                <div class="mt-16 w-full max-w-3xl overflow-hidden relative">
+                    <div class="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none" style="background:linear-gradient(to right,#000,transparent)"></div>
+                    <div class="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none" style="background:linear-gradient(to left,#000,transparent)"></div>
+                    <div class="flex w-max animate-scroll gap-0">
+                        <div class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
+                            <span class="whitespace-nowrap">Davabharti</span>
+                            <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
+                            <span class="whitespace-nowrap">Ganesha Foundation</span>
+                            <span class="whitespace-nowrap">AAP Bihar</span>
+                            <span class="whitespace-nowrap">Pasuseva</span>
+                            <span class="whitespace-nowrap">Coding Pandas</span>
+                        </div>
+                        <div class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
+                            <span class="whitespace-nowrap">Davabharti</span>
+                            <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
+                            <span class="whitespace-nowrap">Ganesha Foundation</span>
+                            <span class="whitespace-nowrap">AAP Bihar</span>
+                            <span class="whitespace-nowrap">Pasuseva</span>
+                            <span class="whitespace-nowrap">Coding Pandas</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ============================================================
+         VARIANT 2 — Split Layout with Proof Cluster
+         ============================================================ -->
+    <div id="v2">
+        <div class="section-divider">⚡ Variant 2 — Split Layout</div>
+
+        <section class="relative min-h-screen flex items-center overflow-hidden"
+            style="background:linear-gradient(135deg,#07101D 0%,#0B1B30 45%,#102A47 100%);">
+
+            <!-- GRID LINES -->
+            <div class="absolute inset-0 z-0 pointer-events-none"
+                style="background-image:linear-gradient(to right,rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;"></div>
+
+            <!-- INTERACTIVE GRID CELLS -->
+            <div id="hero-grid-v2" class="absolute inset-0 z-[1]"></div>
+
+            <!-- EMBER GLOW — top right -->
+            <div class="absolute top-0 right-0 pointer-events-none"
+                style="width:650px;height:650px;background:radial-gradient(ellipse at 100% 0%,rgba(224,113,47,0.18) 0%,rgba(224,113,47,0.05) 45%,transparent 70%);"></div>
+
+            <!-- BRAND BLUE GLOW — bottom left -->
+            <div class="absolute bottom-0 left-0 pointer-events-none"
+                style="width:700px;height:500px;background:radial-gradient(ellipse at 0% 100%,rgba(30,82,134,0.28) 0%,rgba(79,143,203,0.07) 55%,transparent 75%);"></div>
+
+            <!-- BOTTOM FADE -->
+            <div class="absolute bottom-0 left-0 w-full h-32 pointer-events-none z-[2]"
+                style="background:linear-gradient(to bottom,transparent,#07101D);"></div>
+
+            <!-- CONTENT -->
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <!-- LEFT: COPY -->
+                    <div>
+                        <!-- EYEBROW -->
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8"
+                            style="background:rgba(224,113,47,0.1);border-color:rgba(224,113,47,0.3);">
+                            <span style="color:#E0712F;">⚡</span>
+                            <span style="color:#E0712F;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;font-family:'Manrope',sans-serif;">Business Growth Partner</span>
+                        </div>
+
+                        <!-- HEADLINE -->
+                        <h1 style="font-family:'Manrope',sans-serif;font-weight:800;line-height:1.05;letter-spacing:-0.03em;color:#ffffff;font-size:clamp(2.6rem,5vw,4.4rem);margin-bottom:1.5rem;">
+                            Stop Managing<br/>
+                            Vendors.<br/>
+                            <span style="color:#E0712F;">Start Growing.</span>
+                        </h1>
+
+                        <!-- DESCRIPTION -->
+                        <p style="font-family:'IBM Plex Sans',sans-serif;color:#9DB3C9;font-size:1.05rem;line-height:1.8;max-width:480px;margin-bottom:2.5rem;">
+                            One team. Full ownership. We handle strategy, technology,
+                            SEO, and marketing — so you stop coordinating vendors
+                            and start seeing real growth.
+                        </p>
+
+                        <!-- CTAs -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="./consultancy.html"
+                                class="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-lg hover:shadow-xl transition-all duration-200">
+                                Get Your Growth Plan
+                                <span class="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
+                            </a>
+                            <a href="./work.html"
+                                class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm font-semibold border hover:bg-white/5 transition-all duration-200"
+                                style="color:#C6DCF0;border-color:rgba(134,180,223,0.25);">
+                                See Our Work ↗
+                            </a>
+                        </div>
+
+                        <!-- SOCIAL PROOF -->
+                        <div class="flex items-center gap-5 mt-10 pt-10 border-t" style="border-color:rgba(255,255,255,0.08);">
+                            <div class="flex -space-x-3">
+                                <img class="w-10 h-10 p-1.5 rounded-full shadow-md object-contain" style="background:#D6DDE4;"
+                                    src="./assets/brands/davabharti.webp" alt="Dava Bharti" loading="lazy" width="300" height="160">
+                                <img class="w-10 h-10 p-1.5 rounded-full shadow-md object-contain" style="background:#D6DDE4;"
+                                    src="./assets/brands/enersol.webp" alt="Enersol" loading="lazy" width="1270" height="488">
+                                <img class="w-10 h-10 p-1.5 rounded-full shadow-md object-contain" style="background:#D6DDE4;"
+                                    src="./assets/brands/thikana.webp" alt="Thikana" loading="lazy" width="753" height="730">
+                                <div class="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
+                                    style="background:#1E5286;color:#C6DCF0;">+97</div>
+                            </div>
+                            <div>
+                                <p style="color:#ffffff;font-size:0.875rem;font-weight:700;line-height:1.3;font-family:'Manrope',sans-serif;">100+ Businesses</p>
+                                <p style="color:#6E8198;font-size:0.75rem;margin-top:3px;">trust us as their growth partner</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: PROOF CLUSTER -->
+                    <div class="hidden lg:flex items-center justify-center">
+                        <div class="relative w-full max-w-[440px]" style="padding:2rem 1.5rem;">
+
+                            <!-- FLOATING CARD: top-right -->
+                            <div class="absolute -top-2 right-0 z-20 rounded-xl px-4 py-3 border flex items-center gap-3"
+                                style="background:rgba(7,16,29,0.95);border-color:rgba(224,113,47,0.3);backdrop-filter:blur(12px);min-width:176px;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+                                <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style="background:rgba(224,113,47,0.2);">
+                                    <i class="fas fa-chart-line" style="color:#E0712F;font-size:12px;"></i>
+                                </div>
+                                <div>
+                                    <p style="color:#ffffff;font-size:12px;font-weight:700;line-height:1.2;font-family:'Manrope',sans-serif;">Growth Owned</p>
+                                    <p style="color:#6E8198;font-size:11px;margin-top:2px;">Not just delivered</p>
+                                </div>
+                            </div>
+
+                            <!-- MAIN CARD -->
+                            <div class="rounded-2xl p-7 border"
+                                style="background:rgba(17,46,77,0.7);border-color:rgba(79,143,203,0.2);backdrop-filter:blur(16px);box-shadow:0 24px 64px rgba(0,0,0,0.35);">
+
+                                <p style="color:#6E8198;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:1.25rem;font-family:'Manrope',sans-serif;">What We Own For You</p>
+
+                                <!-- SERVICE PILLS -->
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span style="background:rgba(30,82,134,0.3);color:#86B4DF;border:1px solid rgba(79,143,203,0.3);padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;">Strategy & Consultancy</span>
+                                    <span style="background:rgba(224,113,47,0.15);color:#F0935A;border:1px solid rgba(224,113,47,0.3);padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;">Web & App Dev</span>
+                                    <span style="background:rgba(30,82,134,0.3);color:#86B4DF;border:1px solid rgba(79,143,203,0.3);padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;">SEO · GEO · AEO</span>
+                                    <span style="background:rgba(224,113,47,0.15);color:#F0935A;border:1px solid rgba(224,113,47,0.3);padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;">Meta & Google Ads</span>
+                                    <span style="background:rgba(30,82,134,0.3);color:#86B4DF;border:1px solid rgba(79,143,203,0.3);padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;">Social Media</span>
+                                    <span style="background:rgba(47,143,107,0.15);color:#45A883;border:1px solid rgba(47,143,107,0.3);padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;">Ongoing Partnership</span>
+                                </div>
+
+                                <!-- DIVIDER -->
+                                <div style="border-top:1px solid rgba(255,255,255,0.07);margin-bottom:1.25rem;"></div>
+
+                                <!-- STATS ROW -->
+                                <div class="grid grid-cols-3 text-center">
+                                    <div class="py-1">
+                                        <p style="font-family:'Manrope',sans-serif;font-size:2rem;font-weight:800;color:#ffffff;line-height:1;">100+</p>
+                                        <p style="color:#6E8198;font-size:11px;margin-top:5px;">Partners</p>
+                                    </div>
+                                    <div class="py-1" style="border-left:1px solid rgba(255,255,255,0.07);border-right:1px solid rgba(255,255,255,0.07);">
+                                        <p style="font-family:'Manrope',sans-serif;font-size:2rem;font-weight:800;color:#ffffff;line-height:1;">95%</p>
+                                        <p style="color:#6E8198;font-size:11px;margin-top:5px;">Retention</p>
+                                    </div>
+                                    <div class="py-1">
+                                        <p style="font-family:'Manrope',sans-serif;font-size:2rem;font-weight:800;color:#ffffff;line-height:1;">3+</p>
+                                        <p style="color:#6E8198;font-size:11px;margin-top:5px;">Yrs Active</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FLOATING CARD: bottom-left -->
+                            <div class="absolute -bottom-2 left-0 z-20 rounded-xl px-4 py-3 border flex items-center gap-3"
+                                style="background:rgba(7,16,29,0.95);border-color:rgba(79,143,203,0.3);backdrop-filter:blur(12px);min-width:176px;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+                                <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style="background:rgba(30,82,134,0.25);">
+                                    <i class="fas fa-handshake" style="color:#4F8FCB;font-size:12px;"></i>
+                                </div>
+                                <div>
+                                    <p style="color:#ffffff;font-size:12px;font-weight:700;line-height:1.2;font-family:'Manrope',sans-serif;">One Team</p>
+                                    <p style="color:#6E8198;font-size:11px;margin-top:2px;">Full accountability</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TRUSTED BY STRIP -->
+                <div class="mt-16 pt-8 border-t" style="border-color:rgba(255,255,255,0.06);">
+                    <p style="color:#3D4A59;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-align:center;margin-bottom:1.25rem;font-family:'Manrope',sans-serif;">Trusted By</p>
+                    <div class="w-full overflow-hidden relative">
+                        <div class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none"
+                            style="background:linear-gradient(to right,#07101D,transparent)"></div>
+                        <div class="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none"
+                            style="background:linear-gradient(to left,#07101D,transparent)"></div>
+                        <div class="flex w-max animate-scroll gap-0">
+                            <div class="flex gap-14 items-center px-7 text-sm font-semibold tracking-widest uppercase" style="color:#3D4A59;">
+                                <span class="whitespace-nowrap">Davabharti</span>
+                                <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
+                                <span class="whitespace-nowrap">Ganesha Foundation</span>
+                                <span class="whitespace-nowrap">AAP Bihar</span>
+                                <span class="whitespace-nowrap">Pasuseva</span>
+                                <span class="whitespace-nowrap">Coding Pandas</span>
+                            </div>
+                            <div class="flex gap-14 items-center px-7 text-sm font-semibold tracking-widest uppercase" style="color:#3D4A59;">
+                                <span class="whitespace-nowrap">Davabharti</span>
+                                <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
+                                <span class="whitespace-nowrap">Ganesha Foundation</span>
+                                <span class="whitespace-nowrap">AAP Bihar</span>
+                                <span class="whitespace-nowrap">Pasuseva</span>
+                                <span class="whitespace-nowrap">Coding Pandas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ============================================================
+         VARIANT 3 — Premium Editorial
+         ============================================================ -->
+    <div id="v3">
+        <div class="section-divider">⚡ Variant 3 — Premium Editorial</div>
+
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden"
+            style="background:#07101D;">
+
+            <!-- SUBTLE GRID -->
+            <div class="absolute inset-0 z-0 pointer-events-none"
+                style="background-image:linear-gradient(to right,rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:80px 80px;"></div>
+
+            <!-- INTERACTIVE GRID CELLS -->
+            <div id="hero-grid-v3" class="absolute inset-0 z-1"></div>
+
+            <!-- VERY SUBTLE CENTER GLOW -->
+            <div class="absolute inset-0 z-0 pointer-events-none"
+                style="background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(30,82,134,0.10) 0%,transparent 70%);"></div>
+
+            <!-- BOTTOM FADE -->
+            <div class="absolute bottom-0 left-0 w-full h-40 pointer-events-none z-2"
+                style="background:linear-gradient(to bottom,transparent,#07101D);"></div>
+
+            <!-- CONTENT -->
+            <div class="relative z-10 w-full max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+
+                <!-- MICRO LABEL -->
+                <p style="font-family:'IBM Plex Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:#3D4A59;margin-bottom:32px;">
+                    Business Growth Partner &nbsp;·&nbsp; Est. 2021
+                </p>
+
+                <!-- SHIMMER RULE -->
+                <div class="shimmer-line" style="width:48px;height:1px;border-radius:999px;margin-bottom:40px;"></div>
+
+                <!-- SMALL SETUP LINE -->
+                <p style="font-family:'IBM Plex Sans',sans-serif;font-size:clamp(0.8rem,1.6vw,1rem);font-weight:300;letter-spacing:0.04em;color:rgba(255,255,255,0.3);line-height:1.6;margin-bottom:20px;">
+                    Your Business Doesn't Need Another Vendor.
+                </p>
+
+                <!-- BIG PAYOFF -->
+                <div style="margin-bottom:12px;">
+                    <p style="font-family:'Manrope',sans-serif;font-size:clamp(1.4rem,3.5vw,2.4rem);font-weight:600;color:rgba(255,255,255,0.75);letter-spacing:-0.02em;line-height:1.15;margin-bottom:6px;">
+                        It Needs A
+                    </p>
+                    <p style="font-family:'Manrope',sans-serif;font-size:clamp(3.2rem,9vw,7.5rem);font-weight:800;color:#E0712F;letter-spacing:-0.04em;line-height:1;margin:0;">
+                        Growth Partner.
+                    </p>
+                </div>
+
+                <!-- THIN DIVIDER -->
+                <div style="width:1px;height:48px;background:linear-gradient(to bottom,rgba(224,113,47,0.5),transparent);margin:40px auto 40px;"></div>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
+                    <a href="./consultancy.html"
+                        class="group inline-flex items-center gap-2 px-8 py-3.5 text-white text-sm font-bold bg-accent hover:bg-accent-dark transition-all duration-200"
+                        style="border-radius:3px;letter-spacing:0.06em;text-transform:uppercase;font-size:11px;">
+                        Get Your Growth Plan
+                        <span class="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
+                    </a>
+                    <a href="./work.html"
+                        class="inline-flex items-center gap-2 text-sm transition-all duration-200"
+                        style="color:rgba(255,255,255,0.4);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:2px;">
+                        See Our Work
+                    </a>
+                </div>
+
+                <!-- SOCIAL PROOF — minimal -->
+                <div class="flex items-center justify-center gap-8 mt-16 pt-10 border-t w-full" style="border-color:rgba(255,255,255,0.05);">
+                    <div class="text-center">
+                        <p style="font-family:'Manrope',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1;">100+</p>
+                        <p style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#3D4A59;margin-top:6px;">Partners</p>
+                    </div>
+                    <div style="width:1px;height:36px;background:rgba(255,255,255,0.06);"></div>
+                    <div class="text-center">
+                        <p style="font-family:'Manrope',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1;">95%</p>
+                        <p style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#3D4A59;margin-top:6px;">Retention</p>
+                    </div>
+                    <div style="width:1px;height:36px;background:rgba(255,255,255,0.06);"></div>
+                    <div class="text-center">
+                        <p style="font-family:'Manrope',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1;">3+</p>
+                        <p style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#3D4A59;margin-top:6px;">Years</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ============================================================
+         INTERACTIVE GRID JS — runs for both sections
+         ============================================================ -->
+    <script>
+    function initGrid(sectionEl, gridEl) {
+        const CELL = 50;
+        let cols = 0, rows = 0, cellEls = [];
+
+        function buildGrid() {
+            gridEl.innerHTML = '';
+            cols = Math.ceil(gridEl.offsetWidth / CELL) + 1;
+            rows = Math.ceil(gridEl.offsetHeight / CELL) + 1;
+            gridEl.style.display = 'grid';
+            gridEl.style.gridTemplateColumns = `repeat(${cols}, ${CELL}px)`;
+            gridEl.style.gridTemplateRows = `repeat(${rows}, ${CELL}px)`;
+            cellEls = [];
+            for (let i = 0; i < cols * rows; i++) {
+                const d = document.createElement('div');
+                d.style.cssText = 'transition:background 0.55s ease;';
+                gridEl.appendChild(d);
+                cellEls.push(d);
+            }
+        }
+
+        buildGrid();
+        window.addEventListener('resize', buildGrid);
+
+        sectionEl.addEventListener('mousemove', (e) => {
+            const rect = gridEl.getBoundingClientRect();
+            const cx = Math.floor((e.clientX - rect.left) / CELL);
+            const cy = Math.floor((e.clientY - rect.top) / CELL);
+            const pattern = [
+                [0,0,0.40],[-1,0,0.20],[1,0,0.20],[0,-1,0.20],[0,1,0.20],
+                [-1,-1,0.09],[1,-1,0.09],[-1,1,0.09],[1,1,0.09],
+                [-2,0,0.04],[2,0,0.04],[0,-2,0.04],[0,2,0.04],
+            ];
+            pattern.forEach(([dx, dy, alpha]) => {
+                const x = cx + dx, y = cy + dy;
+                if (x < 0 || x >= cols || y < 0 || y >= rows) return;
+                const cell = cellEls[y * cols + x];
+                if (!cell) return;
+                clearTimeout(cell._t);
+                cell.style.background = `rgba(30,82,134,${alpha})`;
+                cell._t = setTimeout(() => { cell.style.background = ''; }, 200);
+            });
+        });
+    }
+
+    const v1Section = document.querySelector('#v1 section');
+    const v1Grid    = document.getElementById('hero-grid-v1');
+    const v2Section = document.querySelector('#v2 section');
+    const v2Grid    = document.getElementById('hero-grid-v2');
+
+    if (v1Section && v1Grid) initGrid(v1Section, v1Grid);
+    if (v2Section && v2Grid) initGrid(v2Section, v2Grid);
+
+    const v3Section = document.querySelector('#v3 section');
+    const v3Grid    = document.getElementById('hero-grid-v3');
+    if (v3Section && v3Grid) initGrid(v3Section, v3Grid);
+    </script>
+
+</body>
+</html>

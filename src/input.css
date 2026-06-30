@@ -4,10 +4,12 @@
 @source "../**/*.js";
 
 @theme {
-  --color-accent: #4338CA;
-  --color-dark: #111827;
-  --color-primary: #4338CA;
-  --color-primary-dark: #3730A3;
+  --color-accent: #E0712F;            /* ember-400 */
+  --color-accent-dark: #C2521F;       /* ember-500, hover state */
+  --color-dark: #0B1B30;              /* tg-blue-900 */
+  --color-primary: #1E5286;           /* tg-blue-600 */
+  --color-primary-dark: #173B62;      /* tg-blue-700, hover state */
+  --color-secondary: #0B1B30;         /* tg-blue-900 — used as bg-secondary / text-secondary */
 }
 
 * {
@@ -15,8 +17,9 @@
 }
 
 :root {
-  --primary: #4338CA;
-  --primary-dark: #3730A3;
+  --primary: #1E5286;
+  --primary-dark: #173B62;
+  --secondary: #0B1B30;
 }
 
 .text-primary { color: var(--primary); }
@@ -29,7 +32,7 @@
 .hero {
   background-color: #060d18;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(57, 126, 255, 0.25) 0%, transparent 80%),
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(30, 82, 134, 0.25) 0%, transparent 80%),
     linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: auto, 80px 80px, 80px 80px;
@@ -50,7 +53,7 @@
 }
 
 .group:hover .word span {
-  color: #6366f1;
+  color: #E0712F;
   transform: translateY(-3px);
 }
 

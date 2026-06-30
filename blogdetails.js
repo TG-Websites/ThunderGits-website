@@ -108,13 +108,13 @@ function displayBlogContent(blog) {
     if (blog.image) {
         featuredImageContainer.innerHTML = `
             <div class="max-w-6xl mx-auto px-6">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-indigo-500/10 group">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 group">
                     <img src="${blog.image}"
                          alt="${blog.title}" 
                          class="w-full h-[400px] md:h-[700px] object-cover transition-transform duration-1000 group-hover:scale-105"
                          onerror="this.src='./assets/blogimg1.webp'"
                          data-aos="zoom-in">
-                    <div class="absolute inset-0 bg-indigo-950/10 group-hover:bg-transparent transition-colors duration-700"></div>
+                    <div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700"></div>
                 </div>
             </div>
         `;
@@ -125,8 +125,8 @@ function displayBlogContent(blog) {
     // Update blog content
     const blogBody = document.getElementById('blogBody');
     blogBody.innerHTML = `
-        ${blog.excerpt ? `<div class="text-xl md:text-2xl text-blue-950 font-bold mb-16 leading-relaxed border-l-4 border-indigo-500 pl-8 italic" data-aos="fade-up">${blog.excerpt}</div>` : ''}
-        <div class="prose prose-lg md:prose-xl prose-indigo max-w-none text-gray-700 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
+        ${blog.excerpt ? `<div class="text-xl md:text-2xl text-blue-950 font-bold mb-16 leading-relaxed border-l-4 border-accent pl-8 italic" data-aos="fade-up">${blog.excerpt}</div>` : ''}
+        <div class="prose prose-lg md:prose-xl prose-gray max-w-none text-gray-700 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
             ${formatBlogContent(blog.content)}
         </div>
     `;
@@ -139,18 +139,18 @@ function displayBlogContent(blog) {
     authorInfo.innerHTML = `
         <div class="pt-24 border-t border-gray-100" data-aos="fade-up">
             <div class="flex flex-col sm:flex-row items-center sm:items-start gap-12 bg-gray-50/50 p-8 md:p-12 rounded-3xl border border-gray-100">
-                <div class="w-24 h-24 bg-gradient-to-br from-indigo-600 to-blue-800 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-xl shadow-indigo-500/20 flex-shrink-0">
+                <div class="w-24 h-24 bg-gradient-to-br from-accent to-accent-dark rounded-2xl flex items-center justify-center text-white font-bold text-3xl shadow-xl shadow-primary/20 flex-shrink-0">
                     ${authorName.charAt(0).toUpperCase()}
                 </div>
                 <div>
-                    <span class="text-[10px] tracking-[0.3em] font-black uppercase text-indigo-500/60 mb-3 block">Written By</span>
+                    <span class="text-[10px] tracking-[0.3em] font-black uppercase text-accent/60 mb-3 block">Written By</span>
                     <h4 class="text-3xl font-bold text-blue-950 mb-4">${authorName}</h4>
                     <p class="text-gray-500 leading-relaxed text-lg max-w-2xl font-light">
                         ${blog.author?.bio || 'Leading the digital transformation frontier at ThunderGits Technology. Expert in building scalable architectures and premium user experiences.'}
                     </p>
                     <div class="flex gap-4 mt-8">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-500 transition-all shadow-sm"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-500 transition-all shadow-sm"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent transition-all shadow-sm"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent transition-all shadow-sm"><i class="ri-twitter-fill"></i></a>
                     </div>
                 </div>
             </div>
@@ -163,7 +163,7 @@ function displayBlogContent(blog) {
         blogTags.innerHTML = `
             <div class="flex flex-wrap gap-3" data-aos="fade-up">
                 ${blog.tags.map(tag => `
-                    <span class="px-5 py-2 bg-gray-100/50 text-gray-500 text-[10px] font-bold uppercase tracking-widest hover:bg-indigo-600 hover:text-white transition-all cursor-pointer rounded-lg border border-gray-100 hover:border-indigo-600 shadow-sm">
+                    <span class="px-5 py-2 bg-gray-100/50 text-gray-500 text-[10px] font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-all cursor-pointer rounded-lg border border-gray-100 hover:border-accent shadow-sm">
                         #${tag}
                     </span>
                 `).join('')}
@@ -236,21 +236,21 @@ function displayRelatedBlogs(blogs) {
         
         container.innerHTML = `
             ${blogsToShow.map((blog, index) => `
-                <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-indigo-500/50 hover:bg-white hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="${(index % 3) * 100}">
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden border border-gray-200/50 hover:border-accent/50 hover:bg-white hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 flex flex-col" data-aos="fade-up" data-aos-delay="${(index % 3) * 100}">
                     <div class="h-56 overflow-hidden relative">
                         <img src="${blog.featuredImage || blog.image || './assets/blogimg1.webp'}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="${blog.title}" onerror="this.src='./assets/blogimg1.webp'">
-                        <div class="absolute inset-0 bg-indigo-950/10 group-hover:bg-transparent transition-colors duration-700"></div>
+                        <div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700"></div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <div class="flex items-center gap-3 mb-5">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-indigo-600 px-2 py-1 bg-indigo-50 rounded">${formatCategory(blog.category)}</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-accent px-2 py-1 bg-accent/5 rounded">${formatCategory(blog.category)}</span>
                             <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">5 min read</span>
                         </div>
-                        <h3 class="text-xl font-bold text-blue-950 mb-4 group-hover:text-indigo-600 transition-colors leading-tight">${blog.title}</h3>
+                        <h3 class="text-xl font-bold text-blue-950 mb-4 group-hover:text-accent transition-colors leading-tight">${blog.title}</h3>
                         <p class="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed">${blog.excerpt || 'Read more about this topic.'}</p>
                         <div class="mt-auto pt-6 border-t border-gray-100 flex justify-between items-center">
                             <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">${new Date(blog.publishedAt).toLocaleDateString()}</span>
-                            <a href="./blogdetails.html?id=${blog._id}" class="w-10 h-10 rounded-full bg-blue-950 text-white flex items-center justify-center hover:bg-indigo-600 transition-colors shadow-lg group-hover:scale-110">
+                            <a href="./blogdetails.html?id=${blog._id}" class="w-10 h-10 rounded-full bg-blue-950 text-white flex items-center justify-center hover:bg-accent transition-colors shadow-lg group-hover:scale-110">
                                 <i class="fas fa-arrow-right text-xs"></i>
                             </a>
                         </div>
@@ -260,7 +260,7 @@ function displayRelatedBlogs(blogs) {
             
             ${blogs.length > visibleCount ? `
                 <div class="col-span-full text-center mt-12">
-                    <button id="showMoreBlogs" class="px-10 py-4 bg-blue-950 text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-indigo-600 transition-all shadow-lg">
+                    <button id="showMoreBlogs" class="px-10 py-4 bg-blue-950 text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-accent transition-all shadow-lg">
                         Load More Articles
                     </button>
                 </div>
@@ -292,7 +292,7 @@ function showError(message) {
             <i class="ri-error-warning-line text-red-500 text-6xl mb-6"></i>
             <h2 class="text-2xl font-bold text-white mb-4">Article Not Found</h2>
             <p class="text-gray-400 mb-8">${message}</p>
-            <a href="./blog.html" class="inline-flex items-center bg-white text-black px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-indigo-500 hover:text-white transition-all">
+            <a href="./blog.html" class="inline-flex items-center bg-white text-black px-8 py-3 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-accent/50 hover:text-white transition-all">
                 <i class="ri-arrow-left-line mr-3"></i> Back to Blog
             </a>
         </div>

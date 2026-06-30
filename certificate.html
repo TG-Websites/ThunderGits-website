@@ -25,10 +25,10 @@
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./tailwind.css">
+  <link rel="stylesheet" href="./theme.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
@@ -58,7 +58,7 @@
 </script>
 </head>
 
-<body class="bg-black text-white font-['Inter',sans-serif]">
+<body class="bg-black text-white font-['IBM_Plex_Sans',sans-serif]">
 
   <!-- Navbar -->
   <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
@@ -87,8 +87,7 @@
         <a href="./blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
         <a href="./contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
         <a href="./contact.html"
-          class="px-6 py-2 bg-primary hover:bg-primary-dark text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get
-          a Quote</a>
+          class="px-6 py-2 bg-accent hover:bg-accent-dark text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Book Free Consultancy</a>
       </div>
     </div>
 
@@ -115,7 +114,7 @@
 
     <!-- Top Glow -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-      style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+      style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(134,180,223,0.40) 0%, rgba(79,143,203,0.22) 20%, rgba(30,82,134,0.08) 50%, transparent 75%);">
     </div>
 
     <div class="relative z-10 max-w-screen-xl mx-auto px-6 w-full">
@@ -124,12 +123,12 @@
         <!-- Left: Hero Text -->
         <div data-aos="fade-right">
           <span
-            class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-8 uppercase font-bold">
+            class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-[#E0712F]/10 border border-[#E0712F]/20 text-[#E0712F] mb-8 uppercase font-bold">
             Verification Portal
           </span>
           <h1
             style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
-            Verified <span class="text-indigo-400 font-semibold">Internship</span> <br /> Certificates
+            Verified <span class="text-[#E0712F] font-semibold">Internship</span> <br /> Certificates
           </h1>
           <p class="text-gray-400 text-lg leading-relaxed mb-8 font-light max-w-xl">
             Authenticity matters. Use our secure portal to verify internship completion records issued by ThunderGits
@@ -140,7 +139,7 @@
         <!-- Right: Status Card (Shows up immediately or during loading) -->
         <div data-aos="fade-left" class="relative group">
           <div
-            class="absolute -inset-4 bg-indigo-500/10 blur-2xl rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition duration-700">
+            class="absolute -inset-4 bg-[#E0712F]/10 blur-2xl rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition duration-700">
           </div>
           <div class="relative bg-white/[0.02] border border-white/10 rounded-[2.5rem] p-8 md:p-10 backdrop-blur-md">
             <div class="flex items-center gap-6 mb-8">
@@ -172,7 +171,7 @@
 
             <div class="flex flex-col gap-4">
               <a href="./contact.html"
-                class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition duration-300 text-center shadow-lg shadow-indigo-900/50">
+                class="w-full py-4 bg-[#1E5286] hover:bg-[#E0712F] text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition duration-300 text-center shadow-lg shadow-[#0B1B30]/50">
                 Contact Support
               </a>
             </div>
@@ -219,7 +218,7 @@
             </div>
             <div>
               <h2 id="name" class="text-3xl font-bold text-white mb-2">—</h2>
-              <p class="text-indigo-400 text-sm font-semibold uppercase tracking-widest">Verified Intern</p>
+              <p class="text-[#E0712F] text-sm font-semibold uppercase tracking-widest">Verified Intern</p>
               <span
                 class="inline-block mt-3 px-3 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-black uppercase tracking-widest rounded-md border border-emerald-500/20">Completed</span>
             </div>
@@ -267,7 +266,7 @@
               <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Project/Record
                 Link</span>
               <a id="link" href="#" target="_blank"
-                class="text-indigo-400 font-bold hover:text-white transition break-all">Checking record...</a>
+                class="text-[#E0712F] font-bold hover:text-white transition break-all">Checking record...</a>
             </div>
             <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
               <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest block mb-2">Verification

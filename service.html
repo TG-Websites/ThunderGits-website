@@ -47,9 +47,9 @@
   <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./tailwind.css">
+  <link rel="stylesheet" href="./theme.css">
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- Swiper JS -->
@@ -60,6 +60,33 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Hero animations */
+    @keyframes svc-marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .svc-marquee-track { animation: svc-marquee 28s linear infinite; }
+    .svc-marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes svc-float {
+      0%,100% { transform: rotate(-2deg) translateY(0px); }
+      50%      { transform: rotate(-2deg) translateY(-12px); }
+    }
+    .svc-float { animation: svc-float 6s ease-in-out infinite; }
+
+    @keyframes svc-float-sm {
+      0%,100% { transform: rotate(1.5deg) translateY(0px); }
+      50%      { transform: rotate(1.5deg) translateY(-8px); }
+    }
+    .svc-float-sm { animation: svc-float-sm 5s ease-in-out infinite 1s; }
+
+    @keyframes glow-pulse {
+      0%,100% { opacity: 0.55; }
+      50%      { opacity: 0.80; }
+    }
+    .glow-pulse { animation: glow-pulse 4s ease-in-out infinite; }
+  </style>
 
 <script type="application/ld+json">
 {
@@ -83,7 +110,7 @@
 </script>
 </head>
 
-<body class="bg-white text-black font-['Inter',sans-serif]">
+<body class="bg-white text-black font-['IBM_Plex_Sans',sans-serif]">
 
 
   <!-- Navbar -->
@@ -113,140 +140,21 @@
 
       <!-- DESKTOP NAV -->
       <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
-        <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark transition">Home</a></li>
-        <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
-        <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-primary-dark transition">Case Studies</a></li>
+        <li><a href="./index.html" class="text-fg-brand hover:text-gray-700 transition">Home</a></li>
+        <li><a href="./about.html" class="text-black hover:text-gray-700 transition">About</a></li>
+        <li><a href="./work.html" class="text-black hover:text-gray-700 transition">Work</a></li>
+                <li><a href="./case-studies.html" class="text-black hover:text-gray-700 transition">Case Studies</a></li>
         <li><a href="./service.html" class="text-black text-primary font-semibold transition">Services</a></li>
-        <li><a href="./career.html" class="text-black hover:text-primary-dark transition">Career</a></li>
+        <li><a href="./career.html" class="text-black hover:text-gray-700 transition">Career</a></li>
 
-        <!-- INDUSTRIES DROPDOWN -->
-        <li class="relative group">
-          <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
-            Industries
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-            </svg>
-          </button>
 
-          <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
-                            transition-all duration-300 z-50">
-            <ul class="p-2 text-sm text-gray-700">
-
-              <!-- Finance & Business -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Finance & Business <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=banking"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO
-                        Banking</a></li>
-                    <li><a href="./industries/index.html?page=stock-market"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock
-                        Market</a></li>
-                    <li><a href="./industries/index.html?page=corporate"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=real-estate"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real
-                        Estate</a></li>
-                    <li><a href="./industries/index.html?page=sales-marketing"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales
-                        & Marketing</a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Technology & Media -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Technology & Media <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=gaming"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=media-entertainment"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media
-                        & Entertainment</a></li>
-                    <li><a href="./industries/index.html?page=education"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Commerce & Lifestyle -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Commerce & Lifestyle <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=retail-ecommerce"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail
-                        & Ecommerce</a></li>
-                    <li><a href="./industries/index.html?page=household"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=food-beverages"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food
-                        & Beverages</a></li>
-                    <li><a href="./industries/index.html?page=travel-hospitality"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel
-                        & Hospitality</a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Industry & Services -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Industry & Services <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=transportation-logistics"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation
-                        & Logistics</a></li>
-                    <li><a href="./industries/index.html?page=healthcare"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=automotive"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-        </li>
-
-        <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
-        <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+        <li><a href="./blog.html" class="text-black hover:text-gray-700 transition">Blog</a></li>
+        <li><a href="./contact.html" class="text-black hover:text-gray-700 transition">Contact</a></li>
 
         <li class="shrink-0">
           <a href="./consultancy.html"
-            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+          style="color: #fff;"
+            class="group flex items-center gap-2 px-5 py-2 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
             Book Free Consultancy
           </a>
         </li>
@@ -269,120 +177,10 @@
         </li>
                 <li><a href="./case-studies.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Case Studies</a></li>
         <li><a href="./service.html"
-            class="block py-2.5 px-3 rounded-lg text-primary bg-blue-50 hover:bg-gray-50 transition">Services</a></li>
+            class="block py-2.5 px-3 rounded-lg text-[#1E5286] bg-[#EFF5FB] hover:bg-gray-50 transition">Services</a></li>
         <li><a href="./career.html"
             class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
 
-        <!-- INDUSTRIES ACCORDION -->
-        <li>
-          <button onclick="toggleAccordion('industries')"
-            class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
-            <span>Industries</span>
-            <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300"
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-            </svg>
-          </button>
-
-          <div id="industries" class="hidden pl-3 mt-1 flex flex-col gap-1">
-
-            <!-- Finance & Business -->
-            <div>
-              <button onclick="toggleAccordion('finance')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Finance & Business</span>
-                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="finance" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=banking"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO
-                  Banking</a>
-                <a href="./industries/index.html?page=stock-market"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock
-                  Market</a>
-                <a href="./industries/index.html?page=corporate"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
-                <a href="./industries/index.html?page=real-estate"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real
-                  Estate</a>
-                <a href="./industries/index.html?page=sales-marketing"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales
-                  & Marketing</a>
-              </div>
-            </div>
-
-            <!-- Technology & Media -->
-            <div>
-              <button onclick="toggleAccordion('tech')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Technology & Media</span>
-                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="tech" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=gaming"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
-                <a href="./industries/index.html?page=media-entertainment"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media
-                  & Entertainment</a>
-                <a href="./industries/index.html?page=education"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
-              </div>
-            </div>
-
-            <!-- Commerce & Lifestyle -->
-            <div>
-              <button onclick="toggleAccordion('commerce')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Commerce & Lifestyle</span>
-                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="commerce" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=retail-ecommerce"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail
-                  & Ecommerce</a>
-                <a href="./industries/index.html?page=household"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
-                <a href="./industries/index.html?page=food-beverages"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food
-                  & Beverages</a>
-                <a href="./industries/index.html?page=travel-hospitality"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel
-                  & Hospitality</a>
-              </div>
-            </div>
-
-            <!-- Industry & Services -->
-            <div>
-              <button onclick="toggleAccordion('industry')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Industry & Services</span>
-                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="industry" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=transportation-logistics"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation
-                  & Logistics</a>
-                <a href="./industries/index.html?page=healthcare"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
-                <a href="./industries/index.html?page=automotive"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
-              </div>
-            </div>
-
-          </div>
-        </li>
 
         <li><a href="./blog.html"
             class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a>
@@ -392,9 +190,11 @@
 
         <li class="mt-2">
           <a href="./consultancy.html"
-            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
-            Book Free Consultancy
-          </a>
+                    style="color: #fff;"
+                        class="group flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
+                        Book Free Consultancy
+                        <span class="group-hover:translate-x-0.5 transition-transform duration-200 text-xs">→</span>
+                    </a>
         </li>
 
       </ul>
@@ -402,47 +202,197 @@
   </nav>
 
 
-  <!-- Aligent Hero Section -->
-  <section id="hero-section" class="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
-    <!-- STATIC CSS GRID LINES -->
-    <div class="absolute inset-0 z-0 pointer-events-none"
-      style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
-    </div>
+  <!-- Hero Section -->
+  <section id="hero-section" class="relative min-h-screen flex flex-col overflow-hidden" style="background:#080D18;">
 
-    <!-- INTERACTIVE HIGHLIGHT CELLS -->
-    <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+    <!-- Fine grid lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:55px 55px;"></div>
 
-    <!-- TOP CENTER GLOW -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-      style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
-    </div>
+    <!-- Interactive highlight cells -->
+    <div id="hero-grid" class="absolute inset-0 z-[1] pointer-events-auto"></div>
 
-    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center " data-aos="fade-up">
-      <span
-        class="inline-flex items-center px-4 py-2 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
-        Growth Partnership
-      </span>
+    <!-- Ember glow top-right -->
+    <div class="absolute top-0 right-0 pointer-events-none glow-pulse" style="width:700px;height:700px;background:radial-gradient(ellipse at 100% 0%,rgba(224,113,47,0.18) 0%,rgba(224,113,47,0.07) 40%,transparent 70%);"></div>
 
-      <h1
-        style="font-family: 'Inter', sans-serif; font-size: clamp(3rem, 10vw, 7rem); font-weight: 300; line-height: 1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
-        Growth <span class="text-indigo-400">Services</span> <br /> That Own Results
-      </h1>
+    <!-- Harbor blue glow bottom-left -->
+    <div class="absolute bottom-0 left-0 pointer-events-none" style="width:600px;height:400px;background:radial-gradient(ellipse at 0% 100%,rgba(30,82,134,0.22) 0%,transparent 65%);"></div>
 
-      <p class="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-light">
-        Not a service list. A full ownership model — strategy, build, visibility, <br class="hidden sm:block" /> marketing, and long-term accountability under one team.
-      </p>
+    <!-- Main content -->
+    <div class="relative z-10 flex-1 flex items-center">
+      <div class="max-w-7xl mx-auto px-6 lg:px-14 w-full pt-32 pb-16 lg:pt-28 lg:pb-12">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-14 lg:gap-8 justify-between">
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-        <a href="#services"
-          class="group relative px-10 py-4 bg-primary hover:bg-primary-dark text-white text-xs font-bold uppercase tracking-widest rounded-full overflow-hidden transition-all duration-300 shadow-lg shadow-indigo-900/50">
-          <span class="relative z-10">What We Own</span>
-        </a>
-        <a href="./contact.html"
-          class="px-10 py-4 border border-indigo-500/30 text-indigo-400 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-indigo-500/10 transition-all duration-500">
-          Let's Talk
-        </a>
+          <!-- LEFT: Editorial text -->
+          <div class="lg:max-w-[56%]" data-aos="fade-right" data-aos-duration="800">
+
+            <!-- Eyebrow -->
+            <div class="flex items-center gap-3 mb-10">
+              <span class="w-10 h-px bg-accent"></span>
+              <span class="text-accent text-[10px] tracking-[0.45em] uppercase font-black">Services</span>
+              <span class="w-10 h-px bg-accent"></span>
+            </div>
+
+            <!-- Headline -->
+            <h1 style="font-family:'Manrope',sans-serif;line-height:0.92;letter-spacing:-0.04em;margin-bottom:2.5rem;">
+              <span class="block" style="font-size:clamp(0.75rem,1.2vw,0.9rem);font-weight:400;color:rgba(255,255,255,0.3);letter-spacing:0.25em;text-transform:uppercase;line-height:1;margin-bottom:1.5rem;">We Own Every Part of Your Growth</span>
+              <span class="block text-white" style="font-size:clamp(4rem,8.5vw,8rem);font-weight:800;">Build.</span>
+              <span class="block text-white" style="font-size:clamp(4rem,8.5vw,8rem);font-weight:800;">Grow.</span>
+              <span class="block" style="font-size:clamp(4rem,8.5vw,8rem);font-weight:800;color:#E0712F;">Dominate.</span>
+            </h1>
+
+            <!-- Stats row -->
+            <div class="flex flex-wrap items-center gap-6 sm:gap-8 mb-10 pb-10 border-b border-white/8">
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#E0712F;line-height:1;">5</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Core Services</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">100+</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Businesses Served</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">1</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Accountable Team</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">0</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Silos</p>
+              </div>
+            </div>
+
+            <!-- Description + CTAs -->
+            <p class="text-gray-400 text-[0.95rem] leading-relaxed max-w-lg mb-9">
+              Not a service list. A full ownership model — strategy, build, visibility, marketing, and long-term accountability under one team. No handoffs. No excuses.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="#services"
+                class="inline-flex items-center gap-2.5 px-8 py-4 bg-accent hover:bg-accent-dark text-white text-[10px] font-black uppercase tracking-widest rounded-full transition-all duration-300 shadow-lg shadow-accent/20">
+                What We Own <i class="ri-arrow-down-line"></i>
+              </a>
+              <a href="./consultancy.html"
+                class="inline-flex items-center gap-2.5 px-8 py-4 border border-white/20 text-white/65 text-[10px] font-black uppercase tracking-widest rounded-full hover:border-white/55 hover:text-white transition-all duration-300">
+                Let's Talk <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: Floating capabilities panel -->
+          <div class="hidden lg:flex flex-col gap-4 items-end shrink-0 w-90" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+
+            <!-- Ambient glow behind panel -->
+            <div class="absolute pointer-events-none" style="width:420px;height:520px;background:radial-gradient(ellipse at 60% 50%,rgba(224,113,47,0.10) 0%,transparent 65%);right:3.5rem;"></div>
+
+            <!-- Main capabilities card -->
+            <div class="svc-float relative w-full rounded-2xl border border-white/10 bg-[#0D1A2D] shadow-2xl overflow-hidden">
+              <!-- Card header -->
+              <div class="flex items-center justify-between px-5 py-4 border-b border-white/8">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-2 h-2 rounded-full bg-accent"></div>
+                  <span class="text-white text-xs font-bold" style="font-family:'Manrope';">Our Capabilities</span>
+                </div>
+                <span class="text-[9px] text-gray-500 uppercase tracking-widest font-bold">5 Services</span>
+              </div>
+              <!-- Service list -->
+              <div class="divide-y divide-white/5">
+                <!-- 1 -->
+                <div class="flex items-center gap-4 px-5 py-3.5 hover:bg-white/3 transition-colors group/item">
+                  <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                    <i class="ri-lightbulb-flash-line text-accent text-sm"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="text-white text-xs font-semibold" style="font-family:'Manrope';">Consultancy & Strategy</p>
+                    <p class="text-gray-500 text-[10px] mt-0.5">Clarity before action. Always.</p>
+                  </div>
+                  <i class="ri-arrow-right-up-line text-gray-600 group-hover/item:text-accent text-xs ml-auto transition-colors shrink-0"></i>
+                </div>
+                <!-- 2 -->
+                <div class="flex items-center gap-4 px-5 py-3.5 hover:bg-white/3 transition-colors group/item">
+                  <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                    <i class="ri-code-s-slash-line text-accent text-sm"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="text-white text-xs font-semibold" style="font-family:'Manrope';">Build — Web, App & CRM</p>
+                    <p class="text-gray-500 text-[10px] mt-0.5">Products that perform, not just launch.</p>
+                  </div>
+                  <i class="ri-arrow-right-up-line text-gray-600 group-hover/item:text-accent text-xs ml-auto transition-colors shrink-0"></i>
+                </div>
+                <!-- 3 — highlighted -->
+                <div class="flex items-center gap-4 px-5 py-3.5 bg-accent/6 border-l-2 border-accent group/item">
+                  <div class="w-8 h-8 rounded-lg bg-accent/15 border border-accent/30 flex items-center justify-center shrink-0">
+                    <i class="ri-line-chart-line text-accent text-sm"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="text-accent text-xs font-semibold" style="font-family:'Manrope';">SEO, GEO & AEO Visibility</p>
+                    <p class="text-gray-500 text-[10px] mt-0.5">Rank everywhere. Own the search.</p>
+                  </div>
+                  <span class="text-[8px] text-accent font-black uppercase tracking-wider ml-auto shrink-0">Popular</span>
+                </div>
+                <!-- 4 -->
+                <div class="flex items-center gap-4 px-5 py-3.5 hover:bg-white/3 transition-colors group/item">
+                  <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                    <i class="ri-megaphone-line text-accent text-sm"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="text-white text-xs font-semibold" style="font-family:'Manrope';">Marketing & Paid Ads</p>
+                    <p class="text-gray-500 text-[10px] mt-0.5">Revenue-first campaigns, not vanity.</p>
+                  </div>
+                  <i class="ri-arrow-right-up-line text-gray-600 group-hover/item:text-accent text-xs ml-auto transition-colors shrink-0"></i>
+                </div>
+                <!-- 5 -->
+                <div class="flex items-center gap-4 px-5 py-3.5 hover:bg-white/3 transition-colors group/item">
+                  <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                    <i class="ri-shake-hands-line text-accent text-sm"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="text-white text-xs font-semibold" style="font-family:'Manrope';">Ongoing Growth Partnership</p>
+                    <p class="text-gray-500 text-[10px] mt-0.5">We stay. We own. We grow together.</p>
+                  </div>
+                  <i class="ri-arrow-right-up-line text-gray-600 group-hover/item:text-accent text-xs ml-auto transition-colors shrink-0"></i>
+                </div>
+              </div>
+              <!-- Card footer -->
+              <div class="px-5 py-3.5 border-t border-white/8 flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                <span class="text-gray-500 text-[10px] font-medium">All 5 delivered by one team — no outsourcing.</span>
+              </div>
+            </div>
+
+            <!-- Small accent card -->
+            <div class="svc-float-sm w-3/4 rounded-xl border border-accent/25 bg-[#0D1A2D] shadow-lg overflow-hidden">
+              <div class="h-0.5 bg-accent"></div>
+              <div class="px-4 py-3.5 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center shrink-0">
+                  <i class="ri-shield-check-line text-white text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-white text-xs font-bold" style="font-family:'Manrope';">Zero Silos. Full Ownership.</p>
+                  <p class="text-gray-500 text-[10px] mt-0.5">Strategy → Build → Grow → Retain</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </div>
+
+    <!-- Bottom marquee -->
+    <div class="relative z-10 border-t border-white/6 bg-white/2 py-3.5 overflow-hidden">
+      <div class="flex whitespace-nowrap svc-marquee-track">
+        <span class="flex items-center gap-8 pr-8 text-[10px] text-white/30 uppercase tracking-widest font-bold">
+          <span class="text-accent/60">✦</span> Consultancy & Strategy <span class="text-accent/60">✦</span> Website Development <span class="text-accent/60">✦</span> Mobile App Development <span class="text-accent/60">✦</span> SEO & GEO Visibility <span class="text-accent/60">✦</span> AEO — AI Search <span class="text-accent/60">✦</span> Paid Ads & Marketing <span class="text-accent/60">✦</span> Brand Strategy <span class="text-accent/60">✦</span> SaaS & CRM Build <span class="text-accent/60">✦</span> Ongoing Partnership <span class="text-accent/60">✦</span> Content Marketing <span class="text-accent/60">✦</span> UI/UX Design &nbsp;&nbsp;&nbsp;
+        </span>
+        <span class="flex items-center gap-8 pr-8 text-[10px] text-white/30 uppercase tracking-widest font-bold" aria-hidden="true">
+          <span class="text-accent/60">✦</span> Consultancy & Strategy <span class="text-accent/60">✦</span> Website Development <span class="text-accent/60">✦</span> Mobile App Development <span class="text-accent/60">✦</span> SEO & GEO Visibility <span class="text-accent/60">✦</span> AEO — AI Search <span class="text-accent/60">✦</span> Paid Ads & Marketing <span class="text-accent/60">✦</span> Brand Strategy <span class="text-accent/60">✦</span> SaaS & CRM Build <span class="text-accent/60">✦</span> Ongoing Partnership <span class="text-accent/60">✦</span> Content Marketing <span class="text-accent/60">✦</span> UI/UX Design &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
+    </div>
+
   </section>
 
 
@@ -465,11 +415,11 @@
         <!-- Left: Content -->
         <div class="flex flex-col items-start" data-aos="fade-right">
           <span
-            class="text-xs tracking-[0.3em] font-black uppercase text-blue-950 mb-4 bg-blue-50 px-4 py-2 rounded-full">
+            class="text-xs tracking-[0.3em] font-black uppercase text-[#0B1B30] mb-4 bg-blue-50 px-4 py-2 rounded-full">
             Our Approach
           </span>
           <h2
-            class="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-blue-950 mb-8">
+            class="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-[#0B1B30] mb-8">
             Not An Agency. <br />
             A Growth <br />
             Partner.
@@ -481,10 +431,10 @@
           <!-- Circular Button -->
           <a href="#services" class="group relative w-32 h-32 flex items-center justify-center">
             <div
-              class="absolute inset-0 border border-blue-950 rounded-full transition-all duration-500 group-hover:bg-blue-950">
+              class="absolute inset-0 border border-blue-950 rounded-full transition-all duration-500 group-hover:bg-[#0B1B30]">
             </div>
             <span
-              class="relative z-10 text-xs font-black uppercase tracking-widest text-blue-950 group-hover:text-white transition-colors duration-300 text-center px-4">
+              class="relative z-10 text-xs font-black uppercase tracking-widest text-[#0B1B30] group-hover:text-white transition-colors duration-300 text-center px-4">
               Explore ↗
             </span>
           </a>
@@ -536,11 +486,11 @@
 
       <!-- Section Title -->
       <div class="mb-24 text-center" data-aos="fade-up">
-        <span class="text-xs tracking-[0.4em] font-black uppercase text-blue-950/40 mb-4 block">Growth Pillars</span>
-        <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter leading-none text-blue-950 mb-8">
+        <span class="text-xs tracking-[0.4em] font-black uppercase text-[#0B1B30]/40 mb-4 block">Growth Pillars</span>
+        <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter leading-none text-[#0B1B30] mb-8">
           What We Own <br class="hidden sm:block" /> For Our Partners
         </h2>
-        <div class="w-24 h-1.5 bg-blue-950 mx-auto rounded-full mb-8"></div>
+        <div class="w-24 h-1.5 bg-[#0B1B30] mx-auto rounded-full mb-8"></div>
         <p class="text-gray-500 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed italic">
           Five growth pillars. One team. Full accountability. Everything your business needs to grow — owned end-to-end by us.
         </p>
@@ -558,18 +508,18 @@
               class="absolute top-6 right-10 text-6xl font-black text-gray-50 transition-colors group-hover:text-blue-50">01</span>
 
             <div
-              class="w-16 h-16 bg-blue-950 rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
+              class="w-16 h-16 bg-[#0B1B30] rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
               <i class="fas fa-chess"></i>
             </div>
 
             <span class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-2 block">Where Growth Starts</span>
-            <h3 class="text-2xl font-black uppercase tracking-tight text-blue-950 mb-4">Consultancy <br /> & Strategy</h3>
+            <h3 class="text-2xl font-black uppercase tracking-tight text-[#0B1B30] mb-4">Consultancy <br /> & Strategy</h3>
             <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">
               Before we build anything, we understand everything. Business model, market, goals — then we build your growth roadmap.
             </p>
 
             <div
-              class="flex items-center gap-2 text-blue-950 font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+              class="flex items-center gap-2 text-[#0B1B30] font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
               Learn More <span>→</span>
             </div>
           </div>
@@ -584,18 +534,18 @@
               class="absolute top-6 right-10 text-6xl font-black text-gray-50 transition-colors group-hover:text-blue-50">02</span>
 
             <div
-              class="w-16 h-16 bg-blue-950 rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
+              class="w-16 h-16 bg-[#0B1B30] rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
               <i class="fas fa-layer-group"></i>
             </div>
 
             <span class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-2 block">Website · App · CRM</span>
-            <h3 class="text-2xl font-black uppercase tracking-tight text-blue-950 mb-4">Build <br /> Your Platform</h3>
+            <h3 class="text-2xl font-black uppercase tracking-tight text-[#0B1B30] mb-4">Build <br /> Your Platform</h3>
             <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">
               From zero to advanced — websites, web apps, mobile apps, and CRM systems built to perform, scale, and convert.
             </p>
 
             <div
-              class="flex items-center gap-2 text-blue-950 font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+              class="flex items-center gap-2 text-[#0B1B30] font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
               Learn More <span>→</span>
             </div>
           </div>
@@ -610,18 +560,18 @@
               class="absolute top-6 right-10 text-6xl font-black text-gray-50 transition-colors group-hover:text-blue-50">03</span>
 
             <div
-              class="w-16 h-16 bg-blue-950 rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
+              class="w-16 h-16 bg-[#0B1B30] rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
               <i class="fas fa-search"></i>
             </div>
 
             <span class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-2 block">SEO · GEO · AEO</span>
-            <h3 class="text-2xl font-black uppercase tracking-tight text-blue-950 mb-4">Search <br /> Visibility</h3>
+            <h3 class="text-2xl font-black uppercase tracking-tight text-[#0B1B30] mb-4">Search <br /> Visibility</h3>
             <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">
               Rank on Google. Appear on ChatGPT and Perplexity. Get found in every search format — traditional and AI-powered.
             </p>
 
             <div
-              class="flex items-center gap-2 text-blue-950 font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+              class="flex items-center gap-2 text-[#0B1B30] font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
               Learn More <span>→</span>
             </div>
           </div>
@@ -636,18 +586,18 @@
               class="absolute top-6 right-10 text-6xl font-black text-gray-50 transition-colors group-hover:text-blue-50">04</span>
 
             <div
-              class="w-16 h-16 bg-blue-950 rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
+              class="w-16 h-16 bg-[#0B1B30] rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
               <i class="fas fa-bullhorn"></i>
             </div>
 
             <span class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-2 block">Meta · Google · Social</span>
-            <h3 class="text-2xl font-black uppercase tracking-tight text-blue-950 mb-4">Marketing <br /> & Ads</h3>
+            <h3 class="text-2xl font-black uppercase tracking-tight text-[#0B1B30] mb-4">Marketing <br /> & Ads</h3>
             <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">
               Meta Ads, Google Ads, social media management, and content — all aligned to one goal: revenue growth.
             </p>
 
             <div
-              class="flex items-center gap-2 text-blue-950 font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+              class="flex items-center gap-2 text-[#0B1B30] font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
               Learn More <span>→</span>
             </div>
           </div>
@@ -662,18 +612,18 @@
               class="absolute top-6 right-10 text-6xl font-black text-gray-50 transition-colors group-hover:text-blue-50">05</span>
 
             <div
-              class="w-16 h-16 bg-blue-950 rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
+              class="w-16 h-16 bg-[#0B1B30] rounded-2xl flex items-center justify-center text-white text-2xl mb-8 transition-transform duration-500 group-hover:scale-110 shadow-lg shadow-blue-950/20">
               <i class="fas fa-handshake"></i>
             </div>
 
             <span class="text-[10px] tracking-[0.3em] font-black uppercase text-gray-400 mb-2 block">Long-Term Growth</span>
-            <h3 class="text-2xl font-black uppercase tracking-tight text-blue-950 mb-4">Ongoing <br /> Partnership</h3>
+            <h3 class="text-2xl font-black uppercase tracking-tight text-[#0B1B30] mb-4">Ongoing <br /> Partnership</h3>
             <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">
               Growth is not a one-time project. We stay as your dedicated monthly team — accountable for results, not just deliverables.
             </p>
 
             <div
-              class="flex items-center gap-2 text-blue-950 font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+              class="flex items-center gap-2 text-[#0B1B30] font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
               Learn More <span>→</span>
             </div>
           </div>
@@ -692,7 +642,7 @@
       border: 1px solid #D1D5DB;
       border-left: 1px solid;
       /* width of the border */
-      border-image: linear-gradient(to bottom, #172554, #1e3a8a) 1;
+      border-image: linear-gradient(to bottom, #0B1B30, #1E5286) 1;
       border-radius: 0;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
@@ -710,7 +660,7 @@
       content: "";
       position: absolute;
       pointer-events: none;
-      background: linear-gradient(to right, #172554, #1e3a8a);
+      background: linear-gradient(to right, #0B1B30, #1E5286);
       /* gradient added */
     }
 
@@ -720,7 +670,7 @@
       left: 0;
       height: 1px;
       width: 0;
-      background: linear-gradient(to right, #172554, #1e3a8a);
+      background: linear-gradient(to right, #0B1B30, #1E5286);
     }
 
     /* Right stroke (top → bottom) */
@@ -729,7 +679,7 @@
       right: 0;
       width: 1px;
       height: 0;
-      background: linear-gradient(to bottom, #172554, #1e3a8a);
+      background: linear-gradient(to bottom, #0B1B30, #1E5286);
     }
 
     /* Bottom stroke (right → left) */
@@ -738,7 +688,7 @@
       right: 0;
       height: 1px;
       width: 0;
-      background: linear-gradient(to left, #172554, #1e3a8a);
+      background: linear-gradient(to left, #0B1B30, #1E5286);
     }
 
     /* Hover timeline */
@@ -786,19 +736,19 @@
       </div>
 
       <!-- Content -->
-      <div class="bg-blue-950 text-blue-300 flex flex-col items-start lg:px-20 md:px-14 px-6 py-10"
+      <div class="bg-[#0B1B30] text-[#86B4DF] flex flex-col items-start lg:px-20 md:px-14 px-6 py-10"
         data-aos="fade-left">
-        <h3 class="text-3xl font-bold mb-4 text-blue-300">Consultancy & Strategy</h3>
-        <p class="mb-6 leading-relaxed text-blue-300">
+        <h3 class="text-3xl font-bold mb-4 text-[#86B4DF]">Consultancy & Strategy</h3>
+        <p class="mb-6 leading-relaxed text-[#86B4DF]">
           Before we build anything, we understand everything. We study your business model, your market, your competition, and your goals — then build a growth roadmap that connects every decision to one outcome: your business growing faster and smarter.
         </p>
-        <h4 class="text-lg font-semibold mb-3 text-blue-300">What We Do:</h4>
-        <ul class="space-y-2 text-blue-300">
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Business audit and growth gap analysis</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Market research and competitive positioning</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Custom growth roadmap aligned to your goals</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Technology stack and platform selection</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Ongoing strategic review as your business scales</li>
+        <h4 class="text-lg font-semibold mb-3 text-[#86B4DF]">What We Do:</h4>
+        <ul class="space-y-2 text-[#86B4DF]">
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Business audit and growth gap analysis</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Market research and competitive positioning</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Custom growth roadmap aligned to your goals</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Technology stack and platform selection</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Ongoing strategic review as your business scales</li>
         </ul>
       </div>
     </div>
@@ -810,17 +760,17 @@
       <div id="build"
         class="bg-white text-gray-800 flex flex-col items-start lg:px-20 md:px-14 px-6 py-10 order-2 md:order-1"
         data-aos="fade-right">
-        <h3 class="text-3xl font-bold mb-4 text-blue-950">Build — Website · App · CRM</h3>
+        <h3 class="text-3xl font-bold mb-4 text-[#0B1B30]">Build — Website · App · CRM</h3>
         <p class="mb-6 leading-relaxed">
           We build websites, web apps, mobile apps, and CRM systems from zero to advanced. Every product we build is engineered for performance, designed to convert, and built to scale — because we measure success by what your business achieves with it, not just what we delivered.
         </p>
-        <h4 class="text-lg font-semibold mb-3 text-blue-950">What We Build:</h4>
+        <h4 class="text-lg font-semibold mb-3 text-[#0B1B30]">What We Build:</h4>
         <ul class="space-y-2">
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> High-performance websites and landing pages</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> Custom web applications and portals</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> Mobile apps for iOS and Android</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> CRM systems tailored to your sales workflow</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> E-commerce stores with complete order management
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> High-performance websites and landing pages</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> Custom web applications and portals</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> Mobile apps for iOS and Android</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> CRM systems tailored to your sales workflow</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> E-commerce stores with complete order management
           </li>
         </ul>
       </div>
@@ -840,19 +790,19 @@
       </div>
 
       <!-- Content -->
-      <div class="bg-blue-950 text-blue-300 flex flex-col items-start lg:px-20 md:px-14 px-6 py-10"
+      <div class="bg-[#0B1B30] text-[#86B4DF] flex flex-col items-start lg:px-20 md:px-14 px-6 py-10"
         data-aos="fade-left">
-        <h3 class="text-3xl font-bold mb-4 text-blue-300">Search Visibility — SEO · GEO · AEO</h3>
-        <p class="mb-6 leading-relaxed text-blue-300">
+        <h3 class="text-3xl font-bold mb-4 text-[#86B4DF]">Search Visibility — SEO · GEO · AEO</h3>
+        <p class="mb-6 leading-relaxed text-[#86B4DF]">
           SEO so you rank on Google. GEO (Generative Engine Optimisation) so you appear when people ask ChatGPT, Perplexity, or Gemini. AEO (Answer Engine Optimisation) so you get featured in voice and snippet results. We own your visibility across every search format.
         </p>
-        <h4 class="text-lg font-semibold mb-3 text-blue-300">What We Cover:</h4>
-        <ul class="space-y-2 text-blue-300">
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Technical SEO, on-page, and off-page optimisation</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> AI search optimisation for ChatGPT, Perplexity, and Gemini</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Featured snippet and voice search optimisation (AEO)</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Keyword strategy, content planning, and link building</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Monthly reporting with ranking progress and next actions</li>
+        <h4 class="text-lg font-semibold mb-3 text-[#86B4DF]">What We Cover:</h4>
+        <ul class="space-y-2 text-[#86B4DF]">
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Technical SEO, on-page, and off-page optimisation</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> AI search optimisation for ChatGPT, Perplexity, and Gemini</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Featured snippet and voice search optimisation (AEO)</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Keyword strategy, content planning, and link building</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Monthly reporting with ranking progress and next actions</li>
         </ul>
       </div>
     </div>
@@ -863,17 +813,17 @@
       <!-- Content -->
       <div class="bg-white text-gray-800 flex flex-col items-start lg:px-20 md:px-14 px-6 py-10 order-2 md:order-1"
         data-aos="fade-right">
-        <h3 class="text-3xl font-bold mb-4 text-blue-950">Marketing & Ads</h3>
+        <h3 class="text-3xl font-bold mb-4 text-[#0B1B30]">Marketing & Ads</h3>
         <p class="mb-6 leading-relaxed">
           Meta Ads, Google Ads, social media management, and content strategy — all aligned to one outcome: revenue. We don't just run campaigns. We own your brand's presence, test what works, and scale what converts.
         </p>
-        <h4 class="text-lg font-semibold mb-3 text-blue-950">What We Manage:</h4>
+        <h4 class="text-lg font-semibold mb-3 text-[#0B1B30]">What We Manage:</h4>
         <ul class="space-y-2">
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> Meta Ads (Facebook & Instagram) campaign management</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> Google Ads — Search, Display, and Performance Max</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> Social media content creation and account management</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> Brand content strategy and copywriting</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-950"></i> Performance tracking with ROI-focused reporting</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> Meta Ads (Facebook & Instagram) campaign management</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> Google Ads — Search, Display, and Performance Max</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> Social media content creation and account management</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> Brand content strategy and copywriting</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#0B1B30]"></i> Performance tracking with ROI-focused reporting</li>
         </ul>
       </div>
 
@@ -892,19 +842,19 @@
 
       <!-- Content -->
       <div
-        class="relative text-blue-300 flex flex-col items-start lg:px-20 md:px-14 px-6 py-10 bg-gradient-to-r from-blue-950 to-blue-900"
+        class="relative text-[#86B4DF] flex flex-col items-start lg:px-20 md:px-14 px-6 py-10 bg-gradient-to-r from-blue-950 to-blue-900"
         data-aos="fade-left">
-        <h3 class="text-3xl font-bold mb-4 text-blue-300">Ongoing Partnership</h3>
+        <h3 class="text-3xl font-bold mb-4 text-[#86B4DF]">Ongoing Partnership</h3>
         <p class="mb-6 leading-relaxed">
           Growth is not a one-time project. We stay as your dedicated monthly team — managing your website, running your ads, publishing your content, tracking your metrics, and iterating constantly. One team, fully accountable for your growth.
         </p>
-        <h4 class="text-lg font-semibold mb-3 text-blue-300">What's Included:</h4>
+        <h4 class="text-lg font-semibold mb-3 text-[#86B4DF]">What's Included:</h4>
         <ul class="space-y-2">
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Dedicated monthly growth team (no hourly billing)</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Continuous website updates and technical maintenance</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Monthly growth reviews with KPI tracking</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Proactive recommendations — we come to you with ideas</li>
-          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-blue-300"></i> Single point of contact, full ownership of outcomes</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Dedicated monthly growth team (no hourly billing)</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Continuous website updates and technical maintenance</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Monthly growth reviews with KPI tracking</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Proactive recommendations — we come to you with ideas</li>
+          <li class="flex items-start"><i class="fas fa-check mr-3 mt-1 text-[#86B4DF]"></i> Single point of contact, full ownership of outcomes</li>
         </ul>
       </div>
     </div>
@@ -939,13 +889,13 @@
               border border-blue-950 text-white overflow-hidden rounded-md">
 
           <!-- Background Layer -->
-          <span class="absolute inset-0 bg-blue-950 origin-right scale-x-100 
+          <span class="absolute inset-0 bg-[#0B1B30] origin-right scale-x-100 
                    transition-transform duration-500 ease-in-out 
                    group-hover:scale-x-0 z-0 rounded-md"></span>
 
           <!-- Text -->
-          <span class="relative z-10 transition-colors duration-500 ease-in-out 
-                   group-hover:text-transparent group-hover:bg-clip-text 
+          <span class="relative z-10 text-white transition-colors duration-500 ease-in-out
+                   group-hover:text-transparent group-hover:bg-clip-text
                    group-hover:bg-gradient-to-r group-hover:from-blue-950 group-hover:to-blue-900">
             Get in Touch
           </span>
@@ -953,10 +903,10 @@
 
         <!-- Second Button: Transparent → Gradient -->
         <a href="#services" class="group relative px-8 py-3 text-sm sm:text-base font-semibold uppercase 
-              border border-blue-950 text-blue-950 overflow-hidden rounded-md">
+              border border-blue-950 text-[#0B1B30] overflow-hidden rounded-md">
 
           <!-- Background Layer -->
-          <span class="absolute inset-0 bg-blue-950 origin-left scale-x-0 
+          <span class="absolute inset-0 bg-[#0B1B30] origin-left scale-x-0 
                    transition-transform duration-500 ease-in-out 
                    group-hover:scale-x-100 z-0 rounded-md"></span>
 

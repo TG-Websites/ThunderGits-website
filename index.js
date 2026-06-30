@@ -103,15 +103,15 @@ async function fetchJobs() {
             console.log("Rendering job:", job.jobTitle);
 
             const card = `
-        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+        <div class="group bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 flex flex-col" data-aos="fade-up" data-aos-delay="100">
           <div class="flex items-center gap-4 ">
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
-              <i class="ri-palette-line text-2xl text-indigo-400 group-hover:text-white transition-colors"></i>
+            <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent transition-colors">
+              <i class="ri-palette-line text-2xl text-accent group-hover:text-white transition-colors"></i>
             </div>
-            <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors"> ${job.jobTitle}</h3>
+            <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors"> ${job.jobTitle}</h3>
           </div>
           <p class="text-gray-400 leading-relaxed mb-8 flex-grow">${job.jobDescription} </p>
-          <a href="./jobs/jobDetail.html?id=${job._id}"  class="inline-flex items-center gap-2 mt-10 text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
+          <a href="./jobs/jobDetail.html?id=${job._id}"  class="inline-flex items-center gap-2 mt-10 text-accent text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">
             Apply Now <i class="ri-arrow-right-line"></i>
           </a>
         </div>
@@ -148,7 +148,7 @@ async function fetchLatestBlogs() {
         if (blogs.length === 0) {
             container.innerHTML = `
                 <div class="swiper-slide p-2">
-                    <div class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-sm items-center justify-center">
+                    <div class="flex flex-col h-[580px] bg-white border border-gray-200 rounded-xl shadow-sm items-center justify-center">
                         <i class="fas fa-blog text-gray-400 text-6xl mb-4"></i>
                         <p class="text-gray-500 text-lg">No blogs available yet</p>
                         <p class="text-gray-400 text-sm">Check back soon for exciting content!</p>
@@ -170,19 +170,19 @@ async function fetchLatestBlogs() {
             // Card markup (same style as demo card)
             const cardHTML = `
                 <div class="swiper-slide p-2">
-                    <div class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
-                        <img src="${blog.featuredImage || './assets/default-blog.webp'}" 
-                             alt="${blog.title}" 
+                    <div class="flex flex-col h-[580px] bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <img src="${blog.featuredImage || './assets/default-blog.webp'}"
+                             alt="${blog.title}"
                              class="w-full h-56 object-cover"
                              onerror="this.src='./assets/default-blog.webp'">
                         <div class="flex flex-col flex-1 p-6">
-                            <p class="text-xs uppercase text-pink-600 font-semibold mb-2">${categoryDisplay}</p>
+                            <p class="text-xs uppercase text-accent font-semibold mb-2">${categoryDisplay}</p>
                             <h3 class="font-bold text-lg text-black mb-2 line-clamp-2">${blog.title}</h3>
                             <p class="text-gray-500 text-sm mb-4 flex-1 line-clamp-4">
                                 ${excerpt}
                             </p>
                             <div class="mt-auto">
-                                <a class="inline-flex items-center text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 px-5 py-2 rounded-md shadow hover:opacity-90 transition-all duration-300"
+                                <a class="inline-flex items-center text-white font-semibold bg-accent hover:bg-accent-dark px-5 py-2 rounded-md shadow transition-all duration-300"
                                    href="./blogdetails.html?id=${blog._id}">
                                     Learn More
                                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -222,7 +222,7 @@ async function fetchLatestBlogs() {
         console.error("Error fetching blogs:", error);
         container.innerHTML = `
             <div class="swiper-slide p-2">
-                <div class="flex flex-col h-[580px] bg-white border border-pink-200 rounded-xl shadow-sm items-center justify-center">
+                <div class="flex flex-col h-[580px] bg-white border border-gray-200 rounded-xl shadow-sm items-center justify-center">
                     <i class="fas fa-exclamation-triangle text-red-400 text-6xl mb-4"></i>
                     <p class="text-red-500 text-lg">Failed to load blogs</p>
                     <p class="text-gray-400 text-sm">Please try again later</p>

@@ -29,16 +29,47 @@
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./tailwind.css">
+  <link rel="stylesheet" href="./theme.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="./style.css">
+  <style>
+    @keyframes car-marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .car-marquee-track { animation: car-marquee 30s linear infinite; }
+    .car-marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes car-float-a {
+      0%,100% { transform: translateY(0px); }
+      50%      { transform: translateY(-8px); }
+    }
+    @keyframes car-float-b {
+      0%,100% { transform: translateY(0px); }
+      50%      { transform: translateY(-10px); }
+    }
+    .car-float-a { animation: car-float-a 4.5s ease-in-out infinite; }
+    .car-float-b { animation: car-float-b 5.5s ease-in-out infinite 1.2s; }
+
+    @keyframes glow-pulse {
+      0%,100% { opacity: 0.55; }
+      50%      { opacity: 0.80; }
+    }
+    .glow-pulse { animation: glow-pulse 4s ease-in-out infinite; }
+
+    @keyframes blink-dot {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.3; }
+    }
+    .blink-dot { animation: blink-dot 1.8s ease-in-out infinite; }
+  </style>
 
 <script type="application/ld+json">
 {
@@ -62,7 +93,7 @@
 </script>
 </head>
 
-<body class="bg-black text-white font-['Inter',sans-serif]">
+<body class="bg-black text-white font-['IBM_Plex_Sans',sans-serif]">
 
   <!-- Navbar -->
   <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
@@ -91,140 +122,21 @@
 
       <!-- DESKTOP NAV -->
       <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
-        <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark transition">Home</a></li>
-        <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
-        <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-primary-dark transition">Case Studies</a></li>
-        <li><a href="./service.html" class="text-black hover:text-primary-dark transition">Services</a></li>
+        <li><a href="./index.html" class="text-fg-brand hover:text-gray-700 transition">Home</a></li>
+        <li><a href="./about.html" class="text-black hover:text-gray-700 transition">About</a></li>
+        <li><a href="./work.html" class="text-black hover:text-gray-700 transition">Work</a></li>
+                <li><a href="./case-studies.html" class="text-black hover:text-gray-700 transition">Case Studies</a></li>
+        <li><a href="./service.html" class="text-black hover:text-gray-700 transition">Services</a></li>
         <li><a href="./career.html" class="text-black text-primary font-semibold transition">Career</a></li>
 
-        <!-- INDUSTRIES DROPDOWN -->
-        <li class="relative group">
-          <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
-            Industries
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-            </svg>
-          </button>
 
-          <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
-                            transition-all duration-300 z-50">
-            <ul class="p-2 text-sm text-gray-700">
-
-              <!-- Finance & Business -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Finance & Business <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=banking"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO
-                        Banking</a></li>
-                    <li><a href="./industries/index.html?page=stock-market"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock
-                        Market</a></li>
-                    <li><a href="./industries/index.html?page=corporate"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=real-estate"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real
-                        Estate</a></li>
-                    <li><a href="./industries/index.html?page=sales-marketing"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales
-                        & Marketing</a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Technology & Media -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Technology & Media <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=gaming"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=media-entertainment"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media
-                        & Entertainment</a></li>
-                    <li><a href="./industries/index.html?page=education"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Commerce & Lifestyle -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Commerce & Lifestyle <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=retail-ecommerce"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail
-                        & Ecommerce</a></li>
-                    <li><a href="./industries/index.html?page=household"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=food-beverages"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food
-                        & Beverages</a></li>
-                    <li><a href="./industries/index.html?page=travel-hospitality"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel
-                        & Hospitality</a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Industry & Services -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Industry & Services <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=transportation-logistics"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation
-                        & Logistics</a></li>
-                    <li><a href="./industries/index.html?page=healthcare"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=automotive"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-        </li>
-
-        <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
-        <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+        <li><a href="./blog.html" class="text-black hover:text-gray-700 transition">Blog</a></li>
+        <li><a href="./contact.html" class="text-black hover:text-gray-700 transition">Contact</a></li>
 
         <li class="shrink-0">
           <a href="./consultancy.html"
-            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+          style="color: #fff;"
+            class="group flex items-center gap-2 px-5 py-2 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
             Book Free Consultancy
           </a>
         </li>
@@ -248,119 +160,9 @@
                 <li><a href="./case-studies.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Case Studies</a></li>
         <li><a href="./service.html"
             class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
-        <li><a href="./career.html" class="block py-2.5 px-3 rounded-lg text-primary bg-blue-50 transition">Career</a>
+        <li><a href="./career.html" class="block py-2.5 px-3 rounded-lg text-[#1E5286] bg-[#EFF5FB] transition">Career</a>
         </li>
 
-        <!-- INDUSTRIES ACCORDION -->
-        <li>
-          <button onclick="toggleAccordion('industries')"
-            class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
-            <span>Industries</span>
-            <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300"
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-            </svg>
-          </button>
-
-          <div id="industries" class="hidden pl-3 mt-1 flex flex-col gap-1">
-
-            <!-- Finance & Business -->
-            <div>
-              <button onclick="toggleAccordion('finance')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Finance & Business</span>
-                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="finance" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=banking"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO
-                  Banking</a>
-                <a href="./industries/index.html?page=stock-market"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock
-                  Market</a>
-                <a href="./industries/index.html?page=corporate"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
-                <a href="./industries/index.html?page=real-estate"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real
-                  Estate</a>
-                <a href="./industries/index.html?page=sales-marketing"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales
-                  & Marketing</a>
-              </div>
-            </div>
-
-            <!-- Technology & Media -->
-            <div>
-              <button onclick="toggleAccordion('tech')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Technology & Media</span>
-                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="tech" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=gaming"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
-                <a href="./industries/index.html?page=media-entertainment"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media
-                  & Entertainment</a>
-                <a href="./industries/index.html?page=education"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
-              </div>
-            </div>
-
-            <!-- Commerce & Lifestyle -->
-            <div>
-              <button onclick="toggleAccordion('commerce')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Commerce & Lifestyle</span>
-                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="commerce" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=retail-ecommerce"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail
-                  & Ecommerce</a>
-                <a href="./industries/index.html?page=household"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
-                <a href="./industries/index.html?page=food-beverages"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food
-                  & Beverages</a>
-                <a href="./industries/index.html?page=travel-hospitality"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel
-                  & Hospitality</a>
-              </div>
-            </div>
-
-            <!-- Industry & Services -->
-            <div>
-              <button onclick="toggleAccordion('industry')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Industry & Services</span>
-                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="industry" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=transportation-logistics"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation
-                  & Logistics</a>
-                <a href="./industries/index.html?page=healthcare"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
-                <a href="./industries/index.html?page=automotive"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
-              </div>
-            </div>
-
-          </div>
-        </li>
 
         <li><a href="./blog.html"
             class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a>
@@ -370,62 +172,170 @@
 
         <li class="mt-2">
           <a href="./consultancy.html"
-            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
-            Book Free Consultancy
-          </a>
+                    style="color: #fff;"
+                        class="group flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
+                        Book Free Consultancy
+                        <span class="group-hover:translate-x-0.5 transition-transform duration-200 text-xs">→</span>
+                    </a>
         </li>
 
       </ul>
     </div>
   </nav>
 
-  <!-- Aligent Hero Section -->
-  <section id="hero-section"
-    class="relative pt-25 sm:pt-48 pb-24 bg-black overflow-hidden min-h-[90vh] flex items-center">
-    <div class="absolute inset-0 z-0 pointer-events-none"
-      style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
-    </div>
-    <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-      style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+  <!-- Hero Section -->
+  <section id="hero-section" class="relative min-h-screen flex flex-col overflow-hidden" style="background:#080D18;">
+
+    <!-- Fine grid lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:55px 55px;"></div>
+
+    <!-- Interactive highlight cells -->
+    <div id="hero-grid" class="absolute inset-0 z-[1] pointer-events-auto"></div>
+
+    <!-- Ember glow top-right -->
+    <div class="absolute top-0 right-0 pointer-events-none glow-pulse" style="width:700px;height:700px;background:radial-gradient(ellipse at 100% 0%,rgba(224,113,47,0.18) 0%,rgba(224,113,47,0.07) 40%,transparent 70%);"></div>
+
+    <!-- Harbor blue glow bottom-left -->
+    <div class="absolute bottom-0 left-0 pointer-events-none" style="width:600px;height:400px;background:radial-gradient(ellipse at 0% 100%,rgba(30,82,134,0.22) 0%,transparent 65%);"></div>
+
+    <!-- Main content -->
+    <div class="relative z-10 flex-1 flex items-center">
+      <div class="max-w-7xl mx-auto px-6 lg:px-14 w-full pt-32 pb-16 lg:pt-28 lg:pb-12">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-14 lg:gap-10 justify-between">
+
+          <!-- LEFT: Editorial text -->
+          <div class="lg:max-w-[54%]" data-aos="fade-right" data-aos-duration="800">
+
+            <!-- Eyebrow -->
+            <div class="flex items-center gap-3 mb-10">
+              <span class="w-10 h-px bg-accent"></span>
+              <span class="text-accent text-[10px] tracking-[0.45em] uppercase font-black">We're Hiring</span>
+              <span class="w-10 h-px bg-accent"></span>
+            </div>
+
+            <!-- Headline -->
+            <h1 style="font-family:'Manrope',sans-serif;line-height:0.92;letter-spacing:-0.04em;margin-bottom:2.5rem;">
+              <span class="block" style="font-size:clamp(0.75rem,1.2vw,0.9rem);font-weight:400;color:rgba(255,255,255,0.3);letter-spacing:0.25em;text-transform:uppercase;line-height:1;margin-bottom:1.5rem;">Join the People Who Own Results</span>
+              <span class="block text-white" style="font-size:clamp(4rem,8.5vw,7.5rem);font-weight:800;">Don't Just</span>
+              <span class="block text-white" style="font-size:clamp(4rem,8.5vw,7.5rem);font-weight:800;">Work Here.</span>
+              <span class="block" style="font-size:clamp(4rem,8.5vw,7.5rem);font-weight:800;color:#E0712F;">Build Here.</span>
+            </h1>
+
+            <!-- Stats row -->
+            <div class="flex flex-wrap items-center gap-6 sm:gap-8 mb-10 pb-10 border-b border-white/8">
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#E0712F;line-height:1;">25+</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Team Members</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">3+</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Years Building</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">100%</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Ownership Culture</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-green-400 blink-dot shrink-0"></div>
+                <div>
+                  <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">Open</p>
+                  <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Roles Available</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Description + CTAs -->
+            <p class="text-gray-400 text-[0.95rem] leading-relaxed max-w-lg mb-9">
+              We're Business Growth Engineers — developers, marketers, strategists, and SEO specialists who take full ownership of results. If you believe in accountability over deliverables, you belong here.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="#positions"
+                class="inline-flex items-center gap-2.5 px-8 py-4 bg-accent hover:bg-accent-dark text-white text-[10px] font-black uppercase tracking-widest rounded-full transition-all duration-300 shadow-lg shadow-accent/20">
+                See Open Roles <i class="ri-arrow-down-line"></i>
+              </a>
+              <a href="#why-join"
+                class="inline-flex items-center gap-2.5 px-8 py-4 border border-white/20 text-white/65 text-[10px] font-black uppercase tracking-widest rounded-full hover:border-white/55 hover:text-white transition-all duration-300">
+                Why Join Us? <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: Image + floating culture cards -->
+          <div class="hidden lg:block relative shrink-0 w-105" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+
+            <!-- Ambient glow -->
+            <div class="absolute -inset-6 pointer-events-none" style="background:radial-gradient(ellipse at 60% 50%,rgba(224,113,47,0.12) 0%,transparent 65%);"></div>
+
+            <!-- Image frame -->
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+              <img src="./assets/blogimg1.webp" alt="Team at ThunderGits"
+                class="w-full aspect-4/3 object-cover"
+                loading="lazy" decoding="async" width="890" height="664"/>
+              <!-- Bottom gradient on image -->
+              <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(8,13,24,0.7) 0%,transparent 50%);"></div>
+              <!-- Ember accent stripe top -->
+              <div class="absolute top-0 left-0 right-0 h-0.5 bg-accent"></div>
+              <!-- Bottom label on image -->
+              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                <div>
+                  <p class="text-white text-xs font-bold" style="font-family:'Manrope';">ThunderGits Team</p>
+                  <p class="text-white/50 text-[10px] mt-0.5">Building from Patna · Growing Globally</p>
+                </div>
+                <div class="flex -space-x-2">
+                  <div class="w-7 h-7 rounded-full bg-accent border-2 border-[#080D18] flex items-center justify-center text-[9px] text-white font-black">T</div>
+                  <div class="w-7 h-7 rounded-full bg-primary border-2 border-[#080D18] flex items-center justify-center text-[9px] text-white font-black">G</div>
+                  <div class="w-7 h-7 rounded-full bg-white/20 border-2 border-[#080D18] flex items-center justify-center text-[9px] text-white font-black">+</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating chip: Remote friendly -->
+            <div class="car-float-a absolute -top-4 -right-4 bg-[#0D1A2D] border border-white/10 rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
+                <i class="ri-global-line text-accent text-sm"></i>
+              </div>
+              <div>
+                <p class="text-white text-xs font-bold" style="font-family:'Manrope';">Remote & Hybrid</p>
+                <p class="text-gray-500 text-[10px]">Work from anywhere</p>
+              </div>
+            </div>
+
+            <!-- Floating chip: Ownership culture -->
+            <div class="car-float-b absolute -bottom-4 -left-5 bg-[#0D1A2D] border border-accent/25 rounded-xl px-4 py-3 shadow-xl overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-0.5 bg-accent"></div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center shrink-0">
+                  <i class="ri-rocket-2-line text-white text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-white text-xs font-bold" style="font-family:'Manrope';">Ownership Culture</p>
+                  <p class="text-gray-500 text-[10px]">Real accountability. Real growth.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Left Content -->
-      <div data-aos="fade-right">
-        <span
-          class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
-          Join Our Mission
+    <!-- Bottom marquee -->
+    <div class="relative z-10 border-t border-white/6 bg-white/2 py-3.5 overflow-hidden">
+      <div class="flex whitespace-nowrap car-marquee-track">
+        <span class="flex items-center gap-8 pr-8 text-[10px] text-white/30 uppercase tracking-widest font-bold">
+          <span class="text-accent/60">✦</span> Full Stack Developers <span class="text-accent/60">✦</span> SEO Specialists <span class="text-accent/60">✦</span> Digital Marketers <span class="text-accent/60">✦</span> Brand Strategists <span class="text-accent/60">✦</span> UI/UX Designers <span class="text-accent/60">✦</span> Content Writers <span class="text-accent/60">✦</span> Mobile Developers <span class="text-accent/60">✦</span> Growth Hackers <span class="text-accent/60">✦</span> Project Managers <span class="text-accent/60">✦</span> Business Analysts <span class="text-accent/60">✦</span> Video Editors &nbsp;&nbsp;&nbsp;
         </span>
-        <h1
-          style="font-family: 'Inter', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
-          Your Future at <br /> <span class="text-indigo-400 font-semibold">ThunderGits</span>
-        </h1>
-        <p class="text-gray-400 text-lg leading-relaxed mb-10 font-light max-w-xl">
-          At ThunderGits, we are Business Growth Engineers — developers, marketers, strategists, and SEO specialists who take full ownership of our partners' growth. Join us if you believe in accountability over deliverables.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-6">
-          <a href="#positions"
-            class="px-10 py-4 bg-primary hover:bg-primary-dark text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 text-center shadow-lg shadow-indigo-900/50">
-            Explore Open Positions
-          </a>
-          <a href="#why-join"
-            class="px-10 py-4 border border-indigo-500/30 text-indigo-400 text-[10px] font-black uppercase tracking-widest rounded-2xl hover:bg-indigo-500/10 transition duration-300 text-center">
-            Why Join Us?
-          </a>
-        </div>
-      </div>
-
-      <!-- Right Image -->
-      <div data-aos="fade-left" class="relative group">
-        <div
-          class="absolute -inset-4 bg-indigo-500/20 blur-2xl rounded-full opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition duration-700">
-        </div>
-        <img src="./assets/blogimg1.webp" alt="Careers at ThunderGits"
-          class="relative w-full rounded-3xl shadow-2xl grayscale-0 sm:grayscale sm:hover:grayscale-0 transition-all duration-700 border border-white/10" loading="lazy" decoding="async" width="890" height="664"/>
+        <span class="flex items-center gap-8 pr-8 text-[10px] text-white/30 uppercase tracking-widest font-bold" aria-hidden="true">
+          <span class="text-accent/60">✦</span> Full Stack Developers <span class="text-accent/60">✦</span> SEO Specialists <span class="text-accent/60">✦</span> Digital Marketers <span class="text-accent/60">✦</span> Brand Strategists <span class="text-accent/60">✦</span> UI/UX Designers <span class="text-accent/60">✦</span> Content Writers <span class="text-accent/60">✦</span> Mobile Developers <span class="text-accent/60">✦</span> Growth Hackers <span class="text-accent/60">✦</span> Project Managers <span class="text-accent/60">✦</span> Business Analysts <span class="text-accent/60">✦</span> Video Editors &nbsp;&nbsp;&nbsp;
+        </span>
       </div>
     </div>
+
   </section>
 
   <!-- Open Positions Section -->
@@ -433,7 +343,7 @@
     <div class="max-w-screen-xl mx-auto px-6">
       <div class="text-center mb-20" data-aos="fade-up">
         <h2 class="text-4xl font-light text-white mb-4">Open Positions</h2>
-        <div class="w-12 h-1 bg-indigo-500 mx-auto"></div>
+        <div class="w-12 h-1 bg-[#E0712F] mx-auto"></div>
         <p class="mt-8 text-gray-400 max-w-2xl mx-auto">Join our passionate team and build innovative solutions that
           make an impact. We are looking for talented individuals to shape the future with us.</p>
       </div>
@@ -445,13 +355,13 @@
   <!-- Why Join Us Section -->
   <section id="why-join" class="relative bg-black py-24 overflow-hidden">
     <!-- Glow effects -->
-    <div class="absolute top-1/2 left-0 w-96 h-96 bg-indigo-500/10 blur-[120px] -translate-y-1/2 -ml-48"></div>
-    <div class="absolute top-1/2 right-0 w-96 h-96 bg-indigo-500/10 blur-[120px] -translate-y-1/2 -mr-48"></div>
+    <div class="absolute top-1/2 left-0 w-96 h-96 bg-[#E0712F]/10 blur-[120px] -translate-y-1/2 -ml-48"></div>
+    <div class="absolute top-1/2 right-0 w-96 h-96 bg-[#E0712F]/10 blur-[120px] -translate-y-1/2 -mr-48"></div>
 
     <div class="max-w-screen-xl mx-auto px-6 relative z-10">
       <div class="text-center mb-20" data-aos="fade-up">
         <h2 class="text-4xl font-light text-white mb-4">Why Join Us</h2>
-        <div class="w-12 h-1 bg-indigo-500 mx-auto"></div>
+        <div class="w-12 h-1 bg-[#E0712F] mx-auto"></div>
         <p class="mt-8 text-gray-400 max-w-2xl mx-auto">ThunderGits is more than just a place to work—it's a place to
           grow, innovate, and make an impact.</p>
       </div>
@@ -459,11 +369,11 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <!-- Growth -->
         <div
-          class="group text-center p-8 bg-white/[0.02] border border-white/10 rounded-[2.5rem] hover:border-indigo-500/30 transition-all duration-500"
+          class="group text-center p-8 bg-white/[0.02] border border-white/10 rounded-[2.5rem] hover:border-[#E0712F]/30 transition-all duration-500"
           data-aos="fade-up" data-aos-delay="100">
           <div
-            class="w-20 h-20 mx-auto rounded-3xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-            <i class="ri-line-chart-line text-4xl text-indigo-400"></i>
+            class="w-20 h-20 mx-auto rounded-3xl bg-[#E0712F]/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+            <i class="ri-line-chart-line text-4xl text-[#E0712F]"></i>
           </div>
           <h3 class="text-2xl font-bold text-white mb-4">Career Growth</h3>
           <p class="text-gray-400 leading-relaxed">We offer ample opportunities for professional development, mentoring,
@@ -472,11 +382,11 @@
 
         <!-- Culture -->
         <div
-          class="group text-center p-8 bg-white/[0.02] border border-white/10 rounded-[2.5rem] hover:border-indigo-500/30 transition-all duration-500"
+          class="group text-center p-8 bg-white/[0.02] border border-white/10 rounded-[2.5rem] hover:border-[#E0712F]/30 transition-all duration-500"
           data-aos="fade-up" data-aos-delay="200">
           <div
-            class="w-20 h-20 mx-auto rounded-3xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-            <i class="ri-group-line text-4xl text-indigo-400"></i>
+            class="w-20 h-20 mx-auto rounded-3xl bg-[#E0712F]/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+            <i class="ri-group-line text-4xl text-[#E0712F]"></i>
           </div>
           <h3 class="text-2xl font-bold text-white mb-4">Inclusive Culture</h3>
           <p class="text-gray-400 leading-relaxed">Join a collaborative and inclusive team that thrives on diverse
@@ -485,11 +395,11 @@
 
         <!-- Balance -->
         <div
-          class="group text-center p-8 bg-white/[0.02] border border-white/10 rounded-[2.5rem] hover:border-indigo-500/30 transition-all duration-500"
+          class="group text-center p-8 bg-white/[0.02] border border-white/10 rounded-[2.5rem] hover:border-[#E0712F]/30 transition-all duration-500"
           data-aos="fade-up" data-aos-delay="300">
           <div
-            class="w-20 h-20 mx-auto rounded-3xl bg-indigo-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-            <i class="ri-scales-3-line text-4xl text-indigo-400"></i>
+            class="w-20 h-20 mx-auto rounded-3xl bg-[#E0712F]/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+            <i class="ri-scales-3-line text-4xl text-[#E0712F]"></i>
           </div>
           <h3 class="text-2xl font-bold text-white mb-4">Work-Life Balance</h3>
           <p class="text-gray-400 leading-relaxed">We prioritize a healthy work-life balance, offering flexibility and
@@ -505,7 +415,7 @@
       <!-- Left: Timeline -->
       <div data-aos="fade-right">
         <div class="mb-16">
-          <span class="text-indigo-600 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Our Process</span>
+          <span class="text-[#1E5286] text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Our Process</span>
           <h2 class="text-5xl font-light text-black mb-6">The Hiring Process</h2>
           <p class="text-gray-600 text-lg font-light leading-relaxed">Our hiring process is simple and transparent. We
             believe in providing a seamless experience from application to onboarding.</p>
@@ -550,7 +460,7 @@
 
       <!-- Right: Image -->
       <div data-aos="fade-left" class="relative">
-        <div class="absolute -inset-4 bg-indigo-500/5 blur-2xl rounded-3xl"></div>
+        <div class="absolute -inset-4 bg-[#E0712F]/5 blur-2xl rounded-3xl"></div>
         <img src="./assets/about-img.webp" alt="Hiring Process"
           class="relative w-full rounded-[3rem] shadow-2xl object-cover aspect-[4/5]" loading="lazy" decoding="async" width="1024" height="1536"/>
       </div>

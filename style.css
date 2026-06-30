@@ -39,7 +39,7 @@
 .swiper-slide-active .testimonial-box::before {
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-top: 12px solid #3b82f6; /* Use gradient start color to make it visible */
+  border-top: 12px solid #1E5286;
   transform: translate(-50%, 100%);
   left: 50%;
 }
@@ -134,18 +134,6 @@
 } */
 
 
-/* Tailwind accent color replacement */
-.text-accent { 
-  background: linear-gradient(to right, #172554, #1e3a8a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}        
-.border-accent { 
-  border-image: linear-gradient(to right, #172554, #1e3a8a) 1; 
-}
-.before\:bg-accent::before { 
-  background: linear-gradient(to right, #172554, #1e3a8a); 
-}
 
 /* Blog Swiper Pagination Dots */
 .blogSwiper .swiper-pagination-bullet-active {

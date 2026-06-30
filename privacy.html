@@ -28,9 +28,9 @@
     <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./tailwind.css">
+  <link rel="stylesheet" href="./theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -58,7 +58,7 @@
 </script>
 </head>
 
-<body class="bg-black text-white font-['Inter',sans-serif]">
+<body class="bg-black text-white font-['IBM_Plex_Sans',sans-serif]">
 
     <!-- Navbar -->
     <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
@@ -85,119 +85,20 @@
 
             <!-- DESKTOP NAV -->
             <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
-                <li><a href="./index.html" class="text-black hover:text-primary-dark transition">Home</a></li>
-                <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
-                <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-primary-dark transition">Case Studies</a></li>
-                <li><a href="./service.html" class="text-black hover:text-primary-dark transition">Services</a></li>
-                <li><a href="./career.html" class="text-black hover:text-primary-dark transition">Career</a></li>
+                <li><a href="./index.html" class="text-black hover:text-gray-700 transition">Home</a></li>
+                <li><a href="./about.html" class="text-black hover:text-gray-700 transition">About</a></li>
+                <li><a href="./work.html" class="text-black hover:text-gray-700 transition">Work</a></li>
+                <li><a href="./case-studies.html" class="text-black hover:text-gray-700 transition">Case Studies</a></li>
+                <li><a href="./service.html" class="text-black hover:text-gray-700 transition">Services</a></li>
+                <li><a href="./career.html" class="text-black hover:text-gray-700 transition">Career</a></li>
 
-                <!-- INDUSTRIES DROPDOWN -->
-                <li class="relative group">
-                    <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
-                        Industries
-                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div
-                        class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
-                        <ul class="p-2 text-sm text-gray-700">
-                            <li class="relative group/sub">
-                                <div
-                                    class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                                    Finance & Business <span class="text-gray-400">›</span></div>
-                                <div
-                                    class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                                    <ul class="p-2 text-sm">
-                                        <li><a href="./industries/index.html?page=banking"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO
-                                                Banking</a></li>
-                                        <li><a href="./industries/index.html?page=stock-market"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock
-                                                Market</a></li>
-                                        <li><a href="./industries/index.html?page=corporate"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a>
-                                        </li>
-                                        <li><a href="./industries/index.html?page=real-estate"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real
-                                                Estate</a></li>
-                                        <li><a href="./industries/index.html?page=sales-marketing"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales
-                                                & Marketing</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="relative group/sub">
-                                <div
-                                    class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                                    Technology & Media <span class="text-gray-400">›</span></div>
-                                <div
-                                    class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                                    <ul class="p-2 text-sm">
-                                        <li><a href="./industries/index.html?page=gaming"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a>
-                                        </li>
-                                        <li><a href="./industries/index.html?page=media-entertainment"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media
-                                                & Entertainment</a></li>
-                                        <li><a href="./industries/index.html?page=education"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="relative group/sub">
-                                <div
-                                    class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                                    Commerce & Lifestyle <span class="text-gray-400">›</span></div>
-                                <div
-                                    class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                                    <ul class="p-2 text-sm">
-                                        <li><a href="./industries/index.html?page=retail-ecommerce"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail
-                                                & Ecommerce</a></li>
-                                        <li><a href="./industries/index.html?page=household"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a>
-                                        </li>
-                                        <li><a href="./industries/index.html?page=food-beverages"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food
-                                                & Beverages</a></li>
-                                        <li><a href="./industries/index.html?page=travel-hospitality"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel
-                                                & Hospitality</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="relative group/sub">
-                                <div
-                                    class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                                    Industry & Services <span class="text-gray-400">›</span></div>
-                                <div
-                                    class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                                    <ul class="p-2 text-sm">
-                                        <li><a href="./industries/index.html?page=transportation-logistics"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation
-                                                & Logistics</a></li>
-                                        <li><a href="./industries/index.html?page=healthcare"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a>
-                                        </li>
-                                        <li><a href="./industries/index.html?page=automotive"
-                                                class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
 
-                <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
-                <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+                <li><a href="./blog.html" class="text-black hover:text-gray-700 transition">Blog</a></li>
+                <li><a href="./contact.html" class="text-black hover:text-gray-700 transition">Contact</a></li>
                 <li class="shrink-0">
                     <a href="./consultancy.html"
-                        class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+                    style="color: #fff;"
+                        class="group flex items-center gap-2 px-5 py-2 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
                         Book Free Consultancy
                     </a>
                 </li>
@@ -219,120 +120,13 @@
                         class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
                 <li><a href="./career.html"
                         class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
-                <li>
-                    <button onclick="toggleAccordion('industries')"
-                        class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
-                        <span>Industries</span>
-                        <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="industries" class="hidden pl-3 mt-1">
-                        <div>
-                            <button onclick="toggleAccordion('finance')"
-                                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                                <span>Finance & Business</span>
-                                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="m19 9-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div id="finance" class="hidden pl-4 mt-0.5">
-                                <a href="./industries/index.html?page=banking"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO
-                                    Banking</a>
-                                <a href="./industries/index.html?page=stock-market"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock
-                                    Market</a>
-                                <a href="./industries/index.html?page=corporate"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
-                                <a href="./industries/index.html?page=real-estate"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real
-                                    Estate</a>
-                                <a href="./industries/index.html?page=sales-marketing"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales
-                                    & Marketing</a>
-                            </div>
-                        </div>
-                        <div>
-                            <button onclick="toggleAccordion('tech')"
-                                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                                <span>Technology & Media</span>
-                                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="m19 9-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div id="tech" class="hidden pl-4 mt-0.5">
-                                <a href="./industries/index.html?page=gaming"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
-                                <a href="./industries/index.html?page=media-entertainment"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media
-                                    & Entertainment</a>
-                                <a href="./industries/index.html?page=education"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
-                            </div>
-                        </div>
-                        <div>
-                            <button onclick="toggleAccordion('commerce')"
-                                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                                <span>Commerce & Lifestyle</span>
-                                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="m19 9-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div id="commerce" class="hidden pl-4 mt-0.5">
-                                <a href="./industries/index.html?page=retail-ecommerce"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail
-                                    & Ecommerce</a>
-                                <a href="./industries/index.html?page=household"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
-                                <a href="./industries/index.html?page=food-beverages"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food
-                                    & Beverages</a>
-                                <a href="./industries/index.html?page=travel-hospitality"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel
-                                    & Hospitality</a>
-                            </div>
-                        </div>
-                        <div>
-                            <button onclick="toggleAccordion('industry')"
-                                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                                <span>Industry & Services</span>
-                                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="m19 9-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div id="industry" class="hidden pl-4 mt-0.5">
-                                <a href="./industries/index.html?page=transportation-logistics"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation
-                                    & Logistics</a>
-                                <a href="./industries/index.html?page=healthcare"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
-                                <a href="./industries/index.html?page=automotive"
-                                    class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
                 <li><a href="./blog.html"
                         class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a></li>
                 <li><a href="./contact.html"
                         class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
                 <li class="mt-2">
                     <a href="./consultancy.html"
-                        class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+                        class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
                         Book Free Consultancy
                     </a>
                 </li>
@@ -351,17 +145,17 @@
         <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
         <!-- TOP CENTER GLOW -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-            style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+            style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(134,180,223,0.40) 0%, rgba(79,143,203,0.22) 20%, rgba(30,82,134,0.08) 50%, transparent 75%);">
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12" data-aos="fade-right">
             <span
-                class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
+                class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-[#86B4DF] mb-8 uppercase font-bold">
                 Legal
             </span>
             <h1
                 style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
-                Privacy <span class="text-indigo-400 font-semibold">Policy</span>
+                Privacy <span class="text-[#E0712F] font-semibold">Policy</span>
             </h1>
             <p class="text-gray-400 text-lg leading-relaxed font-light max-w-xl">
                 Your privacy matters. Learn how we protect and use your information.
@@ -375,14 +169,14 @@
 
             <!-- Title -->
             <div class="text-left mb-12" data-aos="fade-up">
-                <h4 class="text-sm font-semibold text-indigo-400 tracking-widest uppercase mb-3">Legal</h4>
+                <h4 class="text-sm font-semibold text-[#E0712F] tracking-widest uppercase mb-3">Legal</h4>
                 <h2 class="text-white font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 relative inline-block">
                     Privacy Policy
-                    <span class="absolute left-0 -bottom-2 w-20 h-1 bg-indigo-500 rounded"></span>
+                    <span class="absolute left-0 -bottom-2 w-20 h-1 bg-[#E0712F] rounded"></span>
                 </h2>
                 <p class="text-gray-400 max-w-2xl mt-6">
                     ThunderGits Consultancy Services Pvt Ltd ("we", "our", or "us") operates the website
-                    <span class="font-semibold text-indigo-400">thundergits.com</span>.
+                    <span class="font-semibold text-[#E0712F]">thundergits.com</span>.
                     This Privacy Policy outlines how we collect, use, and safeguard your information.
                 </p>
             </div>
@@ -391,7 +185,7 @@
             <div class="space-y-6">
 
                 <!-- 1. Information We Collect -->
-                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500"
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-[#E0712F]/30 transition-all duration-500"
                     data-aos="fade-up">
                     <h3 class="text-lg font-semibold text-white mb-3">1. Information We Collect</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -407,7 +201,7 @@
                 </div>
 
                 <!-- 2. Use of Information -->
-                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500"
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-[#E0712F]/30 transition-all duration-500"
                     data-aos="fade-up">
                     <h3 class="text-lg font-semibold text-white mb-3">2. Use of Information</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -416,7 +210,7 @@
                 </div>
 
                 <!-- 3. Data Sharing -->
-                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500"
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-[#E0712F]/30 transition-all duration-500"
                     data-aos="fade-up">
                     <h3 class="text-lg font-semibold text-white mb-3">3. Data Sharing</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -426,7 +220,7 @@
                 </div>
 
                 <!-- 4. Cookies -->
-                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500"
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-[#E0712F]/30 transition-all duration-500"
                     data-aos="fade-up">
                     <h3 class="text-lg font-semibold text-white mb-3">4. Cookies</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -435,7 +229,7 @@
                 </div>
 
                 <!-- 5. Data Security -->
-                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500"
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-[#E0712F]/30 transition-all duration-500"
                     data-aos="fade-up">
                     <h3 class="text-lg font-semibold text-white mb-3">5. Data Security</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -444,7 +238,7 @@
                 </div>
 
                 <!-- 6. Children's Privacy -->
-                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500"
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-[#E0712F]/30 transition-all duration-500"
                     data-aos="fade-up">
                     <h3 class="text-lg font-semibold text-white mb-3">6. Children's Privacy</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -454,7 +248,7 @@
                 </div>
 
                 <!-- 7. Policy Changes -->
-                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500"
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-[#E0712F]/30 transition-all duration-500"
                     data-aos="fade-up">
                     <h3 class="text-lg font-semibold text-white mb-3">7. Policy Changes</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -464,7 +258,7 @@
                 </div>
 
                 <!-- 8. Contact Us -->
-                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-indigo-500/30 transition-all duration-500"
+                <div class="bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:border-[#E0712F]/30 transition-all duration-500"
                     data-aos="fade-up">
                     <h3 class="text-lg font-semibold text-white mb-3">8. Contact Us</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">

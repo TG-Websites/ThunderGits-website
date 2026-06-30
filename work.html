@@ -29,10 +29,10 @@
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./tailwind.css">
+  <link rel="stylesheet" href="./theme.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
@@ -42,7 +42,7 @@
   <style>
     #work-list {
       scrollbar-width: thin;
-      scrollbar-color: rgba(99, 102, 241, 0.35) transparent;
+      scrollbar-color: rgba(224, 113, 47, 0.35) transparent;
     }
 
     #work-list::-webkit-scrollbar {
@@ -54,13 +54,13 @@
     }
 
     #work-list::-webkit-scrollbar-thumb {
-      background: rgba(99, 102, 241, 0.35);
+      background: rgba(224, 113, 47, 0.35);
       border-radius: 100px;
       transition: background 0.3s;
     }
 
     #work-list::-webkit-scrollbar-thumb:hover {
-      background: rgba(99, 102, 241, 0.75);
+      background: rgba(224, 113, 47, 0.70);
     }
     .work-filter {
       padding: 0.45rem 1.1rem;
@@ -75,9 +75,41 @@
       cursor: pointer;
       transition: all 0.25s;
     }
-    .work-filter:hover { border-color: rgba(99,102,241,0.5); color: #fff; }
-    .work-filter.active { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+    .work-filter:hover { border-color: rgba(224,113,47,0.6); color: #fff; }
+    .work-filter.active { background: #E0712F; border-color: #E0712F; color: #fff; }
     .work-card.hidden-card { display: none; }
+
+    /* Hero marquee */
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-track { animation: marquee-scroll 22s linear infinite; }
+    .marquee-track:hover { animation-play-state: paused; }
+
+    /* Floating cards wobble */
+    @keyframes float-a {
+      0%,100% { transform: rotate(3deg) translateY(0px); }
+      50%      { transform: rotate(3deg) translateY(-10px); }
+    }
+    @keyframes float-b {
+      0%,100% { transform: rotate(-2deg) translateY(0px); }
+      50%      { transform: rotate(-2deg) translateY(-8px); }
+    }
+    @keyframes float-c {
+      0%,100% { transform: rotate(1.5deg) translateY(0px); }
+      50%      { transform: rotate(1.5deg) translateY(-6px); }
+    }
+    .card-float-a { animation: float-a 5s ease-in-out infinite; }
+    .card-float-b { animation: float-b 6.5s ease-in-out infinite 1s; }
+    .card-float-c { animation: float-c 4.5s ease-in-out infinite 0.5s; }
+
+    /* Ember glow pulse */
+    @keyframes glow-pulse {
+      0%,100% { opacity: 0.55; }
+      50%      { opacity: 0.80; }
+    }
+    .glow-pulse { animation: glow-pulse 4s ease-in-out infinite; }
   </style>
 
 <script type="application/ld+json">
@@ -102,7 +134,7 @@
 </script>
 </head>
 
-<body class="bg-black text-white font-['Inter',sans-serif]">
+<body class="bg-black text-white font-['IBM_Plex_Sans',sans-serif]">
 
   <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
     <div class="flex items-center justify-between  gap-4 lg:gap-4 xl:gap-16 mx-auto px-3 lg:px-8 xl:px-20 py-2">
@@ -130,140 +162,21 @@
 
       <!-- DESKTOP NAV -->
       <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
-        <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark transition">Home</a></li>
-        <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
+        <li><a href="./index.html" class="text-fg-brand hover:text-gray-700 transition">Home</a></li>
+        <li><a href="./about.html" class="text-black hover:text-gray-700 transition">About</a></li>
         <li><a href="./work.html" class="text-black text-primary font-semibold transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-primary-dark transition">Case Studies</a></li>
-        <li><a href="./service.html" class="text-black hover:text-primary-dark transition">Services</a></li>
-        <li><a href="./career.html" class="text-black hover:text-primary-dark transition">Career</a></li>
+                <li><a href="./case-studies.html" class="text-black hover:text-gray-700 transition">Case Studies</a></li>
+        <li><a href="./service.html" class="text-black hover:text-gray-700 transition">Services</a></li>
+        <li><a href="./career.html" class="text-black hover:text-gray-700 transition">Career</a></li>
 
-        <!-- INDUSTRIES DROPDOWN -->
-        <li class="relative group">
-          <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
-            Industries
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-            </svg>
-          </button>
 
-          <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
-                            transition-all duration-300 z-50">
-            <ul class="p-2 text-sm text-gray-700">
-
-              <!-- Finance & Business -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Finance & Business <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=banking"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO
-                        Banking</a></li>
-                    <li><a href="./industries/index.html?page=stock-market"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock
-                        Market</a></li>
-                    <li><a href="./industries/index.html?page=corporate"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=real-estate"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real
-                        Estate</a></li>
-                    <li><a href="./industries/index.html?page=sales-marketing"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales
-                        & Marketing</a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Technology & Media -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Technology & Media <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=gaming"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=media-entertainment"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media
-                        & Entertainment</a></li>
-                    <li><a href="./industries/index.html?page=education"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Commerce & Lifestyle -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Commerce & Lifestyle <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=retail-ecommerce"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail
-                        & Ecommerce</a></li>
-                    <li><a href="./industries/index.html?page=household"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=food-beverages"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food
-                        & Beverages</a></li>
-                    <li><a href="./industries/index.html?page=travel-hospitality"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel
-                        & Hospitality</a></li>
-                  </ul>
-                </div>
-              </li>
-
-              <!-- Industry & Services -->
-              <li class="relative group/sub">
-                <div
-                  class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">
-                  Industry & Services <span class="text-gray-400">›</span>
-                </div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100
-                                        opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible
-                                        transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=transportation-logistics"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation
-                        & Logistics</a></li>
-                    <li><a href="./industries/index.html?page=healthcare"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a>
-                    </li>
-                    <li><a href="./industries/index.html?page=automotive"
-                        class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-        </li>
-
-        <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
-        <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+        <li><a href="./blog.html" class="text-black hover:text-gray-700 transition">Blog</a></li>
+        <li><a href="./contact.html" class="text-black hover:text-gray-700 transition">Contact</a></li>
 
         <li class="shrink-0">
           <a href="./consultancy.html"
-            class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+          style="color: #fff;"
+            class="group flex items-center gap-2 px-5 py-2 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
             Book Free Consultancy
           </a>
         </li>
@@ -282,7 +195,7 @@
             class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a>
         </li>
         <li><a href="./work.html"
-            class="block py-2.5 px-3 rounded-lg text-primary bg-blue-50 hover:bg-gray-50 transition">Work</a>
+            class="block py-2.5 px-3 rounded-lg text-[#1E5286] bg-[#EFF5FB] hover:bg-gray-50 transition">Work</a>
         </li>
                 <li><a href="./case-studies.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Case Studies</a></li>
         <li><a href="./service.html"
@@ -290,116 +203,6 @@
         <li><a href="./career.html"
             class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
 
-        <!-- INDUSTRIES ACCORDION -->
-        <li>
-          <button onclick="toggleAccordion('industries')"
-            class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
-            <span>Industries</span>
-            <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300"
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-            </svg>
-          </button>
-
-          <div id="industries" class="hidden pl-3 mt-1 flex flex-col gap-1">
-
-            <!-- Finance & Business -->
-            <div>
-              <button onclick="toggleAccordion('finance')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Finance & Business</span>
-                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="finance" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=banking"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO
-                  Banking</a>
-                <a href="./industries/index.html?page=stock-market"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock
-                  Market</a>
-                <a href="./industries/index.html?page=corporate"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
-                <a href="./industries/index.html?page=real-estate"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real
-                  Estate</a>
-                <a href="./industries/index.html?page=sales-marketing"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales
-                  & Marketing</a>
-              </div>
-            </div>
-
-            <!-- Technology & Media -->
-            <div>
-              <button onclick="toggleAccordion('tech')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Technology & Media</span>
-                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="tech" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=gaming"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
-                <a href="./industries/index.html?page=media-entertainment"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media
-                  & Entertainment</a>
-                <a href="./industries/index.html?page=education"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
-              </div>
-            </div>
-
-            <!-- Commerce & Lifestyle -->
-            <div>
-              <button onclick="toggleAccordion('commerce')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Commerce & Lifestyle</span>
-                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="commerce" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=retail-ecommerce"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail
-                  & Ecommerce</a>
-                <a href="./industries/index.html?page=household"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
-                <a href="./industries/index.html?page=food-beverages"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food
-                  & Beverages</a>
-                <a href="./industries/index.html?page=travel-hospitality"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel
-                  & Hospitality</a>
-              </div>
-            </div>
-
-            <!-- Industry & Services -->
-            <div>
-              <button onclick="toggleAccordion('industry')"
-                class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Industry & Services</span>
-                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                </svg>
-              </button>
-              <div id="industry" class="hidden pl-4 mt-0.5 flex flex-col">
-                <a href="./industries/index.html?page=transportation-logistics"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation
-                  & Logistics</a>
-                <a href="./industries/index.html?page=healthcare"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
-                <a href="./industries/index.html?page=automotive"
-                  class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
-              </div>
-            </div>
-
-          </div>
-        </li>
 
         <li><a href="./blog.html"
             class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a>
@@ -409,9 +212,11 @@
 
         <li class="mt-2">
           <a href="./consultancy.html"
-            class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
-            Book Free Consultancy
-          </a>
+                    style="color: #fff;"
+                        class="group flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
+                        Book Free Consultancy
+                        <span class="group-hover:translate-x-0.5 transition-transform duration-200 text-xs">→</span>
+                    </a>
         </li>
 
       </ul>
@@ -419,46 +224,191 @@
   </nav>
 
 
-  <!-- Aligent Hero Section -->
-  <section id="hero-section"
-    class="relative min-h-screen flex items-center bg-black overflow-hidden">
-    <div class="absolute inset-0 z-0 pointer-events-none"
-      style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
-    </div>
-    <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-      style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
-    </div>
+  <!-- Hero Section -->
+  <section id="hero-section" class="relative min-h-screen flex flex-col overflow-hidden" style="background:#080D18;">
 
-    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-      <div data-aos="fade-up">
-        <span
-          class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-white/8 border border-white/15 text-indigo-300 mb-8 uppercase font-bold">
-          Our Portfolio
-        </span>
-        <h1
-          style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 2rem;">
-          Turning Ideas Into <br /> <span class="text-indigo-400 font-semibold">Impactful Reality</span>
-        </h1>
-        <p class="text-gray-400 text-xl leading-relaxed mb-12 font-light max-w-2xl mx-auto">
-          Not just projects delivered — real businesses we partnered with and helped grow. Strategy, build, visibility, and marketing owned end-to-end.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="#work-grid"
-            class="px-10 py-4 bg-primary hover:bg-primary-dark text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 text-center shadow-lg shadow-indigo-900/50">
-            Explore Projects
-          </a>
+    <!-- Background: fine grid -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:55px 55px;"></div>
+
+    <!-- Background: ember radial glow top-right -->
+    <div class="absolute top-0 right-0 pointer-events-none glow-pulse" style="width:700px;height:700px;background:radial-gradient(ellipse at 100% 0%,rgba(224,113,47,0.18) 0%,rgba(224,113,47,0.07) 40%,transparent 70%);"></div>
+
+    <!-- Background: harbor blue glow bottom-left -->
+    <div class="absolute bottom-0 left-0 pointer-events-none" style="width:600px;height:400px;background:radial-gradient(ellipse at 0% 100%,rgba(30,82,134,0.22) 0%,transparent 65%);"></div>
+
+    <!-- Main content -->
+    <div class="relative z-10 flex-1 flex items-center">
+      <div class="max-w-screen-xl mx-auto px-6 lg:px-14 w-full pt-32 pb-16 lg:pt-28 lg:pb-12">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-0 justify-between">
+
+          <!-- LEFT: Editorial text -->
+          <div class="lg:max-w-[58%]" data-aos="fade-right" data-aos-duration="800">
+
+            <!-- Eyebrow -->
+            <div class="flex items-center gap-3 mb-10">
+              <span class="w-10 h-px bg-accent"></span>
+              <span class="text-accent text-[10px] tracking-[0.45em] uppercase font-black">Portfolio</span>
+              <span class="w-10 h-px bg-accent"></span>
+            </div>
+
+            <!-- Headline -->
+            <h1 style="font-family:'Manrope',sans-serif;line-height:0.92;letter-spacing:-0.04em;margin-bottom:2.5rem;">
+              <span class="block" style="font-size:clamp(0.75rem,1.2vw,0.9rem);font-weight:400;color:rgba(255,255,255,0.3);letter-spacing:0.25em;text-transform:uppercase;line-height:1;margin-bottom:1.5rem;">We Build Things That</span>
+              <span class="block text-white" style="font-size:clamp(4.5rem,9.5vw,8.5rem);font-weight:800;">Actually</span>
+              <span class="block" style="font-size:clamp(4.5rem,9.5vw,8.5rem);font-weight:800;color:#E0712F;">Work.</span>
+            </h1>
+
+            <!-- Stats row -->
+            <div class="flex flex-wrap items-center gap-6 sm:gap-8 mb-10 pb-10 border-b border-white/8">
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#E0712F;line-height:1;">16+</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Projects Delivered</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">100+</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Businesses Grown</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">7</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Industries</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">95%</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Partner Retention</p>
+              </div>
+            </div>
+
+            <!-- Description + CTAs -->
+            <p class="text-gray-400 text-[0.95rem] leading-relaxed max-w-lg mb-9">
+              Not just projects delivered — real businesses we partnered with and helped grow. Strategy, build, visibility, and marketing owned end-to-end.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="#work-grid"
+                class="inline-flex items-center gap-2.5 px-8 py-4 bg-accent hover:bg-accent-dark text-white text-[10px] font-black uppercase tracking-widest rounded-full transition-all duration-300 shadow-lg shadow-accent/20">
+                See All Work <i class="ri-arrow-down-line"></i>
+              </a>
+              <a href="./consultancy.html"
+                class="inline-flex items-center gap-2.5 px-8 py-4 border border-white/20 text-white/65 text-[10px] font-black uppercase tracking-widest rounded-full hover:border-white/55 hover:text-white transition-all duration-300">
+                Start a Project <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: Floating stacked project cards -->
+          <div class="hidden lg:block relative w-[400px] h-[540px] shrink-0" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+
+            <!-- Card 1 — back/bottom -->
+            <div class="card-float-a absolute bottom-0 right-0 w-[280px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl" style="z-index:1;">
+              <div class="aspect-video overflow-hidden bg-[#0D1A2D]">
+                <img src="./assets/loqoai.webp" alt="Loqo AI" class="w-full h-full object-cover opacity-90"/>
+              </div>
+              <div class="bg-[#0D1A2D] px-4 py-3 flex items-center justify-between">
+                <div>
+                  <p class="text-white text-sm font-bold" style="font-family:'Manrope';">Loqo AI</p>
+                  <p class="text-[#E0712F] text-[9px] uppercase tracking-widest mt-0.5 font-bold">AI Platform</p>
+                </div>
+                <div class="w-7 h-7 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center shrink-0">
+                  <i class="ri-arrow-right-up-line text-accent text-xs"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 — mid -->
+            <div class="card-float-b absolute top-[130px] left-0 w-[280px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl" style="z-index:2;">
+              <div class="aspect-video overflow-hidden bg-[#0D1A2D]">
+                <img src="./assets/edugit.webp" alt="Edugits ERP" class="w-full h-full object-cover opacity-90"/>
+              </div>
+              <div class="bg-[#0D1A2D] px-4 py-3 flex items-center justify-between">
+                <div>
+                  <p class="text-white text-sm font-bold" style="font-family:'Manrope';">Edugits ERP</p>
+                  <p class="text-[#E0712F] text-[9px] uppercase tracking-widest mt-0.5 font-bold">SaaS ERP</p>
+                </div>
+                <div class="w-7 h-7 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center shrink-0">
+                  <i class="ri-arrow-right-up-line text-accent text-xs"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 — front/top -->
+            <div class="card-float-c absolute top-0 right-[30px] w-[220px] rounded-2xl overflow-hidden border border-accent/35 shadow-[0_0_40px_rgba(224,113,47,0.15)] shadow-2xl" style="z-index:3;">
+              <div class="aspect-video overflow-hidden bg-[#0D1A2D]">
+                <img src="./assets/crumbell.webp" alt="Crumbell" class="w-full h-full object-cover opacity-90"/>
+              </div>
+              <div class="bg-[#0D1A2D] px-4 py-3 flex items-center justify-between">
+                <div>
+                  <p class="text-white text-sm font-bold" style="font-family:'Manrope';">Crumbell</p>
+                  <p class="text-[#E0712F] text-[9px] uppercase tracking-widest mt-0.5 font-bold">Mobile App</p>
+                </div>
+                <div class="w-7 h-7 rounded-full bg-accent flex items-center justify-center shrink-0">
+                  <i class="ri-arrow-right-up-line text-white text-xs"></i>
+                </div>
+              </div>
+              <!-- Accent stripe top -->
+              <div class="absolute top-0 left-0 right-0 h-[2px] bg-accent"></div>
+            </div>
+
+            <!-- Ambient glow behind cards -->
+            <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 60% 60%,rgba(224,113,47,0.12) 0%,transparent 65%);"></div>
+          </div>
+
         </div>
       </div>
     </div>
+
+    <!-- Bottom marquee ticker -->
+    <div class="relative z-10 border-t border-white/6 bg-white/[0.02] py-3.5 overflow-hidden">
+      <div class="flex whitespace-nowrap marquee-track">
+        <!-- Repeated twice for seamless loop -->
+        <span class="flex items-center gap-8 pr-8 text-[10px] text-white/30 uppercase tracking-widest font-bold">
+          <span class="text-accent/60">✦</span> Crumbell <span class="text-accent/60">✦</span> Enersol Biopower <span class="text-accent/60">✦</span> ICAI MFP <span class="text-accent/60">✦</span> Loqo AI <span class="text-accent/60">✦</span> Volcanic Classes <span class="text-accent/60">✦</span> Prismstar <span class="text-accent/60">✦</span> Edugits ERP <span class="text-accent/60">✦</span> Chikit <span class="text-accent/60">✦</span> Ocean of Current Gen <span class="text-accent/60">✦</span> Trio EV <span class="text-accent/60">✦</span> Howbee <span class="text-accent/60">✦</span> Pauseva <span class="text-accent/60">✦</span> Coding Pandas <span class="text-accent/60">✦</span> Netajee &nbsp;&nbsp;&nbsp;
+        </span>
+        <span class="flex items-center gap-8 pr-8 text-[10px] text-white/30 uppercase tracking-widest font-bold" aria-hidden="true">
+          <span class="text-accent/60">✦</span> Crumbell <span class="text-accent/60">✦</span> Enersol Biopower <span class="text-accent/60">✦</span> ICAI MFP <span class="text-accent/60">✦</span> Loqo AI <span class="text-accent/60">✦</span> Volcanic Classes <span class="text-accent/60">✦</span> Prismstar <span class="text-accent/60">✦</span> Edugits ERP <span class="text-accent/60">✦</span> Chikit <span class="text-accent/60">✦</span> Ocean of Current Gen <span class="text-accent/60">✦</span> Trio EV <span class="text-accent/60">✦</span> Howbee <span class="text-accent/60">✦</span> Pauseva <span class="text-accent/60">✦</span> Coding Pandas <span class="text-accent/60">✦</span> Netajee &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
+    </div>
+
   </section>
 
   <!-- Work Showcase Section -->
-  <section id="work-grid" class="bg-black border-t border-white/5 py-20">
+  <section id="work-grid" class="bg-black border-t border-white/5 pt-28 pb-24">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
 
+      <!-- Section Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
+        <div data-aos="fade-right" data-aos-duration="700">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-8 h-px bg-accent"></span>
+            <span class="text-accent text-[10px] tracking-[0.4em] uppercase font-black">Our Portfolio</span>
+          </div>
+          <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.05;color:#fff;letter-spacing:-0.025em;">
+            Work That<br/><span style="color:#E0712F;">Speaks for Itself.</span>
+          </h2>
+        </div>
+        <div data-aos="fade-left" data-aos-duration="700" class="lg:max-w-sm shrink-0">
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            From early-stage startups to established enterprises — every project here is a growth story. Strategy, build, SEO, and marketing: we own the outcome.
+          </p>
+          <div class="flex items-center gap-8">
+            <div>
+              <p style="font-family:'Manrope';font-size:1.8rem;font-weight:800;color:#E0712F;line-height:1;">16+</p>
+              <p class="text-[10px] text-gray-500 uppercase tracking-[0.18em] mt-1">Projects Delivered</p>
+            </div>
+            <div class="w-px h-10 bg-white/10"></div>
+            <div>
+              <p style="font-family:'Manrope';font-size:1.8rem;font-weight:800;color:#fff;line-height:1;">7</p>
+              <p class="text-[10px] text-gray-500 uppercase tracking-[0.18em] mt-1">Industries</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Filter Tabs -->
-      <div class="flex flex-wrap gap-3 mb-14 justify-center" id="work-filters">
+      <div class="flex flex-wrap gap-3 mb-12" id="work-filters">
         <button class="work-filter active" data-filter="all">All Projects</button>
         <button class="work-filter" data-filter="web">Web</button>
         <button class="work-filter" data-filter="mobile">Mobile</button>
@@ -468,229 +418,350 @@
       </div>
 
       <!-- Cards Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="work-cards">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="work-cards">
 
-        <!-- 1. Crumbell -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="mobile web" data-aos="fade-up" data-aos-delay="0">
-          <a href="https://crumbell.in/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/crumbell.webp" alt="Crumbell" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Crumbell</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">Mobile App</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Crumbell -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="mobile web" data-aos="fade-up" data-aos-delay="0">
+          <a href="https://crumbell.in/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/crumbell.webp" alt="Crumbell" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">Mobile App</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Crumbell</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">Mobile App</span>
             </div>
           </a>
         </div>
-
-        <!-- 2. Enersol -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web ecommerce" data-aos="fade-up" data-aos-delay="50">
-          <a href="https://enersolbiopower.com/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/enersol.webp" alt="Enersol Biopower" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Enersol Biopower</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">E-Commerce</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Enersol Biopower -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web ecommerce" data-aos="fade-up" data-aos-delay="50">
+          <a href="https://enersolbiopower.com/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/enersol.webp" alt="Enersol Biopower" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">E-Commerce</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Enersol Biopower</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">E-Commerce</span>
             </div>
           </a>
         </div>
-
-        <!-- 3. ICAI -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web corporate" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://icaimfp.org/index.html" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/icaim.webp" alt="ICAI MFP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">ICAI MFP</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">Corporate</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- ICAI MFP -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web corporate" data-aos="fade-up" data-aos-delay="100">
+          <a href="https://icaimfp.org/index.html" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/icaim.webp" alt="ICAI MFP" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">Corporate</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">ICAI MFP</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">Corporate</span>
             </div>
           </a>
         </div>
-
-        <!-- 5. Loqo AI -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web saas" data-aos="fade-up" data-aos-delay="0">
-          <a href="https://loqo.ai/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/loqoai.webp" alt="Loqo AI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Loqo AI</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">AI Platform</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Loqo AI -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web saas" data-aos="fade-up" data-aos-delay="0">
+          <a href="https://loqo.ai/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/loqoai.webp" alt="Loqo AI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">AI Platform</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Loqo AI</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">AI Platform</span>
             </div>
           </a>
         </div>
-
-        <!-- 6. Volcanic Classes -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web edtech" data-aos="fade-up" data-aos-delay="50">
-          <a href="https://volcanicclasses.org/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/volcanic classes.webp" alt="Volcanic Classes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Volcanic Classes</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">EdTech</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Volcanic Classes -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web edtech" data-aos="fade-up" data-aos-delay="50">
+          <a href="https://volcanicclasses.org/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/volcanic classes.webp" alt="Volcanic Classes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">EdTech</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Volcanic Classes</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">EdTech</span>
             </div>
           </a>
         </div>
-
-        <!-- 7. Prismstar -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web corporate" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://prismstar.in/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/prismstar.webp" alt="Prismstar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Prismstar</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">Real Estate</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Prismstar -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web corporate" data-aos="fade-up" data-aos-delay="100">
+          <a href="https://prismstar.in/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/prismstar.webp" alt="Prismstar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">Real Estate</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Prismstar</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">Real Estate</span>
             </div>
           </a>
         </div>
-
-        <!-- 8. Edugits -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web saas edtech" data-aos="fade-up" data-aos-delay="150">
-          <a href="https://edugits.thundergits.com/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/edugit.webp" alt="Edugits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Edugits ERP</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">SaaS ERP</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Edugits ERP -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web saas edtech" data-aos="fade-up" data-aos-delay="150">
+          <a href="https://edugits.thundergits.com/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/edugit.webp" alt="Edugits" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">SaaS ERP</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Edugits ERP</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">SaaS ERP</span>
             </div>
           </a>
         </div>
-
-        <!-- 9. Chikit -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web saas" data-aos="fade-up" data-aos-delay="0">
-          <a href="https://chikit.thundergits.com/signin" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/chikit.webp" alt="Chikit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Chikit</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">Pharma SaaS</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Chikit -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web saas" data-aos="fade-up" data-aos-delay="0">
+          <a href="https://chikit.thundergits.com/signin" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/chikit.webp" alt="Chikit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">Pharma SaaS</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Chikit</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">Pharma SaaS</span>
             </div>
           </a>
         </div>
-
-        <!-- 10. Ocean of Current Generation -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web corporate" data-aos="fade-up" data-aos-delay="50">
-          <a href="https://oceanofcurrentgeneration.com/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/opc.webp" alt="Ocean of Current Generation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Ocean of Current Gen</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">Corporate</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Ocean of Current Gen -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web corporate" data-aos="fade-up" data-aos-delay="50">
+          <a href="https://oceanofcurrentgeneration.com/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/opc.webp" alt="Ocean of Current Gen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">Corporate</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Ocean of Current Gen</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">Corporate</span>
             </div>
           </a>
         </div>
-
-        <!-- 11. Trio EV -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web corporate" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://trio-ev.com/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/trio.webp" alt="Trio EV" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Trio EV</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">EV Mobility</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Trio EV -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web corporate" data-aos="fade-up" data-aos-delay="100">
+          <a href="https://trio-ev.com/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/trio.webp" alt="Trio EV" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">EV Mobility</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Trio EV</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">EV Mobility</span>
             </div>
           </a>
         </div>
-
-        <!-- 12. Howbee -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web corporate" data-aos="fade-up" data-aos-delay="150">
-          <a href="#" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/Howbee.webp" alt="Howbee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Howbee</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">UI / UX</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Howbee -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web corporate" data-aos="fade-up" data-aos-delay="150">
+          <a href="#" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/Howbee.webp" alt="Howbee" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">UI / UX</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Howbee</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">UI / UX</span>
             </div>
           </a>
         </div>
-
-        <!-- 13. Social Media App -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="mobile web" data-aos="fade-up" data-aos-delay="0">
-          <a href="#" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/LoginPageDemo.webp" alt="Social Media App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Social Media App</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">Social / Mobile</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Social Media App -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="mobile web" data-aos="fade-up" data-aos-delay="0">
+          <a href="#" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/LoginPageDemo.webp" alt="Social Media App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">Social / Mobile</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Social Media App</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">Social / Mobile</span>
             </div>
           </a>
         </div>
-
-        <!-- 14. Pauseva -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web govtech" data-aos="fade-up" data-aos-delay="50">
-          <a href="https://pasuseva.in/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/pasusevaimg.webp" alt="Pauseva" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Pauseva</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">NGO / GovTech</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Pauseva -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web govtech" data-aos="fade-up" data-aos-delay="50">
+          <a href="https://pasuseva.in/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/pasusevaimg.webp" alt="Pauseva" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">NGO / GovTech</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Pauseva</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">NGO / GovTech</span>
             </div>
           </a>
         </div>
-
-        <!-- 15. Coding Pandas -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web edtech" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://codingpandas.in/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/codingpandaimg.webp" alt="Coding Pandas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Coding Pandas</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">EdTech</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Coding Pandas -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web edtech" data-aos="fade-up" data-aos-delay="100">
+          <a href="https://codingpandas.in/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/codingpandaimg.webp" alt="Coding Pandas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">EdTech</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Coding Pandas</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">EdTech</span>
             </div>
           </a>
         </div>
-
-        <!-- 16. Netajee -->
-        <div class="work-card group rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1" data-cat="web govtech" data-aos="fade-up" data-aos-delay="150">
-          <a href="https://netajee.in/" target="_blank" rel="noopener">
-            <div class="aspect-video overflow-hidden bg-white/5">
-              <img src="./assets/netajeeimg.webp" alt="Netajee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async"/>
-            </div>
-            <div class="p-4 bg-white/[0.02]">
-              <div class="flex items-center justify-between">
-                <div><h3 class="text-white font-semibold text-sm">Netajee</h3><span class="text-[10px] text-indigo-400 uppercase tracking-widest">GovTech</span></div>
-                <div class="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all shrink-0"><i class="ri-arrow-right-up-line text-xs text-gray-500 group-hover:text-white"></i></div>
+        <!-- Netajee -->
+        <div class="work-card group relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5" data-cat="web govtech" data-aos="fade-up" data-aos-delay="150">
+          <a href="https://netajee.in/" target="_blank" rel="noopener" class="block">
+            <!-- Image -->
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="./assets/netajeeimg.webp" alt="Netajee" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async"/>
+              <!-- Hover overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end justify-between p-5">
+                <span class="text-white/70 text-[10px] uppercase tracking-widest font-bold">GovTech</span>
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
               </div>
+            </div>
+            <!-- Info strip -->
+            <div class="px-5 pt-4 pb-5 relative">
+              <!-- Accent bottom stripe -->
+              <div class="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-500 rounded-b-2xl"></div>
+              <h3 style="font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:700;color:#ffffff;margin-bottom:0.35rem;">Netajee</h3>
+              <span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1">GovTech</span>
             </div>
           </a>
         </div>
@@ -703,20 +774,20 @@
   <section class="bg-white py-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
       <div data-aos="fade-right">
-        <span class="text-indigo-600 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Get in Touch</span>
+        <span class="text-[#1E5286] text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Get in Touch</span>
         <h2 class="text-5xl font-light text-black mb-8 leading-tight">Have a Cool Project? <br /> <span
             class="font-bold">Let's Build It.</span></h2>
         <p class="text-gray-600 text-lg font-light leading-relaxed mb-12 max-w-lg">We’d love to hear about your ideas.
           Drop us a message and our team will get back to you promptly to turn your vision into reality.</p>
         <div class="flex flex-col sm:flex-row gap-6">
           <a href="./contact.html"
-            class="inline-flex items-center gap-4 px-14 py-6 bg-primary hover:bg-primary-dark text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-2xl shadow-indigo-900/50">
+            class="inline-flex items-center gap-4 px-14 py-6 bg-accent hover:bg-accent-dark text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-2xl shadow-[#0B1B30]/50">
             Start Your Project <i class="ri-arrow-right-up-line text-lg"></i>
           </a>
         </div>
       </div>
       <div data-aos="fade-left" class="relative">
-        <div class="absolute -inset-4 bg-indigo-500/5 blur-2xl rounded-3xl"></div>
+        <div class="absolute -inset-4 bg-[#E0712F]/5 blur-2xl rounded-3xl"></div>
         <img src="./assets/about-img.webp" alt="Contact Us"
           class="relative w-full rounded-[3rem] shadow-2xl object-cover aspect-[4/5]" loading="lazy" decoding="async" width="1024" height="1536"/>
       </div>

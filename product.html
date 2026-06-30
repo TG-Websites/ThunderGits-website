@@ -5,6 +5,8 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products — ThunderGits Technology</title>
@@ -33,6 +35,13 @@
     tailwind.config = {
       theme: {
         extend: {
+      colors: {
+        accent: '#E0712F',
+        'accent-dark': '#C2521F',
+        primary: '#1E5286',
+        'primary-dark': '#173B62',
+        secondary: '#0B1B30',
+      },
           fontSize: {
             base: '1em',
             sm: '14px',
@@ -98,6 +107,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./theme.css">
 
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
@@ -164,9 +174,9 @@
         <!-- Quote + Hamburger -->
         <div class="flex items-center gap-6 animate-slide-fade-up-delay2">
           <a href="./contact.html" class="hidden md:inline-block relative px-8 py-2 text-sm sm:text-base font-semibold uppercase rounded-lg
-               text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500
-               border border-pink-500 hover:text-white transition-all duration-300 ease-out
-               before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 
+               text-transparent bg-clip-text bg-[#E0712F]
+               border border-[#E0712F] hover:text-white transition-all duration-300 ease-out
+               before:absolute before:inset-0 before:rounded-lg before:bg-[#C2521F] 
                before:scale-x-0 before:origin-left hover:before:scale-x-100 
                before:transition-transform before:duration-300 before:z-[-1]">
             Get a Quote
@@ -222,7 +232,7 @@
         <!-- Get a Quote Button -->
         <div class="pt-4">
           <a href="./contact.html"
-            class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border border-pink-500 hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-r before:from-pink-500 before:to-purple-500 before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
+            class="mt-5 relative px-8 py-3 text-sm sm:text-base font-semibold uppercase rounded-lg text-transparent bg-clip-text bg-[#E0712F] border border-[#E0712F] hover:text-white transition-all duration-300 ease-out before:absolute before:inset-0 before:rounded-lg before:bg-[#C2521F] before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 before:z-[-1]">
             Get a Quote
           </a>
         </div>
@@ -230,12 +240,12 @@
 
       <!-- Footer Icons -->
       <div class="pt-8 border-t border-theme-bd mt-10 flex gap-5 text-base text-graytext">
-        <a href="https://www.linkedin.com/company/thundergits" target="_blank" rel="noopener noreferrer" target="_blank" class="hover:text-pink-400 transition"><i
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" rel="noopener noreferrer" target="_blank" class="hover:text-[#E0712F] transition"><i
             class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/thundergits/" target="_blank" rel="noopener noreferrer" target="_blank" class="hover:text-pink-400 transition"><i
+        <a href="https://www.instagram.com/thundergits/" target="_blank" rel="noopener noreferrer" target="_blank" class="hover:text-[#E0712F] transition"><i
             class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
+          class="hover:text-[#E0712F] transition"><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
 
@@ -248,7 +258,7 @@
         <!-- Right Product Showcase -->
         <div data-aos="fade-right" class="relative flex justify-center items-center order-1 md:order-2 mb-6 md:mb-0">
           <div
-            class="relative w-[240px] sm:w-[300px] lg:w-[380px] h-[180px] sm:h-[240px] lg:h-[300px] bg-dark/70 rounded-xl overflow-hidden shadow-xl border border-white/10 hover:border-pink-500/40 transition-all duration-300 group">
+            class="relative w-[240px] sm:w-[300px] lg:w-[380px] h-[180px] sm:h-[240px] lg:h-[300px] bg-dark/70 rounded-xl overflow-hidden shadow-xl border border-white/10 hover:border-[#E0712F]/40 transition-all duration-300 group">
             <img src="./assets/product-hero.webp" alt="Software Solutions"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="2730" height="2904"/>
             <!-- Overlay Text -->
@@ -256,7 +266,7 @@
               class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/40 to-transparent flex flex-col justify-end p-3 sm:p-4">
               <div class="flex items-start gap-3">
                 <!-- Visible Gradient Border -->
-                <div class="w-[3px] sm:w-[4px] h-full bg-gradient-to-b from-pink-500 to-purple-500 rounded-full "></div>
+                <div class="w-[3px] sm:w-[4px] h-full bg-gradient-to-b from-[#E0712F] to-[#1E5286] rounded-full "></div>
 
                 <div>
                   <h3 class="text-white font-semibold text-[13px] sm:text-sm">
@@ -276,13 +286,13 @@
         <div data-aos="fade-left"
           class="flex flex-col justify-center space-y-3 sm:space-y-5 text-center md:text-left order-2 md:order-1">
           <div
-            class="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text font-bold uppercase tracking-wide text-xs sm:text-sm">
+            class="inline-block text-[#E0712F] font-bold uppercase tracking-wide text-xs sm:text-sm">
             Our Products
           </div>
           <h1 class="sr-only">ThunderGits Products — Innovative Software Solutions</h1>
 <h2 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-offwhite leading-snug">
             Building
-            <span class="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">Next-Gen Digital
+            <span class="bg-gradient-to-r text-[#E0712F]">Next-Gen Digital
               Experiences</span>
           </h2>
           <p class="text-offwhite/80 text-sm sm:text-base lg:text-lg max-w-xl mx-auto md:mx-0">
@@ -296,20 +306,20 @@
             class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 items-center sm:items-start justify-center md:justify-start w-full">
             <!-- View Products -->
             <a href="#products"
-              class="group relative inline-flex items-center justify-center flex-1 sm:flex-none sm:min-w-[200px] px-6 py-2.5 text-sm sm:text-base font-semibold uppercase border border-pink-500 text-white overflow-hidden rounded-md shadow-lg text-center">
+              class="group relative inline-flex items-center justify-center flex-1 sm:flex-none sm:min-w-[200px] px-6 py-2.5 text-sm sm:text-base font-semibold uppercase border border-[#E0712F] text-white overflow-hidden rounded-md shadow-lg text-center">
               <span
-                class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-right scale-x-100 transition-transform duration-500 ease-in-out group-hover:scale-x-0 z-0 rounded-md"></span>
+                class="absolute inset-0 bg-[#E0712F] origin-right scale-x-100 transition-transform duration-500 ease-in-out group-hover:scale-x-0 z-0 rounded-md"></span>
               <span
-                class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500">
+                class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#E0712F] group-hover:to-[#1E5286]">
                 View Solutions
               </span>
             </a>
 
             <!-- Contact Us -->
             <a href="#contact"
-              class="group relative inline-flex items-center justify-center flex-1 sm:flex-none sm:min-w-[200px] px-6 py-2.5 text-sm sm:text-base font-semibold uppercase border border-pink-500 text-pink-500 overflow-hidden rounded-md shadow-lg text-center">
+              class="group relative inline-flex items-center justify-center flex-1 sm:flex-none sm:min-w-[200px] px-6 py-2.5 text-sm sm:text-base font-semibold uppercase border border-[#E0712F] text-[#E0712F] overflow-hidden rounded-md shadow-lg text-center">
               <span
-                class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-left scale-x-0 transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0 rounded-md"></span>
+                class="absolute inset-0 bg-[#E0712F] origin-left scale-x-0 transition-transform duration-500 ease-in-out group-hover:scale-x-100 z-0 rounded-md"></span>
               <span class="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-white">
                 Contact Us
               </span>
@@ -357,7 +367,7 @@
       <!-- Heading -->
       <div class="text-left max-w-3xl mx-auto lg:mx-0 mb-10">
         <h4
-          class="text-sm font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent tracking-widest uppercase mb-3"
+          class="text-sm font-semibold bg-gradient-to-r text-[#E0712F] tracking-widest uppercase mb-3"
           data-aos="fade-right">
           What We Offer
         </h4>
@@ -366,7 +376,7 @@
           data-aos="fade-left" data-aos-delay="200">
           Services That Drive Results
           <span
-            class="absolute left-0 -bottom-2 w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+            class="absolute left-0 -bottom-2 w-20 h-1 bg-[#E0712F] rounded-full"></span>
         </h2>
 
         <p class="text-gray-700 text-base sm:text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="400">
@@ -379,9 +389,9 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
         <!-- Card 1 -->
         <div
-          class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-pink-500/20 hover:border-pink-500/40 transition-all duration-500">
+          class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-[#E0712F]/20 hover:border-[#E0712F]/40 transition-all duration-500">
           <div
-            class="w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500 text-white mb-5">
+            class="w-12 h-12 flex items-center justify-center rounded-md bg-[#E0712F] text-white mb-5">
             <i class="ri-cpu-line text-2xl"></i>
           </div>
           <h3 class="text-lg font-semibold mb-2 text-dark">IoT Energy Monitoring</h3>
@@ -393,9 +403,9 @@
 
         <!-- Card 2 -->
         <div
-          class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-purple-500/20 hover:border-purple-500/40 transition-all duration-500">
+          class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-[#1E5286]/20 hover:border-[#1E5286]/40 transition-all duration-500">
           <div
-            class="w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-r from-purple-500 to-pink-500 text-white mb-5">
+            class="w-12 h-12 flex items-center justify-center rounded-md bg-[#1E5286] text-white mb-5">
             <i class="ri-brain-line text-2xl"></i>
           </div>
           <h3 class="text-lg font-semibold mb-2 text-dark">AI-Powered Analytics</h3>
@@ -407,9 +417,9 @@
 
         <!-- Card 3 -->
         <div
-          class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-pink-400/20 hover:border-pink-400/40 transition-all duration-500">
+          class="group relative bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-[#E0712F]/20 hover:border-[#E0712F]/40 transition-all duration-500">
           <div
-            class="w-12 h-12 flex items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-purple-500 text-white mb-5">
+            class="w-12 h-12 flex items-center justify-center rounded-md bg-[#E0712F] text-white mb-5">
             <i class="ri-cloud-line text-2xl"></i>
           </div>
           <h3 class="text-lg font-semibold mb-2 text-dark">Cloud-Based Solutions</h3>
@@ -433,14 +443,14 @@
       <!-- Section Heading -->
       <header class="text-left max-w-3xl mx-auto lg:mx-0 mb-16" data-aos="fade-up">
         <h4
-          class="text-sm font-semibold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent tracking-widest uppercase mb-3">
+          class="text-sm font-semibold bg-gradient-to-r text-[#E0712F] tracking-widest uppercase mb-3">
           💻 Our Innovative Software Products
         </h4>
 
         <h2 class="text-2xl sm:text-3xl lg:text-3xl font-bold leading-snug mb-6 relative inline-block">
           Explore intelligent platforms that power industries and simplify operations
           <span
-            class="absolute left-0 -bottom-2 w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+            class="absolute left-0 -bottom-2 w-16 h-1 bg-[#E0712F] rounded-full"></span>
         </h2>
 
         <p class="text-white/70 text-base sm:text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="200">
@@ -471,7 +481,7 @@
             <!-- Button centered horizontally -->
             <div class="flex justify-center">
               <a href="./products/product-details.html"
-                class="inline-block px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-md font-semibold text-sm transition-all hover:opacity-90">
+                class="inline-block px-6 py-2 bg-[#E0712F] hover:bg-[#C2521F] text-white rounded-md font-semibold text-sm transition-all duration-200">
                 View Details
               </a>
             </div>
@@ -492,7 +502,7 @@
             Smart energy monitoring system using IoT sensors & AI. Optimize energy consumption, reduce costs, and gain actionable insights.
           </p>
           <div class="flex justify-center">
-            <a href="#enerlytics" class="inline-block px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-md font-semibold text-sm transition-all hover:opacity-90">
+            <a href="#enerlytics" class="inline-block px-6 py-2 bg-[#E0712F] hover:bg-[#C2521F] text-white rounded-md font-semibold text-sm transition-all duration-200">
               Explore
             </a>
           </div>
@@ -512,7 +522,7 @@
             Cloud-based fleet & logistics management solution with GPS tracking, predictive maintenance, and real-time operational insights.
           </p>
           <div class="flex justify-center">
-            <a href="#fleetiq" class="inline-block px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-md font-semibold text-sm transition-all hover:opacity-90">
+            <a href="#fleetiq" class="inline-block px-6 py-2 bg-[#E0712F] hover:bg-[#C2521F] text-white rounded-md font-semibold text-sm transition-all duration-200">
               Learn More
             </a>
           </div>
@@ -538,7 +548,7 @@
         Experience Our Software in Action
         <!-- Underline -->
         <span
-          class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded"></span>
+          class="absolute left-1/2 -bottom-2 transform -translate-x-1/2 w-24 h-1 bg-[#E0712F] rounded"></span>
       </h2>
 
       <!-- Paragraph -->
@@ -550,27 +560,27 @@
 
         <!-- First Button: Gradient → Transparent (border visible) -->
         <a href="./contact.html" class="group relative px-8 py-3 text-sm sm:text-base font-semibold uppercase 
-              border border-pink-500 text-white overflow-hidden rounded-md">
+              border border-[#E0712F] text-white overflow-hidden rounded-md">
 
           <!-- Background Layer -->
-          <span class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-right scale-x-100 
+          <span class="absolute inset-0 bg-[#E0712F] origin-right scale-x-100 
                    transition-transform duration-500 ease-in-out 
                    group-hover:scale-x-0 z-0 rounded-md"></span>
 
           <!-- Text -->
           <span class="relative z-10 transition-colors duration-500 ease-in-out 
                    group-hover:text-transparent group-hover:bg-clip-text 
-                   group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-500">
+                   group-hover:bg-gradient-to-r group-hover:from-[#E0712F] group-hover:to-[#1E5286]">
             Book a Demo
           </span>
         </a>
 
         <!-- Second Button: Transparent → Gradient -->
         <a href="#services" class="group relative px-8 py-3 text-sm sm:text-base font-semibold uppercase 
-              border border-pink-500 text-pink-500 overflow-hidden rounded-md">
+              border border-[#E0712F] text-[#E0712F] overflow-hidden rounded-md">
 
           <!-- Background Layer -->
-          <span class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 origin-left scale-x-0 
+          <span class="absolute inset-0 bg-[#E0712F] origin-left scale-x-0 
                    transition-transform duration-500 ease-in-out 
                    group-hover:scale-x-100 z-0 rounded-md"></span>
 
@@ -627,9 +637,9 @@
       <div>
         <h3 class="font-semibold mb-3 text-lg">Explore</h3>
         <ul class="space-y-2">
-          <li><a href="./index.html" class="hover:text-pink-400 transition">Home</a></li>
-          <li><a href="./work.html" class="hover:text-pink-400 transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-primary-dark transition">Case Studies</a></li>
+          <li><a href="./index.html" class="hover:text-[#E0712F] transition">Home</a></li>
+          <li><a href="./work.html" class="hover:text-[#E0712F] transition">Work</a></li>
+                <li><a href="./case-studies.html" class="text-black hover:text-gray-700 transition">Case Studies</a></li>
         </ul>
       </div>
 
@@ -637,7 +647,7 @@
       <div>
         <h3 class="font-semibold mb-3 text-lg">Company</h3>
         <ul class="space-y-2">
-          <li><a href="./privacy.html" class="hover:text-pink-400 transition">Privacy Policy</a></li>
+          <li><a href="./privacy.html" class="hover:text-[#E0712F] transition">Privacy Policy</a></li>
         </ul>
       </div>
 
@@ -656,7 +666,7 @@
           </li>
           <li class="flex flex-col md:flex-row md:items-start gap-2 text-gray-200">
             <i class="ri-mail-fill mt-1"></i>
-            <a href="mailto:contact@thundergits.com" class="hover:text-pink-400 transition">info@thundergits.com</a>
+            <a href="mailto:contact@thundergits.com" class="hover:text-[#E0712F] transition">info@thundergits.com</a>
           </li>
         </ul>
       </div>
@@ -668,13 +678,13 @@
       class="relative z-10 border-t border-gray-600 mt-12 py-6 px-6 lg:px-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm text-gray-300 text-center">
       <p class="mb-4 md:mb-0">© 2026 Thundergits — All Rights Reserved</p>
       <div class="flex space-x-6 text-gray-300">
-        <a href="https://www.linkedin.com/company/thundergits" target="_blank" rel="noopener noreferrer" target="_blank" class="hover:text-pink-400 transition"><i
+        <a href="https://www.linkedin.com/company/thundergits" target="_blank" rel="noopener noreferrer" target="_blank" class="hover:text-[#E0712F] transition"><i
             class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/thundergits/" target="_blank" rel="noopener noreferrer" target="_blank" class="hover:text-pink-400 transition"><i
+        <a href="https://www.instagram.com/thundergits/" target="_blank" rel="noopener noreferrer" target="_blank" class="hover:text-[#E0712F] transition"><i
             class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61571113486327" target="_blank"
-          class="hover:text-pink-400 transition"><i class="fab fa-facebook-f"></i></a>
-        <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-pink-400 transition"><i
+          class="hover:text-[#E0712F] transition"><i class="fab fa-facebook-f"></i></a>
+        <!-- <a href="https://x.com/thundergits" target="_blank" class="hover:text-[#E0712F] transition"><i
             class="fab fa-x-twitter"></i></a> -->
 
 
@@ -688,14 +698,14 @@
                 <img src="./assets/call-center (1).webp" alt="" loading="lazy" decoding="async">
             </div>
             <span class="ml-2 px-4 py-2 rounded-xl font-medium whitespace-nowrap
-           bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md border border-gray-200">
+           bg-[#E0712F] text-white shadow-md border border-gray-200">
                 AI Assistant
             </span>
         </div> -->
 
     <!-- Scroll To Top -->
     <button id="scrollToggleBtn"
-      class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-pink-500 transition z-40">
+      class="fixed bottom-16 right-4 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-[#E0712F] transition z-40">
       <i id="scrollIcon" class="fas fa-arrow-up"></i>
     </button>
   </footer>

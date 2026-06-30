@@ -29,8 +29,9 @@
     <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./tailwind.css">
+  <link rel="stylesheet" href="./theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -58,7 +59,7 @@
 </script>
 </head>
 
-<body class="bg-black text-white font-['Inter',sans-serif]">
+<body class="bg-black text-white font-['IBM_Plex_Sans',sans-serif]">
 
     <!-- Navbar -->
     <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
@@ -83,79 +84,21 @@
 
             <!-- DESKTOP NAV -->
             <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
-                <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark transition">Home</a></li>
-                <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
-                <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-primary-dark transition">Case Studies</a></li>
-                <li><a href="./service.html" class="text-black hover:text-primary-dark transition">Services</a></li>
-                <li><a href="./career.html" class="text-black hover:text-primary-dark transition">Career</a></li>
+                <li><a href="./index.html" class="text-fg-brand hover:text-gray-700 transition">Home</a></li>
+                <li><a href="./about.html" class="text-black hover:text-gray-700 transition">About</a></li>
+                <li><a href="./work.html" class="text-black hover:text-gray-700 transition">Work</a></li>
+                <li><a href="./case-studies.html" class="text-black hover:text-gray-700 transition">Case Studies</a></li>
+                <li><a href="./service.html" class="text-black hover:text-gray-700 transition">Services</a></li>
+                <li><a href="./career.html" class="text-black hover:text-gray-700 transition">Career</a></li>
 
-                <!-- INDUSTRIES DROPDOWN -->
-                <li class="relative group">
-                    <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
-                        Industries
-                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
-                            transition-all duration-300 z-50">
-                        <ul class="p-2 text-sm text-gray-700">
-                            <li class="relative group/sub">
-                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Finance & Business <span class="text-gray-400">›</span></div>
-                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                                    <ul class="p-2 text-sm">
-                                        <li><a href="./industries/index.html?page=banking" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO Banking</a></li>
-                                        <li><a href="./industries/index.html?page=stock-market" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock Market</a></li>
-                                        <li><a href="./industries/index.html?page=corporate" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a></li>
-                                        <li><a href="./industries/index.html?page=real-estate" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real Estate</a></li>
-                                        <li><a href="./industries/index.html?page=sales-marketing" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales & Marketing</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="relative group/sub">
-                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Technology & Media <span class="text-gray-400">›</span></div>
-                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                                    <ul class="p-2 text-sm">
-                                        <li><a href="./industries/index.html?page=gaming" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a></li>
-                                        <li><a href="./industries/index.html?page=media-entertainment" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media & Entertainment</a></li>
-                                        <li><a href="./industries/index.html?page=education" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="relative group/sub">
-                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Commerce & Lifestyle <span class="text-gray-400">›</span></div>
-                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                                    <ul class="p-2 text-sm">
-                                        <li><a href="./industries/index.html?page=retail-ecommerce" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail & Ecommerce</a></li>
-                                        <li><a href="./industries/index.html?page=household" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a></li>
-                                        <li><a href="./industries/index.html?page=food-beverages" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food & Beverages</a></li>
-                                        <li><a href="./industries/index.html?page=travel-hospitality" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel & Hospitality</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="relative group/sub">
-                                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Industry & Services <span class="text-gray-400">›</span></div>
-                                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                                    <ul class="p-2 text-sm">
-                                        <li><a href="./industries/index.html?page=transportation-logistics" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation & Logistics</a></li>
-                                        <li><a href="./industries/index.html?page=healthcare" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a></li>
-                                        <li><a href="./industries/index.html?page=automotive" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
 
-                <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
-                <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+                <li><a href="./blog.html" class="text-black hover:text-gray-700 transition">Blog</a></li>
+                <li><a href="./contact.html" class="text-black hover:text-gray-700 transition">Contact</a></li>
 
                 <li class="shrink-0">
                     <a href="./consultancy.html"
-                        class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+                    style="color: #fff;"
+                        class="group flex items-center gap-2 px-5 py-2 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
                         Book Free Consultancy
                     </a>
                 </li>
@@ -168,76 +111,18 @@
                 <li><a href="./index.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Home</a></li>
                 <li><a href="./about.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a></li>
                 <li><a href="./work.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-primary-dark transition">Case Studies</a></li>
+                <li><a href="./case-studies.html" class="text-black hover:text-gray-700 transition">Case Studies</a></li>
                 <li><a href="./service.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
                 <li><a href="./career.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
 
-                <!-- INDUSTRIES ACCORDION -->
-                <li>
-                    <button onclick="toggleAccordion('industries')"
-                        class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
-                        <span>Industries</span>
-                        <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="industries" class="hidden pl-3 mt-1 flex flex-col gap-1">
-                        <div>
-                            <button onclick="toggleAccordion('finance')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                                <span>Finance & Business</span>
-                                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
-                            </button>
-                            <div id="finance" class="hidden pl-4 mt-0.5 flex flex-col">
-                                <a href="./industries/index.html?page=banking" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO Banking</a>
-                                <a href="./industries/index.html?page=stock-market" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock Market</a>
-                                <a href="./industries/index.html?page=corporate" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
-                                <a href="./industries/index.html?page=real-estate" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real Estate</a>
-                                <a href="./industries/index.html?page=sales-marketing" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales & Marketing</a>
-                            </div>
-                        </div>
-                        <div>
-                            <button onclick="toggleAccordion('tech')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                                <span>Technology & Media</span>
-                                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
-                            </button>
-                            <div id="tech" class="hidden pl-4 mt-0.5 flex flex-col">
-                                <a href="./industries/index.html?page=gaming" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
-                                <a href="./industries/index.html?page=media-entertainment" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media & Entertainment</a>
-                                <a href="./industries/index.html?page=education" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
-                            </div>
-                        </div>
-                        <div>
-                            <button onclick="toggleAccordion('commerce')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                                <span>Commerce & Lifestyle</span>
-                                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
-                            </button>
-                            <div id="commerce" class="hidden pl-4 mt-0.5 flex flex-col">
-                                <a href="./industries/index.html?page=retail-ecommerce" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail & Ecommerce</a>
-                                <a href="./industries/index.html?page=household" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
-                                <a href="./industries/index.html?page=food-beverages" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food & Beverages</a>
-                                <a href="./industries/index.html?page=travel-hospitality" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel & Hospitality</a>
-                            </div>
-                        </div>
-                        <div>
-                            <button onclick="toggleAccordion('industry')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                                <span>Industry & Services</span>
-                                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
-                            </button>
-                            <div id="industry" class="hidden pl-4 mt-0.5 flex flex-col">
-                                <a href="./industries/index.html?page=transportation-logistics" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation & Logistics</a>
-                                <a href="./industries/index.html?page=healthcare" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
-                                <a href="./industries/index.html?page=automotive" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
 
                 <li><a href="./blog.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a></li>
                 <li><a href="./contact.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
 
                 <li class="mt-2">
                     <a href="./consultancy.html"
-                        class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+                    style="color: #fff;"
+                        class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
                         Book Free Consultancy
                     </a>
                 </li>
@@ -255,10 +140,10 @@
         <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
         <!-- TOP CENTER GLOW -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-            style="width: 900px; height: 420px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+            style="width: 900px; height: 420px; background: radial-gradient(ellipse at 50% 0%, rgba(134,180,223,0.40) 0%, rgba(79,143,203,0.22) 20%, rgba(30,82,134,0.08) 50%, transparent 75%);">
         </div>
         <div class="relative z-10 max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full border border-white/15 text-indigo-300 mb-8 uppercase font-bold" style="background:rgba(255,255,255,0.05)">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full border border-white/15 text-[#86B4DF] mb-8 uppercase font-bold" style="background:rgba(255,255,255,0.05)">
                 Free · No Obligation
             </span>
             <h1 style="font-family:'Inter',sans-serif; font-size:clamp(2.2rem,6vw,4rem); font-weight:600; line-height:1.15; color:#ffffff; letter-spacing:-0.02em; margin-bottom:1.25rem;">
@@ -276,11 +161,11 @@
 
             <!-- LEFT: Content -->
             <div data-aos="fade-right" style="display:none;" id="left-col">
-                <span style="display:inline-flex;align-items:center;padding:6px 16px;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;border-radius:9999px;border:1px solid #1e3a8a;color:#1e3a8a;background:#eff6ff;margin-bottom:2rem;">
+                <span style="display:inline-flex;align-items:center;padding:6px 16px;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;border-radius:9999px;border:1px solid #1E5286;color:#1E5286;background:#eff6ff;margin-bottom:2rem;">
                     100% Free · No Commitment
                 </span>
                 <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;line-height:1.2;color:#0f172a;letter-spacing:-0.02em;margin-bottom:1.5rem;">
-                    Let's talk about<br><span style="color:#1e3a8a;font-weight:600;">your project</span>
+                    Let's talk about<br><span style="color:#1E5286;font-weight:600;">your project</span>
                 </h2>
                 <p style="font-size:15px;color:#64748b;line-height:1.8;margin-bottom:2.5rem;font-weight:300;">
                     Whether you have a fully scoped idea or just a rough concept, our experts will help you define the right path forward — completely free of charge.
@@ -291,21 +176,21 @@
                     <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#94a3b8;margin-bottom:1rem;">What happens next</p>
                     <div style="display:flex;flex-direction:column;gap:16px;">
                         <div style="display:flex;align-items:flex-start;gap:14px;">
-                            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1e40af;">01</div>
+                            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1E5286;">01</div>
                             <div>
                                 <p style="margin:0 0 3px;font-size:14px;font-weight:600;color:#1e293b;">We review your requirement</p>
                                 <p style="margin:0;font-size:13px;color:#64748b;">Our team analyses your submitted brief within hours.</p>
                             </div>
                         </div>
                         <div style="display:flex;align-items:flex-start;gap:14px;">
-                            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1e40af;">02</div>
+                            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1E5286;">02</div>
                             <div>
                                 <p style="margin:0 0 3px;font-size:14px;font-weight:600;color:#1e293b;">We call you within 24 hours</p>
                                 <p style="margin:0;font-size:13px;color:#64748b;">A dedicated consultant contacts you on your mobile.</p>
                             </div>
                         </div>
                         <div style="display:flex;align-items:flex-start;gap:14px;">
-                            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1e40af;">03</div>
+                            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1E5286;">03</div>
                             <div>
                                 <p style="margin:0 0 3px;font-size:14px;font-weight:600;color:#1e293b;">We propose the best solution</p>
                                 <p style="margin:0;font-size:13px;color:#64748b;">Get a tailored roadmap, tech stack & cost estimate.</p>
@@ -317,15 +202,15 @@
                 <!-- Trust badges -->
                 <div style="display:flex;flex-wrap:wrap;gap:12px;">
                     <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;background:#ffffff;border:1px solid #e2e8f0;">
-                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#1e40af" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#1E5286" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                         <span style="font-size:12px;color:#475569;font-weight:500;">100% Confidential</span>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;background:#ffffff;border:1px solid #e2e8f0;">
-                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#1e40af" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#1E5286" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         <span style="font-size:12px;color:#475569;font-weight:500;">Reply in 24 hrs</span>
                     </div>
                     <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;background:#ffffff;border:1px solid #e2e8f0;">
-                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#1e40af" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#1E5286" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         <span style="font-size:12px;color:#475569;font-weight:500;">Zero Cost</span>
                     </div>
                 </div>
@@ -334,7 +219,7 @@
             <!-- RIGHT: Form -->
             <div data-aos="fade-left" data-aos-delay="100" id="right-col">
                 <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:24px;padding:40px;box-shadow:0 4px 24px rgba(0,0,0,0.06);">
-                    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#1e40af;margin:0 0 6px;">Get Started</p>
+                    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#1E5286;margin:0 0 6px;">Get Started</p>
                     <h3 style="font-size:20px;font-weight:700;color:#0f172a;margin:0 0 28px;letter-spacing:-0.3px;">Book your free session</h3>
 
                     <form id="consultancy-form" style="display:flex;flex-direction:column;gap:20px;" novalidate>
@@ -395,7 +280,7 @@
                         <!-- Submit -->
                         <button type="submit" id="submit-btn"
                             style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;border-radius:14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#ffffff;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:4px;"
-                            class="bg-primary hover:bg-primary-dark">
+                            class="bg-accent hover:bg-accent-dark">
                             <span id="btn-text">Book Free Consultancy</span>
                             <svg id="btn-loader" style="display:none;width:16px;height:16px;animation:spin 1s linear infinite;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <circle style="opacity:0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -507,15 +392,15 @@
     <!-- SUCCESS OVERLAY -->
     <div id="success-overlay" style="display:none;position:fixed;inset:0;z-index:50;align-items:center;justify-content:center;padding:0 16px;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);">
         <div class="bg-white/[0.05] border border-white/10 rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl">
-            <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style="background:rgba(99,102,241,0.15); border:1px solid rgba(99,102,241,0.3);">
-                <svg class="w-8 h-8 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style="background:rgba(30,82,134,0.15); border:1px solid rgba(224,113,47,0.25);">
+                <svg class="w-8 h-8 text-[#E0712F]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
             </div>
             <h2 class="text-2xl font-bold text-white mb-2">Booking Confirmed!</h2>
             <p class="text-gray-400 text-sm mb-8">Thank you! Our team will contact you within 24 hours.</p>
             <a href="./index.html"
-                class="inline-block px-8 py-3 text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 bg-primary hover:bg-primary-dark">
+                class="inline-block px-8 py-3 text-white text-[10px] font-black uppercase tracking-widest rounded-2xl transition duration-300 bg-accent hover:bg-accent-dark">
                 Back to Home
             </a>
         </div>
@@ -640,7 +525,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   for (let i = 0; i < cols * rows; i++) {
                       const cell = document.createElement('div');
                       cell.style.cssText = 'transition:background 0.4s ease;';
-                      cell.addEventListener('mouseenter', () => { cell.style.background = 'rgba(99,102,241,0.12)'; });
+                      cell.addEventListener('mouseenter', () => { cell.style.background = 'rgba(30,82,134,0.12)'; });
                       cell.addEventListener('mouseleave', () => { cell.style.background = ''; });
                       heroGrid.appendChild(cell);
                   }

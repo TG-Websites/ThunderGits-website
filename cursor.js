@@ -21,7 +21,7 @@
         .custom-cursor-dot {
             width: 8px;
             height: 8px;
-            background-color: #4f46e5; /* Modern Premium Indigo */
+            background-color: #E0712F;
             border-radius: 50%;
             position: fixed;
             top: 0;
@@ -31,13 +31,13 @@
             z-index: 9999999;
             opacity: 0;
             transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, opacity 0.3s ease;
-            box-shadow: 0 0 8px rgba(79, 70, 229, 0.6);
+            box-shadow: 0 0 8px rgba(224, 113, 47, 0.6);
         }
 
         .custom-cursor-circle {
             width: 36px;
             height: 36px;
-            border: 1.5px solid rgba(79, 70, 229, 0.5);
+            border: 1.5px solid rgba(224, 113, 47, 0.45);
             border-radius: 50%;
             position: fixed;
             top: 0;
@@ -60,21 +60,21 @@
         .custom-cursor-circle.hover {
             width: 52px;
             height: 52px;
-            border-color: rgba(79, 70, 229, 0.9);
-            background-color: rgba(79, 70, 229, 0.12);
-            box-shadow: 0 0 15px rgba(79, 70, 229, 0.25);
+            border-color: rgba(224, 113, 47, 0.85);
+            background-color: rgba(224, 113, 47, 0.10);
+            box-shadow: 0 0 15px rgba(224, 113, 47, 0.22);
         }
 
         /* Click feedback */
         .custom-cursor-dot.click {
             transform: translate(-50%, -50%) scale(1.4);
-            background-color: #3b82f6;
+            background-color: #C2521F;
         }
 
         .custom-cursor-circle.click {
             transform: translate(-50%, -50%) scale(0.8);
-            border-color: #3b82f6;
-            background-color: rgba(59, 130, 246, 0.1);
+            border-color: #C2521F;
+            background-color: rgba(194, 82, 31, 0.12);
         }
     `;
     document.head.appendChild(style);

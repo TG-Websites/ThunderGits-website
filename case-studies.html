@@ -16,15 +16,52 @@
   <link rel="icon" href="./assets/tg-favicon.png" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="./assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./tailwind.css">
+  <link rel="stylesheet" href="./theme.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Marquee */
+    @keyframes cs-marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .cs-marquee-track { animation: cs-marquee 26s linear infinite; }
+    .cs-marquee-track:hover { animation-play-state: paused; }
+
+    /* Metric card floats */
+    @keyframes cs-float-a {
+      0%,100% { transform: rotate(3deg) translateY(0px); }
+      50%      { transform: rotate(3deg) translateY(-10px); }
+    }
+    @keyframes cs-float-b {
+      0%,100% { transform: rotate(-2.5deg) translateY(0px); }
+      50%      { transform: rotate(-2.5deg) translateY(-8px); }
+    }
+    @keyframes cs-float-c {
+      0%,100% { transform: rotate(1deg) translateY(0px); }
+      50%      { transform: rotate(1deg) translateY(-7px); }
+    }
+    .cs-float-a { animation: cs-float-a 5.5s ease-in-out infinite; }
+    .cs-float-b { animation: cs-float-b 7s ease-in-out infinite 1.2s; }
+    .cs-float-c { animation: cs-float-c 4.8s ease-in-out infinite 0.6s; }
+
+    @keyframes glow-pulse {
+      0%,100% { opacity: 0.55; }
+      50%      { opacity: 0.80; }
+    }
+    .glow-pulse { animation: glow-pulse 4s ease-in-out infinite; }
+
+    /* Card accent stripe animation */
+    .cs-card-stripe { width: 0; transition: width 0.5s ease; }
+    .cs-card:hover .cs-card-stripe { width: 100%; }
+  </style>
 </head>
 
-<body class="bg-black text-white font-['Inter',sans-serif]">
+<body class="bg-black text-white font-['IBM_Plex_Sans',sans-serif]">
 
   <!-- NAV -->
   <nav class="bg-white text-black fixed w-full z-20 top-0 start-0 border-b border-default">
@@ -49,74 +86,18 @@
 
       <!-- DESKTOP NAV -->
       <ul class="hidden lg:flex items-center gap-4 xl:gap-8 font-medium text-sm">
-        <li><a href="./index.html" class="text-fg-brand hover:text-primary-dark transition">Home</a></li>
-        <li><a href="./about.html" class="text-black hover:text-primary-dark transition">About</a></li>
-        <li><a href="./work.html" class="text-black hover:text-primary-dark transition">Work</a></li>
+        <li><a href="./index.html" class="text-fg-brand hover:text-gray-700 transition">Home</a></li>
+        <li><a href="./about.html" class="text-black hover:text-gray-700 transition">About</a></li>
+        <li><a href="./work.html" class="text-black hover:text-gray-700 transition">Work</a></li>
         <li><a href="./case-studies.html" class="text-fg-brand text-primary font-semibold transition">Case Studies</a></li>
-        <li><a href="./service.html" class="text-black hover:text-primary-dark transition">Services</a></li>
-        <li><a href="./career.html" class="text-black hover:text-primary-dark transition">Career</a></li>
+        <li><a href="./service.html" class="text-black hover:text-gray-700 transition">Services</a></li>
+        <li><a href="./career.html" class="text-black hover:text-gray-700 transition">Career</a></li>
 
-        <!-- INDUSTRIES DROPDOWN -->
-        <li class="relative group">
-          <button class="flex items-center gap-1 text-black hover:text-primary-dark transition">
-            Industries
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-            </svg>
-          </button>
-          <div class="absolute left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
-            <ul class="p-2 text-sm text-gray-700">
-              <li class="relative group/sub">
-                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Finance & Business <span class="text-gray-400">›</span></div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=banking" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">NEO Banking</a></li>
-                    <li><a href="./industries/index.html?page=stock-market" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Stock Market</a></li>
-                    <li><a href="./industries/index.html?page=corporate" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Corporate</a></li>
-                    <li><a href="./industries/index.html?page=real-estate" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Real Estate</a></li>
-                    <li><a href="./industries/index.html?page=sales-marketing" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Sales & Marketing</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="relative group/sub">
-                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Technology & Media <span class="text-gray-400">›</span></div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=gaming" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Gaming</a></li>
-                    <li><a href="./industries/index.html?page=media-entertainment" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Media & Entertainment</a></li>
-                    <li><a href="./industries/index.html?page=education" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Education</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="relative group/sub">
-                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Commerce & Lifestyle <span class="text-gray-400">›</span></div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=retail-ecommerce" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Retail & Ecommerce</a></li>
-                    <li><a href="./industries/index.html?page=household" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Household</a></li>
-                    <li><a href="./industries/index.html?page=food-beverages" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Food & Beverages</a></li>
-                    <li><a href="./industries/index.html?page=travel-hospitality" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Travel & Hospitality</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="relative group/sub">
-                <div class="flex items-center justify-between p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg cursor-pointer transition">Industry & Services <span class="text-gray-400">›</span></div>
-                <div class="absolute left-full top-0 ml-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 z-50">
-                  <ul class="p-2 text-sm">
-                    <li><a href="./industries/index.html?page=transportation-logistics" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Transportation & Logistics</a></li>
-                    <li><a href="./industries/index.html?page=healthcare" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Healthcare</a></li>
-                    <li><a href="./industries/index.html?page=automotive" class="block p-2 hover:bg-blue-50 hover:text-primary-dark rounded-lg transition">Automotive</a></li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
 
-        <li><a href="./blog.html" class="text-black hover:text-primary-dark transition">Blog</a></li>
-        <li><a href="./contact.html" class="text-black hover:text-primary-dark transition">Contact</a></li>
+        <li><a href="./blog.html" class="text-black hover:text-gray-700 transition">Blog</a></li>
+        <li><a href="./contact.html" class="text-black hover:text-gray-700 transition">Contact</a></li>
         <li class="shrink-0">
-          <a href="./consultancy.html" class="px-5 py-2 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+          <a href="./consultancy.html" style="color: #fff;" class="group flex items-center gap-2 px-5 py-2 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
             Book Free Consultancy
           </a>
         </li>
@@ -132,67 +113,10 @@
         <li><a href="./case-studies.html" class="block py-2.5 px-3 rounded-lg text-primary font-semibold bg-blue-50">Case Studies</a></li>
         <li><a href="./service.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
         <li><a href="./career.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
-        <li>
-          <button onclick="toggleAccordion('industries')" class="w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">
-            <span>Industries</span>
-            <svg id="industries-icon" class="w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-            </svg>
-          </button>
-          <div id="industries" class="hidden pl-3 mt-1">
-            <div>
-              <button onclick="toggleAccordion('finance')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Finance & Business</span>
-                <svg id="finance-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
-              </button>
-              <div id="finance" class="hidden pl-4 mt-0.5">
-                <a href="./industries/index.html?page=banking" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">NEO Banking</a>
-                <a href="./industries/index.html?page=stock-market" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Stock Market</a>
-                <a href="./industries/index.html?page=corporate" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Corporate</a>
-                <a href="./industries/index.html?page=real-estate" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Real Estate</a>
-                <a href="./industries/index.html?page=sales-marketing" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Sales & Marketing</a>
-              </div>
-            </div>
-            <div>
-              <button onclick="toggleAccordion('tech')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Technology & Media</span>
-                <svg id="tech-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
-              </button>
-              <div id="tech" class="hidden pl-4 mt-0.5">
-                <a href="./industries/index.html?page=gaming" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Gaming</a>
-                <a href="./industries/index.html?page=media-entertainment" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Media & Entertainment</a>
-                <a href="./industries/index.html?page=education" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Education</a>
-              </div>
-            </div>
-            <div>
-              <button onclick="toggleAccordion('commerce')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Commerce & Lifestyle</span>
-                <svg id="commerce-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
-              </button>
-              <div id="commerce" class="hidden pl-4 mt-0.5">
-                <a href="./industries/index.html?page=retail-ecommerce" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Retail & Ecommerce</a>
-                <a href="./industries/index.html?page=household" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Household</a>
-                <a href="./industries/index.html?page=food-beverages" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Food & Beverages</a>
-                <a href="./industries/index.html?page=travel-hospitality" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Travel & Hospitality</a>
-              </div>
-            </div>
-            <div>
-              <button onclick="toggleAccordion('industry')" class="w-full flex items-center justify-between py-2 px-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition text-sm">
-                <span>Industry & Services</span>
-                <svg id="industry-icon" class="w-3.5 h-3.5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" /></svg>
-              </button>
-              <div id="industry" class="hidden pl-4 mt-0.5">
-                <a href="./industries/index.html?page=transportation-logistics" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Transportation & Logistics</a>
-                <a href="./industries/index.html?page=healthcare" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Healthcare</a>
-                <a href="./industries/index.html?page=automotive" class="block py-1.5 px-3 text-xs text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition">Automotive</a>
-              </div>
-            </div>
-          </div>
-        </li>
         <li><a href="./blog.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Blog</a></li>
         <li><a href="./contact.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Contact</a></li>
         <li class="mt-2">
-          <a href="./consultancy.html" class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-semibold hover:opacity-90 transition whitespace-nowrap" style="background-color:#1e40af">
+          <a href="./consultancy.html" class="block text-center px-5 py-2.5 rounded-full text-white text-sm font-bold bg-accent hover:bg-accent-dark shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap">
             Book Free Consultancy
           </a>
         </li>
@@ -201,23 +125,155 @@
   </nav>
 
   <!-- HERO -->
-  <section class="relative min-h-[70vh] flex items-center bg-black overflow-hidden">
-    <div class="absolute inset-0 z-0 pointer-events-none"
-      style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
+  <section class="relative min-h-screen flex flex-col overflow-hidden" style="background:#080D18;">
+
+    <!-- Grid -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:55px 55px;"></div>
+
+    <!-- Ember glow top-right -->
+    <div class="absolute top-0 right-0 pointer-events-none glow-pulse" style="width:700px;height:700px;background:radial-gradient(ellipse at 100% 0%,rgba(224,113,47,0.18) 0%,rgba(224,113,47,0.07) 40%,transparent 70%);"></div>
+
+    <!-- Harbor blue glow bottom-left -->
+    <div class="absolute bottom-0 left-0 pointer-events-none" style="width:600px;height:400px;background:radial-gradient(ellipse at 0% 100%,rgba(30,82,134,0.22) 0%,transparent 65%);"></div>
+
+    <!-- Main content -->
+    <div class="relative z-10 flex-1 flex items-center">
+      <div class="max-w-7xl mx-auto px-6 lg:px-14 w-full pt-32 pb-16 lg:pt-28 lg:pb-12">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-0 justify-between">
+
+          <!-- LEFT: Editorial text -->
+          <div class="lg:max-w-[58%]" data-aos="fade-right" data-aos-duration="800">
+
+            <!-- Eyebrow -->
+            <div class="flex items-center gap-3 mb-10">
+              <span class="w-10 h-px bg-accent"></span>
+              <span class="text-accent text-[10px] tracking-[0.45em] uppercase font-black">Growth Stories</span>
+              <span class="w-10 h-px bg-accent"></span>
+            </div>
+
+            <!-- Headline -->
+            <h1 style="font-family:'Manrope',sans-serif;line-height:0.92;letter-spacing:-0.04em;margin-bottom:2.5rem;">
+              <span class="block" style="font-size:clamp(0.75rem,1.2vw,0.9rem);font-weight:400;color:rgba(255,255,255,0.3);letter-spacing:0.25em;text-transform:uppercase;line-height:1;margin-bottom:1.5rem;">Real Businesses. Real Results.</span>
+              <span class="block text-white" style="font-size:clamp(4rem,8.5vw,8rem);font-weight:800;">Numbers</span>
+              <span class="block text-white" style="font-size:clamp(4rem,8.5vw,8rem);font-weight:800;">That Don't</span>
+              <span class="block" style="font-size:clamp(4rem,8.5vw,8rem);font-weight:800;color:#E0712F;">Lie.</span>
+            </h1>
+
+            <!-- Stats row -->
+            <div class="flex flex-wrap items-center gap-6 sm:gap-8 mb-10 pb-10 border-b border-white/8">
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#E0712F;line-height:1;">100+</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Businesses Grown</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">3+</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Years of Partnerships</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">15+</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Industries</p>
+              </div>
+              <div class="w-px h-9 bg-white/10 hidden sm:block"></div>
+              <div>
+                <p style="font-family:'Manrope';font-size:2rem;font-weight:800;color:#fff;line-height:1;">95%</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.2em] mt-1.5">Partner Retention</p>
+              </div>
+            </div>
+
+            <!-- Description + CTAs -->
+            <p class="text-gray-400 text-[0.95rem] leading-relaxed max-w-lg mb-9">
+              Not just deliveries — deep partnerships. Each case study below is a story of how we embedded ourselves into a business and drove measurable growth.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="#cs-grid"
+                class="inline-flex items-center gap-2.5 px-8 py-4 bg-accent hover:bg-accent-dark text-white text-[10px] font-black uppercase tracking-widest rounded-full transition-all duration-300 shadow-lg shadow-[#E0712F]/20">
+                Read the Stories <i class="ri-arrow-down-line"></i>
+              </a>
+              <a href="./consultancy.html"
+                class="inline-flex items-center gap-2.5 px-8 py-4 border border-white/20 text-white/65 text-[10px] font-black uppercase tracking-widest rounded-full hover:border-white/55 hover:text-white transition-all duration-300">
+                Become a Success Story <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: Floating impact metric cards -->
+          <div class="hidden lg:block relative w-[390px] h-[520px] shrink-0" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+
+            <!-- Ambient glow -->
+            <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 55% 55%,rgba(224,113,47,0.12) 0%,transparent 65%);"></div>
+
+            <!-- Card 1 — back -->
+            <div class="cs-float-a absolute bottom-0 right-0 w-[260px] rounded-2xl border border-white/10 bg-[#0D1A2D] shadow-2xl overflow-hidden" style="z-index:1;">
+              <div class="px-5 pt-5 pb-4">
+                <span class="text-[9px] text-gray-500 uppercase tracking-widest font-bold block mb-3">EdTech · Volcanic Classes</span>
+                <p style="font-family:'Manrope';font-size:3.2rem;font-weight:800;color:#E0712F;line-height:1;">3x</p>
+                <p class="text-white text-sm font-semibold mt-1" style="font-family:'Manrope';">Student Enrollments</p>
+                <p class="text-gray-500 text-[11px] mt-1.5 leading-relaxed">After full website overhaul + SEO strategy in 6 months.</p>
+              </div>
+              <div class="h-[2px] bg-gradient-to-r from-transparent via-[#E0712F]/30 to-transparent"></div>
+              <div class="px-5 py-3 flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                <span class="text-green-400 text-[10px] font-bold">Ongoing Partnership</span>
+              </div>
+            </div>
+
+            <!-- Card 2 — mid -->
+            <div class="cs-float-b absolute top-[140px] left-0 w-[260px] rounded-2xl border border-white/10 bg-[#0D1A2D] shadow-2xl overflow-hidden" style="z-index:2;">
+              <div class="px-5 pt-5 pb-4">
+                <span class="text-[9px] text-gray-500 uppercase tracking-widest font-bold block mb-3">AI Platform · Loqo AI</span>
+                <p style="font-family:'Manrope';font-size:3.2rem;font-weight:800;color:#fff;line-height:1;">80%</p>
+                <p class="text-white text-sm font-semibold mt-1" style="font-family:'Manrope';">User Retention Rate</p>
+                <p class="text-gray-500 text-[11px] mt-1.5 leading-relaxed">Achieved through UX overhaul and onboarding redesign.</p>
+              </div>
+              <div class="h-[2px] bg-gradient-to-r from-transparent via-[#E0712F]/30 to-transparent"></div>
+              <div class="px-5 py-3 flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                <span class="text-green-400 text-[10px] font-bold">Active Client</span>
+              </div>
+            </div>
+
+            <!-- Card 3 — front/top -->
+            <div class="cs-float-c absolute top-0 right-[25px] w-[230px] rounded-2xl border border-accent/40 bg-[#0D1A2D] shadow-[0_0_40px_rgba(224,113,47,0.18)] overflow-hidden" style="z-index:3;">
+              <!-- Accent top stripe -->
+              <div class="h-[2px] bg-accent"></div>
+              <div class="px-5 pt-4 pb-4">
+                <span class="text-[9px] text-gray-500 uppercase tracking-widest font-bold block mb-3">E-Commerce · Enersol</span>
+                <p style="font-family:'Manrope';font-size:3.2rem;font-weight:800;color:#E0712F;line-height:1;">+200%</p>
+                <p class="text-white text-sm font-semibold mt-1" style="font-family:'Manrope';">Organic Traffic</p>
+                <p class="text-gray-500 text-[11px] mt-1.5 leading-relaxed">SEO + content strategy over 4 months.</p>
+              </div>
+              <div class="px-5 py-3 flex items-center gap-2 border-t border-white/5">
+                <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                <span class="text-green-400 text-[10px] font-bold">Active Client</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
     </div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-      style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+
+    <!-- Bottom marquee -->
+    <div class="relative z-10 border-t border-white/6 bg-white/[0.02] py-3.5 overflow-hidden">
+      <div class="flex whitespace-nowrap cs-marquee-track">
+        <span class="flex items-center gap-8 pr-8 text-[10px] text-white/30 uppercase tracking-widest font-bold">
+          <span class="text-accent/60">✦</span> 3x Revenue Growth <span class="text-accent/60">✦</span> 200% Organic Traffic <span class="text-accent/60">✦</span> 80% User Retention <span class="text-accent/60">✦</span> Full Digital Transformation <span class="text-accent/60">✦</span> Brand Strategy to Launch <span class="text-accent/60">✦</span> SEO + Content + Dev <span class="text-accent/60">✦</span> SaaS ERP Delivery <span class="text-accent/60">✦</span> Mobile App from 0 to 1 <span class="text-accent/60">✦</span> GovTech Modernisation <span class="text-accent/60">✦</span> EdTech Scale-Up &nbsp;&nbsp;&nbsp;
+        </span>
+        <span class="flex items-center gap-8 pr-8 text-[10px] text-white/30 uppercase tracking-widest font-bold" aria-hidden="true">
+          <span class="text-accent/60">✦</span> 3x Revenue Growth <span class="text-accent/60">✦</span> 200% Organic Traffic <span class="text-accent/60">✦</span> 80% User Retention <span class="text-accent/60">✦</span> Full Digital Transformation <span class="text-accent/60">✦</span> Brand Strategy to Launch <span class="text-accent/60">✦</span> SEO + Content + Dev <span class="text-accent/60">✦</span> SaaS ERP Delivery <span class="text-accent/60">✦</span> Mobile App from 0 to 1 <span class="text-accent/60">✦</span> GovTech Modernisation <span class="text-accent/60">✦</span> EdTech Scale-Up &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
     </div>
-    <div class="relative z-10 w-full max-w-5xl mx-auto px-6 text-center py-32" data-aos="fade-up">
-      <span class="text-indigo-400 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Our Work in Depth</span>
-      <h1 class="text-5xl lg:text-7xl font-light text-white leading-tight mb-6">Case <span class="font-black">Studies</span></h1>
-      <p class="text-gray-400 text-xl font-light max-w-2xl mx-auto leading-relaxed">Real projects, real results. See how we've helped businesses grow digitally through strategy, design, and technology.</p>
-    </div>
+
   </section>
 
   <!-- LOADING -->
   <div id="cs-loading" class="py-20 text-center">
-    <div class="w-10 h-10 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+    <div class="w-10 h-10 border-2 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
     <p class="text-gray-600 text-sm">Loading case studies...</p>
   </div>
 
@@ -228,8 +284,25 @@
   </div>
 
   <!-- GRID -->
-  <section id="cs-grid" style="display:none;" class="pb-24">
-    <div class="max-w-6xl mx-auto px-6">
+  <section id="cs-grid" style="display:none;" class="bg-black pt-24 pb-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+      <!-- Section header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16" data-aos="fade-up">
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <span class="w-8 h-px bg-accent"></span>
+            <span class="text-accent text-[10px] tracking-[0.4em] uppercase font-black">Case Studies</span>
+          </div>
+          <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.05;color:#fff;letter-spacing:-0.025em;">
+            Every Partnership.<br/><span style="color:#E0712F;">A Measurable Story.</span>
+          </h2>
+        </div>
+        <p class="text-gray-500 text-sm leading-relaxed lg:max-w-xs">
+          Dive deep into how we approached each challenge, the strategy we ran, and the results we owned together.
+        </p>
+      </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="cs-cards"></div>
     </div>
   </section>
@@ -237,10 +310,10 @@
   <!-- CTA -->
   <section class="bg-white py-24">
     <div class="max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
-      <span class="text-indigo-600 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Start Your Story</span>
+      <span class="text-[#1E5286] text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Start Your Story</span>
       <h2 class="text-4xl lg:text-5xl font-light text-black mb-6 leading-tight">Ready to be our <span class="font-bold">next success story?</span></h2>
       <p class="text-gray-500 font-light mb-10 max-w-xl mx-auto">Book a free consultation and let's discuss how we can help your business grow.</p>
-      <a href="./contact.html" class="inline-flex items-center gap-3 px-10 py-5 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-indigo-500 transition-all hover:scale-105">
+      <a href="./contact.html" class="inline-flex items-center gap-3 px-10 py-5 bg-[#1E5286] text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-accent transition-all hover:scale-105">
         Book Free Consultation <i class="ri-arrow-right-up-line text-lg"></i>
       </a>
     </div>
@@ -310,19 +383,25 @@
 
         const cards = data.data.map((cs, i) => `
           <a href="./case-study.html?slug=${cs.slug}"
-             class="group block rounded-2xl overflow-hidden border border-white/8 hover:border-indigo-500/50 transition-all duration-500 hover:-translate-y-1"
+             class="cs-card group block relative rounded-2xl overflow-hidden border border-white/8 bg-[#0A1220] hover:border-accent/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
              data-aos="fade-up" data-aos-delay="${(i % 3) * 80}">
-            <div class="aspect-video overflow-hidden bg-white/5">
+            <div class="relative aspect-[4/3] overflow-hidden">
               ${cs.coverImage
-                ? `<img src="${cs.coverImage}" alt="${cs.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"/>`
-                : `<div class="w-full h-full flex items-center justify-center"><i class="ri-briefcase-line text-4xl text-white/20"></i></div>`}
+                ? `<img src="${cs.coverImage}" alt="${cs.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>`
+                : `<div class="w-full h-full flex items-center justify-center bg-[#0D1A2D]"><i class="ri-briefcase-4-line text-5xl text-white/10"></i></div>`}
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <div class="w-9 h-9 rounded-full bg-accent flex items-center justify-center translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <i class="ri-arrow-right-up-line text-white text-sm"></i>
+                </div>
+              </div>
             </div>
-            <div class="p-5 bg-white/[0.02]">
-              ${cs.industry ? `<span class="text-[10px] font-bold uppercase tracking-widest text-indigo-400 block mb-2">${cs.industry}</span>` : ''}
-              <h3 class="text-white font-semibold text-base mb-1 group-hover:text-indigo-300 transition-colors">${cs.title}</h3>
-              <p class="text-gray-600 text-xs mb-4">${cs.clientName}</p>
+            <div class="px-5 pt-4 pb-5 relative">
+              <div class="cs-card-stripe absolute bottom-0 left-0 h-[2px] bg-accent rounded-b-2xl"></div>
+              ${cs.industry ? `<span class="inline-block text-[9px] font-black uppercase tracking-[0.18em] text-accent border border-accent/25 bg-accent/8 rounded-full px-3 py-1 mb-3">${cs.industry}</span>` : ''}
+              <h3 class="text-white font-bold text-base mb-1 leading-snug group-hover:text-accent transition-colors duration-300" style="font-family:'Manrope',sans-serif;">${cs.title}</h3>
+              <p class="text-gray-600 text-xs mb-3 font-medium">${cs.clientName || ''}</p>
               ${cs.excerpt ? `<p class="text-gray-500 text-xs leading-relaxed line-clamp-2 mb-4">${cs.excerpt}</p>` : ''}
-              <span class="inline-flex items-center gap-1.5 text-indigo-400 text-xs font-semibold group-hover:gap-2.5 transition-all">
+              <span class="inline-flex items-center gap-1.5 text-accent text-xs font-bold group-hover:gap-3 transition-all duration-300">
                 Read Case Study <i class="ri-arrow-right-line"></i>
               </span>
             </div>

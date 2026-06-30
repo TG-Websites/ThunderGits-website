@@ -11,10 +11,11 @@
     <link rel="icon" href="./../assets/tg-favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="../tailwind.css">
+    <link rel="stylesheet" href="../theme.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
@@ -23,7 +24,7 @@
     <link rel="stylesheet" href="./../style.css">
 </head>
 
-<body class="bg-black text-white font-['Inter',sans-serif]">
+<body class="bg-black text-white" style="font-family:'IBM Plex Sans',sans-serif;">
 
     <!-- Navbar -->
     <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
@@ -54,8 +55,7 @@
                 <a href="./../blog.html" class="text-gray-300 hover:text-white text-sm transition">Blog</a>
                 <a href="./../contact.html" class="text-gray-300 hover:text-white text-sm transition">Contact</a>
                 <a href="./../contact.html"
-                    class="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Get
-                    a Quote</a>
+                    class="px-6 py-2 bg-accent hover:bg-accent-dark text-white text-xs font-bold uppercase tracking-widest rounded-full transition duration-300">Book Free Consultancy</a>
             </div>
         </div>
 
@@ -83,34 +83,31 @@
 
         <!-- Top Glow -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-            style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(99,102,241,0.08) 50%, transparent 75%);">
+            style="width: 1000px; height: 500px; background: radial-gradient(ellipse at 50% 0%, rgba(180,220,255,0.45) 0%, rgba(56,189,248,0.25) 20%, rgba(30,82,134,0.08) 50%, transparent 75%);">
         </div>
 
         <div class="relative z-10 max-w-screen-xl mx-auto px-6 w-full">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                <div data-aos="fade-right">
-                    <span
-                        class="inline-flex items-center px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-8 uppercase font-bold">
-                        Now Hiring
-                    </span>
+                <div data-aos="fade-right" class="min-w-0">
+                    <div class="flex items-center gap-3 mb-8">
+                        <span class="w-6 h-px bg-accent"></span>
+                        <span class="inline-flex items-center text-[10px] tracking-[0.3em] text-accent uppercase font-black">Now Hiring</span>
+                    </div>
                     <h1 id="job-title"
-                        style="font-family: 'Inter', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.5rem;">
+                        style="font-family:'Manrope',sans-serif; font-size:clamp(2rem,5vw,4rem); font-weight:800; line-height:1.05; color:#ffffff; letter-spacing:-0.025em; margin-bottom:1.5rem;">
                         Loading...
                     </h1>
-                    <div class="flex flex-wrap gap-6 text-gray-400 text-sm font-medium">
-                        <span class="flex items-center gap-2"><i class="ri-map-pin-2-line text-indigo-400"></i> <span
-                                id="job-location">...</span></span>
-                        <span class="flex items-center gap-2"><i class="ri-time-line text-indigo-400"></i> <span
-                                id="job-type">...</span></span>
-                        <span class="flex items-center gap-2"><i
-                                class="ri-money-dollar-circle-line text-indigo-400"></i> <span
-                                id="job-stipend">...</span></span>
+                    <div class="flex flex-wrap gap-5 text-gray-400 text-sm font-medium">
+                        <span class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs"><i class="ri-map-pin-2-line text-accent"></i> <span id="job-location">...</span></span>
+                        <span class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs"><i class="ri-time-line text-accent"></i> <span id="job-type">...</span></span>
+                        <span class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs"><i class="ri-money-dollar-circle-line text-accent"></i> <span id="job-stipend">...</span></span>
                     </div>
                 </div>
-                <div data-aos="fade-left">
+                <div data-aos="fade-left" class="shrink-0">
                     <a href="#apply-form"
-                        class="px-8 py-4 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-indigo-600 hover:text-white transition-all duration-500">Apply
-                        for this Role</a>
+                        class="inline-flex items-center gap-2 whitespace-nowrap px-8 py-4 bg-accent hover:bg-accent-dark text-white text-[10px] font-black uppercase tracking-widest rounded-full transition-all duration-300 shadow-lg shadow-accent/20">
+                        Apply for this Role <i class="ri-arrow-right-up-line text-sm"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -126,7 +123,7 @@
 
                     <!-- Description -->
                     <div data-aos="fade-up">
-                        <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-600 mb-6">About the
+                        <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-6">About the
                             Role</h3>
                         <div id="job-description" class="text-black text-lg leading-relaxed  space-y-4">
                             <div class="animate-pulse space-y-4">
@@ -139,7 +136,7 @@
 
                     <!-- Responsibilities -->
                     <div data-aos="fade-up">
-                        <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-600 mb-6">What you'll
+                        <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-6">What you'll
                             do</h3>
                         <div id="job-responsibilities"
                             class="text-black text-lg leading-relaxed font-light custom-list">
@@ -152,7 +149,7 @@
 
                     <!-- Qualifications -->
                     <div data-aos="fade-up">
-                        <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-600 mb-6">Who you are
+                        <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-6">Who you are
                         </h3>
                         <div id="job-qualifications" class="text-black text-lg leading-relaxed font-light custom-list">
                             <div class="animate-pulse space-y-4">
@@ -170,7 +167,7 @@
                         data-aos="zoom-in">
                         <h3 class="text-2xl font-bold mb-2">Apply Now</h3>
                         <p id="job-title_2"
-                            class="text-indigo-400 text-sm font-semibold mb-8 uppercase tracking-widest">Loading Role...
+                            class="text-accent text-sm font-semibold mb-8 uppercase tracking-widest">Loading Role...
                         </p>
 
                         <form id="applicationForm" class="space-y-6">
@@ -180,7 +177,7 @@
                                 <label class="text-[10px] font-black uppercase tracking-widest text-gray-500">Full
                                     Name</label>
                                 <input type="text" id="name" name="name"
-                                    class="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition"
+                                    class="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent outline-none transition"
                                     placeholder="John Doe" required>
                             </div>
 
@@ -188,7 +185,7 @@
                                 <label class="text-[10px] font-black uppercase tracking-widest text-gray-500">Email
                                     Address</label>
                                 <input type="email" id="email" name="email"
-                                    class="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition"
+                                    class="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent outline-none transition"
                                     placeholder="john@example.com" required>
                             </div>
 
@@ -196,7 +193,7 @@
                                 <label class="text-[10px] font-black uppercase tracking-widest text-gray-500">Phone
                                     Number</label>
                                 <input type="tel" id="phone" name="phone"
-                                    class="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition"
+                                    class="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent outline-none transition"
                                     placeholder="+91 00000 00000" required>
                             </div>
 
@@ -204,7 +201,7 @@
                                 <label class="text-[10px] font-black uppercase tracking-widest text-gray-500">LinkedIn
                                     Profile</label>
                                 <input type="url" id="linkedinUrl" name="linkedinUrl"
-                                    class="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-indigo-500 outline-none transition"
+                                    class="w-full bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent outline-none transition"
                                     placeholder="https://linkedin.com/in/...">
                             </div>
 
@@ -216,7 +213,7 @@
                                         class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                                         accept=".pdf,.doc,.docx" required>
                                     <div
-                                        class="bg-white/[0.05] border border-dashed border-white/20 rounded-xl px-4 py-8 text-center group-hover:border-indigo-500 transition">
+                                        class="bg-white/[0.05] border border-dashed border-white/20 rounded-xl px-4 py-8 text-center group-hover:border-accent transition">
                                         <i class="ri-upload-cloud-2-line text-2xl text-gray-500 mb-2 block"></i>
                                         <span id="fileName" class="text-xs text-gray-400">Click to upload (PDF,
                                             DOCX)</span>
@@ -225,7 +222,7 @@
                             </div>
 
                             <button type="submit" id="submitButton"
-                                class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
+                                class="w-full py-4 bg-accent hover:bg-accent-dark text-white text-[10px] font-black uppercase tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
                                 <span id="buttonText">Submit Application</span>
                                 <svg id="loader" class="hidden w-4 h-4 animate-spin" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 24 24">

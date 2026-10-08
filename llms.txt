@@ -1,66 +1,67 @@
 ﻿# ThunderGits
 
-> ThunderGits Consultancy Services Pvt Ltd is an AI-driven IT solutions company founded in Bihar, India. We build web applications, mobile apps, custom software, and digital marketing solutions for startups, SMEs, and enterprises globally. Trusted by 50+ brands with a team of 25+ specialists.
+> ThunderGits Consultancy Services Pvt Ltd is a Business Growth Partner based in Samastipur, Bihar, India. We combine strategy, web and mobile development, search visibility (SEO, GEO, AEO), digital marketing and AI solutions for startups, SMEs and enterprises across India, the USA, UK and UAE. Trusted by 50+ businesses with a team of 25+ specialists.
 
 ## Services
 
-- [Web Development](https://thundergits.com/service.html#website-development): Custom responsive websites, CMS integration, web applications, React, Next.js
-- [Mobile App Development](https://thundergits.com/service.html#application-development): iOS and Android apps using React Native and Flutter
-- [Digital Marketing](https://thundergits.com/service.html#digital-marketing): SEO, PPC, social media marketing, content strategy, analytics
-- [UI/UX Design](https://thundergits.com/service.html): User research, wireframing, prototyping, interface design
-- [Cybersecurity](https://thundergits.com/service.html): Vulnerability assessments, threat monitoring, encryption, security integrations
-- [Machine Learning & AI](https://thundergits.com/service.html#machine-learning-ai): Predictive analytics, NLP, computer vision, AI automation
-- [Cloud Computing](https://thundergits.com/service.html#cloud-computing): AWS/Azure/GCP migrations, cloud-native development, infrastructure management
-- [IT Consultancy](https://thundergits.com/service.html#it-consultancy): Technology roadmaps, governance, compliance, system integrations
-- [E-Commerce Solutions](https://thundergits.com/service.html#ecommerce-solutions): Online stores, payment gateways, inventory management, Shopify/WooCommerce
-- [Custom Software Development](https://thundergits.com/service.html#custom-software): CRMs, ERPs, SaaS platforms, bespoke enterprise systems
-- [Business Intelligence](https://thundergits.com/service.html#business-intelligence): Dashboards, KPI tracking, big-data analytics, Power BI
-- [DevOps & CloudOps](https://thundergits.com/service.html#devops-cloudops): CI/CD pipelines, monitoring, cost optimization, Kubernetes
-- [AI Consulting](https://thundergits.com/service.html#ai-consulting): AI strategy, model development and deployment, automation roadmaps
+- [Consultancy & Strategy](https://www.thundergits.com/service.html): Market, audience and competitor research, growth roadmaps, IT consultancy, technology roadmaps, compliance and system integrations
+- [Web Development](https://www.thundergits.com/service.html#website-development): Custom responsive websites, CMS integration, web applications, React, Next.js
+- [Mobile App Development](https://www.thundergits.com/service.html#application-development): iOS and Android apps using React Native and Flutter
+- [Search Visibility (SEO, GEO, AEO)](https://www.thundergits.com/service.html): SEO for Google rankings, GEO for visibility in AI answers (ChatGPT, Perplexity), AEO for featured snippets
+- [Digital Marketing & Ads](https://www.thundergits.com/service.html#digital-marketing): SEO, Google Ads, Meta Ads, social media marketing, content strategy, analytics
+- [UI/UX Design](https://www.thundergits.com/service.html): User research, wireframing, prototyping, interface design
+- [Cybersecurity](https://www.thundergits.com/service.html): Vulnerability assessments, threat monitoring, encryption, security integrations
+- [Machine Learning & AI](https://www.thundergits.com/service.html#machine-learning-ai): Predictive analytics, NLP, computer vision, AI automation
+- [AI Consulting](https://www.thundergits.com/service.html#ai-consulting): AI strategy, model development and deployment, automation roadmaps
+- [Cloud Computing](https://www.thundergits.com/service.html#cloud-computing): AWS, Azure and GCP migrations, cloud-native development, infrastructure management
+- [DevOps & CloudOps](https://www.thundergits.com/service.html#devops-cloudops): CI/CD pipelines, monitoring, cost optimization, Kubernetes
+- [E-Commerce Solutions](https://www.thundergits.com/service.html#ecommerce-solutions): Online stores, payment gateways, inventory management, Shopify and WooCommerce
+- [Custom Software Development](https://www.thundergits.com/service.html#custom-software): CRMs, ERPs, SaaS platforms, bespoke enterprise systems
+- [Business Intelligence](https://www.thundergits.com/service.html#business-intelligence): Dashboards, KPI tracking, big-data analytics, Power BI
+- [Ongoing Partnership](https://www.thundergits.com/service.html): Dedicated monthly team that manages, maintains and grows your website, ads, social media and search visibility after launch
 
 ## Industries Served
 
-- [NEO Banking & Fintech](https://thundergits.com/industries/index.html?page=banking)
-- [Stock Market & Trading](https://thundergits.com/industries/index.html?page=stock-market)
-- [Healthcare & MedTech](https://thundergits.com/industries/index.html?page=healthcare)
-- [Real Estate & PropTech](https://thundergits.com/industries/index.html?page=real-estate)
-- [Education & EdTech](https://thundergits.com/industries/index.html?page=education)
-- [Retail & Ecommerce](https://thundergits.com/industries/index.html?page=retail-ecommerce)
-- [Gaming](https://thundergits.com/industries/index.html?page=gaming)
-- [Automotive](https://thundergits.com/industries/index.html?page=automotive)
-- [Travel & Hospitality](https://thundergits.com/industries/index.html?page=travel-hospitality)
-- [Food & Beverages](https://thundergits.com/industries/index.html?page=food-beverages)
-- [Transportation & Logistics](https://thundergits.com/industries/index.html?page=transportation-logistics)
-- [Media & Entertainment](https://thundergits.com/industries/index.html?page=media-entertainment)
-- [Corporate & Enterprise](https://thundergits.com/industries/index.html?page=corporate)
-- [Sales & Marketing](https://thundergits.com/industries/index.html?page=sales-marketing)
-- [Household & Consumer](https://thundergits.com/industries/index.html?page=household)
+- [NEO Banking & Fintech](https://www.thundergits.com/industries/index.html?page=banking)
+- [Stock Market & Trading](https://www.thundergits.com/industries/index.html?page=stock-market)
+- [Healthcare & MedTech](https://www.thundergits.com/industries/index.html?page=healthcare)
+- [Real Estate & PropTech](https://www.thundergits.com/industries/index.html?page=real-estate)
+- [Education & EdTech](https://www.thundergits.com/industries/index.html?page=education)
+- [Retail & Ecommerce](https://www.thundergits.com/industries/index.html?page=retail-ecommerce)
+- [Gaming](https://www.thundergits.com/industries/index.html?page=gaming)
+- [Automotive](https://www.thundergits.com/industries/index.html?page=automotive)
+- [Travel & Hospitality](https://www.thundergits.com/industries/index.html?page=travel-hospitality)
+- [Food & Beverages](https://www.thundergits.com/industries/index.html?page=food-beverages)
+- [Transportation & Logistics](https://www.thundergits.com/industries/index.html?page=transportation-logistics)
+- [Media & Entertainment](https://www.thundergits.com/industries/index.html?page=media-entertainment)
+- [Corporate & Enterprise](https://www.thundergits.com/industries/index.html?page=corporate)
+- [Sales & Marketing](https://www.thundergits.com/industries/index.html?page=sales-marketing)
+- [Household & Consumer](https://www.thundergits.com/industries/index.html?page=household)
 
 ## Company Information
 
-ThunderGits Consultancy Services Pvt Ltd is registered in India. The company has completed 50+ projects for clients ranging from startups to established enterprises. The team comprises 25+ professionals including developers, designers, and strategists.
+ThunderGits Consultancy Services Pvt Ltd is registered in India. We act as a long-term growth partner rather than a one-off vendor: one team owns strategy, technology, search visibility and marketing.
 
 **Key facts:**
-- 50+ projects completed
-- 55+ happy clients
+- 50+ businesses served
 - 3+ years of experience
 - 25+ team members
-- Clients: Davabharti, Enersol, Thikana, WeThePeopleOfPatna, Ganesha Foundation, AAP Bihar, Pasuseva, Coding Pandas
+- Clients: Davabharti, Enersol, Thikana, Vaidik Sanskar, WeThePeopleOfPatna, Ganesha Foundation, AAP Bihar, Pasuseva, Coding Pandas
 
 ## Blog & Knowledge Base
 
-- [Why React Native for Cross-Platform Apps](https://thundergits.com/blogs/why-react-native.html)
-- [The Ethics of Web Scraping](https://thundergits.com/blogs/the-ethical-web-scraping.html)
-- [DeepSeek AI Analysis](https://thundergits.com/blogs/deepseek.html)
-- [All Blog Articles](https://thundergits.com/blog.html)
+- [Why React Native for Cross-Platform Apps](https://www.thundergits.com/blogs/why-react-native.html)
+- [The Ethics of Web Scraping](https://www.thundergits.com/blogs/the-ethical-web-scraping.html)
+- [DeepSeek AI Analysis](https://www.thundergits.com/blogs/deepseek.html)
+- [All Blog Articles](https://www.thundergits.com/blog.html)
 
 ## Careers
 
-- [Open Positions](https://thundergits.com/career.html): Backend Developer, Frontend Developer, React Native Developer, Kotlin Developer, Deep Learning Engineer, Graphic Designer, SEO Expert, Social Media Manager
+- [Open Positions](https://www.thundergits.com/career.html): Backend Developer, Frontend Developer, React Native Developer, Kotlin Developer, Deep Learning Engineer, Graphic Designer, SEO Expert, Social Media Manager
 
 ## Contact & Location
 
-- **Website**: https://thundergits.com
+- **Website**: https://www.thundergits.com
 - **Email**: info@thundergits.com
 - **Phone**: +91-8757807372
 - **Address**: HN-75, W-8, P-3, Dagarua, B. Ailoth, Musrigharari, Samastipur, Bihar, India - 848101
@@ -70,6 +71,7 @@ ThunderGits Consultancy Services Pvt Ltd is registered in India. The company has
 
 ## Optional
 
-- [Privacy Policy](https://thundergits.com/privacy.html)
-- [Free Consultancy Booking](https://thundergits.com/consultancy.html)
-- [Portfolio / Work](https://thundergits.com/work.html)
+- [Case Studies](https://www.thundergits.com/case-studies.html)
+- [Portfolio / Work](https://www.thundergits.com/work.html)
+- [Free Consultancy Booking](https://www.thundergits.com/consultancy.html)
+- [Privacy Policy](https://www.thundergits.com/privacy.html)

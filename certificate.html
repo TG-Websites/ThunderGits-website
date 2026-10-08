@@ -299,7 +299,7 @@
         </p>
       </div>
       <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
-        <a href="#"
+        <a href="https://www.facebook.com/people/ThunderGits/61591564049916/"
           class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Facebook</a>
         <a href="#"
           class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 text-center md:text-left hover:bg-gray-200 transition-colors">Instagram</a>
@@ -327,7 +327,13 @@
     </div>
     <div
       class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-black">© 2026 | All rights reserved by Thundergits Consultancy Services Private Limited</p>
+  <p class="text-xs text-black">
+  © <span id="currentYear"></span> | All rights reserved by Thundergits Consultancy Services Private Limited
+</p>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
       <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black">
         <a href="./privacy.html">Privacy</a>
       </nav>

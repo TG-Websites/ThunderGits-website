@@ -147,7 +147,10 @@
             display: inline-block;
             cursor: default;
         }
-
+.word .w {
+    display: inline-block;
+    white-space: nowrap;
+}
         @keyframes thunder-text-glow {
 
             0%,
@@ -296,160 +299,151 @@
 
 
     <!-- HERO SECTION -->
-    <section id="hero-section"
-        class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden bg-black">
+<section id="hero-section"
+    class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden bg-black pt-24 pb-6 sm:pt-0 sm:pb-0">
 
-        <!-- STATIC CSS GRID LINES (always visible, faint) -->
-        <div class="absolute inset-0 z-0 pointer-events-none"
-            style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
-        </div>
+    <!-- STATIC CSS GRID LINES (always visible, faint) -->
+    <div class="absolute inset-0 z-0 pointer-events-none"
+        style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
+    </div>
 
-        <!-- INTERACTIVE HIGHLIGHT CELLS (JS fills this — no borders, just color fill) -->
-        <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
+    <!-- INTERACTIVE HIGHLIGHT CELLS (JS fills this — no borders, just color fill) -->
+    <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
 
-        <!-- TOP CENTER GLOW -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-            style="width: 900px; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(134,180,223,0.55) 0%, rgba(79,143,203,0.35) 20%, rgba(30,82,134,0.12) 50%, transparent 75%);">
-        </div>
+    <!-- TOP CENTER GLOW -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
+        style="width: 900px; max-width: 100%; height: 520px; background: radial-gradient(ellipse at 50% 0%, rgba(134,180,223,0.55) 0%, rgba(79,143,203,0.35) 20%, rgba(30,82,134,0.12) 50%, transparent 75%);">
+    </div>
 
-        <!-- BOTTOM FADE -->
-        <div class="absolute bottom-0 left-0 w-full h-40 pointer-events-none"
-            style="background: linear-gradient(to bottom, transparent, #000);">
-        </div>
+    <!-- BOTTOM FADE -->
+    <div class="absolute bottom-0 left-0 w-full h-40 pointer-events-none"
+        style="background: linear-gradient(to bottom, transparent, #000);">
+    </div>
 
-        <!-- CONTENT -->
-        <div class="relative z-10 px-6 max-w-6xl mx-auto flex flex-col items-center">
+    <!-- CONTENT -->
+    <div class="relative z-10 px-6 max-w-6xl w-full mx-auto flex flex-col items-center">
 
-            <!-- BADGE -->
-            <span
-                class="inline-flex items-center gap-2 px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-gray-300 mb-8 uppercase">
-                <span class="text-white">⚡</span> Business Growth Partner
-            </span>
+        <!-- BADGE -->
+        <span
+            class="inline-flex items-center gap-2 px-4 py-1.5 text-xs tracking-widest rounded-full bg-white/8 border border-white/15 text-gray-300 mb-4 sm:mb-8 uppercase">
+            <span class="text-white">⚡</span> Business Growth Partner
+        </span>
 
-            <!-- HEADING -->
-            <div style="position:relative; display:inline-block;">
-                <h1
-                    style="font-family: 'Manrope', sans-serif; font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 700; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.5rem; text-align: center;">
-                    ThunderGits
-                </h1>
+        <!-- HEADING -->
+        <div style="position:relative; display:inline-block;">
+            <h1
+                style="font-family: 'Manrope', sans-serif; font-size: clamp(2.8rem, 7.5vw, 5.8rem); font-weight: 700; line-height: 1.1; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 0.75rem; text-align: center;">
+                ThunderGits
+            </h1>
 
-                <!-- Hover hint: freehand arrow PNG + finger pointer (desktop only) -->
-                <div class="hover-hint"
-                    style="display:none; position:absolute; left:-120px; top:10px; width:140px; height:70px; pointer-events:none; opacity:0.95; filter: drop-shadow(0 10px 22px rgba(59,130,246,0.25)); animation: hover-hint-float 1.9s ease-in-out infinite;">
-                    <img src="./assets/arrow.webp" alt="ThunderGits decorative arrow" style="width:240px; height:auto; display:block;" loading="lazy" decoding="async" width="256" height="256"/>
-                    <div
-                        style="position:absolute; left:92px; bottom:0px; font-family: Manrope, ui-sans-serif, system-ui; font-size: 8px; font-weight: 600; color: #e5e7eb;">
-                        Hover here
-                    </div>
+            <!-- Hover hint: freehand arrow PNG + finger pointer (desktop only) -->
+            <div class="hover-hint"
+                style="display:none; position:absolute; left:-120px; top:10px; width:140px; height:70px; pointer-events:none; opacity:0.95; filter: drop-shadow(0 10px 22px rgba(59,130,246,0.25)); animation: hover-hint-float 1.9s ease-in-out infinite;">
+                <img src="./assets/arrow.webp" alt="ThunderGits decorative arrow" style="width:240px; height:auto; display:block;" loading="lazy" decoding="async" width="256" height="256"/>
+                <div
+                    style="position:absolute; left:92px; bottom:0px; font-family: Manrope, ui-sans-serif, system-ui; font-size: 8px; font-weight: 600; color: #e5e7eb;">
+                    Hover here
                 </div>
             </div>
+        </div>
 
-            <!-- SUB-HEADING -->
-            <p class="text-center text-lg sm:text-2xl md:text-3xl font-bold text-white/90 mb-4 leading-tight max-w-2xl">
-                <!-- Your Business Doesn't Need Another Vendor.<br/>
-                It Needs A <span class="text-white">Growth Partner.</span> -->
-                Your Business Doesn't Need <span style="-webkit-text-stroke:1px rgba(255,255,255,0.45);color:transparent;">Another Vendor.</span><br/>
-It Needs A <span style="color:#E0712F;">Growth Partner.</span>
-<!-- Your Business Doesn't Need Another Vendor.<br/>
-It Needs A <span style="color:#E0712F;text-decoration:underline;text-decoration-color:#E0712F;text-underline-offset:6px;text-decoration-thickness:2px;">Growth Partner.</span> -->
+        <!-- SUB-HEADING -->
+        <p class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-white/90 mb-3 sm:mb-4 leading-tight w-full max-w-2xl">
+            Your Business Doesn't Need <span style="-webkit-text-stroke:1px rgba(255,255,255,0.45);color:transparent;">Another Vendor.</span><br class="hidden sm:block"/>
+            It Needs A <span style="color:#E0712F;">Growth Partner.</span>
+        </p>
 
-<!-- Your Business Doesn't Need Another Vendor.<br/>
-It Needs A <span style="background:linear-gradient(90deg,#4F8FCB,#E0712F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Growth Partner.</span> -->
+        <!-- DESCRIPTION -->
+        <p
+            class="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed w-full sm:w-[42rem] max-w-full mb-5 sm:mb-8 md:mb-10 px-2 sm:px-0">
+            We are your Growth Partner — not an agency you hire for a project.
+            We take ownership of your digital growth, stay with you long-term,
+            and are accountable for results, not just deliverables.
+        </p>
 
-            </p>
+        <!-- CTA ROW -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center">
 
-            <!-- DESCRIPTION -->
-            <p
-                class="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed w-[39%] sm:w-2xl mb-6 sm:mb-8 md:mb-10 px-2 sm:px-0">
-                We are your Growth Partner — not an agency you hire for a project.
-                We take ownership of your digital growth, stay with you long-term,
-                and are accountable for results, not just deliverables.
-            </p>
+            <a href="./service.html"
+                class="flex items-center gap-2 border border-white/20 hover:border-white/50 hover:bg-white/10 cursor-pointer text-white/80 hover:text-white px-8 py-4 rounded-full font-semibold text-xs sm:text-sm hover:scale-105 transition-all duration-300">
+                See How We Work
+                <span class="text-xs">→</span>
+            </a>
 
-            <!-- CTA ROW -->
-            <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center">
+            <!-- AVATAR STACK + COUNT -->
+            <div class="items-center gap-4 hidden sm:flex">
 
-                <a href="./service.html"
-                    class="flex items-center gap-2 border border-white/20 hover:border-white/50 hover:bg-white/10 cursor-pointer text-white/80 hover:text-white px-8 py-4 rounded-full font-semibold text-xs sm:text-sm hover:scale-105 transition-all duration-300">
-                    See How We Work
-                    <span class="text-xs">→</span>
-                </a>
+                <!-- BRAND LOGOS -->
+                <div class="flex -space-x-3">
+                    <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain"
+                        src="./assets/brands/davabharti.webp" alt="Dava Bharti" loading="lazy" decoding="async" width="300" height="160">
 
-                <!-- AVATAR STACK + COUNT -->
-                <div class="items-center gap-4 hidden sm:flex">
+                    <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain"
+                        src="./assets/brands/enersol.webp" alt="Enersol" loading="lazy" decoding="async" width="1270" height="488">
 
-                    <!-- BRAND LOGOS -->
-                    <div class="flex -space-x-3">
-                        <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain"
-                            src="./assets/brands/davabharti.webp" alt="Dava Bharti" loading="lazy" decoding="async" width="300" height="160">
+                    <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain"
+                        src="./assets/brands/thikana.webp" alt="Thikana" loading="lazy" decoding="async" width="753" height="730">
+                </div>
 
-                        <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain"
-                            src="./assets/brands/enersol.webp" alt="Enersol" loading="lazy" decoding="async" width="1270" height="488">
-
-                        <img class="w-12 h-12 p-2 bg-gray-200 rounded-full shadow-md object-contain"
-                            src="./assets/brands/thikana.webp" alt="Thikana" loading="lazy" decoding="async" width="753" height="730">
-                    </div>
-
-                    <!-- TEXT -->
-                    <div class="text-left">
-                        <p class="text-white text-sm font-semibold leading-none">
-                            100+ Businesses
-                        </p>
-                        <p class="text-gray-400 text-xs mt-1">
-                            Across India
-                        </p>
-                    </div>
-
+                <!-- TEXT -->
+                <div class="text-left">
+                    <p class="text-white text-sm font-semibold leading-none">
+                        100+ Businesses
+                    </p>
+                    <p class="text-gray-400 text-xs mt-1">
+                        Across India
+                    </p>
                 </div>
 
             </div>
 
-            <!-- SCROLLING LOGOS -->
-            <div class="mt-20 w-full max-w-3xl overflow-hidden relative">
-                <!-- LEFT FADE -->
-                <div class="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none"
-                    style="background: linear-gradient(to right, #000, transparent)"></div>
-                <!-- RIGHT FADE -->
-                <div class="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none"
-                    style="background: linear-gradient(to left, #000, transparent)"></div>
+        </div>
 
-                <div class="flex w-max animate-scroll gap-0">
-                    <!-- Group 1 -->
-                    <div
-                        class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
-                        <span class="whitespace-nowrap">Davabharti</span>
-                        <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
-                        <span class="whitespace-nowrap">Ganesha Foundation</span>
-                        <span class="whitespace-nowrap">AAP Bihar</span>
-                        <span class="whitespace-nowrap">Pasuseva</span>
-                        <span class="whitespace-nowrap">Coding Pandas</span>
-                    </div>
-                    <!-- Group 2 (duplicate for seamless loop) -->
-                    <div
-                        class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
-                        <span class="whitespace-nowrap">Davabharti</span>
-                        <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
-                        <span class="whitespace-nowrap">Ganesha Foundation</span>
-                        <span class="whitespace-nowrap">AAP Bihar</span>
-                        <span class="whitespace-nowrap">Pasuseva</span>
-                        <span class="whitespace-nowrap">Coding Pandas</span>
-                    </div>
+        <!-- SCROLLING LOGOS -->
+        <div class="mt-10 sm:mt-20 w-full max-w-3xl overflow-hidden relative">
+            <!-- LEFT FADE -->
+            <div class="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none"
+                style="background: linear-gradient(to right, #000, transparent)"></div>
+            <!-- RIGHT FADE -->
+            <div class="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none"
+                style="background: linear-gradient(to left, #000, transparent)"></div>
+
+            <div class="flex w-max animate-scroll gap-0">
+                <!-- Group 1 -->
+                <div
+                    class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
+                    <span class="whitespace-nowrap">Davabharti</span>
+                    <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
+                    <span class="whitespace-nowrap">Ganesha Foundation</span>
+                    <span class="whitespace-nowrap">AAP Bihar</span>
+                    <span class="whitespace-nowrap">Pasuseva</span>
+                    <span class="whitespace-nowrap">Coding Pandas</span>
+                </div>
+                <!-- Group 2 (duplicate for seamless loop) -->
+                <div
+                    class="flex gap-14 items-center px-7 text-gray-400 text-sm font-semibold tracking-widest uppercase">
+                    <span class="whitespace-nowrap">Davabharti</span>
+                    <span class="whitespace-nowrap">WeThePeopleOfPatna</span>
+                    <span class="whitespace-nowrap">Ganesha Foundation</span>
+                    <span class="whitespace-nowrap">AAP Bihar</span>
+                    <span class="whitespace-nowrap">Pasuseva</span>
+                    <span class="whitespace-nowrap">Coding Pandas</span>
                 </div>
             </div>
-
         </div>
-    </section>
 
+    </div>
+</section>
 
 
     <!-- PROBLEM TIMELINE SECTION -->
-    <section class="bg-white py-24 sm:py-32 overflow-hidden">
+    <section class="bg-white py-12 sm:py-16 overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 lg:px-12 text-center">
             <span class="text-xs tracking-[0.3em] font-black uppercase text-gray-500 mb-4 block">The Problem</span>
             <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-black mb-6 leading-[1]">
                 Why Most Businesses<br/>Struggle To Grow
             </h2>
-            <p class="text-gray-500 text-lg max-w-2xl mx-auto mb-20">
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto mb-12">
                 Most growing businesses try to solve growth by hiring multiple vendors — one for each piece of the puzzle. The result? Nobody owns the full picture.
             </p>
 
@@ -504,447 +498,379 @@ It Needs A <span style="background:linear-gradient(90deg,#4F8FCB,#E0712F);-webki
                 </div>
             </div>
 
-            <p class="mt-16 text-gray-400 text-base max-w-xl mx-auto">
+            <p class="mt-10 text-gray-400 text-base max-w-xl mx-auto">
                 ThunderGits solves this — one team, full ownership, one goal: <span class="text-black font-semibold">your business growing.</span>
             </p>
         </div>
     </section>
 
     <!-- about section -->
-    <section class="bg-black text-white overflow-hidden ">
-        <section class="bg-gray-100 py-5 sm:py-16 h-[350px] sm:h-[400px]">
-            <div class="max-w-7xl mx-auto px-6 text-center">
+<section class="bg-black text-white overflow-hidden">
 
-                <!-- Heading -->
-                <p class="text-xl tracking-[0.2em] text-black mb-5 sm:mb-12 font-bold">
-                    WE WORKED WITH GLOBAL LARGEST BRANDS
-                </p>
+    <!-- PARTNERS -->
+    <section class="bg-gray-100 py-6 sm:py-10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
 
-                <div class="carousal" id="carousel">
+            <!-- Heading -->
+            <p class="text-base sm:text-xl tracking-[0.2em] text-black mb-4 sm:mb-8 font-bold">
+                WE WORKED WITH GLOBAL LARGEST BRANDS
+            </p>
 
-                    <div class="carousalgroup flex gap-10 items-center justify-start sm:justify-center">
-                        <img alt="Davabharti — ThunderGits client logo" src="./assets/brands/davabharti.webp" class="logo" loading="lazy" decoding="async"/>
-                        <img alt="Enersol — ThunderGits client logo" src="./assets/brands/enersol.webp" class="logo" loading="lazy" decoding="async"/>
-                        <img alt="Brand logo — ThunderGits client" src="./assets/brands/header.webp" class="logo" loading="lazy" decoding="async"/>
-                        <img alt="ThunderGits partner brand logo" src="./assets/brands/logo.webp" class="logo" loading="lazy" decoding="async"/>
-                        <img alt="Thikana — ThunderGits client logo" src="./assets/brands/thikana.webp" class="logo" loading="lazy" decoding="async"/>
-                        <img alt="Vaidik Sanskar — ThunderGits client logo" src="./assets/brands/vaidiksanskar.webp" class="logo" loading="lazy" decoding="async"/>
-                    </div>
+            <div class="carousal" id="carousel">
 
+                <div class="carousalgroup flex gap-10 items-center justify-start sm:justify-center">
+                    <img alt="Davabharti — ThunderGits client logo" src="./assets/brands/davabharti.webp" class="logo" loading="lazy" decoding="async"/>
+                    <img alt="Enersol — ThunderGits client logo" src="./assets/brands/enersol.webp" class="logo" loading="lazy" decoding="async"/>
+                    <img alt="Brand logo — ThunderGits client" src="./assets/brands/header.webp" class="logo" loading="lazy" decoding="async"/>
+                    <img alt="ThunderGits partner brand logo" src="./assets/brands/logo.webp" class="logo" loading="lazy" decoding="async"/>
+                    <img alt="Thikana — ThunderGits client logo" src="./assets/brands/thikana.webp" class="logo" loading="lazy" decoding="async"/>
+                    <img alt="Vaidik Sanskar — ThunderGits client logo" src="./assets/brands/vaidiksanskar.webp" class="logo" loading="lazy" decoding="async"/>
                 </div>
 
-            </div>
-        </section>
-        <div class=" hidden lg:grid relative mx-auto  md:grid-cols-2 gap-6">
-
-            <div class="px-6 sm:px-8 md:px-16 py-12 md:py-16 mt-20 ml-10">
-
-                <!-- Tag -->
-                <p class="text-2xl font-semibold  text-white mb-4">
-                    WHO WE ARE
-                </p>
-
-                <!-- Heading -->
-                <h2 class="text-5xl sm:text-4xl lg:text-5xl font-bold leading-tight  mb-6">
-                    NOT AN VENDOR. <br class="hidden sm:block" />
-                    A GROWTH PARTNER.
-                </h2>
-
-                <!-- Description -->
-                <p class="text-md text-md mb-8 md:mb-10">
-                    We take ownership of a business's digital growth as a single, integrated team.
-                    One point of accountability. One shared definition of success: your growth.
-                </p>
-
-                <!-- Button -->
-                <a href="./about.html">
-                    <button
-                        class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full cursor-pointer border border-white/30 text-white flex items-center justify-center text-xs sm:text-sm hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white transition-all duration-300">
-                        Explore Us ↗
-                    </button>
-                </a>
-
-            </div>
-
-            <!-- RIGHT IMAGE -->
-            <div class="flex justify-end items-center h-full w-full">
-                <!-- <img src="./assets/about.webp" alt="About" -->
-                <img src="./assets/why_us_home.png" alt="About"
-                    class=" w-full lg:w-1/2 absolute right-0 " loading="lazy" decoding="async" width="838" height="838"/>
-            </div>
-
-        </div>
-
-
-        <!-- for mobile -->
-        <div class="grid md:hidden xl:hidden relative mx-auto grid-cols-1 gap-6 items-center">
-
-            <!-- LEFT CONTENT -->
-            <div class="px-6 sm:px-8 md:px-16 py-12 md:py-16 mt-10 md:mt-20">
-
-                <!-- Tag -->
-                <p class="text-xl md:text-2xl font-semibold text-white mb-4">
-                    WHO WE ARE
-                </p>
-
-                <!-- Heading -->
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                    BUILDING TOMORROW <br class="hidden sm:block" />
-                    WITH TECHNOLOGY
-                </h2>
-
-                <!-- Description -->
-                <p class="text-sm md:text-base mb-8 md:mb-10 text-gray-200">
-                    We're a team of strategic digital marketing experts working globally with
-                    leading brands. We believe real progress happens when you refuse to play safe.
-                </p>
-
-                <!-- Button -->
-                <button
-                    class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 cursor-pointer rounded-full border border-white/30 text-white flex items-center justify-center text-xs sm:text-sm hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white transition-all duration-300">
-                    Explore Us ↗
-                </button>
-
-            </div>
-
-            <!-- RIGHT IMAGE -->
-            <div class="flex justify-center md:justify-end items-center w-full px-0 md:px-0">
-                <img src="./assets/about.webp" alt="About"
-                    class="w-full max-w-sm sm:max-w-md md:max-w-full rounded-lg h-auto object-cover" loading="lazy" decoding="async" width="838" height="838"/>
             </div>
 
         </div>
     </section>
+
+    <!-- WHO WE ARE (single responsive block) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch gap-0">
+
+        <!-- LEFT CONTENT -->
+        <div class="self-center px-6 sm:px-8 lg:pl-16 xl:pl-24 2xl:pl-40 lg:pr-0 py-8 lg:py-10">
+
+            <!-- Tag -->
+            <p class="text-lg sm:text-2xl font-semibold text-white mb-4">
+                WHO WE ARE
+            </p>
+
+            <!-- Heading -->
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                NOT AN VENDOR. <br class="hidden sm:block" />
+                A GROWTH PARTNER.
+            </h2>
+
+            <!-- Description -->
+            <p class="text-sm sm:text-base text-gray-200 mb-8 lg:mb-10 max-w-xl">
+                We take ownership of a business's digital growth as a single, integrated team.
+                One point of accountability. One shared definition of success: your growth.
+            </p>
+
+            <!-- Button -->
+            <a href="./about.html" class="inline-block">
+                <button
+                    class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full cursor-pointer border border-white/30 text-white flex items-center justify-center text-xs sm:text-sm hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white transition-all duration-300">
+                    Explore Us ↗
+                </button>
+            </a>
+
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="relative w-full">
+            <img src="./assets/why_us_home.png" alt="About ThunderGits"
+                class="block w-full h-auto lg:absolute lg:inset-0 lg:h-full object-cover object-top"
+                loading="lazy" decoding="async" width="838" height="838"/>
+        </div>
+
+    </div>
+
+</section>
 
 
     <!-- Services section -->
-    <section class="relative w-full bg-white py-20 overflow-hidden">
+    <!-- Services section -->
+<section class="relative w-full bg-white py-20 overflow-hidden">
 
-        <div class="max-w-7xl mx-auto px-6 sm:px-0  gap-10">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
 
-            <div class="flex flex-col items-start">
+        <div class="flex flex-col items-start">
 
-                <!-- TAG -->
-                <p class="text-xl font-bold uppercase mb-5 tg-eyebrow">
-                    Services
+            <!-- TAG -->
+            <p class="text-xl font-bold uppercase mb-5 tg-eyebrow">
+                Services
+            </p>
+
+            <!-- MAIN HEADING -->
+            <h2 class="text-4xl md:text-5xl font-bold leading-[1.05] text-black">
+                <span class="text-black">What We Own </span>
+                <span class="text-black">For Our Partners</span>
+            </h2>
+
+            <!-- DESCRIPTION -->
+            <p class="mt-6 text-black text-lg font-semibold leading-relaxed max-w-2xl">
+                Most businesses deal with fragmented teams — no one owns the full picture. We do.
+                Strategy, technology, visibility, and marketing — all working as one team, for one goal.
+            </p>
+
+            <!-- SMALL HIGHLIGHT LINE -->
+            <div class="mt-8 flex items-center gap-3">
+                <div class="w-10 h-[1px] bg-black"></div>
+                <p class="text-xs tracking-widest text-gray-500 uppercase">
+                    Explore our services
                 </p>
-
-                <!-- MAIN HEADING -->
-                <h2 class=" text-4xl md:text-5xl font-bold leading-[1.05] text-black">
-                    <span class="text-black">What We Own </span>
-                    <span class="text-black">For Our Partners</span>
-                </h2>
-
-                <!-- DESCRIPTION -->
-                <p class="mt-6 text-black text-lg font-semibold  leading-relaxed max-w-2xl">
-                    Most businesses deal with fragmented teams — no one owns the full picture. We do.
-                    Strategy, technology, visibility, and marketing — all working as one team, for one goal.
-                </p>
-
-                <!-- SMALL HIGHLIGHT LINE -->
-                <div class="mt-8 flex items-center gap-3">
-                    <div class="w-10 h-[1px] bg-black"></div>
-                    <p class="text-xs tracking-widest text-gray-500 uppercase">
-                        Explore our services
-                    </p>
-                    <div class="w-10 h-[1px] bg-black"></div>
-                </div>
-
+                <div class="w-10 h-[1px] bg-black"></div>
             </div>
 
-            <!-- RIGHT SERVICES LIST -->
-            <div class="lg:col-span-2 space-y-10 mt-10 ">
-
-                <!-- SERVICE ITEM -->
-                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
-
-                    <div
-                        class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-3 lg:gap-5">
-
-                        <!-- TITLE -->
-                        <h3 class="text-4xl font-bold text-center lg:text-left w-full lg:flex-1">
-
-                            <span class="word block">
-                                <span>C</span><span>o</span><span>n</span><span>s</span><span>u</span><span>l</span><span>t</span><span>a</span><span>n</span><span>c</span><span>y</span>
-                            </span>
-
-                            <span class="word block">
-                                <span>&</span><span> </span><span>S</span><span>t</span><span>r</span><span>a</span><span>t</span><span>e</span><span>g</span><span>y</span>
-                            </span>
-
-                        </h3>
-
-                        <!-- DESCRIPTION -->
-                        <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 md:px-6">
-
-                            <!-- BG IMAGE -->
-                            <div class="absolute inset-[-10px] opacity-0 scale-105
-                        group-hover:opacity-100 group-hover:scale-100
-                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
-
-                                <img alt="ThunderGits business consultancy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-                                    class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
-
-                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <p class="relative z-10 w-full text-gray-600 text-center lg:text-left
-                      group-hover:text-gray-200 transition duration-500 p-4">
-                                Before we build anything, we understand everything. We study your market,
-                                audience, and competitors — and build a clear growth roadmap that every
-                                other service is built on.
-                            </p>
-
-                        </div>
-
-                        <!-- BUTTON -->
-                        <a href="./service.html"
-                            class="w-full lg:flex-1 flex justify-center lg:justify-end">
-                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
-                       rounded-full border border-gray-300 text-sm text-gray-500
-                       transition-all duration-300
-                       hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
-                       group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
-                                Explore ↗
-                            </button></a>
-
-                    </div>
-                </div>
-
-                <!-- SERVICE ITEM -->
-                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
-
-                    <div
-                        class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-3 lg:gap-5">
-
-                        <!-- TITLE -->
-                        <h3 class="text-4xl font-bold text-center lg:text-left w-full lg:flex-1">
-
-                            <span class="word block">
-                                <span>B</span><span>u</span><span>i</span><span>l</span><span>d</span>
-                            </span>
-
-                            <span class="word block">
-                                <span>W</span><span>e</span><span>b</span><span>s</span><span>i</span><span>t</span><span>e</span><span> </span><span>·</span><span> </span><span>A</span><span>p</span><span>p</span><span> </span><span>·</span><span> </span><span>C</span><span>R</span><span>M</span>
-                            </span>
-
-                        </h3>
-
-                        <!-- DESCRIPTION -->
-                        <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 md:px-6">
-
-                            <!-- BG IMAGE -->
-                            <div class="absolute inset-[-10px] opacity-0 scale-105
-                        group-hover:opacity-100 group-hover:scale-100
-                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
-
-                                <img alt="ThunderGits engineering and development" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-                                    class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
-
-                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <p class="relative z-10 text-gray-600 text-center lg:text-left
-                      group-hover:text-gray-200 transition duration-500 p-4">
-                                We build websites, web applications, mobile apps, and CRM systems from zero to
-                                advanced — designed to perform, convert, and scale with your business.
-                            </p>
-
-                        </div>
-
-                        <!-- BUTTON -->
-                        <a href="./service.html"
-                            class="w-full lg:flex-1 flex justify-center lg:justify-end">
-                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
-                       rounded-full border border-gray-300 text-sm text-gray-500
-                       transition-all duration-300
-                       hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
-                       group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
-                                Explore ↗
-                            </button>
-                        </a>
-
-                    </div>
-                </div>
-
-                <!-- SERVICE ITEM -->
-                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
-
-                    <div
-                        class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-3 lg:gap-5">
-                        <!-- TITLE -->
-                        <h3 class="text-4xl font-bold text-center lg:text-left w-full lg:flex-1">
-
-                            <span class="word block">
-                                <span>S</span><span>e</span><span>a</span><span>r</span><span>c</span><span>h</span>
-                            </span>
-
-                            <span class="word block">
-                                <span>V</span><span>i</span><span>s</span><span>i</span><span>b</span><span>i</span><span>l</span><span>i</span><span>t</span><span>y</span>
-                            </span>
-
-                        </h3>
-
-                        <!-- DESCRIPTION -->
-                        <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 md:px-6">
-
-                            <!-- BG IMAGE -->
-                            <div class="absolute inset-[-10px] opacity-0 scale-105
-                        group-hover:opacity-100 group-hover:scale-100
-                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
-
-                                <img alt="ThunderGits SEO GEO AEO search visibility" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-                                    class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
-
-                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <p class="relative z-10 text-gray-600 text-center lg:text-left
-                      group-hover:text-gray-200 transition duration-500 p-4">
-                                SEO so you rank on Google. GEO so you appear on ChatGPT and Perplexity.
-                                AEO so you win featured snippets. We make sure your business gets found everywhere people search.
-                            </p>
-
-                        </div>
-
-                        <!-- BUTTON -->
-                        <a href="./service.html"
-                            class="w-full lg:flex-1 flex justify-center lg:justify-end">
-                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
-                       rounded-full border border-gray-300 text-sm text-gray-500
-                       transition-all duration-300
-                       hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
-                       group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
-                                Explore ↗
-                            </button>
-                        </a>
-
-                    </div>
-                </div>
-
-                <!-- SERVICE ITEM -->
-                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
-
-                    <div
-                        class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-3 lg:gap-5">
-
-                        <!-- TITLE -->
-                        <h3
-                            class="text-4xl  font-bold text-center lg:text-left w-full lg:flex-1">
-
-                            <span class="word block">
-                                <span>M</span><span>a</span><span>r</span><span>k</span><span>e</span><span>t</span><span>i</span><span>n</span><span>g</span>
-                            </span>
-
-                            <span class="word block">
-                                <span>&</span><span> </span><span>A</span><span>d</span><span>s</span>
-                            </span>
-
-                        </h3>
-
-                        <!-- DESCRIPTION -->
-                        <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 md:px-6">
-
-                            <!-- BG IMAGE -->
-                            <div class="absolute inset-[-10px] opacity-0 scale-105
-                        group-hover:opacity-100 group-hover:scale-100
-                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
-
-                                <img alt="ThunderGits marketing and advertising" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-                                    class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
-
-                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <p class="relative z-10 text-gray-600 text-center lg:text-left
-                      group-hover:text-gray-200 transition duration-500 p-4">
-                                Meta Ads, Google Ads, social media management, and content — we build and run
-                                the marketing systems that bring the right people to your business, consistently.
-                            </p>
-
-                        </div>
-
-                        <!-- BUTTON -->
-                        <a href="./service.html"
-                            class="w-full lg:flex-1 flex justify-center lg:justify-end">
-                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
-                       rounded-full border border-gray-300 text-sm text-gray-500
-                       transition-all duration-300
-                       hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
-                       group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
-                                Explore ↗
-                            </button>
-                        </a>
-
-                    </div>
-                </div>
-
-                <!-- SERVICE ITEM -->
-                <div class="group border-b border-gray-200 pb-10 cursor-pointer">
-
-                    <div
-                        class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-3 lg:gap-5">
-
-                        <!-- TITLE -->
-                        <h3 class="text-4xl font-bold text-center lg:text-left w-full lg:flex-1">
-
-                            <span class="word block">
-                                <span>O</span><span>n</span><span>g</span><span>o</span><span>i</span><span>n</span><span>g</span>
-                            </span>
-
-                            <span class="word block">
-                                <span>P</span><span>a</span><span>r</span><span>t</span><span>n</span><span>e</span><span>r</span><span>s</span><span>h</span><span>i</span><span>p</span>
-                            </span>
-
-                        </h3>
-
-                        <!-- DESCRIPTION -->
-                        <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 md:px-6">
-
-                            <!-- BG IMAGE -->
-                            <div class="absolute inset-[-10px] opacity-0 scale-105
-                        group-hover:opacity-100 group-hover:scale-100
-                        transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
-
-                                <img alt="ThunderGits ongoing business growth partnership" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-                                    class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
-
-                                <div class="absolute inset-0 bg-black/50 rounded-md"></div>
-                            </div>
-
-                            <!-- TEXT -->
-                            <p class="relative z-10 text-gray-600 text-center lg:text-left
-                      group-hover:text-gray-200 transition duration-500 p-4">
-                                Growth is not a one-time project. We stay as your dedicated monthly team —
-                                managing, maintaining, and growing everything together, long after launch.
-                            </p>
-
-                        </div>
-
-                        <!-- BUTTON -->
-                        <a href="./service.html"
-                            class="w-full lg:flex-1 flex justify-center lg:justify-end">
-                            <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
-                       rounded-full border border-gray-300 text-sm text-gray-500
-                       transition-all duration-300
-                       hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
-                       group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
-                                Explore ↗
-                            </button>
-                        </a>
-
-
-                    </div>
-                </div>
-
-
-            </div>
         </div>
-    </section>
+
+        <!-- SERVICES LIST -->
+        <div class="space-y-10 mt-10">
+
+            <!-- SERVICE ITEM 1 -->
+            <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+                <div class="flex flex-col lg:flex-row items-center md:items-start lg:justify-between gap-3 lg:gap-5">
+
+                    <!-- TITLE -->
+                    <h3 class="text-3xl sm:text-4xl font-bold text-center md:text-left w-full lg:flex-1">
+                        <span class="word block">
+                            <span class="w"><span>C</span><span>o</span><span>n</span><span>s</span><span>u</span><span>l</span><span>t</span><span>a</span><span>n</span><span>c</span><span>y</span></span>
+                        </span>
+                        <span class="word block">
+                            <span class="w"><span>&</span></span>
+                            <span class="w"><span>S</span><span>t</span><span>r</span><span>a</span><span>t</span><span>e</span><span>g</span><span>y</span></span>
+                        </span>
+                    </h3>
+
+                    <!-- DESCRIPTION -->
+                    <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 lg:px-6">
+
+                        <!-- BG IMAGE -->
+                        <div class="absolute inset-[-10px] opacity-0 scale-105
+                            group-hover:opacity-100 group-hover:scale-100
+                            transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                            <img alt="ThunderGits business consultancy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
+                            <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                        </div>
+
+                        <!-- TEXT -->
+                        <p class="relative z-10 w-full text-gray-600 text-center md:text-left
+                            group-hover:text-gray-200 transition duration-500 p-4 md:pl-0 lg:pl-4">
+                            Before we build anything, we understand everything. We study your market,
+                            audience, and competitors — and build a clear growth roadmap that every
+                            other service is built on.
+                        </p>
+
+                    </div>
+
+                    <!-- BUTTON -->
+                    <a href="./service.html" class="w-full lg:flex-1 flex justify-center md:justify-start lg:justify-end">
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                            rounded-full border border-gray-300 text-sm text-gray-500
+                            transition-all duration-300
+                            hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
+                            group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
+                            Explore ↗
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- SERVICE ITEM 2 -->
+            <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+                <div class="flex flex-col lg:flex-row items-center md:items-start lg:justify-between gap-3 lg:gap-5">
+
+                    <!-- TITLE -->
+                    <h3 class="text-3xl sm:text-4xl font-bold text-center md:text-left w-full lg:flex-1">
+                        <span class="word block">
+                            <span class="w"><span>B</span><span>u</span><span>i</span><span>l</span><span>d</span></span>
+                        </span>
+                        <span class="word block">
+                            <span class="w"><span>W</span><span>e</span><span>b</span><span>s</span><span>i</span><span>t</span><span>e</span></span>
+                            <span class="w"><span>·</span></span>
+                            <span class="w"><span>A</span><span>p</span><span>p</span></span>
+                            <span class="w"><span>·</span></span>
+                            <span class="w"><span>C</span><span>R</span><span>M</span></span>
+                        </span>
+                    </h3>
+
+                    <!-- DESCRIPTION -->
+                    <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 lg:px-6">
+
+                        <!-- BG IMAGE -->
+                        <div class="absolute inset-[-10px] opacity-0 scale-105
+                            group-hover:opacity-100 group-hover:scale-100
+                            transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                            <img alt="ThunderGits engineering and development" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
+                            <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                        </div>
+
+                        <!-- TEXT -->
+                        <p class="relative z-10 w-full text-gray-600 text-center md:text-left
+                            group-hover:text-gray-200 transition duration-500 p-4 md:pl-0 lg:pl-4">
+                            We build websites, web applications, mobile apps, and CRM systems from zero to
+                            advanced — designed to perform, convert, and scale with your business.
+                        </p>
+
+                    </div>
+
+                    <!-- BUTTON -->
+                    <a href="./service.html" class="w-full lg:flex-1 flex justify-center md:justify-start lg:justify-end">
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                            rounded-full border border-gray-300 text-sm text-gray-500
+                            transition-all duration-300
+                            hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
+                            group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
+                            Explore ↗
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- SERVICE ITEM 3 -->
+            <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+                <div class="flex flex-col lg:flex-row items-center md:items-start lg:justify-between gap-3 lg:gap-5">
+
+                    <!-- TITLE -->
+                    <h3 class="text-3xl sm:text-4xl font-bold text-center md:text-left w-full lg:flex-1">
+                        <span class="word block">
+                            <span class="w"><span>S</span><span>e</span><span>a</span><span>r</span><span>c</span><span>h</span></span>
+                        </span>
+                        <span class="word block">
+                            <span class="w"><span>V</span><span>i</span><span>s</span><span>i</span><span>b</span><span>i</span><span>l</span><span>i</span><span>t</span><span>y</span></span>
+                        </span>
+                    </h3>
+
+                    <!-- DESCRIPTION -->
+                    <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 lg:px-6">
+
+                        <!-- BG IMAGE -->
+                        <div class="absolute inset-[-10px] opacity-0 scale-105
+                            group-hover:opacity-100 group-hover:scale-100
+                            transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                            <img alt="ThunderGits SEO GEO AEO search visibility" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
+                            <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                        </div>
+
+                        <!-- TEXT -->
+                        <p class="relative z-10 w-full text-gray-600 text-center md:text-left
+                            group-hover:text-gray-200 transition duration-500 p-4 md:pl-0 lg:pl-4">
+                            SEO so you rank on Google. GEO so you appear on ChatGPT and Perplexity.
+                            AEO so you win featured snippets. We make sure your business gets found everywhere people search.
+                        </p>
+
+                    </div>
+
+                    <!-- BUTTON -->
+                    <a href="./service.html" class="w-full lg:flex-1 flex justify-center md:justify-start lg:justify-end">
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                            rounded-full border border-gray-300 text-sm text-gray-500
+                            transition-all duration-300
+                            hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
+                            group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
+                            Explore ↗
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- SERVICE ITEM 4 -->
+            <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+                <div class="flex flex-col lg:flex-row items-center md:items-start lg:justify-between gap-3 lg:gap-5">
+
+                    <!-- TITLE -->
+                    <h3 class="text-3xl sm:text-4xl font-bold text-center md:text-left w-full lg:flex-1">
+                        <span class="word block">
+                            <span class="w"><span>M</span><span>a</span><span>r</span><span>k</span><span>e</span><span>t</span><span>i</span><span>n</span><span>g</span></span>
+                        </span>
+                        <span class="word block">
+                            <span class="w"><span>&</span></span>
+                            <span class="w"><span>A</span><span>d</span><span>s</span></span>
+                        </span>
+                    </h3>
+
+                    <!-- DESCRIPTION -->
+                    <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 lg:px-6">
+
+                        <!-- BG IMAGE -->
+                        <div class="absolute inset-[-10px] opacity-0 scale-105
+                            group-hover:opacity-100 group-hover:scale-100
+                            transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                            <img alt="ThunderGits marketing and advertising" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
+                            <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                        </div>
+
+                        <!-- TEXT -->
+                        <p class="relative z-10 w-full text-gray-600 text-center md:text-left
+                            group-hover:text-gray-200 transition duration-500 p-4 md:pl-0 lg:pl-4">
+                            Meta Ads, Google Ads, social media management, and content — we build and run
+                            the marketing systems that bring the right people to your business, consistently.
+                        </p>
+
+                    </div>
+
+                    <!-- BUTTON -->
+                    <a href="./service.html" class="w-full lg:flex-1 flex justify-center md:justify-start lg:justify-end">
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                            rounded-full border border-gray-300 text-sm text-gray-500
+                            transition-all duration-300
+                            hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
+                            group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
+                            Explore ↗
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- SERVICE ITEM 5 -->
+            <div class="group border-b border-gray-200 pb-10 cursor-pointer">
+                <div class="flex flex-col lg:flex-row items-center md:items-start lg:justify-between gap-3 lg:gap-5">
+
+                    <!-- TITLE -->
+                    <h3 class="text-3xl sm:text-4xl font-bold text-center md:text-left w-full lg:flex-1">
+                        <span class="word block">
+                            <span class="w"><span>O</span><span>n</span><span>g</span><span>o</span><span>i</span><span>n</span><span>g</span></span>
+                        </span>
+                        <span class="word block">
+                            <span class="w"><span>P</span><span>a</span><span>r</span><span>t</span><span>n</span><span>e</span><span>r</span><span>s</span><span>h</span><span>i</span><span>p</span></span>
+                        </span>
+                    </h3>
+
+                    <!-- DESCRIPTION -->
+                    <div class="relative w-full lg:grow-[3] lg:shrink lg:basis-0 overflow-hidden px-0 lg:px-6">
+
+                        <!-- BG IMAGE -->
+                        <div class="absolute inset-[-10px] opacity-0 scale-105
+                            group-hover:opacity-100 group-hover:scale-100
+                            transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                            <img alt="ThunderGits ongoing business growth partnership" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                                class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async"/>
+                            <div class="absolute inset-0 bg-black/50 rounded-md"></div>
+                        </div>
+
+                        <!-- TEXT -->
+                        <p class="relative z-10 w-full text-gray-600 text-center md:text-left
+                            group-hover:text-gray-200 transition duration-500 p-4 md:pl-0 lg:pl-4">
+                            Growth is not a one-time project. We stay as your dedicated monthly team —
+                            managing, maintaining, and growing everything together, long after launch.
+                        </p>
+
+                    </div>
+
+                    <!-- BUTTON -->
+                    <a href="./service.html" class="w-full lg:flex-1 flex justify-center md:justify-start lg:justify-end">
+                        <button class="w-20 h-20 md:w-24 md:h-24 shrink-0
+                            rounded-full border border-gray-300 text-sm text-gray-500
+                            transition-all duration-300
+                            hover:bg-[#E0712F] hover:border-[#E0712F] hover:text-white hover:scale-105
+                            group-hover:bg-[#0B1B30] group-hover:border-[#0B1B30] group-hover:text-white cursor-pointer">
+                            Explore ↗
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- AGENCY VS THUNDERGITS -->
     <section class="bg-white py-24 sm:py-32 overflow-hidden">
@@ -1649,7 +1575,7 @@ It Needs A <span style="background:linear-gradient(90deg,#4F8FCB,#E0712F);-webki
 
             <!-- COL 2: SOCIAL LINKS -->
             <div class="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-300">
-                <a href="#"
+                <a href="https://www.facebook.com/people/ThunderGits/61591564049916/"
                     class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Facebook</a>
                 <a href="https://www.instagram.com/thundergits/" target="_blank" rel="noopener noreferrer"
                     class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition">Instagram</a>
@@ -1706,9 +1632,13 @@ It Needs A <span style="background:linear-gradient(90deg,#4F8FCB,#E0712F);-webki
         <!-- BOTTOM BAR -->
         <div
             class="border-t border-gray-300 px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-center md:text-left">
-                © 2026 | All rights reserved by Thundergits Consultancy Services Private Limited
-            </p>
+          <p class="text-xs text-center md:text-left">
+  © <span id="currentYear"></span> | All rights reserved by Thundergits Consultancy Services Private Limited
+</p>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
 
             <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-semibold">
                 <a href="./privacy.html">Privacy</a>

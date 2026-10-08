@@ -598,8 +598,8 @@
                       background 0.25s,
                       transform 0.2s;
                   "
-                  onmouseover="this.style.background=’#C2521F’"
-                  onmouseout="this.style.background=’#E0712F’"
+                  onmouseover="this.style.background='#C2521F'"
+                  onmouseout="this.style.background='#E0712F'"
                 >
                   Send a Message
                   <i class="ri-arrow-right-up-line text-base"></i>
@@ -1385,7 +1385,7 @@
           class="flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-300"
         >
           <a
-            href="#"
+            href="https://www.facebook.com/people/ThunderGits/61591564049916/"
             class="px-8 py-5 border-b border-gray-300 text-center md:text-left font-semibold hover:bg-gray-200 transition"
             >Facebook</a
           >
@@ -1487,10 +1487,13 @@
       <div
         class="border-t border-gray-300 px-6 sm:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4"
       >
-        <p class="text-xs text-center md:text-left">
-          © 2026 | All rights reserved by Thundergits Consultancy Services
-          Private Limited
-        </p>
+      <p class="text-xs text-center md:text-left">
+  © <span id="currentYear"></span> | All rights reserved by Thundergits Consultancy Services Private Limited
+</p>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
 
         <nav
           class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm font-semibold"

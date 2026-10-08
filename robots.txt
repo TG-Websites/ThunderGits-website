@@ -1,24 +1,10 @@
+# robots.txt for https://www.thundergits.com/
+# Search engines and AI crawlers (GPTBot, ChatGPT-User, ClaudeBot,
+# PerplexityBot, Googlebot, Bingbot) are all allowed by the rules below.
+
 User-agent: *
 Allow: /
+# Temporary: remove this line once /node_modules/ is deleted from the live server.
 Disallow: /node_modules/
 
-# AI crawlers — allowed
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-Sitemap: https://thundergits.com/sitemap.xml
+Sitemap: https://www.thundergits.com/sitemap.xml

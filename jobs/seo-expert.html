@@ -272,7 +272,7 @@
                 <p class="text-sm text-black leading-relaxed font-semibold max-w-xs">Innovating the future of digital experiences. ThunderGits delivers top-tier technology solutions.</p>
             </div>
             <div class="flex flex-col justify-center border-b md:border-b-0 md:border-r border-gray-300">
-                <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 hover:bg-gray-200 transition-colors text-center md:text-left">Facebook</a>
+                <a href="https://www.facebook.com/people/ThunderGits/61591564049916/" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 hover:bg-gray-200 transition-colors text-center md:text-left">Facebook</a>
                 <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 hover:bg-gray-200 transition-colors text-center md:text-left">Instagram</a>
                 <a href="#" class="px-12 py-8 text-gray-800 font-semibold border-b border-gray-300 hover:bg-gray-200 transition-colors text-center md:text-left">Youtube</a>
                 <a href="#" class="px-12 py-8 text-gray-800 font-semibold hover:bg-gray-200 transition-colors text-center md:text-left">Linkedin</a>
@@ -286,7 +286,13 @@
             </div>
         </div>
         <div class="border-t border-gray-300 px-8 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-black">© 2026 | All rights reserved by Thundergits Consultancy Services Private Limited</p>
+           <p class="text-xs text-black">
+  © <span id="currentYear"></span> | All rights reserved by Thundergits Consultancy Services Private Limited
+</p>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
             <nav class="flex gap-6 md:gap-10 text-sm font-semibold text-black"><a href="./../about.html">About us</a><a href="./../blog.html">Blogs</a><a href="./../contact.html">Contact</a></nav>
         </div>
     </footer>

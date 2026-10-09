@@ -354,216 +354,225 @@
     </nav>
 
     <!-- Hero Section -->
-    <section
-      id="hero-section"
-      class="relative overflow-hidden flex flex-col lg:flex-row"
-      style="min-height: 100svh; background-color: #0b1b30"
-    >
-      <!-- LEFT: Text block -->
-      <div
-        class="relative z-10 flex flex-col justify-center pt-36 pb-16 lg:py-0 px-8 lg:px-16 xl:px-24 lg:w-[52%] shrink-0"
-      >
-        <!-- Grid lines -->
-        <div
-          class="absolute inset-0 pointer-events-none"
-          style="
-            background-image:
-              linear-gradient(
-                to right,
-                rgba(255, 255, 255, 0.04) 1px,
-                transparent 1px
-              ),
-              linear-gradient(
-                to bottom,
-                rgba(255, 255, 255, 0.04) 1px,
-                transparent 1px
-              );
-            background-size: 60px 60px;
-          "
-        ></div>
+<style>
+  /* ---------- BASE: mobile first (below 1024px) ---------- */
+  .ah { position: relative; overflow: hidden; background: #0b1b30; }
 
-        <div class="relative z-10">
-          <!-- Eyebrow -->
-          <div class="flex items-center gap-3 mb-8">
-            <span class="w-8 h-px bg-[#E0712F]"></span>
-            <span
-              class="text-[#E0712F] text-[10px] tracking-[0.4em] uppercase font-black"
-              >About ThunderGits</span
-            >
-          </div>
+  .ah-text {
+    position: relative; z-index: 10;
+    padding: 6.5rem 1.5rem 2.5rem;
+  }
+  .ah-grid-lines {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .ah-inner { position: relative; z-index: 10; }
 
-          <h1
-            style="
-              font-family: &quot;Manrope&quot;, sans-serif;
-              font-size: clamp(2.2rem, 4vw, 3.8rem);
-              font-weight: 800;
-              line-height: 1.05;
-              color: #fff;
-              letter-spacing: -0.025em;
-              margin-bottom: 1.5rem;
-            "
-          >
-            One Team.<br />
-            One Goal.<br />
-            <span style="color: #e0712f">Your Growth.</span>
-          </h1>
+  .ah-eyebrow { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.25rem; }
+  .ah-eyebrow i { width: 2rem; height: 1px; background: #E0712F; display: block; }
+  .ah-eyebrow span {
+    color: #E0712F; font-size: 10px; letter-spacing: .4em;
+    text-transform: uppercase; font-weight: 900;
+  }
 
-          <p
-            class="text-gray-400 text-sm sm:text-base leading-relaxed mb-12 max-w-md font-light"
-          >
-            We are ThunderGits — not an agency you hire, but a Business Growth
-            Partner that stays. Strategy, technology, marketing, and SEO. One
-            team. Full accountability.
-          </p>
+  .ah-h1 {
+    font-family: 'Manrope', sans-serif; font-weight: 800; line-height: 1.05;
+    color: #fff; letter-spacing: -.025em;
+    font-size: clamp(2.1rem, 9vw, 3.2rem);
+    margin: 0 0 1rem;
+  }
+  .ah-h1 span { color: #e0712f; }
+.ah-img img { object-position: center top; }
+  .ah-p {
+    color: #9ca3af; font-weight: 300; line-height: 1.6;
+    font-size: clamp(.9rem, 2.4vw, 1rem);
+    max-width: 28rem; margin: 0 0 1.5rem;
+  }
 
-          <!-- Stats grid with separator lines -->
-          <div class="grid grid-cols-2 border-t border-white/10">
-            <div class="py-8 pr-8 border-r border-white/10">
-              <p
-                style="
-                  font-family: &quot;Manrope&quot;;
-                  font-size: 2.4rem;
-                  font-weight: 800;
-                  color: #e0712f;
-                  line-height: 1;
-                "
-              >
-                100+
-              </p>
-              <p
-                class="text-[10px] text-gray-500 uppercase tracking-[0.18em] mt-2"
-              >
-                Businesses Partnered
-              </p>
-            </div>
-            <div class="py-8 pl-8">
-              <p
-                style="
-                  font-family: &quot;Manrope&quot;;
-                  font-size: 2.4rem;
-                  font-weight: 800;
-                  color: #fff;
-                  line-height: 1;
-                "
-              >
-                3+
-              </p>
-              <p
-                class="text-[10px] text-gray-500 uppercase tracking-[0.18em] mt-2"
-              >
-                Years of Growth
-              </p>
-            </div>
-            <div class="py-8 pr-8 border-t border-r border-white/10">
-              <p
-                style="
-                  font-family: &quot;Manrope&quot;;
-                  font-size: 2.4rem;
-                  font-weight: 800;
-                  color: #fff;
-                  line-height: 1;
-                "
-              >
-                15+
-              </p>
-              <p
-                class="text-[10px] text-gray-500 uppercase tracking-[0.18em] mt-2"
-              >
-                Industries Served
-              </p>
-            </div>
-            <div class="py-8 pl-8 border-t border-white/10">
-              <p
-                style="
-                  font-family: &quot;Manrope&quot;;
-                  font-size: 2.4rem;
-                  font-weight: 800;
-                  color: #fff;
-                  line-height: 1;
-                "
-              >
-                95%
-              </p>
-              <p
-                class="text-[10px] text-gray-500 uppercase tracking-[0.18em] mt-2"
-              >
-                Partner Retention
-              </p>
-            </div>
-          </div>
+  .ah-stats { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(255,255,255,.1); }
+  .ah-stat { padding: 1rem 1rem 1rem 0; }
+  .ah-stat:nth-child(odd)  { border-right: 1px solid rgba(255,255,255,.1); }
+  .ah-stat:nth-child(even) { padding-left: 1rem; }
+  .ah-stat:nth-child(n+3)  { border-top: 1px solid rgba(255,255,255,.1); }
+  .ah-num {
+    font-family: 'Manrope', sans-serif; font-weight: 800; line-height: 1;
+    font-size: clamp(1.7rem, 7vw, 2.4rem); color: #fff; margin: 0;
+  }
+  .ah-num.accent { color: #e0712f; }
+  .ah-label {
+    margin: .5rem 0 0; font-size: 10px; color: #6b7280;
+    text-transform: uppercase; letter-spacing: .18em;
+  }
+
+  /* image panel (stacked under the text on mobile and tablet) */
+  .ah-img { position: relative; height: clamp(18rem, 62vw, 32rem); }
+  .ah-img img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 25%;
+  }
+  .ah-fade-side, .ah-fade-bottom { position: absolute; inset: 0; pointer-events: none; }
+  .ah-fade-side   { background: linear-gradient(to bottom, #0b1b30 0%, rgba(11,27,48,.3) 25%, transparent 50%); }
+  .ah-fade-bottom { background: linear-gradient(to top, rgba(11,27,48,.65) 0%, transparent 45%); }
+  .ah-card, .ah-stripe { display: none; }
+
+  /* ---------- TABLET (640px and up) ---------- */
+  @media (min-width: 640px) {
+    .ah-text { padding: 7rem 3rem 3rem; }
+    .ah-stat { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+  }
+
+  /* ---------- DESKTOP (1024px and up) ---------- */
+  @media (min-width: 1024px) {
+    .ah { min-height: 100svh; }
+
+    .ah-text {
+      width: 52%;
+      min-height: 100svh;               /* grows if content is taller, never clips */
+      display: flex; flex-direction: column; justify-content: center;
+      padding-top: clamp(5.5rem, 12vh, 7.5rem);
+      padding-bottom: clamp(1rem, 3vh, 2.5rem);
+      padding-left: clamp(2.5rem, 6vw, 8rem);
+      padding-right: clamp(2rem, 4vw, 5rem);
+    }
+
+    .ah-eyebrow { margin-bottom: clamp(.75rem, 2.5vh, 2rem); }
+    .ah-h1 {
+      font-size: clamp(2rem, min(3.6vw, 6.5vh), 4rem);
+      margin-bottom: clamp(.75rem, 2.2vh, 1.5rem);
+    }
+    .ah-p {
+      font-size: clamp(.85rem, min(1.1vw, 2.2vh), 1.1rem);
+      margin-bottom: clamp(.9rem, 3vh, 2.5rem);
+    }
+    .ah-stat { padding-top: clamp(.6rem, 2.2vh, 1.75rem); padding-bottom: clamp(.6rem, 2.2vh, 1.75rem); }
+    .ah-stat:nth-child(odd)  { padding-right: 2rem; }
+    .ah-stat:nth-child(even) { padding-left: 2rem; }
+    .ah-num { font-size: clamp(1.6rem, min(2.4vw, 4.4vh), 2.8rem); }
+
+    /* image: pinned to the section's right edge, always full section height */
+    .ah-img {
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 48%; height: auto;
+    }
+    /* desktop media query */
+.ah-img { top: 1rem; }   /* just clears the navbar, small gap */
+.ah-img img { object-position: center top; }
+    .ah-fade-side { background: linear-gradient(to right, #0b1b30 0%, rgba(11,27,48,.3) 40%, transparent 65%); }
+
+    .ah-stripe {
+      display: block; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(224,113,47,.4), transparent);
+    }
+    .ah-card {
+      display: block; position: absolute; bottom: 2rem; right: 6rem;  /* clear of WhatsApp button */
+      width: clamp(13rem, 17vw, 17rem);
+    }
+  }
+
+  /* very short desktop windows: tighten a little more */
+  @media (min-width: 1024px) and (max-height: 700px) {
+    .ah-card { display: none; }
+  }
+
+  /* ---------- BIGGER TEXT ON DESKTOP ---------- */
+@media (min-width: 1024px) {
+  .ah-eyebrow span { font-size: 12px; }
+  .ah-eyebrow i    { width: 2.5rem; }
+
+  .ah-h1 {
+    font-size: clamp(2.4rem, min(4.4vw, 8vh), 5.2rem);
+  }
+
+  .ah-p {
+    font-size: clamp(1rem, min(1.35vw, 2.6vh), 1.3rem);
+    max-width: 34rem;
+  }
+
+  .ah-num   { font-size: clamp(2rem, min(3vw, 5.4vh), 3.4rem); }
+  .ah-label { font-size: 12px; }
+}
+</style>
+
+<section id="hero-section" class="ah">
+
+  <!-- TEXT -->
+  <div class="ah-text">
+    <div class="ah-grid-lines"></div>
+
+    <div class="ah-inner">
+      <div class="ah-eyebrow"><i></i><span>About ThunderGits</span></div>
+
+      <h1 class="ah-h1">
+        One Team.<br />
+        One Goal.<br />
+        <span>Your Growth.</span>
+      </h1>
+
+      <p class="ah-p">
+        We are ThunderGits — not an agency you hire, but a Business Growth
+        Partner that stays. Strategy, technology, marketing, and SEO. One
+        team. Full accountability.
+      </p>
+
+      <div class="ah-stats">
+        <div class="ah-stat">
+          <p class="ah-num accent">100+</p>
+          <p class="ah-label">Businesses Partnered</p>
+        </div>
+        <div class="ah-stat">
+          <p class="ah-num">3+</p>
+          <p class="ah-label">Years of Growth</p>
+        </div>
+        <div class="ah-stat">
+          <p class="ah-num">15+</p>
+          <p class="ah-label">Industries Served</p>
+        </div>
+        <div class="ah-stat">
+          <p class="ah-num">95%</p>
+          <p class="ah-label">Partner Retention</p>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- RIGHT: Image — flush edge, full height -->
-      <div class="relative lg:flex-1 h-80 sm:h-128 lg:h-auto">
-        <!-- <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-        <source src="./assets/about-video.mp4" type="video/mp4" />
-      </video> -->
-        <img
-          src="./assets/why_us_home.png"
-          alt="About"
-          class="absolute inset-0 w-full h-full object-cover object-center"
-          loading="lazy"
-          decoding="async"
-          width="838"
-          height="838"
-        />
-        <!-- Left-edge gradient blending into bg -->
-        <div
-          class="absolute inset-0 pointer-events-none"
-          style="
-            background: linear-gradient(
-              to right,
-              #0b1b30 0%,
-              rgba(11, 27, 48, 0.3) 40%,
-              transparent 65%
-            );
-          "
-        ></div>
-        <!-- Bottom gradient -->
-        <div
-          class="absolute inset-0 pointer-events-none"
-          style="
-            background: linear-gradient(
-              to top,
-              rgba(11, 27, 48, 0.65) 0%,
-              transparent 45%
-            );
-          "
-        ></div>
-        <!-- Floating trust card -->
-        <div
-          class="absolute bottom-8 right-8 hidden lg:block"
-          style="min-width: 210px"
-        >
-          <div
-            class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15 shadow-2xl"
-          >
-            <div class="flex items-center gap-3 mb-3">
-              <div
-                class="w-9 h-9 rounded-full bg-[#E0712F] flex items-center justify-center shrink-0"
-              >
-                <i class="ri-shield-check-line text-white text-base"></i>
-              </div>
-              <div>
-                <p class="text-white text-xs font-bold leading-tight">
-                  Trusted Growth Partner
-                </p>
-                <p class="text-white/40 text-[10px] mt-0.5">Since 2022</p>
-              </div>
-            </div>
-            <div class="h-px bg-white/10 mb-3"></div>
-            <p class="text-white/55 text-[11px] leading-relaxed">
-              Building businesses that grow — not just websites that exist.
-            </p>
+  <!-- IMAGE -->
+  <div class="ah-img">
+    <img
+      src="./assets/why_us_home.png"
+      alt="About"
+      loading="lazy"
+      decoding="async"
+      width="838"
+      height="838"
+    />
+    <div class="ah-fade-side"></div>
+    <div class="ah-fade-bottom"></div>
+
+    <div class="ah-card">
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15 shadow-2xl">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-[#E0712F] flex items-center justify-center shrink-0">
+            <i class="ri-shield-check-line text-white text-base"></i>
+          </div>
+          <div>
+            <p class="text-white text-xs font-bold leading-tight">Trusted Growth Partner</p>
+            <p class="text-white/40 text-[10px] mt-0.5">Since 2022</p>
           </div>
         </div>
-        <!-- Ember accent stripe -->
-        <div
-          class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-[#E0712F]/40 to-transparent hidden lg:block"
-        ></div>
+        <div class="h-px bg-white/10 mb-3"></div>
+        <p class="text-white/55 text-[11px] leading-relaxed">
+          Building businesses that grow — not just websites that exist.
+        </p>
       </div>
-    </section>
+    </div>
+
+    <div class="ah-stripe"></div>
+  </div>
+
+</section>
 
     <script>
       function toggleMobileMenu() {
@@ -599,90 +608,108 @@
     </a>
   </div> -->
 
-    <section
-      id="identity"
-      class="w-full bg-white py-24 sm:py-32 overflow-hidden"
-    >
-      <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <!-- Left: Image with Pattern -->
-          <div class="relative group" data-aos="fade-right">
-            <div
-              class="relative z-10 w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
-            >
-              <img
-                src="./assets/about_hero.png"
-                alt="About ThunderGits"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
-                width="1024"
-                height="1536"
-              />
-            </div>
-            <!-- Decorative element -->
-            <div
-              class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-100 rounded-full -z-10 animate-pulse"
-            ></div>
-            <div
-              class="absolute -top-6 -left-6 w-24 h-24 border-4 border-blue-950 rounded-2xl -z-10"
-            ></div>
-          </div>
+  <style>
+  /* Tablet only (640px to 1023px) */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    #identity .identity-frame {
+      height: auto;
+      aspect-ratio: 4 / 5;      /* about 688x860 on a 768px tablet */
+    }
+    #identity .identity-img {
+      object-position: center 20%;
+    }
+  }
+</style>
+<section
+  id="identity"
+  class="w-full bg-white overflow-hidden"
+  style="padding-top:3rem; padding-bottom:3rem;"
+>
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          <!-- Right Content -->
-          <div class="flex flex-col items-start" data-aos="fade-left">
-            <span
-              class="text-xs tracking-[0.3em] font-black uppercase text-[#0B1B30] mb-4 bg-blue-50 px-4 py-2 rounded-full"
-            >
-              Our Identity
-            </span>
-            <h2
-              class="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-[#0B1B30] mb-8"
-            >
-              Ownership <br />
-              Over <br />
-              Outcomes
-            </h2>
-            <div
-              class="space-y-6 text-gray-700 text-lg leading-relaxed max-w-xl"
-            >
-              <p>
-                At
-                <span class="font-bold text-[#0B1B30]"
-                  >ThunderGits Consultancy Services Pvt Ltd</span
-                >, we don’t measure success by what we delivered. We measure it
-                by what grew. Every business we partner with gets one team —
-                accountable for the full picture, not just their piece of it.
-              </p>
-              <p>
-                Strategy, technology, visibility, and marketing — all working
-                together, under one roof, with one shared definition of success:
-                your growth.
-              </p>
-            </div>
-
-            <!-- Circular Button (Landing Page Style) -->
-            <a
-              href="#process"
-              class="mt-12 group relative w-32 h-32 flex items-center justify-center"
-            >
-              <div
-                class="absolute inset-0 border border-blue-950 rounded-full transition-all duration-500 group-hover:bg-[#0B1B30]"
-              ></div>
-              <span
-                class="relative z-10 text-xs font-black uppercase tracking-widest text-[#0B1B30] group-hover:text-white transition-colors duration-300"
-              >
-                Process ↗
-              </span>
-            </a>
-          </div>
+      <!-- Left: Image with Pattern -->
+      <div class="relative group" data-aos="fade-right">
+        <div
+          class="identity-frame relative z-10 w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
+        >
+          <img
+            src="./assets/about_hero.png"
+            alt="About ThunderGits"
+            class="identity-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+            decoding="async"
+            width="1024"
+            height="1536"
+          />
         </div>
+        <!-- Decorative element -->
+        <div
+          class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-100 rounded-full -z-10 animate-pulse"
+        ></div>
+        <div
+          class="absolute -top-6 -left-6 w-24 h-24 border-4 border-blue-950 rounded-2xl -z-10"
+        ></div>
       </div>
-    </section>
 
-    <section
-      class="w-full px-4 sm:px-20 bg-[#0B1B30] py-24 sm:py-32 overflow-hidden relative"
-    >
+      <!-- Right Content -->
+      <div class="flex flex-col items-start" data-aos="fade-left">
+        <span
+          class="text-xs tracking-[0.3em] font-black uppercase text-[#0B1B30] mb-4 bg-blue-50 px-4 py-2 rounded-full"
+        >
+          Our Identity
+        </span>
+        <h2
+          class="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-[#0B1B30] mb-8"
+        >
+          Ownership <br />
+          Over <br />
+          Outcomes
+        </h2>
+        <div
+          class="space-y-6 text-gray-700 text-lg leading-relaxed max-w-xl"
+        >
+          <p>
+            At
+            <span class="font-bold text-[#0B1B30]"
+              >ThunderGits Consultancy Services Pvt Ltd</span
+            >, we don’t measure success by what we delivered. We measure it
+            by what grew. Every business we partner with gets one team —
+            accountable for the full picture, not just their piece of it.
+          </p>
+          <p>
+            Strategy, technology, visibility, and marketing — all working
+            together, under one roof, with one shared definition of success:
+            your growth.
+          </p>
+        </div>
+
+        <!-- Circular Button (Landing Page Style) -->
+        <a
+          href="#process"
+          class="mt-12 group relative w-32 h-32 flex items-center justify-center"
+        >
+          <div
+            class="absolute inset-0 border border-blue-950 rounded-full transition-all duration-500 group-hover:bg-[#0B1B30]"
+          ></div>
+          <span
+            class="relative z-10 text-xs font-black uppercase tracking-widest text-[#0B1B30] group-hover:text-white transition-colors duration-300"
+          >
+            Process ↗
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- //// who we are -->
+   <section
+  class="w-full px-4 sm:px-20 bg-[#0B1B30] overflow-hidden relative"
+  style="padding-top:3rem; padding-bottom:3rem;"
+>
       <!-- Subtle gradient to break solid color -->
       <div
         class="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-transparent pointer-events-none"
@@ -754,7 +781,7 @@
     </section>
 
     <!-- Our Process Section -->
-    <section id="process" class="w-full bg-[#f8f9fa] relative py-24">
+ <section id="process" class="w-full bg-[#f8f9fa] relative" style="padding-top:3rem; padding-bottom:3rem;">
       <div class="max-w-7xl mx-auto px-6 sm:px-10 md:px-20">
         <!-- Section Heading -->
         <div class="mb-16 text-center">
@@ -1308,7 +1335,9 @@
       });
     </script>
 
-    <section class="w-full px-6 sm:px-10 md:px-20 py-20 bg-white">
+<!-- our values section -->
+
+   <section class="w-full px-6 sm:px-10 md:px-20 bg-white" style="padding-top:3rem; padding-bottom:3rem;">
       <div class="max-w-7xl mx-auto">
         <!-- Section Heading -->
         <div class="mb-16 text-left">

@@ -407,487 +407,384 @@
     </nav>
 
     <!-- Hero Section -->
-    <section
-      id="hero-section"
-      class="relative min-h-screen flex flex-col overflow-hidden"
-      style="background: #080d18"
-    >
-      <!-- FINE GRID LINES -->
-      <div
-        class="absolute inset-0 z-0 pointer-events-none"
-        style="
-          background-image:
-            linear-gradient(
-              to right,
-              rgba(255, 255, 255, 0.04) 1px,
-              transparent 1px
-            ),
-            linear-gradient(
-              to bottom,
-              rgba(255, 255, 255, 0.04) 1px,
-              transparent 1px
-            );
-          background-size: 50px 50px;
-        "
-      ></div>
+    <style>
+  /* ---------- MOBILE (below 640px): stack cards, no overlap ---------- */
+  @media (max-width: 639px) {
+    .cnt-wrap {
+      display: flex !important;
+      flex-direction: column;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
+      gap: 1rem;
+      width: 100% !important;
+      max-width: 360px;
+      min-height: 0 !important;
+      margin: 0 auto;
+    }
+    .cnt-wrap .cnt-a,
+    .cnt-wrap .cnt-b,
+    .cnt-wrap .cnt-c {
+      position: relative !important;
+      top: auto !important; right: auto !important;
+      bottom: auto !important; left: auto !important;
+      width: 100% !important;
+      transform: none !important;
+      animation: none !important;
+    }
+    .cnt-wrap .cnt-c { order: 1; }
+    .cnt-wrap .cnt-b { order: 2; }
+    .cnt-wrap .cnt-a { order: 3; }
+  }
 
-      <!-- INTERACTIVE HIGHLIGHT CELLS -->
-      <div id="hero-grid" class="absolute inset-0 z-1 flex flex-wrap"></div>
+  /* ---------- DESKTOP (1024px and up): fixed card layout ---------- */
+  @media (min-width: 1024px) {
+    .cnt-wrap {
+      display: block !important;
+      position: relative;
+      flex: none;
+      width: 440px !important;
+      height: 500px;
+      min-height: 500px !important;
+    }
+    .cnt-wrap .cnt-a {
+      position: absolute !important;
+      top: 0 !important; right: 0 !important;
+      bottom: auto !important; left: auto !important;
+      width: 190px !important;
+    }
+    .cnt-wrap .cnt-c {
+      position: absolute !important;
+      top: 120px !important; left: 0 !important;
+      width: 275px !important;
+      z-index: 10;
+    }
+    .cnt-wrap .cnt-b {
+      position: absolute !important;
+      bottom: 0 !important; right: 0 !important;
+      top: auto !important; left: auto !important;
+      width: 195px !important;
+    }
+  }
 
-      <!-- EMBER GLOW — top-right -->
-      <div
-        class="absolute top-0 right-0 pointer-events-none glow-pulse"
-        style="
-          width: 700px;
-          height: 700px;
-          background: radial-gradient(
-            ellipse at 100% 0%,
-            rgba(224, 113, 47, 0.18) 0%,
-            rgba(224, 113, 47, 0.06) 35%,
-            transparent 65%
-          );
-        "
-      ></div>
+  /* smaller laptops: scale the card group so it fits its column */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .cnt-wrap {
+      transform: scale(0.85);
+      margin-left: -33px;
+      margin-right: -33px;
+    }
+  }
+</style>
 
-      <!-- HARBOR BLUE GLOW — bottom-left -->
-      <div
-        class="absolute bottom-0 left-0 pointer-events-none"
-        style="
-          width: 600px;
-          height: 500px;
-          background: radial-gradient(
-            ellipse at 0% 100%,
-            rgba(30, 82, 134, 0.22) 0%,
-            rgba(11, 27, 48, 0.12) 40%,
-            transparent 70%
-          );
-        "
-      ></div>
+<section
+  id="hero-section"
+  class="relative min-h-screen flex flex-col overflow-hidden"
+  style="background: #080d18"
+>
+  <!-- FINE GRID LINES -->
+  <div
+    class="absolute inset-0 z-0 pointer-events-none"
+    style="
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+    "
+  ></div>
 
-      <!-- CONTENT -->
-      <div class="relative z-10 flex-1 flex items-center">
-        <div
-          class="max-w-7xl mx-auto px-6 lg:px-14 w-full pt-32 pb-16 lg:pt-28 lg:pb-12"
-        >
-          <div
-            class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-0 justify-between"
+  <!-- INTERACTIVE HIGHLIGHT CELLS -->
+  <div id="hero-grid" class="absolute inset-0 z-1 flex flex-wrap"></div>
+
+  <!-- EMBER GLOW — top-right -->
+  <div
+    class="absolute top-0 right-0 pointer-events-none glow-pulse"
+    style="
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(
+        ellipse at 100% 0%,
+        rgba(224, 113, 47, 0.18) 0%,
+        rgba(224, 113, 47, 0.06) 35%,
+        transparent 65%
+      );
+    "
+  ></div>
+
+  <!-- HARBOR BLUE GLOW — bottom-left -->
+  <div
+    class="absolute bottom-0 left-0 pointer-events-none"
+    style="
+      width: 600px;
+      height: 500px;
+      background: radial-gradient(
+        ellipse at 0% 100%,
+        rgba(30, 82, 134, 0.22) 0%,
+        rgba(11, 27, 48, 0.12) 40%,
+        transparent 70%
+      );
+    "
+  ></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 flex-1 flex items-center">
+    <div class="max-w-7xl mx-auto px-6 lg:px-14 w-full pt-32 pb-16 lg:pt-28 lg:pb-12">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-0 justify-between">
+
+        <!-- LEFT -->
+        <div class="lg:w-[52%] shrink-0">
+          <!-- Eyebrow -->
+          <div class="flex items-center gap-3 mb-8">
+            <span class="w-8 h-px bg-accent"></span>
+            <span class="text-accent text-[10px] tracking-[0.4em] uppercase font-black">Contact Us</span>
+          </div>
+
+          <!-- Heading -->
+          <h1
+            style="
+              font-family: 'Manrope', sans-serif;
+              font-size: clamp(2.6rem, 5vw, 4.8rem);
+              font-weight: 800;
+              line-height: 1.05;
+              letter-spacing: -0.03em;
+              color: #ffffff;
+              margin-bottom: 1.75rem;
+            "
           >
-            <!-- LEFT -->
-            <div class="lg:w-[52%] shrink-0">
-              <!-- Eyebrow -->
-              <div class="flex items-center gap-3 mb-8">
-                <span class="w-8 h-px bg-accent"></span>
-                <span
-                  class="text-accent text-[10px] tracking-[0.4em] uppercase font-black"
-                  >Contact Us</span
-                >
+            Let’s Start<br />
+            Something<br />
+            <span style="color: #e0712f">Real.</span>
+          </h1>
+
+          <!-- Subtext -->
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.55);
+              font-size: 1.05rem;
+              line-height: 1.75;
+              max-width: 440px;
+              margin-bottom: 2.5rem;
+            "
+          >
+            Every conversation starts with us listening. Tell us where you
+            are — we’ll help you get where you want to go.
+          </p>
+
+          <!-- Stats row -->
+          <div class="flex items-center gap-8 mb-10 flex-wrap">
+            <div class="border-r border-white/10 pr-8">
+              <div style="font-family: 'Manrope', sans-serif; font-size: 1.75rem; font-weight: 800; color: #e0712f;">3</div>
+              <div style="font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); font-weight: 700;">Offices</div>
+            </div>
+            <div class="border-r border-white/10 pr-8">
+              <div style="font-family: 'Manrope', sans-serif; font-size: 1.75rem; font-weight: 800; color: #ffffff;">&lt;24hrs</div>
+              <div style="font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); font-weight: 700;">Response</div>
+            </div>
+            <div>
+              <div style="font-family: 'Manrope', sans-serif; font-size: 1.75rem; font-weight: 800; color: #ffffff;">100+</div>
+              <div style="font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); font-weight: 700;">Clients Served</div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contact-form"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 14px 32px;
+                background: #e0712f;
+                color: #fff;
+                font-size: 0.65rem;
+                font-weight: 900;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                border-radius: 9999px;
+                transition: background 0.25s, transform 0.2s;
+              "
+              onmouseover="this.style.background='#C2521F'"
+              onmouseout="this.style.background='#E0712F'"
+            >
+              Send a Message
+              <i class="ri-arrow-right-up-line text-base"></i>
+            </a>
+            <a
+              href="#faq"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 14px 32px;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.65rem;
+                font-weight: 900;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                border-radius: 9999px;
+                transition: border-color 0.25s, color 0.25s;
+              "
+            >
+              View FAQs <i class="ri-question-line text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Floating Contact Cards -->
+        <div
+          class="cnt-wrap relative lg:w-[42%] shrink-0 flex items-center justify-center"
+          style="min-height: 400px"
+        >
+          <!-- Back card: 3 Offices -->
+          <div
+            class="cnt-a absolute top-4 right-4 lg:right-0 bg-[#0D1A2D] border border-white/8 rounded-2xl p-5 cnt-float-a"
+            style="width: 190px"
+          >
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-7 h-7 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                <i class="ri-map-pin-line text-xs text-accent"></i>
               </div>
-
-              <!-- Heading -->
-              <h1
-                style="
-                  font-family: ’Manrope’, sans-serif;
-                  font-size: clamp(2.6rem, 5vw, 4.8rem);
-                  font-weight: 800;
-                  line-height: 1.05;
-                  letter-spacing: -0.03em;
-                  color: #ffffff;
-                  margin-bottom: 1.75rem;
-                "
-              >
-                Let’s Start<br />
-                Something<br />
-                <span style="color: #e0712f">Real.</span>
-              </h1>
-
-              <!-- Subtext -->
-              <p
-                style="
-                  color: rgba(255, 255, 255, 0.55);
-                  font-size: 1.05rem;
-                  line-height: 1.75;
-                  max-width: 440px;
-                  margin-bottom: 2.5rem;
-                "
-              >
-                Every conversation starts with us listening. Tell us where you
-                are — we’ll help you get where you want to go.
-              </p>
-
-              <!-- Stats row -->
-              <div class="flex items-center gap-8 mb-10 flex-wrap">
-                <div class="border-r border-white/10 pr-8">
-                  <div
-                    style="
-                      font-family: ’Manrope’, sans-serif;
-                      font-size: 1.75rem;
-                      font-weight: 800;
-                      color: #e0712f;
-                    "
-                  >
-                    3
-                  </div>
-                  <div
-                    style="
-                      font-size: 0.62rem;
-                      letter-spacing: 0.22em;
-                      text-transform: uppercase;
-                      color: rgba(255, 255, 255, 0.4);
-                      font-weight: 700;
-                    "
-                  >
-                    Offices
-                  </div>
-                </div>
-                <div class="border-r border-white/10 pr-8">
-                  <div
-                    style="
-                      font-family: ’Manrope’, sans-serif;
-                      font-size: 1.75rem;
-                      font-weight: 800;
-                      color: #ffffff;
-                    "
-                  >
-                    &lt;24hrs
-                  </div>
-                  <div
-                    style="
-                      font-size: 0.62rem;
-                      letter-spacing: 0.22em;
-                      text-transform: uppercase;
-                      color: rgba(255, 255, 255, 0.4);
-                      font-weight: 700;
-                    "
-                  >
-                    Response
-                  </div>
-                </div>
-                <div>
-                  <div
-                    style="
-                      font-family: ’Manrope’, sans-serif;
-                      font-size: 1.75rem;
-                      font-weight: 800;
-                      color: #ffffff;
-                    "
-                  >
-                    100+
-                  </div>
-                  <div
-                    style="
-                      font-size: 0.62rem;
-                      letter-spacing: 0.22em;
-                      text-transform: uppercase;
-                      color: rgba(255, 255, 255, 0.4);
-                      font-weight: 700;
-                    "
-                  >
-                    Clients Served
-                  </div>
-                </div>
+              <span style="font-size: 0.58rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45);">Our Offices</span>
+            </div>
+            <div class="space-y-2.5">
+              <div class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                <span style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.65);">Mumbai</span>
               </div>
-
-              <!-- CTAs -->
-              <div class="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#contact-form"
-                  style="
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 10px;
-                    padding: 14px 32px;
-                    background: #e0712f;
-                    color: #fff;
-                    font-size: 0.65rem;
-                    font-weight: 900;
-                    letter-spacing: 0.25em;
-                    text-transform: uppercase;
-                    border-radius: 9999px;
-                    transition:
-                      background 0.25s,
-                      transform 0.2s;
-                  "
-                  onmouseover="this.style.background='#C2521F'"
-                  onmouseout="this.style.background='#E0712F'"
-                >
-                  Send a Message
-                  <i class="ri-arrow-right-up-line text-base"></i>
-                </a>
-                <a
-                  href="#faq"
-                  style="
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 10px;
-                    padding: 14px 32px;
-                    border: 1px solid rgba(255, 255, 255, 0.18);
-                    color: rgba(255, 255, 255, 0.7);
-                    font-size: 0.65rem;
-                    font-weight: 900;
-                    letter-spacing: 0.25em;
-                    text-transform: uppercase;
-                    border-radius: 9999px;
-                    transition:
-                      border-color 0.25s,
-                      color 0.25s;
-                  "
-                >
-                  View FAQs <i class="ri-question-line text-base"></i>
-                </a>
+              <div class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                <span style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.65);">Bangalore</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+                <span style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.65);">Bihar</span>
               </div>
             </div>
+          </div>
 
-            <!-- RIGHT: Floating Contact Cards -->
-            <div
-              class="relative lg:w-[42%] shrink-0 flex items-center justify-center"
-              style="min-height: 400px"
-            >
-              <!-- Back card: 3 Offices -->
-              <div
-                class="absolute top-4 right-4 lg:right-0 bg-[#0D1A2D] border border-white/8 rounded-2xl p-5 cnt-float-a"
-                style="width: 190px"
-              >
-                <div class="flex items-center gap-2 mb-4">
-                  <div
-                    class="w-7 h-7 rounded-lg bg-accent/10 flex items-center justify-center shrink-0"
-                  >
-                    <i class="ri-map-pin-line text-xs text-accent"></i>
-                  </div>
-                  <span
-                    style="
-                      font-size: 0.58rem;
-                      font-weight: 800;
-                      letter-spacing: 0.22em;
-                      text-transform: uppercase;
-                      color: rgba(255, 255, 255, 0.45);
-                    "
-                    >Our Offices</span
-                  >
-                </div>
-                <div class="space-y-2.5">
-                  <div class="flex items-center gap-2.5">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"
-                    ></span>
-                    <span
-                      style="
-                        font-size: 0.8rem;
-                        color: rgba(255, 255, 255, 0.65);
-                      "
-                      >Mumbai</span
-                    >
-                  </div>
-                  <div class="flex items-center gap-2.5">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"
-                    ></span>
-                    <span
-                      style="
-                        font-size: 0.8rem;
-                        color: rgba(255, 255, 255, 0.65);
-                      "
-                      >Bangalore</span
-                    >
-                  </div>
-                  <div class="flex items-center gap-2.5">
-                    <span
-                      class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"
-                    ></span>
-                    <span
-                      style="
-                        font-size: 0.8rem;
-                        color: rgba(255, 255, 255, 0.65);
-                      "
-                      >Bihar</span
-                    >
-                  </div>
-                </div>
-              </div>
+          <!-- Mid card: Response time -->
+          <div
+            class="cnt-b absolute bottom-8 left-0 lg:-left-4 bg-[#0D1A2D] border border-white/8 rounded-2xl p-5 cnt-float-b"
+            style="width: 195px"
+          >
+            <div class="flex items-center gap-2 mb-3">
+              <span
+                class="w-2 h-2 rounded-full bg-green-400 shrink-0"
+                style="animation: blink-dot 2s ease-in-out infinite"
+              ></span>
+              <span style="font-size: 0.58rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45);">Response Time</span>
+            </div>
+            <div style="font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; line-height: 1;">
+              &lt;24hrs
+            </div>
+            <div style="font-size: 0.68rem; color: rgba(255, 255, 255, 0.35); margin-top: 4px;">
+              We reply fast. Always.
+            </div>
+          </div>
 
-              <!-- Mid card: Response time -->
-              <div
-                class="absolute bottom-8 left-0 lg:-left-4 bg-[#0D1A2D] border border-white/8 rounded-2xl p-5 cnt-float-b"
-                style="width: 195px"
-              >
-                <div class="flex items-center gap-2 mb-3">
-                  <span
-                    class="w-2 h-2 rounded-full bg-green-400 shrink-0"
-                    style="animation: blink-dot 2s ease-in-out infinite"
-                  ></span>
-                  <span
-                    style="
-                      font-size: 0.58rem;
-                      font-weight: 800;
-                      letter-spacing: 0.22em;
-                      text-transform: uppercase;
-                      color: rgba(255, 255, 255, 0.45);
-                    "
-                    >Response Time</span
-                  >
-                </div>
+          <!-- Front card: Contact info -->
+          <div
+            class="cnt-c relative z-10 bg-[#0D1A2D] rounded-2xl p-6 cnt-float-c"
+            style="
+              width: 275px;
+              border-top: 2px solid #e0712f;
+              border-left: 1px solid rgba(255, 255, 255, 0.08);
+              border-right: 1px solid rgba(255, 255, 255, 0.08);
+              border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            "
+          >
+            <div class="mb-5">
+              <span style="font-size: 0.58rem; font-weight: 800; letter-spacing: 0.3em; text-transform: uppercase; color: #e0712f;">Reach Us Directly</span>
+              <h3 style="font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; margin-top: 4px;">
+                We’re here to help you grow.
+              </h3>
+            </div>
+            <div class="space-y-3">
+              <a href="tel:+918757807372" class="flex items-center gap-3">
                 <div
-                  style="
-                    font-family: ’Manrope’, sans-serif;
-                    font-size: 2rem;
-                    font-weight: 800;
-                    color: #fff;
-                    line-height: 1;
-                  "
+                  class="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
+                  style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);"
                 >
-                  &lt;24hrs
+                  <i class="ri-phone-line text-sm text-accent"></i>
                 </div>
+                <span style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6)">+91-8757807372</span>
+              </a>
+              <a href="mailto:info@thundergits.com" class="flex items-center gap-3">
                 <div
-                  style="
-                    font-size: 0.68rem;
-                    color: rgba(255, 255, 255, 0.35);
-                    margin-top: 4px;
-                  "
+                  class="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
+                  style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);"
                 >
-                  We reply fast. Always.
+                  <i class="ri-mail-line text-sm text-accent"></i>
                 </div>
-              </div>
-
-              <!-- Front card: Contact info -->
-              <div
-                class="relative z-10 bg-[#0D1A2D] rounded-2xl p-6 cnt-float-c"
-                style="
-                  width: 275px;
-                  border-top: 2px solid #e0712f;
-                  border-left: 1px solid rgba(255, 255, 255, 0.08);
-                  border-right: 1px solid rgba(255, 255, 255, 0.08);
-                  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-                "
-              >
-                <div class="mb-5">
-                  <span
-                    style="
-                      font-size: 0.58rem;
-                      font-weight: 800;
-                      letter-spacing: 0.3em;
-                      text-transform: uppercase;
-                      color: #e0712f;
-                    "
-                    >Reach Us Directly</span
-                  >
-                  <h3
-                    style="
-                      font-family: ’Manrope’, sans-serif;
-                      font-size: 1rem;
-                      font-weight: 700;
-                      color: #fff;
-                      margin-top: 4px;
-                    "
-                  >
-                    We’re here to help you grow.
-                  </h3>
+                <span style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6)">info@thundergits.com</span>
+              </a>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
+                  style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);"
+                >
+                  <i class="ri-time-line text-sm text-accent"></i>
                 </div>
-                <div class="space-y-3">
-                  <a href="tel:+918757807372" class="flex items-center gap-3">
-                    <div
-                      class="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
-                      style="
-                        background: rgba(255, 255, 255, 0.04);
-                        border: 1px solid rgba(255, 255, 255, 0.08);
-                      "
-                    >
-                      <i class="ri-phone-line text-sm text-accent"></i>
-                    </div>
-                    <span
-                      style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6)"
-                      >+91-8757807372</span
-                    >
-                  </a>
-                  <a
-                    href="mailto:info@thundergits.com"
-                    class="flex items-center gap-3"
-                  >
-                    <div
-                      class="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
-                      style="
-                        background: rgba(255, 255, 255, 0.04);
-                        border: 1px solid rgba(255, 255, 255, 0.08);
-                      "
-                    >
-                      <i class="ri-mail-line text-sm text-accent"></i>
-                    </div>
-                    <span
-                      style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6)"
-                      >info@thundergits.com</span
-                    >
-                  </a>
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-8 h-8 rounded-lg shrink-0 flex items-center justify-center"
-                      style="
-                        background: rgba(255, 255, 255, 0.04);
-                        border: 1px solid rgba(255, 255, 255, 0.08);
-                      "
-                    >
-                      <i class="ri-time-line text-sm text-accent"></i>
-                    </div>
-                    <span
-                      style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6)"
-                      >Mon–Sat · 9AM to 7PM IST</span
-                    >
-                  </div>
-                </div>
+                <span style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6)">Mon–Sat · 9AM to 7PM IST</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- BOTTOM MARQUEE -->
-      <div
-        class="relative z-10 border-t border-white/8 py-5 overflow-hidden"
-        style="background: rgba(255, 255, 255, 0.02)"
-      >
-        <div class="flex cnt-marquee-track whitespace-nowrap select-none">
-          <span
-            class="inline-flex items-center gap-6 px-6 text-[10px] font-black uppercase tracking-[0.35em]"
-            style="color: rgba(255, 255, 255, 0.25)"
-          >
-            Send a Message
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Email Us
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Call Now
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Mumbai Office
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Bangalore
-            Office <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Bihar
-            Office <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Start a
-            Conversation
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Book a Call
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Get in Touch
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Let’s Grow
-            Together <span style="color: rgba(224, 113, 47, 0.6)">◆</span> FAQ
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Response
-            &lt;24hrs <span style="color: rgba(224, 113, 47, 0.6)">◆</span>
-          </span>
-          <span
-            class="inline-flex items-center gap-6 px-6 text-[10px] font-black uppercase tracking-[0.35em]"
-            style="color: rgba(255, 255, 255, 0.25)"
-            aria-hidden="true"
-          >
-            Send a Message
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Email Us
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Call Now
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Mumbai Office
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Bangalore
-            Office <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Bihar
-            Office <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Start a
-            Conversation
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Book a Call
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Get in Touch
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Let’s Grow
-            Together <span style="color: rgba(224, 113, 47, 0.6)">◆</span> FAQ
-            <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Response
-            &lt;24hrs <span style="color: rgba(224, 113, 47, 0.6)">◆</span>
-          </span>
-        </div>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <!-- BOTTOM MARQUEE -->
+  <div
+    class="relative z-10 border-t border-white/8 py-5 overflow-hidden"
+    style="background: rgba(255, 255, 255, 0.02)"
+  >
+    <div class="flex cnt-marquee-track whitespace-nowrap select-none">
+      <span
+        class="inline-flex items-center gap-6 px-6 text-[10px] font-black uppercase tracking-[0.35em]"
+        style="color: rgba(255, 255, 255, 0.25)"
+      >
+        Send a Message
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Email Us
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Call Now
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Mumbai Office
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Bangalore Office
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Bihar Office
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Start a Conversation
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Book a Call
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Get in Touch
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Let’s Grow Together
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> FAQ
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Response &lt;24hrs
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span>
+      </span>
+      <span
+        class="inline-flex items-center gap-6 px-6 text-[10px] font-black uppercase tracking-[0.35em]"
+        style="color: rgba(255, 255, 255, 0.25)"
+        aria-hidden="true"
+      >
+        Send a Message
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Email Us
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Call Now
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Mumbai Office
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Bangalore Office
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Bihar Office
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Start a Conversation
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Book a Call
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Get in Touch
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Let’s Grow Together
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> FAQ
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span> Response &lt;24hrs
+        <span style="color: rgba(224, 113, 47, 0.6)">◆</span>
+      </span>
+    </div>
+  </div>
+</section>
 
     <!-- Our Presence Section — LIGHT -->
-    <section class="relative bg-white py-24">
+   <section class="relative bg-white" style="padding-top:3rem; padding-bottom:3rem;">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-20" data-aos="fade-up">
           <div class="flex items-center justify-center gap-3 mb-4">
@@ -1009,132 +906,169 @@
     </section>
 
     <!-- Contact Form Section — DARK -->
-    <section
-      id="contact-form"
-      class="relative py-24"
-      style="background: #0b1b30"
-    >
-      <div class="max-w-4xl mx-auto px-6">
-        <div data-aos="fade-up">
-          <div
-            class="backdrop-blur-xl border border-white/10 rounded-[3rem] p-10 sm:p-20 relative overflow-hidden"
-            style="background: rgba(255, 255, 255, 0.03)"
-          >
-            <div
-              class="absolute top-0 right-0 w-96 h-96 bg-accent/5 blur-[120px] -mr-48 -mt-48"
-            ></div>
+  <style>
+  /* ---------- Contact form: fluid sizing ---------- */
+  #contact-form { padding-top: 3rem; padding-bottom: 3rem; }
 
-            <div class="text-center mb-16 relative z-10">
-              <div class="flex items-center justify-center gap-3 mb-5">
-                <span class="w-8 h-px bg-accent"></span>
-                <span
-                  class="text-accent text-[10px] tracking-[0.4em] uppercase font-black"
-                  >Get in Touch</span
-                >
-                <span class="w-8 h-px bg-accent"></span>
-              </div>
-              <h2
-                class="text-4xl sm:text-5xl font-bold mb-6 text-white"
-                style="font-family: &quot;Manrope&quot;, sans-serif"
-              >
-                Send a Message
-              </h2>
-              <p class="text-gray-400 max-w-lg mx-auto">
-                Have a question, need support, or want to collaborate? Fill out
-                the form below and we'll get back to you within 24 hours.
-              </p>
-            </div>
+  #contact-form .cf-wrap { max-width: 56rem; margin: 0 auto; padding: 0 1rem; }
 
-            <form id="contactForm" class="space-y-10 relative z-10">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                <div class="space-y-4">
-                  <label
-                    for="name"
-                    class="text-[10px] font-bold uppercase tracking-widest text-accent px-2"
-                    >Full Name</label
-                  >
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    class="w-full bg-white/5 border border-white/10 focus:border-accent focus:bg-white/10 outline-none text-white py-5 px-8 transition-all duration-300 rounded-2xl"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div class="space-y-4">
-                  <label
-                    for="phone"
-                    class="text-[10px] font-bold uppercase tracking-widest text-accent px-2"
-                    >Phone Number</label
-                  >
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    class="w-full bg-white/5 border border-white/10 focus:border-accent focus:bg-white/10 outline-none text-white py-5 px-8 transition-all duration-300 rounded-2xl"
-                    placeholder="+91 98765 43210"
-                  />
-                </div>
-              </div>
+  #contact-form .cf-card {
+    border-radius: clamp(1.5rem, 5vw, 3rem);
+    padding: clamp(1.25rem, 5vw, 4rem) clamp(1.25rem, 6vw, 5rem);
+  }
 
-              <div class="space-y-4">
-                <label
-                  for="email"
-                  class="text-[10px] font-bold uppercase tracking-widest text-accent px-2"
-                  >Email Address</label
-                >
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="w-full bg-white/5 border border-white/10 focus:border-accent focus:bg-white/10 outline-none text-white py-5 px-8 transition-all duration-300 rounded-2xl"
-                  placeholder="john@example.com"
-                />
-              </div>
+  #contact-form .cf-head { margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+  #contact-form .cf-title { font-size: clamp(1.75rem, 6vw, 3rem); line-height: 1.15; margin-bottom: 1rem; }
+  #contact-form .cf-sub { font-size: clamp(.875rem, 2.2vw, 1rem); }
 
-              <div class="space-y-4">
-                <label
-                  for="message"
-                  class="text-[10px] font-bold uppercase tracking-widest text-accent px-2"
-                  >Your Message</label
-                >
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  class="w-full bg-white/5 border border-white/10 focus:border-accent focus:bg-white/10 outline-none h-48 text-white py-5 px-8 resize-none transition-all duration-300 rounded-2xl"
-                  placeholder="Tell us about your project or inquiry..."
-                ></textarea>
-              </div>
+  #contact-form form { display: flex; flex-direction: column; gap: clamp(1.1rem, 3vw, 2rem); }
 
-              <div class="text-center">
-                <button
-                  type="submit"
-                  id="submitBtn"
-                  class="group relative inline-flex items-center gap-4 px-14 py-6 bg-primary hover:bg-accent text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full transition-all duration-300 shadow-2xl shadow-accent/30 hover:scale-105 active:scale-95 disabled:opacity-50"
-                >
-                  <span id="submitText">Send Message</span>
-                  <i
-                    class="ri-arrow-right-line text-lg group-hover:translate-x-2 transition-transform"
-                  ></i>
-                  <span id="loadingText" class="hidden items-center gap-2">
-                    <i class="ri-loader-4-line animate-spin"></i> Processing...
-                  </span>
-                </button>
-              </div>
+  #contact-form .cf-row { display: grid; grid-template-columns: 1fr; gap: clamp(1.1rem, 3vw, 2rem); }
+  @media (min-width: 640px) {
+    #contact-form .cf-row { grid-template-columns: 1fr 1fr; }
+  }
 
-              <div
-                id="formFeedback"
-                class="hidden mt-10 p-6 rounded-3xl text-xs font-bold uppercase tracking-[0.2em] border text-center"
-              ></div>
-            </form>
+  #contact-form .cf-field { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
+  #contact-form .cf-field label { display: block; padding: 0 .25rem; }
+
+  #contact-form .cf-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: clamp(.8rem, 2vw, 1.2rem) clamp(1rem, 3vw, 1.75rem);
+    font-size: 16px;            /* prevents zoom on iPhone */
+    border-radius: 1rem;
+  }
+  #contact-form textarea.cf-input { height: clamp(8rem, 22vw, 11rem); resize: none; }
+
+  #contact-form .cf-btn {
+    padding: clamp(.9rem, 2.2vw, 1.4rem) clamp(1.5rem, 5vw, 3.5rem);
+    width: 100%;
+    justify-content: center;
+  }
+  @media (min-width: 640px) {
+    #contact-form .cf-btn { width: auto; }
+  }
+
+  #contact-form #formFeedback { margin-top: 1rem; padding: 1rem; word-break: break-word; }
+
+  /* validation messages */
+  #contact-form .cf-err { color: #f87171; font-size: .75rem; min-height: 1rem; padding: 0 .25rem; }
+  #contact-form .cf-input.is-invalid { border-color: #f87171; }
+</style>
+
+<section id="contact-form" class="relative" style="background: #0b1b30">
+  <div class="cf-wrap">
+    <div data-aos="fade-up">
+      <div
+        class="cf-card backdrop-blur-xl border border-white/10 relative overflow-hidden"
+        style="background: rgba(255, 255, 255, 0.03)"
+      >
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-accent/5 blur-[120px] -mr-48 -mt-48"
+        ></div>
+
+        <div class="cf-head text-center relative z-10">
+          <div class="flex items-center justify-center gap-3 mb-5">
+            <span class="w-8 h-px bg-accent"></span>
+            <span class="text-accent text-[10px] tracking-[0.4em] uppercase font-black">Get in Touch</span>
+            <span class="w-8 h-px bg-accent"></span>
           </div>
+          <h2
+            class="cf-title font-bold text-white"
+            style="font-family: 'Manrope', sans-serif"
+          >
+            Send a Message
+          </h2>
+          <p class="cf-sub text-gray-400 max-w-lg mx-auto">
+            Have a question, need support, or want to collaborate? Fill out
+            the form below and we'll get back to you within 24 hours.
+          </p>
         </div>
-      </div>
-    </section>
 
+        <form id="contactForm" class="relative z-10" novalidate>
+          <div class="cf-row">
+            <div class="cf-field">
+              <label for="name" class="text-[10px] font-bold uppercase tracking-widest text-accent">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                maxlength="50"
+                autocomplete="name"
+                class="cf-input bg-white/5 border border-white/10 focus:border-accent focus:bg-white/10 outline-none text-white transition-all duration-300"
+                placeholder="John Doe"
+              />
+              <small class="cf-err" data-for="name"></small>
+            </div>
+            <div class="cf-field">
+              <label for="phone" class="text-[10px] font-bold uppercase tracking-widest text-accent">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                inputmode="numeric"
+                maxlength="10"
+                autocomplete="tel-national"
+                class="cf-input bg-white/5 border border-white/10 focus:border-accent focus:bg-white/10 outline-none text-white transition-all duration-300"
+                placeholder="9876543210"
+              />
+              <small class="cf-err" data-for="phone"></small>
+            </div>
+          </div>
+
+          <div class="cf-field">
+            <label for="email" class="text-[10px] font-bold uppercase tracking-widest text-accent">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              maxlength="100"
+              autocomplete="email"
+              class="cf-input bg-white/5 border border-white/10 focus:border-accent focus:bg-white/10 outline-none text-white transition-all duration-300"
+              placeholder="john@example.com"
+            />
+            <small class="cf-err" data-for="email"></small>
+          </div>
+
+          <div class="cf-field">
+            <label for="message" class="text-[10px] font-bold uppercase tracking-widest text-accent">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              maxlength="1000"
+              class="cf-input bg-white/5 border border-white/10 focus:border-accent focus:bg-white/10 outline-none text-white transition-all duration-300"
+              placeholder="Tell us about your project or inquiry..."
+            ></textarea>
+            <small class="cf-err" data-for="message"></small>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              id="submitBtn"
+              class="cf-btn group relative inline-flex items-center gap-4 bg-primary hover:bg-accent text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full transition-all duration-300 shadow-2xl shadow-accent/30 hover:scale-105 active:scale-95 disabled:opacity-50"
+            >
+              <span id="submitText">Send Message</span>
+              <i class="ri-arrow-right-line text-lg group-hover:translate-x-2 transition-transform"></i>
+              <span id="loadingText" class="hidden items-center gap-2">
+                <i class="ri-loader-4-line animate-spin"></i> Processing...
+              </span>
+            </button>
+          </div>
+
+          <div
+            id="formFeedback"
+            class="hidden rounded-3xl text-xs font-bold uppercase tracking-[0.2em] border text-center"
+          ></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
     <!-- FAQ Section — LIGHT -->
     <section id="faq" class="relative bg-white py-24">
       <div class="max-w-4xl mx-auto px-6">
@@ -1299,7 +1233,7 @@
     </section>
 
     <!-- CTA Section — DARK -->
-    <section class="py-28 relative overflow-hidden" style="background: #0b1b30">
+    <section class="py-16 relative overflow-hidden" style="background: #0b1b30">
       <div
         class="absolute inset-0 pointer-events-none"
         style="
@@ -1592,8 +1526,83 @@
         const loadingText = document.getElementById("loadingText");
         const formFeedback = document.getElementById("formFeedback");
 
+        // ---- validation helpers ----
+        const rules = {
+          name(v) {
+            if (!v) return "Please enter your name.";
+            if (v.length < 2) return "Name must be at least 2 letters.";
+            if (!/^[\p{L}][\p{L} .'-]*$/u.test(v))
+              return "Name can contain only letters and spaces.";
+            return "";
+          },
+          phone(v) {
+            if (!v) return "Please enter your phone number.";
+            if (!/^\d{10}$/.test(v)) return "Phone number must be exactly 10 digits.";
+            if (!/^[6-9]/.test(v))
+              return "Enter a valid mobile number (starts with 6, 7, 8 or 9).";
+            return "";
+          },
+          email(v) {
+            if (!v) return "Please enter your email.";
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))
+              return "Enter a valid email address.";
+            return "";
+          },
+          message(v) {
+            if (!v) return "Please write a message.";
+            if (v.length < 10) return "Message must be at least 10 characters.";
+            return "";
+          },
+        };
+        const showErr = (id, msg) => {
+          const input = document.getElementById(id);
+          const err = contactForm.querySelector('[data-for="' + id + '"]');
+          if (err) err.textContent = msg;
+          input.classList.toggle("is-invalid", !!msg);
+        };
+        const check = (id) => {
+          const msg = rules[id](document.getElementById(id).value.trim());
+          showErr(id, msg);
+          return !msg;
+        };
+        const esc = (s) =>
+          String(s).replace(
+            /[&<>"']/g,
+            (c) =>
+              ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;",
+              })[c],
+          );
+
+        // live filtering while typing
+        document.getElementById("phone").addEventListener("input", (e) => {
+          e.target.value = e.target.value.replace(/\D/g, "").slice(0, 10);
+        });
+        document.getElementById("name").addEventListener("input", (e) => {
+          e.target.value = e.target.value.replace(/[^\p{L} .'-]/gu, "");
+        });
+        Object.keys(rules).forEach((id) => {
+          const el = document.getElementById(id);
+          el.addEventListener("blur", () => check(id));
+          el.addEventListener("input", () => {
+            if (el.classList.contains("is-invalid")) check(id);
+          });
+        });
+
         contactForm.addEventListener("submit", async function (e) {
           e.preventDefault();
+
+          const ok = Object.keys(rules).map(check);
+          if (ok.includes(false)) {
+            const bad = contactForm.querySelector(".is-invalid");
+            if (bad) bad.focus();
+            return;
+          }
+
           submitBtn.disabled = true;
           submitText.classList.add("hidden");
           loadingText.classList.remove("hidden");
@@ -1639,11 +1648,11 @@
           try {
             const emailHtml = `
             <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${data.name}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Phone:</strong> ${data.phone || "N/A"}</p>
+            <p><strong>Name:</strong> ${esc(data.name)}</p>
+            <p><strong>Email:</strong> ${esc(data.email)}</p>
+            <p><strong>Phone:</strong> ${esc(data.phone || "N/A")}</p>
             <p><strong>Message:</strong></p>
-            <p>${data.message}</p>
+            <p>${esc(data.message).replace(/\n/g, "<br>")}</p>
           `;
 
             const response = await fetch(

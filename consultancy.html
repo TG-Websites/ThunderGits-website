@@ -66,6 +66,154 @@
   ]
 }
 </script>
+    <!-- PAGE STYLES: responsive layout + form field states -->
+    <style>
+        html, body { max-width: 100%; overflow-x: hidden; }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ---------- Hero ---------- */
+        .hero-section {
+            min-height: 45vh;
+            padding-top: 7rem;
+            padding-bottom: 3rem;
+        }
+
+        /* ---------- Form section layout ---------- */
+        .form-section {
+            background: #f8f9fa;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            overflow-x: hidden; /* stops AOS slide animations causing sideways scroll */
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 4rem;
+            align-items: start;
+        }
+        #left-col { display: none; }
+        #right-col { width: 100%; min-width: 0; }
+
+        .form-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+        .form-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 28px;
+            letter-spacing: -0.3px;
+        }
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .field-row > div { min-width: 0; }
+
+        /* ---------- Form fields ---------- */
+        .tg-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .tg-input {
+            width: 100%;
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #1e293b;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            font-family: inherit;
+        }
+        textarea.tg-input { resize: none; }
+        .tg-input:focus {
+            border-color: #93c5fd;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+        }
+        .tg-input.invalid {
+            border-color: #fca5a5;
+            background: #fffafa;
+        }
+        .tg-input.invalid:focus {
+            border-color: #f87171;
+            box-shadow: 0 0 0 3px rgba(248,113,113,0.12);
+        }
+        .tg-error {
+            display: none;
+            color: #ef4444;
+            font-size: 12px;
+            margin: 6px 0 0;
+            line-height: 1.4;
+        }
+        .tg-hint {
+            color: #94a3b8;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        .tg-submit {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 15px 24px;
+            border-radius: 14px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            margin-top: 4px;
+        }
+        .tg-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+        /* ---------- Tablet & below ---------- */
+        @media (max-width: 1023px) {
+            .form-section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+            .form-grid { gap: 2rem; }
+            #right-col { max-width: 640px; margin-left: auto; margin-right: auto; }
+        }
+
+        /* ---------- Desktop ---------- */
+        @media (min-width: 1024px) {
+            .form-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+            #left-col { display: block; }
+        }
+
+        /* ---------- Mobile ---------- */
+        @media (max-width: 640px) {
+            .hero-section { padding-top: 6.5rem; padding-bottom: 2.5rem; min-height: auto; }
+            .form-section { padding-top: 2rem; padding-bottom: 2.5rem; }
+            .form-card { padding: 24px 18px; border-radius: 20px; }
+            .form-title { font-size: 18px; margin-bottom: 22px; }
+            /* 16px stops iOS Safari zooming in on focus */
+            .tg-input { font-size: 16px; padding: 12px 14px; }
+        }
+        @media (max-width: 560px) {
+            .field-row { grid-template-columns: 1fr; gap: 20px; }
+        }
+        @media (max-width: 360px) {
+            .form-card { padding: 20px 14px; }
+        }
+    </style>
 </head>
 
 <body class="bg-black text-white font-['IBM_Plex_Sans',sans-serif]">
@@ -120,7 +268,7 @@
                 <li><a href="./index.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Home</a></li>
                 <li><a href="./about.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">About</a></li>
                 <li><a href="./work.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Work</a></li>
-                <li><a href="./case-studies.html" class="text-black hover:text-gray-700 transition">Case Studies</a></li>
+                <li><a href="./case-studies.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Case Studies</a></li>
                 <li><a href="./service.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Services</a></li>
                 <li><a href="./career.html" class="block py-2.5 px-3 rounded-lg text-gray-800 hover:bg-gray-50 transition">Career</a></li>
 
@@ -140,7 +288,7 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="relative bg-black overflow-hidden flex items-center" style="min-height:45vh; padding-top:7rem; padding-bottom:3rem;">
+    <section class="hero-section relative bg-black overflow-hidden flex items-center">
         <!-- STATIC CSS GRID LINES -->
         <div class="absolute inset-0 z-0 pointer-events-none"
             style="background-image: linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 50px 50px;">
@@ -149,7 +297,7 @@
         <div id="hero-grid" class="absolute inset-0 z-[1]"></div>
         <!-- TOP CENTER GLOW -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none"
-            style="width: 900px; height: 420px; background: radial-gradient(ellipse at 50% 0%, rgba(134,180,223,0.40) 0%, rgba(79,143,203,0.22) 20%, rgba(30,82,134,0.08) 50%, transparent 75%);">
+            style="width: 900px; max-width: 100%; height: 420px; background: radial-gradient(ellipse at 50% 0%, rgba(134,180,223,0.40) 0%, rgba(79,143,203,0.22) 20%, rgba(30,82,134,0.08) 50%, transparent 75%);">
         </div>
         <div class="relative z-10 max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
             <span class="inline-flex items-center gap-2 px-4 py-1.5 text-[10px] tracking-[0.3em] rounded-full border border-white/15 text-[#86B4DF] mb-8 uppercase font-bold" style="background:rgba(255,255,255,0.05)">
@@ -165,11 +313,11 @@
     </section>
 
     <!-- FORM SECTION -->
-    <section class="relative" style="background:#f8f9fa; padding-top:5rem; padding-bottom:5rem;">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12" style="display:grid; grid-template-columns:1fr; gap:4rem; align-items:start;">
+    <section class="form-section relative">
+        <div class="form-grid max-w-7xl mx-auto px-6 lg:px-12">
 
-            <!-- LEFT: Content -->
-            <div data-aos="fade-right" style="display:none;" id="left-col">
+            <!-- LEFT: Content (visible on desktop only) -->
+            <div data-aos="fade-right" id="left-col">
                 <span style="display:inline-flex;align-items:center;padding:6px 16px;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;border-radius:9999px;border:1px solid #1E5286;color:#1E5286;background:#eff6ff;margin-bottom:2rem;">
                     100% Free · No Commitment
                 </span>
@@ -227,69 +375,79 @@
 
             <!-- RIGHT: Form -->
             <div data-aos="fade-left" data-aos-delay="100" id="right-col">
-                <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:24px;padding:40px;box-shadow:0 4px 24px rgba(0,0,0,0.06);">
+                <div class="form-card">
                     <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#1E5286;margin:0 0 6px;">Get Started</p>
-                    <h3 style="font-size:20px;font-weight:700;color:#0f172a;margin:0 0 28px;letter-spacing:-0.3px;">Book your free session</h3>
+                    <h3 class="form-title">Book your free session</h3>
 
                     <form id="consultancy-form" style="display:flex;flex-direction:column;gap:20px;" novalidate>
 
                         <!-- Name -->
                         <div>
-                            <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
+                            <label class="tg-label" for="c-name">
                                 Full Name <span style="color:#f87171;">*</span>
                             </label>
                             <input id="c-name" type="text" name="name" required autocomplete="name"
+                                maxlength="60" inputmode="text" autocapitalize="words" spellcheck="false"
+                                aria-describedby="err-name"
                                 placeholder="e.g. Rahul Sharma"
-                                style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;background:#f8fafc;border:1px solid #e2e8f0;" />
-                            <p id="err-name" style="display:none;color:#f87171;font-size:12px;margin:6px 0 0;">Name is required</p>
+                                class="tg-input" />
+                            <p id="err-name" class="tg-error" role="alert">Name is required</p>
                         </div>
 
                         <!-- Mobile -->
                         <div>
-                            <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
+                            <label class="tg-label" for="c-mobile">
                                 Mobile Number <span style="color:#f87171;">*</span>
                             </label>
                             <input id="c-mobile" type="tel" name="mobile" required autocomplete="tel"
+                                maxlength="18" inputmode="tel"
+                                aria-describedby="err-mobile"
                                 placeholder="+91 98765 43210"
-                                style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;background:#f8fafc;border:1px solid #e2e8f0;" />
-                            <p id="err-mobile" style="display:none;color:#f87171;font-size:12px;margin:6px 0 0;">Mobile number is required</p>
+                                class="tg-input" />
+                            <p id="err-mobile" class="tg-error" role="alert">Mobile number is required</p>
                         </div>
 
                         <!-- Requirement -->
                         <div>
-                            <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
+                            <label class="tg-label" for="c-requirement">
                                 Your Requirement <span style="color:#f87171;">*</span>
                             </label>
                             <textarea id="c-requirement" name="requirement" required rows="4"
+                                maxlength="1000"
+                                aria-describedby="err-requirement"
                                 placeholder="Tell us what you're looking for — e.g. a mobile app, website, digital marketing, etc."
-                                style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;resize:none;background:#f8fafc;border:1px solid #e2e8f0;font-family:inherit;"></textarea>
-                            <p id="err-requirement" style="display:none;color:#f87171;font-size:12px;margin:6px 0 0;">Please describe your requirement</p>
+                                class="tg-input"></textarea>
+                            <p id="err-requirement" class="tg-error" role="alert">Please describe your requirement</p>
                         </div>
 
-                        <!-- Email + Business side by side on desktop -->
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <!-- Email + Business side by side (stacks on mobile) -->
+                        <div class="field-row">
                             <div>
-                                <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
-                                    Email <span style="color:#94a3b8;font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span>
+                                <label class="tg-label" for="c-email">
+                                    Email <span class="tg-hint">(optional)</span>
                                 </label>
                                 <input id="c-email" type="email" name="email" autocomplete="email"
+                                    maxlength="100" inputmode="email" autocapitalize="none" spellcheck="false"
+                                    aria-describedby="err-email"
                                     placeholder="you@example.com"
-                                    style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;background:#f8fafc;border:1px solid #e2e8f0;" />
+                                    class="tg-input" />
+                                <p id="err-email" class="tg-error" role="alert">Enter a valid email address</p>
                             </div>
                             <div>
-                                <label style="display:block;font-size:12px;font-weight:600;color:#475569;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px;">
-                                    Business <span style="color:#94a3b8;font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span>
+                                <label class="tg-label" for="c-business">
+                                    Business <span class="tg-hint">(optional)</span>
                                 </label>
                                 <input id="c-business" type="text" name="businessName"
+                                    maxlength="80" autocomplete="organization"
+                                    aria-describedby="err-business"
                                     placeholder="e.g. Acme Tech"
-                                    style="width:100%;border-radius:12px;padding:12px 16px;font-size:14px;color:#1e293b;outline:none;transition:border 0.2s,box-shadow 0.2s;box-sizing:border-box;background:#f8fafc;border:1px solid #e2e8f0;" />
+                                    class="tg-input" />
+                                <p id="err-business" class="tg-error" role="alert">Enter a valid business name</p>
                             </div>
                         </div>
 
                         <!-- Submit -->
-                        <button type="submit" id="submit-btn"
-                            style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;border-radius:14px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#ffffff;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:4px;"
-                            class="bg-accent hover:bg-accent-dark">
+                        <button type="submit" id="submit-btn" class="tg-submit bg-accent hover:bg-accent-dark">
                             <span id="btn-text">Book Free Consultancy</span>
                             <svg id="btn-loader" style="display:none;width:16px;height:16px;animation:spin 1s linear infinite;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <circle style="opacity:0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -309,32 +467,6 @@
 
         </div>
     </section>
-
-    <style>
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @media (min-width: 1024px) {
-            #left-col { display: block !important; }
-            .form-section-grid { grid-template-columns: 1fr 1fr !important; }
-        }
-    </style>
-    <script>
-        /* Apply two-col grid on lg screens */
-        (function() {
-            const grid = document.querySelector('#left-col').parentElement;
-            grid.classList.add('form-section-grid');
-            function applyGrid() {
-                if (window.innerWidth >= 1024) {
-                    grid.style.gridTemplateColumns = '1fr 1fr';
-                    document.getElementById('left-col').style.display = 'block';
-                } else {
-                    grid.style.gridTemplateColumns = '1fr';
-                    document.getElementById('left-col').style.display = 'none';
-                }
-            }
-            applyGrid();
-            window.addEventListener('resize', applyGrid);
-        })();
-    </script>
 
     <!-- FOOTER -->
     <footer class="w-full bg-gray-100 text-black">
@@ -403,8 +535,8 @@
     </footer>
 
     <!-- SUCCESS OVERLAY -->
-    <div id="success-overlay" style="display:none;position:fixed;inset:0;z-index:50;align-items:center;justify-content:center;padding:0 16px;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);">
-        <div class="bg-white/[0.05] border border-white/10 rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl">
+    <div id="success-overlay" style="display:none;position:fixed;inset:0;z-index:50;align-items:center;justify-content:center;padding:0 16px;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);overflow-y:auto;">
+        <div class="bg-white/[0.05] border border-white/10 rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl" style="margin:auto;">
             <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style="background:rgba(30,82,134,0.15); border:1px solid rgba(224,113,47,0.25);">
                 <svg class="w-8 h-8 text-[#E0712F]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
@@ -422,11 +554,11 @@
     <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
 document.addEventListener('DOMContentLoaded', function() {
-  
+
           AOS.init({ duration: 700, once: true });
-  
+
           const API_BASE = 'https://api.thundergits.com';
-  
+
           // Mobile menu toggle
           const menuBtn = document.getElementById('mobile-menu-btn');
           const mobileMenu = document.getElementById('mobile-menu');
@@ -437,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function() {
               iconOpen.classList.toggle('hidden');
               iconClose.classList.toggle('hidden');
           });
-  
+
           // Industries accordion
           function toggleAccordion(id) {
               const el = document.getElementById(id);
@@ -445,60 +577,180 @@ document.addEventListener('DOMContentLoaded', function() {
               el.classList.toggle('hidden');
               if (icon) icon.style.transform = el.classList.contains('hidden') ? '' : 'rotate(180deg)';
           }
-  
-          // Input styling on focus
-          const inputs = document.querySelectorAll('#consultancy-form input, #consultancy-form textarea');
-          inputs.forEach(inp => {
-              inp.addEventListener('focus', () => { inp.style.border = '1px solid #93c5fd'; inp.style.boxShadow = '0 0 0 3px rgba(59,130,246,0.1)'; });
-              inp.addEventListener('blur', () => { inp.style.border = '1px solid #e2e8f0'; inp.style.boxShadow = ''; });
+
+          /* =========================================================
+             FORM VALIDATION
+             - sanitize(): removes characters that are not allowed while typing
+             - validate(): returns an error message, or '' if the value is OK
+             ========================================================= */
+
+          const EMAIL_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)*\.[A-Za-z]{2,}$/;
+
+          const fields = {
+              // Name: letters only (any language) + space . ' -   → no digits / symbols
+              name: {
+                  required: true,
+                  sanitize: v => v
+                      .replace(/[^\p{L}\p{M}\s.'’-]/gu, '')
+                      .replace(/\s{2,}/g, ' ')
+                      .replace(/^\s+/, ''),
+                  validate: v => {
+                      if (!v) return 'Name is required';
+                      if (!/^[\p{L}\p{M}][\p{L}\p{M}\s.'’-]*$/u.test(v)) return 'Name can only contain letters';
+                      if ((v.match(/\p{L}/gu) || []).length < 2) return 'Name must have at least 2 letters';
+                      if (v.length > 60) return 'Name is too long (max 60 characters)';
+                      return '';
+                  }
+              },
+
+              // Mobile: digits, +, space, - only
+              mobile: {
+                  required: true,
+                  sanitize: v => v
+                      .replace(/[^\d+\s-]/g, '')
+                      .replace(/(?!^)\+/g, '')      // "+" allowed only at the start
+                      .replace(/\s{2,}/g, ' ')
+                      .replace(/^\s+/, ''),
+                  validate: v => {
+                      if (!v) return 'Mobile number is required';
+                      const c = v.replace(/[\s-]/g, '');
+                      const indian = /^(\+91|91|0)?[6-9]\d{9}$/.test(c);
+                      const intl   = /^\+(?!91)[1-9]\d{7,14}$/.test(c);
+                      if (!indian && !intl) return 'Enter a valid mobile number (e.g. +91 98765 43210)';
+                      return '';
+                  }
+              },
+
+              // Requirement: at least 10 characters and must contain real words
+              requirement: {
+                  required: true,
+                  sanitize: v => v.replace(/^\s+/, ''),
+                  validate: v => {
+                      if (!v) return 'Please describe your requirement';
+                      if (v.length < 10) return 'Please write at least 10 characters';
+                      if ((v.match(/\p{L}/gu) || []).length < 5) return 'Please describe your requirement in words';
+                      if (v.length > 1000) return 'Requirement is too long (max 1000 characters)';
+                      return '';
+                  }
+              },
+
+              // Email (optional): validated only if filled
+              email: {
+                  required: false,
+                  sanitize: v => v.replace(/\s/g, ''),
+                  validate: v => {
+                      if (!v) return '';
+                      if (!EMAIL_RE.test(v)) return 'Enter a valid email address (e.g. you@example.com)';
+                      return '';
+                  }
+              },
+
+              // Business (optional): letters/numbers and common punctuation
+              business: {
+                  required: false,
+                  sanitize: v => v
+                      .replace(/[^\p{L}\p{M}\p{N}\s&.,'’()\-]/gu, '')
+                      .replace(/\s{2,}/g, ' ')
+                      .replace(/^\s+/, ''),
+                  validate: v => {
+                      if (!v) return '';
+                      if (v.length < 2) return 'Business name must be at least 2 characters';
+                      if (!/\p{L}/u.test(v)) return 'Business name must include letters';
+                      if (v.length > 80) return 'Business name is too long (max 80 characters)';
+                      return '';
+                  }
+              }
+          };
+
+          Object.keys(fields).forEach(key => {
+              fields[key].el  = document.getElementById(`c-${key}`);
+              fields[key].err = document.getElementById(`err-${key}`);
+              fields[key].touched = false;
           });
-  
+
+          function showError(key, msg) {
+              const f = fields[key];
+              if (msg) {
+                  f.err.textContent = msg;
+                  f.err.style.display = 'block';
+                  f.el.classList.add('invalid');
+                  f.el.setAttribute('aria-invalid', 'true');
+              } else {
+                  f.err.style.display = 'none';
+                  f.el.classList.remove('invalid');
+                  f.el.removeAttribute('aria-invalid');
+              }
+          }
+
+          function checkField(key) {
+              const f = fields[key];
+              const msg = f.validate(f.el.value.trim());
+              showError(key, msg);
+              return !msg;
+          }
+
+          Object.keys(fields).forEach(key => {
+              const f = fields[key];
+
+              // Filter disallowed characters as the user types / pastes
+              f.el.addEventListener('input', () => {
+                  const cleaned = f.sanitize(f.el.value);
+                  if (cleaned !== f.el.value) f.el.value = cleaned;
+                  // Re-check live once the field has been touched or shows an error
+                  if (f.touched || f.el.classList.contains('invalid')) checkField(key);
+              });
+
+              // Validate when leaving the field
+              f.el.addEventListener('blur', () => {
+                  f.touched = true;
+                  f.el.value = f.el.value.trim();
+                  checkField(key);
+              });
+          });
+
           // Form submit
           document.getElementById('consultancy-form').addEventListener('submit', async (e) => {
               e.preventDefault();
-  
-              const name         = document.getElementById('c-name').value.trim();
-              const mobile       = document.getElementById('c-mobile').value.trim();
-              const requirement  = document.getElementById('c-requirement').value.trim();
-              const email        = document.getElementById('c-email').value.trim();
-              const businessName = document.getElementById('c-business').value.trim();
-  
-              let valid = true;
-              ['name', 'mobile', 'requirement'].forEach(f => {
-                  const el  = document.getElementById(`c-${f}`);
-                  const err = document.getElementById(`err-${f}`);
-                  if (!el.value.trim()) {
-                      err.style.display = 'block';
-                      el.style.border = '1px solid #fca5a5';
-                      valid = false;
-                  } else {
-                      err.style.display = 'none';
-                      el.style.border = '1px solid #e2e8f0';
-                  }
+
+              let firstInvalid = null;
+              Object.keys(fields).forEach(key => {
+                  fields[key].touched = true;
+                  fields[key].el.value = fields[key].el.value.trim();
+                  if (!checkField(key) && !firstInvalid) firstInvalid = fields[key].el;
               });
-              if (!valid) return;
-  
+              if (firstInvalid) {
+                  firstInvalid.focus();
+                  return;
+              }
+
+              const name         = fields.name.el.value.trim();
+              const mobile       = fields.mobile.el.value.trim();
+              const requirement  = fields.requirement.el.value.trim();
+              const email        = fields.email.el.value.trim();
+              const businessName = fields.business.el.value.trim();
+
               const submitBtn = document.getElementById('submit-btn');
               const btnText   = document.getElementById('btn-text');
               const btnLoader = document.getElementById('btn-loader');
               const status    = document.getElementById('form-status');
-  
+
               submitBtn.disabled = true;
               btnText.textContent = 'Booking...';
               btnLoader.style.display = 'inline-block';
               status.style.display = 'none';
-  
+
               try {
                   const res = await fetch(`${API_BASE}/api/consultancy`, {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
                       body: JSON.stringify({ name, mobile, requirement, email: email || undefined, businessName: businessName || undefined }),
                   });
-  
+
                   if (res.ok) {
                       document.getElementById('success-overlay').style.display = 'flex';
                   } else {
-                      const data = await res.json();
+                      let data = {};
+                      try { data = await res.json(); } catch (_) {}
                       status.textContent = data.message || 'Something went wrong. Please try again.';
                       status.style.color = '#f87171';
                       status.style.display = 'block';
@@ -513,22 +765,14 @@ document.addEventListener('DOMContentLoaded', function() {
                   btnLoader.style.display = 'none';
               }
           });
-  
-          // Clear error on input
-          ['c-name', 'c-mobile', 'c-requirement'].forEach(id => {
-              const map = { 'c-name': 'name', 'c-mobile': 'mobile', 'c-requirement': 'requirement' };
-              document.getElementById(id).addEventListener('input', () => {
-                  document.getElementById(`err-${map[id]}`).style.display = 'none';
-                  document.getElementById(id).style.border = '1px solid rgba(255,255,255,0.1)';
-              });
-          });
-  
+
           // Hero grid interaction (same as other pages)
           const heroGrid = document.getElementById('hero-grid');
           if (heroGrid) {
               const CELL = 50;
-              let cols, rows;
+              let cols, rows, lastWidth = 0;
               function buildGrid() {
+                  lastWidth = window.innerWidth;
                   cols = Math.ceil(window.innerWidth / CELL);
                   rows = Math.ceil(heroGrid.parentElement.offsetHeight / CELL);
                   heroGrid.innerHTML = '';
@@ -544,9 +788,12 @@ document.addEventListener('DOMContentLoaded', function() {
                   }
               }
               buildGrid();
-              window.addEventListener('resize', buildGrid);
+              // Only rebuild when the width changes (avoids rebuilding when the mobile address bar shows/hides)
+              window.addEventListener('resize', () => {
+                  if (window.innerWidth !== lastWidth) buildGrid();
+              });
           }
-      
+
 });
 </script>
 
@@ -559,4 +806,3 @@ document.addEventListener('DOMContentLoaded', function() {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30" fill="#fff"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.74 5.494 2.031 7.806L0 32l8.418-2.007A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.28 13.28 0 0 1-6.77-1.852l-.485-.288-5.002 1.193 1.216-4.858-.315-.5A13.28 13.28 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.28-9.72c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.896.2-.265.398-1.029 1.295-1.262 1.561-.232.265-.465.298-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.056-1.98-2.36-2.213-2.758-.233-.398-.025-.614.175-.812.18-.18.398-.465.597-.698.2-.232.265-.398.398-.664.133-.265.066-.498-.033-.698-.1-.2-.896-2.16-1.228-2.958-.323-.776-.65-.671-.896-.683l-.764-.013c-.265 0-.697.1-1.062.498-.365.398-1.394 1.362-1.394 3.32 0 1.96 1.427 3.852 1.627 4.118.2.265 2.808 4.288 6.803 6.016.951.41 1.693.655 2.272.839.954.303 1.822.26 2.508.158.765-.114 2.354-.963 2.686-1.893.333-.93.333-1.728.233-1.894-.099-.166-.365-.265-.763-.464z"/></svg>
   </a></body>
 </html>
-
